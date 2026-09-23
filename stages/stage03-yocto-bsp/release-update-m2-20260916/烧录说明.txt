@@ -1,0 +1,50 @@
+TL3572-EVM openEuler Stage3-M2 完整整机固件（update.img）
+生成时间：2026-09-16
+
+一、镜像内容
+- 烧录文件：update-tl3572-openeuler-stage3-m2.img（4,119,118,524 字节）
+- 组成：厂商 Loader/GPT/U-Boot/Trust/Recovery/OEM/Userdata 原封不动
+  + 厂商 boot.img（Linux 6.12.69 内核与设备树不变）
+  + openEuler Embedded 24.03-LTS rootfs（MACHINE=tl3572-evm 正式构建）
+- 本版相对 Stage3-M1 的变化（nfs 清理收口）：
+  1. 移除 nfs-utils / nfs-utils-client / nfs-utils-mount / rpcbind（manifest 计数为 0）
+  2. /etc/systemd/system/proc-fs-nfsd.mount -> /dev/null（mask 兜底）
+  3. 预期 systemctl --failed = 0 个单元（M1 实机为 1 个：proc-fs-nfsd.mount）
+- rootfs 为 3,999,997,952 字节 ext4（分区为 14 GiB，余量充足，板上可按需 resize2fs 扩容），
+  e2fsck -fn 五阶段通过。缩容原因：RKFW 头部 firmware-size 为 u32，
+  4 GiB rootfs 会使 firmware 总长溢出 4,294,967,295 上限。
+
+二、烧录方式（整镜像，RKDevTool v3.37）
+1. RKDevTool 切到"升级固件"页，点"固件"，选择 update-tl3572-openeuler-stage3-m2.img。
+2. 板卡进入 Loader 模式（按住升级/RECOVERY 键上电，或 MaskROM）。
+3. 点击"升级"，等待所有分区写入完成（rootfs 约 3.7 GiB，耗时数分钟）。
+4. 完成后复位，115200 串口（ttyFIQ0，8N1）观察启动。
+
+三、烧录后验收（串口或 SSH）
+  login: root（空密码，直接回车）
+  systemctl --failed                 # 预期 0 个单元
+  cat /etc/os-release | head -2      # openEuler Embedded 24.03-LTS
+  uname -a                           # 6.12.69-gf1b67c293213（厂商内核保留）
+  findmnt -no SOURCE,FSTYPE /        # /dev/mmcblk0p6 ext4
+  command -v findmnt ss getent mcsctl
+  getent hosts www.openeuler.org     # DNS（eth0 DHCP）
+  rpcbind / rpc.statd 进程应不存在（nfs 已整体移除）
+
+四、回滚
+任意时刻可通过 Loader 模式重新烧录厂商完整 update.img 恢复
+（4-软件资料\Linux\updateimg\updateimg-v1.0\update.img）。
+
+五、产物哈希（节选，全量见 SHA256SUMS）
+- update-tl3572-openeuler-stage3-m2.img  03400abf...c36b46
+- 镜像内 rootfs（缩容后）                2afc6c96...2dc05e8
+- BitBake 原始 4 GiB ext4（gz 归档）     b767278c...de36c5f
+  （gz 为 BitBake 原始输出；update.img 内为同内容缩容版，两者 e2fsck 均 clean）
+
+六、组装方法记录（可复现，脚本与素材见本目录 pack\ 与说明）
+AFPTool(RKDevTool v3.37 bin) -unpack 厂商 update.img 得 firmware.img；
+再 -unpack 得 10 个分区镜像；替换 rootfs.img 后 -pack 重组 firmware；
+最终镜像 = 厂商头(仅 fw_size 字段 0x25 改为 4,118,292,484) + 厂商 boot 区
++ 重组 firmware + 32 字节整文件 MD5。
+注意：RKImageMaker v2.23 无法解析 AFPTool v2.28 重组的 firmware
+（"Get image version failed"），故 RKFW 层为手工组装；
+已通过 RKImageMaker -unpack / AFPTool -unpack 双重回解逐字节验证。

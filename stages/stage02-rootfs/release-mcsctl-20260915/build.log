@@ -1,0 +1,83 @@
+Loading cache...done.
+Loaded 4227 entries from dependency cache.
+Parsing recipes...done.
+Parsing of 2666 .bb files complete (2664 cached, 2 parsed). 4228 targets, 406 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION           = "2.0.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "openeuler-24.03"
+TARGET_SYS           = "aarch64-openeuler-linux"
+MACHINE              = "qemu-aarch64"
+DISTRO               = "openeuler"
+DISTRO_VERSION       = "24.03-LTS"
+TUNE_FEATURES        = "aarch64"
+TARGET_FPU           = ""
+EXTERNAL_TOOLCHAIN   = "/usr1/openeuler/gcc/openeuler_gcc_arm64le"
+EXTERNAL_TARGET_SYS  = "aarch64-openeuler-linux-gnu"
+GCC_VERSION          = "12.3.1"
+OPENEULER_TOOLCHAIN_VERSION = "12.3.1"
+meta                 = "HEAD:4bf0e3ea7a5cd4577ae43c510870f235a39eedc0"
+meta-oe              
+meta-python          
+meta-networking      
+meta-filesystems     = "HEAD:a82d92c8a6525da01524bf8f4a60bf6b35dcbb3d"
+meta-openeuler       
+meta-openeuler-bsp   
+meta-openeuler-rtos  
+meta-zephyr          = "openEuler-24.03-LTS:3aa6999c9ab78569bc2209a9dbb185e2f7e4301c"
+meta-tl3572          = "<unknown>:<unknown>"
+
+Initialising tasks...done.
+Sstate summary: Wanted 21 Local 15 Mirrors 0 Missed 6 Current 1269 (71% match, 99% complete)
+Removing 3 stale sstate objects for arch qemu_aarch64...done.
+Removing 3 stale sstate objects for arch aarch64...done.
+NOTE: Executing Tasks
+NOTE: Running task 2116 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcsctl.bb:do_install)
+NOTE: recipe mcsctl-1.0-r0: task do_install: Started
+NOTE: recipe mcsctl-1.0-r0: task do_install: Succeeded
+NOTE: Running task 2815 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcsctl.bb:do_package)
+NOTE: recipe mcsctl-1.0-r0: task do_package: Started
+NOTE: recipe mcsctl-1.0-r0: task do_package: Succeeded
+NOTE: Running task 2816 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcsctl.bb:do_packagedata)
+NOTE: recipe mcsctl-1.0-r0: task do_packagedata: Started
+NOTE: recipe mcsctl-1.0-r0: task do_packagedata: Succeeded
+NOTE: Running task 2817 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcsctl.bb:do_package_write_rpm)
+NOTE: Running task 2818 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcsctl.bb:do_package_qa)
+NOTE: recipe mcsctl-1.0-r0: task do_package_write_rpm: Started
+NOTE: recipe mcsctl-1.0-r0: task do_package_qa: Started
+NOTE: recipe mcsctl-1.0-r0: task do_package_qa: Succeeded
+NOTE: recipe mcsctl-1.0-r0: task do_package_write_rpm: Succeeded
+NOTE: Running task 2819 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/images/openeuler-image.bb:do_rootfs)
+NOTE: recipe openeuler-image-1.0-r0: task do_rootfs: Started
+NOTE: recipe openeuler-image-1.0-r0: task do_rootfs: Succeeded
+NOTE: Running task 2820 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/images/openeuler-image.bb:do_flush_pseudodb)
+NOTE: Running task 2821 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/images/openeuler-image.bb:do_write_qemuboot_conf)
+NOTE: recipe openeuler-image-1.0-r0: task do_flush_pseudodb: Started
+NOTE: recipe openeuler-image-1.0-r0: task do_flush_pseudodb: Succeeded
+NOTE: Running task 2822 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/images/openeuler-image.bb:do_image_qa)
+NOTE: recipe openeuler-image-1.0-r0: task do_write_qemuboot_conf: Started
+NOTE: recipe openeuler-image-1.0-r0: task do_write_qemuboot_conf: Succeeded
+NOTE: recipe openeuler-image-1.0-r0: task do_image_qa: Started
+NOTE: recipe openeuler-image-1.0-r0: task do_image_qa: Succeeded
+NOTE: Running task 2823 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/images/openeuler-image.bb:do_image)
+NOTE: recipe openeuler-image-1.0-r0: task do_image: Started
+NOTE: recipe openeuler-image-1.0-r0: task do_image: Succeeded
+NOTE: Running task 2824 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/images/openeuler-image.bb:do_image_tar)
+NOTE: Running task 2825 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/images/openeuler-image.bb:do_image_ext4)
+NOTE: Running task 2826 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/images/openeuler-image.bb:do_image_cpio)
+NOTE: recipe openeuler-image-1.0-r0: task do_image_tar: Started
+NOTE: recipe openeuler-image-1.0-r0: task do_image_ext4: Started
+NOTE: recipe openeuler-image-1.0-r0: task do_image_cpio: Started
+NOTE: recipe openeuler-image-1.0-r0: task do_image_ext4: Succeeded
+NOTE: recipe openeuler-image-1.0-r0: task do_image_tar: Succeeded
+NOTE: recipe openeuler-image-1.0-r0: task do_image_cpio: Succeeded
+NOTE: Running task 2827 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/images/openeuler-image.bb:do_image_complete)
+NOTE: recipe openeuler-image-1.0-r0: task do_image_complete: Started
+NOTE: recipe openeuler-image-1.0-r0: task do_image_complete: Succeeded
+NOTE: Running task 2828 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/images/openeuler-image.bb:do_populate_lic_deploy)
+NOTE: recipe openeuler-image-1.0-r0: task do_populate_lic_deploy: Started
+NOTE: recipe openeuler-image-1.0-r0: task do_populate_lic_deploy: Succeeded
+NOTE: Running noexec task 2829 of 2829 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/images/openeuler-image.bb:do_build)
+NOTE: Tasks Summary: Attempted 2829 tasks of which 2813 didn't need to be rerun and all succeeded.

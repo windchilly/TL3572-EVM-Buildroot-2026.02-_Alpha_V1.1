@@ -1,0 +1,15 @@
+{
+  "duration_seconds": 259200,
+  "elapsed_seconds": 300.09,
+  "exchanges": 2996,
+  "expected_end_at": "2026-09-21T06:46:57.282599+00:00",
+  "firmware_sha256": "c6d01166ac90f9ebe7f14bda0d98d53179cb7129512fb1e5f21432c3338effc5",
+  "interval_seconds": 0.1,
+  "micad_sha256": "07124837f5746decb778c2b70750a02f9ae4c89e3eaaa01c6dc8361e9ebe8cf6",
+  "module_sha256": "c38973bcb1eabfce88669b31ee797980dfa7053891454355d80f440e42048b0a",
+  "payload_size": 451,
+  "rx_bytes": 1432088,
+  "started_at": "2026-09-18T06:46:57.282599+00:00",
+  "state": "RUNNING",
+  "updated_at": "2026-09-18T06:51:57.378498+00:00"
+}

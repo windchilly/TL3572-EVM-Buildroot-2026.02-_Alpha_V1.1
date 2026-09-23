@@ -1,0 +1,11 @@
+[Unit]
+Description=Load TL3572 MCS kernel module
+Before=micad.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'test -d /sys/module/mcs_km || /sbin/insmod /lib/modules/mcs_km.ko'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

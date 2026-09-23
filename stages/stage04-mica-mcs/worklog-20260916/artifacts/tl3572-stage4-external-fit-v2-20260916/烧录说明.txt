@@ -1,0 +1,24 @@
+TL3572 Stage4 external-data FIT v2（厂商DTB增量overlay）
+
+烧录文件：boot-mcs-tl3572-external-fit-v2-vendor-dtb-overlay.img
+大小：40,647,168 字节
+SHA256：5d2d48989e7f5a3d060440838e043615b800e6a85216479c54149f960cfd7c94
+
+v2针对首版external FIT实机启动时的U-Boot UFS Data Abort修正：
+- 内核Image不变；
+- 厂商resource不变；
+- 不再使用源码整体重编后导致约800个既有phandle重编号的DTB；
+- 从厂商boot.img提取原始DTB，通过overlay只追加mcs-rmem和mcs-remoteproc；
+- UFS既有phandle保持厂商值0x44f；
+- FIT仍为external-data格式，头0x600，首数据偏移0x800；
+- kernel/fdt/resource回解SHA256全部通过。
+
+RKDevTool：进入“下载分区”，只勾选boot，地址0x0000a000。
+不要烧录上一版boot-mcs-tl3572-external-fit.img。
+
+测试目标：
+1. U-Boot不再在ufs@29e00000扫描阶段Data Abort；
+2. 进入Linux/systemd；
+3. 再检查新内核配置、MCS保留内存和mcs-remoteproc节点。
+
+rmmod/insmod循环和1000次压力测试继续暂缓。

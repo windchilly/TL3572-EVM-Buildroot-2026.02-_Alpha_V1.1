@@ -1,0 +1,74 @@
+Loading cache...done.
+Loaded 4229 entries from dependency cache.
+Parsing recipes...done.
+Parsing of 2668 .bb files complete (2666 cached, 2 parsed). 4230 targets, 408 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION           = "2.0.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "openeuler-24.03"
+TARGET_SYS           = "aarch64-openeuler-linux"
+MACHINE              = "tl3572-evm"
+DISTRO               = "openeuler"
+DISTRO_VERSION       = "24.03-LTS"
+TUNE_FEATURES        = "aarch64"
+TARGET_FPU           = ""
+EXTERNAL_TOOLCHAIN   = "/usr1/openeuler/gcc/openeuler_gcc_arm64le"
+EXTERNAL_TARGET_SYS  = "aarch64-openeuler-linux-gnu"
+GCC_VERSION          = "12.3.1"
+OPENEULER_TOOLCHAIN_VERSION = "12.3.1"
+meta                 = "HEAD:4bf0e3ea7a5cd4577ae43c510870f235a39eedc0"
+meta-oe              
+meta-python          
+meta-networking      
+meta-filesystems     = "HEAD:a82d92c8a6525da01524bf8f4a60bf6b35dcbb3d"
+meta-openeuler       
+meta-openeuler-bsp   
+meta-openeuler-rtos  
+meta-zephyr          = "openEuler-24.03-LTS:3aa6999c9ab78569bc2209a9dbb185e2f7e4301c"
+meta-tl3572-stage3   = "<unknown>:<unknown>"
+
+Initialising tasks...done.
+Sstate summary: Wanted 6 Local 0 Mirrors 0 Missed 6 Current 1298 (0% match, 99% complete)
+Removing 3 stale sstate objects for arch tl3572_evm...done.
+Removing 3 stale sstate objects for arch allarch...done.
+NOTE: Executing Tasks
+NOTE: Running task 2140 of 2845 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/packagegroups/packagegroup-core-full-cmdline.bb:do_package)
+NOTE: recipe packagegroup-core-full-cmdline-1.0-r6: task do_package: Started
+NOTE: recipe packagegroup-core-full-cmdline-1.0-r6: task do_package: Succeeded
+NOTE: Running task 2834 of 2845 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/packagegroups/packagegroup-core-full-cmdline.bb:do_packagedata)
+NOTE: recipe packagegroup-core-full-cmdline-1.0-r6: task do_packagedata: Started
+NOTE: recipe packagegroup-core-full-cmdline-1.0-r6: task do_packagedata: Succeeded
+NOTE: Running task 2835 of 2845 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/packagegroups/packagegroup-core-full-cmdline.bb:do_package_write_rpm)
+NOTE: Running task 2836 of 2845 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/packagegroups/packagegroup-core-full-cmdline.bb:do_package_qa)
+NOTE: recipe packagegroup-core-full-cmdline-1.0-r6: task do_package_write_rpm: Started
+NOTE: recipe packagegroup-core-full-cmdline-1.0-r6: task do_package_qa: Started
+NOTE: recipe packagegroup-core-full-cmdline-1.0-r6: task do_package_qa: Succeeded
+NOTE: recipe packagegroup-core-full-cmdline-1.0-r6: task do_package_write_rpm: Succeeded
+NOTE: Running task 2837 of 2845 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-core/images/tl3572-openeuler-mcs-image.bb:do_rootfs)
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_rootfs: Started
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_rootfs: Succeeded
+NOTE: Running task 2838 of 2845 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-core/images/tl3572-openeuler-mcs-image.bb:do_flush_pseudodb)
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_flush_pseudodb: Started
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_flush_pseudodb: Succeeded
+NOTE: Running task 2839 of 2845 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-core/images/tl3572-openeuler-mcs-image.bb:do_image_qa)
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_image_qa: Started
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_image_qa: Succeeded
+NOTE: Running task 2840 of 2845 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-core/images/tl3572-openeuler-mcs-image.bb:do_image)
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_image: Started
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_image: Succeeded
+NOTE: Running task 2841 of 2845 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-core/images/tl3572-openeuler-mcs-image.bb:do_image_tar)
+NOTE: Running task 2842 of 2845 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-core/images/tl3572-openeuler-mcs-image.bb:do_image_ext4)
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_image_tar: Started
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_image_ext4: Started
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_image_ext4: Succeeded
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_image_tar: Succeeded
+NOTE: Running task 2843 of 2845 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-core/images/tl3572-openeuler-mcs-image.bb:do_image_complete)
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_image_complete: Started
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_image_complete: Succeeded
+NOTE: Running task 2844 of 2845 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-core/images/tl3572-openeuler-mcs-image.bb:do_populate_lic_deploy)
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_populate_lic_deploy: Started
+NOTE: recipe tl3572-openeuler-mcs-image-1.0-r0: task do_populate_lic_deploy: Succeeded
+NOTE: Running noexec task 2845 of 2845 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-core/images/tl3572-openeuler-mcs-image.bb:do_build)
+NOTE: Tasks Summary: Attempted 2845 tasks of which 2832 didn't need to be rerun and all succeeded.

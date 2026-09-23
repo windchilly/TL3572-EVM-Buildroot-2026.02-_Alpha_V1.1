@@ -1,0 +1,22 @@
+TL3572-EVM openEuler Stage3 rootfs M1
+
+烧录文件由压缩包恢复：
+gzip -dc rootfs-openeuler-tl3572-stage3-m1.ext4.gz > tl3572-openeuler-mcs-image-tl3572-evm.ext4
+解压后 SHA256：7cf4d20a0196b33496a24ada7c44fa1d1984f89fc7035b67d9c2d38d804210c2
+文件长度：4294967296 字节（4 GiB）
+
+RKDevTool 操作：
+1. 使板卡进入 Loader 模式。
+2. 只选择 rootfs 分区，并选择上述 ext4 文件。
+3. 不改写 Loader、parameter、uboot、trust 和 boot 分区。
+4. 下载完成后复位，通过 115200 波特率串口观察启动。
+
+串口登录账号：root
+串口登录密码：空密码（不输入任何字符，直接按回车）
+
+本镜像继续使用板上现有的厂商 boot.img 和 Linux 6.12.69。
+已离线验证 ext4 文件系统为 clean，mcsctl、findmnt、ss、getent、
+systemd-networkd DHCP 配置及厂商模块/固件均存在。
+
+已知项：proc-fs-nfsd.mount 仍可能出现在 systemctl --failed 中；
+auditd.service 已不存在。该项不影响本轮启动、网络及用户态工具验证。

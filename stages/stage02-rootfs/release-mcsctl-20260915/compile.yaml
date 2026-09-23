@@ -1,0 +1,38 @@
+build_in: host
+machine: qemu-aarch64
+toolchain_type: EXTERNAL_TOOLCHAIN:aarch64
+cache_src_dir:
+nativesdk_dir: /opt/buildtools/nativesdk
+toolchain_dir: /usr1/openeuler/gcc/openeuler_gcc_arm64le
+sstate_dir: /home/openeuler/build/sstate-cache
+tmp_dir: /home/openeuler/build/tl3572-2oo3/build/build-rootfs/tmp
+no_layer: true
+repos:
+- yocto-poky
+- yocto-meta-openembedded
+local_conf: |+
+  # Stage 2 builds an AArch64 userspace seed.  The QEMU kernel and its MCS
+  # kernel module are not deployed to TL3572.
+  MCS_FEATURES ?= "openamp"
+  DISTRO_FEATURES:append = " mcs"
+  INIT_MANAGER = "systemd"
+
+  DL_DIR = "/home/openeuler/build/downloads"
+  BB_NUMBER_THREADS = "32"
+  PARALLEL_MAKE = "-j 32"
+
+  IMAGE_FSTYPES = "tar.gz ext4"
+  IMAGE_FSTYPES:append = " ext4 tar.gz"
+  IMAGE_ROOTFS_SIZE = "4194304"
+  IMAGE_INSTALL:append = " ethtool dosfstools mcs-linux mcsctl screen "
+  IMAGE_INSTALL:remove = "packagegroup-kernel-modules packagegroup-mcs"
+  IMAGE_FEATURES:append = " debug-tweaks "
+
+  # mcs-km from qemu-aarch64 is ABI-incompatible with the TL3572 vendor
+  # Linux 6.12.69 kernel.  Keep MICA userspace only in this stage.
+  KERNEL_MODULE_AUTOLOAD:remove = "mcs_km"
+
+layers:
+- yocto-meta-openeuler/rtos/meta-openeuler-rtos
+- yocto-meta-openeuler/rtos/meta-zephyr
+- /home/openeuler/build/tl3572-2oo3/meta-tl3572

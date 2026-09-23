@@ -1,0 +1,18 @@
+TL3572 Stage4 boot.img v3（2026-09-16）
+
+烧录文件：boot-mcs-tl3572-external-fit-v3-disable-unused-ufs.img
+烧录分区：boot（RKDevTool 地址 0x0000a000）
+SHA-256：3927892e4743666ebb4c4239c93d18c8baed95eedef18a1e13cc8563d533ba33
+大小：40647168 字节
+
+本版改动：
+1. 保留 v2 的新内核、MCS 64 MiB 保留内存和 mcs-remoteproc 节点；
+2. 将本板未使用的 /soc/ufs@29e00000 设为 disabled，绕过 Rockchip U-Boot 启动内核前的 UFS 自动探测崩溃；
+3. 保持厂商 DTB 的既有 phandle 不变；
+4. 使用 Rockchip 外置数据 FIT 格式（mkimage -B 0x200 -E -p 0x800）。
+
+只替换 boot 分区，不要改写 uboot、rootfs 或其他分区。烧录完成后复位，串口应越过此前的 UFS Data Abort 并进入 Linux。
+
+附带模块：mcs_km-tl3572-of-cpu.ko
+模块 SHA-256：1c42336cb8290ebd82db71f7e4e630cbf0eadaab34650e0104c6703b6447aadb
+该模块已在本镜像启动的内核上完成一次 insmod/rmmod 验证；尚未固化进 rootfs。

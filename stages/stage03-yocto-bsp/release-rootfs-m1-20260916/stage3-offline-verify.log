@@ -1,0 +1,43 @@
+MACHINE_ARTIFACTS
+-rw-r--r--. 2 openeuler openeuler 4.0G Sep 16 10:27 /home/openeuler/build/tl3572-2oo3/build/build-tl3572/tmp/deploy/images/tl3572-evm/tl3572-openeuler-mcs-image-tl3572-evm-20260916022553.rootfs.ext4
+BSP_IDENTITY
+-rw-r--r--. 1 openeuler openeuler 325 Mar  9  2018 /home/openeuler/build/tl3572-2oo3/build/build-tl3572/tmp/work/tl3572_evm-openeuler-linux/tl3572-openeuler-mcs-image/1.0-r0/rootfs/usr/share/tl3572/vendor-overlay-info
+lrwxrwxrwx. 1 openeuler openeuler 4 Mar  9  2018 /home/openeuler/build/tl3572-2oo3/build/build-tl3572/tmp/work/tl3572_evm-openeuler-linux/tl3572-openeuler-mcs-image/1.0-r0/rootfs/usr/bin/mcsctl -> mica
+mica
+DIAGNOSTIC_TOOLS
+ 38145038     84 -rwxr-xr-x   1 openeuler openeuler    85144 Mar  9  2018 /home/openeuler/build/tl3572-2oo3/build/build-tl3572/tmp/work/tl3572_evm-openeuler-linux/tl3572-openeuler-mcs-image/1.0-r0/rootfs/usr/bin/findmnt
+ 38145826    192 -rwxr-xr-x   1 openeuler openeuler   195200 Mar  9  2018 /home/openeuler/build/tl3572-2oo3/build/build-tl3572/tmp/work/tl3572_evm-openeuler-linux/tl3572-openeuler-mcs-image/1.0-r0/rootfs/sbin/ss
+ 38145846     68 -rwxr-xr-x   1 openeuler openeuler    68640 Mar  9  2018 /home/openeuler/build/tl3572-2oo3/build/build-tl3572/tmp/work/tl3572_evm-openeuler-linux/tl3572-openeuler-mcs-image/1.0-r0/rootfs/usr/bin/getent
+NETWORK_POLICY
+[Match]
+Name=eth* en*
+
+[Network]
+DHCP=yes
+
+[Service]
+ExecStart=
+ExecStart=/lib/systemd/systemd-networkd-wait-online --any --timeout=30
+SERVICE_STATUS
+auditd.service=absent
+proc-fs-nfsd.mount=present-known-issue
+VENDOR_ASSETS
+7
+68
+PACKAGE_MANIFEST
+iproute2-ss aarch64 6.6.0
+mcsctl aarch64 1.0
+tl3572-vendor-assets tl3572_evm 1.0
+util-linux-findmnt aarch64 2.39.1
+audit aarch64 3.1.2
+nfs-utils aarch64 2.6.3
+nfs-utils-client aarch64 2.6.3
+nfs-utils-mount aarch64 2.6.3
+E2FSCK
+e2fsck 1.47.0 (5-Feb-2023)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/home/openeuler/build/tl3572-2oo3/build/build-tl3572/tmp/deploy/images/tl3572-evm/tl3572-openeuler-mcs-image-tl3572-evm-20260916022553.rootfs.ext4: 5397/1048576 files (0.2% non-contiguous), 145222/1048576 blocks

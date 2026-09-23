@@ -1,0 +1,8 @@
+
+bootcmd=boot_android ${devtype} ${devnum};boot_fit;bootflow scan -bl;
+=> mmc list
+mmc@2a010000: 0 (eMMC)
+mmc@2a090000: 1
+=> printenv bootcmd
+bootcmd=boot_android ${devtype} ${devnum};boot_fit;bootflow scan -bl;
+=> 

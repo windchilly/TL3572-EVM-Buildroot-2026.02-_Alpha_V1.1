@@ -1,0 +1,121 @@
+
+tl3572-openeuler login: root
+7[r[999;999H[6n8[32mtl3572-openeuler ~[m # echo ===V_BEGIN===
+===V_BEGIN===
+[32mtl3572-openeuler ~[m # [Kcat /etc/os-release | head -4
+ID=openeuler
+NAME="openEuler Embedded(openEuler Embedded Reference Distro)"
+VERSION="24.03-LTS (openEuler24_03-LTS)"
+VERSION_ID=24.03-lts
+[32mtl3572-openeuler ~[m # [Kuname -a
+Linux tl3572-openeuler 6.12.69-gf1b67c293213 #6 SMP Mon Aug  3 08:50:38 CST 2026 aarch64 aarch64 aarch64 GNU/Linux
+[32mtl3572-openeuler ~[m # hostname
+tl3572-openeuler
+[32mtl3572-openeuler ~[m # echo ===V_MOUNTS===
+===V_MOUNTS===
+[32mtl3572-openeuler ~[m # [Kfindmnt -no SOURCE,FSTYPE,OPTIONS /
+/dev/mmcblk0p6 ext4   rw,relatime
+[32mtl3572-openeuler ~[m # [Kfindmnt -no TARGET,SOURCE,FSTYPE /oem /userdata
+[32mtl3572-openeuler ~[m # [Kdf -h / /oem /userdata
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       3.7G  232M  3.3G   7% /
+/dev/mmcblk0p7  124M  5.3M  115M   5% /oem
+/dev/mmcblk0p8   15G  288K   15G   1% /userdata
+[32mtl3572-openeuler ~[m # [Kecho ===V_NET===
+===V_NET===
+[32mtl3572-openeuler ~[m # [Kip -4 addr show eth0
+6: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    inet 192.168.2.142/24 metric 1024 brd 192.168.2.255 scope global dynamic eth0
+       valid_lft 84407sec preferred_lft 84407sec
+[32mtl3572-openeuler ~[m # [Kip route | head -3
+default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.142 metric 1024 
+192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.142 metric 1024 
+192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.142 metric 1024 
+[32mtl3572-openeuler ~[m # [Ksystemctl is-active systemd-networkd sshd
+active
+inactive
+[32mtl3572-openeuler ~[m # [Kecho ===V_FAILED===
+===V_FAILED===
+[32mtl3572-openeuler ~[m # [Ksystemctl --failed --no-pager
+[0m [0m[0m [0m[0mUNIT              [0m[0m [0m[0mLOAD  [0m[0m [0m[0mACTIVE[0m[0m [0m[0mSUB   [0m[0m [0m[0mDESCRIPTION                  [0m
+[0;1;31m*[0m[0;1;31m [0m[0;1;31mproc-fs-nfsd.mount[0m[0;1;31m [0mloaded [0;1;31mfailed[0m[0;1;31m [0m[0;1;31mfailed[0m[0;1;31m [0mNFSD configuration filesystem
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+1 loaded units listed.
+[32mtl3572-openeuler ~[m # [Ksystemctl status proc-fs-nfsd.mount --no-pager | head -8
+x proc-fs-nfsd.mount - NFSD configuration filesystem
+     Loaded: loaded (/lib/systemd/system/proc-fs-nfsd.mount; static)
+     Active: failed (Result: exit-code) since Wed 2026-09-16 18:48:02 CST; 7h left
+      Where: /proc/fs/nfsd
+       What: nfsd
+
+Sep 16 18:48:02 tl3572-openeuler mount[209]: mount: /proc/fs/nfsd: unknown filesystem type 'nfsd'.
+Sep 16 18:48:02 tl3572-openeuler mount[209]:        dmesg(1) may have more information after failed mount system call.
+[32mtl3572-openeuler ~[m # [Kecho ===V_TOOLS===
+===V_TOOLS===
+[32mtl3572-openeuler ~[m # [Kcommand -v findmnt ss getent
+/usr/bin/findmnt
+/sbin/ss
+/usr/bin/getent
+[32mtl3572-openeuler ~[m # [Kmcsctl --help 2>&1 | head -12
+usage: mica [-h] {create,start,stop,rm,status,gdb} ...
+
+Query or send control commands to the micad.
+
+positional arguments:
+  {create,start,stop,rm,status,gdb}
+                        the command to execute
+    create              Create a new mica client
+    start               Start a client
+    stop                Stop a client
+    rm                  Remove a client
+    status              query the mica client status
+[32mtl3572-openeuler ~[m # [Kss -lntup
+Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                   
+udp   UNCONN 0      0         127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=232,fd=21))
+udp   UNCONN 0      0         127.0.0.53:53         0.0.0.0:*    users:(("systemd-resolve",pid=232,fd=19))
+udp   UNCONN 0      0      192.168.2.142:68         0.0.0.0:*    users:(("systemd-network",pid=335,fd=18))
+udp   UNCONN 0      0            0.0.0.0:111        0.0.0.0:*    users:(("rpcbind",pid=207,fd=6))         
+udp   UNCONN 0      0            0.0.0.0:59618      0.0.0.0:*    users:(("avahi-daemon",pid=277,fd=14))   
+udp   UNCONN 0      0            0.0.0.0:55604      0.0.0.0:*    users:(("rpc.statd",pid=358,fd=7))       
+udp   UNCONN 0      0          127.0.0.1:958        0.0.0.0:*    users:(("rpc.statd",pid=358,fd=4))       
+udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("avahi-daemon",pid=277,fd=12))   
+udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("systemd-resolve",pid=232,fd=15))
+udp   UNCONN 0      0            0.0.0.0:5355       0.0.0.0:*    users:(("systemd-resolve",pid=232,fd=11))
+udp   UNCONN 0      0                  *:51224            *:*    users:(("avahi-daemon",pid=277,fd=15))   
+udp   UNCONN 0      0                  *:111              *:*    users:(("rpcbind",pid=207,fd=8))         
+udp   UNCONN 0      0                  *:58409            *:*    users:(("rpc.statd",pid=358,fd=9))       
+udp   UNCONN 0      0                  *:5353             *:*    users:(("systemd-resolve",pid=232,fd=16))
+udp   UNCONN 0      0                  *:5353             *:*    users:(("avahi-daemon",pid=277,fd=13))   
+udp   UNCONN 0      0                  *:5355             *:*    users:(("systemd-resolve",pid=232,fd=13))
+tcp   LISTEN 0      0            0.0.0.0:37327      0.0.0.0:*    users:(("rpc.statd",pid=358,fd=8))       
+tcp   LISTEN 0      0         127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=232,fd=22))
+tcp   LISTEN 0      0            0.0.0.0:111        0.0.0.0:*    users:(("rpcbind",pid=207,fd=7))         
+tcp   LISTEN 0      0         127.0.0.53:53         0.0.0.0:*    users:(("systemd-resolve",pid=232,fd=20))
+tcp   LISTEN 0      0            0.0.0.0:5355       0.0.0.0:*    users:(("systemd-resolve",pid=232,fd=12))
+tcp   LISTEN 0      0                  *:35151            *:*    users:(("rpc.statd",pid=358,fd=10))      
+tcp   LISTEN 0      0                  *:111              *:*    users:(("rpcbind",pid=207,fd=9))         
+tcp   LISTEN 0      0                  *:22               *:*    users:(("systemd",pid=1,fd=45))          
+tcp   LISTEN 0      0                  *:5355             *:*    users:(("systemd-resolve",pid=232,fd=14))
+[32mtl3572-openeuler ~[m # [Kecho ===V_MODULES===
+===V_MODULES===
+[32mtl3572-openeuler ~[m # [Kls /lib/modules/*.ko 2>/dev/null | wc -l
+7
+[32mtl3572-openeuler ~[m # [Kls /lib/modules/ 2>/dev/null | head -12
+bcmdhd.ko
+bcmdhd_pcie.ko
+btbcm.ko
+btintel.ko
+btrtl.ko
+btusb.ko
+hci_uart.ko
+[32mtl3572-openeuler ~[m # [Ksystemctl is-enabled micad 2>&1; systemctl is-active micad 22>&1
+disabled
+inactive
+[32mtl3572-openeuler ~[m # [Kgetent hosts www.openeuler.org
+119.13.92.81    www.openeuler.org
+[32mtl3572-openeuler ~[m # [Kecho ===V_END===
+===V_END===
+[32mtl3572-openeuler ~[m # [K

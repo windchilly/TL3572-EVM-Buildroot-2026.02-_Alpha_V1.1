@@ -1,0 +1,18 @@
+diff --git a/demos/rk3572_mica/component/UniProton-patch-for-libmetal.patch b/demos/rk3572_mica/component/UniProton-patch-for-libmetal.patch
+--- a/demos/rk3572_mica/component/UniProton-patch-for-libmetal.patch
++++ b/demos/rk3572_mica/component/UniProton-patch-for-libmetal.patch
+@@ -479,7 +479,13 @@
+ +
+ +static inline int __metal_mutex_is_acquired(metal_mutex_t *mutex)
+ +{
+-+	
+++	int ret = pthread_mutex_trylock(mutex);
+++
+++	if (ret == 0) {
+++		pthread_mutex_unlock(mutex);
+++		return 0;
+++	}
+++	return 1;
+ +}
+ +
+ +static inline void __metal_mutex_acquire(metal_mutex_t *mutex)

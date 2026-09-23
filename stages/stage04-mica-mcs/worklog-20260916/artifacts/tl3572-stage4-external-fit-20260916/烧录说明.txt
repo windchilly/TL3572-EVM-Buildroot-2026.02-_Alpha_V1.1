@@ -1,0 +1,36 @@
+TL3572 Stage4 external-data FIT boot.img（2026-09-16）
+
+一、烧录文件
+boot-mcs-tl3572-external-fit.img
+大小：40,647,168 字节
+SHA256：1168a10e5100f228bb4db047541fc1a4db5eca103794140f7f20a69df3653804
+
+该镜像包含：
+- Linux 6.12.69 Stage4 MICA 配置与 arm64 SGI 补丁；
+- 新 tl3572-evm.dtb（64 MiB MCS reserved-memory 和 mcs-remoteproc 节点）；
+- 厂商原版 resource；
+- Rockchip external-data FIT：头大小 0x600，首段 data-position 0x800；
+- AArch64、未压缩 Image，并保留厂商 signature 节点结构。
+
+二、RKDevTool 手动烧录
+1. 按住升级键使板卡进入 Loader 模式。
+2. 打开 RKDevTool 的“下载分区”页。
+3. 只勾选 boot 分区。
+4. 地址填写或保持为 0x0000a000。
+5. 文件选择 boot-mcs-tl3572-external-fit.img。
+6. Loader、uboot、trust、rootfs、recovery、oem、userdata 等均不要勾选。
+7. 执行烧录并复位，记录完整串口输出（COM7，115200 8N1）。
+
+不要烧录旧文件 artifacts\boot-mcs-tl3572.img；旧文件是 embedded-data FIT，U-Boot 会报 No fit blob。
+
+三、回滚
+若新镜像仍不能启动，只需按同一地址将以下厂商 boot.img 烧回 boot 分区：
+I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\4-软件资料\Linux\Kernel\image\linux-6.12.69-v1.0-gf1b67c2\boot.img
+
+四、启动后的可选只读检查
+uname -r
+zcat /proc/config.gz | grep -E 'REMOTEPROC=|RPMSG_CHAR=|RPMSG_CTRL='
+grep -iE '134000000|reserved' /proc/iomem
+ls /proc/device-tree/mcs-remoteproc
+
+rmmod/insmod 冒烟与1000次压力测试本轮暂不执行。

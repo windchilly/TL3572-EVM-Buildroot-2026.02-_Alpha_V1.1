@@ -1,0 +1,25 @@
+--- /home/openeuler/build/tl3572-2oo3/build-kernel/arch/arm64/boot/dts/rockchip/tl3572-evm.dts.orig-20260916	2026-09-16 13:49:00.295289428 +0800
++++ /home/openeuler/build/tl3572-2oo3/build-kernel/arch/arm64/boot/dts/rockchip/tl3572-evm.dts	2026-09-16 13:52:47.694153395 +0800
+@@ -12,6 +12,22 @@
+ 	model = "TL3572-EVM";
+     compatible = "rockchip,rk3572-evb1-v10", "rockchip,rk3572";
+ 
++	reserved-memory {
++		#address-cells = <2>;
++		#size-cells = <2>;
++		ranges;
++
++		mcs_rmem: mcs-rmem@134000000 {
++			reg = <0x1 0x34000000 0x0 0x04000000>;
++			no-map;
++		};
++	};
++
++	mcs_remoteproc: mcs-remoteproc {
++		compatible = "oe,mcs_remoteproc";
++		memory-region = <&mcs_rmem>;
++	};
++
+ 	aliases {
+ 		mmc0 = &sdhci;
+ 		mmc1 = &sdmmc0;

@@ -1,0 +1,42 @@
+--- arch/arm64/kernel/smp.c.orig-20260916	2026-09-16 13:45:30.304797817 +0800
++++ arch/arm64/kernel/smp.c	2026-09-16 13:45:30.377799379 +0800
+@@ -1117,6 +1117,39 @@
+ 	ipi_setup(smp_processor_id());
+ }
+ 
++/*
++ * openEuler MICA (mcs_km) reserved-SGI support for TL3572.
++ *
++ * The kernel claims SGIs [0, nr_ipi) for its own IPIs (8 on GICv3).
++ * SGI nr_ipi stays free so the mcs_km module can register its own
++ * percpu handler on it and exchange notifications with a bare-metal
++ * client OS running on another core.  These exports let the module
++ * resolve the mapped Linux IRQ number and raise that SGI.
++ */
++int arm64_mcs_ipi_virq(void)
++{
++	if (WARN_ON_ONCE(!ipi_irq_base))
++		return -ENXIO;
++
++	return ipi_irq_base + nr_ipi;
++}
++EXPORT_SYMBOL_GPL(arm64_mcs_ipi_virq);
++
++void arm64_mcs_ipi_send(const struct cpumask *target)
++{
++	struct irq_desc *desc;
++
++	if (WARN_ON_ONCE(!ipi_irq_base))
++		return;
++
++	desc = irq_to_desc(ipi_irq_base + nr_ipi);
++	if (WARN_ON_ONCE(!desc))
++		return;
++
++	__ipi_send_mask(desc, target);
++}
++EXPORT_SYMBOL_GPL(arm64_mcs_ipi_send);
++
+ void arch_smp_send_reschedule(int cpu)
+ {
+ 	smp_cross_call(cpumask_of(cpu), IPI_RESCHEDULE);

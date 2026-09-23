@@ -1,0 +1,110 @@
+diff --git a/src/component/mica/rpmsg_service.c b/src/component/mica/rpmsg_service.c
+index 1111111..2222222 100644
+--- a/src/component/mica/rpmsg_service.c
++++ b/src/component/mica/rpmsg_service.c
+@@ -14,6 +14,7 @@
+ #include "rpmsg_backend.h"
+ #include "prt_sem.h"
++#include "prt_hwi.h"
+ #include "prt_proxy_ext.h"
+ #include "pthread.h"
+ #include "stdio.h"
+@@ -40,12 +40,16 @@ extern void rpmsg_set_default_ept(struct rpmsg_endpoint *ept);
+ #define RPMSG_TTY_EPT_NAME "rpmsg-tty"
+ static SemHandle tty_sem;
+ static struct rpmsg_endpoint tty_ept;
+-static struct rpmsg_rcv_msg tty_msg;
++#define RPMSG_TTY_RX_QUEUE_DEPTH 8U
++static struct rpmsg_rcv_msg tty_msg_queue[RPMSG_TTY_RX_QUEUE_DEPTH];
++static U32 tty_msg_head;
++static U32 tty_msg_tail;
++static U32 tty_msg_count;
+ 
+ char *g_s1 = "Hello, UniProton! \r\n";
+ extern char *g_printf_buffer;
+ 
+ static struct PrtSpinLock g_ttyLock;
+ 
+ static void rpmsg_service_unbind(struct rpmsg_endpoint *ep)
+ {
+@@ -92,18 +96,29 @@ static int rpmsg_rx_tty_callback(struct rpmsg_endpoint *ept, void *data,
+                    size_t len, uint32_t src, void *priv)
+ {
+-    struct rpmsg_rcv_msg *tty_msg = priv;
++    uintptr_t intSave;
+ 
++    intSave = PRT_HwiLock();
++    if (tty_msg_count == RPMSG_TTY_RX_QUEUE_DEPTH) {
++        PRT_HwiRestore(intSave);
++        PRT_Printf("[openamp] tty rx queue full\n");
++        return -1;
++    }
+     rpmsg_hold_rx_buffer(ept, data);
+-    tty_msg->data = data;
+-    tty_msg->len = len;
++    tty_msg_queue[tty_msg_tail].data = data;
++    tty_msg_queue[tty_msg_tail].len = len;
++    tty_msg_tail = (tty_msg_tail + 1U) % RPMSG_TTY_RX_QUEUE_DEPTH;
++    tty_msg_count++;
++    PRT_HwiRestore(intSave);
+     PRT_SemPost(tty_sem);
+ 
+     return 0;
+ }
+ 
+ static void *rpmsg_tty_task(void *arg)
+ {
+     int ret;
++    uintptr_t intSave;
++    struct rpmsg_rcv_msg tty_msg;
+ #ifndef LOSCFG_SHELL_MICA_INPUT
+     char tx_buff[512];
+ #endif
+@@ -114,7 +129,6 @@ static void *rpmsg_tty_task(void *arg)
+ 
+     PRT_Printf("[openamp] tty task started\n");
+ 
+-    tty_ept.priv = &tty_msg;
+     PRT_Printf("[openamp-diag] tty create begin\n");
+     ret = rpmsg_create_ept(&tty_ept, rpdev, RPMSG_TTY_EPT_NAME,
+                    RPMSG_ADDR_ANY, RPMSG_ADDR_ANY,
+@@ -128,9 +142,17 @@ static void *rpmsg_tty_task(void *arg)
+ 
+     while (tty_ept.addr !=  RPMSG_ADDR_ANY) {
+         PRT_SemPend(tty_sem, OS_WAIT_FOREVER);
++        intSave = PRT_HwiLock();
++        if (tty_msg_count == 0U) {
++            PRT_HwiRestore(intSave);
++            continue;
++        }
++        tty_msg = tty_msg_queue[tty_msg_head];
++        tty_msg_head = (tty_msg_head + 1U) % RPMSG_TTY_RX_QUEUE_DEPTH;
++        tty_msg_count--;
++        PRT_HwiRestore(intSave);
+         if (tty_msg.len) {
+             tty_data = (char *)tty_msg.data;
+-            tty_data[tty_msg.len] = '\0';
+             #ifdef LOSCFG_SHELL_MICA_INPUT
+                 ShellCB *shellCb = OsGetShellCB();
+                 if (shellCb == NULL) {
+@@ -145,14 +167,16 @@ static void *rpmsg_tty_task(void *arg)
+                     }
+                 }
+             #else
+-                ret = snprintf(tx_buff, 512, "Hello, UniProton! Recv: %s\r\n", tty_data);
+-                rpmsg_send(&tty_ept, tx_buff, ret);
++                ret = snprintf(tx_buff, sizeof(tx_buff), "Hello, UniProton! Recv: %.*s\r\n",
++                               (int)tty_msg.len, tty_data);
++                if (ret > 0) {
++                    size_t tx_len = (ret < (int)sizeof(tx_buff)) ? (size_t)ret : sizeof(tx_buff) - 1U;
++                    rpmsg_send(&tty_ept, tx_buff, tx_len);
++                }
+             #endif
+                 rpmsg_release_rx_buffer(&tty_ept, tty_msg.data);
+ 
+         }
+-        tty_msg.len = 0;
+-        tty_msg.data = NULL;
+ 
+         /* TODO: add lifecycle */
+     }

@@ -1,0 +1,116 @@
+From: TL3572 MICA integration <noreply@example.com>
+Subject: [PATCH] cpu: reserve selected logical CPUs for MCS clients
+
+Keep selected logical CPUs present but offline so MCS can resolve their DT
+CPU nodes and start client OS images through PSCI. Exclude the CPUs from the
+boot bring-up mask and reject later Linux CPU-hotplug attempts.
+
+Signed-off-by: TL3572 MICA integration <noreply@example.com>
+---
+ kernel/cpu.c | 45 ++++++++++++++++++++++++++++++++++++++-------
+ 1 file changed, 38 insertions(+), 7 deletions(-)
+
+diff --git a/kernel/cpu.c b/kernel/cpu.c
+--- a/kernel/cpu.c
++++ b/kernel/cpu.c
+@@ -37,6 +37,7 @@
+ #include <linux/cpuset.h>
+ #include <linux/random.h>
+ #include <linux/cc_platform.h>
++#include <linux/cpumask.h>
+ 
+ #include <trace/events/power.h>
+ #define CREATE_TRACE_POINTS
+@@ -89,6 +90,29 @@ static DEFINE_PER_CPU(struct cpuhp_cpu_state, cpuhp_state) = {
+ 
+ #ifdef CONFIG_SMP
+ cpumask_t cpus_booted_once_mask;
++static cpumask_t mcs_reserved_cpus;
++
++static int __init mcs_reserved_cpus_setup(char *str)
++{
++	int ret;
++
++	ret = cpulist_parse(str, &mcs_reserved_cpus);
++	if (ret) {
++		pr_err("MCS: invalid reserved CPU list '%s'\n", str);
++		cpumask_clear(&mcs_reserved_cpus);
++		return ret;
++	}
++	if (cpumask_test_cpu(0, &mcs_reserved_cpus)) {
++		pr_err("MCS: boot CPU0 cannot be reserved\n");
++		cpumask_clear(&mcs_reserved_cpus);
++		return -EINVAL;
++	}
++
++	pr_info("MCS: reserving CPU(s) %*pbl from Linux\n",
++		cpumask_pr_args(&mcs_reserved_cpus));
++	return 0;
++}
++early_param("mcs_reserve_cpus", mcs_reserved_cpus_setup);
+ #endif
+ 
+ #if defined(CONFIG_LOCKDEP) && defined(CONFIG_SMP)
+@@ -1693,6 +1717,12 @@ static int cpu_up(unsigned int cpu, enum cpuhp_state target)
+ {
+ 	int err = 0;
+ 
++	if (cpumask_test_cpu(cpu, &mcs_reserved_cpus)) {
++		pr_err("can't online cpu %u because it is reserved for MCS\n",
++		       cpu);
++		return -EPERM;
++	}
++
+ 	if (!cpu_possible(cpu)) {
+ 		pr_err("can't online cpu %d because it is not configured as may-hotadd at boot time\n",
+ 		       cpu);
+@@ -1839,10 +1869,9 @@ bool __weak arch_cpuhp_init_parallel_bringup(void)
+  * This avoids waiting for each AP to respond to the startup IPI in
+  * CPUHP_BRINGUP_CPU.
+  */
+-static bool __init cpuhp_bringup_cpus_parallel(unsigned int ncpus)
++static bool __init cpuhp_bringup_cpus_parallel(const struct cpumask *mask,
++						unsigned int ncpus)
+ {
+-	const struct cpumask *mask = cpu_present_mask;
+-
+ 	if (__cpuhp_parallel_bringup)
+ 		__cpuhp_parallel_bringup = arch_cpuhp_init_parallel_bringup();
+ 	if (!__cpuhp_parallel_bringup)
+@@ -1875,20 +1904,31 @@ static bool __init cpuhp_bringup_cpus_parallel(unsigned int ncpus)
+ 	return true;
+ }
+ #else
+-static inline bool cpuhp_bringup_cpus_parallel(unsigned int ncpus) { return false; }
++static inline bool cpuhp_bringup_cpus_parallel(const struct cpumask *mask,
++						unsigned int ncpus) { return false; }
+ #endif /* CONFIG_HOTPLUG_PARALLEL */
+ 
+ void __init bringup_nonboot_cpus(unsigned int max_cpus)
+ {
++	const struct cpumask *mask = cpu_present_mask;
++	static cpumask_t available_cpus __initdata;
++
+ 	if (!max_cpus)
+ 		return;
+ 
++	if (!cpumask_empty(&mcs_reserved_cpus)) {
++		cpumask_andnot(&available_cpus, cpu_present_mask,
++			       &mcs_reserved_cpus);
++		mask = &available_cpus;
++		max_cpus = min(max_cpus, (unsigned int)cpumask_weight(mask));
++	}
++
+ 	/* Try parallel bringup optimization if enabled */
+-	if (cpuhp_bringup_cpus_parallel(max_cpus))
++	if (cpuhp_bringup_cpus_parallel(mask, max_cpus))
+ 		return;
+ 
+ 	/* Full per CPU serialized bringup */
+-	cpuhp_bringup_mask(cpu_present_mask, max_cpus, CPUHP_ONLINE);
++	cpuhp_bringup_mask(mask, max_cpus, CPUHP_ONLINE);
+ }
+ 
+ #ifdef CONFIG_PM_SLEEP_SMP
+-- 
+2.43.0

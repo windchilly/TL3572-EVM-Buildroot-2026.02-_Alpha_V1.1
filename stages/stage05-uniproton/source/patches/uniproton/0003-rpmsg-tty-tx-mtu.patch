@@ -1,0 +1,18 @@
+diff --git a/src/component/mica/rpmsg_service.c b/src/component/mica/rpmsg_service.c
+--- a/src/component/mica/rpmsg_service.c
++++ b/src/component/mica/rpmsg_service.c
+@@ -43,6 +43,7 @@ static struct rpmsg_endpoint tty_ept;
+ #define RPMSG_TTY_RX_QUEUE_DEPTH 8U
++#define RPMSG_TTY_TX_BUFFER_SIZE 496U
+ static struct rpmsg_rcv_msg tty_msg_queue[RPMSG_TTY_RX_QUEUE_DEPTH];
+ static U32 tty_msg_head;
+ static U32 tty_msg_tail;
+@@ -128,7 +129,7 @@ static void *rpmsg_tty_task(void *arg)
+     uintptr_t intSave;
+     struct rpmsg_rcv_msg tty_msg;
+ #ifndef LOSCFG_SHELL_MICA_INPUT
+-    char tx_buff[512];
++    char tx_buff[RPMSG_TTY_TX_BUFFER_SIZE];
+ #endif
+     char *tty_data;
+

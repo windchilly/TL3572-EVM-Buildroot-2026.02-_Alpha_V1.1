@@ -1,0 +1,51 @@
+TL3572 Stage4 boot.img v4 maxcpus（2026-09-16）
+
+烧录文件：boot.img（本目录，40,647,168 字节）
+SHA-256：5bdd356b66f51e758277724df16836a3086190d999101a35fdf31d7506158691
+gz 副本：boot.img.gz（15,627,391 字节，SHA-256 44ec6de051c48be547779939d9db44dcf5aba060206b995df5c9c3db79e18212）
+烧录分区：boot = /dev/mmcblk0p3（RKDevTool 地址 0x0000a000，64 MiB）
+
+本版改动（相对 v3）：
+1. 仅内核一项变化：CONFIG_CMDLINE 由空改为厂商 cmdline 固化 + 追加 maxcpus=7，
+   并置 CONFIG_CMDLINE_FORCE=y（arm64 6.12 的 Kconfig choice 只有
+   FROM_BOOTLOADER/FORCE 两项，无 EXTEND，故采用 FORCE 整串固化）；
+2. 固化的 cmdline 与 U-Boot 实测传递逐字一致，仅去掉纯信息性的
+   androidboot.fwver（会随固件版本过期）并在末尾加 maxcpus=7；
+   内核实际消费的 earlycon/console/root/rootwait/rw/rcu_* 全部保留；
+   androidboot.*/storagemedia 本就被内核视为未知参数透传用户态，openEuler
+   rootfs 不读取，冻结无功能影响；
+3. fdt（厂商 DTB + mcs overlay + ufs@29e00000 disabled，SHA 195535eb...）、
+   resource（厂商原版，SHA 7508f47d...）、FIT 格式（外置数据 mkimage -B 0x200
+   -E -p 0x800）与 v3 完全一致，未改动；
+4. utsrelease 保持 6.12.69-gf1b67c293213，mcs_km-tl3572-of-cpu.ko 无需重编。
+
+效果：Linux 只在线 CPU0-6，CPU7 从未进入 Linux，预留给阶段5 UniProton 单实例。
+
+为什么不用 U-Boot env 改 bootargs：实测厂商 U-Boot 环境为
+ENV_IS_NOWHERE（"Loading Environment from nowhere"，不落盘，saveenv 无法
+持久化），且自启打断键为 CTRL+C 且倒计时为 0（"Hit key to stop
+autoboot('CTRL+C'): 0"），CR 无法打断——env 路线不可行，故内核固化。
+
+烧录方式（两种等价）：
+A. RKDevTool：进 Loader 模式，「下载分区」只勾 boot，地址 0x0000a000，
+   文件选本目录 boot.img，其余分区全部不勾，执行后复位。
+B. 板上 Linux 直写（本次实际使用，2026-09-16 17:40 执行）：
+   gunzip -c boot-v4-maxcpus.img.gz > /root/boot-v4-maxcpus.img
+   dd if=/root/boot-v4-maxcpus.img of=/dev/mmcblk0p3 bs=4M conv=fsync
+   （烧前已备份 p3 原内容到 /root/boot-p3-backup-pre-v4.img，64 MiB，
+   SHA 96919338f0ccaddc037e0c053b6fd103621319f8f6f08a78920c118aa865f58c）
+
+烧录后验收（SSH root@192.168.2.143 空密码，或串口 COM7）：
+- cat /proc/cmdline        # 应含 maxcpus=7，且为固化的完整串（无 U-Boot 动态追加段）
+- nproc                    # 7
+- cat /sys/devices/system/cpu/online; cat /sys/devices/system/cpu/offline
+                           # 0-6 / 7
+- systemctl --failed       # 0 loaded units
+- uname -r                 # 6.12.69-gf1b67c293213
+- grep 134000000 /proc/iomem   # mcs 保留内存仍在
+
+回滚：boot 分区烧回 v3 镜像（本目录上一级 tl3572-stage4-external-fit-v3-20260916\
+boot-mcs-tl3572-external-fit-v3-disable-unused-ufs.img，SHA 3927892e...）或厂商
+原版（4-软件资料\Linux\Kernel\image\linux-6.12.69-v1.0-gf1b67c2\boot.img）。
+
+配套模块：mcs_km-tl3572-of-cpu.ko（artifacts\，无需重编，vermagic 不变）。

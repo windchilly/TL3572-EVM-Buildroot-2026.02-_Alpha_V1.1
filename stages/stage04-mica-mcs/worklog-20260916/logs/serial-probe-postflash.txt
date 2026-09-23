@@ -1,0 +1,2 @@
+Unable to open connection:
+Opening '\\.\COM7': Error 5: พÜพ๘ทรฮสกฃ

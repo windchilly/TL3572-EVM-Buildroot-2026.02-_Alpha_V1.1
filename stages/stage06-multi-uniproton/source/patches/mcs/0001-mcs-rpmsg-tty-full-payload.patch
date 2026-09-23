@@ -1,0 +1,18 @@
+diff --git a/mica/micad/services/pty/rpmsg_pty.c b/mica/micad/services/pty/rpmsg_pty.c
+index 1111111..2222222 100644
+--- a/mica/micad/services/pty/rpmsg_pty.c
++++ b/mica/micad/services/pty/rpmsg_pty.c
+@@ -17,7 +17,12 @@
+ #define RPMSG_TTY_DEV		"/dev/ttyRPMSG"
+ #define RPMSG_TTY_DEV_LEN	20
+ #define RPMSG_TTY_MAX_DEV	10
+-#define BUF_SIZE		256
++/*
++ * A 512-byte RPMsg buffer has a 16-byte header.  Read one complete payload
++ * from the PTY so writes up to the transport MTU are not split into back-to-
++ * back messages before the remote endpoint can consume them.
++ */
++#define BUF_SIZE		496
+ 
+ static int tty_id[RPMSG_TTY_MAX_DEV] = { [0 ... (RPMSG_TTY_MAX_DEV-1)] = -1 };
+ 

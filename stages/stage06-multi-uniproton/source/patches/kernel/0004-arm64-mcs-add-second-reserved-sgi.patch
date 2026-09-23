@@ -1,0 +1,104 @@
+From 9b6e4cb6dc0380785d4e7716be1d4a15bc45d6f1 Mon Sep 17 00:00:00 2001
+From: TL3572 MCS Integration <noreply@example.com>
+Date: Mon, 21 Sep 2026 10:30:00 +0800
+Subject: [PATCH] arm64: mcs: add second reserved SGI
+
+Reserve and export SGI9 in addition to SGI8 so the two UniProton clients
+can use independent notification interrupts.  Seed the GICv2 target maps
+for CPU4/5 because reserved CPUs never execute Linux gic_cpu_init().
+
+Signed-off-by: TL3572 MCS Integration <noreply@example.com>
+---
+ arch/arm64/include/asm/smp.h |  4 ++--
+ arch/arm64/kernel/smp.c      | 19 +++++++++++--------
+ drivers/irqchip/irq-gic.c    | 17 ++++++++++++++---
+ 3 files changed, 27 insertions(+), 13 deletions(-)
+
+diff --git a/arch/arm64/include/asm/smp.h b/arch/arm64/include/asm/smp.h
+--- a/arch/arm64/include/asm/smp.h
++++ b/arch/arm64/include/asm/smp.h
+@@ -38,8 +38,8 @@ extern u64 __cpu_logical_map[NR_CPUS];
+ extern u64 cpu_logical_map(unsigned int cpu);
+ 
+ /* openEuler MICA (mcs_km) reserved-SGI exports, see kernel/smp.c */
+-int arm64_mcs_ipi_virq(void);
+-void arm64_mcs_ipi_send(const struct cpumask *target);
++int arm64_mcs_ipi_virq(unsigned int index);
++void arm64_mcs_ipi_send(unsigned int index, const struct cpumask *target);
+ 
+ static inline void set_cpu_logical_map(unsigned int cpu, u64 hwid)
+ {
+diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+--- a/arch/arm64/kernel/smp.c
++++ b/arch/arm64/kernel/smp.c
+@@ -1121,28 +1121,33 @@ void __init set_smp_ipi_range(int ipi_base, int n)
+  * openEuler MICA (mcs_km) reserved-SGI support for TL3572.
+  *
+  * The kernel claims SGIs [0, nr_ipi) for its own IPIs (8 on this GICv2).
+- * SGI nr_ipi stays free so the mcs_km module can register its own
+- * percpu handler on it and exchange notifications with a bare-metal
+- * client OS running on another core.  These exports let the module
+- * resolve the mapped Linux IRQ number and raise that SGI.
++ * SGIs [nr_ipi, nr_ipi + 2) stay free so the mcs_km module can register
++ * percpu handlers for two bare-metal clients.  These exports let the
++ * module resolve each mapped Linux IRQ number and raise the selected SGI.
+  */
+-int arm64_mcs_ipi_virq(void)
++#define ARM64_MCS_IPI_COUNT 2U
++
++int arm64_mcs_ipi_virq(unsigned int index)
+ {
+ 	if (WARN_ON_ONCE(!ipi_irq_base))
+ 		return -ENXIO;
++	if (index >= ARM64_MCS_IPI_COUNT)
++		return -EINVAL;
+ 
+-	return ipi_irq_base + nr_ipi;
++	return ipi_irq_base + nr_ipi + index;
+ }
+ EXPORT_SYMBOL_GPL(arm64_mcs_ipi_virq);
+ 
+-void arm64_mcs_ipi_send(const struct cpumask *target)
++void arm64_mcs_ipi_send(unsigned int index, const struct cpumask *target)
+ {
+ 	struct irq_desc *desc;
+ 
+ 	if (WARN_ON_ONCE(!ipi_irq_base))
+ 		return;
++	if (WARN_ON_ONCE(index >= ARM64_MCS_IPI_COUNT))
++		return;
+ 
+-	desc = irq_to_desc(ipi_irq_base + nr_ipi);
++	desc = irq_to_desc(ipi_irq_base + nr_ipi + index);
+ 	if (WARN_ON_ONCE(!desc))
+ 		return;
+ 
+diff --git a/drivers/irqchip/irq-gic.c b/drivers/irqchip/irq-gic.c
+--- a/drivers/irqchip/irq-gic.c
++++ b/drivers/irqchip/irq-gic.c
+@@ -973,2 +973,13 @@ static __init void gic_smp_init(void)
+ 	int base_sgi;
++	unsigned int cpu;
++
++	/*
++	 * CPU4/5 are deliberately kept out of Linux CPU bring-up on TL3572.
++	 * Without gic_cpu_init() their target maps would both retain the same
++	 * unresolved mask (bits 4 and 5), causing either MCS SGI to hit both
++	 * UniProton instances.  RK3572 GIC CPU-interface IDs match its logical
++	 * CPU IDs, so seed the two reserved targets explicitly.
++	 */
++	for (cpu = 4; cpu <= 5; cpu++)
++		gic_cpu_map[cpu] = BIT(cpu);
+ 
+@@ -979,6 +990,6 @@ static __init void gic_smp_init(void)
+ 	/*
+-	 * Allocate SGI0..8 contiguously.  arm64 owns SGI0..7 and exports
+-	 * the mapped virq for SGI8 to the MCS module.
++	 * Allocate SGI0..9 contiguously.  arm64 owns SGI0..7 and exports
++	 * the mapped virqs for SGI8/9 to the MCS module.
+ 	 */
+-	base_sgi = irq_domain_alloc_irqs(gic_data[0].domain, 9, NUMA_NO_NODE, &sgi_fwspec);
++	base_sgi = irq_domain_alloc_irqs(gic_data[0].domain, 10, NUMA_NO_NODE, &sgi_fwspec);
+ 	if (WARN_ON(base_sgi <= 0))
+-- 
+2.34.1

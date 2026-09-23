@@ -1,0 +1,27 @@
+TL3572-EVM Stage4-M4b/c/d 首轮内核烧录（2026-09-16）
+
+一、烧录文件
+artifacts\boot-mcs-tl3572.img（40,646,878 字节，SHA256 58ce1874...95b1a）
+内容 = Linux 6.12.69 MICA 内核（REMOTEPROC/RPMSG_CHAR/RPMSG_CTRL=y
++ arm64 预留 SGI 补丁）+ tl3572-evm.dtb（新增 mcs-rmem@0x134000000 64MiB
++ oe,mcs_remoteproc 节点）+ 厂商原版 resource。FIT 签名节点已去除
+（厂商 U-Boot 不校验，verifiedbootstate=orange）。
+
+二、烧录方式（RKDevTool，只更新 boot 分区）
+1. RKDevTool 切到"下载分区"页。
+2. 勾选 boot 行，地址保持 0x0000a000，文件选 boot-mcs-tl3572.img。
+3. 其余分区（Loader/uboot/trust/rootfs/recovery/oem/userdata）全部不勾。
+4. 板卡进 Loader 模式（按住升级键上电），点"执行"。
+5. 完成后复位。
+
+三、烧录后自动验收（我来做，SSH 192.168.2.143 或串口）
+- zcat /proc/config.gz | grep -E "REMOTEPROC|RPMSG_CHAR"（应 =y，证明新内核在跑）
+- uname -r 不变（6.12.69-gf1b67c293213，vermagic 兼容板上 7 个厂商模块）
+- /proc/iomem 中 0x134000000-0x137ffffff 不再是 System RAM
+- ls /proc/device-tree/mcs-remoteproc
+- insmod mcs_km.ko → /dev/mcs 出现；rmmod/insmod 循环
+- systemctl start micad && mcsctl status
+
+四、回滚
+boot 分区烧回厂商 boot.img 即可（4-软件资料\Linux\Kernel\image\...\boot.img，
+RKDevTool 同地址 0x0000a000）；rootfs 未动。

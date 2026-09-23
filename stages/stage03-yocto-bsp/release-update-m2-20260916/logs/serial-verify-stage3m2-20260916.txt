@@ -1,0 +1,78 @@
+
+tl3572-openeuler login: root
+7[r[999;999H[6n8[32mtl3572-openeuler ~[m # echo ===V_BEGIN===
+===V_BEGIN===
+[32mtl3572-openeuler ~[m # [Kcat /etc/os-release | head -3
+ID=openeuler
+NAME="openEuler Embedded(openEuler Embedded Reference Distro)"
+VERSION="24.03-LTS (openEuler24_03-LTS)"
+[32mtl3572-openeuler ~[m # [Kuname -a
+Linux tl3572-openeuler 6.12.69-gf1b67c293213 #6 SMP Mon Aug  3 08:50:38 CST 2026 aarch64 aarch64 aarch64 GNU/Linux
+[32mtl3572-openeuler ~[m # hostname
+tl3572-openeuler
+[32mtl3572-openeuler ~[m # echo ===V_FAILED===
+===V_FAILED===
+[32mtl3572-openeuler ~[m # [Ksystemctl --failed --no-pager
+[0m [0m[0m [0m[0mUNIT[0m[0m [0m[0mLOAD[0m[0m [0m[0mACTIVE[0m[0m [0m[0mSUB[0m[0m [0m[0mDESCRIPTION[0m
+0 loaded units listed.
+[32mtl3572-openeuler ~[m # [Kpgrep -l rpcbind; pgrep -l rpc.statd; grep -c nfsd /proc/mo unts
+0
+[32mtl3572-openeuler ~[m # [Kecho ===V_MOUNTS===
+===V_MOUNTS===
+[32mtl3572-openeuler ~[m # [Kfindmnt -no SOURCE,FSTYPE /
+/dev/mmcblk0p6 ext4
+[32mtl3572-openeuler ~[m # [Kdf -h / /oem /userdata
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       3.5G  231M  3.0G   8% /
+/dev/mmcblk0p7  7.3M  5.3M  1.2M  83% /oem
+/dev/mmcblk0p8  3.5M  292K  2.7M  10% /userdata
+[32mtl3572-openeuler ~[m # [Kecho ===V_NET===
+===V_NET===
+[32mtl3572-openeuler ~[m # [Kip -4 addr show eth0
+6: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    inet 192.168.2.143/24 metric 1024 brd 192.168.2.255 scope global dynamic eth0
+       valid_lft 84320sec preferred_lft 84320sec
+[32mtl3572-openeuler ~[m # [Kip route | head -3
+default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.143 metric 1024 
+192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.143 metric 1024 
+192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.143 metric 1024 
+[32mtl3572-openeuler ~[m # [Ksystemctl is-active systemd-networkd
+active
+[32mtl3572-openeuler ~[m # [Kss -lntup | grep -E "22|53"
+udp   UNCONN 0      0         127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=230,fd=21))
+udp   UNCONN 0      0         127.0.0.53:53         0.0.0.0:*    users:(("systemd-resolve",pid=230,fd=19))
+udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("avahi-daemon",pid=274,fd=12))   
+udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("systemd-resolve",pid=230,fd=15))
+udp   UNCONN 0      0            0.0.0.0:5355       0.0.0.0:*    users:(("systemd-resolve",pid=230,fd=11))
+udp   UNCONN 0      0                  *:5353             *:*    users:(("systemd-resolve",pid=230,fd=16))
+udp   UNCONN 0      0                  *:5353             *:*    users:(("avahi-daemon",pid=274,fd=13))   
+udp   UNCONN 0      0                  *:5355             *:*    users:(("systemd-resolve",pid=230,fd=13))
+tcp   LISTEN 0      0         127.0.0.53:53         0.0.0.0:*    users:(("systemd-resolve",pid=230,fd=20))
+tcp   LISTEN 0      0         127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=230,fd=22))
+tcp   LISTEN 0      0            0.0.0.0:5355       0.0.0.0:*    users:(("systemd-resolve",pid=230,fd=12))
+tcp   LISTEN 0      0                  *:22               *:*    users:(("systemd",pid=1,fd=43))          
+tcp   LISTEN 0      0                  *:5355             *:*    users:(("systemd-resolve",pid=230,fd=14))
+[32mtl3572-openeuler ~[m # [Kecho ===V_TOOLS===
+===V_TOOLS===
+[32mtl3572-openeuler ~[m # [Kcommand -v findmnt ss getent mcsctl
+/usr/bin/findmnt
+/sbin/ss
+/usr/bin/getent
+/usr/bin/mcsctl
+[32mtl3572-openeuler ~[m # [Kmcsctl --help 2>&1 | head -6
+usage: mica [-h] {create,start,stop,rm,status,gdb} ...
+
+Query or send control commands to the micad.
+
+positional arguments:
+  {create,start,stop,rm,status,gdb}
+[32mtl3572-openeuler ~[m # [Kls /lib/modules/*.ko 2>/dev/null | wc -l
+7
+[32mtl3572-openeuler ~[m # [Ksystemctl is-enabled micad 2>&1; systemctl is-active micad 22>&1
+disabled
+inactive
+[32mtl3572-openeuler ~[m # [Kgetent hosts www.openeuler.org
+119.13.92.81    www.openeuler.org
+[32mtl3572-openeuler ~[m # [Kecho ===V_END===
+===V_END===
+[32mtl3572-openeuler ~[m # [K

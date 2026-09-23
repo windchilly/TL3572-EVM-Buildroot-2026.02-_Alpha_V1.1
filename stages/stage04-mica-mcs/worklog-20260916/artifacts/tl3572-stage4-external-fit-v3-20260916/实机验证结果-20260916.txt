@@ -1,0 +1,33 @@
+TL3572 Stage4 v3 实机验证结果（2026-09-16）
+
+一、boot.img
+- v3 DTB 哈希：195535ebebee247d99cda7596dbb62094a7465a24a2774df975a58133edcd0fe
+- U-Boot 已越过此前的 UFS Data Abort，Linux 正常启动到登录界面。
+- uname：6.12.69-gf1b67c293213 #2 SMP Wed Sep 16 13:48:38 CST 2026 aarch64
+- 根文件系统：/dev/mmcblk0p6，正常读写挂载。
+- 网络：eth0 = 192.168.2.143/24，连通正常。
+- systemctl --failed：0 loaded units listed。
+
+二、设备树与保留内存
+- /proc/device-tree/mcs-remoteproc/compatible = oe,mcs_remoteproc
+- /proc/device-tree/mcs-remoteproc/status = okay
+- /proc/device-tree/soc/ufs@29e00000/status = disabled
+- /proc/iomem：134000000-137ffffff : reserved
+- dmesg：0x0000000134000000..0x0000000137ffffff，65536 KiB，nomap，mcs-rmem@134000000
+
+三、mcs_km 模块兼容修复
+- 原模块 vermagic 正确，但 CONFIG_KPROBES 未启用，register_kprobe("cpu_logical_map") 返回 -95，首次 insmod 失败。
+- 修复：删除 kprobe 私有符号解析，改用内核已导出的 of_get_cpu_node() 和设备树 CPU reg 属性取得 MPIDR；TL3572 CPU 节点 #address-cells=1、reg=4 字节，因此按 u32 读取。
+- 新模块：mcs_km-tl3572-of-cpu.ko
+- SHA-256：1c42336cb8290ebd82db71f7e4e630cbf0eadaab34650e0104c6703b6447aadb
+- vermagic：6.12.69-gf1b67c293213 SMP mod_unload aarch64
+- insmod：返回 0；lsmod 中存在 mcs_km；/dev/mcs 创建为字符设备 508:0。
+- rmmod：返回 0；模块和 /dev/mcs 均正常清理；无新增 kernel oops。
+
+四、本轮未执行
+- 10 次 rmmod/insmod 冒烟循环。
+- 1000 次压力循环。
+- UniProton 镜像启动、IPI/IOCTL 端到端通信。
+- 24 小时稳定性及多次冷启动测试。
+
+当前板卡已将测试模块卸载，系统保持正常运行。

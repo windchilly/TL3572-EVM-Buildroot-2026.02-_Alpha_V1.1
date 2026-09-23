@@ -1,0 +1,71 @@
+From 6a904c1d3a7a6dc85df5f2d1f65ad92d65754370 Mon Sep 17 00:00:00 2001
+From: TL3572 MCS Integration <noreply@example.com>
+Date: Mon, 21 Sep 2026 11:00:00 +0800
+Subject: [PATCH] baremetal: route dual SGI events to their clients
+
+The kernel module reports the CPU4/SGI8 event as POLLIN and the CPU5/SGI9
+event as POLLPRI.  Preserve the source identity instead of broadcasting
+every interrupt to every running remoteproc instance.
+
+Signed-off-by: TL3572 MCS Integration <noreply@example.com>
+---
+ library/remoteproc/baremetal_rproc.c | 22 +++++++++++++++++-----
+ 1 file changed, 17 insertions(+), 5 deletions(-)
+
+diff --git a/library/remoteproc/baremetal_rproc.c b/library/remoteproc/baremetal_rproc.c
+--- a/library/remoteproc/baremetal_rproc.c
++++ b/library/remoteproc/baremetal_rproc.c
+@@ -49,17 +49,27 @@ static int pipe_fd[2];
+ /* shared memory pool size: 128 K */
+ #define SHM_POOL_SIZE      0x20000
+ 
++#define MCS_CLIENT_CPU_BASE 4U
++#define MCS_CLIENT_COUNT    2U
++
+ static atomic_bool notifier;
+ 
+-static void rproc_notify_all(void)
++static void rproc_notify_client(unsigned int index)
+ {
+ 	struct metal_list *node;
+ 	struct mica_client *client;
+ 
++	if (index >= MCS_CLIENT_COUNT)
++		return;
++
+ 	metal_list_for_each(&g_client_list, node) {
+ 		client = metal_container_of(node, struct mica_client, node);
+-		if (client->ped == BARE_METAL && client->rproc.state == RPROC_RUNNING)
++		if (client->ped == BARE_METAL &&
++		    client->cpu_id == MCS_CLIENT_CPU_BASE + index &&
++		    client->rproc.state == RPROC_RUNNING) {
+ 			remoteproc_get_notification(&client->rproc, 0);
++			return;
++		}
+ 	}
+ }
+ 
+@@ -69,7 +79,7 @@ static void *rproc_wait_event(void *arg)
+ {
+ 	int ret;
+ 	struct pollfd fds[2] = {
+-		{ .fd = mcs_fd, .events = POLLIN, },
++		{ .fd = mcs_fd, .events = POLLIN | POLLPRI, },
+ 		{ .fd = pipe_fd[PIPE_READ_END], .events = POLLIN, }
+ 	};
+ 
+@@ -83,8 +93,10 @@ static void *rproc_wait_event(void *arg)
+ 			break;
+ 		}
+ 
+-		if (fds[0].revents & POLLIN)
+-			rproc_notify_all();
++		if (fds[0].revents & POLLIN)
++			rproc_notify_client(0);
++		if (fds[0].revents & POLLPRI)
++			rproc_notify_client(1);
+ 	}
+ 
+ 	pthread_exit(NULL);
+-- 
+2.34.1

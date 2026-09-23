@@ -1,0 +1,13 @@
+
+bootcmd=boot_android ${devtype} ${devnum};boot_fit;bootflow scan -bl;
+=> mmc dev 0
+switch to partitions #0, OK
+mmc0(part 0) is current device
+=> mmc read ${loadaddr} 0xa000 0x10
+MMC read: dev # 0, block # 40960, count 16 ... 16 blocks read: OK
+=> md.b ${loadaddr} 0x40
+40c00800: d0 0d fe ed 02 6c 38 de 00 00 00 38 02 6c 35 10  .....l8....8.l5.
+40c00810: 00 00 00 28 00 00 00 11 00 00 00 10 00 00 00 00  ...(............
+40c00820: 00 00 00 72 02 6c 34 d8 00 00 00 00 00 00 00 00  ...r.l4.........
+40c00830: 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00  ................
+=> 

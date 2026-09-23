@@ -1,0 +1,21 @@
+--- /home/openeuler/build/tl3572-2oo3/build-kernel/.config.pre-maxcpus-20260916	2026-09-16 17:37:02.780995137 +0800
++++ /home/openeuler/build/tl3572-2oo3/build-kernel/.config	2026-09-16 17:37:05.892061654 +0800
+@@ -200,6 +200,7 @@
+ CONFIG_RELAY=y
+ CONFIG_BLK_DEV_INITRD=y
+ CONFIG_INITRAMFS_SOURCE=""
++# CONFIG_INITRAMFS_FORCE is not set
+ CONFIG_RD_GZIP=y
+ CONFIG_RD_BZIP2=y
+ CONFIG_RD_LZMA=y
+@@ -520,7 +521,9 @@
+ #
+ # Boot options
+ #
+-CONFIG_CMDLINE=""
++CONFIG_CMDLINE="storagemedia=emmc androidboot.storagemedia=emmc androidboot.mode=normal androidboot.verifiedbootstate=orange rw rootwait earlycon=uart8250,mmio32,0x2c130000 console=ttyFIQ0 root=/dev/mmcblk0p6 rcupdate.rcu_expedited=1 rcu_nocbs=all maxcpus=7"
++# CONFIG_CMDLINE_FROM_BOOTLOADER is not set
++CONFIG_CMDLINE_FORCE=y
+ CONFIG_EFI_STUB=y
+ CONFIG_EFI=y
+ # CONFIG_COMPRESSED_INSTALL is not set

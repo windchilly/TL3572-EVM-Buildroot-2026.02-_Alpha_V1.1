@@ -1,0 +1,7 @@
+cfbaa873538c61a262dedd6673469ec1eb4019ee6fef61c09a5ffa92a68301d8  /home/openeuler/stage4-out/0001-arm64-smp-reserved-SGI-for-MICA-mcs_km.patch
+f5b691e10139320b5c31ded01a6a2577c75e85294b37e0ec62f766110243d852  /home/openeuler/stage4-out/0002-tl3572-dts-mcs-reserved-memory.patch
+58ce18747af5ccb93c37e3383ad53949187318b8a34595a22d97924e57f95b1a  /home/openeuler/stage4-out/boot-mcs-tl3572.img
+48aa10872402fdc26ee69a0dcd27326c92da3a0bb24f530c0446a5e0f1e098bb  /home/openeuler/stage4-out/boot-mcs.its
+9c36b63756b7147d6a28a0009808358b070f52901975110c207f9242a8dd92cf  /home/openeuler/stage4-out/kernel-config-stage4-mica
+afa4d85eee8598ec4fc08cab037f36535a0adc1e40e9113e1103f4567aaef369  /home/openeuler/stage4-out/mcs_km-tl3572.c
+e58527f0d1a080e6930f8a342eaafbd12b635d3473669d362186964b5b71e58b  /home/openeuler/stage4-out/mcs_km.ko

@@ -1,0 +1,58 @@
+diff --git a/src/component/mica/rpmsg_service.c b/src/component/mica/rpmsg_service.c
+--- a/src/component/mica/rpmsg_service.c
++++ b/src/component/mica/rpmsg_service.c
+@@ -14,6 +14,7 @@
+ #include "rpmsg_backend.h"
+ #include "prt_sem.h"
++#include "prt_hwi.h"
+ #include "prt_proxy_ext.h"
+ #include "pthread.h"
+ #include "stdio.h"
+@@ -51,7 +52,6 @@ char *g_s1 = "Hello, UniProton! \r\n";
+ extern char *g_printf_buffer;
+ 
+ static struct PrtSpinLock g_ttyLock;
+-static struct PrtSpinLock g_ttyRxLock;
+ 
+ static void rpmsg_service_unbind(struct rpmsg_endpoint *ep)
+ {
+@@ -106,9 +106,9 @@ static int rpmsg_rx_tty_callback(struct rpmsg_endpoint *ept, void *data,
+ {
+     uintptr_t intSave;
+ 
+-    intSave = PRT_SplIrqLock(&g_ttyRxLock);
++    intSave = PRT_HwiLock();
+     if (tty_msg_count == RPMSG_TTY_RX_QUEUE_DEPTH) {
+-        PRT_SplIrqUnlock(&g_ttyRxLock, intSave);
++        PRT_HwiRestore(intSave);
+         PRT_Printf("[openamp] tty rx queue full\n");
+         return -1;
+     }
+@@ -117,7 +117,7 @@ static int rpmsg_rx_tty_callback(struct rpmsg_endpoint *ept, void *data,
+     tty_msg_queue[tty_msg_tail].len = len;
+     tty_msg_tail = (tty_msg_tail + 1U) % RPMSG_TTY_RX_QUEUE_DEPTH;
+     tty_msg_count++;
+-    PRT_SplIrqUnlock(&g_ttyRxLock, intSave);
++    PRT_HwiRestore(intSave);
+     PRT_SemPost(tty_sem);
+ 
+     return 0;
+@@ -154,9 +154,9 @@ static void *rpmsg_tty_task(void *arg)
+     while (tty_ept.addr !=  RPMSG_ADDR_ANY) {
+         PRT_SemPend(tty_sem, OS_WAIT_FOREVER);
+-        intSave = PRT_SplIrqLock(&g_ttyRxLock);
++        intSave = PRT_HwiLock();
+         if (tty_msg_count == 0U) {
+-            PRT_SplIrqUnlock(&g_ttyRxLock, intSave);
++            PRT_HwiRestore(intSave);
+             continue;
+         }
+         tty_msg = tty_msg_queue[tty_msg_head];
+@@ -163,7 +163,7 @@ static void *rpmsg_tty_task(void *arg)
+         tty_msg_head = (tty_msg_head + 1U) % RPMSG_TTY_RX_QUEUE_DEPTH;
+         tty_msg_count--;
+-        PRT_SplIrqUnlock(&g_ttyRxLock, intSave);
++        PRT_HwiRestore(intSave);
+         if (tty_msg.len) {
+             tty_data = (char *)tty_msg.data;
+             #ifdef LOSCFG_SHELL_MICA_INPUT

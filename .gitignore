@@ -1,0 +1,24 @@
+# Generated full-system images and root filesystems. Sources, recipes, and
+# validation records remain in the repository.
+*.iso
+*.ext4
+*.ext4.gz
+/4-软件资料/Linux/Filesystem/image/
+/4-软件资料/Linux/updateimg/updateimg-v1.0/update.img
+/stages/stage03-yocto-bsp/release-update-m2-20260916/update-tl3572-openeuler-stage3-m2.img
+/stages/stage04-mica-mcs/release-update-20260916/update-tl3572-openeuler-stage4.img
+/stages/stage04-mica-mcs/release-update-20260916/pack/rootfs.img
+
+# Large vendor bundles and caches outside the Stage 06 build input chain.
+/4-软件资料/Linux/LinuxSDK/LinuxSDK-v1.0.tar.gz
+/4-软件资料/Linux/LinuxSDK/dl.tar.gz
+/4-软件资料/Linux/LinuxSDK/rk3572-buildroot-2026.02-sysroot-v1.0.tar.gz
+
+# Third-party desktop installers are not build inputs.
+/4-软件资料/Tools/Windows/
+
+# Redundant duplicate of the U-Boot source archive.
+/4-软件资料/Linux/U-Boot/src/u-boot-2025.04-v1.0-gb501dba.tar(1).gz
+
+# Local backup of nested vendor Git metadata; the documents are tracked as files.
+/.local-git-metadata-backup/

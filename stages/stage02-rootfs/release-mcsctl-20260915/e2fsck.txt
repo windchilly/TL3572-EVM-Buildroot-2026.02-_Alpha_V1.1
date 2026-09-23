@@ -1,0 +1,7 @@
+e2fsck 1.47.0 (5-Feb-2023)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/home/openeuler/build/tl3572-2oo3/build/build-rootfs/tmp/deploy/images/qemu-aarch64/openeuler-image-qemu-aarch64-20260915082322.rootfs.ext4: 5374/1048576 files (0.2% non-contiguous), 142800/1048576 blocks

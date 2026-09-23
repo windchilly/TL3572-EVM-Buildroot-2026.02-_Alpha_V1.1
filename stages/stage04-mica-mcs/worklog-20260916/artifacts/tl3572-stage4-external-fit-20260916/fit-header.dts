@@ -1,0 +1,70 @@
+/dts-v1/;
+
+/ {
+	timestamp = <0x6aaa46e2>;
+	description = "FIT image with Linux kernel, FDT blob and resource";
+
+	images {
+
+		fdt {
+			data-size = <0x401b2>;
+			data-position = <0x800>;
+			type = "flat_dt";
+			arch = "arm64";
+			compression = "none";
+			load = <0xffffff00>;
+
+			hash {
+				value = <0x647438b7 0xf2298d17 0xbbee5df3 0xb331fff7 0x3b4880fa 0x81252871 0x9731fe14 0xf8ffd5e7>;
+				algo = "sha256";
+			};
+		};
+
+		kernel {
+			data-size = <0x2639a00>;
+			data-position = <0x40a00>;
+			type = "kernel";
+			arch = "arm64";
+			os = "linux";
+			compression = "none";
+			entry = <0xffffff01>;
+			load = <0xffffff01>;
+
+			hash {
+				value = <0xe69eba89 0x56438f35 0xea83864 0x761d46af 0xb3ff9e48 0x2a20af89 0x3765a51c 0xe66d31d8>;
+				algo = "sha256";
+			};
+		};
+
+		resource {
+			data-size = <0x49600>;
+			data-position = <0x267a400>;
+			type = "multi";
+			arch = "arm64";
+			compression = "none";
+
+			hash {
+				value = <0x7508f47d 0x84c56ca 0xc9b92fc4 0x4ae5dc4c 0x4c74bb48 0x1d2860ac 0x52d7cd10 0xbd520269>;
+				algo = "sha256";
+			};
+		};
+	};
+
+	configurations {
+		default = "conf";
+
+		conf {
+			rollback-index = <0x00>;
+			fdt = "fdt";
+			kernel = "kernel";
+			multi = "resource";
+
+			signature {
+				algo = "sha256,rsa2048";
+				padding = "pss";
+				key-name-hint = "dev";
+				sign-images = "fdt\0kernel\0multi";
+			};
+		};
+	};
+};

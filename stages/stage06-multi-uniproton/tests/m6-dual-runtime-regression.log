@@ -1,0 +1,36 @@
+M6 dual UniProton runtime regression
+Date: 2026-09-21
+Board: TL3572-EVM / Linux 6.12.69-gf1b67c293213
+
+[baseline]
+cmdline: ... mcs_reserve_cpus=4-5
+online: 0-3,6-7
+offline: 4-5
+up-a: CPU4 Offline
+up-b: CPU5 Offline
+systemctl --failed: empty
+
+[A then B]
+up-a single echo PASS: count=10, payload=451, rx_bytes=4780, elapsed=0.009s
+up-a concurrent echo PASS: count=1000, payload=451, rx_bytes=478000, elapsed=0.549s
+up-b concurrent echo PASS: count=1000, payload=451, rx_bytes=478000, elapsed=0.558s
+one-sided lifecycle PASS: clients=up-a,up-b, cycles_each=50, elapsed=147.793s
+interrupts after isolation:
+  GICv2 hwirq 8  MCS IPI8: 1212
+  GICv2 hwirq 9  MCS IPI9: 1202
+  Err: 0
+
+[reboot, B then A]
+up-b single echo PASS: count=10, payload=451, rx_bytes=4780, elapsed=0.009s
+up-a concurrent echo PASS: count=1000, payload=451, rx_bytes=478000, elapsed=0.492s
+up-b concurrent echo PASS: count=1000, payload=451, rx_bytes=478000, elapsed=0.496s
+one-sided lifecycle PASS: clients=up-b,up-a, cycles_each=20, elapsed=59.221s
+
+[final zero-warning image smoke]
+boot sha256: a6a050cd9aa335516907ca79c290084e9585c03c3d53a660d262c8789515a436
+boot partition readback: identical
+up-a concurrent echo PASS: count=1000, payload=451, rx_bytes=478000, elapsed=0.478s
+up-b concurrent echo PASS: count=1000, payload=451, rx_bytes=478000, elapsed=0.487s
+systemctl --failed: empty
+
+OVERALL: PASS

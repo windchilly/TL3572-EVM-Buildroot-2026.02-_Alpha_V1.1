@@ -1,0 +1,24 @@
+
+=> boot
+ANDROID: reboot reason: "(none)"
+Not AVB images, AVB skip
+No valid android hdr
+Android image load failed
+Android boot failed, error -1.
+## Booting FIT Image FIT: No fit blob
+FIT: No FIT image
+Scanning for bootflows in all bootdevs
+Seq  Method       State   Uclass    Part  Name                      Filename
+---  -----------  ------  --------  ----  ------------------------  ----------------
+Scanning bootdev 'mmc@2a090000.bootdev':
+Card did not respond to voltage select! : -110
+Scanning bootdev 'mmc@2a010000.bootdev':
+Unknown uclass 'nvme' in label
+scanning bus for devices...
+ufshcd-rockchip ufs@29e00000: ufshcd_link_startup: Device not present
+ufshcd-rockchip ufs@29e00000: link startup failed -6
+ufshcd-rockchip ufs@29e00000: ufshcd_pltfrm_init() failed -6
+No more bootdevs
+---  -----------  ------  --------  ----  ------------------------  ----------------
+(0 bootflows, 0 valid)
+=> 

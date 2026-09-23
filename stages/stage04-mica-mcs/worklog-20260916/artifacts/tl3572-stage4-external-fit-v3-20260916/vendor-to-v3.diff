@@ -1,0 +1,47 @@
+diff --git a/home/openeuler/build/tl3572-2oo3/bootimg-out-stage4-external-fit-v3/vendor.dts b/home/openeuler/build/tl3572-2oo3/bootimg-out-stage4-external-fit-v3/fdt.dts
+index 81609d2..bf814e3 100644
+--- a/home/openeuler/build/tl3572-2oo3/bootimg-out-stage4-external-fit-v3/vendor.dts
++++ b/home/openeuler/build/tl3572-2oo3/bootimg-out-stage4-external-fit-v3/fdt.dts
+@@ -383,6 +383,7 @@
+ 		mclkout_sai2 = "/clocks/mclkout-sai2@26010004";
+ 		mclkout_sai3 = "/clocks/mclkout-sai3@26010004";
+ 		mclkout_sai4 = "/clocks/mclkout-sai4@26082604";
++		mcs_rmem = "/reserved-memory/mcs-rmem@134000000";
+ 		mcu_rgb3x8_pins_m0 = "/pinctrl/vo/mcu-rgb3x8-pins-m0";
+ 		mcu_rgb3x8_pins_m1 = "/pinctrl/vo/mcu-rgb3x8-pins-m1";
+ 		mcu_rgb565_pins = "/pinctrl/vo/mcu-rgb565-pins";
+@@ -2719,6 +2720,12 @@
+ 		};
+ 	};
+ 
++	mcs-remoteproc {
++		compatible = "oe,mcs_remoteproc";
++		memory-region = <0x4da>;
++		status = "okay";
++	};
++
+ 	mipi0-csi2 {
+ 		compatible = "rockchip,rk3572-mipi-csi2";
+ 		phandle = <0x1cb>;
+@@ -6691,6 +6698,12 @@
+ 			reg = <0x00 0x00 0x00 0x00>;
+ 		};
+ 
++		mcs-rmem@134000000 {
++			no-map;
++			phandle = <0x4da>;
++			reg = <0x01 0x34000000 0x00 0x4000000>;
++		};
++
+ 		ramoops@40110000 {
+ 			boot-log-count = <0x01>;
+ 			boot-log-size = <0x8000>;
+@@ -11392,7 +11405,7 @@
+ 			reset-gpios = <0xe6 0x10 0x00>;
+ 			reset-names = "biu\0sys\0ufs\0grf\0mphy";
+ 			resets = <0x03 0xe5 0x03 0xe6 0x03 0xe7 0x03 0xe8 0x03 0x1ad>;
+-			status = "okay";
++			status = "disabled";
+ 		};
+ 
+ 		usb@24000000 {

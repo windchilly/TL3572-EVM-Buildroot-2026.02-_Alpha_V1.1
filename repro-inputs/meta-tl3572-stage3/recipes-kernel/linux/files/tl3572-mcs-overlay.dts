@@ -1,0 +1,35 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	fragment@0 {
+		target-path = "/reserved-memory";
+
+		__overlay__ {
+			mcs_rmem: mcs-rmem@7a000000 {
+				reg = <0x0 0x7a000000 0x0 0x04000000>;
+				no-map;
+			};
+		};
+	};
+
+	fragment@1 {
+		target-path = "/";
+
+		__overlay__ {
+			mcs-remoteproc {
+				compatible = "oe,mcs_remoteproc";
+				memory-region = <&mcs_rmem>;
+				status = "okay";
+			};
+		};
+	};
+
+	fragment@2 {
+		target-path = "/soc/ufs@29e00000";
+
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+};

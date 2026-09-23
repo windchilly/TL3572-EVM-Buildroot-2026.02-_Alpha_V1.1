@@ -1,0 +1,10 @@
+STAGE4_EXTERNAL_FIT_V3_VALIDATION=PASS
+fdt_header_totalsize=0x00000600 (1536 bytes)
+first_data_position=0x800
+vendor_ufs_phandle=0x44f
+patched_ufs_phandle=0x44f
+existing_ufs_phandle_preserved=PASS
+unused_ufs_status_disabled=PASS
+mcs_reserved_memory_overlay=PASS
+mcs_remoteproc_overlay=PASS
+all_external_blob_sizes_and_sha256=PASS

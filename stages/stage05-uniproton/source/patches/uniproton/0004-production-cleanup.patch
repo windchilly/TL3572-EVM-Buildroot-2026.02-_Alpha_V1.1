@@ -1,0 +1,319 @@
+diff --git a/src/arch/cpu/armv8/common/hwi/prt_vector.S b/src/arch/cpu/armv8/common/hwi/prt_vector.S
+--- a/src/arch/cpu/armv8/common/hwi/prt_vector.S
++++ b/src/arch/cpu/armv8/common/hwi/prt_vector.S
+@@ -140,13 +140,11 @@ OsVectorTable:
+     EXC_HANDLE  3
+ 
+ .org (VBAR + 0x200)                      // Synchronous, Current EL with SP_ELx
+-    stp x1, x0, [sp,#-16]!
+-    mrs x0, ESR_EL1
+-    mrs x1, ELR_EL1
+-    mrs x2, FAR_EL1
+-    mrs x3, SPSR_EL1
+-    bl  Up7SyncDiag
+-1:  b   1b
++#ifdef OS_GDB_STUB
++    el1_sync_handler 4
++#else
++    EXC_HANDLE  4
++#endif
+ 
+ .org (VBAR + 0x280)                      // IRQ/vIRQ, Current EL with SP_ELx
+     stp x1, x0, [sp,#-16]!
+diff --git a/src/component/mica/resource_table.h b/src/component/mica/resource_table.h
+--- a/src/component/mica/resource_table.h
++++ b/src/component/mica/resource_table.h
+@@ -31,7 +31,9 @@ extern "C" {
+ #define RPMSG_IPU_C0_FEATURES   1
+ #define NUM_RPMSG_BUFF          8
+ 
++#ifndef VIRTIO_ID_RPMSG
+ #define VIRTIO_ID_RPMSG         7
++#endif
+ #define RSC_VENDOR_EPT_TABLE    128 /* List of bound endpoints */
+ 
+ enum rsc_table_entries {
+diff --git a/src/component/mica/rpmsg_backend_rsc_table.c b/src/component/mica/rpmsg_backend_rsc_table.c
+--- a/src/component/mica/rpmsg_backend_rsc_table.c
++++ b/src/component/mica/rpmsg_backend_rsc_table.c
+@@ -80,24 +80,10 @@ static inline struct fw_rsc_vdev_vring *rsc_table_get_vring1(void *rsc_table)
+ static int virtio_notify(void *priv, uint32_t id)
+ {
+     uint16_t coreMask = 1;
+-
+-    PRT_Printf("[openamp-diag] notify id=%u begin\n", id);
+-#if defined(OS_OPENAMP_GICV2_NOTIFY_ALL_OTHER)
+-    /*
+-     * The AMP image sees itself as logical core 0 although it runs on CPU7.
+-     * A logical core mask therefore cannot address Linux CPU0 correctly.
+-     * GICv2 TargetListFilter=1 routes the SGI to every CPU interface except
+-     * the requesting CPU, which is exactly the AMP-to-host notification path.
+-     */
+-    PRT_DSB();
+-    *(volatile U32 *)(uintptr_t)GICD_SGIR = (1U << 24) | OS_OPENAMP_NOTIFY_HWI_NUM;
+-    PRT_ISB();
+-#elif defined(OS_OPTION_SMP)
++#if defined(OS_OPTION_SMP)
+     OsHwiMcTrigger(0, coreMask, OS_OPENAMP_NOTIFY_HWI_NUM);
+ #else
+     OsHwiMcTrigger(coreMask, OS_OPENAMP_NOTIFY_HWI_NUM);
+ #endif
+-    PRT_Printf("[openamp-diag] notify id=%u done\n", id);
+ 
+     return 0;
+ }
+@@ -185,7 +171,6 @@ void rsc_table_set_offline_flag(void)
+ {
+     void *rsc;
+     int rsc_size;
+-    uint32_t status;
+     struct fw_resource_table *rsc_table;
+ 
+     rsc_table_get(&rsc, &rsc_size);
+@@ -327,17 +312,6 @@ struct rpmsg_device *rpmsg_backend_init(void)
+         goto cleanup_vdev;
+     }
+ 
+-    PRT_Printf("[openamp-diag] shm=%lx size=%lx svq=%lx avail=%u local=%u "
+-               "d0=%lx/%u map=%lx\n",
+-               (uintptr_t)VDEV_START_ADDR, (uintptr_t)SHM_SIZE,
+-               (uintptr_t)rvdev.svq,
+-               (unsigned int)rvdev.svq->vq_ring.avail->idx,
+-               (unsigned int)rvdev.svq->vq_available_idx,
+-               (uintptr_t)rvdev.svq->vq_ring.desc[0].addr,
+-               (unsigned int)rvdev.svq->vq_ring.desc[0].len,
+-               (uintptr_t)metal_io_phys_to_virt(
+-                   shm_io, rvdev.svq->vq_ring.desc[0].addr));
+-
+     return rpmsg_virtio_get_rpmsg_device(&rvdev);
+ 
+ cleanup_vdev:
+diff --git a/src/component/mica/rpmsg_service.c b/src/component/mica/rpmsg_service.c
+--- a/src/component/mica/rpmsg_service.c
++++ b/src/component/mica/rpmsg_service.c
+@@ -53,7 +53,9 @@ char *g_s1 = "Hello, UniProton! \r\n";
+ extern char *g_printf_buffer;
+ 
++#if defined(OS_OPTION_SMP)
+ static struct PrtSpinLock g_ttyLock;
++#endif
+ 
+ static void rpmsg_service_unbind(struct rpmsg_endpoint *ep)
+ {
+@@ -68,7 +70,9 @@ int send_message(unsigned char *message, int len)
+ {
+     int ret;
++#if defined(OS_OPTION_SMP)
+     uintptr_t intSave;
++#endif
+ 
+     if (!is_rpmsg_ept_ready(&tty_ept)) {
+         return 0;
+@@ -87,12 +91,8 @@ static void *rpmsg_rpc_task(void *arg)
+ {
+     int ret;
+ 
+-    PRT_Printf("[openamp-diag] rpc create begin\n");
+     ret = rpmsg_create_ept(&rpc_ept, rpdev, RPMSG_RPC_EPT_NAME,
+                    RPMSG_ADDR_ANY, RPMSG_ADDR_ANY,
+                    rpmsg_client_cb, rpmsg_service_unbind);
+-    PRT_Printf("[openamp-diag] rpc create done ret=%d addr=%u dst=%u\n",
+-               ret, rpc_ept.addr, rpc_ept.dest_addr);
+     if (ret != 0) {
+         PRT_Printf("[openamp] rpc endpoint ret:%d \n", ret);
+         goto err;
+@@ -142,12 +142,8 @@ static void *rpmsg_tty_task(void *arg)
+ 
+     PRT_Printf("[openamp] tty task started\n");
+ 
+-    PRT_Printf("[openamp-diag] tty create begin\n");
+     ret = rpmsg_create_ept(&tty_ept, rpdev, RPMSG_TTY_EPT_NAME,
+                    RPMSG_ADDR_ANY, RPMSG_ADDR_ANY,
+                    rpmsg_rx_tty_callback, NULL);
+-    PRT_Printf("[openamp-diag] tty create done ret=%d addr=%u dst=%u\n",
+-               ret, tty_ept.addr, tty_ept.dest_addr);
+     if (ret != 0) {
+         PRT_Printf("[openamp] tty endpoint ret:%d \n", ret);
+         goto err;
+diff --git a/demos/rk3572_mica/apps/openamp/main.c b/demos/rk3572_mica/apps/openamp/main.c
+--- a/demos/rk3572_mica/apps/openamp/main.c
++++ b/demos/rk3572_mica/apps/openamp/main.c
+@@ -24,7 +24,6 @@ int TestOpenamp()
+ {
+     int ret;
+ 
+-    PRT_Printf("UP7-F: openamp init\n");
+     ret = rpmsg_service_init();
+     if (ret) {
+         return ret;
+@@ -36,7 +35,6 @@ int TestOpenamp()
+ 
+ void TestTaskEntry()
+ {
+-    PRT_Printf("UP7-E: task entry\n");
+ #if defined(OS_OPTION_OPENAMP)
+     TestOpenamp();
+ #endif
+@@ -83,9 +81,7 @@ U32 PRT_AppInit(void)
+      * We will register the actual interrupt handler when rpmsg is initialised.
+      */
+-    PRT_Printf("UP7-C1: rpmsg hwi\n");
+     ret = RpmsgHwiInit();
+-    PRT_Printf("UP7-C2: rpmsg hwi done\n");
+     if (ret) {
+         return ret;
+     }
+@@ -92,43 +88,11 @@ U32 PRT_AppInit(void)
+ #endif
+ 
+     ret = OsTestInit();
+-    PRT_Printf("UP7-C3: task created\n");
+     if (ret) {
+         return ret;
+     }
+ 
+-    PRT_Printf("UP7-C4: before clk\n");
+     ret = TestClkStart();
+-    PRT_Printf("UP7-C5: clk started ret=%d\n", ret);
+-    /* diag: wait ~1 tick period, then dump virtual-timer + GIC pending state */
+-    {
+-        volatile U32 i;
+-        U64 vct;
+-        U32 vctl, ispendr0;
+-        for (i = 0; i < 30000000; i++) {
+-        }
+-        OS_EMBED_ASM("MRS %0, CNTVCT_EL0" : "=r"(vct) : : "memory");
+-        OS_EMBED_ASM("MRS %0, CNTV_CTL_EL0" : "=r"(vctl) : : "memory");
+-        ispendr0 = *(volatile U32 *)(GIC_DIST_BASE + 0x200U);
+-        PRT_Printf("UP7-X1: vct_lo=%u vctl=0x%x ispendr0=0x%x\n",
+-                   (U32)vct, vctl, ispendr0);
+-    }
+-    /* v10 diag: inspect exception state without enabling IRQ before RUNNING_TASK exists. */
+-    {
+-        U64 vbar;
+-        U64 daif;
+-        U64 currentEl;
+-        U64 spSel;
+-        U64 stackPointer;
+-        OS_EMBED_ASM("MRS %0, VBAR_EL1" : "=r"(vbar) : : "memory");
+-        OS_EMBED_ASM("MRS %0, DAIF" : "=r"(daif) : : "memory");
+-        OS_EMBED_ASM("MRS %0, CurrentEL" : "=r"(currentEl) : : "memory");
+-        OS_EMBED_ASM("MRS %0, SPSel" : "=r"(spSel) : : "memory");
+-        OS_EMBED_ASM("MOV %0, SP" : "=r"(stackPointer) : : "memory");
+-        PRT_Printf("UP7-X2: vbar=0x%llx daif=0x%llx el=0x%llx spsel=%llu sp=0x%llx\n",
+-                   vbar, daif, currentEl, spSel, stackPointer);
+-    }
+     if (ret) {
+         return ret;
+     }
+@@ -143,7 +107,6 @@ U32 PRT_HardDrvInit(void)
+     if (ret) {
+         return ret;
+     }
+-    PRT_Printf("UP7-B: hwdrv done\n");
+ 
+     return OS_OK;
+ }
+@@ -151,13 +114,6 @@ U32 PRT_HardDrvInit(void)
+-__attribute__((noreturn)) void Up7SyncDiag(U64 esr, U64 elr, U64 far, U64 spsr)
+-{
+-    PRT_Printf("\nUP7-EXC: esr=0x%llx elr=0x%llx far=0x%llx spsr=0x%llx\n",
+-               esr, elr, far, spsr);
+-    for (;;) {
+-        OS_EMBED_ASM("WFE");
+-    }
+-}
+ 
+ void PRT_HardBootInit(void)
+ {
+@@ -163,7 +113,6 @@ void PRT_HardBootInit(void)
+ 
+ S32 main(void)
+ {
+-    PRT_Printf("UP7-A: main\n");
+     return OsConfigStart();
+ }
+diff --git a/demos/rk3572_mica/bsp/timer.c b/demos/rk3572_mica/bsp/timer.c
+--- a/demos/rk3572_mica/bsp/timer.c
++++ b/demos/rk3572_mica/bsp/timer.c
+@@ -7,7 +7,6 @@
+ #include "cpu_config.h"
+ extern int IsrRegister(U32 intNo, U32 pri);
+ #include "securec.h"
+-extern U32 PRT_Printf(const char *format, ...);
+ 
+ U64 g_timerFrequency;
+ #define PMU_TIMER_FREQUENCY g_timerFrequency
+@@ -20,13 +19,7 @@ U64 GetGenericTimerFreq(void)
+ 
+ void TimerIsr(uintptr_t para)
+ {
+-    static U32 tickDiagCount;
+-
+     (void)para;
+-    if (tickDiagCount < 3U) {
+-        PRT_Printf("UP7-TI: tick %u\n", tickDiagCount + 1U);
+-    }
+-    tickDiagCount++;
+     U32 cfgMask = 0x0;
+     U64 cycle = PMU_TIMER_FREQUENCY / OS_TICK_PER_SECOND;
+@@ -58,11 +51,8 @@ void CoreTimerInit(void)
+ 
+ U32 CoreTimerStart(void)
+ {
+-    PRT_Printf("UP7-T1: clkstart enter\n");
+     g_timerFrequency = GetGenericTimerFreq();
+-    PRT_Printf("UP7-T2: freq=%u\n", (U32)g_timerFrequency);
+     CoreTimerInit();
+-    PRT_Printf("UP7-T3: core timer inited\n");
+     
+     return OS_OK;
+ }
+diff --git a/demos/rk3572_mica/bsp/hwi_init.c b/demos/rk3572_mica/bsp/hwi_init.c
+--- a/demos/rk3572_mica/bsp/hwi_init.c
++++ b/demos/rk3572_mica/bsp/hwi_init.c
+@@ -298,6 +298,8 @@ int IsrRegister(U32 intNo, U32 pri)
+     shift = (intNo % 4U) * 8U;
+     reg = (*addr) & ~(0xFFU << shift);
+     *addr = (reg | pri << shift);
++
++    return OS_OK;
+ }
+ 
+ void OsGicInitCpuInterface(void)
+diff --git a/demos/rk3572_mica/component/libmetal/lib/system/uniproton/mutex.h b/demos/rk3572_mica/component/libmetal/lib/system/uniproton/mutex.h
+--- a/demos/rk3572_mica/component/libmetal/lib/system/uniproton/mutex.h
++++ b/demos/rk3572_mica/component/libmetal/lib/system/uniproton/mutex.h
+@@ -53,7 +53,13 @@ static inline int __metal_mutex_try_acquire(metal_mutex_t *mutex)
+ 
+ static inline int __metal_mutex_is_acquired(metal_mutex_t *mutex)
+ {
+-	
++	int ret = pthread_mutex_trylock(mutex);
++
++	if (ret == 0) {
++		pthread_mutex_unlock(mutex);
++		return 0;
++	}
++	return 1;
+ }
+ 
+ static inline void __metal_mutex_acquire(metal_mutex_t *mutex)
+diff --git a/demos/rk3572_mica/component/libmetal/UniProton-patch-for-libmetal.patch b/demos/rk3572_mica/component/libmetal/UniProton-patch-for-libmetal.patch
+--- a/demos/rk3572_mica/component/libmetal/UniProton-patch-for-libmetal.patch
++++ b/demos/rk3572_mica/component/libmetal/UniProton-patch-for-libmetal.patch
+@@ -479,7 +479,13 @@
+ +
+ +static inline int __metal_mutex_is_acquired(metal_mutex_t *mutex)
+ +{
+-+	
+++    int ret = pthread_mutex_trylock(mutex);
+++
+++    if (ret == 0) {
+++        pthread_mutex_unlock(mutex);
+++        return 0;
+++    }
+++    return 1;
+ +}
+ +
+ +static inline void __metal_mutex_acquire(metal_mutex_t *mutex)

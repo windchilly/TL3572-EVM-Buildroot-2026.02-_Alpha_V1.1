@@ -1,0 +1,14 @@
+diff --git a/demos/rk3572_mica/config/prt_config.c b/demos/rk3572_mica/config/prt_config.c
+--- a/demos/rk3572_mica/config/prt_config.c
++++ b/demos/rk3572_mica/config/prt_config.c
+@@ -315,10 +315,8 @@ S32 PRT_HardBootInit(void)
+         return (S32)ret;
+     }
+ 
+-    PRT_Printf("UP7-D1: before OsStart\n");
+     /* OS启动调度 */
+     ret = OsStart();
+-    PRT_Printf("UP7-D2: OsStart returned %d\n", ret);
+     if (ret != OS_OK) {
+         return (S32)ret;
+     }

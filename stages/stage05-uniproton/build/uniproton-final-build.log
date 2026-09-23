@@ -1,0 +1,1058 @@
+Cloning into 'libboundscheck'...
+/home/openeuler/build/tl3572-2oo3/src/UniProton /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build
+INFO:root:/home/openeuler/build/tl3572-2oo3/src/UniProton/config.xml
+INFO:root:build prt_buildef.h succeed.
+INFO:root:[INFO] #################### make_buildef_file.sh armv8_rk3572 successfully. ####################
+INFO:root:[INFO] #################### BUILD_TIME_TAG 2026-09-18_14:59:00 ####################
+INFO:root:[INFO] #################### generate makefile succeed. ####################
+INFO:root:[INFO] #################### make rk3572 armv8 succeed. ####################
+INFO:root:[INFO] #################### make rk3572 all lib succeed! ####################
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build
+################# git clone libmetal #################
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build
+Cloning into 'libmetal'...
+libmetal-2022.10.0/
+libmetal-2022.10.0/.checkpatch.conf
+libmetal-2022.10.0/.github/
+libmetal-2022.10.0/.github/actions/
+libmetal-2022.10.0/.github/actions/build_ci/
+libmetal-2022.10.0/.github/actions/build_ci/Dockerfile
+libmetal-2022.10.0/.github/actions/build_ci/README.md
+libmetal-2022.10.0/.github/actions/build_ci/action.yml
+libmetal-2022.10.0/.github/actions/build_ci/entrypoint.sh
+libmetal-2022.10.0/.github/workflows/
+libmetal-2022.10.0/.github/workflows/compliance.yml
+libmetal-2022.10.0/.github/workflows/continuous-integration.yml
+libmetal-2022.10.0/.gitignore
+libmetal-2022.10.0/.gitlint
+libmetal-2022.10.0/CMakeLists.txt
+libmetal-2022.10.0/LICENSE.md
+libmetal-2022.10.0/MAINTAINERS.md
+libmetal-2022.10.0/README.md
+libmetal-2022.10.0/VERSION
+libmetal-2022.10.0/cmake/
+libmetal-2022.10.0/cmake/collect.cmake
+libmetal-2022.10.0/cmake/depends.cmake
+libmetal-2022.10.0/cmake/modules/
+libmetal-2022.10.0/cmake/modules/FindHugeTLBFS.cmake
+libmetal-2022.10.0/cmake/modules/FindLibRt.cmake
+libmetal-2022.10.0/cmake/modules/FindLibSysFS.cmake
+libmetal-2022.10.0/cmake/options.cmake
+libmetal-2022.10.0/cmake/platforms/
+libmetal-2022.10.0/cmake/platforms/cross-freertos-gcc.cmake
+libmetal-2022.10.0/cmake/platforms/cross-generic-gcc.cmake
+libmetal-2022.10.0/cmake/platforms/cross-generic-iar.cmake
+libmetal-2022.10.0/cmake/platforms/cross-linux-gcc.cmake
+libmetal-2022.10.0/cmake/platforms/microblaze-generic.cmake
+libmetal-2022.10.0/cmake/platforms/template-freertos.cmake
+libmetal-2022.10.0/cmake/platforms/template-generic.cmake
+libmetal-2022.10.0/cmake/platforms/zynq7-freertos.cmake
+libmetal-2022.10.0/cmake/platforms/zynq7-generic-iar.cmake
+libmetal-2022.10.0/cmake/platforms/zynq7-generic.cmake
+libmetal-2022.10.0/cmake/platforms/zynq7-linux.cmake
+libmetal-2022.10.0/cmake/platforms/zynqmp-a53-freertos.cmake
+libmetal-2022.10.0/cmake/platforms/zynqmp-a53-generic.cmake
+libmetal-2022.10.0/cmake/platforms/zynqmp-linux.cmake
+libmetal-2022.10.0/cmake/platforms/zynqmp-r5-freertos.cmake
+libmetal-2022.10.0/cmake/platforms/zynqmp-r5-generic.cmake
+libmetal-2022.10.0/cmake/syscheck.cmake
+libmetal-2022.10.0/doc/
+libmetal-2022.10.0/doc/CMakeLists.txt
+libmetal-2022.10.0/doc/Doxyfile.in
+libmetal-2022.10.0/examples/
+libmetal-2022.10.0/examples/CMakeLists.txt
+libmetal-2022.10.0/examples/system/
+libmetal-2022.10.0/examples/system/CMakeLists.txt
+libmetal-2022.10.0/examples/system/freertos/
+libmetal-2022.10.0/examples/system/freertos/CMakeLists.txt
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/CMakeLists.txt
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/CMakeLists.txt
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/common.h
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/ipi_latency_demod.c
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/ipi_shmem_demod.c
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/libmetal_amp_demod.c
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/lscript.ld
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/platform_config.h
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/shmem_atomic_demod.c
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/shmem_demod.c
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/shmem_latency_demod.c
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/shmem_throughput_demod.c
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/sys_init.c
+libmetal-2022.10.0/examples/system/freertos/zynqmp_r5/zynqmp_amp_demo/sys_init.h
+libmetal-2022.10.0/examples/system/generic/
+libmetal-2022.10.0/examples/system/generic/CMakeLists.txt
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/CMakeLists.txt
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/CMakeLists.txt
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/common.h
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/ipi_latency_demod.c
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/ipi_shmem_demod.c
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/libmetal_amp_demod.c
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/lscript.ld
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/platform_config.h
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/shmem_atomic_demod.c
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/shmem_demod.c
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/shmem_latency_demod.c
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/shmem_throughput_demod.c
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/sys_init.c
+libmetal-2022.10.0/examples/system/generic/zynqmp_r5/zynqmp_amp_demo/sys_init.h
+libmetal-2022.10.0/examples/system/linux/
+libmetal-2022.10.0/examples/system/linux/CMakeLists.txt
+libmetal-2022.10.0/examples/system/linux/zynqmp/
+libmetal-2022.10.0/examples/system/linux/zynqmp/CMakeLists.txt
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/CMakeLists.txt
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/common.h
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/ipi_latency_demo.c
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/ipi_shmem_demo.c
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/libmetal_amp_demo.c
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/libmetal_amp_demod.c
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/shmem_atomic_demo.c
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/shmem_demo.c
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/shmem_latency_demo.c
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/shmem_throughput_demo.c
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/sys_init.c
+libmetal-2022.10.0/examples/system/linux/zynqmp/zynqmp_amp_demo/sys_init.h
+libmetal-2022.10.0/lib/
+libmetal-2022.10.0/lib/CMakeLists.txt
+libmetal-2022.10.0/lib/alloc.h
+libmetal-2022.10.0/lib/assert.h
+libmetal-2022.10.0/lib/atomic.h
+libmetal-2022.10.0/lib/cache.h
+libmetal-2022.10.0/lib/compiler.h
+libmetal-2022.10.0/lib/compiler/
+libmetal-2022.10.0/lib/compiler/CMakeLists.txt
+libmetal-2022.10.0/lib/compiler/armcc/
+libmetal-2022.10.0/lib/compiler/armcc/CMakeLists.txt
+libmetal-2022.10.0/lib/compiler/armcc/errno.h
+libmetal-2022.10.0/lib/compiler/gcc/
+libmetal-2022.10.0/lib/compiler/gcc/CMakeLists.txt
+libmetal-2022.10.0/lib/compiler/gcc/atomic.h
+libmetal-2022.10.0/lib/compiler/gcc/compiler.h
+libmetal-2022.10.0/lib/compiler/iar/
+libmetal-2022.10.0/lib/compiler/iar/CMakeLists.txt
+libmetal-2022.10.0/lib/compiler/iar/compiler.h
+libmetal-2022.10.0/lib/compiler/iar/errno.h
+libmetal-2022.10.0/lib/condition.h
+libmetal-2022.10.0/lib/config.h
+libmetal-2022.10.0/lib/cpu.h
+libmetal-2022.10.0/lib/device.c
+libmetal-2022.10.0/lib/device.h
+libmetal-2022.10.0/lib/dma.c
+libmetal-2022.10.0/lib/dma.h
+libmetal-2022.10.0/lib/errno.h
+libmetal-2022.10.0/lib/init.c
+libmetal-2022.10.0/lib/io.c
+libmetal-2022.10.0/lib/io.h
+libmetal-2022.10.0/lib/irq.c
+libmetal-2022.10.0/lib/irq.h
+libmetal-2022.10.0/lib/irq_controller.h
+libmetal-2022.10.0/lib/list.h
+libmetal-2022.10.0/lib/log.c
+libmetal-2022.10.0/lib/log.h
+libmetal-2022.10.0/lib/mutex.h
+libmetal-2022.10.0/lib/processor/
+libmetal-2022.10.0/lib/processor/CMakeLists.txt
+libmetal-2022.10.0/lib/processor/aarch64/
+libmetal-2022.10.0/lib/processor/aarch64/CMakeLists.txt
+libmetal-2022.10.0/lib/processor/aarch64/atomic.h
+libmetal-2022.10.0/lib/processor/aarch64/cpu.h
+libmetal-2022.10.0/lib/processor/arm/
+libmetal-2022.10.0/lib/processor/arm/CMakeLists.txt
+libmetal-2022.10.0/lib/processor/arm/atomic.h
+libmetal-2022.10.0/lib/processor/arm/cpu.h
+libmetal-2022.10.0/lib/processor/ceva/
+libmetal-2022.10.0/lib/processor/ceva/CMakeLists.txt
+libmetal-2022.10.0/lib/processor/ceva/cpu.h
+libmetal-2022.10.0/lib/processor/csky/
+libmetal-2022.10.0/lib/processor/csky/CMakeLists.txt
+libmetal-2022.10.0/lib/processor/csky/cpu.h
+libmetal-2022.10.0/lib/processor/microblaze/
+libmetal-2022.10.0/lib/processor/microblaze/CMakeLists.txt
+libmetal-2022.10.0/lib/processor/microblaze/atomic.h
+libmetal-2022.10.0/lib/processor/microblaze/cpu.h
+libmetal-2022.10.0/lib/processor/riscv/
+libmetal-2022.10.0/lib/processor/riscv/CMakeLists.txt
+libmetal-2022.10.0/lib/processor/riscv/cpu.h
+libmetal-2022.10.0/lib/processor/x86/
+libmetal-2022.10.0/lib/processor/x86/CMakeLists.txt
+libmetal-2022.10.0/lib/processor/x86/atomic.h
+libmetal-2022.10.0/lib/processor/x86/cpu.h
+libmetal-2022.10.0/lib/processor/x86_64/
+libmetal-2022.10.0/lib/processor/x86_64/CMakeLists.txt
+libmetal-2022.10.0/lib/processor/x86_64/atomic.h
+libmetal-2022.10.0/lib/processor/x86_64/cpu.h
+libmetal-2022.10.0/lib/processor/xtensa/
+libmetal-2022.10.0/lib/processor/xtensa/CMakeLists.txt
+libmetal-2022.10.0/lib/processor/xtensa/atomic.h
+libmetal-2022.10.0/lib/processor/xtensa/cpu.h
+libmetal-2022.10.0/lib/shmem.c
+libmetal-2022.10.0/lib/shmem.h
+libmetal-2022.10.0/lib/sleep.h
+libmetal-2022.10.0/lib/softirq.c
+libmetal-2022.10.0/lib/softirq.h
+libmetal-2022.10.0/lib/spinlock.h
+libmetal-2022.10.0/lib/sys.h
+libmetal-2022.10.0/lib/system/
+libmetal-2022.10.0/lib/system/CMakeLists.txt
+libmetal-2022.10.0/lib/system/freertos/
+libmetal-2022.10.0/lib/system/freertos/CMakeLists.txt
+libmetal-2022.10.0/lib/system/freertos/alloc.h
+libmetal-2022.10.0/lib/system/freertos/assert.h
+libmetal-2022.10.0/lib/system/freertos/cache.h
+libmetal-2022.10.0/lib/system/freertos/condition.c
+libmetal-2022.10.0/lib/system/freertos/condition.h
+libmetal-2022.10.0/lib/system/freertos/device.c
+libmetal-2022.10.0/lib/system/freertos/init.c
+libmetal-2022.10.0/lib/system/freertos/io.c
+libmetal-2022.10.0/lib/system/freertos/io.h
+libmetal-2022.10.0/lib/system/freertos/irq.c
+libmetal-2022.10.0/lib/system/freertos/irq.h
+libmetal-2022.10.0/lib/system/freertos/log.h
+libmetal-2022.10.0/lib/system/freertos/mutex.h
+libmetal-2022.10.0/lib/system/freertos/shmem.c
+libmetal-2022.10.0/lib/system/freertos/sleep.h
+libmetal-2022.10.0/lib/system/freertos/sys.h
+libmetal-2022.10.0/lib/system/freertos/template/
+libmetal-2022.10.0/lib/system/freertos/template/CMakeLists.txt
+libmetal-2022.10.0/lib/system/freertos/template/sys.c
+libmetal-2022.10.0/lib/system/freertos/template/sys.h
+libmetal-2022.10.0/lib/system/freertos/time.c
+libmetal-2022.10.0/lib/system/freertos/xlnx_common/
+libmetal-2022.10.0/lib/system/freertos/xlnx_common/CMakeLists.txt
+libmetal-2022.10.0/lib/system/freertos/xlnx_common/irq.c
+libmetal-2022.10.0/lib/system/freertos/xlnx_common/sys.h
+libmetal-2022.10.0/lib/system/freertos/zynq7/
+libmetal-2022.10.0/lib/system/freertos/zynq7/CMakeLists.txt
+libmetal-2022.10.0/lib/system/freertos/zynq7/sys.c
+libmetal-2022.10.0/lib/system/freertos/zynq7/sys.h
+libmetal-2022.10.0/lib/system/freertos/zynqmp_a53/
+libmetal-2022.10.0/lib/system/freertos/zynqmp_a53/CMakeLists.txt
+libmetal-2022.10.0/lib/system/freertos/zynqmp_a53/sys.c
+libmetal-2022.10.0/lib/system/freertos/zynqmp_a53/sys.h
+libmetal-2022.10.0/lib/system/freertos/zynqmp_r5/
+libmetal-2022.10.0/lib/system/freertos/zynqmp_r5/CMakeLists.txt
+libmetal-2022.10.0/lib/system/freertos/zynqmp_r5/sys.c
+libmetal-2022.10.0/lib/system/freertos/zynqmp_r5/sys.h
+libmetal-2022.10.0/lib/system/generic/
+libmetal-2022.10.0/lib/system/generic/CMakeLists.txt
+libmetal-2022.10.0/lib/system/generic/alloc.h
+libmetal-2022.10.0/lib/system/generic/assert.h
+libmetal-2022.10.0/lib/system/generic/cache.h
+libmetal-2022.10.0/lib/system/generic/condition.c
+libmetal-2022.10.0/lib/system/generic/condition.h
+libmetal-2022.10.0/lib/system/generic/device.c
+libmetal-2022.10.0/lib/system/generic/init.c
+libmetal-2022.10.0/lib/system/generic/io.c
+libmetal-2022.10.0/lib/system/generic/io.h
+libmetal-2022.10.0/lib/system/generic/irq.c
+libmetal-2022.10.0/lib/system/generic/irq.h
+libmetal-2022.10.0/lib/system/generic/log.h
+libmetal-2022.10.0/lib/system/generic/microblaze_generic/
+libmetal-2022.10.0/lib/system/generic/microblaze_generic/CMakeLists.txt
+libmetal-2022.10.0/lib/system/generic/microblaze_generic/sys.c
+libmetal-2022.10.0/lib/system/generic/microblaze_generic/sys.h
+libmetal-2022.10.0/lib/system/generic/mutex.h
+libmetal-2022.10.0/lib/system/generic/shmem.c
+libmetal-2022.10.0/lib/system/generic/sleep.h
+libmetal-2022.10.0/lib/system/generic/sys.h
+libmetal-2022.10.0/lib/system/generic/template/
+libmetal-2022.10.0/lib/system/generic/template/CMakeLists.txt
+libmetal-2022.10.0/lib/system/generic/template/sys.c
+libmetal-2022.10.0/lib/system/generic/template/sys.h
+libmetal-2022.10.0/lib/system/generic/time.c
+libmetal-2022.10.0/lib/system/generic/xlnx_common/
+libmetal-2022.10.0/lib/system/generic/xlnx_common/CMakeLists.txt
+libmetal-2022.10.0/lib/system/generic/xlnx_common/irq.c
+libmetal-2022.10.0/lib/system/generic/xlnx_common/sys.h
+libmetal-2022.10.0/lib/system/generic/zynq7/
+libmetal-2022.10.0/lib/system/generic/zynq7/CMakeLists.txt
+libmetal-2022.10.0/lib/system/generic/zynq7/sys.c
+libmetal-2022.10.0/lib/system/generic/zynq7/sys.h
+libmetal-2022.10.0/lib/system/generic/zynqmp_a53/
+libmetal-2022.10.0/lib/system/generic/zynqmp_a53/CMakeLists.txt
+libmetal-2022.10.0/lib/system/generic/zynqmp_a53/sys.c
+libmetal-2022.10.0/lib/system/generic/zynqmp_a53/sys.h
+libmetal-2022.10.0/lib/system/generic/zynqmp_r5/
+libmetal-2022.10.0/lib/system/generic/zynqmp_r5/CMakeLists.txt
+libmetal-2022.10.0/lib/system/generic/zynqmp_r5/sys.c
+libmetal-2022.10.0/lib/system/generic/zynqmp_r5/sys.h
+libmetal-2022.10.0/lib/system/linux/
+libmetal-2022.10.0/lib/system/linux/CMakeLists.txt
+libmetal-2022.10.0/lib/system/linux/alloc.h
+libmetal-2022.10.0/lib/system/linux/assert.h
+libmetal-2022.10.0/lib/system/linux/cache.h
+libmetal-2022.10.0/lib/system/linux/condition.c
+libmetal-2022.10.0/lib/system/linux/condition.h
+libmetal-2022.10.0/lib/system/linux/device.c
+libmetal-2022.10.0/lib/system/linux/init.c
+libmetal-2022.10.0/lib/system/linux/io.h
+libmetal-2022.10.0/lib/system/linux/irq.c
+libmetal-2022.10.0/lib/system/linux/irq.h
+libmetal-2022.10.0/lib/system/linux/log.h
+libmetal-2022.10.0/lib/system/linux/mutex.h
+libmetal-2022.10.0/lib/system/linux/shmem.c
+libmetal-2022.10.0/lib/system/linux/sleep.h
+libmetal-2022.10.0/lib/system/linux/sys.h
+libmetal-2022.10.0/lib/system/linux/time.c
+libmetal-2022.10.0/lib/system/linux/utilities.c
+libmetal-2022.10.0/lib/system/nuttx/
+libmetal-2022.10.0/lib/system/nuttx/CMakeLists.txt
+libmetal-2022.10.0/lib/system/nuttx/alloc.h
+libmetal-2022.10.0/lib/system/nuttx/assert.h
+libmetal-2022.10.0/lib/system/nuttx/cache.h
+libmetal-2022.10.0/lib/system/nuttx/condition.c
+libmetal-2022.10.0/lib/system/nuttx/condition.h
+libmetal-2022.10.0/lib/system/nuttx/device.c
+libmetal-2022.10.0/lib/system/nuttx/init.c
+libmetal-2022.10.0/lib/system/nuttx/io.c
+libmetal-2022.10.0/lib/system/nuttx/io.h
+libmetal-2022.10.0/lib/system/nuttx/irq.c
+libmetal-2022.10.0/lib/system/nuttx/irq.h
+libmetal-2022.10.0/lib/system/nuttx/log.h
+libmetal-2022.10.0/lib/system/nuttx/mutex.h
+libmetal-2022.10.0/lib/system/nuttx/shmem.c
+libmetal-2022.10.0/lib/system/nuttx/sleep.h
+libmetal-2022.10.0/lib/system/nuttx/sys.h
+libmetal-2022.10.0/lib/system/nuttx/time.c
+libmetal-2022.10.0/lib/system/zephyr/
+libmetal-2022.10.0/lib/system/zephyr/CMakeLists.txt
+libmetal-2022.10.0/lib/system/zephyr/alloc.c
+libmetal-2022.10.0/lib/system/zephyr/alloc.h
+libmetal-2022.10.0/lib/system/zephyr/assert.h
+libmetal-2022.10.0/lib/system/zephyr/cache.h
+libmetal-2022.10.0/lib/system/zephyr/condition.c
+libmetal-2022.10.0/lib/system/zephyr/condition.h
+libmetal-2022.10.0/lib/system/zephyr/device.c
+libmetal-2022.10.0/lib/system/zephyr/init.c
+libmetal-2022.10.0/lib/system/zephyr/io.h
+libmetal-2022.10.0/lib/system/zephyr/irq.c
+libmetal-2022.10.0/lib/system/zephyr/irq.h
+libmetal-2022.10.0/lib/system/zephyr/log.c
+libmetal-2022.10.0/lib/system/zephyr/log.h
+libmetal-2022.10.0/lib/system/zephyr/mutex.h
+libmetal-2022.10.0/lib/system/zephyr/shmem.c
+libmetal-2022.10.0/lib/system/zephyr/sleep.h
+libmetal-2022.10.0/lib/system/zephyr/sys.c
+libmetal-2022.10.0/lib/system/zephyr/sys.h
+libmetal-2022.10.0/lib/system/zephyr/time.c
+libmetal-2022.10.0/lib/time.h
+libmetal-2022.10.0/lib/utilities.h
+libmetal-2022.10.0/lib/version.c
+libmetal-2022.10.0/lib/version.h
+libmetal-2022.10.0/scripts/
+libmetal-2022.10.0/scripts/checkpatch.pl
+libmetal-2022.10.0/scripts/ci/
+libmetal-2022.10.0/scripts/ci/check_compliance.py
+libmetal-2022.10.0/scripts/do_checkpatch.sh
+libmetal-2022.10.0/scripts/gitlint/
+libmetal-2022.10.0/scripts/gitlint/commit_rules.py
+libmetal-2022.10.0/scripts/spelling.txt
+libmetal-2022.10.0/test/
+libmetal-2022.10.0/test/CMakeLists.txt
+libmetal-2022.10.0/test/metal-header-template.c
+libmetal-2022.10.0/test/metal-test.c
+libmetal-2022.10.0/test/metal-test.h
+libmetal-2022.10.0/test/system/
+libmetal-2022.10.0/test/system/CMakeLists.txt
+libmetal-2022.10.0/test/system/freertos/
+libmetal-2022.10.0/test/system/freertos/CMakeLists.txt
+libmetal-2022.10.0/test/system/freertos/alloc.c
+libmetal-2022.10.0/test/system/freertos/atomic.c
+libmetal-2022.10.0/test/system/freertos/irq.c
+libmetal-2022.10.0/test/system/freertos/main.c
+libmetal-2022.10.0/test/system/freertos/mutex.c
+libmetal-2022.10.0/test/system/freertos/sleep.c
+libmetal-2022.10.0/test/system/freertos/threads.c
+libmetal-2022.10.0/test/system/freertos/zynq7/
+libmetal-2022.10.0/test/system/freertos/zynq7/CMakeLists.txt
+libmetal-2022.10.0/test/system/freertos/zynq7/Xilinx.spec
+libmetal-2022.10.0/test/system/freertos/zynq7/lscript.ld
+libmetal-2022.10.0/test/system/freertos/zynqmp_a53/
+libmetal-2022.10.0/test/system/freertos/zynqmp_a53/CMakeLists.txt
+libmetal-2022.10.0/test/system/freertos/zynqmp_a53/lscript.ld
+libmetal-2022.10.0/test/system/freertos/zynqmp_r5/
+libmetal-2022.10.0/test/system/freertos/zynqmp_r5/CMakeLists.txt
+libmetal-2022.10.0/test/system/freertos/zynqmp_r5/lscript.ld
+libmetal-2022.10.0/test/system/generic/
+libmetal-2022.10.0/test/system/generic/CMakeLists.txt
+libmetal-2022.10.0/test/system/generic/alloc.c
+libmetal-2022.10.0/test/system/generic/atomic.c
+libmetal-2022.10.0/test/system/generic/irq.c
+libmetal-2022.10.0/test/system/generic/main.c
+libmetal-2022.10.0/test/system/generic/microblaze_generic/
+libmetal-2022.10.0/test/system/generic/microblaze_generic/CMakeLists.txt
+libmetal-2022.10.0/test/system/generic/microblaze_generic/helper.c
+libmetal-2022.10.0/test/system/generic/microblaze_generic/lscript.ld
+libmetal-2022.10.0/test/system/generic/microblaze_generic/platform.c
+libmetal-2022.10.0/test/system/generic/microblaze_generic/platform.h
+libmetal-2022.10.0/test/system/generic/mutex.c
+libmetal-2022.10.0/test/system/generic/zynq7/
+libmetal-2022.10.0/test/system/generic/zynq7/CMakeLists.txt
+libmetal-2022.10.0/test/system/generic/zynq7/Xilinx.spec
+libmetal-2022.10.0/test/system/generic/zynq7/helper.c
+libmetal-2022.10.0/test/system/generic/zynq7/lscript.ld
+libmetal-2022.10.0/test/system/generic/zynqmp_a53/
+libmetal-2022.10.0/test/system/generic/zynqmp_a53/CMakeLists.txt
+libmetal-2022.10.0/test/system/generic/zynqmp_a53/helper.c
+libmetal-2022.10.0/test/system/generic/zynqmp_a53/lscript.ld
+libmetal-2022.10.0/test/system/generic/zynqmp_r5/
+libmetal-2022.10.0/test/system/generic/zynqmp_r5/CMakeLists.txt
+libmetal-2022.10.0/test/system/generic/zynqmp_r5/helper.c
+libmetal-2022.10.0/test/system/generic/zynqmp_r5/lscript.ld
+libmetal-2022.10.0/test/system/linux/
+libmetal-2022.10.0/test/system/linux/CMakeLists.txt
+libmetal-2022.10.0/test/system/linux/alloc.c
+libmetal-2022.10.0/test/system/linux/atomic.c
+libmetal-2022.10.0/test/system/linux/condition.c
+libmetal-2022.10.0/test/system/linux/irq.c
+libmetal-2022.10.0/test/system/linux/main.c
+libmetal-2022.10.0/test/system/linux/mutex.c
+libmetal-2022.10.0/test/system/linux/shmem.c
+libmetal-2022.10.0/test/system/linux/spinlock.c
+libmetal-2022.10.0/test/system/linux/threads.c
+libmetal-2022.10.0/test/system/linux/zynq/
+libmetal-2022.10.0/test/system/linux/zynq/CMakeLists.txt
+libmetal-2022.10.0/test/system/linux/zynq/device.c
+libmetal-2022.10.0/test/system/zephyr/
+libmetal-2022.10.0/test/system/zephyr/CMakeLists.txt
+libmetal-2022.10.0/test/system/zephyr/alloc.c
+libmetal-2022.10.0/test/system/zephyr/atomic.c
+libmetal-2022.10.0/test/system/zephyr/main.c
+libmetal-2022.10.0/test/system/zephyr/metal-test-internal.h
+libmetal-2022.10.0/test/system/zephyr/mutex.c
+libmetal-2022.10.0/test/version.c
+patching file CMakeLists.txt
+patching file cmake/platforms/uniproton_arm64_gcc.cmake
+patching file cmake/platforms/uniproton_x86_64_gcc.cmake
+patching file lib/system/uniproton/CMakeLists.txt
+patching file lib/system/uniproton/alloc.h
+patching file lib/system/uniproton/assert.h
+patching file lib/system/uniproton/cache.h
+patching file lib/system/uniproton/condition.c
+patching file lib/system/uniproton/condition.h
+patching file lib/system/uniproton/device.c
+patching file lib/system/uniproton/init.c
+patching file lib/system/uniproton/io.h
+patching file lib/system/uniproton/irq.h
+patching file lib/system/uniproton/log.h
+patching file lib/system/uniproton/mutex.h
+patching file lib/system/uniproton/shmem.c
+patching file lib/system/uniproton/sleep.h
+patching file lib/system/uniproton/sys.h
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build
+################# git clone openamp #################
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build
+Cloning into 'OpenAMP'...
+openamp-2022.10.1/
+openamp-2022.10.1/.travis.yml
+openamp-2022.10.1/VERSION
+openamp-2022.10.1/scripts/
+openamp-2022.10.1/scripts/ci/
+openamp-2022.10.1/scripts/ci/check_compliance.py
+openamp-2022.10.1/scripts/do_checkpatch.sh
+openamp-2022.10.1/scripts/gitlint/
+openamp-2022.10.1/scripts/gitlint/commit_rules.py
+openamp-2022.10.1/scripts/checkpatch.pl
+openamp-2022.10.1/scripts/spelling.txt
+openamp-2022.10.1/README.md
+openamp-2022.10.1/apps/
+openamp-2022.10.1/apps/system/
+openamp-2022.10.1/apps/system/linux/
+openamp-2022.10.1/apps/system/linux/machine/
+openamp-2022.10.1/apps/system/linux/machine/zynqmp/
+openamp-2022.10.1/apps/system/linux/machine/zynqmp/helper.c
+openamp-2022.10.1/apps/system/linux/machine/zynqmp/CMakeLists.txt
+openamp-2022.10.1/apps/system/linux/machine/generic/
+openamp-2022.10.1/apps/system/linux/machine/generic/helper.c
+openamp-2022.10.1/apps/system/linux/machine/generic/platform_info.c
+openamp-2022.10.1/apps/system/linux/machine/generic/platform_info.h
+openamp-2022.10.1/apps/system/linux/machine/generic/rsc_table.h
+openamp-2022.10.1/apps/system/linux/machine/generic/CMakeLists.txt
+openamp-2022.10.1/apps/system/linux/machine/generic/rsc_table.c
+openamp-2022.10.1/apps/system/linux/machine/CMakeLists.txt
+openamp-2022.10.1/apps/system/linux/CMakeLists.txt
+openamp-2022.10.1/apps/system/generic/
+openamp-2022.10.1/apps/system/generic/machine/
+openamp-2022.10.1/apps/system/generic/machine/zynq7/
+openamp-2022.10.1/apps/system/generic/machine/zynq7/helper.c
+openamp-2022.10.1/apps/system/generic/machine/zynq7/linker_remote.ld
+openamp-2022.10.1/apps/system/generic/machine/zynq7/linker_master.ld
+openamp-2022.10.1/apps/system/generic/machine/zynq7/Xilinx.spec
+openamp-2022.10.1/apps/system/generic/machine/zynq7/CMakeLists.txt
+openamp-2022.10.1/apps/system/generic/machine/microblaze_generic/
+openamp-2022.10.1/apps/system/generic/machine/microblaze_generic/helper.c
+openamp-2022.10.1/apps/system/generic/machine/microblaze_generic/linker_remote.ld
+openamp-2022.10.1/apps/system/generic/machine/microblaze_generic/CMakeLists.txt
+openamp-2022.10.1/apps/system/generic/machine/zynqmp_r5/
+openamp-2022.10.1/apps/system/generic/machine/zynqmp_r5/helper.c
+openamp-2022.10.1/apps/system/generic/machine/zynqmp_r5/linker_remote.ld
+openamp-2022.10.1/apps/system/generic/machine/zynqmp_r5/linker_large_text.ld
+openamp-2022.10.1/apps/system/generic/machine/zynqmp_r5/CMakeLists.txt
+openamp-2022.10.1/apps/system/generic/machine/CMakeLists.txt
+openamp-2022.10.1/apps/system/generic/CMakeLists.txt
+openamp-2022.10.1/apps/system/CMakeLists.txt
+openamp-2022.10.1/apps/tests/
+openamp-2022.10.1/apps/tests/msg/
+openamp-2022.10.1/apps/tests/msg/rpmsg-ping.h
+openamp-2022.10.1/apps/tests/msg/rpmsg-update.c
+openamp-2022.10.1/apps/tests/msg/rpmsg-nocopy-echo.c
+openamp-2022.10.1/apps/tests/msg/rpmsg-ping.c
+openamp-2022.10.1/apps/tests/msg/rpmsg-nocopy-ping.c
+openamp-2022.10.1/apps/tests/msg/CMakeLists.txt
+openamp-2022.10.1/apps/tests/msg/rpmsg-flood-ping.c
+openamp-2022.10.1/apps/tests/CMakeLists.txt
+openamp-2022.10.1/apps/machine/
+openamp-2022.10.1/apps/machine/zynqmp/
+openamp-2022.10.1/apps/machine/zynqmp/zynqmp_linux_r5_proc.c
+openamp-2022.10.1/apps/machine/zynqmp/platform_info.c
+openamp-2022.10.1/apps/machine/zynqmp/platform_info.h
+openamp-2022.10.1/apps/machine/zynqmp/openamp-linux-userspace.dtsi
+openamp-2022.10.1/apps/machine/zynqmp/CMakeLists.txt
+openamp-2022.10.1/apps/machine/zynq7/
+openamp-2022.10.1/apps/machine/zynq7/zynq_a9_rproc.c
+openamp-2022.10.1/apps/machine/zynq7/platform_info.c
+openamp-2022.10.1/apps/machine/zynq7/platform_info.h
+openamp-2022.10.1/apps/machine/zynq7/platform_info_remoteproc_master.c
+openamp-2022.10.1/apps/machine/zynq7/rsc_table.h
+openamp-2022.10.1/apps/machine/zynq7/CMakeLists.txt
+openamp-2022.10.1/apps/machine/zynq7/rsc_table.c
+openamp-2022.10.1/apps/machine/microblaze_generic/
+openamp-2022.10.1/apps/machine/microblaze_generic/platform_info.c
+openamp-2022.10.1/apps/machine/microblaze_generic/README.md
+openamp-2022.10.1/apps/machine/microblaze_generic/platform_info.h
+openamp-2022.10.1/apps/machine/microblaze_generic/zynqmp_mb_a53_rproc.c
+openamp-2022.10.1/apps/machine/microblaze_generic/rsc_table.h
+openamp-2022.10.1/apps/machine/microblaze_generic/CMakeLists.txt
+openamp-2022.10.1/apps/machine/microblaze_generic/rsc_table.c
+openamp-2022.10.1/apps/machine/zynqmp_r5/
+openamp-2022.10.1/apps/machine/zynqmp_r5/platform_info.c
+openamp-2022.10.1/apps/machine/zynqmp_r5/platform_info.h
+openamp-2022.10.1/apps/machine/zynqmp_r5/zynqmp_r5_a53_rproc.c
+openamp-2022.10.1/apps/machine/zynqmp_r5/rsc_table.h
+openamp-2022.10.1/apps/machine/zynqmp_r5/CMakeLists.txt
+openamp-2022.10.1/apps/machine/zynqmp_r5/rsc_table.c
+openamp-2022.10.1/apps/machine/CMakeLists.txt
+openamp-2022.10.1/apps/CMakeLists.txt
+openamp-2022.10.1/apps/examples/
+openamp-2022.10.1/apps/examples/load_fw/
+openamp-2022.10.1/apps/examples/load_fw/mem_image_store.c
+openamp-2022.10.1/apps/examples/load_fw/platform_info.c
+openamp-2022.10.1/apps/examples/load_fw/lscript.ld
+openamp-2022.10.1/apps/examples/load_fw/platform_info.h
+openamp-2022.10.1/apps/examples/load_fw/load_fw.c
+openamp-2022.10.1/apps/examples/load_fw/zynqmp_apu_lcm_rproc_example.c
+openamp-2022.10.1/apps/examples/load_fw/zynqmp_r5_lcm_rproc_example.c
+openamp-2022.10.1/apps/examples/load_fw/zynqmp_rpu_lcm_rproc_example.c
+openamp-2022.10.1/apps/examples/load_fw/CMakeLists.txt
+openamp-2022.10.1/apps/examples/load_fw/common.h
+openamp-2022.10.1/apps/examples/matrix_multiply/
+openamp-2022.10.1/apps/examples/matrix_multiply/matrix_multiplyd.c
+openamp-2022.10.1/apps/examples/matrix_multiply/matrix_multiply.c
+openamp-2022.10.1/apps/examples/matrix_multiply/matrix_multiply.h
+openamp-2022.10.1/apps/examples/matrix_multiply/CMakeLists.txt
+openamp-2022.10.1/apps/examples/linux_rpc_demo/
+openamp-2022.10.1/apps/examples/linux_rpc_demo/linux-rpmsg-rpc-demo.h
+openamp-2022.10.1/apps/examples/linux_rpc_demo/README.md
+openamp-2022.10.1/apps/examples/linux_rpc_demo/linux_rpc_demod.c
+openamp-2022.10.1/apps/examples/linux_rpc_demo/linux_rpc_demo.c
+openamp-2022.10.1/apps/examples/linux_rpc_demo/CMakeLists.txt
+openamp-2022.10.1/apps/examples/rpc_demo/
+openamp-2022.10.1/apps/examples/rpc_demo/rpmsg-rpc-demo.h
+openamp-2022.10.1/apps/examples/rpc_demo/rpc_demo.c
+openamp-2022.10.1/apps/examples/rpc_demo/rpc_demod.c
+openamp-2022.10.1/apps/examples/rpc_demo/CMakeLists.txt
+openamp-2022.10.1/apps/examples/rpmsg_sample_echo/
+openamp-2022.10.1/apps/examples/rpmsg_sample_echo/rpmsg-sample-echo.c
+openamp-2022.10.1/apps/examples/rpmsg_sample_echo/rpmsg-sample-ping.c
+openamp-2022.10.1/apps/examples/rpmsg_sample_echo/CMakeLists.txt
+openamp-2022.10.1/apps/examples/CMakeLists.txt
+openamp-2022.10.1/apps/examples/echo/
+openamp-2022.10.1/apps/examples/echo/rpmsg-ping.c
+openamp-2022.10.1/apps/examples/echo/rpmsg-echo.h
+openamp-2022.10.1/apps/examples/echo/CMakeLists.txt
+openamp-2022.10.1/apps/examples/echo/rpmsg-echo.c
+openamp-2022.10.1/apps/examples/nocopy_echo/
+openamp-2022.10.1/apps/examples/nocopy_echo/rpmsg-nocopy-echo.c
+openamp-2022.10.1/apps/examples/nocopy_echo/rpmsg-echo.h
+openamp-2022.10.1/apps/examples/nocopy_echo/rpmsg-nocopy-ping.c
+openamp-2022.10.1/apps/examples/nocopy_echo/CMakeLists.txt
+openamp-2022.10.1/docs/
+openamp-2022.10.1/docs/apps/
+openamp-2022.10.1/docs/apps/matrix_multiply/
+openamp-2022.10.1/docs/apps/matrix_multiply/README.md
+openamp-2022.10.1/docs/apps/rpc_demo/
+openamp-2022.10.1/docs/apps/rpc_demo/README.md
+openamp-2022.10.1/docs/apps/echo_test/
+openamp-2022.10.1/docs/apps/echo_test/README.md
+openamp-2022.10.1/docs/img-src/
+openamp-2022.10.1/docs/img-src/coprocessor-rpmsg-static-ep.gv
+openamp-2022.10.1/docs/img-src/rproc-lcm-state-machine.gv
+openamp-2022.10.1/docs/img-src/coprocessor-rpmsg-ns.gv
+openamp-2022.10.1/docs/img-src/gen-graph.py
+openamp-2022.10.1/docs/img-src/coprocessor-rpmsg-ns-dynamic.gv
+openamp-2022.10.1/docs/img/
+openamp-2022.10.1/docs/img/coprocessor-rpmsg-static-ep.png
+openamp-2022.10.1/docs/img/coprocessor-rpmsg-ns.png
+openamp-2022.10.1/docs/img/rproc-lcm-state-machine.png
+openamp-2022.10.1/docs/img/coprocessor-rpmsg-ns-dynamic.png
+openamp-2022.10.1/docs/data-structure.md
+openamp-2022.10.1/docs/remoteproc-design.md
+openamp-2022.10.1/docs/rpmsg-design.md
+openamp-2022.10.1/cmake/
+openamp-2022.10.1/cmake/options.cmake
+openamp-2022.10.1/cmake/platforms/
+openamp-2022.10.1/cmake/platforms/cross_generic_gcc.cmake
+openamp-2022.10.1/cmake/platforms/zynqmp_a53_generic.cmake
+openamp-2022.10.1/cmake/platforms/cross_linux_gcc.cmake
+openamp-2022.10.1/cmake/platforms/zynq7_linux.cmake
+openamp-2022.10.1/cmake/platforms/zynq7_generic.cmake
+openamp-2022.10.1/cmake/platforms/zynqmp_linux.cmake
+openamp-2022.10.1/cmake/platforms/zynqmp_r5_generic.cmake
+openamp-2022.10.1/cmake/collect.cmake
+openamp-2022.10.1/cmake/modules/
+openamp-2022.10.1/cmake/modules/FindLibmetal.cmake
+openamp-2022.10.1/cmake/syscheck.cmake
+openamp-2022.10.1/cmake/depends.cmake
+openamp-2022.10.1/.gitlint
+openamp-2022.10.1/.gitignore
+openamp-2022.10.1/CMakeLists.txt
+openamp-2022.10.1/lib/
+openamp-2022.10.1/lib/include/
+openamp-2022.10.1/lib/include/openamp/
+openamp-2022.10.1/lib/include/openamp/rpmsg_rpc_client_server.h
+openamp-2022.10.1/lib/include/openamp/remoteproc_loader.h
+openamp-2022.10.1/lib/include/openamp/elf_loader.h
+openamp-2022.10.1/lib/include/openamp/open_amp.h
+openamp-2022.10.1/lib/include/openamp/virtio.h
+openamp-2022.10.1/lib/include/openamp/rsc_table_parser.h
+openamp-2022.10.1/lib/include/openamp/rpmsg_retarget.h
+openamp-2022.10.1/lib/include/openamp/virtio_ring.h
+openamp-2022.10.1/lib/include/openamp/remoteproc_virtio.h
+openamp-2022.10.1/lib/include/openamp/virtqueue.h
+openamp-2022.10.1/lib/include/openamp/version.h
+openamp-2022.10.1/lib/include/openamp/remoteproc.h
+openamp-2022.10.1/lib/include/openamp/rpmsg_virtio.h
+openamp-2022.10.1/lib/include/openamp/rpmsg.h
+openamp-2022.10.1/lib/virtio/
+openamp-2022.10.1/lib/virtio/virtqueue.c
+openamp-2022.10.1/lib/virtio/virtio.c
+openamp-2022.10.1/lib/virtio/CMakeLists.txt
+openamp-2022.10.1/lib/proxy/
+openamp-2022.10.1/lib/proxy/rpmsg_retarget.c
+openamp-2022.10.1/lib/proxy/CMakeLists.txt
+openamp-2022.10.1/lib/remoteproc/
+openamp-2022.10.1/lib/remoteproc/rsc_table_parser.c
+openamp-2022.10.1/lib/remoteproc/elf_loader.c
+openamp-2022.10.1/lib/remoteproc/remoteproc.c
+openamp-2022.10.1/lib/remoteproc/remoteproc_virtio.c
+openamp-2022.10.1/lib/remoteproc/CMakeLists.txt
+openamp-2022.10.1/lib/service/
+openamp-2022.10.1/lib/service/rpmsg/
+openamp-2022.10.1/lib/service/rpmsg/rpc/
+openamp-2022.10.1/lib/service/rpmsg/rpc/rpmsg_rpc_client.c
+openamp-2022.10.1/lib/service/rpmsg/rpc/rpmsg_rpc_server.c
+openamp-2022.10.1/lib/service/rpmsg/rpc/CMakeLists.txt
+openamp-2022.10.1/lib/version.c
+openamp-2022.10.1/lib/rpmsg/
+openamp-2022.10.1/lib/rpmsg/rpmsg_virtio.c
+openamp-2022.10.1/lib/rpmsg/rpmsg.c
+openamp-2022.10.1/lib/rpmsg/rpmsg_internal.h
+openamp-2022.10.1/lib/rpmsg/CMakeLists.txt
+openamp-2022.10.1/lib/version.h.in
+openamp-2022.10.1/lib/CMakeLists.txt
+openamp-2022.10.1/MAINTAINERS.md
+openamp-2022.10.1/LICENSE.md
+openamp-2022.10.1/.checkpatch.conf
+openamp-2022.10.1/.github/
+openamp-2022.10.1/.github/workflows/
+openamp-2022.10.1/.github/workflows/compliance.yml
+openamp-2022.10.1/.github/workflows/continuous-integration.yml
+openamp-2022.10.1/.github/actions/
+openamp-2022.10.1/.github/actions/build_ci/
+openamp-2022.10.1/.github/actions/build_ci/entrypoint.sh
+openamp-2022.10.1/.github/actions/build_ci/README.md
+openamp-2022.10.1/.github/actions/build_ci/action.yml
+openamp-2022.10.1/.github/actions/build_ci/Dockerfile
+patching file CMakeLists.txt
+patching file cmake/depends.cmake
+patching file cmake/platforms/uniproton_arm64_gcc.cmake
+patching file cmake/platforms/uniproton_x86_64_gcc.cmake
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build
+######################### build metal #########################
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is GNU 14.3.1
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Detecting C compiler ABI info
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- libmetal version: 1.3.0 (/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal)
+-- Build type:  
+-- Host:    Linux/x86_64
+-- Target:  Uniproton/arm
+-- Machine: Generic
+-- Looking for include file stdatomic.h
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Looking for include file stdatomic.h - not found
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build
+/usr/bin/cmake -S/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal -B/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/CMakeFiles /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build'
+make  -f lib/CMakeFiles/metal-static.dir/build.make lib/CMakeFiles/metal-static.dir/depend
+make[2]: Entering directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build'
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/CMakeFiles/metal-static.dir/DependInfo.cmake "--color="
+make[2]: Leaving directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build'
+make  -f lib/CMakeFiles/metal-static.dir/build.make lib/CMakeFiles/metal-static.dir/build
+make[2]: Entering directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build'
+[  7%] Building C object lib/CMakeFiles/metal-static.dir/dma.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/dma.c.obj -MF CMakeFiles/metal-static.dir/dma.c.obj.d -o CMakeFiles/metal-static.dir/dma.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/dma.c
+[ 14%] Building C object lib/CMakeFiles/metal-static.dir/device.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/device.c.obj -MF CMakeFiles/metal-static.dir/device.c.obj.d -o CMakeFiles/metal-static.dir/device.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/device.c
+[ 21%] Building C object lib/CMakeFiles/metal-static.dir/init.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/init.c.obj -MF CMakeFiles/metal-static.dir/init.c.obj.d -o CMakeFiles/metal-static.dir/init.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/init.c
+[ 28%] Building C object lib/CMakeFiles/metal-static.dir/io.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/io.c.obj -MF CMakeFiles/metal-static.dir/io.c.obj.d -o CMakeFiles/metal-static.dir/io.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/io.c
+[ 35%] Building C object lib/CMakeFiles/metal-static.dir/irq.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/irq.c.obj -MF CMakeFiles/metal-static.dir/irq.c.obj.d -o CMakeFiles/metal-static.dir/irq.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/irq.c
+[ 42%] Building C object lib/CMakeFiles/metal-static.dir/log.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/log.c.obj -MF CMakeFiles/metal-static.dir/log.c.obj.d -o CMakeFiles/metal-static.dir/log.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/log.c
+[ 50%] Building C object lib/CMakeFiles/metal-static.dir/shmem.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/shmem.c.obj -MF CMakeFiles/metal-static.dir/shmem.c.obj.d -o CMakeFiles/metal-static.dir/shmem.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/shmem.c
+[ 57%] Building C object lib/CMakeFiles/metal-static.dir/softirq.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/softirq.c.obj -MF CMakeFiles/metal-static.dir/softirq.c.obj.d -o CMakeFiles/metal-static.dir/softirq.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/softirq.c
+[ 64%] Building C object lib/CMakeFiles/metal-static.dir/version.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/version.c.obj -MF CMakeFiles/metal-static.dir/version.c.obj.d -o CMakeFiles/metal-static.dir/version.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/version.c
+[ 71%] Building C object lib/CMakeFiles/metal-static.dir/system/uniproton/condition.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/system/uniproton/condition.c.obj -MF CMakeFiles/metal-static.dir/system/uniproton/condition.c.obj.d -o CMakeFiles/metal-static.dir/system/uniproton/condition.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/system/uniproton/condition.c
+[ 78%] Building C object lib/CMakeFiles/metal-static.dir/system/uniproton/device.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/system/uniproton/device.c.obj -MF CMakeFiles/metal-static.dir/system/uniproton/device.c.obj.d -o CMakeFiles/metal-static.dir/system/uniproton/device.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/system/uniproton/device.c
+[ 85%] Building C object lib/CMakeFiles/metal-static.dir/system/uniproton/init.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/system/uniproton/init.c.obj -MF CMakeFiles/metal-static.dir/system/uniproton/init.c.obj.d -o CMakeFiles/metal-static.dir/system/uniproton/init.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/system/uniproton/init.c
+[ 92%] Building C object lib/CMakeFiles/metal-static.dir/system/uniproton/shmem.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DMETAL_INTERNAL -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib/include -nostdlib -nostdinc -MD -MT lib/CMakeFiles/metal-static.dir/system/uniproton/shmem.c.obj -MF CMakeFiles/metal-static.dir/system/uniproton/shmem.c.obj.d -o CMakeFiles/metal-static.dir/system/uniproton/shmem.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/libmetal/lib/system/uniproton/shmem.c
+[100%] Linking C static library libmetal.a
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /usr/bin/cmake -P CMakeFiles/metal-static.dir/cmake_clean_target.cmake
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/lib && /usr/bin/cmake -E cmake_link_script CMakeFiles/metal-static.dir/link.txt --verbose=1
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-ar qc libmetal.a "CMakeFiles/metal-static.dir/dma.c.obj" "CMakeFiles/metal-static.dir/device.c.obj" "CMakeFiles/metal-static.dir/init.c.obj" "CMakeFiles/metal-static.dir/io.c.obj" "CMakeFiles/metal-static.dir/irq.c.obj" "CMakeFiles/metal-static.dir/log.c.obj" "CMakeFiles/metal-static.dir/shmem.c.obj" "CMakeFiles/metal-static.dir/softirq.c.obj" "CMakeFiles/metal-static.dir/version.c.obj" "CMakeFiles/metal-static.dir/system/uniproton/condition.c.obj" "CMakeFiles/metal-static.dir/system/uniproton/device.c.obj" "CMakeFiles/metal-static.dir/system/uniproton/init.c.obj" "CMakeFiles/metal-static.dir/system/uniproton/shmem.c.obj"
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-ranlib libmetal.a
+make[2]: Leaving directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build'
+[100%] Built target metal-static
+make[1]: Leaving directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build'
+/usr/bin/cmake -E cmake_progress_start /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build/CMakeFiles 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[1]: Entering directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build'
+make[1]: Nothing to be done for 'preinstall'.
+make[1]: Leaving directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/libmetal/build'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: ""
+-- Installing: ../output/usr/local/include/metal/alloc.h
+-- Installing: ../output/usr/local/include/metal/assert.h
+-- Installing: ../output/usr/local/include/metal/atomic.h
+-- Installing: ../output/usr/local/include/metal/cache.h
+-- Installing: ../output/usr/local/include/metal/compiler.h
+-- Installing: ../output/usr/local/include/metal/condition.h
+-- Installing: ../output/usr/local/include/metal/config.h
+-- Installing: ../output/usr/local/include/metal/cpu.h
+-- Installing: ../output/usr/local/include/metal/device.h
+-- Installing: ../output/usr/local/include/metal/errno.h
+-- Installing: ../output/usr/local/include/metal/dma.h
+-- Installing: ../output/usr/local/include/metal/io.h
+-- Installing: ../output/usr/local/include/metal/irq.h
+-- Installing: ../output/usr/local/include/metal/irq_controller.h
+-- Installing: ../output/usr/local/include/metal/list.h
+-- Installing: ../output/usr/local/include/metal/log.h
+-- Installing: ../output/usr/local/include/metal/mutex.h
+-- Installing: ../output/usr/local/include/metal/shmem.h
+-- Installing: ../output/usr/local/include/metal/sleep.h
+-- Installing: ../output/usr/local/include/metal/softirq.h
+-- Installing: ../output/usr/local/include/metal/spinlock.h
+-- Installing: ../output/usr/local/include/metal/sys.h
+-- Installing: ../output/usr/local/include/metal/time.h
+-- Installing: ../output/usr/local/include/metal/utilities.h
+-- Installing: ../output/usr/local/include/metal/version.h
+-- Installing: ../output/usr/local/include/metal/compiler/armcc/errno.h
+-- Installing: ../output/usr/local/include/metal/compiler/gcc/atomic.h
+-- Installing: ../output/usr/local/include/metal/compiler/gcc/compiler.h
+-- Installing: ../output/usr/local/include/metal/compiler/iar/compiler.h
+-- Installing: ../output/usr/local/include/metal/compiler/iar/errno.h
+-- Installing: ../output/usr/local/include/metal/processor/arm/atomic.h
+-- Installing: ../output/usr/local/include/metal/processor/arm/cpu.h
+-- Installing: ../output/usr/local/include/metal/system/uniproton/alloc.h
+-- Installing: ../output/usr/local/include/metal/system/uniproton/assert.h
+-- Installing: ../output/usr/local/include/metal/system/uniproton/cache.h
+-- Installing: ../output/usr/local/include/metal/system/uniproton/condition.h
+-- Installing: ../output/usr/local/include/metal/system/uniproton/io.h
+-- Installing: ../output/usr/local/include/metal/system/uniproton/irq.h
+-- Installing: ../output/usr/local/include/metal/system/uniproton/log.h
+-- Installing: ../output/usr/local/include/metal/system/uniproton/mutex.h
+-- Installing: ../output/usr/local/include/metal/system/uniproton/sleep.h
+-- Installing: ../output/usr/local/include/metal/system/uniproton/sys.h
+-- Installing: ../output/usr/local/lib/libmetal.a
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build
+######################### build openamp #########################
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is GNU 14.3.1
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Detecting C compiler ABI info
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- open-amp version: 1.3.1 (/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp)
+-- Host:    Linux/x86_64
+-- Target:  Uniproton/arm
+-- Machine: Generic
+-- C_FLAGS : -nostdlib -nostdinc -Wall -Wextra
+-- Looking for include file stdatomic.h
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Looking for include file stdatomic.h - not found
+-- Looking for include file fcntl.h
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Looking for include file fcntl.h - not found
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build
+/usr/bin/cmake -S/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp -B/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/CMakeFiles /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build'
+make  -f lib/CMakeFiles/open_amp-static.dir/build.make lib/CMakeFiles/open_amp-static.dir/depend
+make[2]: Entering directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build'
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib/CMakeFiles/open_amp-static.dir/DependInfo.cmake "--color="
+make[2]: Leaving directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build'
+make  -f lib/CMakeFiles/open_amp-static.dir/build.make lib/CMakeFiles/open_amp-static.dir/build
+make[2]: Entering directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build'
+[ 10%] Building C object lib/CMakeFiles/open_amp-static.dir/version.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DOPENAMP_VERSION=\"1.3.1\" -DOPENAMP_VERSION_MAJOR=1 -DOPENAMP_VERSION_MINOR=3 -DOPENAMP_VERSION_PATCH=1 -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../config -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/include/generated/openamp -nostdlib -nostdinc -Wall -Wextra -MD -MT lib/CMakeFiles/open_amp-static.dir/version.c.obj -MF CMakeFiles/open_amp-static.dir/version.c.obj.d -o CMakeFiles/open_amp-static.dir/version.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/version.c
+[ 20%] Building C object lib/CMakeFiles/open_amp-static.dir/virtio/virtio.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DOPENAMP_VERSION=\"1.3.1\" -DOPENAMP_VERSION_MAJOR=1 -DOPENAMP_VERSION_MINOR=3 -DOPENAMP_VERSION_PATCH=1 -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../config -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/include/generated/openamp -nostdlib -nostdinc -Wall -Wextra -MD -MT lib/CMakeFiles/open_amp-static.dir/virtio/virtio.c.obj -MF CMakeFiles/open_amp-static.dir/virtio/virtio.c.obj.d -o CMakeFiles/open_amp-static.dir/virtio/virtio.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/virtio/virtio.c
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/virtqueue.h:22,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/virtio.h:10,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/virtio/virtio.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+[ 30%] Building C object lib/CMakeFiles/open_amp-static.dir/virtio/virtqueue.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DOPENAMP_VERSION=\"1.3.1\" -DOPENAMP_VERSION_MAJOR=1 -DOPENAMP_VERSION_MINOR=3 -DOPENAMP_VERSION_PATCH=1 -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../config -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/include/generated/openamp -nostdlib -nostdinc -Wall -Wextra -MD -MT lib/CMakeFiles/open_amp-static.dir/virtio/virtqueue.c.obj -MF CMakeFiles/open_amp-static.dir/virtio/virtqueue.c.obj.d -o CMakeFiles/open_amp-static.dir/virtio/virtqueue.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/virtio/virtqueue.c
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/virtqueue.h:22,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/virtio.h:10,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/virtio/virtqueue.c:9:
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+[ 40%] Building C object lib/CMakeFiles/open_amp-static.dir/rpmsg/rpmsg.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DOPENAMP_VERSION=\"1.3.1\" -DOPENAMP_VERSION_MAJOR=1 -DOPENAMP_VERSION_MINOR=3 -DOPENAMP_VERSION_PATCH=1 -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../config -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/include/generated/openamp -nostdlib -nostdinc -Wall -Wextra -MD -MT lib/CMakeFiles/open_amp-static.dir/rpmsg/rpmsg.c.obj -MF CMakeFiles/open_amp-static.dir/rpmsg/rpmsg.c.obj.d -o CMakeFiles/open_amp-static.dir/rpmsg/rpmsg.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg.c
+[ 50%] Building C object lib/CMakeFiles/open_amp-static.dir/rpmsg/rpmsg_virtio.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DOPENAMP_VERSION=\"1.3.1\" -DOPENAMP_VERSION_MAJOR=1 -DOPENAMP_VERSION_MINOR=3 -DOPENAMP_VERSION_PATCH=1 -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../config -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/include/generated/openamp -nostdlib -nostdinc -Wall -Wextra -MD -MT lib/CMakeFiles/open_amp-static.dir/rpmsg/rpmsg_virtio.c.obj -MF CMakeFiles/open_amp-static.dir/rpmsg/rpmsg_virtio.c.obj.d -o CMakeFiles/open_amp-static.dir/rpmsg/rpmsg_virtio.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/rpmsg_virtio.h:15,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c:15:
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c: In function 'rpmsg_virtio_send_offchannel_nocopy':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c:408:13: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  408 |         int status;
+      |             ^~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c: In function 'rpmsg_virtio_send_offchannel_raw':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c:499:13: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  499 |         int status;
+      |             ^~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c: In function 'rpmsg_virtio_rx_callback':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c:551:13: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  551 |         int status;
+      |             ^~~~~~
+[ 60%] Building C object lib/CMakeFiles/open_amp-static.dir/remoteproc/elf_loader.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DOPENAMP_VERSION=\"1.3.1\" -DOPENAMP_VERSION_MAJOR=1 -DOPENAMP_VERSION_MINOR=3 -DOPENAMP_VERSION_PATCH=1 -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../config -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/include/generated/openamp -nostdlib -nostdinc -Wall -Wextra -MD -MT lib/CMakeFiles/open_amp-static.dir/remoteproc/elf_loader.c.obj -MF CMakeFiles/open_amp-static.dir/remoteproc/elf_loader.c.obj.d -o CMakeFiles/open_amp-static.dir/remoteproc/elf_loader.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/remoteproc/elf_loader.c
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/remoteproc.h:15,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/elf_loader.h:11,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/remoteproc/elf_loader.c:11:
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+[ 70%] Building C object lib/CMakeFiles/open_amp-static.dir/remoteproc/remoteproc.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DOPENAMP_VERSION=\"1.3.1\" -DOPENAMP_VERSION_MAJOR=1 -DOPENAMP_VERSION_MINOR=3 -DOPENAMP_VERSION_PATCH=1 -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../config -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/include/generated/openamp -nostdlib -nostdinc -Wall -Wextra -MD -MT lib/CMakeFiles/open_amp-static.dir/remoteproc/remoteproc.c.obj -MF CMakeFiles/open_amp-static.dir/remoteproc/remoteproc.c.obj.d -o CMakeFiles/open_amp-static.dir/remoteproc/remoteproc.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/remoteproc/remoteproc.c
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/remoteproc.h:15,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/elf_loader.h:11,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/remoteproc/remoteproc.c:12:
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+[ 80%] Building C object lib/CMakeFiles/open_amp-static.dir/remoteproc/remoteproc_virtio.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DOPENAMP_VERSION=\"1.3.1\" -DOPENAMP_VERSION_MAJOR=1 -DOPENAMP_VERSION_MINOR=3 -DOPENAMP_VERSION_PATCH=1 -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../config -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/include/generated/openamp -nostdlib -nostdinc -Wall -Wextra -MD -MT lib/CMakeFiles/open_amp-static.dir/remoteproc/remoteproc_virtio.c.obj -MF CMakeFiles/open_amp-static.dir/remoteproc/remoteproc_virtio.c.obj.d -o CMakeFiles/open_amp-static.dir/remoteproc/remoteproc_virtio.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/remoteproc/remoteproc_virtio.c
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/remoteproc.h:15,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/remoteproc/remoteproc_virtio.c:12:
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+[ 90%] Building C object lib/CMakeFiles/open_amp-static.dir/remoteproc/rsc_table_parser.c.obj
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib && /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DOPENAMP_VERSION=\"1.3.1\" -DOPENAMP_VERSION_MAJOR=1 -DOPENAMP_VERSION_MINOR=3 -DOPENAMP_VERSION_PATCH=1 -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../include/libc/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../config -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/include -I/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/include/generated/openamp -nostdlib -nostdinc -Wall -Wextra -MD -MT lib/CMakeFiles/open_amp-static.dir/remoteproc/rsc_table_parser.c.obj -MF CMakeFiles/open_amp-static.dir/remoteproc/rsc_table_parser.c.obj.d -o CMakeFiles/open_amp-static.dir/remoteproc/rsc_table_parser.c.obj -c /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/remoteproc/rsc_table_parser.c
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/lib/remoteproc/rsc_table_parser.c:9:
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+[100%] Linking C static library libopen_amp.a
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib && /usr/bin/cmake -P CMakeFiles/open_amp-static.dir/cmake_clean_target.cmake
+cd /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/lib && /usr/bin/cmake -E cmake_link_script CMakeFiles/open_amp-static.dir/link.txt --verbose=1
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-ar qc libopen_amp.a "CMakeFiles/open_amp-static.dir/version.c.obj" "CMakeFiles/open_amp-static.dir/virtio/virtio.c.obj" "CMakeFiles/open_amp-static.dir/virtio/virtqueue.c.obj" "CMakeFiles/open_amp-static.dir/rpmsg/rpmsg.c.obj" "CMakeFiles/open_amp-static.dir/rpmsg/rpmsg_virtio.c.obj" "CMakeFiles/open_amp-static.dir/remoteproc/elf_loader.c.obj" "CMakeFiles/open_amp-static.dir/remoteproc/remoteproc.c.obj" "CMakeFiles/open_amp-static.dir/remoteproc/remoteproc_virtio.c.obj" "CMakeFiles/open_amp-static.dir/remoteproc/rsc_table_parser.c.obj"
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-ranlib libopen_amp.a
+make[2]: Leaving directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build'
+[100%] Built target open_amp-static
+make[1]: Leaving directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build'
+/usr/bin/cmake -E cmake_progress_start /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build/CMakeFiles 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[1]: Entering directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build'
+make[1]: Nothing to be done for 'preinstall'.
+make[1]: Leaving directory '/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/open-amp/build'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: ""
+-- Installing: ../output/usr/local/lib/libopen_amp.a
+-- Up-to-date: ../output/usr/local/include/openamp
+-- Up-to-date: ../output/usr/local/include/openamp/rpmsg.h
+-- Up-to-date: ../output/usr/local/include/openamp/elf_loader.h
+-- Up-to-date: ../output/usr/local/include/openamp/remoteproc_loader.h
+-- Up-to-date: ../output/usr/local/include/openamp/rsc_table_parser.h
+-- Up-to-date: ../output/usr/local/include/openamp/version.h
+-- Up-to-date: ../output/usr/local/include/openamp/rpmsg_virtio.h
+-- Up-to-date: ../output/usr/local/include/openamp/open_amp.h
+-- Up-to-date: ../output/usr/local/include/openamp/rpmsg_retarget.h
+-- Up-to-date: ../output/usr/local/include/openamp/virtio_ring.h
+-- Up-to-date: ../output/usr/local/include/openamp/rpmsg_rpc_client_server.h
+-- Up-to-date: ../output/usr/local/include/openamp/virtio.h
+-- Up-to-date: ../output/usr/local/include/openamp/remoteproc.h
+-- Up-to-date: ../output/usr/local/include/openamp/virtqueue.h
+-- Up-to-date: ../output/usr/local/include/openamp/remoteproc_virtio.h
+-- Up-to-date: ../output/usr/local/include/openamp
+-- Installing: ../output/usr/local/include/openamp/version_def.h
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/rk3572_mica
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build/rk3572_mica /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build
+[  6%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 12%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 25%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 25%] Built target mica
+[ 31%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 37%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 43%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 50%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 56%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 62%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 62%] Built target bsp
+[ 68%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 68%] Built target config
+[ 75%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 75%] Built target rpmsg
+[ 81%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+[ 87%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 93%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 93%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/build

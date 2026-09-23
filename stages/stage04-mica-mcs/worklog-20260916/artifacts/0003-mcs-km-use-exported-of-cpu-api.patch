@@ -1,0 +1,77 @@
+--- a/mcs_km.c
++++ b/mcs_km.c
+@@ -21,7 +21,6 @@
+ #include <linux/of_address.h>
+ #include <linux/of_irq.h>
+ #include <linux/version.h>
+-#include <linux/kprobes.h>
+ 
+ #define MCS_DEVICE_NAME		"mcs"
+ 
+@@ -124,38 +123,29 @@ static unsigned long invoke_psci_fn(unsigned long function_id,
+ 	return res.a0;
+ }
+ 
+-static u64 (*cpu_logical_map_fn)(unsigned int cpu);
+-
+-static int get_cpu_logical_map(void)
+-{
+-	int ret;
+-	struct kprobe probe = {
+-		.symbol_name = "cpu_logical_map",
+-	};
+-
+-	ret = register_kprobe(&probe);
+-	if (ret < 0)
+-		return ret;
+-
+-	cpu_logical_map_fn = (void *)probe.addr;
+-	unregister_kprobe(&probe);
+-	return 0;
+-}
+-
+ /**
+- * Enumerate the possible CPU set from __cpu_logical_map[]
+- * and return the MPIDR values related to the @cpu.
+- * If the @cpu is not found or the hwid is invalid, return INVALID_HWID.
++ * Return the MPIDR value associated with @cpu from its CPU device-tree node.
++ * If the CPU node or its reg property is not found, return INVALID_HWID.
+  */
+ static u64 get_cpu_mpidr(u32 cpu)
+ {
++	struct device_node *cpu_node;
++	u32 mpidr;
++
+ 	if (cpu >= NR_CPUS)
+ 		return INVALID_HWID;
+ 
+-	if (cpu_logical_map_fn != NULL)
+-		return cpu_logical_map_fn(cpu);
++	cpu_node = of_get_cpu_node(cpu, NULL);
++	if (!cpu_node)
++		return INVALID_HWID;
+ 
+-	return INVALID_HWID;
++	if (of_property_read_u32(cpu_node, "reg", &mpidr)) {
++		of_node_put(cpu_node);
++		return INVALID_HWID;
++	}
++	of_node_put(cpu_node);
++
++	return mpidr;
+ }
+ 
+ static irqreturn_t handle_clientos_ipi(int irq, void *data)
+@@ -555,12 +545,6 @@ static int __init mcs_dev_init(void)
+ 		return ret;
+ 	}
+ 
+-	ret = get_cpu_logical_map();
+-	if (ret) {
+-		pr_err("Failed to get cpu_logical_map symbol, ret = %d\n", ret);
+-		return ret;
+-	}
+-
+ 	ret = init_reserved_mem();
+ 	if (ret) {
+ 		pr_err("Failed to get mcs mem, ret = %d\n", ret);

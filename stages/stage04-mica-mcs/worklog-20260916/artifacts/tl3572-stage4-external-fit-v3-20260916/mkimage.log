@@ -1,0 +1,41 @@
+FIT description: FIT image with Linux kernel, FDT blob and resource
+Created:         Wed Sep 16 16:48:23 2026
+ Image 0 (fdt)
+  Description:  unavailable
+  Created:      Wed Sep 16 16:48:23 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    262543 Bytes = 256.39 KiB = 0.25 MiB
+  Architecture: AArch64
+  Load Address: 0xffffff00
+  Hash algo:    sha256
+  Hash value:   195535ebebee247d99cda7596dbb62094a7465a24a2774df975a58133edcd0fe
+ Image 1 (kernel)
+  Description:  unavailable
+  Created:      Wed Sep 16 16:48:23 2026
+  Type:         Kernel Image
+  Compression:  uncompressed
+  Data Size:    40081920 Bytes = 39142.50 KiB = 38.23 MiB
+  Architecture: AArch64
+  OS:           Linux
+  Load Address: 0xffffff01
+  Entry Point:  0xffffff01
+  Hash algo:    sha256
+  Hash value:   e69eba8956438f350ea83864761d46afb3ff9e482a20af893765a51ce66d31d8
+ Image 2 (resource)
+  Description:  unavailable
+  Created:      Wed Sep 16 16:48:23 2026
+  Type:         Multi-File Image
+  Compression:  uncompressed
+  Data Size:    300544 Bytes = 293.50 KiB = 0.29 MiB
+  Hash algo:    sha256
+  Hash value:   7508f47d084c56cac9b92fc44ae5dc4c4c74bb481d2860ac52d7cd10bd520269
+ Default Configuration: 'conf'
+ Configuration 0 (conf)
+  Description:  unavailable
+  Kernel:       kernel
+  FDT:          fdt
+  Sign algo:    sha256,rsa2048:dev
+  Sign padding: pss
+  Sign value:   unavailable
+  Timestamp:    unavailable

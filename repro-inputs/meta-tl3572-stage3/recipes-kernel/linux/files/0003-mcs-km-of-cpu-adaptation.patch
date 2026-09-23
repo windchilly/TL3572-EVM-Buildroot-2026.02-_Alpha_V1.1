@@ -1,0 +1,158 @@
+--- a/mcs_km.c (openEuler mcs 5cb4915)
++++ b/mcs_km.c (TL3572 of-cpu adaptation)
+@@ -21,7 +21,6 @@
+ #include <linux/of_address.h>
+ #include <linux/of_irq.h>
+ #include <linux/version.h>
+-#include <linux/kprobes.h>
+ 
+ #define MCS_DEVICE_NAME		"mcs"
+ 
+@@ -40,7 +39,6 @@
+ #define IOC_QUERY_MEM		_IOW(MAGIC_NUMBER, 3, int)
+ #define IOC_GET_COPY_MSG_MEM    _IOWR(MAGIC_NUMBER, 4, struct core_msg_mem_info)
+ #define IOC_MAXNR		4
+-#define IPI_MCS			8
+ #define RPROC_MEM_MAX		4
+ 
+ #define INSTANCE_SIZE  0x2400000       /*实例大小36M*/
+@@ -50,6 +48,10 @@
+ static struct class *mcs_class;
+ static int mcs_major;
+ 
++extern int arm64_mcs_ipi_virq(void);
++extern void arm64_mcs_ipi_send(const struct cpumask *target);
++
++static int mcs_irq = -1;
+ static int __percpu *mcs_evt;
+ 
+ struct cpu_info {
+@@ -121,38 +123,29 @@
+ 	return res.a0;
+ }
+ 
+-static u64 (*cpu_logical_map_fn)(unsigned int cpu);
+-
+-static int get_cpu_logical_map(void)
+-{
+-	int ret;
+-	struct kprobe probe = {
+-		.symbol_name = "cpu_logical_map",
+-	};
+-
+-	ret = register_kprobe(&probe);
+-	if (ret < 0)
+-		return ret;
+-
+-	cpu_logical_map_fn = (void *)probe.addr;
+-	unregister_kprobe(&probe);
+-	return 0;
+-}
+-
+ /**
+- * Enumerate the possible CPU set from __cpu_logical_map[]
+- * and return the MPIDR values related to the @cpu.
+- * If the @cpu is not found or the hwid is invalid, return INVALID_HWID.
++ * Return the MPIDR value associated with @cpu from its CPU device-tree node.
++ * If the CPU node or its reg property is not found, return INVALID_HWID.
+  */
+ static u64 get_cpu_mpidr(u32 cpu)
+ {
++	struct device_node *cpu_node;
++	u32 mpidr;
++
+ 	if (cpu >= NR_CPUS)
+ 		return INVALID_HWID;
+ 
+-	if (cpu_logical_map_fn != NULL)
+-		return cpu_logical_map_fn(cpu);
++	cpu_node = of_get_cpu_node(cpu, NULL);
++	if (!cpu_node)
++		return INVALID_HWID;
+ 
+-	return INVALID_HWID;
++	if (of_property_read_u32(cpu_node, "reg", &mpidr)) {
++		of_node_put(cpu_node);
++		return INVALID_HWID;
++	}
++	of_node_put(cpu_node);
++
++	return mpidr;
+ }
+ 
+ static irqreturn_t handle_clientos_ipi(int irq, void *data)
+@@ -165,18 +158,18 @@
+ 
+ static void enable_mcs_ipi(void *data)
+ {
+-	enable_percpu_irq(IPI_MCS, IRQ_TYPE_NONE);
++	enable_percpu_irq(mcs_irq, IRQ_TYPE_NONE);
+ }
+ 
+ static void disable_mcs_ipi(void *data)
+ {
+-	disable_percpu_irq(IPI_MCS);
++	disable_percpu_irq(mcs_irq);
+ }
+ 
+ static void remove_mcs_ipi(void)
+ {
+ 	on_each_cpu(disable_mcs_ipi, NULL, 1);
+-	free_percpu_irq(IPI_MCS, mcs_evt);
++	free_percpu_irq(mcs_irq, mcs_evt);
+ 	free_percpu(mcs_evt);
+ }
+ 
+@@ -185,13 +178,15 @@
+ 	int err;
+ 	struct irq_desc *desc;
+ 
+-#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 6, 0)
+-	desc = irq_data_to_desc(irq_get_irq_data(IPI_MCS));
+-#else
+-	desc = irq_to_desc(IPI_MCS);
+-#endif
++	mcs_irq = arm64_mcs_ipi_virq();
++	if (mcs_irq < 0) {
++		pr_err("failed to resolve mcs reserved ipi, ret = %d\n", mcs_irq);
++		return mcs_irq;
++	}
++
++	desc = irq_data_to_desc(irq_get_irq_data(mcs_irq));
+ 	if (desc->action) {
+-		pr_err("IRQ %d is not free\n", IPI_MCS);
++		pr_err("IRQ %d is not free\n", mcs_irq);
+ 		return -EBUSY;
+ 	}
+ 
+@@ -199,7 +194,7 @@
+ 	if (!mcs_evt)
+ 		return -ENOMEM;
+ 
+-	err = request_percpu_irq(IPI_MCS, handle_clientos_ipi, "MCS IPI", mcs_evt);
++	err = request_percpu_irq(mcs_irq, handle_clientos_ipi, "MCS IPI", mcs_evt);
+ 	if (err) {
+ 		free_percpu(mcs_evt);
+ 		return err;
+@@ -211,7 +206,7 @@
+ 
+ static void send_clientos_ipi(const struct cpumask *target)
+ {
+-	ipi_send_mask(IPI_MCS, target);
++	arm64_mcs_ipi_send(target);
+ }
+ 
+ static unsigned int mcs_poll(struct file *file, poll_table *wait)
+@@ -550,12 +545,6 @@
+ 		return ret;
+ 	}
+ 
+-	ret = get_cpu_logical_map();
+-	if (ret) {
+-		pr_err("Failed to get cpu_logical_map symbol, ret = %d\n", ret);
+-		return ret;
+-	}
+-
+ 	ret = init_reserved_mem();
+ 	if (ret) {
+ 		pr_err("Failed to get mcs mem, ret = %d\n", ret);

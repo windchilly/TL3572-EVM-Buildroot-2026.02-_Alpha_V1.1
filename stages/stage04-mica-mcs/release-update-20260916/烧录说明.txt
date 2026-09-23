@@ -1,0 +1,82 @@
+TL3572-EVM openEuler Stage4 完整整机固件（update.img）
+生成时间：2026-09-16（Yocto 正式化首版）
+
+一、镜像内容
+- 烧录文件：update-tl3572-openeuler-stage4.img（4,119,186,108 字节）
+- 组成：厂商 Loader/GPT/U-Boot(含SPL/TF-A/OP-TEE)/Recovery/OEM/Userdata 原封不动
+  + meta-tl3572-stage3 配方化构建的 boot.img（linux-tl3572_6.12.69.bb 产出）
+  + openEuler rootfs（新增 linux-tl3572 包，mcs_km.ko 进 /lib/modules）
+- 本版相对 Stage3-M2 的变化（全部经 bitbake 可重复构建，meta-tl3572-stage3 层）：
+  1. boot 分区换为阶段4 MICA 内核：REMOTEPROC/RPMSG_CHAR/RPMSG_CTRL=y +
+     0001 补丁（SGI8 预留）+ CONFIG_CMDLINE_FORCE 固化 cmdline 末尾 maxcpus=7；
+     DTB=厂商原版+overlay（mcs-rmem@134000000 64MiB + mcs-remoteproc 节点 +
+     ufs@29e00000 disabled），fdt SHA256 与 2026-09-16 板上验证版逐字节一致
+     （195535eb...）；外置数据 FIT（mkimage -B 0x200 -E -p 0x800）
+  2. rootfs 新增 mcs_km.ko（of-cpu 版，vermagic 6.12.69-gf1b67c293213，
+     /lib/modules/ 扁平布局，与 7 个厂商模块同列共 8 个）
+  3. rootfs 缩容至 3,999,997,952 字节（RKFW fw_size u32 限制），e2fsck clean；
+     nfs/rpcbind 计数仍为 0，auditd 仍不存在
+- 内核由厂商源码 tarball（SHA 186face3...，与阶段1清单一致）+ Arm GNU 14.3.1
+  工具链重编，配方内置四重哈希/vermagic 断言，2920 个 bitbake 任务全绿。
+
+二、烧录方式（整镜像，RKDevTool v3.37）
+1. RKDevTool 切到"升级固件"页，点"固件"，选择 update-tl3572-openeuler-stage4.img。
+2. 板卡进入 Loader 模式（按住升级/RECOVERY 键上电，或 MaskROM）。
+3. 点击"升级"，等待所有分区写入完成（rootfs 约 3.7 GiB，耗时数分钟）。
+4. 完成后复位，115200 串口（ttyFIQ0 8N1）或 SSH（root 空密码，eth0 DHCP）观察。
+注意：整镜像烧录会覆盖 rootfs（含板上 /root 的实验文件与 p3 备份）；
+当前板卡已在跑功能等价的手工 v4 内核，是否烧录本镜像请自行决定。
+
+三、烧录后验收（SSH 或串口）
+  systemctl --failed                       # 预期 0 个单元
+  uname -r                                 # 6.12.69-gf1b67c293213
+  cat /proc/cmdline                        # 固化完整串，末尾 maxcpus=7
+  nproc; cat /sys/devices/system/cpu/online; cat /sys/devices/system/cpu/offline
+                                           # 7 / 0-6 / 7（CPU7 预留）
+  ls /lib/modules/                          # 8 个 .ko，含 mcs_km.ko
+  insmod /lib/modules/mcs_km.ko && ls -l /dev/mcs && rmmod mcs_km
+  grep 134000000 /proc/iomem                # mcs 保留内存
+  systemctl start micad && mcsctl status && systemctl stop micad
+                                           # active；两实例 Offline 属预期
+
+四、回滚
+任意时刻 Loader 模式重烧厂商完整 update.img 恢复
+（4-软件资料\Linux\updateimg\updateimg-v1.0\update.img）。
+
+五、产物哈希（节选，全量见 SHA256SUMS）
+- update-tl3572-openeuler-stage4.img   6eafe110...860ecf
+- boot-tl3572-openeuler-mcs.img        f0303cb4...2bd53b
+- 镜像内 rootfs（缩容版）              5cdd9cc5...eefa2
+- Image-tl3572-6.12.69-gf1b67c293213   aa1e9c9e...f39d8
+- mcs_km-tl3572.ko                     c38973bc...48b0a
+- tl3572-6.12.69.config                57e11529...b718d
+
+六、组装与验证记录（可复现，素材见 pack\）
+AFPTool v2.28 -pack（pack\ 十件套：8 件厂商原件来自 stage3 已验证素材 +
+新 boot.img + 缩容 rootfs.img）得 firmware.img；RKFW 层用 python 手工组装：
+厂商头（仅 0x25 处 fw_size 改为 4,118,360,068）+ 厂商 boot 区（逐字节）+
+新 firmware + 32 字节整文件 MD5。组装脚本自检：以厂商 firmware 重组厂商
+镜像，输出与厂商原文件 SHA256 逐字节一致（c66ffb62...）。
+验证三板斧均通过：
+1. RKImageMaker -unpack 回解 success；导出 firmware.img 与原件 SHA 一致
+   （99569d34...），导出 boot.bin = MiniLoaderAll.bin = 厂商镜像 boot 区
+   （bd3c4eab...）；
+2. AFPTool -unpack firmware.img 回解，10 个分区与 pack\ 输入逐字节一致；
+3. 头部 python 逐字节 diff：与厂商镜像仅 fw_size 字段 3 字节差异。
+注意：AFPTool -unpack 直接作用于重组后的 update.img 会报 check crc failed
+（对 stage3 已实机验证镜像同样如此），属 AFPTool 对重组 RKFW 的固有行为，
+验证需经 RKImageMaker 拆外层。
+
+七、整镜像实机烧录复验记录（2026-09-16 19:27，全项通过）
+- 内核：6.12.69-gf1b67c293213 #1 SMP Wed Sep 16 10:36:14 UTC 2026（Yocto 配方产物）
+- cmdline：固化完整串，末尾 maxcpus=7
+- CPU：nproc=7；online 0-6；offline 7；present 0-7
+- systemctl --failed：0 loaded units
+- /lib/modules：8 个 .ko（7 厂商 + mcs_km.ko）
+- /proc/iomem：134000000-137ffffff reserved（mcs-rmem）
+- 挂载：/ ← mmcblk0p6 rw（3.5G 缩容镜像）；/oem ← p7；/userdata ← p8
+- 网络：eth0 DHCP（本轮 192.168.2.144，动态）
+- mcs_km：insmod RC=0 → /dev/mcs 508:0 → rmmod RC=0，dmesg 无异常
+- micad：active；mcsctl status RC=0，uniproton/uniproton-gdb 两实例 Offline（无 RTOS 固件，预期）
+- 烧录注意：镜像放本地盘（USB 外接盘读取与 USB 下载通信冲突曾致工具退出）；
+  rootfs 全新（SSH 主机密钥新生成，ed25519 指纹 SHA256:jJ6U1DCL10dLFgJTTVR1ZWOFDEGsQb27JJnzvwrKAVM）

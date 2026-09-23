@@ -1,0 +1,29 @@
+diff --git a/demos/rk3572_mica/build/build_app.sh b/demos/rk3572_mica/build/build_app.sh
+--- a/demos/rk3572_mica/build/build_app.sh
++++ b/demos/rk3572_mica/build/build_app.sh
+@@ -1,3 +1,5 @@
++set -e
++
+ export TOOLCHAIN_PATH=/home/openeuler/build/tl3572-2oo3/toolchain-14.3
+ export TOOLCHAIN_GCC_PATH=$TOOLCHAIN_PATH/bin/aarch64-none-linux-gnu-gcc
+ # export ALL="task-switch task-preempt semaphore-shuffle interrupt-latency deadlock-break message-latency"
+diff --git a/demos/rk3572_mica/component/UniProton-patch-for-libmetal.patch b/demos/rk3572_mica/component/UniProton-patch-for-libmetal.patch
+--- a/demos/rk3572_mica/component/UniProton-patch-for-libmetal.patch
++++ b/demos/rk3572_mica/component/UniProton-patch-for-libmetal.patch
+@@ -422,6 +422,6 @@ diff -urN libmetal-2022.10.0/lib/system/uniproton/mutex.h libmetal-m/lib/system/
+ --- libmetal-2022.10.0/lib/system/uniproton/mutex.h	1970-01-01 08:00:00.000000000 +0800
+ +++ libmetal-m/lib/system/uniproton/mutex.h	2023-08-23 14:30:40.292021000 +0800
+-@@ -0,0 +1,73 @@
++@@ -0,0 +1,79 @@
+ +/*
+ + * Copyright (c) 2017, Linaro Limited. and Contributors. All rights reserved.
+ + *
+diff --git a/demos/rk3572_mica/build/build_openamp.sh b/demos/rk3572_mica/build/build_openamp.sh
+--- a/demos/rk3572_mica/build/build_openamp.sh
++++ b/demos/rk3572_mica/build/build_openamp.sh
+@@ -1,3 +1,5 @@
++set -e
++
+ echo "################# git clone libmetal #################"
+ pushd ../component
+ rm -rf ./libmetal*

@@ -1,0 +1,70 @@
+--- a/drivers/irqchip/irq-gic.c
++++ b/drivers/irqchip/irq-gic.c
+@@ -976,7 +976,11 @@
+ 				  "irqchip/arm/gic:starting",
+ 				  gic_starting_cpu, NULL);
+ 
+-	base_sgi = irq_domain_alloc_irqs(gic_data[0].domain, 8, NUMA_NO_NODE, &sgi_fwspec);
++	/*
++	 * Allocate SGI0..8 contiguously.  arm64 owns SGI0..7 and exports
++	 * the mapped virq for SGI8 to the MCS module.
++	 */
++	base_sgi = irq_domain_alloc_irqs(gic_data[0].domain, 9, NUMA_NO_NODE, &sgi_fwspec);
+ 	if (WARN_ON(base_sgi <= 0))
+ 		return;
+ 
+--- a/arch/arm64/kernel/smp.c
++++ b/arch/arm64/kernel/smp.c
+@@ -1117,6 +1117,39 @@
+ 	ipi_setup(smp_processor_id());
+ }
+ 
++/*
++ * openEuler MICA (mcs_km) reserved-SGI support for TL3572.
++ *
++ * The kernel claims SGIs [0, nr_ipi) for its own IPIs (8 on this GICv2).
++ * SGI nr_ipi stays free so the mcs_km module can register its own
++ * percpu handler on it and exchange notifications with a bare-metal
++ * client OS running on another core.  These exports let the module
++ * resolve the mapped Linux IRQ number and raise that SGI.
++ */
++int arm64_mcs_ipi_virq(void)
++{
++	if (WARN_ON_ONCE(!ipi_irq_base))
++		return -ENXIO;
++
++	return ipi_irq_base + nr_ipi;
++}
++EXPORT_SYMBOL_GPL(arm64_mcs_ipi_virq);
++
++void arm64_mcs_ipi_send(const struct cpumask *target)
++{
++	struct irq_desc *desc;
++
++	if (WARN_ON_ONCE(!ipi_irq_base))
++		return;
++
++	desc = irq_to_desc(ipi_irq_base + nr_ipi);
++	if (WARN_ON_ONCE(!desc))
++		return;
++
++	__ipi_send_mask(desc, target);
++}
++EXPORT_SYMBOL_GPL(arm64_mcs_ipi_send);
++
+ void arch_smp_send_reschedule(int cpu)
+ {
+ 	smp_cross_call(cpumask_of(cpu), IPI_RESCHEDULE);
+--- a/arch/arm64/include/asm/smp.h
++++ b/arch/arm64/include/asm/smp.h
+@@ -37,6 +37,10 @@
+ extern u64 __cpu_logical_map[NR_CPUS];
+ extern u64 cpu_logical_map(unsigned int cpu);
+ 
++/* openEuler MICA (mcs_km) reserved-SGI exports, see kernel/smp.c */
++int arm64_mcs_ipi_virq(void);
++void arm64_mcs_ipi_send(const struct cpumask *target);
++
+ static inline void set_cpu_logical_map(unsigned int cpu, u64 hwid)
+ {
+ 	__cpu_logical_map[cpu] = hwid;
