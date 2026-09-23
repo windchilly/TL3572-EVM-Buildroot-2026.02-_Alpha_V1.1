@@ -12,11 +12,13 @@
 
 - 工作区根目录已初始化 Git 仓库，分支 `main`，远端 `origin` 指向上述 URL。
 - 已完成本地提交 `c03df1d`：`Import TL3572 project sources, references and Stage 06 build inputs`。
-- **尚未推送 GitHub**。最后检查时远端仍为空，本地 `git status` 干净。
+- 已于 2026-09-23 将 `main` 首次推送到 GitHub，并设置本地分支跟踪
+  `origin/main`；首次推送成功，无权限或配额错误。
 - 本机 Git Credential Manager 已通过浏览器为 `windchilly` 完成登录，凭据可用；
   仓库本地提交身份为 `windchilly <windchilly@users.noreply.github.com>`。
-- 本次提交共 1020 个文件，原始文件总量约 2.63 GiB；546 个文件经 Git LFS
-  跟踪。`git lfs fsck` 已通过。
+- 首次导入共 1020 个文件，原始文件总量约 2.63 GiB；546 个文件经 Git LFS
+  跟踪。`git lfs fsck` 已通过；首次推送实际上传 522 个去重后的 LFS 对象，
+  共约 2.5 GB。
 - Stage 06 的 `SHA256SUMS` 共 38 项，逐项校验通过。
 
 ## 已纳入的内容
@@ -56,15 +58,18 @@ ISO、6.1 GiB 原厂 LinuxSDK 压缩包、下载缓存、生成的 sysroot、第
   移到本地忽略目录 `.local-git-metadata-backup/`，六个实际发布文档已作为普通
   文件进入主仓库，避免出现无法克隆内容的 Git 指针。
 
-## 下一步
+## 推送后验证
 
-1. 再次确认 `git status --short` 干净、`git remote -v` 指向目标仓库。
-2. 执行 `git push -u origin main`。Git LFS 会随推送上传二进制对象；初次上传
-   体积较大，应等待其完成，勿重复发起并行推送。
-3. 推送后用 `git ls-remote origin refs/heads/main`、GitHub 网页目录及 LFS
-   文件下载核对远端；如遇配额或权限错误，记录原始错误再处理。
-4. 如需验证复建，按 `repro-inputs/README.md` 在指定容器和上游源码提交中运行；
-   当前只有历史构建（2920/2920、零 warning）与板卡实测记录，未从 GitHub
-   克隆后重新构建。
+- `git ls-remote origin refs/heads/main` 与本地 `HEAD` 一致。
+- 已从 GitHub 做一次全新的 `main` 浅克隆，克隆提交与本地一致。
+- 已在新克隆中单独下载 LFS 样本
+  `1-产品规格书/配件规格书/RG200U 5G通信模块规格书 .pdf`；远端下载文件与
+  本地文件的 SHA256 均为
+  `47808e1f5f5471885f7bcb32b6faa5d6e9852c6f7124b3cc9ace49dd530f18cb`。
+- GitHub 仓库网页可匿名访问并标记为 Public。验证用临时克隆已删除。
 
-当前用户请求是写好本文件供其他模型交接，因此本轮停在本地提交，未继续推送。
+## 后续可选工作
+
+如需验证复建，按 `repro-inputs/README.md` 在指定容器和上游源码提交中运行；
+当前只有历史构建（2920/2920、零 warning）与板卡实测记录，尚未从 GitHub
+全新克隆后执行完整构建。除此之外，本次公开仓库上传任务已完成。
