@@ -16,10 +16,14 @@ Yocto 层内 `vendor-boot.img` SHA256 为
 这些配置固定使用构建机上的绝对路径；改变工作区位置时需要同步修改配置和
 `stages/stage06-multi-uniproton/build/rebuild-m6-dual-image.sh`。
 
+Stage 01–05 在构建容器中保留的七个上游源码工作树、早期 `meta-tl3572` 层、
+配置和脚本已另行归档到 `stage01-05/`，内容及历史快照限制见其 `README.md`。
+
 其余前置输入：
 
 1. 按 `stages/stage01-baseline/TL3572-stage01-baseline-manifest.md` 固定七个上游
-   仓库提交和 openEuler 容器镜像摘要。上游仓库未复制进本仓库。
+   仓库提交和 openEuler 容器镜像摘要。七个提交的源码快照可从
+   `stage01-05/upstream/` 解压；这些压缩包不含 Git 历史。
 2. 从 `4-软件资料/Linux/Tools/` 提供 Arm GNU 14.3 工具链到
    `/home/openeuler/build/tl3572-2oo3/toolchain-14.3/`。openEuler GCC 12.3 和
    Native SDK 由记录中的容器环境提供。

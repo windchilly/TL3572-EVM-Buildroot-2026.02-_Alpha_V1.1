@@ -20,6 +20,10 @@ are included are stored through Git LFS.
   boot artifacts retained as validation references.
 - `repro-inputs/` complete Stage 06 Yocto layer and the corresponding
   BitBake/oebuild configuration copied from the build server.
+- `repro-inputs/stage01-05/` seven pinned upstream source snapshots, the
+  earlier Stage 02 `meta-tl3572` layer, historical build configuration and
+  scripts, and remaining Stage 03-05 source/configuration inputs copied from
+  the openEuler build container.
 
 ## Omitted from Git
 
@@ -36,10 +40,13 @@ omitted image outputs and therefore cannot be checked in full from a clone.
 
 ## Reproduction requirements
 
-The complete Stage 06 Yocto layer and its vendor assets are now under
-`repro-inputs/`. To rebuild, provision the pinned upstream repositories,
-container image, external openEuler toolchain, and download access described
-in `stages/stage01-baseline/`. Restore the absolute workspace layout recorded
-in `repro-inputs/README.md`. A clean-room rebuild from this GitHub clone has
-not yet been run; the archived Stage 06 build and board tests are documented
-under `stages/stage06-multi-uniproton/`.
+The complete Stage 06 Yocto layer and its vendor assets are under
+`repro-inputs/`. Pinned Stage 01 upstream source trees are also archived at
+`repro-inputs/stage01-05/upstream/`, without Git metadata. To rebuild,
+provision the pinned container image, external openEuler toolchain, and
+download access described in `stages/stage01-baseline/`. Restore the absolute
+workspace layout recorded in `repro-inputs/README.md`. The container no
+longer has untouched full-layer snapshots for every historical Stage 03-05
+state, and no clean-room rebuild from this GitHub clone has yet been run.
+The archived Stage 06 build and board tests are documented under
+`stages/stage06-multi-uniproton/`.

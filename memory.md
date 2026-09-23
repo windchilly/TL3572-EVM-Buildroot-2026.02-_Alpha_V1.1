@@ -33,6 +33,10 @@
 - 已从构建机复制完整的最终 `meta-tl3572-stage3` Yocto 层（约 312 MiB）及
   BitBake、`.oebuild` 配置到 `repro-inputs/`。复建步骤与外部依赖见
   `repro-inputs/README.md`，上传范围说明见 `GITHUB_UPLOAD_SCOPE.md`。
+- 2026-09-23 再次进入 `dev_openeuler` 容器，归档 Stage 01 的七个固定提交源码
+  快照，以及容器中仍保留的 Stage 02 `meta-tl3572` 层、Stage 02–04 构建配置与
+  脚本、Stage 03 历史配方和 Stage 04/05 额外源码配置；见
+  `repro-inputs/stage01-05/README.md` 与该目录的 `SHA256SUMS`。
 
 ## 已排除的内容
 
@@ -44,9 +48,10 @@ ISO、6.1 GiB 原厂 LinuxSDK 压缩包、下载缓存、生成的 sysroot、第
 
 ## 复建与安全处理
 
-- 远端构建机上的 Yocto 层已补齐；上游 Yocto/MCS/UniProton 仓库仍应按
-  `stages/stage01-baseline/TL3572-stage01-baseline-manifest.md` 的提交拉取，
-  容器镜像按其摘要固定。新的干净环境尚未执行全量复建。
+- 远端构建机上的最终 Yocto 层已补齐；上游 Yocto/MCS/UniProton 等七个仓库的
+  固定提交源码也已归档在 `repro-inputs/stage01-05/upstream/`，不含 Git 历史。
+  容器镜像仍按 Stage 01 清单摘要固定。Stage 03–05 各自未经修改的完整历史层
+  快照在容器中未找到；新的干净环境尚未执行全量复建。
 - `repro-inputs/meta-tl3572-stage3/recipes-kernel/linux/files/` 的 BitBake
   重封装内核源码 SHA256 为
   `94ebe6676f276f731309234e23ca338cd529f2255fc09c6dddbf1e353d6a0985`；
