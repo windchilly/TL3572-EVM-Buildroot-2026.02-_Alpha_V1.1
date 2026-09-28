@@ -1,0 +1,45 @@
+tl3572-repro-20260928
+tl3572-repro2-20260928
+tl3572-repro3-20260928
+tl3572-repro4-20260928
+tl3572-repro-fetch-20260928
+tl3572-repro-clone2-20260928
+tl3572-all-stage01-20260928
+tl3572-all-stage02-20260928
+tl3572-all-stage03-20260928
+tl3572-all-stage04-20260928
+tl3572-all-stage05-20260928
+tl3572-all-stage06-20260928
+tl3572-all-stage07-20260928
+tl3572-all-stage05-20260928-m5-final
+tl3572-repro-20260928
+tl3572-repro2-20260928
+tl3572-repro-fetch-20260928
+tl3572-repro-clone2-20260928
+DELETED build-rk3588-uniproton-20260820
+DELETED build-rk3588-uniproton-mica-20260820
+DELETED rk3588_worktrees
+DELETED rk3588_reports
+DELETED vendor_sdk/rk3588_linux6.1_rkr6_v1
+DELETED artifacts/uniproton-rk3588-mica-20260820
+DELETED artifacts/rk3588-openeuler-ok3588-toolchain-20260820
+DELETED build/build-rk3588-openeuler-ok3588-toolchain-20260820
+DELETED r1-media
+DELETED tl3572-all-stages-export-20260928
+DELETED tl3572-all-stages-snapshots-20260928
+DELETED tl3572-all-stages-snapshots-v2-20260928/work
+DELETED tl3572-all-stages-snapshots-v2-20260928/profiles
+DELETED rk3572-input-export-20260928
+DELETED rk3572-input-export-20260928-v4
+DELETED tl3572-github-repro-20260928/work
+DELETED tl3572-github-repro-20260928/work-v2
+MOVED /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-github-repro-20260928 -> /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/projects/tl3572/reproduction/20260928/github (old path kept as symlink)
+MOVED /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-all-stages-validation-20260928 -> /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/projects/tl3572/reproduction/20260928/stage02-and-initial-m5 (old path kept as symlink)
+MOVED /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-all-stages-validation-rest-20260928 -> /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/projects/tl3572/reproduction/20260928/stage01-03-04-06-07 (old path kept as symlink)
+MOVED /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-all-stages-validation-m5-final-20260928 -> /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/projects/tl3572/reproduction/20260928/stage05-final (old path kept as symlink)
+MOVED /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/rk3572-input-export-20260928-v5 -> /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/projects/tl3572/exports/20260928/rk3572-inputs (old path kept as symlink)
+MOVED /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-all-stages-history-v2-20260928 -> /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/projects/tl3572/exports/20260928/historical (old path kept as symlink)
+MOVED /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-all-stages-snapshots-v2-20260928 -> /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/projects/tl3572/exports/20260928/all-stages (old path kept as symlink)
+MOVED /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-all-stages-evidence-20260928 -> /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/projects/tl3572/evidence/20260928 (old path kept as symlink)
+MOVED /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/all-stage-verified-input-cache -> /home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/projects/tl3572/cache/20260928/verified-inputs (old path kept as symlink)
+Server directory organization complete. Original TL3572/RPi4/shared paths retained.

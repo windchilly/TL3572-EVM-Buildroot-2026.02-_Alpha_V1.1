@@ -1,0 +1,19 @@
+tl3572-all-stage07-20260928 Exited (137) 14 seconds ago
+tl3572-all-stage05-20260928-m5-final Exited (137) 14 seconds ago
+tl3572-all-stage06-20260928 Exited (137) 14 seconds ago
+tl3572-all-stage01-20260928 Exited (137) 14 seconds ago
+tl3572-all-stage04-20260928 Exited (137) 14 seconds ago
+tl3572-all-stage03-20260928 Exited (137) 14 seconds ago
+tl3572-all-stage02-20260928 Exited (137) 14 seconds ago
+tl3572-all-stage05-20260928 Exited (137) 14 seconds ago
+tl3572-repro4-20260928 Exited (137) 14 seconds ago
+tl3572-repro3-20260928 Exited (137) 14 seconds ago
+dev_openeuler Up 6 hours
+portainer Up 6 hours
+monitor-cadvisor Up 6 hours
+monitor-node-exporter Up 6 hours
+dev_liyuting Up 6 hours
+monitor-prometheus Up 6 hours
+monitor-grafana Up 6 hours
+gitlab Up 6 hours (healthy)
+gitlab-runner Up 6 hours

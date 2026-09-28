@@ -1,0 +1,19 @@
+test_escaping_symlink_is_rejected (test_archive_utils.SourceArchiveTests.test_escaping_symlink_is_rejected) ... ok
+test_internal_parent_symlink_is_retained (test_archive_utils.SourceArchiveTests.test_internal_parent_symlink_is_retained) ... ok
+test_lfs_pointer_is_rejected (test_archive_utils.SourceArchiveTests.test_lfs_pointer_is_rejected) ... ok
+test_sorted_deterministic_archive (test_archive_utils.SourceArchiveTests.test_sorted_deterministic_archive) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.008s
+
+OK
+test_file_emitter_separates_instances (test_up_log_reader.UpLogReaderTest.test_file_emitter_separates_instances) ... ok
+test_header_is_bound_to_instance (test_up_log_reader.UpLogReaderTest.test_header_is_bound_to_instance) ... ok
+test_monitor_marks_client_and_boot (test_up_log_reader.UpLogReaderTest.test_monitor_marks_client_and_boot) ... ok
+test_reads_committed_records_only (test_up_log_reader.UpLogReaderTest.test_reads_committed_records_only) ... ok
+test_reports_ring_overwrite_boundary (test_up_log_reader.UpLogReaderTest.test_reports_ring_overwrite_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.016s
+
+OK

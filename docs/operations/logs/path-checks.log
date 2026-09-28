@@ -1,0 +1,21 @@
+RK3588 removed: build-rk3588-uniproton-20260820
+RK3588 removed: build-rk3588-uniproton-mica-20260820
+RK3588 removed: rk3588_worktrees
+RK3588 removed: rk3588_reports
+RK3588 removed: vendor_sdk/rk3588_linux6.1_rkr6_v1
+RK3588 removed: artifacts/uniproton-rk3588-mica-20260820
+RK3588 removed: artifacts/rk3588-openeuler-ok3588-toolchain-20260820
+RK3588 removed: build/build-rk3588-openeuler-ok3588-toolchain-20260820
+RK3588 removed: r1-media
+Retained link resolves: projects/tl3572/current
+Retained link resolves: projects/rpi4/current
+Retained link resolves: projects/rpi4/uefi
+Retained link resolves: projects/rpi4/release-20260814
+Retained link resolves: projects/rpi4/release-20260818
+Retained link resolves: projects/shared/src
+Retained link resolves: projects/shared/toolchains
+Retained link resolves: projects/shared/downloads
+Old path resolves: tl3572-github-repro-20260928/repo-v2
+Old path resolves: tl3572-all-stages-snapshots-v2-20260928
+Old path resolves: tl3572-all-stages-history-v2-20260928
+Old path resolves: tl3572-all-stages-validation-m5-final-20260928

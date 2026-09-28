@@ -22,3 +22,7 @@
 
 # Local backup of nested vendor Git metadata; the documents are tracked as files.
 /.local-git-metadata-backup/
+
+# Local-only vendor SDK, metadata and maintenance reports; not reproduction inputs.
+/.local-only/
+__pycache__/

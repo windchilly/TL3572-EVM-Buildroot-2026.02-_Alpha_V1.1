@@ -1,0 +1,17 @@
+217681920	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/build-rk3588-uniproton-20260820
+225918976	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/build-rk3588-uniproton-mica-20260820
+23751294976	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/rk3588_worktrees
+1921024	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/rk3588_reports
+85284335616	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/vendor_sdk/rk3588_linux6.1_rkr6_v1
+2084864	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/artifacts/uniproton-rk3588-mica-20260820
+2866257920	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/artifacts/rk3588-openeuler-ok3588-toolchain-20260820
+2855018496	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/build/build-rk3588-openeuler-ok3588-toolchain-20260820
+9901481984	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/r1-media
+15380480	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-all-stages-export-20260928
+12288	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-all-stages-snapshots-20260928
+5983502336	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-all-stages-snapshots-v2-20260928/work
+2408448	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-all-stages-snapshots-v2-20260928/profiles
+505757696	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/rk3572-input-export-20260928
+588554240	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/rk3572-input-export-20260928-v4
+2022670336	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-github-repro-20260928/work
+347148288	/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-github-repro-20260928/work-v2

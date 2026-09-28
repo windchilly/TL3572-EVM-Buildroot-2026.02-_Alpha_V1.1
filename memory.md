@@ -238,3 +238,51 @@ ISO、6.1 GiB 原厂 LinuxSDK 压缩包、下载缓存、生成的 sysroot、第
   MCS create/rm fd 和 mcsctl 错误返回遗留问题不变。旧 tmp/sstate、大型生成镜像、
   密码/Token/私钥/board core 不上传。整个原厂 LinuxSDK/dl/sysroot 包不属于此 openEuler
   Stage 构建输入，仍不上传；用到的厂商源码、工具链和资产已经单独归档。
+
+## 2026-09-28：本地 / Docker 目录整理与清理完成
+
+- 用户要求重新分类、优化本地及 Euler Docker 目录；明确确认“RK3588 删除，树莓派保留”。
+  本轮没有登录、重启、刷写板卡，也没有实施 M7 外设直驱。
+- 本地新增根 `README.md`、`docs/operations/` 目录规范/服务器索引/清理记录，
+  以及默认预览的 `scripts/maintenance/organize-local.ps1`、`organize-server.sh`。
+  采用精确目标、真实路径核对、删除前输入验证和旧路径兼容，原源码/阶段目录不整体改名。
+- 原厂整体 SDK/dl/sysroot 三包约 8.85 GiB 移至 `.local-only/vendor-sdk/` 保留；
+  原 `.local-git-metadata-backup` 的 36 文件移至 `.local-only/metadata/nested-vendor-git/`。
+  本地实际动作清单 `.local-only/maintenance/local-layout-20260928.json` 被 Git 忽略。
+- Ubuntu 桌面 ISO 与 VMware 16.2.5 安装包共 5,662,836,760 B（5.27 GiB）移入回收站，可恢复。
+  删除字节相同的 U-Boot `(1)` 副本 48,259,142 B，可从保留正式包复制恢复；
+  两包 SHA256 均为 `f8ddebee24a985cbc879db6de4846248858c8c25c9dc25bb6c493ed2de7adce5`。
+  另删除五个 Python 缓存目录 63,466 B。回收站未清空，不声称本地释放了 5.27 GiB 磁盘。
+- 原厂板级工具、Stage02–04 唯一历史镜像、正式 release 结构、各阶段 SHA 清单和
+  所有跟踪源码均保持原位置、无删除；全阶段 24 项输入哈希重新通过。
+- 服务器删除 9 个明确 RK3588 目录：两个 UniProton 构建、SDK、工作树、报告、
+  两个 artifacts 发布目录、build 中的 RK3588 Yocto 构建、r1-media。Git worktree 先按
+  精确路径解除注册，共享 UniProton 仓库及其他工作树保留。RK3588 数据永久删除，无恢复保证。
+- 另删除两个不完整导出、最终快照的重复 work/profiles、旧 v1/v4 输入导出、
+  github-repro 的失败 work/work-v2；先保留总日志、输入清单和 project-logs。
+  RK3588 约 116.51 GiB，重复临时产物约 8.82 GiB；文件系统实测减少
+  134,572,208,128 B（125.33 GiB），这是新复现检查之前的清理快照。
+- 开发容器新分类入口 `/home/openeuler/build/projects/`：
+  `tl3572/{current,reproduction,exports,evidence,archive,cache,tools,maintenance}`，
+  `rpi4/{current,uefi,release-20260814,release-20260818}`，`shared/` 共用环境入口。
+  宿主机仍使用既有 build 卷 `_data/`。分类入口目录 UID/GID 1000 可写，
+  未递归修改原仓库/输入属主。容器根新增 `README.md`。
+- 主工程 `/home/openeuler/build/tl3572-2oo3` 不移动，原绝对构建路径不变。
+  成功导出和验证目录物理移至 `projects/tl3572/`，原顶层名字保留相对符号链接，
+  同时兼容宿主机与容器，不能改成指向宿主机私有路径的绝对链接。
+  完整映射见 `docs/operations/workspace-layout.md`；主工程原失效的 `.git` 链接未改动，
+  Git 操作使用本地仓库或分类后 github/repo-v2 克隆。
+- 14 个完成的临时容器在确认无运行工作后停止，删除 4 个失败/克隆辅助容器：
+  `tl3572-repro-20260928`、`tl3572-repro2-20260928`、`tl3572-repro-fetch-20260928`、
+  `tl3572-repro-clone2-20260928`；成功容器保留。没有停止 dev_openeuler 或其他服务容器，
+  没有 Docker 全局 prune，shared 源码/缓存/工具链与树莓派原目录均保留。
+- 整理后新容器 `tl3572-layout-stage02-20260928` 从空目录恢复 Stage02、禁网 fetch
+  215/215（0 复用）通过，驱动 exit=0，随后停止。新工作区为分类目录
+  `reproduction/20260928/layout-smoke-stage02`，没有旧缓存。
+- M5 最终容器通过旧路径兼容链接再次启动读取固件，哈希仍为 `3faa550c...478d0`，随后停止。
+  树莓派 20260818 发布目录 20 项校验全部通过；Linux 4 项归档单测、5 项 M7 日志单测通过。
+  9 个 RK3588 删除路径消失，TL3572/RPi4/shared 及旧验证路径均可解析。
+- 本轮证据在 `docs/operations/logs/`（13 个文件及 SHA256SUMS），完整说明
+  `docs/operations/cleanup-20260928.md`；服务器记录在
+  `projects/tl3572/maintenance/20260928/`。本轮脚本执行已完成，不能再盲目执行 --apply。
+  先前 M6 全镜像、全阶段恢复与 M5 完整重编结论不变，固定复现提交 2e6074a 不变。

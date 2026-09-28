@@ -10,6 +10,8 @@ are included are stored through Git LFS.
 ## Included
 
 - Root project migration plan, product update note, and getting-started PDF.
+- Root README plus `docs/operations/` directory ownership/maintenance records
+  and `scripts/maintenance/` exact-target, preview-by-default maintenance tools.
 - `1-产品规格书/`, `2-技术服务/`, `3-用户手册/`, and `5-硬件资料/`.
 - `4-软件资料/` demos, source code, feature documents, vendor Buildroot,
   Linux kernel, and U-Boot source archives, Arm GNU 14.3 toolchain archive,
@@ -47,8 +49,12 @@ are included are stored through Git LFS.
   archived separately. This is not an upload of the entire unrelated SDK.
 - Third-party Windows installers and one identical duplicate U-Boot archive.
 
-The `.gitignore` is the definitive path list for omissions. The original
-files remain in the local workspace. Some Stage 02-04 SHA256SUMS lists include
+The `.gitignore` is the definitive path list for omissions. After the
+2026-09-28 cleanup, the complete vendor SDK/dl/sysroot archives and nested
+vendor Git metadata are preserved under ignored `.local-only/`; the Ubuntu
+desktop ISO and VMware installer are in the Windows Recycle Bin. The verified
+identical extra U-Boot archive and regenerable bytecode caches were deleted.
+Formal stage outputs remain at their original paths. Some Stage 02-04 SHA256SUMS lists include
 omitted image outputs and therefore cannot be checked in full from a clone.
 
 ## Reproduction requirements (updated 2026-09-28)
