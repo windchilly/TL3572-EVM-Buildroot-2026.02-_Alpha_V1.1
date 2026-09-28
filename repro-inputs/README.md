@@ -1,5 +1,10 @@
 # Stage 06 复建输入
 
+2026-09-28 补齐入口：[RK3572 换机复现](rk3572/README.md)。此前本说明列出的
+七个仓库/最终层还不足以还原全套 openEuler 包输入；新增归档包含另外 150 个包目录、
+必需下载源镜像及 UniProton 的有效源码依赖，并提供空目录、固定容器的自动构建脚本。
+换机请优先使用新入口；下文是原始归档说明。
+
 本目录从构建机 `/home/openeuler/build/tl3572-2oo3/` 复制了最终
 `meta-tl3572-stage3/`、`build/build-tl3572/conf/` 和 `.oebuild/` 配置。
 Yocto 层内含 Stage 06 当前配方、补丁、厂商资产覆盖包、内核源码包、
@@ -32,5 +37,6 @@ Stage 01–05 在构建容器中保留的七个上游源码工作树、早期 `m
    `build_m6_instances.sh`，并把两个 ELF 放进本层的镜像配方文件目录。
 4. 在容器中运行 `stages/stage06-multi-uniproton/build/rebuild-m6-dual-image.sh`。
 
-历史实测构建为 2920/2920 任务成功、零 warning；当前归档尚未在另一台构建机上
-重新执行一次干净复建。下载缓存和 sstate 不在仓库中，首次构建需要联网并会耗时。
+历史实测构建为 2920/2920 任务成功、零 warning。2026-09-28 新增的是必需下载
+**源文件镜像**，不是 sstate 或旧编译输出；完整独立重建状态见
+`rk3572/tests/clean-rebuild.md`，不能将历史成功记录当作新环境已通过。

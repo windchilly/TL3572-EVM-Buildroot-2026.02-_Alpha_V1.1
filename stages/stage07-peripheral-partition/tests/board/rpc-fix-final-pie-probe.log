@@ -1,0 +1,60 @@
+[New LWP 2320]
+[New LWP 2323]
+
+warning: Unable to find libthread_db matching inferior's thread library, thread debugging will not be available.
+0x0000007f9b79d224 in ?? () from /lib64/libc.so.6
+warning: could not convert 'rpc_service_users' from the host encoding (ANSI_X3.4-1968) to UTF-32.
+This normally should not happen, please file a bug report.
+RPC_LIFECYCLE users=0 fp=(nil) lfd=1
+[Inferior 1 (process 2319) detached]
+starting up-a-m7...
+start up-a-m7 successfully!
+[New LWP 2320]
+[New LWP 2323]
+[New LWP 3751]
+
+warning: Unable to find libthread_db matching inferior's thread library, thread debugging will not be available.
+0x0000007f9b79d224 in ?? () from /lib64/libc.so.6
+warning: could not convert 'rpc_service_users' from the host encoding (ANSI_X3.4-1968) to UTF-32.
+This normally should not happen, please file a bug report.
+RPC_LIFECYCLE users=1 fp=0x7f94000c20 lfd=18
+[Inferior 1 (process 2319) detached]
+starting up-b-m7...
+start up-b-m7 successfully!
+[New LWP 2320]
+[New LWP 2323]
+[New LWP 3751]
+[New LWP 3762]
+
+warning: Unable to find libthread_db matching inferior's thread library, thread debugging will not be available.
+0x0000007f9b79d224 in ?? () from /lib64/libc.so.6
+warning: could not convert 'rpc_service_users' from the host encoding (ANSI_X3.4-1968) to UTF-32.
+This normally should not happen, please file a bug report.
+RPC_LIFECYCLE users=2 fp=0x7f94000c20 lfd=18
+[Inferior 1 (process 2319) detached]
+stopping up-a-m7...
+stop up-a-m7 successfully!
+[New LWP 2320]
+[New LWP 2323]
+[New LWP 3762]
+
+warning: Unable to find libthread_db matching inferior's thread library, thread debugging will not be available.
+0x0000007f9b79d224 in ?? () from /lib64/libc.so.6
+warning: could not convert 'rpc_service_users' from the host encoding (ANSI_X3.4-1968) to UTF-32.
+This normally should not happen, please file a bug report.
+RPC_LIFECYCLE users=1 fp=0x7f94000c20 lfd=18
+[Inferior 1 (process 2319) detached]
+up-b-m7 concurrent echo PASS: count=100, payload=451, rx_bytes=47800, elapsed=0.066s
+stopping up-b-m7...
+stop up-b-m7 successfully!
+[New LWP 2320]
+[New LWP 2323]
+
+warning: Unable to find libthread_db matching inferior's thread library, thread debugging will not be available.
+0x0000007f9b79d224 in ?? () from /lib64/libc.so.6
+warning: could not convert 'rpc_service_users' from the host encoding (ANSI_X3.4-1968) to UTF-32.
+This normally should not happen, please file a bug report.
+RPC_LIFECYCLE users=0 fp=(nil) lfd=1
+[Inferior 1 (process 2319) detached]
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed

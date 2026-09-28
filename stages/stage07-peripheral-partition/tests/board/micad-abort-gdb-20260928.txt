@@ -1,0 +1,75 @@
+
+Thread 2 "micad" received signal SIGABRT, Aborted.
+[Switching to LWP 314]
+0x0000007f8f912300 in ?? () from /lib64/libc.so.6
+
+Thread 3 (LWP 330 "micad"):
+#0  0x0000007f8f96c4e4 in poll () from /lib64/libc.so.6
+#1  0x00000055788ca04c in ?? ()
+#2  0x0000007f8f9107e0 in ?? () from /lib64/libc.so.6
+#3  0x0000007f8f975d0c in ?? () from /lib64/libc.so.6
+
+Thread 2 (LWP 314 "micad"):
+#0  0x0000007f8f912300 in ?? () from /lib64/libc.so.6
+#1  0x0000007f8f8ce2bc in raise () from /lib64/libc.so.6
+#2  0x0000007f8f8baea8 in abort () from /lib64/libc.so.6
+#3  0x0000007f8f906794 in ?? () from /lib64/libc.so.6
+#4  0x0000007f8f91c088 in ?? () from /lib64/libc.so.6
+#5  0x0000007f8f91e2ec in ?? () from /lib64/libc.so.6
+#6  0x0000007f8f9206b4 in free () from /lib64/libc.so.6
+#7  0x0000007f8f8fb754 in fclose () from /lib64/libc.so.6
+#8  0x00000055788c58c8 in ?? ()
+#9  0x00000055788c899c in ?? ()
+#10 0x00000055788c7e04 in ?? ()
+#11 0x00000055788bd4c8 in ?? ()
+#12 0x00000055788bda00 in ?? ()
+#13 0x0000007f8f9107e0 in ?? () from /lib64/libc.so.6
+#14 0x0000007f8f975d0c in ?? () from /lib64/libc.so.6
+
+Thread 1 (LWP 312 "micad"):
+#0  0x0000007f8f90d224 in ?? () from /lib64/libc.so.6
+#1  0x0000007f8f9188ec in ?? () from /lib64/libc.so.6
+#2  0x00000055788bccf8 in ?? ()
+#3  0x0000007f8f8bb46c in ?? () from /lib64/libc.so.6
+#4  0x0000007f8f8bb53c in __libc_start_main () from /lib64/libc.so.6
+#5  0x00000055788bcf70 in ?? ()
+x0             0x0                 0
+x1             0x13a               314
+x2             0x6                 6
+x3             0x7f8f8821a0        547868909984
+x4             0x7f8fa31ad0        547870677712
+x5             0x1                 1
+x6             0x20                32
+x7             0x63df7a6d39e95df8  7196605339102961144
+x8             0x83                131
+x9             0x11d0              4560
+x10            0xa                 10
+x11            0x7f8f880a70        547868904048
+x12            0xfffffffd          4294967293
+x13            0x51eb851eb851eb0   368934881474191024
+x14            0x0                 0
+x15            0x0                 0
+x16            0x0                 0
+x17            0x0                 0
+x18            0x5                 5
+x19            0x13a               314
+x20            0x7f8fa31ad0        547870677712
+x21            0x6                 6
+x22            0x7f8fab4000        547871211520
+x23            0x7f8f9df342        547870339906
+x24            0x2                 2
+x25            0x7f8f073000        547860459520
+x26            0x7f8f8821a0        547868909984
+x27            0x7f8f073000        547860459520
+x28            0x7f8f8828e0        547868911840
+x29            0x7f8f880d40        547868904768
+x30            0x7f8f9122ec        547869500140
+sp             0x7f8f880d40        0x7f8f880d40
+pc             0x7f8f912300        0x7f8f912300
+cpsr           0x60000000          [ EL=0 BTYPE=0 C Z ]
+fpsr           0x0                 [ ]
+fpcr           0x0                 [ Len=0 Stride=0 RMode=0 ]
+tpidr          0x7f8f8828e0        0x7f8f8828e0
+tpidr2         0x0                 0x0
+Saved corefile /root/m7-observe-20260928/micad-abort.core
+[Inferior 1 (process 312) detached]

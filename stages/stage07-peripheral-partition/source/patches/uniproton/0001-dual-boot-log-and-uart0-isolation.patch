@@ -1,0 +1,56 @@
+diff --git a/demos/rk3572_mica/bsp/mmu.c b/demos/rk3572_mica/bsp/mmu.c
+--- a/demos/rk3572_mica/bsp/mmu.c
++++ b/demos/rk3572_mica/bsp/mmu.c
+@@ -32,9 +32,9 @@ static mmu_mmap_region_s g_mem_map_info[] = {
+         .max_level = 0x2,
+         .attrs     = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RWX,
+     }, {    
+-        .virt      = MMU_UART_ADDR,
+-        .phys      = MMU_UART_ADDR,
+-        .size      = 0x2000,
++        .virt      = MMU_IMAGE_ADDR - OPENAMP_LOG_LENGTH,
++        .phys      = MMU_IMAGE_ADDR - OPENAMP_LOG_LENGTH,
++        .size      = OPENAMP_LOG_LENGTH,
+         .max_level = 0x2,
+-        .attrs     = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RWX,
++        .attrs     = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
+     }
+diff --git a/demos/rk3572_mica/apps/openamp/main.c b/demos/rk3572_mica/apps/openamp/main.c
+--- a/demos/rk3572_mica/apps/openamp/main.c
++++ b/demos/rk3572_mica/apps/openamp/main.c
+@@ -13,6 +13,7 @@
+ extern U32 TestClkStart(void);
+ extern U32 OsHwiInit(void);
+ extern S32 OsConfigStart(void);
++extern void UpLogBoot(void);
+ 
+ TskHandle g_testTskHandle;
+ U8 g_memRegion00[OS_MEM_FSC_PT_SIZE];
+@@ -28,6 +29,7 @@ int TestOpenamp()
+     if (ret) {
+         return ret;
+     }
++    PRT_Printf("[boot] RPMsg ready\n");
+ 
+     return OS_OK;
+ }
+@@ -37,4 +39,5 @@ void TestTaskEntry()
+ {
++    PRT_Printf("[boot] scheduler task entered\n");
+ #if defined(OS_OPTION_OPENAMP)
+     TestOpenamp();
+ #endif
+@@ -85,6 +88,7 @@ U32 PRT_AppInit(void)
+     if (ret) {
+         return ret;
+     }
++    PRT_Printf("[boot] interrupt routing ready\n");
+ #endif
+ 
+     ret = OsTestInit();
+@@ -121,3 +125,5 @@ S32 main(void)
+ {
++    UpLogBoot();
++    PRT_Printf("[boot] UP CPU%u entered\n", MCS_CLIENT_CPU_ID);
+     return OsConfigStart();
+ }

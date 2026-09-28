@@ -1,0 +1,90 @@
+diff --git a/mica/micad/services/rpc/rpc_backend.c b/mica/micad/services/rpc/rpc_backend.c
+--- a/mica/micad/services/rpc/rpc_backend.c
++++ b/mica/micad/services/rpc/rpc_backend.c
+@@ -237,7 +237,9 @@
+ #define WBUF_LEN         0x200
+ 
+-static int lfd;
++static int lfd = STDOUT_FILENO;
+ static FILE *fp;
++/* Lifecycle calls are serialized by the micad control listener. */
++static unsigned int rpc_service_users;
+ 
+ static int __lprintf(const char *fmt, va_list list)
+ {
+@@ -370,6 +372,11 @@ int rpmsg_rpc_service_init(void)
+ 	int ret;
+ 	unsigned int n_services = sizeof(service_table) / sizeof(service_table[0]);
+ 
++	if (rpc_service_users != 0) {
++		rpc_service_users++;
++		return 0;
++	}
++
+ 	lfd = open(LOG_PATH, O_CREAT | O_RDWR | O_APPEND, 0600);
+ 	if (lfd < 0) {
+ 		lfd = STDOUT_FILENO;
+@@ -380,26 +387,43 @@ int rpmsg_rpc_service_init(void)
+ 		if (lfd != STDOUT_FILENO) {
+ 			lprintf("Failed to open or create file");
+ 			close(lfd);
++			lfd = STDOUT_FILENO;
+ 		}
+ 		return -ENOMEM;
+ 	}
+ 
+ 	lprintf("number of services: %d, %p\n", n_services, service_table);
+ 	ret = rpmsg_init_rpc_server(&service_inst, service_table, n_services);
++	if (ret) {
++		fclose(fp);
++		fp = NULL;
++		if (lfd != STDOUT_FILENO)
++			close(lfd);
++		lfd = STDOUT_FILENO;
++		return ret;
++	}
+ #ifdef MULTI_WORKERS
+ 	workers_init();
+ #endif
++	rpc_service_users = 1;
+ 	return ret;
+ }
+ 
+ void rpmsg_rpc_service_terminate(void)
+ {
++	if (rpc_service_users == 0)
++		return;
++	if (--rpc_service_users != 0)
++		return;
++
+ 	if (fp != NULL) {
+ 		fclose(fp);
++		fp = NULL;
+ 	}
+ 
+ 	if (lfd != STDOUT_FILENO) {
+ 		lprintf("Destroying endpoint.\r\n");
+ 		close(lfd);
++		lfd = STDOUT_FILENO;
+ 	}
+ }
+diff --git a/mica/micad/services/rpc/rpmsg_rpc.c b/mica/micad/services/rpc/rpmsg_rpc.c
+--- a/mica/micad/services/rpc/rpmsg_rpc.c
++++ b/mica/micad/services/rpc/rpmsg_rpc.c
+@@ -75,5 +75,13 @@
+ int create_rpmsg_rpc_service(struct mica_client *client)
+ {
+-	rpmsg_rpc_service_init();
+-	return mica_register_service(client, &rpmsg_rpc_service);
++	int ret;
++
++	ret = rpmsg_rpc_service_init();
++	if (ret)
++		return ret;
++
++	ret = mica_register_service(client, &rpmsg_rpc_service);
++	if (ret)
++		rpmsg_rpc_service_terminate();
++	return ret;
+ }
+

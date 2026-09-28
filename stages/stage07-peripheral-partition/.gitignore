@@ -1,0 +1,3 @@
+# Crash dumps can contain private process memory. Keep them on the test board.
+*.core
+__pycache__/

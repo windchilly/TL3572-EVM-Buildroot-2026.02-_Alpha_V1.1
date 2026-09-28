@@ -1,0 +1,16 @@
+[Unit]
+Description=M7.0 reserved-memory log collector for UniProton %i
+After=local-fs.target
+RequiresMountsFor=/userdata
+ConditionPathExists=/dev/mem
+
+[Service]
+Type=simple
+User=root
+UMask=0027
+ExecStart=/usr/bin/python3 /usr/libexec/m7/up_log_reader.py --client %i --follow --output-dir /userdata/uniproton-logs
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

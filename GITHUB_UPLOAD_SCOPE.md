@@ -4,7 +4,7 @@ Target repository: `windchilly/TL3572-EVM-Buildroot-2026.02-_Alpha_V1.1`.
 
 This repository is intended to contain the project documentation, board
 reference materials, vendor source inputs needed by the TL3572 work, and the
-Stage 01-06 implementation and validation records. Large binary files that
+Stage 01-07 implementation and validation records. Large binary files that
 are included are stored through Git LFS.
 
 ## Included
@@ -15,7 +15,7 @@ are included are stored through Git LFS.
   Linux kernel, and U-Boot source archives, Arm GNU 14.3 toolchain archive,
   vendor boot/loader inputs, and their small metadata files.
 - `6-开发参考资料/` and `7-关于Tronlong/`, including PDFs and SBOM/reference files.
-- `stages/` Stage 01-06 source overlays, patches, recipes, configurations,
+- `stages/` Stage 01-07 source overlays, patches, recipes, configurations,
   build and test scripts, logs, manifests, checksums, and small firmware or
   boot artifacts retained as validation references.
 - `repro-inputs/` complete Stage 06 Yocto layer and the corresponding
@@ -24,6 +24,10 @@ are included are stored through Git LFS.
   earlier Stage 02 `meta-tl3572` layer, historical build configuration and
   scripts, and remaining Stage 03-05 source/configuration inputs copied from
   the openEuler build container.
+- `repro-inputs/rk3572/`: 150 additional openEuler package source trees,
+  required upstream source-mirror archives, the complete effective M6
+  UniProton source overlay (including libboundscheck), source inventory,
+  checksums, and clean-container preparation/build scripts.
 
 ## Omitted from Git
 
@@ -38,15 +42,21 @@ The `.gitignore` is the definitive path list for omissions. The original
 files remain in the local workspace. Some Stage 02-04 SHA256SUMS lists include
 omitted image outputs and therefore cannot be checked in full from a clone.
 
-## Reproduction requirements
+## Reproduction requirements (updated 2026-09-28)
 
 The complete Stage 06 Yocto layer and its vendor assets are under
 `repro-inputs/`. Pinned Stage 01 upstream source trees are also archived at
 `repro-inputs/stage01-05/upstream/`, without Git metadata. To rebuild,
-provision the pinned container image, external openEuler toolchain, and
-download access described in `stages/stage01-baseline/`. Restore the absolute
-workspace layout recorded in `repro-inputs/README.md`. The container no
+follow `repro-inputs/rk3572/README.md`: provision the digest-pinned container
+(including GCC 12.3 and Native SDK), restore all archived inputs, and build
+in a new isolated directory. The Arm GNU 14.3 archive is included; scripts
+restore the original command aliases and empty nosys.specs compatibility
+file. The user explicitly selected online retrieval of the pinned Docker
+image, not an additional Git LFS upload of the container image. No
+passwords, tokens, private SSH keys or crash dumps are included. The container no
 longer has untouched full-layer snapshots for every historical Stage 03-05
-state, and no clean-room rebuild from this GitHub clone has yet been run.
+state. The exact clean-room validation scope and results are recorded in
+`repro-inputs/rk3572/tests/clean-rebuild.md`; source completeness is not a
+claim of bit-identical historical image reconstruction or M7 acceptance.
 The archived Stage 06 build and board tests are documented under
 `stages/stage06-multi-uniproton/`.

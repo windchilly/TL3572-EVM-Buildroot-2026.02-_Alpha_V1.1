@@ -2,6 +2,9 @@
 
 当前状态：`COMPLETE`（2026-09-21，功能与构建范围）。
 
+评估板全接口划分与 UniProton 外设直驱另列为
+[M7.0 目标](../stage07-peripheral-partition/README.md)，尚未实施或验收，不属于本阶段的 `COMPLETE` 结论。
+
 M6 已将两个 UniProton 实例固定在 CPU4/CPU5（均为 Cortex-A53），Linux 保留
 CPU0～3 和 CPU6/CPU7（两颗 Cortex-A73）。两实例使用独立 ELF、加载地址、MMU
 区、128 KiB OpenAMP 共享池和 SGI；最终 Yocto 镜像已完成零警告全量构建、写入
@@ -22,7 +25,7 @@ CPU0～3 和 CPU6/CPU7（两颗 Cortex-A73）。两实例使用独立 ELF、加�
 - 单边停启隔离正序 50 轮/实例、逆序 20 轮/实例，合计 70 轮/实例，全部通过；
 - SGI8/SGI9 独立计数，`Err: 0`，`systemctl --failed` 为空；
 - 最终全量构建 `2920/2920` 成功，补丁精确应用，无 warning；
-- 配置继续使用 `AutoBoot=no`，便于 M7 做三实例启动顺序和故障隔离。
+- 配置继续使用 `AutoBoot=no`；M7.0 沿用双实例布局，后续三实例启动顺序和故障隔离另行规划。
 
 目录约定：
 

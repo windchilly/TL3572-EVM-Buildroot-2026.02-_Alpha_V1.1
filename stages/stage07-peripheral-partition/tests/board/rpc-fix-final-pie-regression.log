@@ -1,0 +1,216 @@
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+BASELINE pid=2319 restarts=0 fds=17
+up-a-m7 echo progress: 500/1000
+up-b-m7 echo progress: 500/1000
+up-a-m7 echo progress: 1000/1000
+up-a-m7 concurrent echo PASS: count=1000, payload=451, rx_bytes=478000, elapsed=0.506s
+up-b-m7 echo progress: 1000/1000
+up-b-m7 concurrent echo PASS: count=1000, payload=451, rx_bytes=478000, elapsed=0.520s
+isolation progress: 10/10
+one-sided lifecycle PASS: clients=up-a-m7,up-b-m7, cycles_each=10, elapsed=29.693s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-a-m7,up-b-m7 cycle=1/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.002s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.002s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-b-m7,up-a-m7 cycle=2/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-a-m7,up-b-m7 cycle=3/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-b-m7,up-a-m7 cycle=4/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-a-m7,up-b-m7 cycle=5/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-b-m7,up-a-m7 cycle=6/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.003s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-a-m7,up-b-m7 cycle=7/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.002s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-b-m7,up-a-m7 cycle=8/20 pid=2319 fds=17
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-a-m7,up-b-m7 cycle=9/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.006s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-b-m7,up-a-m7 cycle=10/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-a-m7,up-b-m7 cycle=11/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-b-m7,up-a-m7 cycle=12/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-a-m7,up-b-m7 cycle=13/20 pid=2319 fds=17
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-b-m7,up-a-m7 cycle=14/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.003s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.003s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-a-m7,up-b-m7 cycle=15/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-b-m7,up-a-m7 cycle=16/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-a-m7,up-b-m7 cycle=17/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-b-m7,up-a-m7 cycle=18/20 pid=2319 fds=17
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-a-m7,up-b-m7 cycle=19/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.003s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-b-m7,up-a-m7 cycle=20/20 pid=2319 fds=17
+up-a-m7 echo progress: 500/1000
+up-b-m7 echo progress: 500/1000
+up-a-m7 echo progress: 1000/1000
+up-a-m7 concurrent echo PASS: count=1000, payload=451, rx_bytes=478000, elapsed=0.488s
+up-b-m7 echo progress: 1000/1000
+up-b-m7 concurrent echo PASS: count=1000, payload=451, rx_bytes=478000, elapsed=0.497s
+isolation progress: 10/10
+one-sided lifecycle PASS: clients=up-a-m7,up-b-m7, cycles_each=10, elapsed=29.777s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-a-m7,up-b-m7 cycle=1/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-b-m7,up-a-m7 cycle=2/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-a-m7,up-b-m7 cycle=3/20 pid=2319 fds=17
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-b-m7,up-a-m7 cycle=4/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-a-m7,up-b-m7 cycle=5/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-b-m7,up-a-m7 cycle=6/20 pid=2319 fds=17
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.002s
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.003s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-a-m7,up-b-m7 cycle=7/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.006s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-b-m7,up-a-m7 cycle=8/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.002s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-a-m7,up-b-m7 cycle=9/20 pid=2319 fds=17
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-b-m7,up-a-m7 cycle=10/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-a-m7,up-b-m7 cycle=11/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-b-m7,up-a-m7 cycle=12/20 pid=2319 fds=17
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-a-m7,up-b-m7 cycle=13/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-b-m7,up-a-m7 cycle=14/20 pid=2319 fds=17
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-a-m7,up-b-m7 cycle=15/20 pid=2319 fds=17
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.002s
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.002s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-b-m7,up-a-m7 cycle=16/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-a-m7,up-b-m7 cycle=17/20 pid=2319 fds=17
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.005s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-b-m7,up-a-m7 cycle=18/20 pid=2319 fds=17
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-a-m7,up-b-m7 cycle=19/20 pid=2319 fds=17
+up-b-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+up-a-m7 concurrent echo PASS: count=5, payload=451, rx_bytes=2390, elapsed=0.004s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-b-m7,up-a-m7 cycle=20/20 pid=2319 fds=17
+OVERALL PASS pairs=40 pid=2319 restarts=0 fds=17 elapsed=197.683s

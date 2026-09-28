@@ -1,0 +1,18 @@
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+BASELINE pid=418 restarts=0 fds=17
+up-a-m7 concurrent echo PASS: count=100, payload=451, rx_bytes=47800, elapsed=0.053s
+up-b-m7 concurrent echo PASS: count=100, payload=451, rx_bytes=47800, elapsed=0.054s
+isolation progress: 2/2
+one-sided lifecycle PASS: clients=up-a-m7,up-b-m7, cycles_each=2, elapsed=5.915s
+CPU4: PSCI OFF confirmed
+CPU5: PSCI OFF confirmed
+PAIR PASS stop=up-a-m7,up-b-m7 start=up-a-m7,up-b-m7 cycle=1/1 pid=418 fds=17
+up-b-m7 concurrent echo PASS: count=100, payload=451, rx_bytes=47800, elapsed=0.030s
+up-a-m7 concurrent echo PASS: count=100, payload=451, rx_bytes=47800, elapsed=0.030s
+isolation progress: 2/2
+one-sided lifecycle PASS: clients=up-a-m7,up-b-m7, cycles_each=2, elapsed=5.919s
+CPU5: PSCI OFF confirmed
+CPU4: PSCI OFF confirmed
+PAIR PASS stop=up-b-m7,up-a-m7 start=up-a-m7,up-b-m7 cycle=1/1 pid=418 fds=17
+OVERALL PASS pairs=2 pid=418 restarts=0 fds=17 elapsed=19.049s
