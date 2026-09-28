@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 import subprocess
 import tarfile
+import shutil
 
 
 EXCLUDED = {
@@ -80,6 +81,8 @@ def main():
     parser.add_argument("--project", type=Path, required=True)
     parser.add_argument("--downloads", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--reuse-bundles", type=Path,
+                        help="Reuse unchanged packaging/download bundles from a previous export")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     source = args.project / "src"
@@ -103,7 +106,19 @@ def main():
             record["sparse_checkout"] = (repo / ".git/info/sparse-checkout").exists()
         inventory["repositories"].append(record)
         packages.extend(entries)
-    inventory["bundles"].append(archive(args.output / "openeuler-packages.tar.gz", packages))
+    previous = None
+    if args.reuse_bundles:
+        previous = json.loads((args.reuse_bundles / "SOURCE-INVENTORY.json").read_text(encoding="utf-8"))
+        if inventory["repositories"] != previous["repositories"]:
+            raise ValueError("Packaging repositories changed; do a complete export instead")
+        for bundle in previous["bundles"][:2]:
+            original = args.reuse_bundles / bundle["archive"]
+            if digest(original) != bundle["sha256"]:
+                raise ValueError(f"Corrupt cached bundle: {original}")
+            shutil.copyfile(original, args.output / original.name)
+        inventory["bundles"] = previous["bundles"][:2]
+    else:
+        inventory["bundles"].append(archive(args.output / "openeuler-packages.tar.gz", packages))
 
     # Mirror tarballs contain upstream Git objects where required by ordinary
     # BitBake git fetches. Do not archive live cache configuration, locks or .done.
@@ -111,13 +126,21 @@ def main():
                  if path.is_file() and not path.is_symlink()
                  and not path.name.endswith((".done", ".lock"))
                  and (".tar." in path.name or path.suffix in (".tgz", ".zip"))]
-    inventory["bundles"].append(archive(args.output / "downloads.tar.gz", downloads))
+    if not previous:
+        inventory["bundles"].append(archive(args.output / "downloads.tar.gz", downloads))
 
     uni = source / "UniProton"
     changed = git(uni, "diff", "--name-only", "HEAD").splitlines()
     overlay_paths = {uni / path for path in changed}
     for relative in ("build/uniproton_config/config_armv8_rk3572",
-                     "platform/libboundscheck", "demos/rk3572_mica"):
+                     "platform/libboundscheck", "demos/rk3572_mica",
+                     "src/net/lwip", "src/fs/fat/ff15"):
+        if not (uni / relative).is_dir():
+            if relative == "src/fs/fat/ff15":
+                # CONFIG_OS_OPTION_DRIVER is disabled in the active RK3572
+                # configuration, so the original build never fetched FatFs.
+                continue
+            raise ValueError(f"Effective third-party source missing: {uni / relative}")
         for path in files_under(uni / relative):
             name = path.relative_to(uni).as_posix()
             # Exclude generated demo libs, expanded dependencies and build trees.
@@ -129,17 +152,35 @@ def main():
                 continue
             if name.startswith("demos/rk3572_mica/component/") and path.parent != uni / "demos/rk3572_mica/component":
                 continue
-            if path.suffix in (".elf", ".o", ".a", ".lib", ".bin", ".pyc"):
+            if name.startswith("demos/rk3572_mica/") and path.suffix in (".elf", ".o", ".a", ".lib", ".bin", ".pyc"):
                 continue
             overlay_paths.add(path)
     for relative in ("cmake/tool_chain/rk3572_armv8.cmake", "cmake/tool_chain/rk3572_armv8_config.cmake.in"):
         overlay_paths.add(uni / relative)
     entries = [(path, path.relative_to(uni).as_posix()) for path in overlay_paths]
     inventory["bundles"].append(archive(args.output / "uniproton-m6-complete-overlay.tar.gz", entries))
+    # os-base and systemd inspect this repository through GitPython/git log.
+    # Preserve the exact commit as a shallow repository; no historical objects,
+    # credentials, original remotes or hooks are needed.
+    metadata = args.output / "metadata-git"
+    subprocess.run(["git", "clone", "--bare", "--depth", "1", "--no-tags",
+                    (source / "yocto-meta-openeuler").as_uri(), str(metadata)],
+                   check=True, capture_output=True)
+    subprocess.run(["git", "--git-dir", str(metadata), "config", "--remove-section", "remote.origin"], check=True)
+    subprocess.run(["git", "--git-dir", str(metadata), "config", "core.bare", "false"], check=True)
+    metadata_entries = [(path, f".git/{path.relative_to(metadata).as_posix()}")
+                        for path in files_under(metadata)
+                        if path.relative_to(metadata).parts[0] not in ("hooks", "logs")]
+    inventory["bundles"].append(archive(args.output / "yocto-meta-openeuler-git.tar.gz", metadata_entries))
+    inventory["yocto_git_metadata"] = {"commit": git(source / "yocto-meta-openeuler", "rev-parse", "HEAD"),
+                                       "shallow": True, "remotes": [], "hooks": False,
+                                       "purpose": "exact os-base OEE_REVISION and systemd SOURCE_DATE_EPOCH; no synthetic commit"}
     inventory["uniproton_overlay"] = {
         "baseline_commit": git(uni, "rev-parse", "HEAD"),
         "tracked_changes": changed,
         "libboundscheck_provenance": "effective source files copied into the working tree on 2026-09-17; original fetched commit not recorded; file hashes freeze the exact input",
+        "lwip_provenance": "complete effective patched lwIP 2.1.3 source tree from src/net/lwip; CMake skips FetchContent when restored; frozen by per-file hashes",
+        "fatfs": "ff15 is not used by the active RK3572 configuration (CONFIG_OS_OPTION_DRIVER disabled); no original fetched tree exists",
         "purpose": "effective M6 inputs including libboundscheck, patched dependency tarballs/patches and custom BSP; no generated libraries or ELF outputs",
     }
     manifest = args.output / "SOURCE-INVENTORY.json"

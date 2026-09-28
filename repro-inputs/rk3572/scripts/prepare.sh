@@ -18,6 +18,9 @@ for baseline in "${repo}"/repro-inputs/stage01-05/upstream/*.tar.gz; do
     mkdir "${project}/src/${name}"
     tar -xzf "${baseline}" -C "${project}/src/${name}"
 done
+tar -xzf "${inputs}/yocto-meta-openeuler-git.tar.gz" -C "${project}/src/yocto-meta-openeuler"
+git -C "${project}/src/yocto-meta-openeuler" read-tree HEAD
+test "$(git -C "${project}/src/yocto-meta-openeuler" rev-parse HEAD)" = 3aa6999c9ab78569bc2209a9dbb185e2f7e4301c
 tar -xzf "${inputs}/openeuler-packages.tar.gz" -C "${project}"
 tar -xzf "${inputs}/downloads.tar.gz" -C /home/openeuler/build
 # This overlay contains the effective M6 source, including previously missing
