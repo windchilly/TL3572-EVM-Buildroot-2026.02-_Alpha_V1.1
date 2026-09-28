@@ -43,7 +43,8 @@ are included are stored through Git LFS.
   checksums, and validation records remain where available.
 - The 6.1 GiB vendor `LinuxSDK-v1.0.tar.gz`, 1.5 GiB download cache,
   and 1.3 GiB generated sysroot. They are not inputs to the documented
-  openEuler Stage 06 build path.
+  openEuler stage build paths; used vendor source/toolchain/assets are
+  archived separately. This is not an upload of the entire unrelated SDK.
 - Third-party Windows installers and one identical duplicate U-Boot archive.
 
 The `.gitignore` is the definitive path list for omissions. The original
@@ -70,5 +71,13 @@ recorded. The exact clean-room validation scope and results are recorded in
 claim of bit-identical historical image reconstruction or M7 acceptance.
 All-stage validation is recorded separately in
 `repro-inputs/all-stages/tests/verification.md`.
+The all-stage reproduction entry is `repro-inputs/all-stages/README.md`,
+pinned to commit `2e6074a506111b301ffc146650ef15966da47bf5` (complete source
+archives, final build scripts and validation evidence). Seven-stage
+restoration, six-stage offline fetch and a fresh byte-identical M5 ELF
+rebuild passed; this is not a claim that every historical full image was
+rebuilt. The new archives and inventories passed 24 independent GitHub
+download hash checks. Current checked-out file content is about 4.31 GiB;
+this round added about 1.06 GiB, excluding Git/LFS historical caches.
 The archived Stage 06 build and board tests are documented under
 `stages/stage06-multi-uniproton/`.

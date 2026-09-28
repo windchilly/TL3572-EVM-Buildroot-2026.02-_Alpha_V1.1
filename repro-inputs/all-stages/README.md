@@ -43,9 +43,22 @@ Yocto 仍采用“完整原始内核 + 正式补丁”的原构建方式；额�
 记录归档成员和逐文件校验值；小型 `STAGES.json` 便于直接审阅阶段差异及来源。
 `SHA256SUMS` 分别校验本目录及 historical 目录的归档。
 
+本轮新增约 1.06 GiB，全仓库当前实际文件约 4.31 GiB / 4.63 GB；不是 Git/LFS 历史缓存总量。
+所有完整归档已从 GitHub 独立下载，24 项校验全部一致。
+
 ## 换机恢复 / 构建
 
-Linux x86_64 主机需安装 Docker、Git、Git LFS。先克隆仓库并执行 `git lfs pull`。
+Linux x86_64 主机需安装 Docker、Git、Git LFS。固定本次完整输入、最终构建脚本和验证记录的
+提交为 `2e6074a506111b301ffc146650ef15966da47bf5`；后续 main 的变化不影响此版本：
+
+```sh
+git lfs install
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/windchilly/TL3572-EVM-Buildroot-2026.02-_Alpha_V1.1.git tl3572-all-stages
+cd tl3572-all-stages
+git checkout --detach 2e6074a506111b301ffc146650ef15966da47bf5
+git lfs pull
+```
+
 Docker 仍按用户确认的固定摘要联网下载，镜像本身没有额外上传：
 
 ```text
@@ -92,6 +105,9 @@ M5 boot 内嵌配置 SHA-256 为
 
 验证结果单独记录在 `tests/verification.md`。源码归档完整、离线取源通过、ELF 重编成功、
 完整镜像重编成功及板上验收是不同结论，不能混用。
+已完成七阶段独立恢复、Stage02–Stage07 离线取源，以及 M5 全新目录 ELF 重编与历史文件
+逐字节一致；没有完成每个历史阶段的全镜像重编。此前 M6 全镜像、M6/M7 四份 ELF 和
+M7 MCS/独立 micad 已干净重编，证据见 `../rk3572/tests/clean-rebuild.md`。
 
 没有上传旧 tmp/sstate、大型生成镜像、密码/Token/私钥或 board core。
 原厂 6.1 GiB Buildroot LinuxSDK 整体包、原厂 dl/sysroot 包仍未上传；它们没有参与

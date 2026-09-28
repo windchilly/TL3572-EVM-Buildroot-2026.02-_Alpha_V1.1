@@ -187,3 +187,54 @@ ISO、6.1 GiB 原厂 LinuxSDK 压缩包、下载缓存、生成的 sysroot、第
 - 复建是在同一宿主机的全新隔离容器完成，不声称已换另一台物理主机实测。
   历史 Stage 03–05 未修改的独立层快照缺失、M7 外设直驱未完成/未验收、
   MCS create/rm fd 遗留问题与 mcsctl 错误返回问题仍在，不因本次构建通过而改变。
+
+## 2026-09-28：全 Stage 源码已补齐上传，独立恢复及 M5 重编完成
+
+- 用户进一步要求“应把所有 stage 的源码内容完整上传”，最新“继续”是继续这项上传任务，
+  不代表继续外设驱动实施或授权板卡操作。本轮没有访问、重启、刷写板卡。
+- 完整源码归档已推送 main，提交 `e637d3066d30ab14d8ebde304bd7654cedf4b80e`。
+  最终脚本修正和验证证据提交为 `2e6074a506111b301ffc146650ef15966da47bf5`；
+  `repro-inputs/all-stages/README.md` 的换机命令固定后者，不随 main 漂移。
+- 新入口 `repro-inputs/all-stages/` 有 19 个源码/阶段配置包，共 875,528,534 B：
+  M4/M5/M6 完整有效 6.12.69 内核（各 92,283 个文件/链接）、M5/M6/M7 完整 UniProton
+  （12,511 / 12,776 / 12,776 个文件/链接）、Stage02–Stage07 完整 MCS（各 83 文件）、
+  独立阶段层/配置以及合集。共享的完整源码/大资产按路径与 SHA-256 引用已有实际归档，
+  恢复时校验并补齐，不是只上传补丁，也不依赖原容器内未归档目录。
+- 另上传完整 openEuler 5.10 内核，提交 `920880cbeb4a3390da6f9e95508b29abbf45140d`，
+  73,335 个跟踪源文件、192,274,017 B。Stage02 离线取源确实需要这个内核来源。
+  `SOURCE-INVENTORY.json` 和 `historical/HISTORICAL-INVENTORY.json` 记录逐文件哈希，使用 LFS。
+- Git LFS 实际新增上传 20 个去重后对象，约 1.1 GB；新增目录约 1.06 GiB。
+  全仓库当前实际文件约 4.31 GiB / 4.63 GB，不是 Git/LFS 所有历史缓存占用。
+  基础 Docker 仍固定摘要联网拉取，不上传约 11.16 GiB 展开的镜像，遵守用户选择。
+- 在独立 Windows 克隆 `C:/Users/limew/AppData/Local/Temp/rk3572-github-verify-20260928`
+  从 GitHub 下载 all-stages 全部 LFS 输入；没有向此克隆注入构建机源缓存。
+  新归档/清单 21 项加历史输入 3 项，共 24 项 SHA-256 全部一致；`git lfs fsck` 通过。
+- 七阶段均从新目录、固定摘要容器、只读源码挂载、network none 独立恢复成功。
+  Stage01 只有基线审计，没有固件目标；Stage02 fetch=215/215，Stage03=217/217，
+  Stage04/05/06/07 各 224/224，均为 0 个复用、全部实际执行成功。
+- M5 最终全新容器 `tl3572-all-stage05-20260928-m5-final` 的恢复、取源、重编完整返回 0；
+  所有核心/依赖库从源码生成。ELF 589,064 B，SHA-256
+  `3faa550c98c18a407e1a2816b3c022c82fc91d85b3fb968b83ffed32631478d0`，
+  与历史 `stages/stage05-uniproton/firmware/rk3572-uniproton-final.elf` 经 cmp 逐字节一致。
+  入口补充 mkdir include，并保留历史 CMake `build/rk3572_mica` 路径以固定 DWARF。
+- M5 正式 boot 的 IKCONFIG 与保留的 M4 正式内核配置逐字节一致，SHA-256
+  `57e11529b3d8760c13eb0fa0093aa325157d59bd4176deea6f6198afd26b718d`；
+  使用 `maxcpus=7`，不能把 M6 的 CPU4/5 预留政策错误套入 M5。
+- 最终原始证据在 `repro-inputs/all-stages/tests/logs/`，20 个文件均有 SHA256SUMS；
+  说明在 `tests/verification.md`。Linux 4 项归档单测、Python/Bash 语法检查通过。
+  Stage01/03/04/06/07 批处理均完成并打印 PASS 后，因运行时覆盖驱动文件导致收尾返回 2；
+  原日志 `driver-rest.log` 如实保留，不把批处理整体冒充 exit=0。当前脚本语法通过，
+  随后新目录 M5 驱动完整 exit=0；后续不要在运行中覆盖驱动。
+- 构建宿主卷 `_data/` 中新增验证目录为 `tl3572-all-stages-validation-20260928`、
+  `tl3572-all-stages-validation-rest-20260928`、`tl3572-all-stages-validation-m5-final-20260928`；
+  输入导出目录为 `tl3572-all-stages-history-v2-20260928`、
+  `tl3572-all-stages-snapshots-v2-20260928`，证据副本在 `tl3572-all-stages-evidence-20260928`。
+  这些均已结束，原项目、原容器、新测试目录及首轮诊断目录均保留，勿重复启动旧任务。
+- Stage03–Stage05 未修改的独立完整历史层没有幸存；新增独立层是有证据的重建版，
+  不是原始逐字节历史层快照。历史清理的 M5.1/M5.2 临时工作树无法补造。
+  本轮未重编 Stage02–Stage05 的每份全镜像，也未换另一台物理主机实测。
+  此前已通过的 M6 全镜像、M6/M7 ELF、M7 MCS/micad 验证见上一节，不重复冒充新测试。
+- M7 上传的是已实现的日志/RPC 软件；外设移交和直驱仍未实现/未验收。
+  MCS create/rm fd 和 mcsctl 错误返回遗留问题不变。旧 tmp/sstate、大型生成镜像、
+  密码/Token/私钥/board core 不上传。整个原厂 LinuxSDK/dl/sysroot 包不属于此 openEuler
+  Stage 构建输入，仍不上传；用到的厂商源码、工具链和资产已经单独归档。
