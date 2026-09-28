@@ -1,7 +1,7 @@
 # TL3572 阶段4 交接文档（2026-09-16 15:15 暂停）
 
 > 交接原因：Stage4 首轮 boot.img 烧录后板卡停在 U-Boot 提示符，未启动。正在串口诊断时用户暂停，要求交接。
-> 接手模型请先读本文件，再读主文档《TL3572_openEuler_MICA_UniProton_2oo3_完整移植路径.md》（阶段0-3全部完成，阶段4进行中）。
+> 接手模型请先读本文件，再读主文档 `docs/project/migration-plan.md`（阶段0-3全部完成，阶段4进行中）。
 
 ## 1. 当前状态一句话
 
@@ -11,7 +11,7 @@
 
 - 板卡当前停在 **U-Boot 交互提示符**（串口 COM7，115200 8N1，CH340 线）
 - SSH root@192.168.2.143 不可达（系统未启动）。板卡正常时 SSH 可用：`plink -ssh -batch -hostkey 'SHA256:60CU6EkU00yhkNXzA1B87ln0nyy0+A5Oaubdn7fYn44' -pw '' root@192.168.2.143`（空密码）
-- **板卡可随时回滚**：按住升级键进 Loader 模式，RKDevTool「下载分区」只烧 boot 分区（地址 0x0000a000），文件用厂商原版 `I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\4-软件资料\Linux\Kernel\image\linux-6.12.69-v1.0-gf1b67c2\boot.img`（SHA256 与 update.img 内的一致，已验证）
+- **板卡可随时回滚**：按住升级键进 Loader 模式，RKDevTool「下载分区」只烧 boot 分区（地址 0x0000a000），文件用厂商原版 `software/firmware/kernel/linux-6.12.69-v1.0-gf1b67c2/boot.img`（SHA256 与 update.img 内的一致，已验证）
 - U-Boot 下手动 `boot` 的完整输出已存 `logs\uboot-diag.txt`，关键行：
   ```
   ANDROID: reboot reason: "(none)"
@@ -115,7 +115,7 @@ systemctl start micad && mcsctl status      # micad active、无实例（无RTOS
 | 板卡串口 | COM7（CH340）`plink -serial COM7 -sercfg 115200,8,N,1,N`；**stdin EOF 后 plink 不退出，用完 powershell Stop-Process plink** |
 | 板卡 SSH | root@192.168.2.143 空密码，hostkey `SHA256:60CU6EkU00yhkNXzA1B87ln0nyy0+A5Oaubdn7fYn44`（当前系统未起不可用） |
 | 传文件 | 容器→宿主 `docker cp`，宿主→Windows `pscp`（单文件单命令，多源不支持）；plink/pscp stdout 会 CRLF 污染二进制，传文件只能 pscp |
-| 厂商 boot.img 参照 | 容器 `/home/openeuler/vendor-boot.img`；本地 `4-软件资料\Linux\Kernel\image\...\boot.img` 与 afp-unpack/boot.img 同一文件 |
+| 厂商 boot.img 参照 | 容器 `/home/openeuler/vendor-boot.img`；本地 `software/firmware/kernel/linux-6.12.69-v1.0-gf1b67c2/boot.img` 与 afp-unpack/boot.img 同一文件 |
 | Windows 工作目录 | `stages/stage04-mica-mcs/worklog-20260916/`（artifacts/ + logs/ + docs/） |
 
 ## 6. 已踩过的坑（接手别再踩）
@@ -142,7 +142,7 @@ systemctl start micad && mcsctl status      # micad active、无实例（无RTOS
 
 ## 8. 关键文件索引
 
-- 主进度文档：`I:\...\TL3572_openEuler_MICA_UniProton_2oo3_完整移植路径.md`（§6.7 是阶段3收口记录；阶段4尚未写入，需接手者补 §7 实测记录）
+- 主进度文档：`docs/project/migration-plan.md`（§6.7 是阶段3收口记录；阶段4尚未写入，需接手者补 §7 实测记录）
 - 阶段3 交付：`stages/stage03-yocto-bsp/release-update-m2-20260916/`（完整 update.img 已实机验证 --failed=0）
 - 阶段4 Windows 产物：`../artifacts/`（boot-mcs-tl3572.img / mcs_km.ko / 0001/0002 补丁 / mcs_km-tl3572.c / boot-mcs.its / kernel-config-stage4-mica / SHA256SUMS）
 - 串口证据：`../logs/`（board-kernel-recon.txt=刷前摸底，serial-post-flash-stage4.txt=停在U-Boot，uboot-diag.txt=手动boot完整输出）

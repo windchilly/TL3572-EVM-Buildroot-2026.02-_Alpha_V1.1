@@ -49,6 +49,6 @@ Stage03–05 层明确标注为历史材料重建版；下文是 2026-09-23 原�
 逐字节独立重建。当前最终层在 `repro-inputs/meta-tl3572-stage3/`。
 
 构建仍需 Stage 01 清单指定的 openEuler 容器环境及其中的 GCC 12.3/Native SDK；
-Arm GNU 14.3 工具链见 `4-软件资料/Linux/Tools/`。下载缓存和 sstate 未上传，
+Arm GNU 14.3 工具链见 `software/toolchains/`（历史固定提交为 `4-软件资料/Linux/Tools/`）。下载缓存和 sstate 未上传，
 首次构建可能需要联网。Stage 02–04 的大型已生成 rootfs/update 镜像仍按
-`GITHUB_UPLOAD_SCOPE.md` 排除。尚未从全新 GitHub 克隆执行 Stage 01–05 的完整复建。
+`docs/operations/github-upload-scope.md` 排除。尚未从全新 GitHub 克隆执行 Stage 01–05 的完整复建。

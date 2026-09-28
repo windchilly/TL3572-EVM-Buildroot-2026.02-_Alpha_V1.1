@@ -1,5 +1,8 @@
 # TL3572-EVM openEuler Embedded + MICA + 三 UniProton 2oo3 完整移植路径
 
+目录说明（2026-09-28）：本文已归入 `docs/project/`；文中的 `stages/` 等内联路径
+均相对仓库根目录。原厂文件新位置见 [目录规范](../operations/workspace-layout.md)。
+
 文档版本：V1.5  
 编制日期：2026-09-14  
 最近验证：2026-09-21  
@@ -54,7 +57,7 @@ cluster 的故障域隔离，则切换为 CPU3/5/7，具体见 `7.4` 和 `10.1`�
   → 阶段10 故障注入和验收
 ```
 
-编号说明：本轮已将原 M6 外设扩展单列为 [M7.0 全资源划分与外设直驱](stages/stage07-peripheral-partition/README.md)。下文既有“阶段7/M7 三实例”是旧版路线图的历史称谓，指后续三实例工作，**不属于 M7.0**；其正式编号待该阶段启动时再定，不把第三实例、2oo3 或 I/O 表决提前并入本阶段。
+编号说明：本轮已将原 M6 外设扩展单列为 [M7.0 全资源划分与外设直驱](../../stages/stage07-peripheral-partition/README.md)。下文既有“阶段7/M7 三实例”是旧版路线图的历史称谓，指后续三实例工作，**不属于 M7.0**；其正式编号待该阶段启动时再定，不把第三实例、2oo3 或 I/O 表决提前并入本阶段。
 
 ## 2. 当前已验证基础
 
@@ -762,7 +765,7 @@ Linux 正常上线。
 #### 7.4.1 外设所有权建议（原后续 2oo3 默认方案；非 M7.0）
 
 M7.0 外设直驱需求草案见
-[M7.0 全资源分配](stages/stage07-peripheral-partition/docs/m7.0-resource-allocation-and-tests.md)。本节记录原
+[M7.0 全资源分配](../../stages/stage07-peripheral-partition/docs/m7.0-resource-allocation-and-tests.md)。本节记录原
 2oo3 Linux 唯一 I/O 代理方案；M7.0 草案拟将 CAN、RS-485、RS-232、SARADC
 等工控接口按完整控制器交给 UP1/UP2，并以不改板的软件验证为前提，尝试把 ETH2
 交给 UP2；ETH1 和 DI/DO 留给 Linux。已确认启动阶段可一次性初始化 ETH2 PHY，
@@ -1055,7 +1058,7 @@ UniProton/demos/rk3572_mica/
 
 后续提出的评估板全接口归属及 UP1/UP2 物理外设直驱现单列为 M7.0 需求草案，
 尚未实施或验收；不追溯改变本节的历史 `COMPLETE` 结论。详见
-[M7.0 全资源分配](stages/stage07-peripheral-partition/docs/m7.0-resource-allocation-and-tests.md)。
+[M7.0 全资源分配](../../stages/stage07-peripheral-partition/docs/m7.0-resource-allocation-and-tests.md)。
 
 ### 9.1 资源分配
 

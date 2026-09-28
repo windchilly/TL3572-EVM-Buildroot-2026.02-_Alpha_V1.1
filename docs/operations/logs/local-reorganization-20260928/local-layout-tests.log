@@ -1,0 +1,11 @@
+﻿test_active_local_markdown_links (__main__.LocalLayoutTests.test_active_local_markdown_links) ... ok
+test_all_stage_source_archive_hashes (__main__.LocalLayoutTests.test_all_stage_source_archive_hashes) ... ok
+test_legacy_roots_are_absent (__main__.LocalLayoutTests.test_legacy_roots_are_absent) ... ok
+test_original_tracked_files_are_retained_or_explicitly_recycled (__main__.LocalLayoutTests.test_original_tracked_files_are_retained_or_explicitly_recycled) ... ok
+test_pinned_toolchain_hash (__main__.LocalLayoutTests.test_pinned_toolchain_hash) ... ok
+test_unedited_moved_files_keep_their_hashes (__main__.LocalLayoutTests.test_unedited_moved_files_keep_their_hashes) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 14.861s
+
+OK

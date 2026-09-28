@@ -6,25 +6,46 @@
 TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1/
 ├─ README.md                    项目入口与分类索引
 ├─ memory.md                    当前状态与交接历史
-├─ 1-产品规格书/ ... 7-关于Tronlong/  原厂资料、原厂源码、板级工具
+├─ hardware/                    硬件规格、核心板/底板设计、数据手册
+│  ├─ specifications/           核心板、底板、本板配套附件规格
+│  ├─ core-board/               引脚、机械/位号图、2D/3D 与封装
+│  ├─ carrier-board/            原理图、PCB、BOM、机械/位号图
+│  ├─ datasheets/               SoC、核心板/底板元件数据手册
+│  └─ design-guides/            硬件说明与底板设计指南
+├─ software/                    厂商源码、工具链、示例、参考固件
+│  ├─ sources/{kernel,u-boot,buildroot}/  完整厂商源包
+│  ├─ toolchains/               固定 Arm GNU 14.3
+│  ├─ examples/                 CAN/串口/GPIO、通信、音频与 GUI 示例
+│  └─ firmware/{kernel,u-boot,rootfs,updateimg}/  原厂参考/回滚产物
 ├─ stages/stage01-...stage07-*/  各阶段设计、实现、参考固件、正式记录
 ├─ repro-inputs/                完整复现输入、固定摘要/提交、构建脚本
 │  ├─ all-stages/               当前全阶段恢复入口
 │  ├─ rk3572/                   共享包输入与 M6/M7 干净构建入口
 │  ├─ stage01-05/               原始上游快照和幸存历史输入
 │  └─ meta-tl3572-stage3/ ...    原始 M6 层及配置，保留兼容路径
-├─ docs/operations/             目录映射、清理记录、维护规则
+├─ docs/                        技术与项目文档
+│  ├─ project/                  总移植路线
+│  ├─ manuals/                  厂商使用/开发/评估测试手册
+│  ├─ reference/rockchip/       完整技术参考、补丁、SBOM
+│  ├─ vendor-notes/             开箱、版本更新、软件特性、SDK 说明
+│  └─ operations/               目录映射、清理记录、上传范围、维护规则
 ├─ scripts/maintenance/         精确限定范围的整理工具
 └─ .local-only/                 只留本机、Git 忽略
    ├─ vendor-sdk/               原厂整体 SDK/dl/sysroot，归档保留
+   ├─ tools/windows/            flashing、drivers、industrial、communication、diagnostics
    ├─ metadata/nested-vendor-git/  原嵌套 Git 元数据备份
    └─ maintenance/              实际动作清单
 ```
 
 源码输入只保存到正式来源目录，避免额外复制一套“最新源码”。
 `SOURCE-INVENTORY.json` / `STAGES.json` / `SHA256SUMS` 是源码范围与版本的依据。
-原厂资料、正式 `release-*` 包及已有清单不改名、不改内部结构。
-原厂 SDK 的三个本地大包转入 `.local-only/vendor-sdk/`；实际参与复现的工具链/源包保持原路径。
+正式 `release-*` 包及已有阶段清单不改名、不改内部结构。
+原厂七个编号顶层目录已撤除；文件版本名、CAD 配套关系和源码包内结构保持不变。
+实际参与复现的厂商工具链/源包已归到 `software/`，prepare 脚本识别新旧工具链路径，
+并校验同一个固定哈希。原厂 SDK 的三个大包继续保留在 `.local-only/vendor-sdk/`。
+详细文件/目录映射见 [本地重构方案](local-reorganization-plan.json)，本机实际逐文件哈希
+和动作清单在 `.local-only/maintenance/local-reorganization-20260928.json`。
+旧的固定复现提交 `2e6074a` 保留原布局；无需修改历史提交或重新生成源码归档。
 
 ## openEuler 服务器
 
@@ -93,4 +114,5 @@ RK3588 独立工程已按用户确认删除，不在此分类中；共享上游�
 - Windows 安装包优先回收站；Linux 已确认删除的独立 RK3588 工程无恢复保证。
 - 本地清单、密码、Token、私钥和 core 不上传。
 
-本次具体动作与验证见 [2026-09-28 整理记录](cleanup-20260928.md)。
+服务器清理与初次本地归档见 [初次整理记录](cleanup-20260928.md)；
+本地完整分类和售后/宣传清除见 [本地结构重构记录](local-reorganization-20260928.md)。

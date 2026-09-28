@@ -33,7 +33,12 @@ cp -a "${repo}/repro-inputs/meta-tl3572-stage3" "${project}/"
 cp -a "${repo}/repro-inputs/build-conf/." "${project}/build/build-tl3572/conf/"
 cp -a "${repo}/repro-inputs/.oebuild" "${project}/"
 mkdir "${project}/toolchain-14.3"
-toolchain_archive="${repo}/4-软件资料/Linux/Tools/arm-gnu-toolchain-14.3.rel1-x86_64-aarch64-none-linux-gnu.tar.gz"
+toolchain_archive="${repo}/software/toolchains/arm-gnu-toolchain-14.3.rel1-x86_64-aarch64-none-linux-gnu.tar.gz"
+# Older frozen checkouts use the original vendor layout. Never substitute an
+# arbitrary compiler: either location must pass the same pinned SHA256 check.
+if [[ ! -f "${toolchain_archive}" ]]; then
+    toolchain_archive="${repo}/4-软件资料/Linux/Tools/arm-gnu-toolchain-14.3.rel1-x86_64-aarch64-none-linux-gnu.tar.gz"
+fi
 printf '%s  %s\n' 'c7609e94851a47a5f475fb91eee091c8ca9eef13f31bad2e43d12d11bb1f7861' "${toolchain_archive}" | sha256sum -c -
 tar -xzf "${toolchain_archive}" --strip-components=1 -C "${project}/toolchain-14.3"
 for tool in gcc g++ ar ld nm objcopy objdump readelf strip ranlib; do

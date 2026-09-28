@@ -37,7 +37,8 @@ Yocto 仍采用“完整原始内核 + 正式补丁”的原构建方式；额�
 - `historical/openeuler-kernel-5.10-complete.tar.gz`：固定提交
   `920880cbeb4a3390da6f9e95508b29abbf45140d` 的 73,335 个跟踪源文件。
 - `../meta-tl3572-stage3/recipes-kernel/linux/files/`：完整原始厂商 6.12.69 内核及 boot 输入。
-- 仓库 `4-软件资料/Linux/`：已有厂商 Buildroot、U-Boot、内核源包和 Arm GNU 14.3 工具链。
+- 仓库 `software/sources/` 和 `software/toolchains/`：厂商 Buildroot、U-Boot、内核源包和 Arm GNU 14.3 工具链。
+  下方固定复现提交使用整理前的 `4-软件资料/Linux/` 布局；当前脚本兼容两种工具链位置，哈希不变。
 
 `SOURCE-INVENTORY.json` 和 `historical/HISTORICAL-INVENTORY.json` 使用 Git LFS，
 记录归档成员和逐文件校验值；小型 `STAGES.json` 便于直接审阅阶段差异及来源。

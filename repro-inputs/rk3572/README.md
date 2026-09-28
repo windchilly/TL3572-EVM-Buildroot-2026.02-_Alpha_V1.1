@@ -43,7 +43,7 @@ M6 双固件及 M7 已实现的软件切片；不是宣称所有历史阶段逐�
 5. `repro-inputs/meta-tl3572-stage3/`、`build-conf/`、`.oebuild/`：当前完整配方、
    所有内核补丁、内核源码、defconfig、设备树覆盖、厂商启动输入、镜像配置、
    M6 参考固件及校验，已在仓库。
-6. `4-软件资料/Linux/Tools/arm-gnu-toolchain-14.3.rel1-x86_64-aarch64-none-linux-gnu.tar.gz`：
+6. `software/toolchains/arm-gnu-toolchain-14.3.rel1-x86_64-aarch64-none-linux-gnu.tar.gz`：
    原始交叉工具链，已在仓库；本目录脚本补齐原工作区的命令别名与空 `nosys.specs`。
 7. `stages/stage07-peripheral-partition/`：M7 日志环/读取器、RPC 修复补丁、附加层、
    构建/测试脚本、资源划分和实机证据。外设直驱仍未完成。

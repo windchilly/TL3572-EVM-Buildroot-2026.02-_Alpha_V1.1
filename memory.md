@@ -1,5 +1,11 @@
 # 项目交接记录（2026-09-23）
 
+当前目录已于 2026-09-28 完成实际结构重构：`hardware/`、`software/`、`docs/` 分别
+保存硬件、厂商软件、项目/技术文档；原七个编号顶层目录已撤除，售后/返修/宣传资料
+已移入回收站。总路线为 `docs/project/migration-plan.md`，上传范围为
+`docs/operations/github-upload-scope.md`。历史条目中的原路径按
+`docs/operations/local-reorganization-plan.json` 映射查找；固定复现提交 `2e6074a` 不变。
+
 ## 用户目标
 
 将当前 TL3572 项目上传到公开且原本为空的仓库：
@@ -289,3 +295,36 @@ ISO、6.1 GiB 原厂 LinuxSDK 压缩包、下载缓存、生成的 sysroot、第
 - 用户随后明确确认“同步到 GitHub（推荐）”，已授权将本轮目录文档、维护脚本和
   整理记录同步到 GitHub main。此前已上传的完整 Stage 源码不受影响；本次仅同步
   本地新增提交，无需重新生成或上传大型源码归档，固定复现提交 `2e6074a` 不变。
+
+## 2026-09-28：本地完整结构重构（后续补充）
+
+- 用户指出上轮未真正重构原厂资料，明确要求清除售后/返修等无关内容并整理所有文件。
+  本轮实际撤除原 `1-产品规格书` 至 `7-关于Tronlong` 七个顶层目录，不留空壳或别名。
+- 按用途物理搬迁到 `hardware/{specifications,core-board,carrier-board,datasheets,design-guides}`、
+  `software/{sources,toolchains,examples,firmware}` 和 `docs/{project,manuals,reference,vendor-notes,operations}`。
+  `stages/`、`repro-inputs/` 内部结构、正式包与版本清单保留；完整源码没有裁剪。
+- 原总路线现为 `docs/project/migration-plan.md`，上传范围现为
+  `docs/operations/github-upload-scope.md`。厂商参考/回滚 rootfs 与 update.img 保留本机
+  `software/firmware/`，仍被 Git 忽略；Windows 工具分类到 `.local-only/tools/windows/`。
+  原 SDK/dl/sysroot 继续保留 `.local-only/vendor-sdk/`。
+- 37 个明确移动对象，共 774 文件、4,891,488,590 B，搬迁时 SHA256 **774/774** 不变。
+  随后三个文档有意更新路径；其他搬迁文件再次哈希通过。动作/逐文件清单在忽略的
+  `.local-only/maintenance/local-reorganization-20260928.json`，公开映射在
+  `docs/operations/local-reorganization-plan.json`，执行脚本为 `scripts/maintenance/restructure-local.ps1`。
+- 售后服务说明、产品返修单、跨产品宣传选型手册、交流群推广资料和 VMware 辅助程序
+  共五文件、190,111,270 B 移入回收站，可恢复；没有清空回收站，不声称释放同等磁盘空间。
+  Git 中四个受跟踪文件删除、749 项移动（746 项内容完全相同、3 项文档引用更新）。
+- 根和分类 README、复现说明、M7 引用已更新。prepare 脚本优先读取新
+  `software/toolchains/`，缺失时才回退旧布局，两处使用同一固定 SHA；固定复现提交
+  `2e6074a506111b301ffc146650ef15966da47bf5` 原样保留。
+- 本地六项结构检查通过，全阶段 24 项源包哈希通过，Git LFS fsck 和 PS/Bash 语法通过。
+  新 `tl3572-local-structure-stage02-20260928` 容器禁网、全新工作区，从不含旧厂商路径的
+  `/repo` 使用新工具链完成 prepare、Stage02 恢复与 fetch **215/215、零复用**；
+  Linux 4 项归档单测 + 5 项 M7 日志单测通过，容器已停止。
+  源包只读使用保留克隆，非本轮新 GitHub 克隆，未挂载旧 tmp/sstate。
+- 服务器验证目录 `projects/tl3572/reproduction/20260928/local-structure-smoke/`，
+  实测脚本 `scripts/maintenance/verify-restructured-layout.sh`。本轮证据和校验在
+  `docs/operations/logs/local-reorganization-20260928/`，细节见本地重构记录。
+  本轮没有板卡登录/重启/刷写，没有修改服务器活动工程或重新编译整镜像。
+- 用户已再次明确确认“同步到 GitHub（推荐）”，本次完整结构重构作为普通新提交同步，
+  不重写旧历史、不重新生成或重传同内容源码包。SDK、Windows 工具和本机动作清单不上传。

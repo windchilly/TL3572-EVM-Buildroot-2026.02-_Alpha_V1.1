@@ -15,7 +15,7 @@ Yocto 层内含 Stage 06 当前配方、补丁、厂商资产覆盖包、内核�
 vendor boot、配置及 UniProton A/B 固件。该内核源码包是为 BitBake 重新封装的
 版本，SHA256 为
 `94ebe6676f276f731309234e23ca338cd529f2255fc09c6dddbf1e353d6a0985`；
-原厂压缩包位于 `4-软件资料/Linux/Kernel/src/`，两者字节哈希不同。
+原厂压缩包位于 `software/sources/kernel/`，两者字节哈希不同。
 Yocto 层内 `vendor-boot.img` SHA256 为
 `4f2bbfb25d0255a81ce8a7f18420a138c8225992574e06bf5d30176034fc4b92`。
 
@@ -33,7 +33,7 @@ Stage 01–05 在构建容器中保留的七个上游源码工作树、早期 `m
 1. 按 `stages/stage01-baseline/TL3572-stage01-baseline-manifest.md` 固定七个上游
    仓库提交和 openEuler 容器镜像摘要。七个提交的源码快照可从
    `stage01-05/upstream/` 解压；这些压缩包不含 Git 历史。
-2. 从 `4-软件资料/Linux/Tools/` 提供 Arm GNU 14.3 工具链到
+2. 从 `software/toolchains/` 提供 Arm GNU 14.3 工具链到
    `/home/openeuler/build/tl3572-2oo3/toolchain-14.3/`。openEuler GCC 12.3 和
    Native SDK 由记录中的容器环境提供。
 3. 若要从源码重编 UniProton A/B，先对指定 UniProton 提交应用 Stage 05 的源码

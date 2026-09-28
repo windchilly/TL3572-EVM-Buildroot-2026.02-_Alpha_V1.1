@@ -1,7 +1,7 @@
 # TL3572 openEuler Embedded 阶段2归档（2026-09-15）
 
 本目录是阶段2（openEuler rootfs 在 TL3572 启动）的唯一本地归档。
-背景、验收标准与实机验证记录见根目录《TL3572_openEuler_MICA_UniProton_2oo3_完整移植路径.md》第5节。
+背景、验收标准与实机验证记录见仓库 `docs/project/migration-plan.md` 第5节。
 
 ## 可烧录产物
 

@@ -10,4 +10,5 @@
 
 它们没有删除，也没有上传 GitHub。原厂功能说明和 MD5 文件仍在当前目录；
 如检查 MD5，需在新归档目录指定该清单路径，或先恢复归档至原位置。
-实际使用的厂商 Buildroot、U-Boot、内核源包和 Arm 工具链保持原路径。
+实际使用的厂商 Buildroot、U-Boot、内核源包现位于仓库 `software/sources/`，
+Arm 工具链位于 `software/toolchains/`；原始归档内容和固定 SHA256 不变。

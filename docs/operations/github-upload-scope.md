@@ -9,14 +9,16 @@ are included are stored through Git LFS.
 
 ## Included
 
-- Root project migration plan, product update note, and getting-started PDF.
+- `docs/project/` migration plan and `docs/vendor-notes/` update/getting-started
+  PDFs and software feature notes.
 - Root README plus `docs/operations/` directory ownership/maintenance records
   and `scripts/maintenance/` exact-target, preview-by-default maintenance tools.
-- `1-产品规格书/`, `2-技术服务/`, `3-用户手册/`, and `5-硬件资料/`.
-- `4-软件资料/` demos, source code, feature documents, vendor Buildroot,
+- `hardware/` TL3572 specifications, core/carrier board CAD, BOM, pin definitions,
+  design guides and component datasheets; `docs/manuals/` developer/test manuals.
+- `software/` demos, vendor Buildroot,
   Linux kernel, and U-Boot source archives, Arm GNU 14.3 toolchain archive,
   vendor boot/loader inputs, and their small metadata files.
-- `6-开发参考资料/` and `7-关于Tronlong/`, including PDFs and SBOM/reference files.
+- `docs/reference/rockchip/` technical PDFs, patches and SBOM/reference files.
 - `stages/` Stage 01-07 source overlays, patches, recipes, configurations,
   build and test scripts, logs, manifests, checksums, and small firmware or
   boot artifacts retained as validation references.
@@ -48,12 +50,23 @@ are included are stored through Git LFS.
   openEuler stage build paths; used vendor source/toolchain/assets are
   archived separately. This is not an upload of the entire unrelated SDK.
 - Third-party Windows installers and one identical duplicate U-Boot archive.
+- After-sales and product repair forms, vendor marketing/selection booklet,
+  chat-group promotional material, and the unused VMware helper. These were
+  removed from the current local tree via the Windows Recycle Bin; existing
+  Git history is retained, not rewritten.
 
 The `.gitignore` is the definitive path list for omissions. After the
 2026-09-28 cleanup, the complete vendor SDK/dl/sysroot archives and nested
 vendor Git metadata are preserved under ignored `.local-only/`; the Ubuntu
 desktop ISO and VMware installer are in the Windows Recycle Bin. The verified
 identical extra U-Boot archive and regenerable bytecode caches were deleted.
+The follow-up structural reorganization removed all seven numbered vendor
+top-level directories and physically classified useful files into `hardware/`,
+`software/` and `docs/`. Windows board tools are preserved by function under
+`.local-only/tools/windows/`. Exact mappings and deletions are recorded in
+`docs/operations/local-reorganization-plan.json`; ignored rootfs/update firmware
+is still preserved locally under `software/firmware/`. Relocated LFS files keep
+their original content hashes; no source archive is regenerated.
 Formal stage outputs remain at their original paths. Some Stage 02-04 SHA256SUMS lists include
 omitted image outputs and therefore cannot be checked in full from a clone.
 
@@ -78,12 +91,14 @@ claim of bit-identical historical image reconstruction or M7 acceptance.
 All-stage validation is recorded separately in
 `repro-inputs/all-stages/tests/verification.md`.
 The all-stage reproduction entry is `repro-inputs/all-stages/README.md`,
-pinned to commit `2e6074a506111b301ffc146650ef15966da47bf5` (complete source
+pinned to commit `2e6074a506111b301ffc146650ef15966da47bf5` (original directory layout, complete source
 archives, final build scripts and validation evidence). Seven-stage
 restoration, six-stage offline fetch and a fresh byte-identical M5 ELF
 rebuild passed; this is not a claim that every historical full image was
 rebuilt. The new archives and inventories passed 24 independent GitHub
-download hash checks. Current checked-out file content is about 4.31 GiB;
-this round added about 1.06 GiB, excluding Git/LFS historical caches.
+download hash checks. The source-completion round added about 1.06 GiB;
+after removing irrelevant after-sales/promotional materials, current checked-out
+tracked file content is about 4.14 GiB, excluding ignored local materials and
+Git/LFS historical caches. Renames do not upload another copy of source archives.
 The archived Stage 06 build and board tests are documented under
 `stages/stage06-multi-uniproton/`.
