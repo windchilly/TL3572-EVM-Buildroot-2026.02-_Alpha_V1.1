@@ -1,0 +1,13 @@
+Sep 28 18:21:09 tl3572-openeuler kernel: fiq_debugger fiq_debugger.0: error -ENXIO: IRQ fiq not found
+Sep 28 18:21:09 tl3572-openeuler kernel: fiq_debugger fiq_debugger.0: error -ENXIO: IRQ wakeup not found
+Sep 28 18:21:09 tl3572-openeuler kernel: rockchip-usb2phy 26054000.syscon:usb2-phy@0: error -ENXIO: IRQ index 0 not found
+Sep 28 18:21:09 tl3572-openeuler kernel: rockchip-usb2phy 26054000.syscon:usb2-phy@2000: error -ENXIO: IRQ index 0 not found
+Sep 28 18:21:09 tl3572-openeuler kernel: rockchip_sip_config_dram_addrmap_get error:fffffffffffffffe
+Sep 28 18:21:09 tl3572-openeuler kernel: rk3576_can 2ab10000.can: Failed to request rxchan
+Sep 28 18:21:09 tl3572-openeuler kernel: rk3576_can 2ab10000.can: CAN info: use_dma = 0, rx_max_data = 18, fifo_depth = 14
+Sep 28 18:21:09 tl3572-openeuler kernel: rk3576_can 2ab30000.can: Failed to request rxchan
+Sep 28 18:21:09 tl3572-openeuler kernel: rk3576_can 2ab30000.can: CAN info: use_dma = 0, rx_max_data = 18, fifo_depth = 14
+Sep 28 18:21:09 tl3572-openeuler kernel: Goodix-TS 6-005d: Error reading 1 bytes from 0x8140: -6
+Sep 28 18:21:09 tl3572-openeuler kernel: Goodix-TS 6-005d: Error reading 1 bytes from 0x8140: -6
+Sep 28 18:21:09 tl3572-openeuler kernel: rockchip-drm display-subsystem: [drm] run display error_event monitor
+Sep 28 18:21:09 tl3572-openeuler kernel: platform regulatory.0: Direct firmware load for regulatory.db failed with error -2

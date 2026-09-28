@@ -1,0 +1,15 @@
+ROUND 1
+Testing Classic CAN: can1<->can3
+PASS can1->can3: 128/128 frames, id=0x321, elapsed=0.081s
+PASS can3->can1: 128/128 frames, id=0x456, elapsed=0.079s
+PASS Classic CAN: bidirectional physical path verified
+ROUND 2
+Testing Classic CAN: can1<->can3
+PASS can1->can3: 128/128 frames, id=0x321, elapsed=0.081s
+PASS can3->can1: 128/128 frames, id=0x456, elapsed=0.082s
+PASS Classic CAN: bidirectional physical path verified
+ROUND 3
+Testing Classic CAN: can1<->can3
+PASS can1->can3: 128/128 frames, id=0x321, elapsed=0.081s
+PASS can3->can1: 128/128 frames, id=0x456, elapsed=0.080s
+PASS Classic CAN: bidirectional physical path verified

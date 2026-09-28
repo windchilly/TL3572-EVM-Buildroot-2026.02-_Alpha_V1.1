@@ -11,3 +11,4 @@ repro-inputs/all-stages/historical/HISTORICAL-INVENTORY.json filter=lfs diff=lfs
 *.rar filter=lfs diff=lfs merge=lfs -text
 *.brd filter=lfs diff=lfs merge=lfs -text
 *.DSN filter=lfs diff=lfs merge=lfs -text
+stages/stage07-peripheral-partition/tests/board/can-20260928/*.log whitespace=-blank-at-eol,-blank-at-eof

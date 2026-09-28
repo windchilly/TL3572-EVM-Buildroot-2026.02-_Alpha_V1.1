@@ -1,0 +1,4 @@
+Testing Classic CAN: can1<->can3
+PASS can1->can3: 256/256 frames, id=0x321, elapsed=0.150s
+PASS can3->can1: 256/256 frames, id=0x456, elapsed=0.136s
+PASS Classic CAN: bidirectional physical path verified

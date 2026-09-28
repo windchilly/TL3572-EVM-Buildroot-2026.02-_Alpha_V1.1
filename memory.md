@@ -1,5 +1,13 @@
 # 项目交接记录（2026-09-23）
 
+2026-09-28 已完成 CAN FD1（Linux `can1`，目标 UP1）↔ CAN FD3（Linux
+`can3`，目标 UP2）的经典 CAN 物理基线：每接口累计 RX/TX 各 10,640 帧，三轮
+stop/start，错误、丢包及 bus-off 均为 0；结束后两接口恢复 DOWN，UP1/UP2 保持
+Offline，`micad` 保持 active。CAN FD/BRS 配置被当前 Linux `rk3576_can` 驱动拒绝，
+源码发送路径也仅实现 `struct can_frame`；现有 UniProton RK3572 BSP 尚无 CAN 驱动。
+证据见
+[`stages/stage07-peripheral-partition/tests/board/can-20260928/README.md`](stages/stage07-peripheral-partition/tests/board/can-20260928/README.md)。
+
 当前目录已于 2026-09-28 完成实际结构重构：`hardware/`、`software/`、`docs/` 分别
 保存硬件、厂商软件、项目/技术文档；原七个编号顶层目录已撤除，售后/返修/宣传资料
 已移入回收站。总路线为 `docs/project/migration-plan.md`，上传范围为

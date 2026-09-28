@@ -1,12 +1,19 @@
 # Stage 07 / M7.0：全资源划分与外设直驱
 
-当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / 外设尚未移交 / M7.0 未验收`。
+当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / Linux CAN 物理基线实机验证 / 外设尚未移交 / M7.0 未验收`。
 
 2026-09-28 已补齐 [GitHub 换机输入与构建入口](../../repro-inputs/rk3572/README.md)，
 在空目录、固定基础容器中断网重建 M6 完整镜像、M6/M7 双固件、M7 MCS 软件包及
 独立修复版 micad，均通过；四份固件和独立 micad 与实机版本逐字节一致。
 见 [独立复现记录](../../repro-inputs/rk3572/tests/clean-rebuild.md)。这是现有软件切片的
 可复建性验证，不是完整 M7 镜像或工业外设直驱验收，新产物未部署到板卡。
+
+2026-09-28 已将 CAN FD1（Linux `can1`，M7.0 目标 UP1）与 CAN FD3
+（Linux `can3`，M7.0 目标 UP2）组成物理总线完成经典 CAN 基线测试：每接口累计
+收发各 10,640 帧、三轮 stop/start 恢复，错误/丢包/bus-off 均为 0。当前
+`rk3576_can` 驱动拒绝启用 FD/BRS，因此 CAN FD 数据相位仍未验证。原始证据和边界见
+[CAN FD1 ↔ CAN FD3 物理基线记录](tests/board/can-20260928/README.md)。该结果只证明
+Linux 驱动下的板级物理链路，不代表 UP1/UP2 已完成 CAN 直驱或资源移交。
 
 M7.0 以已完成的 [M6 双 UniProton 基线](../stage06-multi-uniproton/README.md)为起点，保持 UP1=CPU4、UP2=CPU5 及原有内存、SGI、OpenAMP 分配。本阶段的目标是将评估板全部接口明确归属 openEuler、UP1 或 UP2，实现指定工业外设的 UniProton 物理直驱，并逐项取得可复核的实机测试证据。详细表和退出条件见 [M7.0 全资源分配与测试目标](docs/m7.0-resource-allocation-and-tests.md)。
 
