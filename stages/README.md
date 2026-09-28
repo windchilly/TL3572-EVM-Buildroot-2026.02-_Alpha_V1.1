@@ -11,7 +11,7 @@
 | `stage04-mica-mcs/` | Linux MICA/MCS 适配与正式镜像 | 完成 |
 | `stage05-uniproton/` | 单 UniProton 源码、固件、构建和验收 | 完成（延期项见报告） |
 | `stage06-multi-uniproton/` | 双 UniProton；CPU4/CPU5 独立 SGI、内存与 RPMsg | 完成（功能与构建范围） |
-| `stage07-peripheral-partition/` | M7.0 全资源归属、工业外设直驱与全接口测试目标 | 需求草案；未实施、未验收 |
+| `stage07-peripheral-partition/` | M7.0 全资源归属、工业外设直驱与全接口测试目标 | 日志/RPC 软件已实施；外设直驱未实施、未验收 |
 
 规则：
 
@@ -19,3 +19,6 @@
 - 当前可复现材料放在阶段目录的正式分类中；
 - `archive/` 只用于历史调试和中间版本，不作为部署输入；
 - 新阶段延续 `stage06-*`、`stage07-*` 格式，不再在工作区根目录新建散乱目录。
+
+全阶段完整源码、独立恢复入口及历史层重建来源见
+`repro-inputs/all-stages/README.md`。共享源码按 SHA-256 固定，不需依赖原构建容器。

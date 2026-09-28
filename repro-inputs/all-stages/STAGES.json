@@ -1,0 +1,257 @@
+{
+  "format": 1,
+  "profiles": [
+    {
+      "stage": "stage01",
+      "shared_files": [],
+      "source_bundles": {},
+      "provenance": "original archived inputs",
+      "historical_layer_byte_identity": true,
+      "notes": "Baseline source/environment inventory; no historical Stage1 firmware target was built."
+    },
+    {
+      "stage": "stage02",
+      "shared_files": [
+        {
+          "source": "repro-inputs/stage01-05/stage02/meta-tl3572/recipes-core/images/files/tl3572-vendor-overlay.tar.gz",
+          "destination": "meta-tl3572/recipes-core/images/files/tl3572-vendor-overlay.tar.gz",
+          "sha256": "285c6a70d31e1df2bd86bdf376a967f9e21df4e4d647d094025347118d2ae283"
+        }
+      ],
+      "source_bundles": {
+        "mcs": "stage02-mcs-complete.tar.gz"
+      },
+      "provenance": "original archived inputs",
+      "historical_layer_byte_identity": true,
+      "kernel": "complete shared pristine vendor 6.12.69; Stage02 userspace uses qemu-aarch64 metadata, not a board-deployed generic kernel",
+      "profile_bundle": "stage02-profile.tar.gz"
+    },
+    {
+      "stage": "stage03",
+      "shared_files": [
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-bsp/tl3572-vendor-assets/files/tl3572-vendor-overlay.tar.gz",
+          "destination": "meta-tl3572-stage3/recipes-bsp/tl3572-vendor-assets/files/tl3572-vendor-overlay.tar.gz",
+          "sha256": "285c6a70d31e1df2bd86bdf376a967f9e21df4e4d647d094025347118d2ae283"
+        }
+      ],
+      "source_bundles": {
+        "mcs": "stage03-mcs-complete.tar.gz"
+      },
+      "provenance": "reconstructed from preserved recipes, scripts, configurations and final-source overlays",
+      "historical_layer_byte_identity": false,
+      "kernel": "complete shared pristine vendor 6.12.69; Stage02 userspace uses qemu-aarch64 metadata, not a board-deployed generic kernel",
+      "profile_bundle": "stage03-profile.tar.gz"
+    },
+    {
+      "stage": "stage04",
+      "shared_files": [
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-bsp/tl3572-vendor-assets/files/tl3572-vendor-overlay.tar.gz",
+          "destination": "meta-tl3572-stage3/recipes-bsp/tl3572-vendor-assets/files/tl3572-vendor-overlay.tar.gz",
+          "sha256": "285c6a70d31e1df2bd86bdf376a967f9e21df4e4d647d094025347118d2ae283"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-kernel/linux/files/linux-6.12.69-v1.0-gf1b67c2.tar.gz",
+          "destination": "meta-tl3572-stage3/recipes-kernel/linux/files/linux-6.12.69-v1.0-gf1b67c2.tar.gz",
+          "sha256": "94ebe6676f276f731309234e23ca338cd529f2255fc09c6dddbf1e353d6a0985"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-kernel/linux/files/vendor-boot.img",
+          "destination": "meta-tl3572-stage3/recipes-kernel/linux/files/vendor-boot.img",
+          "sha256": "4f2bbfb25d0255a81ce8a7f18420a138c8225992574e06bf5d30176034fc4b92"
+        }
+      ],
+      "source_bundles": {
+        "mcs": "stage04-mcs-complete.tar.gz",
+        "kernel": "stage04-kernel-6.12.69-complete.tar.gz"
+      },
+      "provenance": "reconstructed from preserved recipes, scripts, configurations and final-source overlays",
+      "historical_layer_byte_identity": false,
+      "profile_bundle": "stage04-profile.tar.gz"
+    },
+    {
+      "stage": "stage05",
+      "shared_files": [
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-bsp/tl3572-vendor-assets/files/tl3572-vendor-overlay.tar.gz",
+          "destination": "meta-tl3572-stage3/recipes-bsp/tl3572-vendor-assets/files/tl3572-vendor-overlay.tar.gz",
+          "sha256": "285c6a70d31e1df2bd86bdf376a967f9e21df4e4d647d094025347118d2ae283"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-kernel/linux/files/linux-6.12.69-v1.0-gf1b67c2.tar.gz",
+          "destination": "meta-tl3572-stage3/recipes-kernel/linux/files/linux-6.12.69-v1.0-gf1b67c2.tar.gz",
+          "sha256": "94ebe6676f276f731309234e23ca338cd529f2255fc09c6dddbf1e353d6a0985"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-kernel/linux/files/vendor-boot.img",
+          "destination": "meta-tl3572-stage3/recipes-kernel/linux/files/vendor-boot.img",
+          "sha256": "4f2bbfb25d0255a81ce8a7f18420a138c8225992574e06bf5d30176034fc4b92"
+        },
+        {
+          "source": "stages/stage05-uniproton/firmware/rk3572-uniproton-final.elf",
+          "destination": "meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton.elf",
+          "sha256": "3faa550c98c18a407e1a2816b3c022c82fc91d85b3fb968b83ffed32631478d0"
+        }
+      ],
+      "source_bundles": {
+        "mcs": "stage05-mcs-complete.tar.gz",
+        "UniProton": "stage05-uniproton-complete.tar.gz",
+        "kernel": "stage05-kernel-6.12.69-complete.tar.gz"
+      },
+      "provenance": "reconstructed from preserved recipes, scripts, configurations and final-source overlays",
+      "historical_layer_byte_identity": false,
+      "m5_kernel_config": {
+        "source": "stages/stage05-uniproton/firmware/boot-tl3572-m5-final.img",
+        "method": "embedded IKCONFIG gzip",
+        "sha256": "57e11529b3d8760c13eb0fa0093aa325157d59bd4176deea6f6198afd26b718d",
+        "policy": "maxcpus=7"
+      },
+      "profile_bundle": "stage05-profile.tar.gz"
+    },
+    {
+      "stage": "stage06",
+      "shared_files": [
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-bsp/tl3572-vendor-assets/files/tl3572-vendor-overlay.tar.gz",
+          "destination": "meta-tl3572-stage3/recipes-bsp/tl3572-vendor-assets/files/tl3572-vendor-overlay.tar.gz",
+          "sha256": "285c6a70d31e1df2bd86bdf376a967f9e21df4e4d647d094025347118d2ae283"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton-up-a.elf",
+          "destination": "meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton-up-a.elf",
+          "sha256": "9c5e55a268d9f59e180998848b79297945f2b7eb92ba6512d3869e9cd9ae89b8"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton-up-b.elf",
+          "destination": "meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton-up-b.elf",
+          "sha256": "3357eb979263332a7a4ee606e90fbec90ac0363977a908c5c3a6862c250edde4"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton.elf",
+          "destination": "meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton.elf",
+          "sha256": "15090a509f769ed6488be14ec1ba58f34305af05d00dd00359218adf36f1d34a"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-kernel/linux/files/linux-6.12.69-v1.0-gf1b67c2.tar.gz",
+          "destination": "meta-tl3572-stage3/recipes-kernel/linux/files/linux-6.12.69-v1.0-gf1b67c2.tar.gz",
+          "sha256": "94ebe6676f276f731309234e23ca338cd529f2255fc09c6dddbf1e353d6a0985"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-kernel/linux/files/vendor-boot.img",
+          "destination": "meta-tl3572-stage3/recipes-kernel/linux/files/vendor-boot.img",
+          "sha256": "4f2bbfb25d0255a81ce8a7f18420a138c8225992574e06bf5d30176034fc4b92"
+        }
+      ],
+      "source_bundles": {
+        "mcs": "stage06-mcs-complete.tar.gz",
+        "UniProton": "stage06-uniproton-complete.tar.gz",
+        "kernel": "stage06-kernel-6.12.69-complete.tar.gz"
+      },
+      "provenance": "original archived inputs",
+      "historical_layer_byte_identity": true,
+      "profile_bundle": "stage06-profile.tar.gz"
+    },
+    {
+      "stage": "stage07",
+      "shared_files": [
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-bsp/tl3572-vendor-assets/files/tl3572-vendor-overlay.tar.gz",
+          "destination": "meta-tl3572-stage3/recipes-bsp/tl3572-vendor-assets/files/tl3572-vendor-overlay.tar.gz",
+          "sha256": "285c6a70d31e1df2bd86bdf376a967f9e21df4e4d647d094025347118d2ae283"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton-up-a.elf",
+          "destination": "meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton-up-a.elf",
+          "sha256": "9c5e55a268d9f59e180998848b79297945f2b7eb92ba6512d3869e9cd9ae89b8"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton-up-b.elf",
+          "destination": "meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton-up-b.elf",
+          "sha256": "3357eb979263332a7a4ee606e90fbec90ac0363977a908c5c3a6862c250edde4"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton.elf",
+          "destination": "meta-tl3572-stage3/recipes-core/images/files/rk3572-uniproton.elf",
+          "sha256": "15090a509f769ed6488be14ec1ba58f34305af05d00dd00359218adf36f1d34a"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-kernel/linux/files/linux-6.12.69-v1.0-gf1b67c2.tar.gz",
+          "destination": "meta-tl3572-stage3/recipes-kernel/linux/files/linux-6.12.69-v1.0-gf1b67c2.tar.gz",
+          "sha256": "94ebe6676f276f731309234e23ca338cd529f2255fc09c6dddbf1e353d6a0985"
+        },
+        {
+          "source": "repro-inputs/meta-tl3572-stage3/recipes-kernel/linux/files/vendor-boot.img",
+          "destination": "meta-tl3572-stage3/recipes-kernel/linux/files/vendor-boot.img",
+          "sha256": "4f2bbfb25d0255a81ce8a7f18420a138c8225992574e06bf5d30176034fc4b92"
+        }
+      ],
+      "source_bundles": {
+        "mcs": "stage07-mcs-complete.tar.gz",
+        "UniProton": "stage07-uniproton-complete.tar.gz",
+        "kernel": "stage06-kernel-6.12.69-complete.tar.gz"
+      },
+      "provenance": "original archived inputs",
+      "historical_layer_byte_identity": true,
+      "notes": "Implemented observability/RPC sources only; peripheral direct drivers and handover are not yet implemented. Linux kernel is identical to Stage06; image remains the M6 reference image.",
+      "profile_bundle": "stage07-profile.tar.gz"
+    }
+  ],
+  "shared_inputs": [
+    {
+      "path": "repro-inputs/stage01-05/upstream/OpenAMP.tar.gz",
+      "bytes": 690891,
+      "sha256": "00e7e570a513556bb5260d3f169fda4d0e8bfd6df269f9ef475efdd0b96fe169"
+    },
+    {
+      "path": "repro-inputs/stage01-05/upstream/UniProton.tar.gz",
+      "bytes": 27061861,
+      "sha256": "449b84ac4061220b311fe9bba557c10d768935bea9b3d3fd06404f082106c5f1"
+    },
+    {
+      "path": "repro-inputs/stage01-05/upstream/libmetal.tar.gz",
+      "bytes": 236884,
+      "sha256": "3e0e876b540a43bd5af5846fa6946ecc6093c816b5f9750bbfc2fac8060cdcd8"
+    },
+    {
+      "path": "repro-inputs/stage01-05/upstream/mcs.tar.gz",
+      "bytes": 407672,
+      "sha256": "7f1c7b5d5b664671e2715f89be000c300d4a747e5fb48aa8991481581402368d"
+    },
+    {
+      "path": "repro-inputs/stage01-05/upstream/yocto-meta-openembedded.tar.gz",
+      "bytes": 3573949,
+      "sha256": "a7c03cfd45d771bbb36925b40d29bc509c0df2a99c41f2ea5a2ab5ad3d58ade0"
+    },
+    {
+      "path": "repro-inputs/stage01-05/upstream/yocto-meta-openeuler.tar.gz",
+      "bytes": 40181563,
+      "sha256": "494a31f5fde334ef4a5a23de30eed3018460f40339bc55ee41b8dd43749b3e7a"
+    },
+    {
+      "path": "repro-inputs/stage01-05/upstream/yocto-poky.tar.gz",
+      "bytes": 17146209,
+      "sha256": "90c0c8454ec9a24ff76fc40a39882680db092b2f7a41c4b96becbae1f36e773e"
+    },
+    {
+      "path": "repro-inputs/rk3572/openeuler-packages.tar.gz",
+      "bytes": 491581163,
+      "sha256": "365b387cac93bf41c8d4438113f28b1b20b570352f4c189e94ac0a29312b08dd"
+    },
+    {
+      "path": "repro-inputs/rk3572/downloads.tar.gz",
+      "bytes": 15728251,
+      "sha256": "ece1f513c73c33217ec92619e6ff6c0dd1d8fa0d5d43651bbd2ced89e0a47817"
+    },
+    {
+      "path": "repro-inputs/rk3572/yocto-meta-openeuler-git.tar.gz",
+      "bytes": 39894684,
+      "sha256": "dc87902b2b322f20119c10e48868bf452b562929fdcfa3c2980c089e4f6e8ac3"
+    },
+    {
+      "path": "repro-inputs/meta-tl3572-stage3/recipes-kernel/linux/files/linux-6.12.69-v1.0-gf1b67c2.tar.gz",
+      "bytes": 270581126,
+      "sha256": "94ebe6676f276f731309234e23ca338cd529f2255fc09c6dddbf1e353d6a0985"
+    }
+  ]
+}

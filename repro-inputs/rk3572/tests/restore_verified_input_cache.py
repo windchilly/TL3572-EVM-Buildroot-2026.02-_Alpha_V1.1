@@ -21,6 +21,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo", type=Path, required=True)
     parser.add_argument("--cache", type=Path, action="append", required=True)
+    parser.add_argument("--extra-input", action="append", default=[],
+                        help="Additional repository-relative LFS input to verify/hydrate")
     args = parser.parse_args()
     tracked = subprocess.check_output(["git", "-C", str(args.repo), "ls-files", "-z"])
     candidates = {}
@@ -34,6 +36,7 @@ def main():
     for name in tracked.decode("utf-8").split("\0"):
         if not (name.startswith("repro-inputs/") or
                 fnmatch.fnmatch(name, "4-*/Linux/Tools/arm-gnu-toolchain*.tar.gz") or
+                name in args.extra_input or
                 name.startswith("stages/stage07-peripheral-partition/")):
             continue
         blob = subprocess.check_output(["git", "-C", str(args.repo), "show", f"HEAD:{name}"])

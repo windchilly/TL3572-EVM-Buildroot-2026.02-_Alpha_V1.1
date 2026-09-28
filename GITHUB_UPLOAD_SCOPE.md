@@ -29,6 +29,13 @@ are included are stored through Git LFS.
   UniProton source overlay (including libboundscheck and patched lwIP), the
   required sanitized shallow Git metadata for yocto-meta-openeuler, source inventory,
   checksums, and clean-container preparation/build scripts.
+- `repro-inputs/all-stages/`: complete effective Stage04/05/06 kernel trees,
+  complete Stage05/06/07 UniProton trees and Stage02-07 MCS trees, the complete
+  pinned openEuler 5.10 kernel, independent per-stage layer/configuration
+  profiles, provenance inventories, checksums, and frozen-source restoration
+  and build scripts. Identical large vendor inputs are shared by hash, not
+  omitted. Stage03-05 profiles are evidence-based reconstructions, not
+  untouched original historical layer snapshots.
 
 ## Omitted from Git
 
@@ -56,8 +63,12 @@ file. The user explicitly selected online retrieval of the pinned Docker
 image, not an additional Git LFS upload of the container image. No
 passwords, tokens, private SSH keys or crash dumps are included. The container no
 longer has untouched full-layer snapshots for every historical Stage 03-05
-state. The exact clean-room validation scope and results are recorded in
+state; reconstructed independent source profiles are now archived under
+`repro-inputs/all-stages/`, with their evidence and limitations explicitly
+recorded. The exact clean-room validation scope and results are recorded in
 `repro-inputs/rk3572/tests/clean-rebuild.md`; source completeness is not a
 claim of bit-identical historical image reconstruction or M7 acceptance.
+All-stage validation is recorded separately in
+`repro-inputs/all-stages/tests/verification.md`.
 The archived Stage 06 build and board tests are documented under
 `stages/stage06-multi-uniproton/`.
