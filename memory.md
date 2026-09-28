@@ -328,3 +328,6 @@ ISO、6.1 GiB 原厂 LinuxSDK 压缩包、下载缓存、生成的 sysroot、第
   本轮没有板卡登录/重启/刷写，没有修改服务器活动工程或重新编译整镜像。
 - 用户已再次明确确认“同步到 GitHub（推荐）”，本次完整结构重构作为普通新提交同步，
   不重写旧历史、不重新生成或重传同内容源码包。SDK、Windows 工具和本机动作清单不上传。
+- 完整重构提交 `cb222fec7d9d7ba15a76cfb097467023fc0c2a10` 已推送 GitHub main；
+  本地与远端已核对。第一次 Schannel 握手和后续 chunked HTTP 请求曾超时，最终使用
+  Git OpenSSL + HTTP/1.1 + 固定 POST 缓冲成功；不是源码/LFS 对象缺失或重新上传失败。
