@@ -1,0 +1,427 @@
+INFO:root:/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/config.xml
+INFO:root:build prt_buildef.h succeed.
+INFO:root:[INFO] #################### make_buildef_file.sh armv8_rk3572 successfully. ####################
+INFO:root:[INFO] #################### BUILD_TIME_TAG 2026-09-28_03:40:00 ####################
+INFO:root:[INFO] #################### generate makefile succeed. ####################
+INFO:root:[INFO] #################### make rk3572 armv8 succeed. ####################
+INFO:root:[INFO] #################### make rk3572 all lib succeed! ####################
+patching file CMakeLists.txt
+patching file cmake/platforms/uniproton_arm64_gcc.cmake
+patching file cmake/platforms/uniproton_x86_64_gcc.cmake
+patching file lib/system/uniproton/CMakeLists.txt
+patching file lib/system/uniproton/alloc.h
+patching file lib/system/uniproton/assert.h
+patching file lib/system/uniproton/cache.h
+patching file lib/system/uniproton/condition.c
+patching file lib/system/uniproton/condition.h
+patching file lib/system/uniproton/device.c
+patching file lib/system/uniproton/init.c
+patching file lib/system/uniproton/io.h
+patching file lib/system/uniproton/irq.h
+patching file lib/system/uniproton/log.h
+patching file lib/system/uniproton/mutex.h
+patching file lib/system/uniproton/shmem.c
+patching file lib/system/uniproton/sleep.h
+patching file lib/system/uniproton/sys.h
+patching file CMakeLists.txt
+patching file cmake/depends.cmake
+patching file cmake/platforms/uniproton_arm64_gcc.cmake
+patching file cmake/platforms/uniproton_x86_64_gcc.cmake
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is GNU 14.3.1
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Detecting C compiler ABI info
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- libmetal version: 1.3.0 (/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/libmetal)
+-- Build type:  
+-- Host:    Linux/x86_64
+-- Target:  Uniproton/arm
+-- Machine: Generic
+-- Looking for include file stdatomic.h
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Looking for include file stdatomic.h - not found
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/build
+[  7%] Building C object lib/CMakeFiles/metal-static.dir/dma.c.obj
+[ 14%] Building C object lib/CMakeFiles/metal-static.dir/device.c.obj
+[ 42%] Building C object lib/CMakeFiles/metal-static.dir/irq.c.obj
+[ 42%] Building C object lib/CMakeFiles/metal-static.dir/io.c.obj
+[ 42%] Building C object lib/CMakeFiles/metal-static.dir/init.c.obj
+[ 42%] Building C object lib/CMakeFiles/metal-static.dir/log.c.obj
+[ 50%] Building C object lib/CMakeFiles/metal-static.dir/shmem.c.obj
+[ 57%] Building C object lib/CMakeFiles/metal-static.dir/softirq.c.obj
+[ 64%] Building C object lib/CMakeFiles/metal-static.dir/version.c.obj
+[ 71%] Building C object lib/CMakeFiles/metal-static.dir/system/uniproton/condition.c.obj
+[ 78%] Building C object lib/CMakeFiles/metal-static.dir/system/uniproton/device.c.obj
+[ 85%] Building C object lib/CMakeFiles/metal-static.dir/system/uniproton/init.c.obj
+[ 92%] Building C object lib/CMakeFiles/metal-static.dir/system/uniproton/shmem.c.obj
+[100%] Linking C static library libmetal.a
+[100%] Built target metal-static
+-- Install configuration: ""
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/alloc.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/assert.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/atomic.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/cache.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/compiler.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/condition.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/config.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/cpu.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/device.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/errno.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/dma.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/io.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/irq.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/irq_controller.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/list.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/log.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/mutex.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/shmem.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/sleep.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/softirq.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/spinlock.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/sys.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/time.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/utilities.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/version.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/compiler/armcc/errno.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/compiler/gcc/atomic.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/compiler/gcc/compiler.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/compiler/iar/compiler.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/compiler/iar/errno.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/processor/arm/atomic.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/processor/arm/cpu.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/system/uniproton/alloc.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/system/uniproton/assert.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/system/uniproton/cache.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/system/uniproton/condition.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/system/uniproton/io.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/system/uniproton/irq.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/system/uniproton/log.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/system/uniproton/mutex.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/system/uniproton/sleep.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/include/metal/system/uniproton/sys.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/libmetal/output/usr/local/lib/libmetal.a
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is GNU 14.3.1
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Detecting C compiler ABI info
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- open-amp version: 1.3.1 (/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp)
+-- Host:    Linux/x86_64
+-- Target:  Uniproton/arm
+-- Machine: Generic
+-- C_FLAGS : -nostdlib -nostdinc -Wall -Wextra
+-- Looking for include file stdatomic.h
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Looking for include file stdatomic.h - not found
+-- Looking for include file fcntl.h
+System is unknown to cmake, create:
+Platform/Uniproton to use this system, please post your config file on discourse.cmake.org so it can be added to cmake
+-- Looking for include file fcntl.h - not found
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    WITH_DEFAULT_LOGGER
+    WITH_DOC
+    WITH_EXAMPLES
+    WITH_TESTS
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/build
+[ 10%] Building C object lib/CMakeFiles/open_amp-static.dir/version.c.obj
+[ 20%] Building C object lib/CMakeFiles/open_amp-static.dir/virtio/virtio.c.obj
+[ 50%] Building C object lib/CMakeFiles/open_amp-static.dir/rpmsg/rpmsg_virtio.c.obj
+[ 50%] Building C object lib/CMakeFiles/open_amp-static.dir/virtio/virtqueue.c.obj
+[ 60%] Building C object lib/CMakeFiles/open_amp-static.dir/rpmsg/rpmsg.c.obj
+[ 60%] Building C object lib/CMakeFiles/open_amp-static.dir/remoteproc/elf_loader.c.obj
+[ 70%] Building C object lib/CMakeFiles/open_amp-static.dir/remoteproc/remoteproc.c.obj
+[ 80%] Building C object lib/CMakeFiles/open_amp-static.dir/remoteproc/remoteproc_virtio.c.obj
+[ 90%] Building C object lib/CMakeFiles/open_amp-static.dir/remoteproc/rsc_table_parser.c.obj
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/virtqueue.h:22,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/virtio.h:10,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/virtio/virtio.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/virtqueue.h:22,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/virtio.h:10,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/virtio/virtqueue.c:9:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/remoteproc.h:15,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/remoteproc/remoteproc_virtio.c:12:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/remoteproc/rsc_table_parser.c:9:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/remoteproc.h:15,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/elf_loader.h:11,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/remoteproc/elf_loader.c:11:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/remoteproc.h:15,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/elf_loader.h:11,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/remoteproc/remoteproc.c:12:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../component/open-amp/lib/include/openamp/rpmsg_virtio.h:15,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c:15:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h: In function 'metal_io_write':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/../../build/libmetal/output/usr/local/include/metal/io.h:294:32: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+  294 |                 metal_assert(0);
+      |                                ^
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c: In function 'rpmsg_virtio_send_offchannel_nocopy':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c:408:13: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  408 |         int status;
+      |             ^~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c: In function 'rpmsg_virtio_send_offchannel_raw':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c:499:13: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  499 |         int status;
+      |             ^~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c: In function 'rpmsg_virtio_rx_callback':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/component/open-amp/lib/rpmsg/rpmsg_virtio.c:551:13: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  551 |         int status;
+      |             ^~~~~~
+[100%] Linking C static library libopen_amp.a
+[100%] Built target open_amp-static
+-- Install configuration: ""
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/lib/libopen_amp.a
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/rpmsg.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/elf_loader.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/remoteproc_loader.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/rsc_table_parser.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/version.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/rpmsg_virtio.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/open_amp.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/rpmsg_retarget.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/virtio_ring.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/rpmsg_rpc_client_server.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/virtio.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/remoteproc.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/virtqueue.h
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/remoteproc_virtio.h
+-- Up-to-date: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp
+-- Installing: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/open-amp/output/usr/local/include/openamp/version_def.h
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/m7-up-a
+[ 12%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 12%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 25%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 31%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 43%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 43%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 50%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 56%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 62%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 68%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 75%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 81%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 87%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 93%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 93%] Built target config
+[ 93%] Built target rpmsg
+[ 93%] Built target bsp
+[ 93%] Built target mica
+[ 93%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+e42b1a37ab460d34943ae0bd825f72cd5cbdcfc5efd0a2db00b156088738c5bf  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/tl3572-m7-up-a.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/m7-up-b
+[  6%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 12%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 18%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 25%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 37%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 37%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 43%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 56%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 56%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 62%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 68%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 75%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 81%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 87%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 93%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 93%] Built target config
+[ 93%] Built target rpmsg
+[ 93%] Built target bsp
+[ 93%] Built target mica
+[ 93%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+d51461363145044ca6a1b498d301a54c218770a7a4175ef2528d28f62817b47a  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7/demos/rk3572_mica/build/tl3572-m7-up-b.elf
+M7_UP_RESULT=0

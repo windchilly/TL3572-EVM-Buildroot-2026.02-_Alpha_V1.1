@@ -26,7 +26,11 @@ bash stages/stage07-peripheral-partition/build/build_m7_micad.sh
 
 `source/yocto/meta-tl3572-m7` 是补充层，依赖原 `meta-tl3572-stage3` 的 `tl3572` collection，只为 `mcs-linux` 增加 `0003`。把本补充层加入**独立 M7 构建配置**的 `BBLAYERS`，保留整个 Stage07 的目录层级；补丁仍从同一份 `source/patches/mcs` 引用。不要单独复制 bbappend 后丢失这个相对路径。
 
-本轮只验证元数据解析及独立 daemon 编译，未重打完整 M7 镜像、未声称新 RPM 已生成。在现有 M6 环境中临时验证新增层时，使用 `tests/m7-yocto-parse.conf`（先按实际克隆位置调整其中路径），配合：
+早期只验证元数据解析及独立 daemon 编译。2026-09-28 的[空目录重建检查](../../../repro-inputs/rk3572/tests/clean-rebuild.md)
+已通过 M6 镜像 2920/2920 和 M7 MCS 软件包 147/147，实际生成 RPM；独立部署版
+micad 也使用本轮新编的依赖库重建，并与实机修复版哈希完全一致。仍未重打完整 M7 镜像，
+未把新 RPM 部署到板卡。在已有环境中临时检查新增层解析时，仍可使用
+`tests/m7-yocto-parse.conf`（先按实际克隆位置调整其中路径），配合：
 
 ```sh
 bitbake -r /absolute/path/stage07-peripheral-partition/tests/m7-yocto-parse.conf -e mcs-linux

@@ -118,3 +118,72 @@ ISO、6.1 GiB 原厂 LinuxSDK 压缩包、下载缓存、生成的 sysroot、第
 - 当前完整镜像干净重建尚未通过；上传与新 GitHub 克隆验证结果后续写入
   `repro-inputs/rk3572/tests/clean-rebuild.md`。M7 外设直驱及历史 Stage 03–05
   每阶段完整独立层缺失限制仍在，不能把归档补齐称为这些功能验收。
+
+## 2026-09-28：换机输入已上传，固件与离线取源通过，完整镜像编译中
+
+- 已推送 GitHub main：`9e0451e`、`f2e9887`、`4a8c099`、`7e59de6`、
+  `173bb38`、`e88a230`、`5655fb0`。原 M7 的日志/RPC 修复/实机证据已随任务上传；
+  这不是 M7 工业外设验收。
+- 最终补充四个输入归档共 550,848,503 B（525.33 MiB）：150 个 openEuler 包目录、
+  17 个上游下载源文件/源码 Git 镜像（含原缓存中的 neard、erofs-utils）、
+  完整 M6 有效 UniProton 覆盖（含 libboundscheck、适配后的 lwIP 2.1.3）、
+  yocto-meta-openeuler 单提交浅 Git 元数据（没有 remote/hooks/凭据）。
+- Git 元数据恢复需创建空 `.git/refs` 并 `read-tree HEAD`；源码提交必须是
+  `3aa6999c9ab78569bc2209a9dbb185e2f7e4301c`。Yocto 入口需 source Native SDK
+  环境，不然 compile_et 缺失。工具链命令别名、空 nosys.specs 已在准备脚本恢复。
+- 全仓库当前实际文件约 3.247 GiB / 3.486 GB；用户选择固定 Docker 摘要联网拉取，
+  不上传另一个 11.16 GiB 展开的基础镜像。密码/Token/SSH 私钥/board core 不上传。
+- Windows 独立验证克隆：`C:/Users/limew/AppData/Local/Temp/rk3572-github-verify-20260928`，
+  Git LFS 3.7.1；四个归档、清单、完整内核与工具链从 GitHub 下载后哈希一致。
+- 构建机仍 `10.100.60.226`，原 `dev_openeuler` / 原项目未做清理。
+  独立验证父目录在宿主机卷下 `_data/tl3572-github-repro-20260928`；
+  通过原 dev 容器查看为 `/home/openeuler/build/tl3572-github-repro-20260928`。
+- Linux 克隆最初 `repo`，旧 Git LFS 2.10 的已校验 hydration 文件在 Git 看来 dirty，
+  更新 downloads 归档时 ff 被拒绝；没有 reset/checkout 覆盖。重新从 GitHub 克隆
+  到 `repo-v2`（commit 5655fb0），用哈希严格匹配的源文件缓存注入全部 21 个 LFS 输入。
+  所有编译容器 source 只读、新工作卷、network none，不挂载旧 tmp/sstate/sysroot/.a。
+- `tl3572-repro3-20260928` / `work-v3`：M6/M7 四份 ELF 从头编译全部成功，
+  SHA256 分别为 9c5e55a...、3357eb97...、e42b1a37...、d5146136...，与实机版本
+  完全相同。完整哈希见 `repro-inputs/rk3572/tests/clean-rebuild.md`。
+- 正在运行：`tl3572-repro4-20260928` / `work-v4`，挂载 `repo-v2` 只读，REPRO_JOBS=16。
+  prepare=0；离线 fetch **224/224、0 个复用、全部成功**；随后 2920 任务的
+  M6 完整镜像正在编译，成功后自动继续 m7-mcs。尚未宣布全镜像通过。
+- 镜像卷根日志 `prepare.log`、`fetch.log`、`m6-image.log`、后续 `m7-mcs.log`；
+  固件卷根日志 `m6-up.log`、`m7-up.log`。用 `docker exec` tail/grep 状态。
+  父目录的 work / work-v2 是先前检查失败的隔离目录，保留诊断，不要混用。
+- 板卡 `192.168.2.141` 本次未访问/未刷写/未重启；外设仍未移交。
+- 最新验证文档正在本地更新，需在任务结束前提交/推送，并核对 origin/main。
+
+## 2026-09-28：RK3572 换机复建验证完成（取代上一节“编译中”状态）
+
+- 当前构建全部必需输入已上传；固定源码提交为
+  `5655fb00c59f1cbfce83ca4a6dd91ba5ea703fdc`。换机入口固定此提交与 Docker 摘要，
+  后续 main 继续开发不影响重现本次输入。最终日志/说明另行提交到 main。
+- 在 `tl3572-repro4-20260928` / `work-v4` 的新目录、固定基础镜像、只读 repo-v2、
+  network none 条件下完成：prepare=0、离线 fetch=224/224、M6 镜像=2920/2920、
+  M7 MCS 包=147/147，所有返回码为 0。初始 sstate 为
+  Wanted 1329 / Local 0 / Mirrors 0 / Missed 1329 / Current 0，没有原工作区编译缓存。
+  镜像的 224 个复用任务是本轮先做的 fetch；M7 包的 131 个复用任务来自刚完成的本轮 M6。
+- M6 主日志有 6 个上游 patch-fuzz/QA WARNING，M7 包有 2 个 mcs-linux patch-fuzz WARNING；
+  原始内核、UniProton、UMT 编译警告均保留，不宣称零 warning。
+- M7 Yocto 实际编译的 rpc_backend.c、rpmsg_rpc.c 与板卡回归源码哈希完全一致。
+  又在新工作区用新编的 libmetal/OpenAMP/sysfsutils 跑 Stage07 的
+  prepare_m7_mcs.sh + build_m7_micad.sh，独立 daemon 编译返回 0，SHA-256 为
+  `40b7791d55ea58edb92d0119bd985ad560b2d3e1a1eba26ed1aa6566f907d20c`，
+  与板卡已回归的修复版完全一致，PIE/RELRO/NOW/栈保护、无 RPATH 确认。
+- work-v3 的四份 UP ELF 与 work-v4 的独立 micad 均达到实机参考版本逐字节一致。
+  当前 M6 kernel/FIT/rootfs 成功重建，但不承诺与历史镜像逐字节一致。
+- work-v4 镜像产物在项目内 `build/build-tl3572/tmp/deploy/images/tl3572-evm/`：
+  Image 40,081,920 B，boot FIT 40,647,168 B，mcs_km 98,472 B；
+  rootfs.ext4 逻辑大小 4 GiB（稀疏），rootfs.tar.gz 90,220,064 B。
+  新镜像未上传到 GitHub，上传的是可重建的完整输入和验证过程。
+- 最终证据在 `repro-inputs/rk3572/tests/clean-rebuild.md` 与 `tests/logs/`：
+  prepare、fetch、M6/M7 UP、M6 image、kernel compile、kernel artifact hashes、rootfs 包清单、
+  M7 MCS 总/补丁/编译日志、独立 micad 日志；12 个证据文件均有 SHA256SUMS。
+- 全仓库文件约 3.25 GiB / 3.49 GB；新增四个输入归档 525.33 MiB。
+  用户选定 Docker 摘要联网拉取，11.16 GiB 展开镜像不额外上传；凭据和 board core 不上传。
+- 构建均已结束，不要重复启动“尚在进行”的镜像任务。新验证目录/容器及原项目都保留；
+  本轮没有访问、刷写或重启板卡。M7 RPM 未部署，也未替换进此次 M6 rootfs。
+- 复建是在同一宿主机的全新隔离容器完成，不声称已换另一台物理主机实测。
+  历史 Stage 03–05 未修改的独立层快照缺失、M7 外设直驱未完成/未验收、
+  MCS create/rm fd 遗留问题与 mcsctl 错误返回问题仍在，不因本次构建通过而改变。

@@ -2,6 +2,12 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / 外设尚未移交 / M7.0 未验收`。
 
+2026-09-28 已补齐 [GitHub 换机输入与构建入口](../../repro-inputs/rk3572/README.md)，
+在空目录、固定基础容器中断网重建 M6 完整镜像、M6/M7 双固件、M7 MCS 软件包及
+独立修复版 micad，均通过；四份固件和独立 micad 与实机版本逐字节一致。
+见 [独立复现记录](../../repro-inputs/rk3572/tests/clean-rebuild.md)。这是现有软件切片的
+可复建性验证，不是完整 M7 镜像或工业外设直驱验收，新产物未部署到板卡。
+
 M7.0 以已完成的 [M6 双 UniProton 基线](../stage06-multi-uniproton/README.md)为起点，保持 UP1=CPU4、UP2=CPU5 及原有内存、SGI、OpenAMP 分配。本阶段的目标是将评估板全部接口明确归属 openEuler、UP1 或 UP2，实现指定工业外设的 UniProton 物理直驱，并逐项取得可复核的实机测试证据。详细表和退出条件见 [M7.0 全资源分配与测试目标](docs/m7.0-resource-allocation-and-tests.md)。
 
 本阶段不增加第三个 UniProton，不实现 2oo3、主备或表决。M6 的 `COMPLETE` 只说明双实例计算/通信资源隔离完成；不能据此宣称 CAN、UART、ADC、GMAC 已由 UniProton 驱动。当前资源分配是目标，不是已生效的设备树或驱动清单；实际运行映射见 [M7.0 实机资源台账](docs/m7.0-live-resource-ledger.md)。

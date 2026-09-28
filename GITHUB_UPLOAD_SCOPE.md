@@ -26,7 +26,8 @@ are included are stored through Git LFS.
   the openEuler build container.
 - `repro-inputs/rk3572/`: 150 additional openEuler package source trees,
   required upstream source-mirror archives, the complete effective M6
-  UniProton source overlay (including libboundscheck), source inventory,
+  UniProton source overlay (including libboundscheck and patched lwIP), the
+  required sanitized shallow Git metadata for yocto-meta-openeuler, source inventory,
   checksums, and clean-container preparation/build scripts.
 
 ## Omitted from Git

@@ -97,8 +97,10 @@ GCC 可执行文件 SHA-256 为
 
 ```bash
 git lfs install
-git clone https://github.com/windchilly/TL3572-EVM-Buildroot-2026.02-_Alpha_V1.1.git
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/windchilly/TL3572-EVM-Buildroot-2026.02-_Alpha_V1.1.git
 cd TL3572-EVM-Buildroot-2026.02-_Alpha_V1.1
+# 固定本次验证的全部构建输入；以后 main 可能继续演进。
+git checkout 5655fb00c59f1cbfce83ca4a6dd91ba5ea703fdc
 git lfs pull
 git lfs fsck
 
@@ -112,6 +114,10 @@ bash repro-inputs/rk3572/scripts/run.sh m6-up
 bash repro-inputs/rk3572/scripts/run.sh m7-up
 bash repro-inputs/rk3572/scripts/run.sh m6-image
 bash repro-inputs/rk3572/scripts/run.sh m7-mcs
+
+# 对应板卡独立路径/drop-in 部署方式的 micad；使用上一步新编的依赖库。
+docker exec "$REPRO_CONTAINER" bash /repo/stages/stage07-peripheral-partition/build/prepare_m7_mcs.sh
+docker exec "$REPRO_CONTAINER" bash /repo/stages/stage07-peripheral-partition/build/build_m7_micad.sh
 ```
 
 源码准备和编译容器用 `--network none`，配置用 `BB_NO_NETWORK=1`。
@@ -133,6 +139,8 @@ Yocto 入口显式加载镜像中的 Native SDK 环境脚本，使 `compile_et` 
 - M7 ELF：相同路径将源码目录改为 `UniProton-m7`、文件名前缀改为 `tl3572-m7`。
 - 内核、DTB、boot FIT、完整 rootfs：项目内 `build/build-tl3572/tmp/deploy/images/tl3572-evm/`。
 - M7 MCS：`m7-mcs` 通过附加层构建含三份补丁的 MCS 包；不修改 M6 配方。
+- 独立 M7 micad：项目内 `build-micad-m7/mica/micad/micad`；
+  部署/回退边界见 [M7 构建说明](../../stages/stage07-peripheral-partition/build/README.md)。
 
 M6 镜像配方沿用已实机验证并校验固定哈希的参考双 ELF；它与另行从源码重编 ELF
 是两条显式验证路径。不要直接覆盖配方中的参考 ELF，否则固定哈希检查会拒绝。
@@ -141,8 +149,11 @@ M6 镜像配方沿用已实机验证并校验固定哈希的参考双 ELF；它�
 
 ### 当前验证状态
 
-输入导出、归档哈希、固定容器的 SDK/工具链检查已通过。
-独立空目录的离线构建检查正在进行；以 `tests/clean-rebuild.md` 记录的具体结果为准。
-不能把“源码已上传”或“fetch 通过”当成完整镜像重建通过。
+GitHub 独立下载校验、固定容器的 SDK/工具链、空目录准备均通过。
+M6/M7 四份 ELF 已断网从源码重编，且 SHA-256 与实机验证版本完全相同。
+独立 M7 micad 从本轮新编依赖库构建，也与实机修复版逐字节一致。
+当前 M6 镜像离线取源 224/224、完整镜像 2920/2920、M7 MCS 包 147/147 均通过；
+具体证据与实际警告见 [干净重建记录](tests/clean-rebuild.md)。
+M7 软件包未部署，也未自动替换进上述 M6 rootfs；完整 M7 镜像和外设验收不在此次通过范围。
 Stage 03/04/05 未找到每阶段未修改的完整独立层快照；历史差异保留在阶段材料中，
 本次保证范围为当前 M6/M7 软件输入链路，不改写这一历史限制。

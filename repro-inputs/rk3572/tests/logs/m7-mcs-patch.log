@@ -1,0 +1,217 @@
+DEBUG: Executing python function extend_recipe_sysroot
+NOTE: Direct dependencies are []
+NOTE: Installed into sysroot: []
+NOTE: Skipping as already exists in sysroot: []
+DEBUG: Python function extend_recipe_sysroot finished
+DEBUG: Executing python function do_patch
+DEBUG: Executing python function patch_do_patch
+DEBUG: Searching for 0001-mcs-rpmsg-tty-full-payload.patch in paths:
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/openeuler
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/mcs/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/openeuler
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/mcs/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/tl3572-evm
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/tl3572
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/mcs/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/tl3572
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/aarch64
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/aarch64
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/
+    /home/openeuler/build/tl3572-2oo3/src/
+    /home/openeuler/build/tl3572-2oo3/src/mcs/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/
+DEBUG: Searching for 0002-baremetal-rproc-route-dual-sgi-events.patch in paths:
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/openeuler
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/mcs/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/openeuler
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/mcs/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/tl3572-evm
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/tl3572
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/mcs/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/tl3572
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/aarch64
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/aarch64
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/
+    /home/openeuler/build/tl3572-2oo3/src/
+    /home/openeuler/build/tl3572-2oo3/src/mcs/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/
+DEBUG: Searching for 0003-rpc-shared-log-lifecycle.patch in paths:
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/openeuler
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/mcs/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/openeuler
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/mcs/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/tl3572-evm
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/tl3572
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/mcs/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/tl3572
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/aarch64
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/aarch64
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/
+    /home/openeuler/build/tl3572-2oo3/src/
+    /home/openeuler/build/tl3572-2oo3/src/mcs/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/
+DEBUG: Searching for mcs in paths:
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/openeuler
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/mcs/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/openeuler
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/openeuler
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/mcs/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/tl3572-evm
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/tl3572-evm
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/tl3572
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/mcs/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/tl3572
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/tl3572
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/aarch64
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/mcs/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/aarch64
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/aarch64
+    /repo/stages/stage07-peripheral-partition/source/yocto/meta-tl3572-m7/recipes-mcs/mcs-linux/../../../../patches/mcs/
+    /home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-mcs/mcs-linux/files/
+    /home/openeuler/build/tl3572-2oo3/src/
+    /home/openeuler/build/tl3572-2oo3/src/mcs/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux-0.0.1/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux/
+    /home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/files/
+NOTE: Applying patch '0001-mcs-rpmsg-tty-full-payload.patch' (../../meta-tl3572-stage3/recipes-mcs/mcs-linux/files/0001-mcs-rpmsg-tty-full-payload.patch)
+NOTE: Applying patch '0002-baremetal-rproc-route-dual-sgi-events.patch' (../../meta-tl3572-stage3/recipes-mcs/mcs-linux/files/0002-baremetal-rproc-route-dual-sgi-events.patch)
+NOTE: Applying patch '0003-rpc-shared-log-lifecycle.patch' (../../../../../../repo/stages/stage07-peripheral-partition/source/patches/mcs/0003-rpc-shared-log-lifecycle.patch)
+NOTE: --- Patch fuzz start ---
+Applying patch 0003-rpc-shared-log-lifecycle.patch
+patching file mica/micad/services/rpc/rpc_backend.c
+Hunk #1 succeeded at 236 (offset -1 lines).
+Hunk #2 succeeded at 371 (offset -1 lines).
+Hunk #3 succeeded at 386 with fuzz 1 (offset -1 lines).
+patching file mica/micad/services/rpc/rpmsg_rpc.c
+Hunk #1 succeeded at 76 (offset 1 line).
+
+Now at patch 0003-rpc-shared-log-lifecycle.patch
+
+--- Patch fuzz end ---
+DEBUG: Python function patch_do_patch finished
+DEBUG: Python function do_patch finished
+DEBUG: Executing python function do_qa_patch
+WARNING: Fuzz detected:
+
+Applying patch 0003-rpc-shared-log-lifecycle.patch
+patching file mica/micad/services/rpc/rpc_backend.c
+Hunk #1 succeeded at 236 (offset -1 lines).
+Hunk #2 succeeded at 371 (offset -1 lines).
+Hunk #3 succeeded at 386 with fuzz 1 (offset -1 lines).
+patching file mica/micad/services/rpc/rpmsg_rpc.c
+Hunk #1 succeeded at 76 (offset 1 line).
+
+
+The context lines in the patches can be updated with devtool:
+
+    devtool modify mcs-linux
+    devtool finish --force-patch-refresh mcs-linux <layer_path>
+
+Don't forget to review changes done by devtool!
+
+WARNING: QA Issue: Patch log indicates that patches do not apply cleanly. [patch-fuzz]
+DEBUG: Python function do_qa_patch finished

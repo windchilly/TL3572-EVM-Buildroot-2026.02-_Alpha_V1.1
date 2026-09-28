@@ -1,0 +1,106 @@
+Loading cache...done.
+Loaded 0 entries from dependency cache.
+Parsing recipes...done.
+Parsing of 2669 .bb files complete (0 cached, 2669 parsed). 4231 targets, 408 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION           = "2.0.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "openeuler-24.03"
+TARGET_SYS           = "aarch64-openeuler-linux"
+MACHINE              = "tl3572-evm"
+DISTRO               = "openeuler"
+DISTRO_VERSION       = "24.03-LTS"
+TUNE_FEATURES        = "aarch64"
+TARGET_FPU           = ""
+EXTERNAL_TOOLCHAIN   = "/usr1/openeuler/gcc/openeuler_gcc_arm64le"
+EXTERNAL_TARGET_SYS  = "aarch64-openeuler-linux-gnu"
+GCC_VERSION          = "12.3.1"
+OPENEULER_TOOLCHAIN_VERSION = "12.3.1"
+meta                 
+meta-oe              
+meta-python          
+meta-networking      
+meta-filesystems     = "<unknown>:<unknown>"
+meta-openeuler       
+meta-openeuler-bsp   
+meta-openeuler-rtos  
+meta-zephyr          = "openEuler-24.03-LTS:3aa6999c9ab78569bc2209a9dbb185e2f7e4301c"
+meta-tl3572-stage3   = "<unknown>:<unknown>"
+meta-tl3572-m7       = "main:5655fb00c59f1cbfce83ca4a6dd91ba5ea703fdc"
+
+Initialising tasks...done.
+Sstate summary: Wanted 7 Local 0 Mirrors 0 Missed 7 Current 40 (0% match, 85% complete)
+Removing 1 stale sstate objects for arch tl3572_evm...done.
+Removing 5 stale sstate objects for arch aarch64...done.
+NOTE: Executing Tasks
+NOTE: Running task 108 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_fetch)
+NOTE: recipe mcs-linux-0.0.1-r0: task do_fetch: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_fetch: Succeeded
+NOTE: Running task 133 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_unpack)
+NOTE: Running task 134 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_prepare_recipe_sysroot)
+NOTE: recipe mcs-linux-0.0.1-r0: task do_prepare_recipe_sysroot: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_unpack: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_prepare_recipe_sysroot: Succeeded
+NOTE: recipe mcs-linux-0.0.1-r0: task do_unpack: Succeeded
+NOTE: Running task 135 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_patch)
+NOTE: recipe mcs-linux-0.0.1-r0: task do_patch: Started
+WARNING: mcs-linux-0.0.1-r0 do_patch: Fuzz detected:
+
+Applying patch 0003-rpc-shared-log-lifecycle.patch
+patching file mica/micad/services/rpc/rpc_backend.c
+Hunk #1 succeeded at 236 (offset -1 lines).
+Hunk #2 succeeded at 371 (offset -1 lines).
+Hunk #3 succeeded at 386 with fuzz 1 (offset -1 lines).
+patching file mica/micad/services/rpc/rpmsg_rpc.c
+Hunk #1 succeeded at 76 (offset 1 line).
+
+
+The context lines in the patches can be updated with devtool:
+
+    devtool modify mcs-linux
+    devtool finish --force-patch-refresh mcs-linux <layer_path>
+
+Don't forget to review changes done by devtool!
+
+WARNING: mcs-linux-0.0.1-r0 do_patch: QA Issue: Patch log indicates that patches do not apply cleanly. [patch-fuzz]
+NOTE: recipe mcs-linux-0.0.1-r0: task do_patch: Succeeded
+NOTE: Running task 136 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_deploy_source_date_epoch)
+NOTE: Running task 137 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_generate_toolchain_file)
+NOTE: Running task 138 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_populate_lic)
+NOTE: recipe mcs-linux-0.0.1-r0: task do_deploy_source_date_epoch: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_generate_toolchain_file: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_populate_lic: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_generate_toolchain_file: Succeeded
+NOTE: recipe mcs-linux-0.0.1-r0: task do_populate_lic: Succeeded
+NOTE: recipe mcs-linux-0.0.1-r0: task do_deploy_source_date_epoch: Succeeded
+NOTE: Running task 139 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_configure)
+NOTE: recipe mcs-linux-0.0.1-r0: task do_configure: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_configure: Succeeded
+NOTE: Running task 140 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_compile)
+NOTE: recipe mcs-linux-0.0.1-r0: task do_compile: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_compile: Succeeded
+NOTE: Running task 141 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_install)
+NOTE: recipe mcs-linux-0.0.1-r0: task do_install: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_install: Succeeded
+NOTE: Running task 142 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_package)
+NOTE: Running task 143 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_populate_sysroot)
+NOTE: recipe mcs-linux-0.0.1-r0: task do_populate_sysroot: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_package: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_populate_sysroot: Succeeded
+NOTE: recipe mcs-linux-0.0.1-r0: task do_package: Succeeded
+NOTE: Running task 144 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_packagedata)
+NOTE: recipe mcs-linux-0.0.1-r0: task do_packagedata: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_packagedata: Succeeded
+NOTE: Running task 145 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_package_write_rpm)
+NOTE: Running task 146 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_package_qa)
+NOTE: recipe mcs-linux-0.0.1-r0: task do_package_write_rpm: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_package_qa: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_package_qa: Succeeded
+NOTE: recipe mcs-linux-0.0.1-r0: task do_package_write_rpm: Succeeded
+NOTE: Running noexec task 147 of 147 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_build)
+NOTE: Tasks Summary: Attempted 147 tasks of which 131 didn't need to be rerun and all succeeded.
+
+Summary: There were 2 WARNING messages.
+M7_MCS_RESULT=0

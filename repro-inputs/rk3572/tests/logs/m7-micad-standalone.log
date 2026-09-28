@@ -1,0 +1,139 @@
+Prepared M7 MCS source: /home/openeuler/build/tl3572-2oo3/src/mcs-m7
+-- The C compiler identification is GNU 14.3.1
+-- The CXX compiler identification is GNU 14.3.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-linux-gnu-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-linux-gnu-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/build-micad-m7
+[  3%] Building C object library/CMakeFiles/mica.dir/remoteproc/baremetal_rproc.c.o
+[  7%] Building C object library/CMakeFiles/mica.dir/remoteproc/jailhouse_rproc.c.o
+[ 11%] Building C object library/CMakeFiles/mica.dir/remoteproc/mica_rsc_table.c.o
+[ 23%] Building C object library/CMakeFiles/mica.dir/rpmsg_device/rpmsg_vdev.c.o
+[ 26%] Building C object library/CMakeFiles/mica.dir/remoteproc/remoteproc_core.c.o
+[ 26%] Building C object library/CMakeFiles/mica.dir/rpmsg_device/rpmsg_service.c.o
+[ 23%] Building C object library/CMakeFiles/mica.dir/memory/shm_pool.c.o
+[ 34%] Building C object library/CMakeFiles/mica.dir/mica/mica.c.o
+[ 34%] Building C object library/CMakeFiles/mica.dir/rbuf_device/rbuf_dev.c.o
+[ 38%] Building C object library/CMakeFiles/mica.dir/rbuf_device/ring_buffer.c.o
+[ 42%] Building C object library/CMakeFiles/mica.dir/user_msg/user_msg.c.o
+[ 46%] Building C object library/CMakeFiles/mica.dir/user_msg/user_msg_mem.c.o
+[ 50%] Linking C static library libmica.a
+[ 50%] Built target mica
+[ 53%] Building C object mica/micad/CMakeFiles/micad.dir/main.c.o
+[ 57%] Building C object mica/micad/CMakeFiles/micad.dir/socket_listener.c.o
+[ 61%] Building C object mica/micad/CMakeFiles/micad.dir/services/pty/rpmsg_pty.c.o
+[ 80%] Building C object mica/micad/CMakeFiles/micad.dir/services/debug/mica_debug.c.o
+[ 80%] Building C object mica/micad/CMakeFiles/micad.dir/services/rpc/rpc_backend.c.o
+[ 80%] Building C object mica/micad/CMakeFiles/micad.dir/services/rpc/rpc_helper.c.o
+[ 80%] Building C object mica/micad/CMakeFiles/micad.dir/services/rpc/rpmsg_rpc.c.o
+[ 80%] Building C object mica/micad/CMakeFiles/micad.dir/services/rpc/rpc_workers.c.o
+[ 84%] Building C object mica/micad/CMakeFiles/micad.dir/services/debug/mica_debug_ring_buffer.c.o
+[ 88%] Building C object mica/micad/CMakeFiles/micad.dir/services/debug/mica_gdb_server.c.o
+[ 92%] Building C object mica/micad/CMakeFiles/micad.dir/services/umt/rpmsg_umt.c.o
+[ 96%] Building C object mica/micad/CMakeFiles/micad.dir/__/__/library/mica/mica.c.o
+/home/openeuler/build/tl3572-2oo3/src/mcs-m7/mica/micad/services/umt/rpmsg_umt.c: In function 'umt_service_init':
+/home/openeuler/build/tl3572-2oo3/src/mcs-m7/mica/micad/services/umt/rpmsg_umt.c:75:29: warning: variable 'client' set but not used [-Wunused-but-set-variable]
+   75 |         struct mica_client *client;
+      |                             ^~~~~~
+[100%] Linking C executable micad
+[100%] Built target micad
+40b7791d55ea58edb92d0119bd985ad560b2d3e1a1eba26ed1aa6566f907d20c  /home/openeuler/build/tl3572-2oo3/build-micad-m7/mica/micad/micad
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Position-Independent Executable file)
+  Machine:                           AArch64
+  Version:                           0x1
+  Entry point address:               0x4f00
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          540312 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         9
+  Size of section headers:           64 (bytes)
+  Number of section headers:         36
+  Section header string table index: 35
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  PHDR           0x0000000000000040 0x0000000000000040 0x0000000000000040
+                 0x00000000000001f8 0x00000000000001f8  R      0x8
+  INTERP         0x0000000000000238 0x0000000000000238 0x0000000000000238
+                 0x000000000000001b 0x000000000000001b  R      0x1
+      [Requesting program interpreter: /lib/ld-linux-aarch64.so.1]
+  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x000000000001a8f0 0x000000000001a8f0  R E    0x10000
+  LOAD           0x000000000001f670 0x000000000002f670 0x000000000002f670
+                 0x00000000000010f0 0x0000000000001a88  RW     0x10000
+  DYNAMIC        0x000000000001f778 0x000000000002f778 0x000000000002f778
+                 0x0000000000000220 0x0000000000000220  RW     0x8
+  NOTE           0x000000000001a8d0 0x000000000001a8d0 0x000000000001a8d0
+                 0x0000000000000020 0x0000000000000020  R      0x4
+  GNU_EH_FRAME   0x0000000000017164 0x0000000000017164 0x0000000000017164
+                 0x0000000000000654 0x0000000000000654  R      0x4
+  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000  RW     0x10
+  GNU_RELRO      0x000000000001f670 0x000000000002f670 0x000000000002f670
+                 0x0000000000000990 0x0000000000000990  R      0x1
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     
+   01     .interp 
+   02     .interp .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt .init .plt .text .fini .rodata .eh_frame_hdr .eh_frame .note.ABI-tag 
+   03     .init_array .fini_array .data.rel.ro .dynamic .got .data .bss 
+   04     .dynamic 
+   05     .note.ABI-tag 
+   06     .eh_frame_hdr 
+   07     
+   08     .init_array .fini_array .data.rel.ro .dynamic .got 
+
+Dynamic section at offset 0x1f778 contains 30 entries:
+  Tag        Type                         Name/Value
+ 0x0000000000000001 (NEEDED)             Shared library: [libmetal.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libopen_amp.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-aarch64.so.1]
+ 0x000000000000000c (INIT)               0x3df0
+ 0x000000000000000d (FINI)               0x14000
+ 0x0000000000000019 (INIT_ARRAY)         0x2f670
+ 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)
+ 0x000000000000001a (FINI_ARRAY)         0x2f678
+ 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)
+ 0x000000006ffffef5 (GNU_HASH)           0x258
+ 0x0000000000000005 (STRTAB)             0x14c0
+ 0x0000000000000006 (SYMTAB)             0x278
+ 0x000000000000000a (STRSZ)              1973 (bytes)
+ 0x000000000000000b (SYMENT)             24 (bytes)
+ 0x0000000000000015 (DEBUG)              0x0
+ 0x0000000000000003 (PLTGOT)             0x2f998
+ 0x0000000000000002 (PLTRELSZ)           4440 (bytes)
+ 0x0000000000000014 (PLTREL)             RELA
+ 0x0000000000000017 (JMPREL)             0x2c98
+ 0x0000000000000007 (RELA)               0x1e70
+ 0x0000000000000008 (RELASZ)             3624 (bytes)
+ 0x0000000000000009 (RELAENT)            24 (bytes)
+ 0x0000000000000018 (BIND_NOW)           
+ 0x000000006ffffffb (FLAGS_1)            Flags: NOW PIE
+ 0x000000006ffffffe (VERNEED)            0x1e00
+ 0x000000006fffffff (VERNEEDNUM)         2
+ 0x000000006ffffff0 (VERSYM)             0x1c76
+ 0x000000006ffffff9 (RELACOUNT)          142
+ 0x0000000000000000 (NULL)               0x0
+
+M7_MICAD_STANDALONE_RESULT=0

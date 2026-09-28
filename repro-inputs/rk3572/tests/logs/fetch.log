@@ -1,0 +1,703 @@
+Loading cache...done.
+Loaded 0 entries from dependency cache.
+Parsing recipes...done.
+Parsing of 2669 .bb files complete (0 cached, 2669 parsed). 4231 targets, 408 skipped, 0 masked, 0 errors.
+NOTE: Resolving any missing task queue dependencies
+
+Build Configuration:
+BB_VERSION           = "2.0.0"
+BUILD_SYS            = "x86_64-linux"
+NATIVELSBSTRING      = "openeuler-24.03"
+TARGET_SYS           = "aarch64-openeuler-linux"
+MACHINE              = "tl3572-evm"
+DISTRO               = "openeuler"
+DISTRO_VERSION       = "24.03-LTS"
+TUNE_FEATURES        = "aarch64"
+TARGET_FPU           = ""
+EXTERNAL_TOOLCHAIN   = "/usr1/openeuler/gcc/openeuler_gcc_arm64le"
+EXTERNAL_TARGET_SYS  = "aarch64-openeuler-linux-gnu"
+GCC_VERSION          = "12.3.1"
+OPENEULER_TOOLCHAIN_VERSION = "12.3.1"
+meta                 
+meta-oe              
+meta-python          
+meta-networking      
+meta-filesystems     = "<unknown>:<unknown>"
+meta-openeuler       
+meta-openeuler-bsp   
+meta-openeuler-rtos  
+meta-zephyr          = "openEuler-24.03-LTS:3aa6999c9ab78569bc2209a9dbb185e2f7e4301c"
+meta-tl3572-stage3   = "<unknown>:<unknown>"
+
+Initialising tasks...done.
+Sstate summary: Wanted 0 Local 0 Mirrors 0 Missed 0 Current 0 (0% match, 0% complete)
+NOTE: No setscene tasks
+NOTE: Executing Tasks
+NOTE: Running task 1 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcs-linux.bb:do_fetch)
+NOTE: Running task 2 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/icu/icu_70.1.bb:do_fetch)
+NOTE: Running task 3 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libgpg-error/libgpg-error_1.44.bb:do_fetch)
+NOTE: Running task 4 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/gnutls/libtasn1_4.19.0.bb:do_fetch)
+NOTE: recipe mcs-linux-0.0.1-r0: task do_fetch: Started
+NOTE: recipe libtasn1-4.19.0-r0: task do_fetch: Started
+NOTE: recipe libgpg-error-1.47-r0: task do_fetch: Started
+NOTE: recipe icu-native-74.1-r0: task do_fetch: Started
+NOTE: recipe mcs-linux-0.0.1-r0: task do_fetch: Succeeded
+NOTE: Running task 5 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/gnutls/libtasn1_4.19.0.bb:do_fetch)
+NOTE: recipe libgpg-error-1.47-r0: task do_fetch: Succeeded
+NOTE: recipe libtasn1-4.19.0-r0: task do_fetch: Succeeded
+NOTE: Running task 6 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libmd/libmd_1.0.4.bb:do_fetch)
+NOTE: Running task 7 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/vala/vala_0.56.3.bb:do_fetch)
+NOTE: recipe icu-native-74.1-r0: task do_fetch: Succeeded
+NOTE: Running task 8 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/vala/vala_0.56.3.bb:do_fetch)
+NOTE: recipe vala-0.56.14-r0: task do_fetch: Started
+NOTE: recipe libtasn1-native-4.19.0-r0: task do_fetch: Started
+NOTE: recipe libmd-native-1.1.0-r0: task do_fetch: Started
+NOTE: recipe vala-native-0.56.14-r0: task do_fetch: Started
+NOTE: recipe vala-0.56.14-r0: task do_fetch: Succeeded
+NOTE: Running task 9 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/icu/icu_70.1.bb:do_fetch)
+NOTE: recipe libtasn1-native-4.19.0-r0: task do_fetch: Succeeded
+NOTE: Running task 10 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libical/libical_3.0.16.bb:do_fetch)
+NOTE: recipe libmd-native-1.1.0-r0: task do_fetch: Succeeded
+NOTE: Running task 11 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libunistring/libunistring_1.0.bb:do_fetch)
+NOTE: recipe vala-native-0.56.14-r0: task do_fetch: Succeeded
+NOTE: Running task 12 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/nettle/nettle_3.7.3.bb:do_fetch)
+NOTE: recipe icu-74.1-r0: task do_fetch: Started
+NOTE: recipe libunistring-1.1-r0: task do_fetch: Started
+NOTE: recipe libical-native-3.0.17-r0: task do_fetch: Started
+NOTE: recipe nettle-3.8.1-r0: task do_fetch: Started
+NOTE: recipe icu-74.1-r0: task do_fetch: Succeeded
+NOTE: recipe libunistring-1.1-r0: task do_fetch: Succeeded
+NOTE: Running task 13 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-support/libgcrypt/libgcrypt_1.10.2.bb:do_fetch)
+NOTE: Running task 14 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libpcre/libpcre_8.45.bb:do_fetch)
+NOTE: recipe libical-native-3.0.17-r0: task do_fetch: Succeeded
+NOTE: Running task 15 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/nettle/nettle_3.7.3.bb:do_fetch)
+NOTE: recipe nettle-3.8.1-r0: task do_fetch: Succeeded
+NOTE: Running task 16 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libunistring/libunistring_1.0.bb:do_fetch)
+NOTE: recipe libgcrypt-1.10.2-r0: task do_fetch: Started
+NOTE: recipe libpcre-native-8.45-r0: task do_fetch: Started
+NOTE: recipe nettle-native-3.8.1-r0: task do_fetch: Started
+NOTE: recipe libunistring-native-1.1-r0: task do_fetch: Started
+NOTE: recipe libgcrypt-1.10.2-r0: task do_fetch: Succeeded
+NOTE: Running task 17 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/libidn/libidn2_2.3.2.bb:do_fetch)
+NOTE: recipe libpcre-native-8.45-r0: task do_fetch: Succeeded
+NOTE: Running task 18 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/python/python3-markupsafe_2.1.2.bb:do_fetch)
+NOTE: recipe nettle-native-3.8.1-r0: task do_fetch: Succeeded
+NOTE: Running task 19 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/p11-kit/p11-kit_0.24.1.bb:do_fetch)
+NOTE: recipe libunistring-native-1.1-r0: task do_fetch: Succeeded
+NOTE: Running task 20 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openembedded/meta-oe/recipes-kernel/makedumpfile/makedumpfile_1.7.1.bb:do_fetch)
+NOTE: recipe libidn2-native-2.3.4-r0: task do_fetch: Started
+NOTE: recipe p11-kit-0.25.0-r0: task do_fetch: Started
+NOTE: recipe makedumpfile-1.7.4-r0: task do_fetch: Started
+NOTE: recipe python3-markupsafe-native-2.1.3-r0: task do_fetch: Started
+NOTE: recipe libidn2-native-2.3.4-r0: task do_fetch: Succeeded
+NOTE: Running task 21 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/volatile-binds/volatile-binds.bb:do_fetch)
+NOTE: recipe python3-markupsafe-native-2.1.3-r0: task do_fetch: Succeeded
+NOTE: Running task 22 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/update-rc.d/update-rc.d_0.8.bb:do_fetch)
+NOTE: recipe makedumpfile-1.7.4-r0: task do_fetch: Succeeded
+NOTE: recipe p11-kit-0.25.0-r0: task do_fetch: Succeeded
+NOTE: Running task 23 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/systemd/systemd-serialgetty.bb:do_fetch)
+NOTE: Running task 24 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/kbd/kbd_2.4.0.bb:do_fetch)
+NOTE: recipe volatile-binds-1.0-r0: task do_fetch: Started
+NOTE: recipe update-rc.d-0.8-r0: task do_fetch: Started
+NOTE: recipe systemd-serialgetty-1.0-r5: task do_fetch: Started
+NOTE: recipe kbd-2.6.1-r0: task do_fetch: Started
+NOTE: recipe volatile-binds-1.0-r0: task do_fetch: Succeeded
+NOTE: Running task 25 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/systemd/systemd-conf_1.0.bb:do_fetch)
+NOTE: recipe update-rc.d-0.8-r0: task do_fetch: Succeeded
+NOTE: Running task 26 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/shadow/shadow-securetty_4.6.bb:do_fetch)
+NOTE: recipe systemd-serialgetty-1.0-r5: task do_fetch: Succeeded
+NOTE: Running task 27 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/perl-cross/perlcross_1.3.7.bb:do_fetch)
+NOTE: recipe kbd-2.6.1-r0: task do_fetch: Succeeded
+NOTE: Running task 28 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/flex/flex_2.6.4.bb:do_fetch)
+NOTE: recipe systemd-conf-1_1.0-r0: task do_fetch: Started
+NOTE: recipe shadow-securetty-4.6-r3: task do_fetch: Started
+NOTE: recipe perlcross-native-1.5-r0: task do_fetch: Started
+NOTE: recipe flex-2.6.4-r0: task do_fetch: Started
+NOTE: recipe systemd-conf-1_1.0-r0: task do_fetch: Succeeded
+NOTE: Running task 29 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/lzip/lzip_1.23.bb:do_fetch)
+NOTE: recipe shadow-securetty-4.6-r3: task do_fetch: Succeeded
+NOTE: Running task 30 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/popt/popt_1.18.bb:do_fetch)
+NOTE: recipe perlcross-native-1.5-r0: task do_fetch: Succeeded
+NOTE: Running task 31 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openembedded/meta-oe/recipes-support/libestr/libestr_0.1.11.bb:do_fetch)
+NOTE: recipe flex-2.6.4-r0: task do_fetch: Succeeded
+NOTE: Running task 32 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openembedded/meta-oe/recipes-extended/rsyslog/libfastjson_0.99.9.bb:do_fetch)
+NOTE: recipe popt-1.19-r0: task do_fetch: Started
+NOTE: recipe lzip-native-1.23-r0: task do_fetch: Started
+NOTE: recipe libestr-0.1.11-r0: task do_fetch: Started
+NOTE: recipe libfastjson-1.2304.0-r0: task do_fetch: Started
+NOTE: recipe popt-1.19-r0: task do_fetch: Succeeded
+NOTE: Running task 33 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libcap/libcap_2.66.bb:do_fetch)
+NOTE: recipe lzip-native-1.23-r0: task do_fetch: Succeeded
+NOTE: Running task 34 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libevent/libevent_2.1.12.bb:do_fetch)
+NOTE: recipe libestr-0.1.11-r0: task do_fetch: Succeeded
+NOTE: Running task 35 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libbsd/libbsd_0.11.5.bb:do_fetch)
+NOTE: recipe libfastjson-1.2304.0-r0: task do_fetch: Succeeded
+NOTE: Running task 36 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libical/libical_3.0.16.bb:do_fetch)
+NOTE: recipe libevent-2.1.12-r0: task do_fetch: Started
+NOTE: recipe libcap-native-2.69-r0: task do_fetch: Started
+NOTE: recipe libbsd-native-0.10.0-r0: task do_fetch: Started
+NOTE: recipe libical-3.0.17-r0: task do_fetch: Started
+NOTE: recipe libcap-native-2.69-r0: task do_fetch: Succeeded
+NOTE: Running task 37 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libdaemon/libdaemon_0.14.bb:do_fetch)
+NOTE: recipe libevent-2.1.12-r0: task do_fetch: Succeeded
+NOTE: Running task 38 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-gnome/gobject-introspection/gobject-introspection_1.72.0.bb:do_fetch)
+NOTE: recipe libbsd-native-0.10.0-r0: task do_fetch: Succeeded
+NOTE: Running task 39 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-gnome/gobject-introspection/gobject-introspection_1.72.0.bb:do_fetch)
+NOTE: recipe libical-3.0.17-r0: task do_fetch: Succeeded
+NOTE: Running task 40 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/dbus/dbus_1.14.6.bb:do_fetch)
+NOTE: recipe libdaemon-0.14-r0: task do_fetch: Started
+NOTE: recipe gobject-introspection-1.76.1-r0: task do_fetch: Started
+NOTE: recipe gobject-introspection-native-1.76.1-r0: task do_fetch: Started
+NOTE: recipe dbus-1.14.8-r0: task do_fetch: Started
+NOTE: recipe libdaemon-0.14-r0: task do_fetch: Succeeded
+NOTE: Running task 41 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/mpfr/mpfr_4.1.1.bb:do_fetch)
+NOTE: recipe gobject-introspection-1.76.1-r0: task do_fetch: Succeeded
+NOTE: Running task 42 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/libidn/libidn2_2.3.2.bb:do_fetch)
+NOTE: recipe gobject-introspection-native-1.76.1-r0: task do_fetch: Succeeded
+NOTE: Running task 43 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/cwautomacros/cwautomacros_20110201.bb:do_fetch)
+NOTE: recipe dbus-1.14.8-r0: task do_fetch: Succeeded
+NOTE: Running task 44 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/lzo/lzo_2.10.bb:do_fetch)
+NOTE: recipe mpfr-4.2.1-r0: task do_fetch: Started
+NOTE: recipe libidn2-2.3.4-r0: task do_fetch: Started
+NOTE: recipe lzo-2.10-r0: task do_fetch: Started
+NOTE: recipe mpfr-4.2.1-r0: task do_fetch: Succeeded
+NOTE: Running task 45 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/lz4/lz4_1.9.4.bb:do_fetch)
+NOTE: recipe cwautomacros-native-20110201-r0: task do_fetch: Started
+NOTE: recipe libidn2-2.3.4-r0: task do_fetch: Succeeded
+NOTE: Running task 46 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-devtools/desktop-file-utils/desktop-file-utils_0.27.bb:do_fetch)
+NOTE: recipe lzo-2.10-r0: task do_fetch: Succeeded
+NOTE: Running task 47 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-devtools/desktop-file-utils/desktop-file-utils_0.27.bb:do_fetch)
+NOTE: recipe lz4-1_1.9.4-r0: task do_fetch: Started
+NOTE: recipe cwautomacros-native-20110201-r0: task do_fetch: Succeeded
+NOTE: Running task 48 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/selinux/libsemanage_3.4.bb:do_fetch)
+NOTE: recipe desktop-file-utils-0.27-r0: task do_fetch: Started
+NOTE: recipe lz4-1_1.9.4-r0: task do_fetch: Succeeded
+NOTE: Running task 49 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/file/file_5.41.bb:do_fetch)
+NOTE: recipe desktop-file-utils-native-0.27-r0: task do_fetch: Started
+NOTE: recipe libsemanage-3.5-r0: task do_fetch: Started
+NOTE: recipe desktop-file-utils-0.27-r0: task do_fetch: Succeeded
+NOTE: Running task 50 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/tcltk/tcl_8.6.11.bb:do_fetch)
+NOTE: recipe desktop-file-utils-native-0.27-r0: task do_fetch: Succeeded
+NOTE: Running task 51 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/libaio/libaio_0.3.112.bb:do_fetch)
+NOTE: recipe file-native-5.45-r0: task do_fetch: Started
+NOTE: recipe libsemanage-3.5-r0: task do_fetch: Succeeded
+NOTE: Running task 52 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libpcre/libpcre2_10.40.bb:do_fetch)
+NOTE: recipe tcl-8.6.14-r0: task do_fetch: Started
+NOTE: recipe libaio-0.3.113-r0: task do_fetch: Started
+NOTE: recipe file-native-5.45-r0: task do_fetch: Succeeded
+NOTE: Running task 53 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/gnutls/gnutls_3.7.4.bb:do_fetch)
+NOTE: recipe libpcre2-10.42-r0: task do_fetch: Started
+NOTE: recipe tcl-8.6.14-r0: task do_fetch: Succeeded
+NOTE: Running task 54 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libpcre/libpcre_8.45.bb:do_fetch)
+NOTE: recipe libaio-0.3.113-r0: task do_fetch: Succeeded
+NOTE: Running task 55 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/autoconf-archive/autoconf-archive_2022.02.11.bb:do_fetch)
+NOTE: recipe gnutls-3.8.2-r0: task do_fetch: Started
+NOTE: recipe libpcre2-10.42-r0: task do_fetch: Succeeded
+NOTE: Running task 56 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/tcp-wrappers/tcp-wrappers_7.6.bb:do_fetch)
+NOTE: recipe libpcre-8.45-r0: task do_fetch: Started
+NOTE: recipe autoconf-archive-2023.02.20-r0: task do_fetch: Started
+NOTE: recipe gnutls-3.8.2-r0: task do_fetch: Succeeded
+NOTE: Running task 57 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/gmp/gmp_6.2.1.bb:do_fetch)
+NOTE: recipe libpcre-8.45-r0: task do_fetch: Succeeded
+NOTE: Running task 58 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/zstd/zstd_1.5.2.bb:do_fetch)
+NOTE: recipe tcp-wrappers-7.6-r10: task do_fetch: Started
+NOTE: recipe autoconf-archive-2023.02.20-r0: task do_fetch: Succeeded
+NOTE: Running task 59 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libseccomp/libseccomp_2.5.3.bb:do_fetch)
+NOTE: recipe gmp-6.3.0-r0: task do_fetch: Started
+NOTE: recipe zstd-1.5.5-r0: task do_fetch: Started
+NOTE: recipe tcp-wrappers-7.6-r10: task do_fetch: Succeeded
+NOTE: Running task 60 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/python/python3-jinja2_3.1.2.bb:do_fetch)
+NOTE: recipe libseccomp-2.5.4-r0: task do_fetch: Started
+NOTE: recipe gmp-6.3.0-r0: task do_fetch: Succeeded
+NOTE: Running task 61 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/shadow/shadow-sysroot_4.6.bb:do_fetch)
+NOTE: recipe zstd-1.5.5-r0: task do_fetch: Succeeded
+NOTE: Running task 62 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/shadow/shadow_4.11.1.bb:do_fetch)
+NOTE: recipe libseccomp-2.5.4-r0: task do_fetch: Succeeded
+NOTE: Running task 63 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-kernel/kern-tools/kern-tools-native_git.bb:do_fetch)
+NOTE: recipe shadow-sysroot-4.6-r3: task do_fetch: Started
+NOTE: recipe python3-jinja2-native-3.1.3-r0: task do_fetch: Started
+NOTE: recipe kern-tools-native-0.3-r0: task do_fetch: Started
+NOTE: recipe shadow-native-4.14.3-r0: task do_fetch: Started
+NOTE: recipe shadow-sysroot-4.6-r3: task do_fetch: Succeeded
+NOTE: Running task 64 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libmicrohttpd/libmicrohttpd_0.9.76.bb:do_fetch)
+NOTE: recipe python3-jinja2-native-3.1.3-r0: task do_fetch: Succeeded
+NOTE: Running task 65 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/libarchive/libarchive_3.6.2.bb:do_fetch)
+NOTE: recipe kern-tools-native-0.3-r0: task do_fetch: Succeeded
+NOTE: Running task 66 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/libxml/libxml2_2.11.5.bb:do_fetch)
+NOTE: recipe shadow-native-4.14.3-r0: task do_fetch: Succeeded
+NOTE: Running task 67 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-devtools/meson/meson_1.1.1.bb:do_fetch)
+NOTE: recipe libmicrohttpd-0.9.77-r0: task do_fetch: Started
+NOTE: recipe libarchive-3.7.1-r0: task do_fetch: Started
+NOTE: recipe libxml2-native-2.11.5-r0: task do_fetch: Started
+NOTE: recipe libmicrohttpd-0.9.77-r0: task do_fetch: Succeeded
+NOTE: Running task 68 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/swig/swig_4.0.2.bb:do_fetch)
+NOTE: recipe libarchive-3.7.1-r0: task do_fetch: Succeeded
+NOTE: Running task 69 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/gnutls/gnutls_3.7.4.bb:do_fetch)
+NOTE: recipe meson-native-1.1.1-r0: task do_fetch: Started
+NOTE: recipe libxml2-native-2.11.5-r0: task do_fetch: Succeeded
+NOTE: Running task 70 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/zlib/zlib_1.2.11.bb:do_fetch)
+NOTE: recipe meson-native-1.1.1-r0: task do_fetch: Succeeded
+NOTE: Running task 71 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/util-linux/util-linux-libuuid_2.37.4.bb:do_fetch)
+NOTE: recipe swig-native-4.1.1-r0: task do_fetch: Started
+NOTE: recipe gnutls-native-3.8.2-r0: task do_fetch: Started
+NOTE: recipe zlib-native-1.3.1-r0: task do_fetch: Started
+NOTE: recipe swig-native-4.1.1-r0: task do_fetch: Succeeded
+NOTE: Running task 72 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/openssl/openssl_3.0.8.bb:do_fetch)
+NOTE: recipe util-linux-libuuid-native-2.39.1-r0: task do_fetch: Started
+NOTE: recipe gnutls-native-3.8.2-r0: task do_fetch: Succeeded
+NOTE: Running task 73 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libffi/libffi_3.4.4.bb:do_fetch)
+NOTE: recipe zlib-native-1.3.1-r0: task do_fetch: Succeeded
+NOTE: Running task 74 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/libnsl/libnsl2_git.bb:do_fetch)
+NOTE: recipe libffi-3.4.4-r0: task do_fetch: Started
+NOTE: recipe util-linux-libuuid-native-2.39.1-r0: task do_fetch: Succeeded
+NOTE: Running task 75 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/sqlite/sqlite3_3.38.5.bb:do_fetch)
+NOTE: recipe openssl-native-3.0.12-r0: task do_fetch: Started
+NOTE: recipe libnsl2-2.0.1-r0: task do_fetch: Started
+NOTE: recipe libffi-3.4.4-r0: task do_fetch: Succeeded
+NOTE: Running task 76 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/libtirpc/libtirpc_1.3.2.bb:do_fetch)
+NOTE: recipe sqlite3-3_3.42.0-r0: task do_fetch: Started
+NOTE: recipe libnsl2-2.0.1-r0: task do_fetch: Succeeded
+NOTE: Running task 77 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/readline/readline_8.1.2.bb:do_fetch)
+NOTE: recipe openssl-native-3.0.12-r0: task do_fetch: Succeeded
+NOTE: Running task 78 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/gdbm/gdbm_1.23.bb:do_fetch)
+NOTE: recipe libtirpc-1.3.4-r0: task do_fetch: Started
+NOTE: recipe sqlite3-3_3.42.0-r0: task do_fetch: Succeeded
+NOTE: Running task 79 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/python/python3-flit-core_3.8.0.bb:do_fetch)
+NOTE: recipe readline-8.2-r0: task do_fetch: Started
+NOTE: recipe gdbm-1.23-r0: task do_fetch: Started
+NOTE: recipe libtirpc-1.3.4-r0: task do_fetch: Succeeded
+NOTE: Running task 80 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/gettext/gettext-minimal-native_0.22.bb:do_fetch)
+NOTE: recipe readline-8.2-r0: task do_fetch: Succeeded
+NOTE: Running task 81 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/ncurses/ncurses_6.3+20220423.bb:do_fetch)
+NOTE: recipe gdbm-1.23-r0: task do_fetch: Succeeded
+NOTE: Running task 82 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-support/ca-certificates/ca-certificates_2023.2.64.bb:do_fetch)
+NOTE: recipe python3-flit-core-native-3.8.0-r0: task do_fetch: Started
+NOTE: recipe gettext-minimal-native-0.22-r0: task do_fetch: Started
+NOTE: recipe python3-flit-core-native-3.8.0-r0: task do_fetch: Succeeded
+NOTE: recipe ca-certificates-2023.2.64-r0: task do_fetch: Started
+NOTE: Running task 83 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/python/python3-pyproject-hooks_1.0.0.bb:do_fetch)
+NOTE: recipe gettext-minimal-native-0.22-r0: task do_fetch: Succeeded
+NOTE: Running task 84 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-devtools/python/python3-packaging_23.1.bb:do_fetch)
+NOTE: recipe ncurses-native-6.4-r0: task do_fetch: Started
+NOTE: recipe ca-certificates-2023.2.64-r0: task do_fetch: Succeeded
+NOTE: Running task 85 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-devtools/perl/perl_5.38.0.bb:do_fetch)
+NOTE: recipe ncurses-native-6.4-r0: task do_fetch: Succeeded
+NOTE: Running task 86 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/openssh/openssh_8.9p1.bb:do_fetch)
+NOTE: recipe python3-pyproject-hooks-native-1.0.0-r0: task do_fetch: Started
+NOTE: recipe python3-packaging-native-23.2-r0: task do_fetch: Started
+NOTE: recipe perl-5.38.0-r0: task do_fetch: Started
+NOTE: recipe python3-pyproject-hooks-native-1.0.0-r0: task do_fetch: Succeeded
+NOTE: Running task 87 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openembedded/meta-python/recipes-devtools/python/python3-argcomplete_2.0.0.bb:do_fetch)
+NOTE: recipe python3-packaging-native-23.2-r0: task do_fetch: Succeeded
+NOTE: Running task 88 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/at/at_3.2.5.bb:do_fetch)
+NOTE: recipe openssh-9.3p2-r0: task do_fetch: Started
+NOTE: recipe perl-5.38.0-r0: task do_fetch: Succeeded
+NOTE: Running task 89 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/attr/attr_2.5.1.bb:do_fetch)
+NOTE: recipe python3-argcomplete-3.2.2-r0: task do_fetch: Started
+NOTE: recipe at-3.2.5-r0: task do_fetch: Started
+NOTE: recipe openssh-9.3p2-r0: task do_fetch: Succeeded
+NOTE: Running task 90 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/ed/ed_1.18.bb:do_fetch)
+NOTE: recipe python3-argcomplete-3.2.2-r0: task do_fetch: Succeeded
+NOTE: Running task 91 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/logrotate/logrotate_3.20.1.bb:do_fetch)
+NOTE: recipe attr-2.5.1-r0: task do_fetch: Started
+NOTE: recipe at-3.2.5-r0: task do_fetch: Succeeded
+NOTE: Running task 92 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/bc/bc_1.07.1.bb:do_fetch)
+NOTE: recipe ed-1.18-r0: task do_fetch: Started
+NOTE: recipe attr-2.5.1-r0: task do_fetch: Succeeded
+NOTE: Running task 93 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/systemd/systemd-compat-units.bb:do_fetch)
+NOTE: recipe logrotate-3.21.0-r0: task do_fetch: Started
+NOTE: recipe ed-1.18-r0: task do_fetch: Succeeded
+NOTE: Running task 94 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/attr/acl_2.3.1.bb:do_fetch)
+NOTE: recipe bc-1.07.1-r0: task do_fetch: Started
+NOTE: recipe logrotate-3.21.0-r0: task do_fetch: Succeeded
+NOTE: recipe systemd-compat-units-1.0-r29: task do_fetch: Started
+NOTE: Running task 95 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/m4/m4_1.4.19.bb:do_fetch)
+NOTE: recipe bc-1.07.1-r0: task do_fetch: Succeeded
+NOTE: Running task 96 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openembedded/meta-oe/recipes-extended/rsyslog/rsyslog_8.2206.0.bb:do_fetch)
+NOTE: recipe acl-2.3.1-r0: task do_fetch: Started
+NOTE: recipe systemd-compat-units-1.0-r29: task do_fetch: Succeeded
+NOTE: Running task 97 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/make/make_4.3.bb:do_fetch)
+NOTE: recipe m4-1.4.19-r0: task do_fetch: Started
+NOTE: recipe acl-2.3.1-r0: task do_fetch: Succeeded
+NOTE: Running task 98 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/makedevs/makedevs_1.0.1.bb:do_fetch)
+NOTE: recipe rsyslog-8.2312.0-r0: task do_fetch: Started
+NOTE: recipe make-4.4.1-r0: task do_fetch: Started
+NOTE: recipe m4-1.4.19-r0: task do_fetch: Succeeded
+NOTE: Running task 99 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/cronie/cronie_1.6.1.bb:do_fetch)
+NOTE: recipe makedevs-1.0.1-r0: task do_fetch: Started
+NOTE: recipe make-4.4.1-r0: task do_fetch: Succeeded
+NOTE: Running task 100 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/iputils/iputils_20211215.bb:do_fetch)
+NOTE: recipe rsyslog-8.2312.0-r0: task do_fetch: Succeeded
+NOTE: Running task 101 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/mc/mc_4.8.27.bb:do_fetch)
+NOTE: recipe cronie-1.6.1-r0: task do_fetch: Started
+NOTE: recipe makedevs-1.0.1-r0: task do_fetch: Succeeded
+NOTE: Running task 102 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/sudo/sudo_1.9.13p3.bb:do_fetch)
+NOTE: recipe iputils-20211215-r0: task do_fetch: Started
+NOTE: recipe mc-4.8.27-r1: task do_fetch: Started
+NOTE: recipe cronie-1.6.1-r0: task do_fetch: Succeeded
+NOTE: Running task 103 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-connectivity/bind/bind-dhclient_9.11.22.bb:do_fetch)
+NOTE: recipe sudo-1.9.15p5-r0: task do_fetch: Started
+NOTE: recipe mc-4.8.27-r1: task do_fetch: Succeeded
+NOTE: recipe bind-dhclient-9.11.36-r0: task do_fetch: Started
+NOTE: Running task 104 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/nfs-utils/nfs-utils_2.6.1.bb:do_fetch)
+NOTE: recipe sudo-1.9.15p5-r0: task do_fetch: Succeeded
+NOTE: Running task 105 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-connectivity/dhcp/dhcp_4.4.2-P1.bb:do_fetch)
+NOTE: recipe iputils-20211215-r0: task do_fetch: Succeeded
+NOTE: recipe bind-dhclient-9.11.36-r0: task do_fetch: Succeeded
+NOTE: Running task 106 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/wpa-supplicant/wpa-supplicant_2.10.bb:do_fetch)
+NOTE: Running task 107 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/bluez5/bluez5_5.65.bb:do_fetch)
+NOTE: recipe nfs-utils-2.6.3-r0: task do_fetch: Started
+NOTE: recipe dhcp-4.4.3-r0: task do_fetch: Started
+NOTE: recipe wpa-supplicant-2.10-r0: task do_fetch: Started
+NOTE: recipe bluez5-5.71-r0: task do_fetch: Started
+NOTE: recipe nfs-utils-2.6.3-r0: task do_fetch: Succeeded
+NOTE: Running task 108 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/rpcbind/rpcbind_1.2.6.bb:do_fetch)
+NOTE: recipe dhcp-4.4.3-r0: task do_fetch: Succeeded
+NOTE: Running task 109 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-bsp/usbutils/usbutils_014.bb:do_fetch)
+NOTE: recipe wpa-supplicant-2.10-r0: task do_fetch: Succeeded
+NOTE: Running task 110 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/libnss-mdns/libnss-mdns_0.15.1.bb:do_fetch)
+NOTE: recipe bluez5-5.71-r0: task do_fetch: Succeeded
+NOTE: Running task 111 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/neard/neard_0.16.bb:do_fetch)
+NOTE: recipe rpcbind-1.2.6-r0: task do_fetch: Started
+NOTE: recipe usbutils-014-r0: task do_fetch: Started
+NOTE: recipe libnss-mdns-0.15.1-r0: task do_fetch: Started
+NOTE: recipe neard-0.16-r0: task do_fetch: Started
+NOTE: recipe rpcbind-1.2.6-r0: task do_fetch: Succeeded
+NOTE: Running task 112 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-bsp/pciutils/pciutils_3.7.0.bb:do_fetch)
+NOTE: recipe libnss-mdns-0.15.1-r0: task do_fetch: Succeeded
+NOTE: Running task 113 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/avahi/avahi_0.8.bb:do_fetch)
+NOTE: recipe usbutils-014-r0: task do_fetch: Succeeded
+NOTE: Running task 114 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/iw/iw_5.16.bb:do_fetch)
+NOTE: recipe pciutils-3.10.0-r0: task do_fetch: Started
+NOTE: recipe iw-5.16-r0: task do_fetch: Started
+NOTE: recipe avahi-0.8-r0: task do_fetch: Started
+NOTE: recipe pciutils-3.10.0-r0: task do_fetch: Succeeded
+NOTE: Running task 115 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-kernel/wireless-regdb/wireless-regdb_2023.02.13.bb:do_fetch)
+NOTE: recipe neard-0.16-r0: task do_fetch: Succeeded
+NOTE: Running task 116 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/strace/strace_5.16.bb:do_fetch)
+NOTE: recipe iw-5.16-r0: task do_fetch: Succeeded
+NOTE: Running task 117 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/gdb/gdb_11.2.bb:do_fetch)
+NOTE: recipe avahi-0.8-r0: task do_fetch: Succeeded
+NOTE: Running task 118 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openembedded/meta-networking/recipes-support/cifs/cifs-utils_6.14.bb:do_fetch)
+NOTE: recipe wireless-regdb-2020.11.20-r0: task do_fetch: Started
+NOTE: recipe strace-5.14-r0: task do_fetch: Started
+NOTE: recipe gdb-14.1-r0: task do_fetch: Started
+NOTE: recipe wireless-regdb-2020.11.20-r0: task do_fetch: Succeeded
+NOTE: Running task 119 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/cracklib/cracklib_2.9.8.bb:do_fetch)
+NOTE: recipe cifs-utils-7.0-r0: task do_fetch: Started
+NOTE: recipe strace-5.14-r0: task do_fetch: Succeeded
+NOTE: Running task 120 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/cpio/cpio_2.13.bb:do_fetch)
+NOTE: recipe cifs-utils-7.0-r0: task do_fetch: Succeeded
+NOTE: recipe cracklib-2.9.11-r0: task do_fetch: Started
+NOTE: Running task 121 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openembedded/meta-oe/recipes-extended/libpwquality/libpwquality_1.4.4.bb:do_fetch)
+NOTE: recipe gdb-14.1-r0: task do_fetch: Succeeded
+NOTE: Running task 122 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/sysfsutils/sysfsutils_2.1.0.bb:do_fetch)
+NOTE: recipe cpio-2.14-r0: task do_fetch: Started
+NOTE: recipe cracklib-2.9.11-r0: task do_fetch: Succeeded
+NOTE: Running task 123 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-kernel/kmod/kmod_29.bb:do_fetch)
+NOTE: recipe libpwquality-1.4.5-r0: task do_fetch: Started
+NOTE: recipe sysfsutils-2.1.1-r5: task do_fetch: Started
+NOTE: recipe cpio-2.14-r0: task do_fetch: Succeeded
+NOTE: Running task 124 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/gzip/gzip_1.12.bb:do_fetch)
+NOTE: recipe libpwquality-1.4.5-r0: task do_fetch: Succeeded
+NOTE: Running task 125 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-devtools/binutils/binutils_2.41.bb:do_fetch)
+NOTE: recipe kmod-30-r0: task do_fetch: Started
+NOTE: recipe sysfsutils-2.1.1-r5: task do_fetch: Succeeded
+NOTE: Running task 126 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-support/curl/curl_8.4.0.bb:do_fetch)
+NOTE: recipe gzip-1.12-r0: task do_fetch: Started
+NOTE: recipe kmod-30-r0: task do_fetch: Succeeded
+NOTE: Running task 127 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/tar/tar_1.34.bb:do_fetch)
+NOTE: recipe binutils-2.41-r0: task do_fetch: Started
+NOTE: recipe curl-8.4.0-r0: task do_fetch: Started
+NOTE: recipe gzip-1.12-r0: task do_fetch: Succeeded
+NOTE: Running task 128 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/gawk/gawk_5.1.1.bb:do_fetch)
+NOTE: recipe tar-1.35-r0: task do_fetch: Started
+NOTE: recipe binutils-2.41-r0: task do_fetch: Succeeded
+NOTE: Running task 129 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/time/time_1.9.bb:do_fetch)
+NOTE: recipe gawk-5.2.2-r0: task do_fetch: Started
+NOTE: recipe curl-8.4.0-r0: task do_fetch: Succeeded
+NOTE: Running task 130 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/unzip/unzip_6.0.bb:do_fetch)
+NOTE: recipe tar-1.35-r0: task do_fetch: Succeeded
+NOTE: Running task 131 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/patch/patch_2.7.6.bb:do_fetch)
+NOTE: recipe time-1.9-r0: task do_fetch: Started
+NOTE: recipe gawk-5.2.2-r0: task do_fetch: Succeeded
+NOTE: Running task 132 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/less/less_600.bb:do_fetch)
+NOTE: recipe unzip-1_60-r5: task do_fetch: Started
+NOTE: recipe patch-2.7.6-r0: task do_fetch: Started
+NOTE: recipe time-1.9-r0: task do_fetch: Succeeded
+NOTE: Running task 133 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/net-tools/net-tools_2.10.bb:do_fetch)
+NOTE: recipe less-633-r0: task do_fetch: Started
+NOTE: recipe unzip-1_60-r5: task do_fetch: Succeeded
+NOTE: Running task 134 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/which/which_2.21.bb:do_fetch)
+NOTE: recipe patch-2.7.6-r0: task do_fetch: Succeeded
+NOTE: Running task 135 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/openssl/openssl_3.0.8.bb:do_fetch)
+NOTE: recipe net-tools-2.10-r0: task do_fetch: Started
+NOTE: recipe less-633-r0: task do_fetch: Succeeded
+NOTE: Running task 136 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/glib-2.0/glib-2.0_2.76.4.bb:do_fetch)
+NOTE: recipe which-2.21-r3: task do_fetch: Started
+NOTE: recipe net-tools-2.10-r0: task do_fetch: Succeeded
+NOTE: recipe openssl-3.0.12-r0: task do_fetch: Started
+NOTE: Running task 137 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/bash/bash_5.1.16.bb:do_fetch)
+NOTE: recipe glib-2.0-1_2.78.3-r0: task do_fetch: Started
+NOTE: recipe which-2.21-r3: task do_fetch: Succeeded
+NOTE: Running task 138 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/bzip2/bzip2_1.0.8.bb:do_fetch)
+NOTE: recipe bash-5.2.15-r0: task do_fetch: Started
+NOTE: recipe openssl-3.0.12-r0: task do_fetch: Succeeded
+NOTE: recipe glib-2.0-1_2.78.3-r0: task do_fetch: Succeeded
+NOTE: Running task 139 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/findutils/findutils_4.9.0.bb:do_fetch)
+NOTE: Running task 140 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/dhcpcd/dhcpcd_9.4.1.bb:do_fetch)
+NOTE: recipe bzip2-1.0.8-r0: task do_fetch: Started
+NOTE: recipe bash-5.2.15-r0: task do_fetch: Succeeded
+NOTE: Running task 141 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/parted/parted_3.4.bb:do_fetch)
+NOTE: recipe bzip2-1.0.8-r0: task do_fetch: Succeeded
+NOTE: Running task 142 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/expat/expat_2.5.0.bb:do_fetch)
+NOTE: recipe findutils-4.9.0-r0: task do_fetch: Started
+NOTE: recipe dhcpcd-9.4.1-r0: task do_fetch: Started
+NOTE: recipe parted-3.6-r0: task do_fetch: Started
+NOTE: recipe findutils-4.9.0-r0: task do_fetch: Succeeded
+NOTE: Running task 143 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/squashfs-tools/squashfs-tools_git.bb:do_fetch)
+NOTE: recipe expat-2.5.0-r0: task do_fetch: Started
+NOTE: recipe dhcpcd-9.4.1-r0: task do_fetch: Succeeded
+NOTE: Running task 144 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/diffutils/diffutils_3.9.bb:do_fetch)
+NOTE: recipe parted-3.6-r0: task do_fetch: Succeeded
+NOTE: Running task 145 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/quota/quota_4.06.bb:do_fetch)
+NOTE: recipe squashfs-tools-4.6.1-r0: task do_fetch: Started
+NOTE: recipe expat-2.5.0-r0: task do_fetch: Succeeded
+NOTE: recipe diffutils-3.10-r0: task do_fetch: Started
+NOTE: Running task 146 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/vim/vim-tiny_9.0.bb:do_fetch)
+NOTE: recipe squashfs-tools-4.6.1-r0: task do_fetch: Succeeded
+NOTE: Running task 147 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/xz/xz_5.2.6.bb:do_fetch)
+NOTE: recipe quota-4.06-r0: task do_fetch: Started
+NOTE: recipe diffutils-3.10-r0: task do_fetch: Succeeded
+NOTE: Running task 148 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/libxml/libxml2_2.11.5.bb:do_fetch)
+NOTE: recipe vim-tiny-9.0.2092-r0: task do_fetch: Started
+NOTE: recipe quota-4.06-r0: task do_fetch: Succeeded
+NOTE: Running task 149 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libusb/libusb1_1.0.26.bb:do_fetch)
+NOTE: recipe xz-5.4.4-r0: task do_fetch: Started
+NOTE: recipe libxml2-2.11.5-r0: task do_fetch: Started
+NOTE: recipe vim-tiny-9.0.2092-r0: task do_fetch: Succeeded
+NOTE: Running task 150 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libnl/libnl_3.5.0.bb:do_fetch)
+NOTE: recipe xz-5.4.4-r0: task do_fetch: Succeeded
+NOTE: Running task 151 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/procps/procps_3.3.17.bb:do_fetch)
+NOTE: recipe libusb1-1.0.26-r0: task do_fetch: Started
+NOTE: recipe libxml2-2.11.5-r0: task do_fetch: Succeeded
+NOTE: Running task 152 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/selinux/policycoreutils_3.5.bb:do_fetch)
+NOTE: recipe libnl-1_3.7.0-r0: task do_fetch: Started
+NOTE: recipe libusb1-1.0.26-r0: task do_fetch: Succeeded
+NOTE: Running task 153 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-kernel/kexec/kexec-tools_2.0.23.bb:do_fetch)
+NOTE: recipe procps-4.0.4-r0: task do_fetch: Started
+NOTE: recipe policycoreutils-3.5-r0: task do_fetch: Started
+NOTE: recipe procps-4.0.4-r0: task do_fetch: Succeeded
+NOTE: recipe libnl-1_3.7.0-r0: task do_fetch: Succeeded
+NOTE: Running task 154 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/file/file_5.41.bb:do_fetch)
+NOTE: Running task 155 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/expect/expect_5.45.4.bb:do_fetch)
+NOTE: recipe kexec-tools-2.0.26-r0: task do_fetch: Started
+NOTE: recipe policycoreutils-3.5-r0: task do_fetch: Succeeded
+NOTE: Running task 156 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/selinux/libsepol_3.4.bb:do_fetch)
+NOTE: recipe kexec-tools-2.0.26-r0: task do_fetch: Succeeded
+NOTE: Running task 157 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/json-c/json-c_0.15.bb:do_fetch)
+NOTE: recipe file-5.45-r0: task do_fetch: Started
+NOTE: recipe expect-5.45.4-r0: task do_fetch: Started
+NOTE: recipe libsepol-3.5-r0: task do_fetch: Started
+NOTE: recipe file-5.45-r0: task do_fetch: Succeeded
+NOTE: Running task 158 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/e2fsprogs/e2fsprogs_1.46.5.bb:do_fetch)
+NOTE: recipe json-c-0.17-20230812-r0: task do_fetch: Started
+NOTE: recipe expect-5.45.4-r0: task do_fetch: Succeeded
+NOTE: Running task 159 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/grep/grep_3.7.bb:do_fetch)
+NOTE: recipe libsepol-3.5-r0: task do_fetch: Succeeded
+NOTE: Running task 160 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openembedded/meta-oe/recipes-support/lvm2/lvm2_2.03.11.bb:do_fetch)
+NOTE: recipe json-c-0.17-20230812-r0: task do_fetch: Succeeded
+NOTE: Running task 161 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/selinux/libselinux_3.4.bb:do_fetch)
+NOTE: recipe e2fsprogs-1.47.0-r0: task do_fetch: Started
+NOTE: recipe grep-3.11-r0: task do_fetch: Started
+NOTE: recipe lvm2-2.03.21-r0: task do_fetch: Started
+NOTE: recipe libselinux-3.5-r0: task do_fetch: Started
+NOTE: recipe grep-3.11-r0: task do_fetch: Succeeded
+NOTE: Running task 162 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/psmisc/psmisc_23.4.bb:do_fetch)
+NOTE: recipe e2fsprogs-1.47.0-r0: task do_fetch: Succeeded
+NOTE: Running task 163 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/sed/sed_4.8.bb:do_fetch)
+NOTE: recipe lvm2-2.03.21-r0: task do_fetch: Succeeded
+NOTE: Running task 164 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/libpcap/libpcap_1.10.1.bb:do_fetch)
+NOTE: recipe libselinux-3.5-r0: task do_fetch: Succeeded
+NOTE: Running task 165 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/wget/wget_1.21.3.bb:do_fetch)
+NOTE: recipe psmisc-23.6-r0: task do_fetch: Started
+NOTE: recipe sed-4.9-r0: task do_fetch: Started
+NOTE: recipe libpcap-1.10.4-r0: task do_fetch: Started
+NOTE: recipe wget-1.21.4-r0: task do_fetch: Started
+NOTE: recipe psmisc-23.6-r0: task do_fetch: Succeeded
+NOTE: Running task 166 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/timezone/tzdata.bb:do_fetch)
+NOTE: recipe sed-4.9-r0: task do_fetch: Succeeded
+NOTE: Running task 167 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/audit/audit_3.1.2.bb:do_fetch)
+NOTE: recipe libpcap-1.10.4-r0: task do_fetch: Succeeded
+NOTE: Running task 168 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-support/nlopt/nlopt_2.7.1.bb:do_fetch)
+NOTE: recipe wget-1.21.4-r0: task do_fetch: Succeeded
+NOTE: Running task 169 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/coreutils/coreutils_9.0.bb:do_fetch)
+NOTE: recipe tzdata-2024a-r0: task do_fetch: Started
+NOTE: recipe audit-3.1.2-r0: task do_fetch: Started
+NOTE: recipe nlopt-2.7.1-r0: task do_fetch: Started
+NOTE: recipe tzdata-2024a-r0: task do_fetch: Succeeded
+NOTE: Running noexec task 170 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/os-release/os-release.bb:do_fetch)
+NOTE: Running task 171 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/os-base/os-base_1.0.bb:do_fetch)
+NOTE: recipe coreutils-9.4-r0: task do_fetch: Started
+NOTE: recipe nlopt-2.7.1-r0: task do_fetch: Succeeded
+NOTE: Running task 172 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-core/systemd/systemd_253.7.bb:do_fetch)
+NOTE: recipe audit-3.1.2-r0: task do_fetch: Succeeded
+NOTE: Running task 173 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/base-passwd/base-passwd_3.5.29.bb:do_fetch)
+NOTE: recipe os-base-1.0-r1: task do_fetch: Started
+NOTE: recipe coreutils-9.4-r0: task do_fetch: Succeeded
+NOTE: Running task 174 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/base-files/base-files_3.0.14.bb:do_fetch)
+NOTE: recipe os-base-1.0-r1: task do_fetch: Succeeded
+NOTE: recipe base-passwd-3.5.29-r0: task do_fetch: Started
+NOTE: Running task 175 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/shadow/shadow_4.11.1.bb:do_fetch)
+NOTE: recipe systemd-1_253-r0: task do_fetch: Started
+NOTE: recipe base-files-3.0.14-r89: task do_fetch: Started
+NOTE: recipe base-passwd-3.5.29-r0: task do_fetch: Succeeded
+NOTE: Running task 176 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/busybox/busybox_1.35.0.bb:do_fetch)
+NOTE: recipe shadow-4.14.3-r0: task do_fetch: Started
+NOTE: recipe base-files-3.0.14-r89: task do_fetch: Succeeded
+NOTE: Running task 177 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libcap/libcap_2.66.bb:do_fetch)
+NOTE: recipe systemd-1_253-r0: task do_fetch: Succeeded
+NOTE: Running task 178 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/iptables/iptables_1.8.7.bb:do_fetch)
+NOTE: recipe shadow-4.14.3-r0: task do_fetch: Succeeded
+NOTE: Running task 179 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/elfutils/elfutils_0.186.bb:do_fetch)
+NOTE: recipe busybox-1.36.1-r0: task do_fetch: Started
+NOTE: recipe libcap-2.69-r0: task do_fetch: Started
+NOTE: recipe iptables-1.8.9-r0: task do_fetch: Started
+NOTE: recipe elfutils-0.190-r0: task do_fetch: Started
+NOTE: recipe libcap-2.69-r0: task do_fetch: Succeeded
+NOTE: Running task 180 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/libcap-ng/libcap-ng_0.8.2.bb:do_fetch)
+NOTE: recipe busybox-1.36.1-r0: task do_fetch: Succeeded
+NOTE: Running task 181 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/zlib/zlib_1.2.11.bb:do_fetch)
+NOTE: recipe iptables-1.8.9-r0: task do_fetch: Succeeded
+NOTE: Running task 182 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/util-linux/util-linux-libuuid_2.37.4.bb:do_fetch)
+NOTE: recipe elfutils-0.190-r0: task do_fetch: Succeeded
+NOTE: Running task 183 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/systemd/systemd-systemctl-native.bb:do_fetch)
+NOTE: recipe libcap-ng-0.8.3-r0: task do_fetch: Started
+NOTE: recipe zlib-1.3.1-r0: task do_fetch: Started
+NOTE: recipe systemd-systemctl-native-1.0-r6: task do_fetch: Started
+NOTE: recipe util-linux-libuuid-2.39.1-r0: task do_fetch: Started
+NOTE: recipe libcap-ng-0.8.3-r0: task do_fetch: Succeeded
+NOTE: Running task 184 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-external/libxcrypt/libxcrypt-external.bb:do_fetch)
+NOTE: recipe zlib-1.3.1-r0: task do_fetch: Succeeded
+NOTE: Running task 185 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/pam/libpam_1.5.2.bb:do_fetch)
+NOTE: recipe systemd-systemctl-native-1.0-r6: task do_fetch: Succeeded
+NOTE: Running task 186 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/ncurses/ncurses_6.3+20220423.bb:do_fetch)
+NOTE: recipe libxcrypt-external-1.0-12.3.1-r0: task do_fetch: Started
+NOTE: recipe libpam-1.5.3-r0: task do_fetch: Started
+NOTE: recipe util-linux-libuuid-2.39.1-r0: task do_fetch: Succeeded
+NOTE: Running task 187 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-kernel/dtc/dtc_1.6.1.bb:do_fetch)
+NOTE: recipe ncurses-6.4-r0: task do_fetch: Started
+NOTE: recipe libxcrypt-external-1.0-12.3.1-r0: task do_fetch: Succeeded
+NOTE: Running task 188 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-bsp/u-boot/u-boot-tools_2022.01.bb:do_fetch)
+NOTE: recipe libpam-1.5.3-r0: task do_fetch: Succeeded
+NOTE: Running task 189 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/python/python3_3.11.5.bb:do_fetch)
+NOTE: recipe ncurses-6.4-r0: task do_fetch: Succeeded
+NOTE: Running task 190 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/python/python3-setuptools_67.6.0.bb:do_fetch)
+NOTE: recipe dtc-native-1.7.0-r0: task do_fetch: Started
+NOTE: recipe u-boot-tools-native-1_2024.01-r0: task do_fetch: Started
+NOTE: recipe dtc-native-1.7.0-r0: task do_fetch: Succeeded
+NOTE: Running task 191 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/python/python3-wheel_0.40.0.bb:do_fetch)
+NOTE: recipe python3-setuptools-native-68.0.0-r0: task do_fetch: Started
+NOTE: recipe u-boot-tools-native-1_2024.01-r0: task do_fetch: Succeeded
+NOTE: Running task 192 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/python/python3-installer_0.6.0.bb:do_fetch)
+NOTE: recipe python3-native-3.11.6-r0: task do_fetch: Started
+NOTE: recipe python3-setuptools-native-68.0.0-r0: task do_fetch: Succeeded
+NOTE: Running task 193 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/python/python3_3.11.5.bb:do_fetch)
+NOTE: recipe python3-wheel-native-0.40.0-r0: task do_fetch: Started
+NOTE: recipe python3-native-3.11.6-r0: task do_fetch: Succeeded
+NOTE: Running task 194 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/python/python3-build_0.10.0.bb:do_fetch)
+NOTE: recipe python3-installer-native-0.6.0-r0: task do_fetch: Started
+NOTE: recipe python3-wheel-native-0.40.0-r0: task do_fetch: Succeeded
+NOTE: Running task 195 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/libmetal/libmetal_2022.10.0.bb:do_fetch)
+NOTE: recipe python3-installer-native-0.6.0-r0: task do_fetch: Succeeded
+NOTE: Running task 196 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/openamp/openamp_2022.10.1.bb:do_fetch)
+NOTE: recipe python3-3.11.6-r0: task do_fetch: Started
+NOTE: recipe python3-build-native-0.10.0-r0: task do_fetch: Started
+NOTE: recipe libmetal-2022.10.0-r0: task do_fetch: Started
+NOTE: recipe openamp-2022.10.1-r0: task do_fetch: Started
+NOTE: recipe python3-build-native-0.10.0-r0: task do_fetch: Succeeded
+NOTE: Running task 197 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/opkg-utils/opkg-utils_0.5.0.bb:do_fetch)
+NOTE: recipe libmetal-2022.10.0-r0: task do_fetch: Succeeded
+NOTE: Running task 198 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/libmnl/libmnl_1.0.4.bb:do_fetch)
+NOTE: recipe python3-3.11.6-r0: task do_fetch: Succeeded
+NOTE: Running task 199 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/bash-completion/bash-completion_2.11.bb:do_fetch)
+NOTE: recipe openamp-2022.10.1-r0: task do_fetch: Succeeded
+NOTE: Running task 200 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/libtool/libtool-cross_2.4.7.bb:do_fetch)
+NOTE: recipe opkg-utils-0.5.0-r0: task do_fetch: Started
+NOTE: recipe libmnl-1.0.5-r0: task do_fetch: Started
+NOTE: recipe bash-completion-2.12.0-r0: task do_fetch: Started
+NOTE: recipe libtool-cross-2.4.7-r0: task do_fetch: Started
+NOTE: recipe opkg-utils-0.5.0-r0: task do_fetch: Succeeded
+NOTE: Running task 201 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-external/gcc/gcc-external-cross.bb:do_fetch)
+NOTE: recipe libmnl-1.0.5-r0: task do_fetch: Succeeded
+NOTE: Running task 202 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-external/binutils/binutils-external-cross.bb:do_fetch)
+NOTE: recipe bash-completion-2.12.0-r0: task do_fetch: Succeeded
+NOTE: Running task 203 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/pkgconfig/pkgconfig_git.bb:do_fetch)
+NOTE: recipe libtool-cross-2.4.7-r0: task do_fetch: Succeeded
+NOTE: Running task 204 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-support/sqlite/sqlite3_3.38.5.bb:do_fetch)
+NOTE: recipe gcc-external-cross-aarch64-12.3.1-12.3.1-r0: task do_fetch: Started
+NOTE: recipe binutils-external-cross-aarch64-2.41-12.3.1-r0: task do_fetch: Started
+NOTE: recipe pkgconfig-native-0.29.2-r0: task do_fetch: Started
+NOTE: recipe gcc-external-cross-aarch64-12.3.1-12.3.1-r0: task do_fetch: Succeeded
+NOTE: recipe sqlite3-native-3_3.42.0-r0: task do_fetch: Started
+NOTE: Running noexec task 205 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-external/gcc/gcc-runtime-external.bb:do_fetch)
+NOTE: Running task 206 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-external/gcc/libgcc-external.bb:do_fetch)
+NOTE: recipe binutils-external-cross-aarch64-2.41-12.3.1-r0: task do_fetch: Succeeded
+NOTE: Running task 207 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/run-postinsts/run-postinsts_1.0.bb:do_fetch)
+NOTE: recipe pkgconfig-native-0.29.2-r0: task do_fetch: Succeeded
+NOTE: Running task 208 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-external/glibc/glibc-external.bb:do_fetch)
+NOTE: recipe sqlite3-native-3_3.42.0-r0: task do_fetch: Succeeded
+NOTE: Running task 209 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-connectivity/iproute2/iproute2_5.17.0.bb:do_fetch)
+NOTE: recipe run-postinsts-1.0-r10: task do_fetch: Started
+NOTE: recipe libgcc-external-12.3.1-12.3.1-r0: task do_fetch: Started
+NOTE: recipe iproute2-6.6.0-r0: task do_fetch: Started
+NOTE: recipe run-postinsts-1.0-r10: task do_fetch: Succeeded
+NOTE: Running task 210 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/util-linux/util-linux_2.37.4.bb:do_fetch)
+NOTE: recipe glibc-external-2.38-12.3.1-r0: task do_fetch: Started
+NOTE: recipe libgcc-external-12.3.1-12.3.1-r0: task do_fetch: Succeeded
+NOTE: Running task 211 of 224 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-bsp/tl3572-vendor-assets/tl3572-vendor-assets_1.0.bb:do_fetch)
+NOTE: recipe iproute2-6.6.0-r0: task do_fetch: Succeeded
+NOTE: Running task 212 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/screen/screen_4.9.0.bb:do_fetch)
+NOTE: recipe util-linux-2.39.1-r0: task do_fetch: Started
+NOTE: recipe glibc-external-2.38-12.3.1-r0: task do_fetch: Succeeded
+NOTE: Running task 213 of 224 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-kernel/linux/linux-tl3572_6.12.69.bb:do_fetch)
+NOTE: recipe tl3572-vendor-assets-1.0-r0: task do_fetch: Started
+NOTE: recipe screen-4.9.0-r0: task do_fetch: Started
+NOTE: recipe linux-tl3572-6.12.69-r0: task do_fetch: Started
+NOTE: recipe tl3572-vendor-assets-1.0-r0: task do_fetch: Succeeded
+NOTE: Running task 214 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/../yocto-meta-openeuler/meta-openeuler/recipes-mcs/mcs-linux/mcsctl.bb:do_fetch)
+NOTE: recipe screen-4.9.0-r0: task do_fetch: Succeeded
+NOTE: Running task 215 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/dosfstools/dosfstools_4.2.bb:do_fetch)
+NOTE: recipe util-linux-2.39.1-r0: task do_fetch: Succeeded
+NOTE: Running task 216 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-extended/ethtool/ethtool_5.16.bb:do_fetch)
+NOTE: recipe linux-tl3572-6.12.69-r0: task do_fetch: Succeeded
+NOTE: Running task 217 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-kernel/kmod/depmodwrapper-cross_1.0.bb:do_fetch)
+NOTE: recipe mcsctl-1.0-r0: task do_fetch: Started
+NOTE: recipe dosfstools-4.2-r0: task do_fetch: Started
+NOTE: recipe ethtool-6.6-r0: task do_fetch: Started
+NOTE: recipe depmodwrapper-cross-1.0-r0: task do_fetch: Started
+NOTE: recipe mcsctl-1.0-r0: task do_fetch: Succeeded
+NOTE: Running task 218 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-core/update-rc.d/update-rc.d_0.8.bb:do_fetch)
+NOTE: recipe dosfstools-4.2-r0: task do_fetch: Succeeded
+NOTE: Running task 219 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/opkg-utils/opkg-utils_0.5.0.bb:do_fetch)
+NOTE: recipe depmodwrapper-cross-1.0-r0: task do_fetch: Succeeded
+NOTE: Running task 220 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/makedevs/makedevs_1.0.1.bb:do_fetch)
+NOTE: recipe ethtool-6.6-r0: task do_fetch: Succeeded
+NOTE: Running task 221 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/qemu/qemuwrapper-cross_1.0.bb:do_fetch)
+NOTE: recipe update-rc.d-native-0.8-r0: task do_fetch: Started
+NOTE: recipe qemuwrapper-cross-1.0-r0: task do_fetch: Started
+NOTE: recipe opkg-utils-native-0.5.0-r0: task do_fetch: Started
+NOTE: recipe makedevs-native-1.0.1-r0: task do_fetch: Started
+NOTE: recipe update-rc.d-native-0.8-r0: task do_fetch: Succeeded
+NOTE: Running task 222 of 224 (/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-kernel/linux/linux-dummy.bb:do_fetch)
+NOTE: recipe qemuwrapper-cross-1.0-r0: task do_fetch: Succeeded
+NOTE: Running task 223 of 224 (virtual:native:/home/openeuler/build/tl3572-2oo3/src/yocto-poky/meta/recipes-devtools/pseudo/pseudo_git.bb:do_fetch)
+NOTE: recipe opkg-utils-native-0.5.0-r0: task do_fetch: Succeeded
+NOTE: Running noexec task 224 of 224 (/home/openeuler/build/tl3572-2oo3/meta-tl3572-stage3/recipes-core/images/tl3572-openeuler-mcs-image.bb:do_fetch)
+NOTE: recipe makedevs-native-1.0.1-r0: task do_fetch: Succeeded
+NOTE: recipe linux-dummy-1.0-r1: task do_fetch: Started
+NOTE: recipe pseudo-native-df1d1321fb093283485c387e3c933d2d264e509c-r0: task do_fetch: Started
+NOTE: recipe linux-dummy-1.0-r1: task do_fetch: Succeeded
+NOTE: recipe pseudo-native-df1d1321fb093283485c387e3c933d2d264e509c-r0: task do_fetch: Succeeded
+NOTE: Tasks Summary: Attempted 224 tasks of which 0 didn't need to be rerun and all succeeded.
+FETCH_RESULT=0
