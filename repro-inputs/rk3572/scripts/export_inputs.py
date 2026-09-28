@@ -58,6 +58,10 @@ def archive(output, entries):
                     info.uid = info.gid = 0
                     info.uname = info.gname = ""
                     info.mtime = 0
+                    if info.isdir():
+                        bundle.addfile(info)
+                        records.append({"path": name, "directory": True})
+                        continue
                     if path.is_symlink():
                         if Path(info.linkname).is_absolute() or ".." in Path(info.linkname).parts:
                             raise ValueError(f"Non-portable symlink: {name} -> {info.linkname}")
@@ -111,23 +115,43 @@ def main():
         previous = json.loads((args.reuse_bundles / "SOURCE-INVENTORY.json").read_text(encoding="utf-8"))
         if inventory["repositories"] != previous["repositories"]:
             raise ValueError("Packaging repositories changed; do a complete export instead")
-        for bundle in previous["bundles"][:2]:
+        for bundle in previous["bundles"][:1]:
             original = args.reuse_bundles / bundle["archive"]
             if digest(original) != bundle["sha256"]:
                 raise ValueError(f"Corrupt cached bundle: {original}")
             shutil.copyfile(original, args.output / original.name)
-        inventory["bundles"] = previous["bundles"][:2]
+        inventory["bundles"] = previous["bundles"][:1]
     else:
         inventory["bundles"].append(archive(args.output / "openeuler-packages.tar.gz", packages))
 
-    # Mirror tarballs contain upstream Git objects where required by ordinary
-    # BitBake git fetches. Do not archive live cache configuration, locks or .done.
+    # Some ordinary Git fetches have only a bare cache, without a generated
+    # mirror tarball (notably neard). Export those as standalone sanitized Git
+    # mirrors too; cloning locally materializes alternates and all needed refs.
+    extra_mirrors = args.output / "extra-downloads"
+    extra_mirrors.mkdir()
+    inventory["additional_git_mirrors"] = []
+    for original in sorted((args.downloads / "git2").iterdir()):
+        mirror_name = f"git2_{original.name}.tar.gz"
+        if not original.is_dir() or (args.downloads / mirror_name).exists():
+            continue
+        cloned = args.output / "mirror-git" / original.name
+        subprocess.run(["git", "clone", "--mirror", "--no-hardlinks", original.as_uri(), str(cloned)],
+                       check=True, capture_output=True)
+        subprocess.run(["git", "--git-dir", str(cloned), "config", "--remove-section", "remote.origin"], check=True)
+        entries = [(path, path.relative_to(cloned).as_posix())
+                   for path in sorted(cloned.rglob("*"))
+                   if path.relative_to(cloned).parts[0] not in ("hooks", "logs")]
+        mirror = archive(extra_mirrors / mirror_name, entries)
+        inventory["additional_git_mirrors"].append({"name": original.name, "archive": mirror_name,
+                                                    "bytes": mirror["bytes"], "sha256": mirror["sha256"],
+                                                    "commit": git(cloned, "rev-parse", "HEAD")})
+    # Do not archive live cache configuration, locks or .done.
     downloads = [(path, f"downloads/{path.name}") for path in sorted(args.downloads.iterdir())
                  if path.is_file() and not path.is_symlink()
                  and not path.name.endswith((".done", ".lock"))
                  and (".tar." in path.name or path.suffix in (".tgz", ".zip"))]
-    if not previous:
-        inventory["bundles"].append(archive(args.output / "downloads.tar.gz", downloads))
+    downloads.extend((path, f"downloads/{path.name}") for path in sorted(extra_mirrors.iterdir()))
+    inventory["bundles"].append(archive(args.output / "downloads.tar.gz", downloads))
 
     uni = source / "UniProton"
     changed = git(uni, "diff", "--name-only", "HEAD").splitlines()

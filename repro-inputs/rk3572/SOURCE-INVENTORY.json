@@ -12298,8 +12298,8 @@
     },
     {
       "archive": "downloads.tar.gz",
-      "bytes": 12401338,
-      "sha256": "47f57b12d27437ddf9861ffabb8d5ddaed8aae8b5e62930cd42b555e5e8709b7",
+      "bytes": 15728251,
+      "sha256": "ece1f513c73c33217ec92619e6ff6c0dd1d8fa0d5d43651bbd2ced89e0a47817",
       "files": [
         {
           "path": "downloads/apmd_3.2.2.orig.tar.gz",
@@ -12325,6 +12325,16 @@
           "path": "downloads/ed-1.18.tar.lz",
           "bytes": 66019,
           "sha256": "aca8efad9800c587724a20b97aa8fc47e6b5a47df81606feaba831b074462b4f"
+        },
+        {
+          "path": "downloads/git2_git.kernel.org.pub.scm.linux.kernel.git.xiang.erofs-utils.git.tar.gz",
+          "bytes": 1928263,
+          "sha256": "04bda5cbddcc352c2583222ceb7e21cbce70c9b909ccbeb469dea193824982c2"
+        },
+        {
+          "path": "downloads/git2_git.kernel.org.pub.scm.network.nfc.neard.git.tar.gz",
+          "bytes": 1397667,
+          "sha256": "589ace465aeef2c7c829ce43a85851ec4aa761352186d354ae737bb3fc7aba7b"
         },
         {
           "path": "downloads/git2_github.com.KhronosGroup.OpenCL-Headers.git.tar.gz",
@@ -23301,6 +23311,22 @@
           "sha256": "1f9a9dd492e1adc3e6ce7a1db808affa0182ae8e7cc41ef7f7646c72db8cd12b"
         }
       ]
+    }
+  ],
+  "additional_git_mirrors": [
+    {
+      "name": "git.kernel.org.pub.scm.linux.kernel.git.xiang.erofs-utils.git",
+      "archive": "git2_git.kernel.org.pub.scm.linux.kernel.git.xiang.erofs-utils.git.tar.gz",
+      "bytes": 1928263,
+      "sha256": "04bda5cbddcc352c2583222ceb7e21cbce70c9b909ccbeb469dea193824982c2",
+      "commit": "f36cadb5c563995ab3aa8572a60ed6b721b9557d"
+    },
+    {
+      "name": "git.kernel.org.pub.scm.network.nfc.neard.git",
+      "archive": "git2_git.kernel.org.pub.scm.network.nfc.neard.git.tar.gz",
+      "bytes": 1397667,
+      "sha256": "589ace465aeef2c7c829ce43a85851ec4aa761352186d354ae737bb3fc7aba7b",
+      "commit": "4bc12c0567aa4ae2c43a19312b15d46dab620d15"
     }
   ],
   "yocto_git_metadata": {
