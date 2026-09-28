@@ -28,6 +28,10 @@ mkdir -p "${demo}/libs"
 cp "${uni}/platform/libboundscheck/include/"* "${demo}/include/"
 cd "${uni}"
 python3 build.py rk3572
+# The upstream Python entry point can exit zero after a build failure. Demand
+# the actual archives before continuing, not just a successful process status.
+test -s output/UniProton/lib/rk3572/libRK3572.a
+test -s output/libboundscheck/lib/rk3572/libCortexMXsec_c.lib
 cp output/UniProton/lib/rk3572/* "${demo}/libs/"
 cp output/libboundscheck/lib/rk3572/* "${demo}/libs/"
 cp -a output/libc "${demo}/include/"

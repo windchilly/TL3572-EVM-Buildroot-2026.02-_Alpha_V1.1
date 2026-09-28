@@ -2,6 +2,11 @@
 
 在固定 M6 构建环境内执行；不能仅靠 Stage07 目录从空系统重建完整镜像。M6 上游源码、工具链和 Yocto 环境的准备步骤见仓库根目录 `repro-inputs/README.md`。
 
+2026-09-28 增加[换机、空目录构建入口](../../../repro-inputs/rk3572/README.md)：
+它补齐 libboundscheck 与所有 openEuler 包输入，并从源码构建 UniProton 库；
+`m7-mcs` 通过 Yocto 重建依赖和 MCS 包。下文的独立 daemon 快速构建仍要求
+已有 M6 sysroot，不等同于该干净构建入口。
+
 ## 独立 micad 复建
 
 默认项目根目录 `/home/openeuler/build/tl3572-2oo3`，其中应已有未打补丁的固定 MCS 源码 `src/mcs`（提交 `5cb49156276be04d54a77a630b8600dcc122fdba`）、Arm GNU 14.3 `toolchain-14.3` 及 M6 构建留下的 `build/build-tl3572/tmp/sysroots-components/aarch64/{libmetal,openamp,sysfsutils}`。
