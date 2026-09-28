@@ -1,0 +1,14 @@
+Bash syntax PASS
+test_escaping_symlink_is_rejected (test_archive_utils.SourceArchiveTests.test_escaping_symlink_is_rejected) ... ok
+test_internal_parent_symlink_is_retained (test_archive_utils.SourceArchiveTests.test_internal_parent_symlink_is_retained) ... ok
+test_lfs_pointer_is_rejected (test_archive_utils.SourceArchiveTests.test_lfs_pointer_is_rejected) ... ok
+test_sorted_deterministic_archive (test_archive_utils.SourceArchiveTests.test_sorted_deterministic_archive) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.006s
+
+OK
+084dacef26692e3b174d3e89ae9dff782d7b42296ba7fec87b3b9591d850959f  /repo/repro-inputs/all-stages/scripts/build_up.sh
+d491340bc3350db02466c6475ae2795710532f93be97fea53679ce238eadf0a6  /repo/repro-inputs/all-stages/scripts/build_yocto.sh
+19f46405e04daed3838f425fe9820850f9099b0d999730bb044afd1be0b8128b  /repo/repro-inputs/all-stages/scripts/run.sh
+c92deac9b43bc5ab16036df5d5cc94c4ee1a18803dcfc04c8cac3c17645547e3  /repo/repro-inputs/all-stages/tests/validate.sh

@@ -1,0 +1,30 @@
+Independent GitHub readback, 2026-09-28
+https://github.com/windchilly/TL3572-EVM-Buildroot-2026.02-_Alpha_V1.1.git
+e637d3066d30ab14d8ebde304bd7654cedf4b80e
+Downloaded by git lfs pull; this clone did not use the build-server source cache.
+PASS d5b88ceacc73dc67a0f376f8e91dd7a6c936438829f4acd28096f2d693bae894 344367 repro-inputs/all-stages/stage02-mcs-complete.tar.gz
+PASS 6ec9821ba68ffff7a88ba376dc22a14cf68caa1ce70b54cddac69a4d65924b6a 9804 repro-inputs/all-stages/stage02-profile.tar.gz
+PASS d5b88ceacc73dc67a0f376f8e91dd7a6c936438829f4acd28096f2d693bae894 344367 repro-inputs/all-stages/stage03-mcs-complete.tar.gz
+PASS 2a493ea60f2f5590642cda3657d1ea128af17e70d4aa99c94d5a122a7887af49 11103 repro-inputs/all-stages/stage03-profile.tar.gz
+PASS d5b88ceacc73dc67a0f376f8e91dd7a6c936438829f4acd28096f2d693bae894 344367 repro-inputs/all-stages/stage04-mcs-complete.tar.gz
+PASS 7f0c3a0bdc2eb61c9d7ebcc68efbd2b05b56a26e53db08051392ca18dd528038 264058216 repro-inputs/all-stages/stage04-kernel-6.12.69-complete.tar.gz
+PASS a5714a6c044954fa9bf2ab0c1437de63100c6145eb7423fc223551926753f19c 72718 repro-inputs/all-stages/stage04-profile.tar.gz
+PASS 0f126e657b1108e0a85a3b02662dfbde7b627c9ee33575176be9db16853fefa3 344477 repro-inputs/all-stages/stage05-mcs-complete.tar.gz
+PASS 2bedef4c5cc08ab72243a8661fd4dc059264ac207298841ca0c16386152de182 26761365 repro-inputs/all-stages/stage05-uniproton-complete.tar.gz
+PASS 5cb409d9a88417ec58f3c88ff7b4a23796aa45e80b5574ada8e27ae9d9ee0d74 264058313 repro-inputs/all-stages/stage05-kernel-6.12.69-complete.tar.gz
+PASS e7362a71b65cd66799bf42816e7fdf732bb740c164c09e756cb8cee576d2df66 74279 repro-inputs/all-stages/stage05-profile.tar.gz
+PASS d3d007b4779014d8691094a830311e0102bd37030e07259b75dd5754633e0dd8 344563 repro-inputs/all-stages/stage06-mcs-complete.tar.gz
+PASS 8f3f75bfdca43194c61dc997bf75829504c2d55116285ee02cdb983bb1f98a0b 26939006 repro-inputs/all-stages/stage06-uniproton-complete.tar.gz
+PASS 79b776751d8f5c780671470b7271c30ea35e17a25a91047d7c9a73171fd0d4ed 264059294 repro-inputs/all-stages/stage06-kernel-6.12.69-complete.tar.gz
+PASS 243bedec3efa6d513a8231219484eee5eef5d7ee79276756cf5b3f788b3570be 77935 repro-inputs/all-stages/stage06-profile.tar.gz
+PASS 3f5165f60f42b48e4b52c5405a26efeeab0da8960522118d653e86635447963a 344670 repro-inputs/all-stages/stage07-mcs-complete.tar.gz
+PASS 83ed2001e7cab6af03cac88f109b9c9e05765d0c8be3309802690092aac3c283 26939742 repro-inputs/all-stages/stage07-uniproton-complete.tar.gz
+PASS ed6a97b6322d35385015f6c1ce4fae1692f20547b0b634b3895aa8ce1ff6ac9e 78706 repro-inputs/all-stages/stage07-profile.tar.gz
+PASS a0b51060c352f9c7a0c949d3cae2c9e1f8f33337875421e3b8d6d3a4e712711d 321242 repro-inputs/all-stages/stage02-07-profiles.tar.gz
+PASS 01eeac997c63e348370a4c18436734e4c816d16a4bcab4a36de4c83b05d76ad0 61765426 repro-inputs/all-stages/SOURCE-INVENTORY.json
+PASS 05f385d66ea8f094e5771884f87648a228322dfdbaab26a596e26410ec5341fb 12321 repro-inputs/all-stages/STAGES.json
+PASS 9d2e9e389af67b5f6cbd75f86f4e4b32ce29b93f93117c09859e571db4b9bae7 192274017 repro-inputs/all-stages/historical/openeuler-kernel-5.10-complete.tar.gz
+PASS 89489b3e2264fd550cd800aabfe6aafc144d286f0d3a7423c5b5cd63a7a93a54 1500 repro-inputs/all-stages/historical/surviving-inputs/stage04-reserved-sgi.patch
+PASS db8fc6acd18169cf1a1e3c478eac23194eae8356464e6fc511012617de419e4c 14173940 repro-inputs/all-stages/historical/HISTORICAL-INVENTORY.json
+Total 24 passed, 0 failed
+Working tree clean.

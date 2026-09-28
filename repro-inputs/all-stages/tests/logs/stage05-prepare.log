@@ -1,0 +1,59 @@
+swr.cn-north-4.myhuaweicloud.com/openeuler-embedded/openeuler-container@sha256:b17c6b61bd379c5cf9a933ce69d6b37ae053c6fc95736de1e3f2e5aaad230e5f: Pulling from openeuler-embedded/openeuler-container
+Digest: sha256:b17c6b61bd379c5cf9a933ce69d6b37ae053c6fc95736de1e3f2e5aaad230e5f
+Status: Image is up to date for swr.cn-north-4.myhuaweicloud.com/openeuler-embedded/openeuler-container@sha256:b17c6b61bd379c5cf9a933ce69d6b37ae053c6fc95736de1e3f2e5aaad230e5f
+swr.cn-north-4.myhuaweicloud.com/openeuler-embedded/openeuler-container@sha256:b17c6b61bd379c5cf9a933ce69d6b37ae053c6fc95736de1e3f2e5aaad230e5f
+0b0ceb06ca5f0a4118ff1d601043c7eae749a00a74e053101f5e2d2e6a4a8ad4
+tl3572-all-stage05-20260928-m5-final
+openeuler-packages.tar.gz: OK
+downloads.tar.gz: OK
+uniproton-m6-complete-overlay.tar.gz: OK
+yocto-meta-openeuler-git.tar.gz: OK
+SOURCE-INVENTORY.json: OK
+./config/compile-stage3.yaml: OK
+./config/compile.yaml: OK
+./config/local-stage3.conf: OK
+./scripts/remote-build-mcsctl.sh: OK
+./scripts/remote-build-netfix1.sh: OK
+./scripts/remote-build-stage3-m2.sh: OK
+./scripts/remote-build-stage3.sh: OK
+./scripts/remote-build-stage4.sh: OK
+./scripts/remote-package-mcsctl.sh: OK
+./scripts/remote-reset-stage3-tmp.sh: OK
+./scripts/remote-setup-stage3.sh: OK
+./scripts/remote-verify-mcsctl.sh: OK
+./scripts/remote-verify-stage3.sh: OK
+./stage02/build-conf/bblayers.conf: OK
+./stage02/build-conf/exttc_sanity_info: OK
+./stage02/build-conf/local.conf: OK
+./stage02/build-conf/templateconf.cfg: OK
+./stage02/compile.yaml: OK
+./stage02/meta-tl3572/conf/layer.conf: OK
+./stage02/meta-tl3572/recipes-connectivity/dhcpcd/dhcpcd_%.bbappend: OK
+./stage02/meta-tl3572/recipes-core/images/files/20-wired.network: OK
+./stage02/meta-tl3572/recipes-core/images/files/fstab: OK
+./stage02/meta-tl3572/recipes-core/images/files/hostname: OK
+./stage02/meta-tl3572/recipes-core/images/files/tl3572-vendor-overlay.tar.gz: OK
+./stage02/meta-tl3572/recipes-core/images/openeuler-image.bbappend: OK
+./stage02/meta-tl3572/recipes-core/os-base/os-base_%.bbappend: OK
+./stage02/meta-tl3572/recipes-core/packagegroups/packagegroup-core-boot.bbappend: OK
+./stage02/meta-tl3572/recipes-core/systemd/systemd_%.bbappend: OK
+./stage02/meta-tl3572/recipes-mcs/mcs-linux/mcsctl.bbappend: OK
+./stage03/manifests/stage1-baseline.md: OK
+./stage03/manifests/stage3-m2-pre-edit-20260916/tl3572-openeuler-mcs-image.bb: OK
+./stage04/.config.pre-maxcpus-20260916: OK
+./stage04/mcs-km-tl3572/Makefile: OK
+./stage04/mcs-km-tl3572/mcs_km.c: OK
+./stage04/mcs-km-tl3572/mcs_km.c.pre-of-cpu-20260916: OK
+./stage05/tl3572-up0.conf: OK
+./upstream/OpenAMP.tar.gz: OK
+./upstream/UniProton.tar.gz: OK
+./upstream/libmetal.tar.gz: OK
+./upstream/mcs.tar.gz: OK
+./upstream/yocto-meta-openembedded.tar.gz: OK
+./upstream/yocto-meta-openeuler.tar.gz: OK
+./upstream/yocto-poky.tar.gz: OK
+/repo/4-软件资料/Linux/Tools/arm-gnu-toolchain-14.3.rel1-x86_64-aarch64-none-linux-gnu.tar.gz: OK
+aarch64-none-linux-gnu-gcc (Arm GNU Toolchain 14.3.Rel1 (Build arm-14.174)) 14.3.1 20250623
+/usr1/openeuler/gcc/openeuler_gcc_arm64le/bin/aarch64-openeuler-linux-gnu-gcc: OK
+Prepared fresh project: /home/openeuler/build/tl3572-2oo3
+Restored stage05: reconstructed from preserved recipes, scripts, configurations and final-source overlays

@@ -42,11 +42,14 @@ for dependency in libmetal open-amp; do
 done
 case "${stage}" in
     stage05)
-        cmake -S "${demo}" -B "${demo}/build/m5-repro" -DAPP:STRING=rk3572_mica \
+        # Retain the historical CMake build directory for DWARF byte identity.
+        cmake -S "${demo}" -B "${demo}/build/rk3572_mica" -DAPP:STRING=rk3572_mica \
             -DTOOLCHAIN_PATH:STRING="${toolchain}" -DCPU_TYPE:STRING=rk3572_mica
-        cmake --build "${demo}/build/m5-repro" --target rk3572_mica --parallel "${REPRO_JOBS:-8}"
-        cp "${demo}/build/m5-repro/rk3572_mica" "${demo}/build/rk3572-m5-rebuilt.elf"
+        cmake --build "${demo}/build/rk3572_mica" --target rk3572_mica --parallel "${REPRO_JOBS:-8}"
+        cp "${demo}/build/rk3572_mica/rk3572_mica" "${demo}/build/rk3572-m5-rebuilt.elf"
         sha256sum "${demo}/build/rk3572-m5-rebuilt.elf"
+        printf '%s  %s\n' '3faa550c98c18a407e1a2816b3c022c82fc91d85b3fb968b83ffed32631478d0' \
+            "${demo}/build/rk3572-m5-rebuilt.elf" | sha256sum -c -
         ;;
     stage06)
         for name in up-a up-b; do

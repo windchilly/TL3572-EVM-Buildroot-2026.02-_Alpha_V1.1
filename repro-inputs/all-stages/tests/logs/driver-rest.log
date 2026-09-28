@@ -1,0 +1,6 @@
+stage03 validation PASS
+stage04 validation PASS
+stage01 validation PASS
+stage06 validation PASS
+stage07 validation PASS
+/home/docker_space/docker/volumes/dev_openeuler_vol-openeuler-build/_data/tl3572-github-repro-20260928/repo-v2/repro-inputs/all-stages/tests/validate.sh: 行 37: 未预期的记号 "done" 附近有语法错误

@@ -9,7 +9,7 @@ mkdir -p "${parent}/logs"
 validate_stage() {
     local stage=$1
     export REPRO_STAGE="${stage}"
-    export REPRO_CONTAINER="tl3572-all-${stage}-20260928"
+    export REPRO_CONTAINER="tl3572-all-${stage}-${STAGE_VALIDATION_TAG:-20260928}"
     export REPRO_WORKSPACE="${parent}/${stage}"
     export REPRO_JOBS=4
     bash "${repo}/repro-inputs/all-stages/scripts/run.sh" prepare > "${parent}/logs/${stage}-prepare.log" 2>&1
