@@ -113,6 +113,8 @@ bash repro-inputs/rk3572/scripts/run.sh m7-mcs
 从已校验的归档目录取真实源码。`SOURCE_DATE_EPOCH=1787652448` 来自固定
 yocto-meta-openeuler 提交，避免无 `.git` 时退回当前时间。
 下载 GitHub/LFS 和首次拉取容器仍需联网。
+Yocto 入口显式加载镜像中的 Native SDK 环境脚本，使 `compile_et` 等宿主工具
+进入 PATH；不能仅确认 SDK 目录存在而忽略环境初始化。
 
 脚本固定**容器内部路径**，主机目录可自由选择；遇到已有项目不覆盖。
 构建不需要访问开发板，不执行刷写、重启或外设控制。

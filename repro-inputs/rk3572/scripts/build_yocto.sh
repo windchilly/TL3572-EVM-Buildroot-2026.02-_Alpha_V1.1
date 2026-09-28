@@ -6,6 +6,7 @@ readonly repo=${REPRO_REPO:-/repo}
 readonly mode=${1:-m6-image}
 cd "${project}"
 set +u
+source /opt/buildtools/nativesdk/environment-setup-x86_64-openeulersdk-linux
 source src/yocto-poky/oe-init-build-env "${project}/build/build-tl3572" >/dev/null
 set -u
 case "${mode}" in
