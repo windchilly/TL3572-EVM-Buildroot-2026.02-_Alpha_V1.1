@@ -12,3 +12,5 @@ repro-inputs/all-stages/historical/HISTORICAL-INVENTORY.json filter=lfs diff=lfs
 *.brd filter=lfs diff=lfs merge=lfs -text
 *.DSN filter=lfs diff=lfs merge=lfs -text
 stages/stage07-peripheral-partition/tests/board/can-20260928/*.log whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/board/can-direct-20260928/*.log whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/source/patches/uniproton/0002-rk3572-can-direct-test-hook.patch whitespace=-blank-at-eol,-blank-at-eof

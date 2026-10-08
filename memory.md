@@ -1,5 +1,21 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-08 CAN 直驱继续回归：从 Stage06 完整源码快照连续应用 M7 两份 UniProton
+补丁通过；板端执行器加入 CPU4/5 PSCI OFF 确认，只有两核均 OFF 才重绑 Linux
+CAN1/CAN3。使用原两份测试 ELF 再通过 1,000 次请求/应答，双方 TX/RX=1000/1000、
+TXERR/RXERR=0。连同 9 月 28 日三轮，累计四轮各 1,000 次；最终原 `up-a/up-b`
+Offline、`can1/can3` 绑定 Linux 且 DOWN、`micad` active/NRestarts=0。新增日志见
+[`stages/stage07-peripheral-partition/tests/board/can-direct-20260928/README.md`](stages/stage07-peripheral-partition/tests/board/can-direct-20260928/README.md)。
+
+2026-09-28 已按用户要求把 CAN 测试移到 UP1/UP2：Linux 测试窗口内解绑 CAN1
+和 CAN3，UP1 直接访问 `0x2ab10000`、UP2 直接访问 `0x2ab30000`，修复测试代码
+对 `CAN_INT_MASK` 的误用后，连续三轮各完成 1,000 次经典 CAN 请求/响应；双方每轮
+TX/RX=1000/1000、TXERR/RXERR=0。三轮均正常停止临时实例并重绑 Linux CAN，
+`micad` 保持 PID 4028、`NRestarts=0`、active。当前仅为轮询数据面首切片：仍借用
+Linux 一次性准备 pinctrl/clock/reset，未完成 UP 自主 CRU/reset/pinctrl、CAN IRQ、
+CAN FD/BRS、FD2/FD4 或持久 DT 移交。证据见
+[`stages/stage07-peripheral-partition/tests/board/can-direct-20260928/README.md`](stages/stage07-peripheral-partition/tests/board/can-direct-20260928/README.md)。
+
 2026-09-28 已完成 CAN FD1（Linux `can1`，目标 UP1）↔ CAN FD3（Linux
 `can3`，目标 UP2）的经典 CAN 物理基线：每接口累计 RX/TX 各 10,640 帧，三轮
 stop/start，错误、丢包及 bus-off 均为 0；结束后两接口恢复 DOWN，UP1/UP2 保持

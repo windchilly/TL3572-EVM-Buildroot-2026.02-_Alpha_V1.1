@@ -1,0 +1,43 @@
+BASELINE micad={'MainPID': '4028', 'NRestarts': '0', 'ActiveState': 'active'} seq={'up-a': 1215, 'up-b': 1215}
+UNBOUND 2ab10000.can
+UNBOUND 2ab30000.can
+REBOUND 2ab10000.can
+REBOUND 2ab30000.can
+Traceback (most recent call last):
+  File "/root/m7-can-20260928/run_can_direct_pair.py", line 220, in <module>
+    main()
+  File "/root/m7-can-20260928/run_can_direct_pair.py", line 215, in main
+    raise primary_error
+  File "/root/m7-can-20260928/run_can_direct_pair.py", line 182, in main
+    raise RuntimeError(f"direct CAN test failed\nUP1:\n{text_a}\nUP2:\n{text_b}")
+RuntimeError: direct CAN test failed
+UP1:
+[boot] UP CPU4 entered
+[boot] interrupt routing ready
+[boot] scheduler task entered
+[openamp] get rsctable 7b2500a0, size a64 
+[openamp]: get vring0: da 7a080000
+[openamp]: get vring1: da 7a0800e0
+[openamp] tty task started
+[openamp] ept ready
+[boot] RPMsg ready
+[can] UP1 direct controller ready base=0x2ab10000 rtl=0xcfdba0e3 nbtp=0x1200256d
+[can] UP1 TX fail seq=0 rc=3
+[can] UP1 direct FAIL tx=0 rx=0 txerr=0 rxerr=0 state=0x0 rc=3
+[can] direct test task failed
+
+UP2:
+[boot] UP CPU5 entered
+[boot] interrupt routing ready
+[boot] scheduler task entered
+[openamp] get rsctable 7c2500a0, size a64 
+[openamp]: get vring0: da 7a0a0000
+[openamp]: get vring1: da 7a0a00e0
+[openamp] tty task started
+[openamp] ept ready
+[boot] RPMsg ready
+[can] UP2 direct controller ready base=0x2ab30000 rtl=0xcfdba0e3 nbtp=0x1200256d
+[can] UP2 TX fail seq=0 rc=3
+[can] UP2 direct FAIL tx=0 rx=1 txerr=0 rxerr=0 state=0x0 rc=3
+[can] direct test task failed
+

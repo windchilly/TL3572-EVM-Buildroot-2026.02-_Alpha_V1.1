@@ -1,0 +1,31 @@
+BASELINE micad={'MainPID': '320', 'NRestarts': '0', 'ActiveState': 'active'} seq={'up-a': 0, 'up-b': 0}
+UNBOUND 2ab10000.can
+UNBOUND 2ab30000.can
+[up-a boot=1 seq=1] [boot] UP CPU4 entered
+[up-a boot=1 seq=2] [boot] interrupt routing ready
+[up-a boot=1 seq=3] [boot] scheduler task entered
+[up-a boot=1 seq=4] [openamp] get rsctable 7b2500a0, size a64 
+[up-a boot=1 seq=5] [openamp]: get vring0: da 7a080000
+[up-a boot=1 seq=6] [openamp]: get vring1: da 7a0800e0
+[up-a boot=1 seq=7] [openamp] tty task started
+[up-a boot=1 seq=8] [openamp] ept ready
+[up-a boot=1 seq=9] [boot] RPMsg ready
+[up-a boot=1 seq=10] [can] UP1 direct controller ready base=0x2ab10000 rtl=0xcfdba0e3 nbtp=0x1200256d
+[up-a boot=1 seq=11] [can] UP1 direct PASS tx=1000 rx=1000 txerr=0 rxerr=0 state=0x0 rc=0
+[up-b boot=1 seq=1] [boot] UP CPU5 entered
+[up-b boot=1 seq=2] [boot] interrupt routing ready
+[up-b boot=1 seq=3] [boot] scheduler task entered
+[up-b boot=1 seq=4] [openamp] get rsctable 7c2500a0, size a64 
+[up-b boot=1 seq=5] [openamp]: get vring0: da 7a0a0000
+[up-b boot=1 seq=6] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=1 seq=7] [openamp] tty task started
+[up-b boot=1 seq=8] [openamp] ept ready
+[up-b boot=1 seq=9] [boot] RPMsg ready
+[up-b boot=1 seq=10] [can] UP2 direct controller ready base=0x2ab30000 rtl=0xcfdba0e3 nbtp=0x1200256d
+[up-b boot=1 seq=11] [can] UP2 direct PASS tx=1000 rx=1000 txerr=0 rxerr=0 state=0x0 rc=0
+OVERALL PASS direct CAN requests=1000 responses=1000
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+REBOUND 2ab10000.can
+REBOUND 2ab30000.can
+CLEANUP PASS temporary clients removed; Linux CAN rebound; micad unchanged

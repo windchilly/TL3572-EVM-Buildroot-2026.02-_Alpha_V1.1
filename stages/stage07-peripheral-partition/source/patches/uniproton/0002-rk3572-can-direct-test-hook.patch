@@ -1,0 +1,55 @@
+diff --git a/demos/rk3572_mica/CMakeLists.txt b/demos/rk3572_mica/CMakeLists.txt
+--- a/demos/rk3572_mica/CMakeLists.txt
++++ b/demos/rk3572_mica/CMakeLists.txt
+@@ -8,5 +8,6 @@ set(MCS_NOTIFY_SGI_ID 8 CACHE STRING "SGI used by this UniProton instance")
+ set(MCS_IMAGE_ADDR 0x7c200000 CACHE STRING "Firmware load address")
+ set(MCS_MMU_ADDR 0x7ca00000 CACHE STRING "MMU table reservation address")
++option(M7_CAN_DIRECT_TEST "Run the RK3572 UP1/UP2 direct CAN test" OFF)
+ 
+ configure_file(
+     ${CMAKE_CURRENT_SOURCE_DIR}/bsp/rk3572/rk3572_mica.ld.in
+@@ -34,6 +35,10 @@ add_compile_definitions(
+     MMU_IMAGE_ADDR=${MCS_IMAGE_ADDR}ULL
+ )
+ 
++if(M7_CAN_DIRECT_TEST)
++    add_compile_definitions(M7_CAN_DIRECT_TEST=1)
++endif()
++
+ include(${HOME_PATH}/cmake/functions/uniproton_functions.cmake)
+ import_kconfig(${HOME_PATH}/build/uniproton_config/config_armv8_rk3572/defconfig)
+ 
+diff --git a/demos/rk3572_mica/apps/openamp/CMakeLists.txt b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+--- a/demos/rk3572_mica/apps/openamp/CMakeLists.txt
++++ b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+@@ -1,2 +1,5 @@
+ set(SRC main.c)
++if(M7_CAN_DIRECT_TEST)
++    list(APPEND SRC rk3572_can_test.c)
++endif()
+ add_library(rpmsg OBJECT ${SRC})
+diff --git a/demos/rk3572_mica/apps/openamp/main.c b/demos/rk3572_mica/apps/openamp/main.c
+--- a/demos/rk3572_mica/apps/openamp/main.c
++++ b/demos/rk3572_mica/apps/openamp/main.c
+@@ -12,6 +12,9 @@ extern U32 TestClkStart(void);
+ extern U32 OsHwiInit(void);
+ extern S32 OsConfigStart(void);
+ extern void UpLogBoot(void);
++#if defined(M7_CAN_DIRECT_TEST)
++extern U32 Rk3572CanDirectTest(void);
++#endif
+ 
+ TskHandle g_testTskHandle;
+ U8 g_memRegion00[OS_MEM_FSC_PT_SIZE];
+@@ -34,6 +37,11 @@ void TestTaskEntry()
+ #if defined(OS_OPTION_OPENAMP)
+     TestOpenamp();
+ #endif
++#if defined(M7_CAN_DIRECT_TEST)
++    if (Rk3572CanDirectTest() != OS_OK) {
++        PRT_Printf("[can] direct test task failed\n");
++    }
++#endif
+ }
+ 
+ U32 OsTestInit(void)

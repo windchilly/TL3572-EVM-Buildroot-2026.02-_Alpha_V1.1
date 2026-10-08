@@ -38,6 +38,21 @@ bitbake -r /absolute/path/stage07-peripheral-partition/tests/m7-yocto-parse.conf
 
 必须同时确认 `BBFILE_COLLECTIONS` 包含 `tl3572m7`，`SRC_URI` 包含 `0003-rpc-shared-log-lifecycle.patch`，且 `FILESPATH` 指向实际补丁目录。仅在 `BBLAYERS` 字符串中看到路径不代表层已加载；后读取选项 `-R` 不适合这个验证。
 
+## UP1 / UP2 CAN 直驱测试固件
+
+`prepare_m7_uniproton.sh` 会安装 CAN 测试源并加入默认关闭的
+`M7_CAN_DIRECT_TEST` 构建开关；普通 M7 观测固件不运行 CAN 测试。准备独立 M7 源码后执行：
+
+```sh
+bash stages/stage07-peripheral-partition/build/build_m7_can_direct_test.sh
+```
+
+脚本为 CPU4/CPU5 分别生成 `tl3572-m7-can-up-a.elf` 和
+`tl3572-m7-can-up-b.elf`。它们是临时板级测试固件，不替换 M6/M7 基线 ELF，
+也不安装为 AutoBoot。板端配置、带回收的执行器、接线条件和已验证边界见
+[CAN 直驱实机记录](../tests/board/can-direct-20260928/README.md)。当前实现只覆盖经典 CAN
+轮询数据面；最终移交还需要 UP 自主配置 CRU/reset/pinctrl、IRQ 和 CAN FD/BRS。
+
 ## 板卡部署与回退
 
 本轮板卡部署采用独立文件 `/usr/libexec/m7/micad` 和持久 drop-in `/etc/systemd/system/micad.service.d/90-m7-rpc-fix.conf`，原 `/usr/bin/micad` 未覆盖。drop-in 内容来自 `source/host/micad-m7-rpc-fix.conf`。服务仍使用原 PIDFile、MCS 内核模块前置依赖及失败重启策略。临时 M7 配置为 `AutoBoot=no`，没有安装为开机自动启动实例。
