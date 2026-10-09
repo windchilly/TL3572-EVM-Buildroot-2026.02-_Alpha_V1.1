@@ -1,5 +1,40 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-09 当前入口：用户要求“你先合并即可”，已完成CAN经典/FD/BRS、RS-232、RS-485、
+独立保留日志及RPMsg诊断控制的两份统一ELF（UP1/CPU4与UP2/CPU5）；尚未部署/上板测试。
+本轮没有连接板卡、解绑外设、发送测试帧、重启、刷写或修改DT；不把旧单项PASS转为集成PASS。
+新入口build/prepare_m7_integrated.sh与build/build_m7_integrated.sh位于Stage07，
+新鲜M6树依次0001/0002/0003/0007，安装overlay后0008适配；不叠加旧0004/0005/0006。
+只适配复制后的已验证驱动，历史源码/ELF/原始日志不回写；每版本保持两个ELF，运行时选参数。
+默认passive，M7 status无外设MMIO；M7 run can 1/0/2/4，run rs232/rs485 9600/38400/115200，
+run all 115200 4排队三工作任务。CAN经典/FD共享一个互斥任务槽，两串口独立；重复执行清零计数、
+关闭own IRQ并PRT_HwiDelete。每条命令为一条完整≤63字节RPMsg消息，无流式拼包，普通echo保留。
+新增3×16KiB静态工作栈，仅统一目标OS_TSK_MAX_SUPPORT_NUM从8增至16（内核动态TCB配置），
+两ELF各7个精确4KiB外设MMIO页、GIC16KiB，保留原内存/SGI/log/RPMsg，不新增UART0/GPIO bank映射。
+容器最终src/UniProton-m7-integrated-final-v2-20261009与第二树
+src/UniProton-m7-integrated-repro-20261009各编两应用，两对objcopy运行镜像逐字节一致。
+复用M6 UniProton/openAMP/libmetal/securec库，未再次重建内核/Yocto/OS库。
+17组原生C检查（无MMIO）及既有31项Python单测、ELF静态资源核验通过。
+初次native未初始化警告、配置补丁缺context及核验脚本grep无匹配的失败原始日志保留，最终均修复通过。
+统一源码+四驱动以-Werror编译，M6代理/libc与RWX链接段的既有警告保留，没有宣称全工程零警告。
+记录、运行时命令、构建与校验见
+[统一固件软件合并记录](stages/stage07-peripheral-partition/tests/board/integrated-20261009/README.md)。
+下一步需用户要求继续上板时，在隔离对端与Linux资源独占预检后，使用这同一对ELF做
+被动启动/诊断、单项/组合/并发、模式切换和双停止顺序回归；不再生成新单项测试固件。
+旧单项执行器默认固件启动自动测试，不可直接套用于passive集成ELF，需适配显式控制与统一资源清理。
+FD2/FD4仍SKIPPED/未验证，SARADC/ETH2尚未加入；持久DT/冷启动、实时性/工业协议与M7.0均未验收。
+
+以下为上述软件合并之前的要求和历史测试状态，不能覆盖本条当前入口。
+
+2026-10-09 最新用户要求：后续改为“统一固件、增量功能添加”，不再为每个接口更换单项测试固件。
+现有六份RS-485 ELF仅为三波特率×两个UP，CAN/RS-232在其构建中关闭，尚未合并。
+下一步优先整合CAN经典/FD/BRS、RS-232、RS-485和日志/诊断，每版本UP1/UP2各一份集成ELF，
+在同一固件中做单项/组合/并发与双实例启停回归，再累积加入SARADC/ETH2。
+单项功能PASS不能替代集成PASS，FD2/FD4仍SKIPPED/未验证；默认不自动发送测试流量。
+不要直接跳到另一个独立ADC测试固件。详见
+[增量集成策略](stages/stage07-peripheral-partition/docs/m7.0-incremental-firmware-policy.md)。
+此前RS-485原始证据与66项清单对应固定提交6f0b558，后续另立清单，不回写历史记录。
+
 2026-10-09 最新RS-485切片五轮通过，先读本条；此前RS-232/CAN固件与证据保留。
 用户确认“485已对接”后，按A↔A、B↔B、隔离侧参考地连接理解，未确认/测量端接跳帽。
 保持SoC资源分配UP1=CPU4/UART1/ttyS1，UP2=CPU5/UART2/ttyS2。

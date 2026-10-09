@@ -4,6 +4,9 @@
 M6 双 UniProton 已完成；M7 已完成日志/RPC 软件及 CAN1↔CAN3 的经典 CAN、
 CAN FD/BRS、UART4↔UART8 RS-232 及 UART1↔UART2 RS-485 自主字段初始化/IRQ 直驱切片，
 完整外设移交与 M7.0 尚未验收。板上 UART3 对应 SoC UART8；CAN FD2/FD4 本轮跳过、未验证。
+2026-10-09 已将上述驱动、日志及诊断合并为UP1/UP2两份统一固件，运行时选参数、默认不发送；
+构建/复编及无硬件检查通过，尚未部署或集成实机验收。见
+[合并记录](stages/stage07-peripheral-partition/tests/board/integrated-20261009/README.md)。
 
 ## 从哪里开始
 

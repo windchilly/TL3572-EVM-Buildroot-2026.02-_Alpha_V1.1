@@ -1,0 +1,303 @@
+diff --git a/demos/rk3572_mica/apps/openamp/rk3572_can_fd_test.c b/demos/rk3572_mica/apps/openamp/rk3572_can_fd_test.c
+index 170272b..0847043 100644
+--- a/demos/rk3572_mica/apps/openamp/rk3572_can_fd_test.c
++++ b/demos/rk3572_mica/apps/openamp/rk3572_can_fd_test.c
+@@ -8,6 +8,7 @@
+ #include "prt_typedef.h"
+ #include "cpu_config.h"
+ #include "test.h"
++#include "rk3572_integrated.h"
+ #include "rk3572_can_fd_codec.h"
+ 
+ #define CRU_GATE 0x2609082CULL
+@@ -63,26 +64,17 @@
+ #define RX_EVENTS ((1U << 0) | (1U << 7) | (1U << 15) | (1U << 17))
+ #define STAGE_FRAMES 1000U
+ #define FRAMES (3U * STAGE_FRAMES)
+-#if (M7_CAN_FD_PROFILE == 0)
+-#define BRS_ENABLED 0U
+-#define DATA_BTP RK_CAN_FD_DBTP2
+-#define TDC_VALUE 0U
+-#elif (M7_CAN_FD_PROFILE == 2)
+-#define BRS_ENABLED 1U
+-#define DATA_BTP RK_CAN_FD_DBTP2
+-#define TDC_VALUE 0U
+-#elif (M7_CAN_FD_PROFILE == 4)
+-#define BRS_ENABLED 1U
+-#define DATA_BTP RK_CAN_FD_DBTP4
+-#define TDC_VALUE RK_CAN_FD_TDCR4
+-#else
+-#error "CAN FD profile must be 0, 2 or 4"
+-#endif
++static U32 g_profile, g_brs, g_dataBtp, g_tdc;
++#define M7_CAN_FD_PROFILE g_profile
++#define BRS_ENABLED g_brs
++#define DATA_BTP g_dataBtp
++#define TDC_VALUE g_tdc
+ #define WAIT_TICKS 2000U
+ 
+ struct CanFrame { U32 id, info; U8 len; U8 data[64]; };
+ struct CanIrqState {
+     volatile U32 irqCount, txIrq, rxIrq, errorFlags, overflow, wrongCpu;
++    U32 registered;
+     volatile U32 txDone, rxReady, statusOr, rxFd, rxBrs;
+     struct CanFrame received;
+     U32 txCount, rxCount, txBytes, rxBytes, lastInfo;
+@@ -179,6 +171,7 @@ static U32 InitializeController(void)
+     if (ret) { return ret; }
+     ret = PRT_HwiCreate(CAN_INTID, CanIsr, 0U);
+     if (ret) { return ret; }
++    g_can.registered = 1U;
+     /* Register with the OS, then use GICv2 byte/W1S writes for this SPI. */
+     WriteByte(priority, 0xA0U); WriteByte(target, g_can.target);
+     Write32(GIC_DIST_BASE + 0x280U + (CAN_INTID / 32U) * 4U, 1U << (CAN_INTID % 32U));
+@@ -294,9 +287,15 @@ static U32 RunPair(void)
+     }
+     return 0U;
+ }
+-U32 Rk3572CanDirectTest(void)
++U32 Rk3572CanFdTest(U32 profile)
+ {
+-    U32 ret = InitializeResources(), initialized = 0U;
++    U32 ret, initialized = 0U;
++    if (profile != 0U && profile != 2U && profile != 4U) { return 30U; }
++    g_profile = profile; g_brs = profile != 0U;
++    g_dataBtp = profile == 4U ? RK_CAN_FD_DBTP4 : RK_CAN_FD_DBTP2;
++    g_tdc = profile == 4U ? RK_CAN_FD_TDCR4 : 0U;
++    g_can = (struct CanIrqState){0};
++    ret = InitializeResources();
+     if (!ret) {
+         initialized = 1U; ret = InitializeController();
+         if (!ret) { ret = RunPair(); }
+@@ -304,6 +303,11 @@ U32 Rk3572CanDirectTest(void)
+     }
+     DisableSpi();
+     Write32(GIC_DIST_BASE + 0x280U + (CAN_INTID / 32U) * 4U, 1U << (CAN_INTID % 32U));
++    if (g_can.registered) {
++        U32 deleted = PRT_HwiDelete(CAN_INTID);
++        if (!ret && deleted) { ret = deleted; }
++        g_can.registered = 0U;
++    }
+     if (initialized) {
+         WriteByte(GIC_DIST_BASE + 0x800U + CAN_INTID, g_can.savedTarget);
+         WriteByte(GIC_DIST_BASE + 0x400U + CAN_INTID, g_can.savedPriority);
+diff --git a/demos/rk3572_mica/apps/openamp/rk3572_can_irq_test.c b/demos/rk3572_mica/apps/openamp/rk3572_can_irq_test.c
+index ac3ed80..bc4d72f 100644
+--- a/demos/rk3572_mica/apps/openamp/rk3572_can_irq_test.c
++++ b/demos/rk3572_mica/apps/openamp/rk3572_can_irq_test.c
+@@ -8,6 +8,7 @@
+ #include "prt_typedef.h"
+ #include "cpu_config.h"
+ #include "test.h"
++#include "rk3572_integrated.h"
+ 
+ #define CRU_GATE 0x2609082CULL
+ #define CRU_RESET 0x26090A2CULL
+@@ -62,6 +63,7 @@
+ struct CanFrame { U32 id; U8 len; U8 data[8]; };
+ struct CanIrqState {
+     volatile U32 irqCount, txIrq, rxIrq, errorFlags, overflow, wrongCpu;
++    U32 registered;
+     volatile U32 txDone, rxReady, statusOr;
+     struct CanFrame received;
+     U32 txCount, rxCount;
+@@ -161,6 +163,7 @@ static U32 InitializeController(void)
+     if (ret) { return ret; }
+     ret = PRT_HwiCreate(CAN_INTID, CanIsr, 0U);
+     if (ret) { return ret; }
++    g_can.registered = 1U;
+     /* Register with the OS, then use GICv2 byte/W1S writes for this SPI. */
+     WriteByte(priority, 0xA0U); WriteByte(target, g_can.target);
+     Write32(GIC_DIST_BASE + 0x280U + (CAN_INTID / 32U) * 4U, 1U << (CAN_INTID % 32U));
+@@ -254,9 +257,11 @@ static U32 RunPair(void)
+     }
+     return 0U;
+ }
+-U32 Rk3572CanDirectTest(void)
++U32 Rk3572CanClassicTest(void)
+ {
+-    U32 ret = InitializeResources(), initialized = 0U;
++    U32 ret, initialized = 0U;
++    g_can = (struct CanIrqState){0};
++    ret = InitializeResources();
+     if (!ret) {
+         initialized = 1U; ret = InitializeController();
+         if (!ret) { ret = RunPair(); }
+@@ -264,6 +269,11 @@ U32 Rk3572CanDirectTest(void)
+     }
+     DisableSpi();
+     Write32(GIC_DIST_BASE + 0x280U + (CAN_INTID / 32U) * 4U, 1U << (CAN_INTID % 32U));
++    if (g_can.registered) {
++        U32 deleted = PRT_HwiDelete(CAN_INTID);
++        if (!ret && deleted) { ret = deleted; }
++        g_can.registered = 0U;
++    }
+     if (initialized) {
+         WriteByte(GIC_DIST_BASE + 0x800U + CAN_INTID, g_can.savedTarget);
+         WriteByte(GIC_DIST_BASE + 0x400U + CAN_INTID, g_can.savedPriority);
+diff --git a/demos/rk3572_mica/apps/openamp/rk3572_rs232_test.c b/demos/rk3572_mica/apps/openamp/rk3572_rs232_test.c
+index bb722f5..9784914 100644
+--- a/demos/rk3572_mica/apps/openamp/rk3572_rs232_test.c
++++ b/demos/rk3572_mica/apps/openamp/rk3572_rs232_test.c
+@@ -8,6 +8,7 @@
+ #include "prt_typedef.h"
+ #include "cpu_config.h"
+ #include "test.h"
++#include "rk3572_integrated.h"
+ #include "rk3572_rs232_codec.h"
+ 
+ #define PCLK_GATE 0x26090838ULL
+@@ -41,15 +42,9 @@
+ #else
+ #error "RS232 test supports CPU4/CPU5 only"
+ #endif
+-#if (M7_RS232_BAUD == 115200)
+-#define UART_DIVISOR 13U
+-#elif (M7_RS232_BAUD == 38400)
+-#define UART_DIVISOR 39U
+-#elif (M7_RS232_BAUD == 9600)
+-#define UART_DIVISOR 156U
+-#else
+-#error "RS232 test baud must be 9600, 38400 or 115200"
+-#endif
++static U32 g_baud, g_divisor;
++#define M7_RS232_BAUD g_baud
++#define UART_DIVISOR g_divisor
+ #define FRAMES 1000U
+ #define WAIT_TICKS 3000U
+ #define RX_RING_SIZE 128U
+@@ -65,6 +60,7 @@
+ #define LSR_ERRORS 0x1EU
+ struct UartState {
+     volatile U32 irq, txIrq, rxIrq, txBytes, rxBytes, errors, overflow, wrongCpu, busy, storm;
++    U32 registered;
+     volatile U32 txPos, txLength, rxRead, rxWrite;
+     U8 tx[RS232_FRAME_SIZE], rx[RX_RING_SIZE];
+     U32 txFrames, rxFrames;
+@@ -97,7 +93,7 @@ static void SpiWrite(U32 offset)
+ }
+ static U32 BadState(void)
+ {
+-    return g_uart.errors || g_uart.overflow || g_uart.wrongCpu || g_uart.storm;
++    return g_uart.errors || g_uart.overflow || g_uart.wrongCpu || g_uart.busy || g_uart.storm;
+ }
+ static U32 InitializeResources(void)
+ {
+@@ -171,6 +167,7 @@ static U32 InitializeController(void)
+     if (ret) { return ret; }
+     ret = PRT_HwiCreate(UART_INTID, UartIsr, 0U);
+     if (ret) { return ret; }
++    g_uart.registered = 1U;
+     WriteByte(priority, 0xA0U); WriteByte(target, g_uart.target);
+     SpiWrite(0x280U); SpiWrite(0x100U); UartWrite(IER_DLH, IER_RX_LINE);
+     PRT_Printf("[rs232] UP%u ready uart=%u mpidr=0x%x intid=%u target=0x%x baud=%u clock=24000000 divisor=%u lcr=0x%x\n",
+@@ -241,15 +238,24 @@ static U32 RunPair(void)
+     }
+     return 0U;
+ }
+-U32 Rk3572Rs232Test(void)
++U32 Rk3572Rs232Test(U32 baud)
+ {
+-    U32 ret = InitializeResources(), initialized = 0U;
++    U32 ret, initialized = 0U;
++    if (baud != 115200U && baud != 38400U && baud != 9600U) { return 30U; }
++    g_baud = baud; g_divisor = baud == 115200U ? 13U : (baud == 38400U ? 39U : 156U);
++    g_uart = (struct UartState){0};
++    ret = InitializeResources();
+     if (!ret) {
+         initialized = 1U; ret = InitializeController();
+         if (!ret) { ret = RunPair(); }
+         UartWrite(IER_DLH, 0U); UartWrite(IIR_FCR, 7U);
+     }
+     SpiWrite(0x180U); SpiWrite(0x280U);
++    if (g_uart.registered) {
++        U32 deleted = PRT_HwiDelete(UART_INTID);
++        if (!ret && deleted) { ret = deleted; }
++        g_uart.registered = 0U;
++    }
+     if (initialized) {
+         WriteByte(GIC_DIST_BASE + 0x800U + UART_INTID, g_uart.savedTarget);
+         WriteByte(GIC_DIST_BASE + 0x400U + UART_INTID, g_uart.savedPriority);
+diff --git a/demos/rk3572_mica/apps/openamp/rk3572_rs485_test.c b/demos/rk3572_mica/apps/openamp/rk3572_rs485_test.c
+index 2e1eb58..3219f06 100644
+--- a/demos/rk3572_mica/apps/openamp/rk3572_rs485_test.c
++++ b/demos/rk3572_mica/apps/openamp/rk3572_rs485_test.c
+@@ -9,6 +9,7 @@
+ #include "prt_typedef.h"
+ #include "cpu_config.h"
+ #include "test.h"
++#include "rk3572_integrated.h"
+ #include "rk3572_rs232_codec.h"
+ 
+ #if (MCS_CLIENT_CPU_ID == 4)
+@@ -60,15 +61,9 @@
+ #else
+ #error "RS485 test supports CPU4/CPU5 only"
+ #endif
+-#if (M7_RS485_BAUD == 115200)
+-#define UART_DIVISOR 13U
+-#elif (M7_RS485_BAUD == 38400)
+-#define UART_DIVISOR 39U
+-#elif (M7_RS485_BAUD == 9600)
+-#define UART_DIVISOR 156U
+-#else
+-#error "RS485 test baud must be 9600, 38400 or 115200"
+-#endif
++static U32 g_baud, g_divisor;
++#define M7_RS485_BAUD g_baud
++#define UART_DIVISOR g_divisor
+ #define FRAMES 1000U
+ #define WAIT_TICKS 3000U
+ #define RX_RING_SIZE 128U
+@@ -84,6 +79,7 @@
+ #define LSR_ERRORS 0x1EU
+ struct UartState {
+     volatile U32 irq, txIrq, rxIrq, txBytes, rxBytes, errors, overflow, wrongCpu, busy, storm;
++    U32 registered;
+     volatile U32 txPos, txLength, rxRead, rxWrite, txTurns, rxTurns, dirErrors;
+     U8 tx[RS232_FRAME_SIZE], rx[RX_RING_SIZE];
+     U32 txFrames, rxFrames;
+@@ -116,7 +112,7 @@ static void SpiWrite(U32 offset)
+ }
+ static U32 BadState(void)
+ {
+-    return g_uart.errors || g_uart.overflow || g_uart.wrongCpu || g_uart.storm || g_uart.dirErrors;
++    return g_uart.errors || g_uart.overflow || g_uart.wrongCpu || g_uart.busy || g_uart.storm || g_uart.dirErrors;
+ }
+ static U32 SetDirection(U32 transmit)
+ {
+@@ -204,6 +200,7 @@ static U32 InitializeController(void)
+     if (ret) { return ret; }
+     ret = PRT_HwiCreate(UART_INTID, UartIsr, 0U);
+     if (ret) { return ret; }
++    g_uart.registered = 1U;
+     WriteByte(priority, 0xA0U); WriteByte(target, g_uart.target);
+     SpiWrite(0x280U); SpiWrite(0x100U); UartWrite(IER_DLH, IER_RX_LINE);
+     PRT_Printf("[rs485] UP%u ready uart=%u mpidr=0x%x intid=%u target=0x%x baud=%u clock=24000000 divisor=%u lcr=0x%x\n",
+@@ -283,15 +280,24 @@ static U32 RunPair(void)
+     }
+     return 0U;
+ }
+-U32 Rk3572Rs485Test(void)
++U32 Rk3572Rs485Test(U32 baud)
+ {
+-    U32 ret = InitializeResources(), initialized = 0U;
++    U32 ret, initialized = 0U;
++    if (baud != 115200U && baud != 38400U && baud != 9600U) { return 30U; }
++    g_baud = baud; g_divisor = baud == 115200U ? 13U : (baud == 38400U ? 39U : 156U);
++    g_uart = (struct UartState){0};
++    ret = InitializeResources();
+     if (!ret) {
+         initialized = 1U; ret = InitializeController();
+         if (!ret) { ret = RunPair(); }
+         UartWrite(IER_DLH, 0U); (void)SetDirection(0U); UartWrite(IIR_FCR, 7U);
+     }
+     SpiWrite(0x180U); SpiWrite(0x280U);
++    if (g_uart.registered) {
++        U32 deleted = PRT_HwiDelete(UART_INTID);
++        if (!ret && deleted) { ret = deleted; }
++        g_uart.registered = 0U;
++    }
+     if (initialized) {
+         WriteByte(GIC_DIST_BASE + 0x800U + UART_INTID, g_uart.savedTarget);
+         WriteByte(GIC_DIST_BASE + 0x400U + UART_INTID, g_uart.savedPriority);

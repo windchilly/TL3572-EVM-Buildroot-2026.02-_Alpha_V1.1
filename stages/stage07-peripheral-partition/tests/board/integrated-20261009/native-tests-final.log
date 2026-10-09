@@ -1,0 +1,18 @@
+INTEGRATED COMMAND PASS: runtime profiles/bauds, bounded parse, invalid input has no side effects
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+RS232 codec PASS: CRC vector, 1000 sequences, wrong role/sequence, 256000 bit mutations
+CAN FD CODEC PASS: DLC, flags, 64-byte words, NBTP/DBTP/TDC
+NATIVE VALIDATION PASS: parser + 14 dispatcher/lifecycle runs + 2 existing codecs; no MMIO

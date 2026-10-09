@@ -2,6 +2,13 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-10-09 新的后续要求：转为 [统一固件、增量集成](docs/m7.0-incremental-firmware-policy.md)，
+每版本UP1/UP2各一份集成ELF，同一固件内做单项/组合/并发回归，不再为各接口更换测试固件。
+已合并CAN经典/FD/BRS、RS-232、RS-485和日志/诊断，生成两份被动启动、运行时配置的ELF。
+两新目录复编运行镜像一致，17组无硬件原生检查、31项既有单测及ELF映射核验通过；
+本轮只合并软件，未部署/上板/并发验收。见[统一固件软件记录](tests/board/integrated-20261009/README.md)。
+历史单项证据保留；下一步在同一对ELF上集成回归，再增量加入SARADC/ETH2。
+
 2026-10-09 RS-485五轮通过：UP1/SoC UART1/CPU4 ↔ UP2/SoC UART2/CPU5，
 115200/38400/9600 8N1，另测Linux负载和两种停止顺序，每路累计TX/RX各5000帧/160000字节，
 错误为0。UP直接控制UART MCR/RTSN半双工换向、own clock/reset/mux及本核ISR收发，

@@ -1,0 +1,167 @@
+diff --git a/demos/rk3572_mica/CMakeLists.txt b/demos/rk3572_mica/CMakeLists.txt
+--- a/demos/rk3572_mica/CMakeLists.txt
++++ b/demos/rk3572_mica/CMakeLists.txt
+@@ -13,6 +13,14 @@ if(M7_CAN_IRQ_TEST AND NOT M7_CAN_DIRECT_TEST)
+     message(FATAL_ERROR "M7_CAN_IRQ_TEST requires M7_CAN_DIRECT_TEST")
+ endif()
+ 
++option(M7_INTEGRATED_FIRMWARE "Cumulative CAN/RS232/RS485 with passive boot" OFF)
++if(M7_INTEGRATED_FIRMWARE)
++    if(M7_CAN_DIRECT_TEST OR M7_CAN_IRQ_TEST)
++        message(FATAL_ERROR "Integrated mode uses runtime dispatch, not legacy boot tests")
++    endif()
++    add_compile_definitions(M7_INTEGRATED_FIRMWARE=1)
++endif()
++
+ configure_file(
+     ${CMAKE_CURRENT_SOURCE_DIR}/bsp/rk3572/rk3572_mica.ld.in
+     ${CMAKE_CURRENT_BINARY_DIR}/rk3572_mica.ld
+diff --git a/demos/rk3572_mica/apps/openamp/CMakeLists.txt b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+--- a/demos/rk3572_mica/apps/openamp/CMakeLists.txt
++++ b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+@@ -1,5 +1,11 @@
+ set(SRC main.c)
+-if(M7_CAN_DIRECT_TEST)
++if(M7_INTEGRATED_FIRMWARE)
++    list(APPEND SRC rk3572_integrated.c rk3572_can_irq_test.c rk3572_can_fd_test.c
++                    rk3572_rs232_test.c rk3572_rs485_test.c)
++    set_source_files_properties(rk3572_integrated.c rk3572_can_irq_test.c rk3572_can_fd_test.c
++                                rk3572_rs232_test.c rk3572_rs485_test.c
++                                PROPERTIES COMPILE_OPTIONS "-Werror")
++elseif(M7_CAN_DIRECT_TEST)
+     if(M7_CAN_IRQ_TEST)
+         list(APPEND SRC rk3572_can_irq_test.c)
+     else()
+diff --git a/demos/rk3572_mica/apps/openamp/main.c b/demos/rk3572_mica/apps/openamp/main.c
+--- a/demos/rk3572_mica/apps/openamp/main.c
++++ b/demos/rk3572_mica/apps/openamp/main.c
+@@ -10,6 +10,9 @@
+ #include "test.h"
+ #include "cpu_config.h"
+ #include "rpmsg_backend.h"
++#if defined(M7_INTEGRATED_FIRMWARE)
++#include "rk3572_integrated.h"
++#endif
+ extern U32 TestClkStart(void);
+ extern U32 OsHwiInit(void);
+ extern S32 OsConfigStart(void);
+@@ -41,6 +44,9 @@ int TestOpenamp()
+ void TestTaskEntry()
+ {
+     PRT_Printf("[boot] scheduler task entered\n");
++#if defined(M7_INTEGRATED_FIRMWARE)
++    if (Rk3572IntegratedInit() != OS_OK) { return; }
++#endif
+ #if defined(OS_OPTION_OPENAMP)
+     TestOpenamp();
+ #endif
+diff --git a/demos/rk3572_mica/bsp/mmu.c b/demos/rk3572_mica/bsp/mmu.c
+--- a/demos/rk3572_mica/bsp/mmu.c
++++ b/demos/rk3572_mica/bsp/mmu.c
+@@ -28,7 +28,7 @@ static mmu_mmap_region_s g_mem_map_info[] = {
+     }, {
+         .virt      = MMU_GIC_ADDR,
+         .phys      = MMU_GIC_ADDR,
+-#if defined(M7_CAN_IRQ_TEST)
++#if defined(M7_CAN_IRQ_TEST) || defined(M7_INTEGRATED_FIRMWARE)
+         .size      = 0x4000,
+         .max_level = 0x3,
+ #else
+@@ -36,7 +36,56 @@ static mmu_mmap_region_s g_mem_map_info[] = {
+         .max_level = 0x2,
+ #endif
+         .attrs     = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RWX,
+-#if defined(M7_CAN_IRQ_TEST)
++#if defined(M7_INTEGRATED_FIRMWARE)
++    }, {
++#if (MCS_CLIENT_CPU_ID == 4)
++        .virt = 0x2AB10000, .phys = 0x2AB10000,
++#else
++        .virt = 0x2AB30000, .phys = 0x2AB30000,
++#endif
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++#if (MCS_CLIENT_CPU_ID == 4)
++        .virt = 0x2C160000, .phys = 0x2C160000,
++#else
++        .virt = 0x2C1A0000, .phys = 0x2C1A0000,
++#endif
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++#if (MCS_CLIENT_CPU_ID == 4)
++        .virt = 0x26500000, .phys = 0x26500000,
++#else
++        .virt = 0x2C140000, .phys = 0x2C140000,
++#endif
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++        .virt = 0x26090000, .phys = 0x26090000,
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++#if (MCS_CLIENT_CPU_ID == 4)
++        .virt = 0x260B0000, .phys = 0x260B0000,
++#else
++        .virt = 0x26084000, .phys = 0x26084000,
++#endif
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++        .virt = 0x26074000, .phys = 0x26074000,
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++#if (MCS_CLIENT_CPU_ID == 4)
++        .virt = 0x26086000, .phys = 0x26086000,
++#else
++        .virt = 0x26082000, .phys = 0x26082000,
++#endif
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++#elif defined(M7_CAN_IRQ_TEST)
+     }, {
+ #if (MCS_CLIENT_CPU_ID == 4)
+         .virt = 0x2AB10000, .phys = 0x2AB10000,
+diff --git a/demos/rk3572_mica/config/prt_config.h b/demos/rk3572_mica/config/prt_config.h
+--- a/demos/rk3572_mica/config/prt_config.h
++++ b/demos/rk3572_mica/config/prt_config.h
+@@ -51,5 +51,10 @@
+ #define OS_INCLUDE_TASK                                 YES
+ /* 最大支持的任务数,最大共支持254个 */
++#if defined(M7_INTEGRATED_FIRMWARE)
++/* Existing OpenAMP/proxy tasks plus three persistent peripheral workers. */
++#define OS_TSK_MAX_SUPPORT_NUM                          16
++#else
+ #define OS_TSK_MAX_SUPPORT_NUM                          8
++#endif
+ /* 缺省的任务栈大小 */
+ #define OS_TSK_DEFAULT_STACK_SIZE                       0x1000
+diff --git a/src/component/mica/rpmsg_service.c b/src/component/mica/rpmsg_service.c
+--- a/src/component/mica/rpmsg_service.c
++++ b/src/component/mica/rpmsg_service.c
+@@ -23,6 +23,9 @@
+ #include "shmsg.h"
+ #endif
+ #include "prt_config.h"
++#if defined(M7_INTEGRATED_FIRMWARE)
++#include "rk3572_integrated.h"
++#endif
+ 
+ struct rpmsg_rcv_msg {
+     void *data;
+@@ -164,6 +167,12 @@ static void *rpmsg_tty_task(void *arg)
+         PRT_HwiRestore(intSave);
+         if (tty_msg.len) {
+             tty_data = (char *)tty_msg.data;
++#if defined(M7_INTEGRATED_FIRMWARE)
++            if (Rk3572IntegratedInput(tty_data, tty_msg.len)) {
++                rpmsg_release_rx_buffer(&tty_ept, tty_msg.data);
++                continue;
++            }
++#endif
+             #ifdef LOSCFG_SHELL_MICA_INPUT
+                 ShellCB *shellCb = OsGetShellCB();
+                 if (shellCb == NULL) {

@@ -294,6 +294,44 @@ python3 /root/m7-rs485-20261009/run_rs485_pair.py --baud 115200 --stop-a-first
 每轮必须同时有`OVERALL PASS`、`CLEANUP PASS`和方向计数通过；原始失败日志也需保留。
 不改持久DT，不触碰UART0/ETH1；只能在无业务的隔离测试窗口使用。
 
+## 当前开发入口：UP1 / UP2 统一增量固件（2026-10-09）
+
+CAN经典/FD/BRS、RS-232、RS-485、独立保留日志与RPMsg诊断控制已合并为两个ELF。
+上述单项构建仍可恢复历史证据，但后续开发/交付默认使用此入口。
+换机先按[完整恢复入口](../../../repro-inputs/rk3572/README.md)取得固定Docker摘要、LFS输入及工具链，
+执行`run.sh prepare`、`run.sh m6-up`生成完整M6树和库，再在固定容器、目标不存在的目录执行：
+
+```bash
+export UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated
+bash stages/stage07-peripheral-partition/build/prepare_m7_integrated.sh
+bash stages/stage07-peripheral-partition/build/build_m7_integrated.sh
+bash stages/stage07-peripheral-partition/tests/run_integrated_native.sh
+```
+
+若仓库挂载为`/repo`，须在容器中先`cd /repo`，或使用上述脚本的`/repo/...`绝对路径。
+准备器复制M6全树/库，应用0001/0002/0003/0007，安装overlay，再用0008仅适配复制的驱动；
+不叠加旧0004/0005/0006，不覆盖旧树/ELF。输出位于`$UNIPROTON_ROOT/demos/rk3572_mica/build/`：
+
+- `tl3572-m7-integrated-up-a.elf`：CPU4/SGI8/image 0x7b200000/MMU 0x7ba00000；
+- `tl3572-m7-integrated-up-b.elf`：CPU5/SGI9/image 0x7c200000/MMU 0x7ca00000。
+
+`M7_INTEGRATED_FIRMWARE=ON`，旧启动自动测试开关OFF；默认不初始化或收发工业外设。
+CAN模式与串口波特率均由RPMsg显式运行时命令选择。该通道只控制测试/回报状态，实际数据仍由UP ISR直驱。
+控制源码/四驱动使用`-Werror`；其他M6代码的既有警告不在本次修复范围。
+仅统一目标任务上限8→16，三工作任务各16KiB栈；旧任务上限/构建不改变。
+
+两独立目标目录各运行上述准备/构建，再比较运行镜像（ELF调试路径导致文件hash不同）：
+
+```bash
+bash stages/stage07-peripheral-partition/build/verify_m7_integrated_repro.sh FIRST_BUILD_DIR SECOND_BUILD_DIR
+python3 stages/stage07-peripheral-partition/tests/verify_integrated_elf.py
+```
+
+ELF静态脚本核验仓库`firmware/`下两个交付文件；本轮复用M6库，不是重新全量构建Yocto/内核/OS库。
+临时配置`up-{a,b}-m7-integrated.conf`为`AutoBoot=no`，本轮未安装到板卡。
+不能直接套用旧单项自动执行器；先完成统一资源预检与显式控制适配。
+运行时命令、证据、资源分配及尚未验证项见[统一软件合并记录](../tests/board/integrated-20261009/README.md)。
+
 ## 板卡部署与回退
 
 本轮板卡部署采用独立文件 `/usr/libexec/m7/micad` 和持久 drop-in `/etc/systemd/system/micad.service.d/90-m7-rpc-fix.conf`，原 `/usr/bin/micad` 未覆盖。drop-in 内容来自 `source/host/micad-m7-rpc-fix.conf`。服务仍使用原 PIDFile、MCS 内核模块前置依赖及失败重启策略。临时 M7 配置为 `AutoBoot=no`，没有安装为开机自动启动实例。

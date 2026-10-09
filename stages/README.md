@@ -11,7 +11,7 @@
 | `stage04-mica-mcs/` | Linux MICA/MCS 适配与正式镜像 | 完成 |
 | `stage05-uniproton/` | 单 UniProton 源码、固件、构建和验收 | 完成（延期项见报告） |
 | `stage06-multi-uniproton/` | 双 UniProton；CPU4/CPU5 独立 SGI、内存与 RPMsg | 完成（功能与构建范围） |
-| `stage07-peripheral-partition/` | M7.0 全资源归属、工业外设直驱与全接口测试目标 | 日志/RPC、CAN、RS-232/485 自主配置/IRQ 切片通过；完整移交未验收 |
+| `stage07-peripheral-partition/` | M7.0 全资源归属、工业外设直驱与全接口测试目标 | 日志/RPC、CAN、RS-232/485 单项切片通过；两份统一固件软件合并/复编通过，未上板集成验收 |
 
 规则：
 

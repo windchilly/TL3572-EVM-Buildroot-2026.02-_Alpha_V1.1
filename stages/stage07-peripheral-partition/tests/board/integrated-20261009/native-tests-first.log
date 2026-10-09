@@ -1,0 +1,9 @@
+INTEGRATED COMMAND PASS: runtime profiles/bauds, bounded parse, invalid input has no side effects
+/home/openeuler/build/tl3572-2oo3/m7-integrated-20261009/stage/source/overlay/uniproton/demos/rk3572_mica/apps/openamp/rk3572_integrated.c: In function 'Rk3572IntegratedInput':
+/home/openeuler/build/tl3572-2oo3/m7-integrated-20261009/stage/source/overlay/uniproton/demos/rk3572_mica/apps/openamp/rk3572_integrated.c:99:16: error: 'command.mask' may be used uninitialized [-Werror=maybe-uninitialized]
+   99 |         size = snprintf(reply, sizeof(reply), "M7 UP%u ACCEPTED mask=0x%x\n", MCS_CLIENT_CPU_ID - 3U, accepted);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/m7-integrated-20261009/stage/source/overlay/uniproton/demos/rk3572_mica/apps/openamp/rk3572_integrated.c:72:22: note: 'command.mask' was declared here
+   72 |     struct M7Command command;
+      |                      ^~~~~~~
+cc1: all warnings being treated as errors
