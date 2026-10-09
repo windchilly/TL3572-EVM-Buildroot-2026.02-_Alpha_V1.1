@@ -1,0 +1,54 @@
+FD PROFILE 0; STOP ORDER ('up-b-m7-can-fd0', 'up-a-m7-can-fd0')
+BASELINE micad={'MainPID': '311', 'NRestarts': '0', 'ActiveState': 'active'} seq={'up-a': 52, 'up-b': 52}
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+NO Linux CAN up or bitrate preparation
+UNBOUND 2ab10000.can
+UNBOUND 2ab30000.can
+OWNED resources disabled: gates/resets=0x6600; baud dividers=/16
+FD VALIDATION PASS profile=0 lengths=16/32/64 targets=[16, 32]
+[up-a boot=5 seq=53] [boot] UP CPU4 entered
+[up-a boot=5 seq=54] [boot] interrupt routing ready
+[up-a boot=5 seq=55] [boot] scheduler task entered
+[up-a boot=5 seq=56] [openamp] get rsctable 7b250538, size a64 
+[up-a boot=5 seq=57] [openamp]: get vring0: da 7a080000
+[up-a boot=5 seq=58] [openamp]: get vring1: da 7a0800e0
+[up-a boot=5 seq=59] [openamp] tty task started
+[up-a boot=5 seq=60] [openamp] ept ready
+[up-a boot=5 seq=61] [boot] RPMsg ready
+[up-a boot=5 seq=62] [can-irq] UP1 before gate=0x8600 reset=0x600 select=0x783
+[up-a boot=5 seq=63] [can-fd] UP1 config profile=0 nbtp=0xc020c54 dbtp=0xd90031a tdcr=0x0 brscfg=0x7
+[up-a boot=5 seq=64] [can-irq] UP1 ready mpidr=0x100 intid=185 target=0x10 nbtp=0xc020c54
+[up-a boot=5 seq=65] [can-fd] UP1 stage=1 len=16 profile=0 tx=1000 rx=1000 rxinfo=0xa2a1206
+[up-a boot=5 seq=66] [can-fd] UP1 stage=2 len=32 profile=0 tx=2000 rx=2000 rxinfo=0xd2d120a
+[up-a boot=5 seq=67] [can-fd] UP1 stage=3 len=64 profile=0 tx=3000 rx=3000 rxinfo=0xf2f1212
+[up-a boot=5 seq=68] [can-irq] UP1 counts irq=6000 txirq=3000 rxirq=3000 err=0x0 overflow=0 wrongcpu=0 target=0x10 status=0x20002
+[up-a boot=5 seq=69] [can-fd] UP1 PASS profile=0 tx=3000 rx=3000 txbytes=112000 rxbytes=112000 rxfd=3000 rxbrs=0 rc=0
+[up-a boot=5 seq=70] [can] UP1 direct PASS tx=3000 rx=3000 txerr=0 rxerr=0 state=0x0 rc=0
+[up-b boot=5 seq=53] [boot] UP CPU5 entered
+[up-b boot=5 seq=54] [boot] interrupt routing ready
+[up-b boot=5 seq=55] [boot] scheduler task entered
+[up-b boot=5 seq=56] [openamp] get rsctable 7c250538, size a64 
+[up-b boot=5 seq=57] [openamp]: get vring0: da 7a0a0000
+[up-b boot=5 seq=58] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=5 seq=59] [openamp] tty task started
+[up-b boot=5 seq=60] [openamp] ept ready
+[up-b boot=5 seq=61] [boot] RPMsg ready
+[up-b boot=5 seq=62] [can-irq] UP2 before gate=0xe600 reset=0x6600 select=0x783
+[up-b boot=5 seq=63] [can-fd] UP2 config profile=0 nbtp=0xc020c54 dbtp=0xd90031a tdcr=0x0 brscfg=0x7
+[up-b boot=5 seq=64] [can-irq] UP2 ready mpidr=0x101 intid=187 target=0x20 nbtp=0xc020c54
+[up-b boot=5 seq=65] [can-fd] UP2 stage=1 len=16 profile=0 tx=1000 rx=1000 rxinfo=0xa2a1206
+[up-b boot=5 seq=66] [can-fd] UP2 stage=2 len=32 profile=0 tx=2000 rx=2000 rxinfo=0xd2d120a
+[up-b boot=5 seq=67] [can-fd] UP2 stage=3 len=64 profile=0 tx=3000 rx=3000 rxinfo=0xf2f1212
+[up-b boot=5 seq=68] [can-irq] UP2 counts irq=6000 txirq=3000 rxirq=3000 err=0x0 overflow=0 wrongcpu=0 target=0x20 status=0x20002
+[up-b boot=5 seq=69] [can-fd] UP2 PASS profile=0 tx=3000 rx=3000 txbytes=112000 rxbytes=112000 rxfd=3000 rxbrs=0 rc=0
+[up-b boot=5 seq=70] [can] UP2 direct PASS tx=3000 rx=3000 txerr=0 rxerr=0 state=0x0 rc=0
+OVERALL PASS direct CAN requests=3000 responses=3000
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+UP IRQ QUIESCE intid=185 enabled=False pending=False active=False target=1
+UP IRQ QUIESCE intid=187 enabled=False pending=False active=False target=1
+RESOURCE RESTORE PASS; other CAN gate/reset bits unchanged
+REBOUND 2ab10000.can
+REBOUND 2ab30000.can
+CLEANUP PASS temporary clients removed; Linux CAN rebound; micad unchanged

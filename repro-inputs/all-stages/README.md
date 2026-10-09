@@ -5,10 +5,11 @@
 M5.1/M5.2 等临时工作树无法补造为原始快照。
 
 这里的完整 tar 和固定提交保留 2026-09-28 的正式归档，不会因后续功能更新回写。
-当前 main 另外包含 2026-10-09 的 CAN 自主配置/IRQ 源码、0003 补丁、双 ELF 和证据。
+当前 main 另外包含 2026-10-09 的 CAN 自主配置/IRQ 和 FD/BRS 源码、0003/0004 补丁、
+经典 CAN 双 ELF、FD 六 ELF 及原始证据。
 该新功能需完整 M6 基线加当前 `stages/stage07-peripheral-partition/` 输入，
 不能只解压旧 Stage07 tar 或检出下文固定的 9 月提交。换机先从源码构建 M6 库，
-再用 [M7 IRQ 构建入口](../../stages/stage07-peripheral-partition/build/README.md)
+再用 [M7 IRQ/FD 构建入口](../../stages/stage07-peripheral-partition/build/README.md)
 准备新的独立源码树；完整外设移交仍未验收。
 
 ## 源码保存方式

@@ -1,0 +1,65 @@
+test_all_three_profiles (test_can_fd_pair.CanFdEvidenceTests.test_all_three_profiles) ... ok
+test_classic_can_pass_cannot_prove_fd (test_can_fd_pair.CanFdEvidenceTests.test_classic_can_pass_cannot_prove_fd) ... ok
+test_missing_flags_payload_or_irq_is_rejected (test_can_fd_pair.CanFdEvidenceTests.test_missing_flags_payload_or_irq_is_rejected) ... ok
+test_no_brs_profile_rejects_brs_and_same_cpu (test_can_fd_pair.CanFdEvidenceTests.test_no_brs_profile_rejects_brs_and_same_cpu) ... ok
+test_complete_evidence_passes (test_can_irq_pair.CanIrqEvidenceTests.test_complete_evidence_passes) ... ok
+test_missing_interrupt_or_error_is_rejected (test_can_irq_pair.CanIrqEvidenceTests.test_missing_interrupt_or_error_is_rejected) ... ok
+test_polling_pass_is_insufficient (test_can_irq_pair.CanIrqEvidenceTests.test_polling_pass_is_insufficient) ... ok
+test_same_cpu_target_is_rejected (test_can_irq_pair.CanIrqEvidenceTests.test_same_cpu_target_is_rejected) ... ok
+test_classic_frame_round_trip (test_can_physical_pair.CanPhysicalPairCodecTests.test_classic_frame_round_trip) ... ok
+test_fd_frame_round_trip_with_brs (test_can_physical_pair.CanPhysicalPairCodecTests.test_fd_frame_round_trip_with_brs) ... ok
+test_sequence_is_encoded_big_endian (test_can_physical_pair.CanPhysicalPairCodecTests.test_sequence_is_encoded_big_endian) ... ok
+test_gate_reset_and_divider_decoding (test_can_resource_preflight.CanResourcePreflightTests.test_gate_reset_and_divider_decoding) ... ok
+test_live_dt_pin_fields_are_disjoint (test_can_resource_preflight.CanResourcePreflightTests.test_live_dt_pin_fields_are_disjoint) ... ok
+test_other_controller_bits_do_not_change_own_state (test_can_resource_preflight.CanResourcePreflightTests.test_other_controller_bits_do_not_change_own_state) ... ok
+test_shared_gic_word_uses_only_own_fields (test_can_resource_preflight.CanResourcePreflightTests.test_shared_gic_word_uses_only_own_fields) ... ok
+test_spi_numbers_are_converted_to_intids (test_can_resource_preflight.CanResourcePreflightTests.test_spi_numbers_are_converted_to_intids) ... ok
+test_file_emitter_separates_instances (test_up_log_reader.UpLogReaderTest.test_file_emitter_separates_instances) ... ok
+test_header_is_bound_to_instance (test_up_log_reader.UpLogReaderTest.test_header_is_bound_to_instance) ... ok
+test_monitor_marks_client_and_boot (test_up_log_reader.UpLogReaderTest.test_monitor_marks_client_and_boot) ... ok
+test_reads_committed_records_only (test_up_log_reader.UpLogReaderTest.test_reads_committed_records_only) ... ok
+test_reports_ring_overwrite_boundary (test_up_log_reader.UpLogReaderTest.test_reports_ring_overwrite_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.017s
+
+OK
+PYTHON SYNTAX PASS 15 files
+PATCH 0004 CHECK PASS on Stage06 complete source with 0001/0002/0003
+FD VALIDATION PASS profile=0 lengths=16/32/64 targets=[16, 32]
+ARCHIVED FD RESULT PASS run-01-fd0.log
+FD VALIDATION PASS profile=2 lengths=16/32/64 targets=[16, 32]
+ARCHIVED FD RESULT PASS run-02-fd2.log
+FD VALIDATION PASS profile=4 lengths=16/32/64 targets=[16, 32]
+ARCHIVED FD RESULT PASS run-03-fd4.log
+FD VALIDATION PASS profile=4 lengths=16/32/64 targets=[16, 32]
+ARCHIVED FD RESULT PASS run-04-fd4-cpu-load.log
+ARCHIVED CLASSIC ROLLBACK RESULT PASS
+LOCAL MARKDOWN LINKS PASS 80 targets
+WHITESPACE CHECK PASS
+DEPLOYMENT MATCH server rk3572_can_fd_test.c 966391696f56624c8824697c4a76bc29a88e7232db49fff2f47d288becef0d52
+DEPLOYMENT MATCH server rk3572_can_fd_codec.h cacee2b3d3ddfcab2179fdde7f0402abf6d913a011fd97526d69901450bf1a10
+DEPLOYMENT MATCH server 0004-rk3572-can-fd-test-hook.patch df8bfc36b230834bf65bff5e2de2bb69d145feeaced08ba8fe5913154f899f4e
+DEPLOYMENT MATCH server prepare_m7_can_fd.sh 37c9314f295bc6b438b32e75729f5d94882ac80fe21753bbc143510d12d13081
+DEPLOYMENT MATCH server build_m7_can_fd_test.sh 9af2c29abe5dd354119b8b302d10a4a4582e25826d057f9f21d8219a8a45559b
+DEPLOYMENT MATCH server test_can_fd_codec.c 63f772b7b6858d27defde380523596161079c20bb865c8a9d6149f2c41d6bb70
+DEPLOYMENT MATCH board tl3572-m7-can-fd0-up-a.elf 45fde52b8b84c1bdfce1b3b4d58da9c4a8740c5d6b1f0138cbda171ab484deb9
+DEPLOYMENT MATCH board up-a-m7-can-fd0.conf ef4b4b5c0402f616dc3f3a37a3ce5480d4f7e69e05798a7068e9d15bd4f26192
+DEPLOYMENT MATCH board tl3572-m7-can-fd0-up-b.elf ed8dcf11d825824739f465aa95666d6e55a2f34eae9d3b537df2550f975f7ae0
+DEPLOYMENT MATCH board up-b-m7-can-fd0.conf 693f8e9ac13291609970a2c3477d66566bd8f7f5f082f9d6874869f21b08f45b
+DEPLOYMENT MATCH board tl3572-m7-can-fd2-up-a.elf 45c6cd47416e745b91341e2f629e29a63fd3e56ef17df8505183ddf0f65ec4a0
+DEPLOYMENT MATCH board up-a-m7-can-fd2.conf df0cab1553b35ab23b4d2e7dbf6ee081473904a42743968016c7b72c97317894
+DEPLOYMENT MATCH board tl3572-m7-can-fd2-up-b.elf f0ff2dd9ff44214a9d1ceb50a06ab45bde75f36a9b7cd40b7cba8aaedb05543d
+DEPLOYMENT MATCH board up-b-m7-can-fd2.conf 969b8ae63629307e4d1a6dadcc384ed3884b7da4d93f9a781dd83a1c03fb3996
+DEPLOYMENT MATCH board tl3572-m7-can-fd4-up-a.elf 8f109231f8d790a44bf516d616aad97c800d924b362869960a35d025fefe686a
+DEPLOYMENT MATCH board up-a-m7-can-fd4.conf e053f9cf07166054d5cedf1a97247ccac2e967a0c5659a844e6f05521ce72fc7
+DEPLOYMENT MATCH board tl3572-m7-can-fd4-up-b.elf 1efad431df9f57885daedb1f6bc117d1297b97e0b8d85ed8d8109e4b2c5c073f
+DEPLOYMENT MATCH board up-b-m7-can-fd4.conf cc610aee100a1e6941f7bb87ceaf171e7dce0f97443a3f26cde353d6f8643e27
+DEPLOYMENT MATCH board run_can_fd_pair.py 124f903fb53745d76215c3223a1736c30a9b4f333cc6b578e287a4ca3616f4e6
+DEPLOYMENT MATCH board run_can_fd_with_cpu_load.py ed7543d9968065410014eaa721fdd67ef30fded85772cf566fa826aec1d77942
+DEPLOYMENT MATCH board run_can_direct_pair.py 68cf00b53e6c5cd7c3ad39834b381c1a561e422395478a1cd7bd36c94f3fce8d
+DEPLOYMENT MATCH board run_can_irq_pair.py c09beda1dadbc64aa3632e9f0d69648ba9ea66d05c66001579c9ed608d77cb0a
+DEPLOYMENT MATCH board run_can_irq_with_cpu_load.py c5c1fa8644889b3f8f83f222fee860412805595472243d2f3689a7fb196bf4e5
+DEPLOYMENT MATCH board can_resource_preflight.py 2d0c7ab0eb2ad18efff75573dc4898213f3eebad4d583d816103c3ccfb422450
+DEPLOYMENT CHECK PASS 24 files
+LOCAL VALIDATION PASS

@@ -1,5 +1,28 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-09 后续 CAN FD/BRS 已通过（先读本条，再看下方历史经典 CAN 条目）。
+UP1/FD1/CAN1 ↔ UP2/FD3/CAN3 当前接线，500 kbit/s 仲裁，FD 不变速、BRS 约
+2.006757/4.013514 Mbit/s 三档，每档 16/32/64 字节各 1000 次请求/应答；另补
+4 Mbit/s 档四个 nice=19 Linux CPU worker 与 A→B 停止。四轮每路 TX/RX 各12000、
+txbytes/rxbytes 各448000、rxfd12000/rxbrs9000、错误/溢出/错误核心中断为0。
+随后原经典 CAN IRQ ELF 再通过10000次请求/应答，无重启。上述速率按寄存器计算，未用仪器测量。
+
+独立 FD C/codec、0004 默认关闭钩子、新准备/构建脚本、六配置/ELF、测试脚本与完整
+证据在 [`can-fd-20261009`](stages/stage07-peripheral-partition/tests/board/can-fd-20261009/README.md)。
+原轮询/IRQ源码及脚本未修改。父提交077f93b；完整M6基线+当前M7补丁/覆盖为有效源码，
+旧9月Stage07完整tar不回写。容器 `dev_openeuler` 两独立树
+`src/UniProton-m7-can-fd-20261009`、`src/UniProton-m7-can-fd-repro-20261009` 复编六应用，
+六对运行镜像逐字节一致，ELF因调试路径不同hash不同；本轮复用M6库，未全量Yocto重建。
+本地21项Python单测和原生C codec的 `-Wall -Wextra -Werror` 测试PASS。
+板端临时目录 `/root/m7-can-fd-20261009`；profile0/2/4的完整ELF hash见固件清单与最终状态日志。
+
+结束原up-a/up-b Offline、CPU4/5 OFF、四CAN Linux绑定/DOWN、micad PID311 active/
+NRestarts0、failed units0、ETH1/SSH正常，boot_id=`91f20083-69fc-4bdb-9008-c621eb8b43e7`
+未变，无刷机/重启，原M6/DT不变。仍是运行期临时移交，不是持久/冷启动、四口或M7.0验收。
+下一步FD2↔FD4需用户改接线并确认后逐口测，随后独立外部对端、错误恢复/重启、四路并发、
+持久DT/启动所有权及UART/SARADC/ETH2。已知全局mcs_fd create/rm泄漏未修。
+旧IRQ的SHA256SUMS在077f93b校验；新切片另有清单，不改历史证据。
+
 2026-10-09 CAN 自主字段初始化与中断收发已通过。构建机 SSH 连接恢复后，在
 `dev_openeuler` 的 `src/UniProton-m7-can-irq-20261009` 及第二棵
 `src/UniProton-m7-can-irq-repro-20261009` 中独立编译双应用；两树运行镜像逐字节一致。

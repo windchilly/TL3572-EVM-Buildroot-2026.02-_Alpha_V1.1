@@ -52,7 +52,7 @@ bash stages/stage07-peripheral-partition/build/build_m7_can_direct_test.sh
 也不安装为 AutoBoot。板端配置、带回收的执行器、接线条件和已验证边界见
 [CAN 直驱实机记录](../tests/board/can-direct-20260928/README.md)。当前实现只覆盖经典 CAN
 轮询数据面；这是保留的历史模式。2026-10-09 新增下述独立 IRQ 模式，
-不覆盖历史固件；最终移交仍须 CAN FD/BRS、四口及持久 DT/冷启动验收。
+不覆盖历史固件；FD/BRS 的后续切片见下文，最终移交仍须四口、错误恢复及持久 DT/冷启动验收。
 
 ### CAN 自主字段初始化 / IRQ 模式（2026-10-09）
 
@@ -109,6 +109,67 @@ python3 /root/m7-can-irq-20261009/run_can_irq_pair.py --stop-a-first
 所以不能在正在承载业务流量的系统上运行。失败时也尝试回收；若任一 CPU OFF 未确认，
 不写回资源、不重绑 Linux，应保留日志并人工恢复，不自动重启板卡。
 测试日志中的最终 `CLEANUP PASS` 与数据面 `OVERALL PASS` 必须同时成立。
+
+### CAN FD / BRS 模式（2026-10-09）
+
+使用当前仓库新增的 `prepare_m7_can_fd.sh`、`build_m7_can_fd_test.sh`，
+不要使用固定 9 月提交或仅解压旧 Stage07 tar。与原轮询/IRQ 源码树分开准备：
+
+```bash
+# 固定容器内，M6 源码及全部库已完成构建；目标目录必须不存在。
+export UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd
+bash stages/stage07-peripheral-partition/build/prepare_m7_can_fd.sh
+for profile in 0 2 4; do
+    M7_CAN_FD_PROFILE="$profile" bash stages/stage07-peripheral-partition/build/build_m7_can_fd_test.sh
+done
+```
+
+准备脚本内部启用 IRQ，依次应用 0001/0002/0003/0004，安装独立 FD C 与 codec 头。
+FD 编译脚本显式启用 DIRECT/IRQ/FD；`M7_CAN_FD_PROFILE` 只接受 0/2/4，默认 0。
+CMake 的 `M7_CAN_FD_TEST` 默认 OFF，原准备/构建脚本和默认观测/轮询路径不改变。
+各 profile/CPU 使用独立应用目录；输出在 `$UNIPROTON_ROOT/demos/rk3572_mica/build/`：
+`tl3572-m7-can-fd{0,2,4}-up-{a,b}.elf` 共六份。这些是临时测试 ELF，不能直接代替业务固件。
+
+换机先按 [空目录入口](../../../repro-inputs/rk3572/README.md) 完成 Git LFS、固定 Docker
+摘要、`run.sh prepare`、`run.sh m6-up`，再对该容器执行：
+
+```bash
+docker exec -e UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd \
+    "$REPRO_CONTAINER" bash /repo/stages/stage07-peripheral-partition/build/prepare_m7_can_fd.sh
+for profile in 0 2 4; do
+    docker exec -e UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd \
+        -e M7_CAN_FD_PROFILE="$profile" \
+        "$REPRO_CONTAINER" bash /repo/stages/stage07-peripheral-partition/build/build_m7_can_fd_test.sh
+done
+```
+
+本轮实际在两棵新源码树重新编译六应用，运行镜像逐字节一致；复用已有 M6 库，
+不是新一轮全部库/Yocto 空目录构建。源码、时序计算、实测 ELF hash、构建日志和边界见
+[CAN FD/BRS 记录](../tests/board/can-fd-20261009/README.md)。原 IRQ 的历史文档/固件总清单
+校验对应 `077f93b`，新增 FD 另立校验记录，不回写旧证据。
+
+板端沿用 FD1↔FD3 隔离接线、CPU4/5 OFF、原实例 Offline、Linux CAN DOWN、修复版
+micad 与独立内存日志读取器等前置条件。把六 FD ELF 和六份
+`tests/board/up-{a,b}-m7-can-fd{0,2,4}.conf` 放到 `/root/m7-can-fd-20261009/`，同时放入：
+
+- `run_can_fd_pair.py`、`run_can_fd_with_cpu_load.py`；
+- 共用 `run_can_direct_pair.py`、`run_can_irq_pair.py`、`run_can_irq_with_cpu_load.py`、`can_resource_preflight.py`。
+
+配置为 AutoBoot=no，不安装为开机启动；从该目录以板端 root 执行：
+
+```bash
+python3 /root/m7-can-fd-20261009/run_can_fd_pair.py --profile 0
+python3 /root/m7-can-fd-20261009/run_can_fd_pair.py --profile 2
+python3 /root/m7-can-fd-20261009/run_can_fd_pair.py --profile 4
+python3 /root/m7-can-fd-20261009/run_can_fd_with_cpu_load.py --profile 4 --stop-a-first
+```
+
+profile0 为 FD 不变速，2/4 为 BRS 约 2/4 Mbit/s，仲裁均 500 kbit/s。
+执行器会逐阶段检查 16/32/64 字节、RX 原始 FDF/BRS/DLC、总字节数、时序读回和本核 IRQ，
+不能仅依据经典 CAN PASS 宣称 FD 成功。每次必须同时有 `OVERALL PASS` 与 `CLEANUP PASS`。
+运行期间临时操作 own CRU/IOC/IRQ 并解绑 Linux，不能在业务系统直接运行。
+CPU OFF 未确认时不恢复资源/不重绑/不自动重启，保留日志人工处理。
+此版本仅 FD1/FD3 单请求在途的测试切片，尚无四口、故障恢复、冷启动或工业协议验收。
 
 ## 板卡部署与回退
 

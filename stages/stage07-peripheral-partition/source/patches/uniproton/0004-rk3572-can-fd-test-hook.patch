@@ -1,0 +1,25 @@
+diff --git a/demos/rk3572_mica/CMakeLists.txt b/demos/rk3572_mica/CMakeLists.txt
+--- a/demos/rk3572_mica/CMakeLists.txt
++++ b/demos/rk3572_mica/CMakeLists.txt
+@@ -15,3 +15,11 @@
+ endif()
++option(M7_CAN_FD_TEST "Run the RK3572 direct CAN FD test" OFF)
++set(M7_CAN_FD_PROFILE "0" CACHE STRING "0=no BRS, 2=about 2 Mbps, 4=about 4 Mbps")
++if(M7_CAN_FD_TEST)
++    if(NOT M7_CAN_IRQ_TEST OR NOT M7_CAN_FD_PROFILE MATCHES "^(0|2|4)$")
++        message(FATAL_ERROR "M7_CAN_FD_TEST requires IRQ mode and profile 0, 2 or 4")
++    endif()
++    add_compile_definitions(M7_CAN_FD_PROFILE=${M7_CAN_FD_PROFILE})
++endif()
+ 
+ configure_file(
+diff --git a/demos/rk3572_mica/apps/openamp/CMakeLists.txt b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+--- a/demos/rk3572_mica/apps/openamp/CMakeLists.txt
++++ b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+@@ -2,3 +2,5 @@
+ if(M7_CAN_DIRECT_TEST)
+-    if(M7_CAN_IRQ_TEST)
++    if(M7_CAN_FD_TEST)
++        list(APPEND SRC rk3572_can_fd_test.c)
++    elseif(M7_CAN_IRQ_TEST)
+         list(APPEND SRC rk3572_can_irq_test.c)

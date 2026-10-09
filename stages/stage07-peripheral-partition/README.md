@@ -1,6 +1,15 @@
 # Stage 07 / M7.0：全资源划分与外设直驱
 
-当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 经典 CAN 自主 gate/reset/divider/pinmux 配置及 IRQ 收发通过 / 持久外设移交尚未完成 / M7.0 未验收`。
+当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 经典 CAN 与 CAN FD/BRS 自主配置及 IRQ 收发通过 / 持久外设移交尚未完成 / M7.0 未验收`。
+
+2026-10-09 CAN FD/BRS 切片四轮通过：500 kbit/s 仲裁，数据不变速/约 2/4 Mbit/s，
+16/32/64 字节逐帧全载荷校验。每路累计 TX/RX 各 12000，错误为 0；覆盖四个
+低优先级 Linux CPU worker、两种停止顺序，再用原经典 CAN ELF 通过 10000 次请求/应答。
+新增 FD 模式默认关闭，六份应用在第二棵新源码树复编，运行镜像逐字节一致；M6 库复用。
+结束两 UP OFF/Offline、四 CAN Linux 绑定/DOWN、micad 不重启，原 M6/DT 不变。
+源码、0004 补丁、六 ELF、构建/测试脚本与证据见
+[CAN FD/BRS 实机记录](tests/board/can-fd-20261009/README.md)。尚未测 FD2/FD4、
+独立外部对端、错误恢复/实时性或持久 DT/冷启动，不是全 CAN 或 M7.0 验收。
 
 2026-10-09 新增默认关闭的 CAN IRQ 模式，Linux 解绑后故意关闭本实例时钟、保持
 复位并改变分频，再由 UP1/CAN1/FD1 与 UP2/CAN3/FD3 自行初始化自己的字段、
@@ -9,8 +18,8 @@
 UP 自行关中断/恢复路由，CPU4/5 OFF 后才恢复资源、重绑 Linux，micad 未重启。
 两棵源码树重新编译的运行镜像逐字节一致。原 M6 固件/配置/DT 未覆盖，无刷机或重启。
 见 [CAN 自主初始化与 IRQ 实机证据](tests/board/can-irq-20261009/README.md)。
-共享 PLL/父级总线仍由系统准备；pinmux 未故意置错，冷启动、持久 DT、CAN FD/BRS
-及 FD2/FD4 尚未验证，不能宣称完整 CAN 移交。
+共享 PLL/父级总线仍由系统准备；pinmux 未故意置错，冷启动、持久 DT
+及 FD2/FD4 尚未验证，不能宣称完整 CAN 移交。FD/BRS 的后续验证见上文。
 
 2026-09-28 已补齐 [GitHub 换机输入与构建入口](../../repro-inputs/rk3572/README.md)，
 在空目录、固定基础容器中断网重建 M6 完整镜像、M6/M7 双固件、M7 MCS 软件包及
@@ -21,7 +30,7 @@ UP 自行关中断/恢复路由，CPU4/5 OFF 后才恢复资源、重绑 Linux�
 2026-09-28 已将 CAN FD1（Linux `can1`，M7.0 目标 UP1）与 CAN FD3
 （Linux `can3`，M7.0 目标 UP2）组成物理总线完成经典 CAN 基线测试：每接口累计
 收发各 10,640 帧、三轮 stop/start 恢复，错误/丢包/bus-off 均为 0。当前
-`rk3576_can` 驱动拒绝启用 FD/BRS，因此 CAN FD 数据相位仍未验证。原始证据和边界见
+`rk3576_can` 驱动拒绝启用 FD/BRS，因此当时 CAN FD 数据相位未验证。原始证据和边界见
 [CAN FD1 ↔ CAN FD3 物理基线记录](tests/board/can-20260928/README.md)。该结果只证明
 Linux 驱动下的板级物理链路，不代表 UP1/UP2 已完成 CAN 直驱或资源移交。
 

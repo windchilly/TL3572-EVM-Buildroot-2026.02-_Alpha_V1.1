@@ -1,0 +1,89 @@
+{
+  "collected_at_utc": "2026-10-09T02:34:26.831902+00:00",
+  "mode": "read-only; no CAN traffic, unbind, clock/reset or GIC writes",
+  "kernel": "6.12.69-gf1b67c293213",
+  "boot_id": "91f20083-69fc-4bdb-9008-c621eb8b43e7",
+  "cpu_online": "0-3,6-7",
+  "cpu_offline": "4-5",
+  "mcs_status": "Name                          Assigned CPU        State               Service\nup-b                          5                   Offline\nup-a                          4                   Offline",
+  "micad": "MainPID=311\nNRestarts=0\nActiveState=active",
+  "links": "lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP> \ncan0             DOWN           <NOARP,ECHO> \ncan2             DOWN           <NOARP,ECHO> \neth0             UP             d6:14:36:8b:78:f0 <BROADCAST,MULTICAST,UP,LOWER_UP> \neth1             DOWN           da:14:36:8b:78:f0 <NO-CARRIER,BROADCAST,MULTICAST,UP> \ncan1             DOWN           <NOARP,ECHO> \ncan3             DOWN           <NOARP,ECHO>",
+  "clocks": [
+    "gpll                          20      28       0        1188000000  0          0     50000      Y         deviceless                      no_connection_id",
+    "clk_can3                   10      10       0        297000000   0          0     50000      Y            can@2ab30000                    no_connection_id",
+    "clk_can1                   10      10       0        297000000   0          0     50000      Y            can@2ab10000                    no_connection_id",
+    "hclk_can3            10      10       0        198000000   0          0     50000      Y                  can@2ab30000                    no_connection_id",
+    "hclk_can1            10      10       0        198000000   0          0     50000      Y                  can@2ab10000                    no_connection_id",
+    "cpll                          10      14       0        1000000000  0          0     50000      Y         deviceless                      no_connection_id"
+  ],
+  "registers": {
+    "0x2608203c": "0x00000dd0",
+    "0x2608608c": "0x0000dd00",
+    "0x26090404": "0x00000183",
+    "0x26090408": "0x00000183",
+    "0x2609082c": "0x00008000",
+    "0x26090a2c": "0x00000000",
+    "0x2a601094": "0x00000000",
+    "0x2a601114": "0xef009000",
+    "0x2a601214": "0x00000000",
+    "0x2a601314": "0x00000000",
+    "0x2a6014b8": "0xa0a0a0a0",
+    "0x2a6018b8": "0x01010101",
+    "0x2a601c2c": "0x55555555"
+  },
+  "controllers": {
+    "can1": {
+      "owner": "UP1/CPU4",
+      "spi": 153,
+      "intid": 185,
+      "hclk_gated": false,
+      "baudclk_gated": false,
+      "hclk_reset_asserted": false,
+      "can_reset_asserted": false,
+      "clock_parent_selector": 0,
+      "clock_divider": 4,
+      "pinmux_matches_live_dt": true,
+      "gic_igroupr_bit_observed": false,
+      "gic_enabled": true,
+      "gic_pending": false,
+      "gic_active": false,
+      "gic_priority": 160,
+      "gic_target_mask": 1,
+      "gic_edge_triggered": false,
+      "linux_driver": "rk3576_can",
+      "net_interfaces": [
+        "can1"
+      ]
+    },
+    "can3": {
+      "owner": "UP2/CPU5",
+      "spi": 155,
+      "intid": 187,
+      "hclk_gated": false,
+      "baudclk_gated": false,
+      "hclk_reset_asserted": false,
+      "can_reset_asserted": false,
+      "clock_parent_selector": 0,
+      "clock_divider": 4,
+      "pinmux_matches_live_dt": true,
+      "gic_igroupr_bit_observed": false,
+      "gic_enabled": true,
+      "gic_pending": false,
+      "gic_active": false,
+      "gic_priority": 160,
+      "gic_target_mask": 1,
+      "gic_edge_triggered": false,
+      "linux_driver": "rk3576_can",
+      "net_interfaces": [
+        "can3"
+      ]
+    }
+  },
+  "not_verified": [
+    "UP CPU GIC target masks",
+    "GIC security-group visibility",
+    "UP autonomous initialization",
+    "UP CAN interrupt delivery",
+    "persistent DT handoff"
+  ]
+}

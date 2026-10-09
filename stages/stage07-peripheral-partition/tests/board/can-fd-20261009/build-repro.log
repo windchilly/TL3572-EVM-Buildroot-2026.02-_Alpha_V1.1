@@ -1,0 +1,577 @@
+Prepared M7 source: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009
+Prepared independent CAN FD source: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/m7-can-fd0-up-a
+[  5%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 23%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 23%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 23%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 29%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 35%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 41%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 47%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 52%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 58%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 64%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 76%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 76%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 88%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 88%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 94%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target mica
+[ 94%] Built target rpmsg
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+0c1fca4aec65353fc7b6bf1fc6805f32f10823c3de35a9c9e2cc323f6e9af05f  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd0-up-a.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/m7-can-fd0-up-b
+[  5%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 17%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 17%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 29%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 29%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 35%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 41%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 47%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 58%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 58%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 64%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 76%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 76%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 82%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 88%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 94%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target mica
+[ 94%] Built target rpmsg
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+3e5fe99ed605cac4335414e2a323227e91a73f4d4594e5c4ec73268450cf71ff  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd0-up-b.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/m7-can-fd2-up-a
+[  5%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 17%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 17%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 23%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 29%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 35%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 41%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 47%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 52%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 64%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 64%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 76%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 76%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 88%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 88%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 94%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target mica
+[ 94%] Built target rpmsg
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+495a723dc6819cfc5b85a7ad29f15e54863c1d11b83609ba9654b8866aa1a622  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd2-up-a.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/m7-can-fd2-up-b
+[ 11%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 11%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 17%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 23%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 29%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 41%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 41%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 47%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 52%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 58%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 64%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 70%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 88%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 88%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 88%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 94%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target mica
+[ 94%] Built target rpmsg
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+b030df86905d0a29b692c66d945412ab685b64abc420873410d48397d298a29a  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd2-up-b.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/m7-can-fd4-up-a
+[  5%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 11%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 23%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 23%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 35%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 35%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 47%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 47%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 52%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 58%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 64%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 76%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 82%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 88%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 88%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 94%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target mica
+[ 94%] Built target rpmsg
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+bdf4c92a3150d8772f2b8611d08c31ee2c7f25496eb89ebf7cd9f0aaf8e10a0c  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd4-up-a.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/m7-can-fd4-up-b
+[  5%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 11%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 17%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 23%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 29%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 35%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 41%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 47%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 58%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 58%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 64%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 76%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 76%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 88%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 88%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 94%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target mica
+[ 94%] Built target rpmsg
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+74e580bb110a6af6b88bd051d76f8bfdfa70defafe87b26f2398dedb44d6e522  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd4-up-b.elf
+aarch64-none-linux-gnu-gcc (Arm GNU Toolchain 14.3.Rel1 (Build arm-14.174)) 14.3.1 20250623
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+45fde52b8b84c1bdfce1b3b4d58da9c4a8740c5d6b1f0138cbda171ab484deb9  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd0-up-a.elf
+0c1fca4aec65353fc7b6bf1fc6805f32f10823c3de35a9c9e2cc323f6e9af05f  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd0-up-a.elf
+94a86222a98b0e23e9e7f97cbbb42a47306b609f43ff26b02177581985087ba9  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd0-up-a-tested.bin
+94a86222a98b0e23e9e7f97cbbb42a47306b609f43ff26b02177581985087ba9  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd0-up-a-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-can-fd0-up-a
+ed8dcf11d825824739f465aa95666d6e55a2f34eae9d3b537df2550f975f7ae0  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd0-up-b.elf
+3e5fe99ed605cac4335414e2a323227e91a73f4d4594e5c4ec73268450cf71ff  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd0-up-b.elf
+e14114cffd5676eb289006c447f5b514ecd0a9dd59ef2be7bc4bd251b43573e5  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd0-up-b-tested.bin
+e14114cffd5676eb289006c447f5b514ecd0a9dd59ef2be7bc4bd251b43573e5  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd0-up-b-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-can-fd0-up-b
+45c6cd47416e745b91341e2f629e29a63fd3e56ef17df8505183ddf0f65ec4a0  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd2-up-a.elf
+495a723dc6819cfc5b85a7ad29f15e54863c1d11b83609ba9654b8866aa1a622  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd2-up-a.elf
+332cd2aa6cad03af1b0898fcf1e17764678dd9e7d7fb103b04e61a131e1df7ef  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd2-up-a-tested.bin
+332cd2aa6cad03af1b0898fcf1e17764678dd9e7d7fb103b04e61a131e1df7ef  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd2-up-a-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-can-fd2-up-a
+f0ff2dd9ff44214a9d1ceb50a06ab45bde75f36a9b7cd40b7cba8aaedb05543d  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd2-up-b.elf
+b030df86905d0a29b692c66d945412ab685b64abc420873410d48397d298a29a  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd2-up-b.elf
+51571cf024031786d26964501c81706223185b672114b2e772032a66bc031134  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd2-up-b-tested.bin
+51571cf024031786d26964501c81706223185b672114b2e772032a66bc031134  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd2-up-b-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-can-fd2-up-b
+8f109231f8d790a44bf516d616aad97c800d924b362869960a35d025fefe686a  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd4-up-a.elf
+bdf4c92a3150d8772f2b8611d08c31ee2c7f25496eb89ebf7cd9f0aaf8e10a0c  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd4-up-a.elf
+834713994663102e1558a10d80c91d6575a0dc11ef0595b72b4628db041156df  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd4-up-a-tested.bin
+834713994663102e1558a10d80c91d6575a0dc11ef0595b72b4628db041156df  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd4-up-a-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-can-fd4-up-a
+1efad431df9f57885daedb1f6bc117d1297b97e0b8d85ed8d8109e4b2c5c073f  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd4-up-b.elf
+74e580bb110a6af6b88bd051d76f8bfdfa70defafe87b26f2398dedb44d6e522  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-fd-repro-20261009/demos/rk3572_mica/build/tl3572-m7-can-fd4-up-b.elf
+83fab5025e13a8b54d5419a28f0b17f807b614aca407395cd03cf79f33f5c11e  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd4-up-b-tested.bin
+83fab5025e13a8b54d5419a28f0b17f807b614aca407395cd03cf79f33f5c11e  /home/openeuler/build/tl3572-2oo3/m7-can-fd-20261009/tl3572-m7-can-fd4-up-b-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-can-fd4-up-b
