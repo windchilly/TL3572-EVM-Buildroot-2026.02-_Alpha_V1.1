@@ -7,9 +7,11 @@ CAN FD/BRS、UART4↔UART8 RS-232 及 UART1↔UART2 RS-485 自主字段初始化
 2026-10-09 已将上述驱动、日志及诊断合并为UP1/UP2两份统一固件，运行时选参数、默认不发送；
 构建/复编及无硬件检查通过，软件合并证据见
 [合并记录](stages/stage07-peripheral-partition/tests/board/integrated-20261009/README.md)。
-随后被动上板发现UP1页表需要36KiB、仅预留32KiB，MMU初始化失败被忽略并触发RPMsg对齐异常；
-正式统一固件集成测试失败、尚未修复。用户已改变接线并要求不发送，物理测试暂停。
-失败证据与安全结束状态见[被动测试记录](stages/stage07-peripheral-partition/tests/board/integrated-passive-20261009/README.md)。
+随后被动上板发现UP1页表需要36KiB、仅预留32KiB，MMU初始化失败被忽略并触发RPMsg对齐异常。
+现已仅对统一目标扩至64KiB、增加启动检查和实际PTE验收；修复两ELF通过四轮被动双实例回归。
+用户已改变接线并要求不发送，物理测试仍暂停；不是组合工控收发或M7.0验收。
+见[修复与回归记录](stages/stage07-peripheral-partition/tests/board/integrated-mmu-fix-20261009/README.md)，
+原始[失败证据](stages/stage07-peripheral-partition/tests/board/integrated-passive-20261009/README.md)保留在固定提交。
 
 ## 从哪里开始
 

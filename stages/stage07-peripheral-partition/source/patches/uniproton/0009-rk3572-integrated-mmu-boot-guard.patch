@@ -1,0 +1,211 @@
+diff --git a/demos/rk3572_mica/CMakeLists.txt b/demos/rk3572_mica/CMakeLists.txt
+--- a/demos/rk3572_mica/CMakeLists.txt
++++ b/demos/rk3572_mica/CMakeLists.txt
+@@ -22,6 +22,13 @@
+     add_compile_definitions(M7_INTEGRATED_FIRMWARE=1)
+ endif()
+ 
++# Keep legacy targets byte-for-byte on their original table budget.
++if(M7_INTEGRATED_FIRMWARE)
++    set(M7_MMU_TABLE_BYTES 0x10000)
++else()
++    set(M7_MMU_TABLE_BYTES 0x8000)
++endif()
++
+ configure_file(
+     ${CMAKE_CURRENT_SOURCE_DIR}/bsp/rk3572/rk3572_mica.ld.in
+     ${CMAKE_CURRENT_BINARY_DIR}/rk3572_mica.ld
+diff --git a/demos/rk3572_mica/bsp/rk3572/rk3572_mica.ld.in b/demos/rk3572_mica/bsp/rk3572/rk3572_mica.ld.in
+--- a/demos/rk3572_mica/bsp/rk3572/rk3572_mica.ld.in
++++ b/demos/rk3572_mica/bsp/rk3572/rk3572_mica.ld.in
+@@ -124,5 +124,5 @@
+     {
+         PROVIDE (g_mmu_page_begin = .);
+-        PROVIDE (g_mmu_page_end = g_mmu_page_begin + 0x8000);
++        PROVIDE (g_mmu_page_end = g_mmu_page_begin + @M7_MMU_TABLE_BYTES@);
+     } > MMU_MEM
+ }
+diff --git a/demos/rk3572_mica/bsp/start.S b/demos/rk3572_mica/bsp/start.S
+--- a/demos/rk3572_mica/bsp/start.S
++++ b/demos/rk3572_mica/bsp/start.S
+@@ -99,7 +99,35 @@
+     BIC    sp, x1, #0xf
+ 
+     BL     mmu_init
++#if defined(M7_INTEGRATED_FIRMWARE)
++    CBNZ   w0, MmuBootFatal
++#endif
+     B      OsResetVector
+ 
++#if defined(M7_INTEGRATED_FIRMWARE)
++    .size   Start, . - Start
++    .global MmuBootFatal
++    .type   MmuBootFatal, function
++MmuBootFatal:
++    /* No scheduler, GIC or industrial controller may run after MMU failure. */
++    MSR    DAIFSet, #0xf
++    BL     UpLogMmuFailure
++    BL     rsc_table_set_offline_flag
++    /* Same PSCI SMC conduit/function as the existing AMP power-off path. */
++    MOV    w0, #2
++    MOVK   w0, #0x8400, LSL #16
++    MOV    x1, xzr
++    MOV    x2, xzr
++    MOV    x3, xzr
++    MOV    x4, xzr
++    MOV    x5, xzr
++    MOV    x6, xzr
++    MOV    x7, xzr
++    BL     OsArmSmccSmc
++1:
++    WFE
++    B      1b
++#endif
++
+ OsEnterReset:
+     B      OsEnterReset
+diff --git a/demos/rk3572_mica/bsp/mmu.c b/demos/rk3572_mica/bsp/mmu.c
+--- a/demos/rk3572_mica/bsp/mmu.c
++++ b/demos/rk3572_mica/bsp/mmu.c
+@@ -125,3 +125,19 @@
+ static mmu_ctrl_s g_mmu_ctrl = { 0 };
+ 
++#if defined(M7_INTEGRATED_FIRMWARE)
++/* Nonzero initializer keeps the early result in .data, outside BSS clearing. */
++static struct {
++    U32 magic;
++    U32 mappedUnits;
++    S32 rc;
++    U32 reserved;
++    U64 tableBase;
++    U64 usedBytes;
++    U64 budgetBytes;
++    U64 tcr;
++} g_mmu_boot_info = { .magic = 0x4d4d5537U };
++
++extern U32 PRT_Printf(const char *format, ...);
++#endif
++
+ static U64 mmu_get_tcr(U32 *pips, U32 *pva_bits)
+@@ -394,5 +394,23 @@
+     }
+     
++#if defined(M7_INTEGRATED_FIRMWARE)
++    /* Validate all real descriptors before enabling address translation. */
++    g_mmu_boot_info.mappedUnits = 0U;
++    for (i = 0; i < mem_region_num; ++i) {
++        const mmu_mmap_region_s *map = &mem_map[i];
++        U64 stride = 1ULL << mmu_level2shift(map->max_level);
++        U64 offset;
++        for (offset = 0; offset < map->size; offset += stride) {
++            U64 *pte = mmu_find_pte(map->virt + offset, map->max_level);
++            U64 type = (map->max_level == MMU_LEVEL_3) ? PTE_TYPE_PAGE : PTE_TYPE_BLOCK;
++            if (pte == NULL || *pte != ((map->phys + offset) | map->attrs | type)) {
++                return (U32)-4;
++            }
++            g_mmu_boot_info.mappedUnits++;
++        }
++    }
++    g_mmu_boot_info.tcr = tcr;
++#endif
+     mmu_set_ttbr_tcr_mair(g_mmu_ctrl.tlb_addr, tcr, MEMORY_ATTRIBUTES);
+     
+     return 0;
+@@ -430,6 +430,12 @@
+     S32 ret;
+ 
+     ret = mmu_setup();
++#if defined(M7_INTEGRATED_FIRMWARE)
++    g_mmu_boot_info.rc = ret;
++    g_mmu_boot_info.tableBase = g_mmu_ctrl.tlb_addr;
++    g_mmu_boot_info.usedBytes = g_mmu_ctrl.tlb_fillptr - g_mmu_ctrl.tlb_addr;
++    g_mmu_boot_info.budgetBytes = g_mmu_ctrl.tlb_size;
++#endif
+     if (ret) {
+         return ret;
+     }
+@@ -443,4 +443,31 @@
+     set_sctlr(get_sctlr() | CR_C | CR_M | CR_I);
+ 
++#if defined(M7_INTEGRATED_FIRMWARE)
++    if ((get_sctlr() & (CR_C | CR_M | CR_I)) != (CR_C | CR_M | CR_I)) {
++        return -5;
++    }
++#endif
+     return 0;
+ }
++
++#if defined(M7_INTEGRATED_FIRMWARE)
++S32 MmuBootReport(void)
++{
++    U64 ttbr, tcr, mair;
++    U64 sctlr = get_sctlr();
++    __asm__ volatile("mrs %0, ttbr0_el1" : "=r"(ttbr));
++    __asm__ volatile("mrs %0, tcr_el1" : "=r"(tcr));
++    __asm__ volatile("mrs %0, mair_el1" : "=r"(mair));
++    if (g_mmu_boot_info.rc != 0 ||
++        (sctlr & (CR_C | CR_M | CR_I)) != (CR_C | CR_M | CR_I) ||
++        ttbr != g_mmu_boot_info.tableBase || tcr != g_mmu_boot_info.tcr ||
++        mair != MEMORY_ATTRIBUTES || g_mmu_boot_info.usedBytes > g_mmu_boot_info.budgetBytes) {
++        return -1;
++    }
++    PRT_Printf("[boot] MMU PASS sctlr=0x%lx tables=%lu/%lu mapped=%u ttbr=0x%lx\n",
++        (unsigned long)sctlr, (unsigned long)(g_mmu_boot_info.usedBytes / 4096U),
++        (unsigned long)(g_mmu_boot_info.budgetBytes / 4096U),
++        g_mmu_boot_info.mappedUnits, (unsigned long)ttbr);
++    return 0;
++}
++#endif
+diff --git a/demos/rk3572_mica/apps/openamp/main.c b/demos/rk3572_mica/apps/openamp/main.c
+--- a/demos/rk3572_mica/apps/openamp/main.c
++++ b/demos/rk3572_mica/apps/openamp/main.c
+@@ -18,4 +18,8 @@
+ extern S32 OsConfigStart(void);
+ extern void UpLogBoot(void);
++#if defined(M7_INTEGRATED_FIRMWARE)
++extern S32 MmuBootReport(void);
++extern void MmuBootFatal(void) __attribute__((noreturn));
++#endif
+ #if defined(M7_CAN_DIRECT_TEST)
+ extern U32 Rk3572CanDirectTest(void);
+@@ -135,3 +135,6 @@
+     UpLogBoot();
+     PRT_Printf("[boot] UP CPU%u entered\n", MCS_CLIENT_CPU_ID);
++#if defined(M7_INTEGRATED_FIRMWARE)
++    if (MmuBootReport() != 0) { MmuBootFatal(); }
++#endif
+     return OsConfigStart();
+diff --git a/demos/rk3572_mica/bsp/print.c b/demos/rk3572_mica/bsp/print.c
+--- a/demos/rk3572_mica/bsp/print.c
++++ b/demos/rk3572_mica/bsp/print.c
+@@ -92,3 +92,30 @@
+ }
+ 
++#if defined(M7_INTEGRATED_FIRMWARE)
++/* MMU failure can precede BSS/libc initialization: scalar volatile writes only. */
++void UpLogMmuFailure(void)
++{
++    static const char message[] = "[boot] MMU FAIL initialization/readback; CPU_OFF\n";
++    volatile struct UpLogRecord *record;
++    U32 i, seq;
++    unsigned long flags;
++    UpLogBoot();
++    flags = UpLogIrqSave();
++    seq = g_upLogHeader->writeSeq + 1U;
++    record = &g_upLogRecords[(seq - 1U) % UP_LOG_RECORD_COUNT];
++    record->committedSeq = 0U;
++    record->bootId = g_upLogHeader->bootId;
++    record->length = sizeof(message) - 1U;
++    record->reserved = 0U;
++    for (i = 0U; i < sizeof(message); ++i) {
++        record->text[i] = message[i];
++    }
++    __asm__ volatile("dsb sy" ::: "memory");
++    record->committedSeq = seq;
++    __asm__ volatile("dsb sy" ::: "memory");
++    g_upLogHeader->writeSeq = seq;
++    UpLogIrqRestore(flags);
++}
++#endif
++
+ static int UpLogVprintf(const char *format, va_list args)

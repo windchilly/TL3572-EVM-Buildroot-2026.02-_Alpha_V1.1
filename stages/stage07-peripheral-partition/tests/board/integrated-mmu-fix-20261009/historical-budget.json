@@ -1,0 +1,92 @@
+[
+  {
+    "elf": "tl3572-m7-can-irq-up-a.elf",
+    "table_pages": 7,
+    "required_bytes": 28672,
+    "available_bytes": 32768,
+    "fits": true,
+    "first_overflow_region": null,
+    "sha256": "51fa0a5321cc6f6ded061788c14e64dd2c958ccb5b22032512d4893aeea8f0ea"
+  },
+  {
+    "elf": "tl3572-m7-can-irq-up-b.elf",
+    "table_pages": 7,
+    "required_bytes": 28672,
+    "available_bytes": 32768,
+    "fits": true,
+    "first_overflow_region": null,
+    "sha256": "a61f220f7910d2b04aedbbab5b4059626a6a416a374e44273b43e6e75b742b8c"
+  },
+  {
+    "elf": "tl3572-m7-can-fd4-up-a.elf",
+    "table_pages": 7,
+    "required_bytes": 28672,
+    "available_bytes": 32768,
+    "fits": true,
+    "first_overflow_region": null,
+    "sha256": "8f109231f8d790a44bf516d616aad97c800d924b362869960a35d025fefe686a"
+  },
+  {
+    "elf": "tl3572-m7-can-fd4-up-b.elf",
+    "table_pages": 7,
+    "required_bytes": 28672,
+    "available_bytes": 32768,
+    "fits": true,
+    "first_overflow_region": null,
+    "sha256": "1efad431df9f57885daedb1f6bc117d1297b97e0b8d85ed8d8109e4b2c5c073f"
+  },
+  {
+    "elf": "tl3572-m7-rs232-115200-up-a.elf",
+    "table_pages": 7,
+    "required_bytes": 28672,
+    "available_bytes": 32768,
+    "fits": true,
+    "first_overflow_region": null,
+    "sha256": "d4ed1222335c9ee380beb79a21f309695514d3b9d560a8ceac228aa19809354c"
+  },
+  {
+    "elf": "tl3572-m7-rs232-115200-up-b.elf",
+    "table_pages": 7,
+    "required_bytes": 28672,
+    "available_bytes": 32768,
+    "fits": true,
+    "first_overflow_region": null,
+    "sha256": "da5e178c303d230e22e90a57584eb6cfa97aca6ec03e10145bff940115d3b997"
+  },
+  {
+    "elf": "tl3572-m7-rs485-115200-up-a.elf",
+    "table_pages": 7,
+    "required_bytes": 28672,
+    "available_bytes": 32768,
+    "fits": true,
+    "first_overflow_region": null,
+    "sha256": "8b07b6b32d974ab74ff6bda73f02a62dcf415ce6c0f314adb4185b082114466f"
+  },
+  {
+    "elf": "tl3572-m7-rs485-115200-up-b.elf",
+    "table_pages": 7,
+    "required_bytes": 28672,
+    "available_bytes": 32768,
+    "fits": true,
+    "first_overflow_region": null,
+    "sha256": "72d666f1b7d379d4a6bf8e987358e2f5bf73cc643252b93a0061cc733d5ec523"
+  },
+  {
+    "elf": "tl3572-m7-integrated-up-a.elf",
+    "table_pages": 9,
+    "required_bytes": 36864,
+    "available_bytes": 32768,
+    "fits": false,
+    "first_overflow_region": "0x26090000",
+    "sha256": "d22bdf200c326e2727d4c9ff9f19e4aa46c38727b3b7b7dedc7f33503fbf1581"
+  },
+  {
+    "elf": "tl3572-m7-integrated-up-b.elf",
+    "table_pages": 8,
+    "required_bytes": 32768,
+    "available_bytes": 32768,
+    "fits": true,
+    "first_overflow_region": null,
+    "sha256": "1a4ece0cff536cfe5f796b1aecc843fc04b7ffb3ad5243ca094dba99b84fa622"
+  }
+]

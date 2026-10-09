@@ -1,5 +1,6 @@
 """Static check of the two integrated ELF64 images; Python stdlib only, no board access."""
 import struct
+import argparse
 from pathlib import Path
 
 
@@ -35,6 +36,19 @@ def verify(path, cpu):
                  'Rk3572CanFdTest', 'Rk3572Rs232Test', 'Rk3572Rs485Test', 'UpLogBoot'):
         assert name in symbols and symbols[name][1], f'Missing function: {name}'
     assert 'Rk3572CanDirectTest' not in symbols, 'Legacy boot-test export unexpectedly linked'
+    from audit_integrated_mmu import audit
+    assert audit(path)['fits'], 'Insufficient real page-table budget'
+    assert symbols['g_mmu_page_end'][0] - symbols['g_mmu_page_begin'][0] == 0x10000
+    assert symbols['g_mmu_boot_info'][1] == 48 and symbols['g_mmu_boot_info'][2][:4] == b'7UMM'
+    assert symbols['MmuBootReport'][1] and 'MmuBootFatal' in symbols
+    start, size, instructions = symbols['Start']
+    assert size == 20, 'Unexpected Start boot guard layout'
+    branch = struct.unpack_from('<I', instructions, 12)[0]
+    assert branch & 0xff00001f == 0x35000000, 'Start must CBNZ w0 after mmu_init'
+    immediate = (branch >> 5) & 0x7ffff
+    if immediate & 0x40000:
+        immediate -= 0x80000
+    assert start + 12 + immediate * 4 == symbols['MmuBootFatal'][0], 'MMU failure must branch to fatal path'
     assert symbols['g_stacks'][1] == 3 * 0x4000 and symbols['g_stacks'][0] % 16 == 0
     regions = list(struct.iter_unpack('<5Q', symbols['g_mem_map_info'][2]))
     assert len(regions) == 11
@@ -59,7 +73,9 @@ def verify(path, cpu):
 
 
 if __name__ == '__main__':
-    firmware = Path(__file__).resolve().parents[1] / 'firmware'
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--firmware-dir', type=Path, default=Path(__file__).resolve().parents[1] / 'firmware')
+    firmware = parser.parse_args().firmware_dir
     verify(firmware / 'tl3572-m7-integrated-up-a.elf', 4)
     verify(firmware / 'tl3572-m7-integrated-up-b.elf', 5)
     print('No deployment or hardware result implied by this static verification.')

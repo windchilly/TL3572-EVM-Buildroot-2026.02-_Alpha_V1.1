@@ -1,5 +1,6 @@
 """Offline page-table budget audit for the present 4 KiB / L1-start RK3572 maps."""
 import json
+import argparse
 from pathlib import Path
 import struct
 
@@ -38,7 +39,9 @@ def audit(path):
 
 
 if __name__ == '__main__':
-    firmware = Path(__file__).resolve().parents[1] / 'firmware'
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--firmware-dir', type=Path, default=Path(__file__).resolve().parents[1] / 'firmware')
+    firmware = parser.parse_args().firmware_dir
     results = [audit(firmware / f'tl3572-m7-integrated-up-{role}.elf') for role in ('a', 'b')]
     print(json.dumps(results, indent=2))
     raise SystemExit(0 if all(result['fits'] for result in results) else 1)

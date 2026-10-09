@@ -24,6 +24,7 @@ class PassiveTests(unittest.TestCase):
 
     def test_boot_rejects_any_peripheral_entry(self):
         text = ('[boot] UP CPU4 entered\n[boot] interrupt routing ready\n'
+                '[boot] MMU PASS sctlr=0x30d01805 tables=9/16 mapped=48 ttbr=0x7ba00000\n'
                 '[boot] scheduler task entered\n[boot] RPMsg ready\n'
                 '[integrated] UP1 ready modules=can-classic,can-fd,rs232,rs485 mode=passive\n')
         runner.validate_boot(text, 1)
@@ -32,6 +33,10 @@ class PassiveTests(unittest.TestCase):
                 runner.validate_boot(text + extra, 1)
         with self.assertRaises(RuntimeError):
             runner.validate_boot(text.replace('[boot] RPMsg ready', ''), 1)
+        for old, new in (('sctlr=0x30d01805', 'sctlr=0x30d00800'), ('tables=9/16', 'tables=8/16'),
+                         ('mapped=48', 'mapped=47'), ('ttbr=0x7ba00000', 'ttbr=0x7ca00000')):
+            with self.assertRaises(RuntimeError):
+                runner.validate_boot(text.replace(old, new), 1)
 
     def test_resource_drift_fails(self):
         initial = {'registers': {'0x2609082c': 1}, 'drivers': {'test.serial': 'dw-apb-uart'}}

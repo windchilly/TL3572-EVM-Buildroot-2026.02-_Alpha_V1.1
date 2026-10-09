@@ -15,4 +15,6 @@ done
 # Modify only these copied drivers: runtime parameters, independent exports, repeat-run cleanup.
 git -C "$uni" apply --check "$stage_root/source/patches/uniproton/0008-rk3572-integrated-runtime.patch"
 git -C "$uni" apply "$stage_root/source/patches/uniproton/0008-rk3572-integrated-runtime.patch"
+git -C "$uni" apply --check "$stage_root/source/patches/uniproton/0009-rk3572-integrated-mmu-boot-guard.patch"
+git -C "$uni" apply "$stage_root/source/patches/uniproton/0009-rk3572-integrated-mmu-boot-guard.patch"
 echo "Prepared cumulative firmware source: $uni"

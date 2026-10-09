@@ -14,11 +14,12 @@ import can_resource_preflight as can
 import rs232_resources as rs232
 import rs485_resources as rs485
 import run_can_direct_pair as common
+import integrated_mmu_resources as mmu
 
-ROOT = Path('/root/m7-integrated-20261009')
+ROOT = Path('/root/m7-integrated-mmu-fix-20261009')
 CLIENTS = ('up-a-m7-integrated', 'up-b-m7-integrated')
-HASHES = ('d22bdf200c326e2727d4c9ff9f19e4aa46c38727b3b7b7dedc7f33503fbf1581',
-          '1a4ece0cff536cfe5f796b1aecc843fc04b7ffb3ad5243ca094dba99b84fa622')
+HASHES = ('2575faeaa01aaa76c63229d07e190bcdda9f49ac2ef3b0eb60e152ef291ae399',
+          'b0ae2ad5af68aaa2a85f6b9229fecfe26738baf48b88890d2c2ff94b1ef083dc')
 SAFE_COMMANDS = ('M7 status', 'M7 unsupported')
 
 
@@ -56,6 +57,14 @@ def validate_boot(text, up):
             raise RuntimeError(f'missing startup marker: {marker}')
     if re.search(r'\[(?:can|can-irq|can-fd|rs232|rs485)\]|\[integrated\].*\bbegin\b', text):
         raise RuntimeError('peripheral driver entered during passive test')
+    match = re.search(r'\[boot\] MMU PASS sctlr=0x([0-9a-f]+) tables=(\d+)/(\d+) mapped=(\d+) ttbr=0x([0-9a-f]+)', text)
+    if not match:
+        raise RuntimeError('missing MMU hardware readback marker')
+    sctlr, used, available, mapped, root = match.groups()
+    expected_root = 0x7ba00000 if up == 1 else 0x7ca00000
+    if (int(sctlr, 16) & 0x1005 != 0x1005 or int(used) != (9 if up == 1 else 8) or
+            int(available) != 16 or int(mapped) != 48 or int(root, 16) != expected_root or 'MMU FAIL' in text):
+        raise RuntimeError('MMU disabled/incomplete or wrong instance table')
 
 
 def snapshot():
@@ -158,6 +167,8 @@ def main():
                     up = CLIENTS.index(client) + 1
                     entries = common.new_log_messages(reader, f'up-{chr(96 + up)}', log_seq[f'up-{chr(96 + up)}'])
                     validate_boot(''.join(message for _, _, message in entries), up)
+                    image = ROOT / f'tl3572-m7-integrated-up-{chr(96 + up)}.elf'
+                    print(f'{client} REAL MMU PASS ' + json.dumps(mmu.verify_running(image), sort_keys=True), flush=True)
                     fd = echo.open_tty(path)
                     try:
                         reply = passive_command(fd, 'M7 status')

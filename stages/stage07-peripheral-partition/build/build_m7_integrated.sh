@@ -21,3 +21,5 @@ build_one()
 }
 build_one up-a 4 8 0x7b200000 0x7ba00000
 build_one up-b 5 9 0x7c200000 0x7ca00000
+python3 "$(dirname "${BASH_SOURCE[0]}")/../tests/audit_integrated_mmu.py" --firmware-dir "$demo/build"
+python3 "$(dirname "${BASH_SOURCE[0]}")/../tests/verify_integrated_elf.py" --firmware-dir "$demo/build"

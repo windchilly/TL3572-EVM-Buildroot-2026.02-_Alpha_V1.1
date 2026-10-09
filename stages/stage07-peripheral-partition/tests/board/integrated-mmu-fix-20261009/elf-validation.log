@@ -1,0 +1,5 @@
+ELF STATIC PASS UP1: all four drivers + control/log; 3 aligned workers; 7 exact MMIO pages
+MMIO pages: 0x26074000 0x26086000 0x26090000 0x260b0000 0x26500000 0x2ab10000 0x2c160000
+ELF STATIC PASS UP2: all four drivers + control/log; 3 aligned workers; 7 exact MMIO pages
+MMIO pages: 0x26074000 0x26082000 0x26084000 0x26090000 0x2ab30000 0x2c140000 0x2c1a0000
+No deployment or hardware result implied by this static verification.

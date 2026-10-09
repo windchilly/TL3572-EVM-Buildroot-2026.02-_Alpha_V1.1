@@ -309,7 +309,7 @@ bash stages/stage07-peripheral-partition/tests/run_integrated_native.sh
 ```
 
 若仓库挂载为`/repo`，须在容器中先`cd /repo`，或使用上述脚本的`/repo/...`绝对路径。
-准备器复制M6全树/库，应用0001/0002/0003/0007，安装overlay，再用0008仅适配复制的驱动；
+准备器复制M6全树/库，应用0001/0002/0003/0007，安装overlay，再用0008适配复制的驱动、0009修复启动；
 不叠加旧0004/0005/0006，不覆盖旧树/ELF。输出位于`$UNIPROTON_ROOT/demos/rk3572_mica/build/`：
 
 - `tl3572-m7-integrated-up-a.elf`：CPU4/SGI8/image 0x7b200000/MMU 0x7ba00000；
@@ -319,6 +319,9 @@ bash stages/stage07-peripheral-partition/tests/run_integrated_native.sh
 CAN模式与串口波特率均由RPMsg显式运行时命令选择。该通道只控制测试/回报状态，实际数据仍由UP ISR直驱。
 控制源码/四驱动使用`-Werror`；其他M6代码的既有警告不在本次修复范围。
 仅统一目标任务上限8→16，三工作任务各16KiB栈；旧任务上限/构建不改变。
+0009仅统一目标页表预算32→64KiB；Start必须检查mmu_init返回值，失败记录原始内存日志并请求CPU_OFF，
+不再进入OS/RPMsg。正常启动逐项验证真实PTE，且回读SCTLR/TTBR0/TCR/MAIR后才启动应用。
+构建末尾强制运行页表预算与ELF启动CBNZ分支核验；任一失败，脚本返回非零，产物不可部署。
 
 两独立目标目录各运行上述准备/构建，再比较运行镜像（ELF调试路径导致文件hash不同）：
 
@@ -328,9 +331,11 @@ python3 stages/stage07-peripheral-partition/tests/verify_integrated_elf.py
 ```
 
 ELF静态脚本核验仓库`firmware/`下两个交付文件；本轮复用M6库，不是重新全量构建Yocto/内核/OS库。
-临时配置`up-{a,b}-m7-integrated.conf`为`AutoBoot=no`，本轮未安装到板卡。
-不能直接套用旧单项自动执行器；先完成统一资源预检与显式控制适配。
-运行时命令、证据、资源分配及尚未验证项见[统一软件合并记录](../tests/board/integrated-20261009/README.md)。
+临时配置`up-{a,b}-m7-integrated.conf`为`AutoBoot=no`，修复板端路径为`/root/m7-integrated-mmu-fix-20261009`，
+没有更改原M6实例或开机自启配置。被动执行器`tests/board/run_integrated_passive.py`硬性禁止M7 run，
+调用只读实际页表核验；部署助手清单、命令与四轮结果见[MMU修复记录](../tests/board/integrated-mmu-fix-20261009/README.md)。
+不能直接套用旧单项自动执行器。物理run仍须重新确认隔离接线并完成统一独占移交。
+运行时命令/资源分配见[原软件合并记录](../tests/board/integrated-20261009/README.md)，该记录须在17024db复查旧输入。
 
 ## 板卡部署与回退
 

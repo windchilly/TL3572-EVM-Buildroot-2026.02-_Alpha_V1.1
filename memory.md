@@ -1,5 +1,31 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-09 最新入口：用户授权“继续修复页表容量和启动检查”，已完成0009，仅统一固件页表32→64KiB，
+Start检查mmu_init返回值；错误原始日志不依赖libc/SIMD，置offline后请求PSCI CPU_OFF，失败不进入OS/RPMsg。
+正常初始化逐项检查48个真实PTE，启动回读SCTLR/TTBR0/TCR/MAIR；早期结果存非零初始化.data避免BSS清零。
+构建强制页表预算及ELF中CBNZ w0→MmuBootFatal机器码核验，失败产物不可部署。
+历史CAN IRQ/FD、RS-232/RS-485单项两路均28KiB；合并UP1需36KiB/UP2需32KiB，旧预算32KiB。
+合并前静态检查只查映射声明，未查分配预算或错误返回；是合并回归/验证缺口，不是板卡或接线突变。
+完整M6+0001/2/3/7+overlay+0008/0009，两新源码树
+src/UniProton-m7-integrated-mmu-fix-v2-20261009与src/UniProton-m7-integrated-mmu-fix-repro-v2-20261009，
+两对运行镜像逐字节一致；复用M6库，不重建Yocto/内核/OS库。中间补丁context失败及v1构建日志均保留。
+修复正式ELF UP1 SHA256=2575faeaa01aaa76c63229d07e190bcdda9f49ac2ef3b0eb60e152ef291ae399，
+UP2=b0ae2ad5af68aaa2a85f6b9229fecfe26738baf48b88890d2c2ff94b1ef083dc，替换当前两份统一交付文件，旧版在17024db。
+17组native C检查、42项Python单测、预算/ELF分支核验通过。板端新目录/root/m7-integrated-mmu-fix-20261009，
+同一对ELF四轮被动双实例PASS，两种启动/停止顺序，每路400次451字节RPMsg echo/191200响应字节；
+每轮SCTLR=0x30d01805（M/C/I=1），UP1 9/16页/UP2 8/16页，实际48条映射逐项属性/地址核验，工作计数全0。
+未强制触发新错误分支实机CPU_OFF，分支机器码及无libc错误日志做静态核验；不记为故障注入PASS。
+用户“接线已改变，先不要发送”仍有效，本轮没有M7 run、工业帧、解绑、重启、刷写、DT或原M6改变。
+结束原up-a/up-b Offline、CPU4/5 PSCI OFF、临时客户端/ttyRPMSG清理、六控制器Linux绑定/资源快照不变，
+micad PID311 active/NRestarts0、failed units0、ETH1正常、boot_id=91f20083-69fc-4bdb-9008-c621eb8b43e7不变。
+另一处MCS create/rm fd泄漏未修：本轮57→59；四轮start/stop内离线fd集合未漂移。
+证据/复现步骤见[MMU修复与被动回归](stages/stage07-peripheral-partition/tests/board/integrated-mmu-fix-20261009/README.md)。
+旧65项合并清单固定17024db，故障27项清单固定a16ad2c，不回写；本轮另立新清单，未来需按各固定提交核验。
+下一步重新确认工控隔离对接后，同一对修复固件做单项/组合/并发物理回归；当前不发送。
+SARADC/ETH2未加入、FD2/4仍SKIPPED，持久DT/冷启动、实时性/工业协议及M7.0未验收。
+
+以下“尚未修复/等待指示”是a16ad2c时的历史状态，不得覆盖上述修复与回归结果。
+
 2026-10-09 最新入口：用户要求继续UP外设测试，但随后明确“接线已改变，先不要发送”。
 当前禁止所有M7 run/工业收发，不解绑CAN/UART；不能沿用此前隔离接线确认。
 本轮只做统一ELF被动启动、日志/RPMsg诊断及只读定位，无重启/刷写/DT修改。
