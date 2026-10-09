@@ -1,5 +1,30 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-09 最新入口：用户要求继续UP外设测试，但随后明确“接线已改变，先不要发送”。
+当前禁止所有M7 run/工业收发，不解绑CAN/UART；不能沿用此前隔离接线确认。
+本轮只做统一ELF被动启动、日志/RPMsg诊断及只读定位，无重启/刷写/DT修改。
+正式统一固件17024db的UP1两次启动均未出现RPMsg，UP2尚未在正式成对测试中启动。
+已定位：UP1 11个映射需9×4KiB=36KiB页表，旧链接预算只有32KiB；
+第9页在0x26090000映射时申请失败，mmu_init返回错误却被Start汇编忽略。
+实机残留页表8页均已使用，CRU/IOC及最后log映射缺失；异常SCTLR=0x30d00800、M=0，
+ELR=0x7b202b04为metal_io_init的str q28,[x1]，FAR=0x7b2563a8，ESR=0x96000061。
+UP2静态映射需要32KiB、刚好占满预算；不能从静态fits宣称实机集成PASS。
+仅加6条启动诊断打印的独立实验树，两轮被动诊断/echo与两种停止顺序通过；
+它把shm_device移动8字节使故障写地址16字节对齐，未修MMU，不能作为正式固件或验收结果。
+正式源码/两ELF/hash及旧65项清单保持17024db不变；诊断补丁单独作为证据保存。
+新增硬性命令白名单被动执行器、页表预算审计及8项单测，共39项Python单测通过；
+对正式两ELF运行audit_integrated_mmu.py预期exit1（UP1预算失败），这不是固件PASS。
+详见[统一固件被动测试与启动故障](stages/stage07-peripheral-partition/tests/board/integrated-passive-20261009/README.md)。
+结束up-a/up-b Offline，CPU4/5 PSCI OFF，临时客户端/ttyRPMSG清理，六控制器仍Linux绑定，
+所测外设CRU/IOC/SPI寄存器快照前后一致，micad PID311 active/NRestarts0、failed units0、ETH1正常，
+boot_id=91f20083-69fc-4bdb-9008-c621eb8b43e7不变。MCS create/rm泄漏仍在，fd由51增至57，
+不能称所有fd无泄漏；诊断两轮start/stop内部未再漂移。原M6配置/固件/DT保留。
+下一步先取得用户修复指示：建议仅统一目标扩页表预算并检查启动MMU返回值，
+补充SCTLR.M及完整页表验收，再做同一对修复ELF的无工业发送双实例回归。
+任何物理收发仍须重新确认接线。M7.0未验收，SARADC/ETH2仍未加入，FD2/4仍SKIPPED。
+
+以下2026-10-09软件合并条目是17024db时的历史状态，不能覆盖上面的实机失败结论。
+
 2026-10-09 当前入口：用户要求“你先合并即可”，已完成CAN经典/FD/BRS、RS-232、RS-485、
 独立保留日志及RPMsg诊断控制的两份统一ELF（UP1/CPU4与UP2/CPU5）；尚未部署/上板测试。
 本轮没有连接板卡、解绑外设、发送测试帧、重启、刷写或修改DT；不把旧单项PASS转为集成PASS。

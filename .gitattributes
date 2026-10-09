@@ -25,3 +25,6 @@ stages/stage07-peripheral-partition/tests/board/rs485-20261009/*.log whitespace=
 stages/stage07-peripheral-partition/source/patches/uniproton/0007-rk3572-integrated-hooks.patch whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/source/patches/uniproton/0008-rk3572-integrated-runtime.patch whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/tests/board/integrated-20261009/*.log whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/board/integrated-passive-20261009/*.log whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/board/integrated-passive-20261009/diagnostic-hooks.patch whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/board/integrated-passive-20261009/*.json whitespace=cr-at-eol

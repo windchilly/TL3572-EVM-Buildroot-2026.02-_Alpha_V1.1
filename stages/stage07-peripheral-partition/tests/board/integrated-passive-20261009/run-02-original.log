@@ -1,0 +1,25 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+NO industrial sends, controller unbind, FIFO access, CRU/IOC/GIC writes, DT change or reboot
+BASELINE micad={'MainPID': '311', 'NRestarts': '0', 'ActiveState': 'active'} fds=55 boot_id=91f20083-69fc-4bdb-9008-c621eb8b43e7
+PERIPHERAL SNAPSHOT BEFORE {"drivers": {"26500000.serial": "dw-apb-uart", "2ab10000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "registers": {"0x2607400c": 37017, "0x26074010": 2457, "0x26074018": 4, "0x2608203c": 3536, "0x2608404c": 153, "0x2608608c": 56576, "0x26090374": 31488, "0x26090404": 387, "0x26090408": 387, "0x2609040c": 33, "0x26090410": 0, "0x26090414": 279, "0x26090418": 11, "0x2609041c": 768, "0x26090420": 768, "0x26090424": 768, "0x26090428": 768, "0x2609042c": 768, "0x26090430": 768, "0x26090434": 768, "0x26090438": 768, "0x26090808": 24512, "0x2609082c": 32768, "0x26090838": 32736, "0x2609083c": 37449, "0x26090840": 65468, "0x26090a2c": 0, "0x26090a38": 0, "0x26090a3c": 0, "0x26090a40": 0, "0x260b0320": 1, "0x260b0814": 16844, "0x260b0a14": 0, "0x2a601090": 0, "0x2a601094": 0, "0x2a601110": 286331264, "0x2a601114": 4009791488, "0x2a601210": 0, "0x2a601214": 0, "0x2a601310": 0, "0x2a601314": 0, "0x2a60149c": 2694881440, "0x2a6014a0": 2694881440, "0x2a6014a4": 2694881440, "0x2a6014b8": 2694881440, "0x2a60189c": 16843009, "0x2a6018a0": 16843009, "0x2a6018a4": 16843009, "0x2a6018b8": 16843009, "0x2a601c24": 1431655765, "0x2a601c28": 1431655765, "0x2a601c2c": 1431655765}}
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+PERIPHERAL SNAPSHOT AFTER {"drivers": {"26500000.serial": "dw-apb-uart", "2ab10000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "registers": {"0x2607400c": 37017, "0x26074010": 2457, "0x26074018": 4, "0x2608203c": 3536, "0x2608404c": 153, "0x2608608c": 56576, "0x26090374": 31488, "0x26090404": 387, "0x26090408": 387, "0x2609040c": 33, "0x26090410": 0, "0x26090414": 279, "0x26090418": 11, "0x2609041c": 768, "0x26090420": 768, "0x26090424": 768, "0x26090428": 768, "0x2609042c": 768, "0x26090430": 768, "0x26090434": 768, "0x26090438": 768, "0x26090808": 24512, "0x2609082c": 32768, "0x26090838": 32736, "0x2609083c": 37449, "0x26090840": 65468, "0x26090a2c": 0, "0x26090a38": 0, "0x26090a3c": 0, "0x26090a40": 0, "0x260b0320": 1, "0x260b0814": 16844, "0x260b0a14": 0, "0x2a601090": 0, "0x2a601094": 0, "0x2a601110": 286331264, "0x2a601114": 4009791488, "0x2a601210": 0, "0x2a601214": 0, "0x2a601310": 0, "0x2a601314": 0, "0x2a60149c": 2694881440, "0x2a6014a0": 2694881440, "0x2a6014a4": 2694881440, "0x2a6014b8": 2694881440, "0x2a60189c": 16843009, "0x2a6018a0": 16843009, "0x2a6018a4": 16843009, "0x2a6018b8": 16843009, "0x2a601c24": 1431655765, "0x2a601c28": 1431655765, "0x2a601c2c": 1431655765}}
+FINAL mcs=Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+micad={'MainPID': '311', 'NRestarts': '0', 'ActiveState': 'active'}
+FINAL fds=57; create/rm MCS fd leak is a known separate issue
+[up-a boot=23 seq=316] [boot] UP CPU4 entered
+[up-a boot=23 seq=317] [boot] interrupt routing ready
+[up-a boot=23 seq=318] [boot] scheduler task entered
+[up-a boot=23 seq=319] [integrated] UP1 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+Traceback (most recent call last):
+  File "/root/m7-integrated-20261009/run_integrated_passive.py", line 237, in <module>
+    main()
+  File "/root/m7-integrated-20261009/run_integrated_passive.py", line 231, in main
+    raise primary
+  File "/root/m7-integrated-20261009/run_integrated_passive.py", line 154, in main
+    raise RuntimeError(f'no unique RPMsg TTY: {client}')
+RuntimeError: no unique RPMsg TTY: up-a-m7-integrated

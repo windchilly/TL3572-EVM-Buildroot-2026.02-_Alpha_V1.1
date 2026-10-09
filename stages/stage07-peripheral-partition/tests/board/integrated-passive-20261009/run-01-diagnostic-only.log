@@ -1,0 +1,107 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+NO industrial sends, controller unbind, FIFO access, CRU/IOC/GIC writes, DT change or reboot
+BASELINE micad={'MainPID': '311', 'NRestarts': '0', 'ActiveState': 'active'} fds=53 boot_id=91f20083-69fc-4bdb-9008-c621eb8b43e7
+PERIPHERAL SNAPSHOT BEFORE {"drivers": {"26500000.serial": "dw-apb-uart", "2ab10000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "registers": {"0x2607400c": 37017, "0x26074010": 2457, "0x26074018": 4, "0x2608203c": 3536, "0x2608404c": 153, "0x2608608c": 56576, "0x26090374": 31488, "0x26090404": 387, "0x26090408": 387, "0x2609040c": 33, "0x26090410": 0, "0x26090414": 279, "0x26090418": 11, "0x2609041c": 768, "0x26090420": 768, "0x26090424": 768, "0x26090428": 768, "0x2609042c": 768, "0x26090430": 768, "0x26090434": 768, "0x26090438": 768, "0x26090808": 24512, "0x2609082c": 32768, "0x26090838": 32736, "0x2609083c": 37449, "0x26090840": 65468, "0x26090a2c": 0, "0x26090a38": 0, "0x26090a3c": 0, "0x26090a40": 0, "0x260b0320": 1, "0x260b0814": 16844, "0x260b0a14": 0, "0x2a601090": 0, "0x2a601094": 0, "0x2a601110": 286331264, "0x2a601114": 4009791488, "0x2a601210": 0, "0x2a601214": 0, "0x2a601310": 0, "0x2a601314": 0, "0x2a60149c": 2694881440, "0x2a6014a0": 2694881440, "0x2a6014a4": 2694881440, "0x2a6014b8": 2694881440, "0x2a60189c": 16843009, "0x2a6018a0": 16843009, "0x2a6018a4": 16843009, "0x2a6018b8": 16843009, "0x2a601c24": 1431655765, "0x2a601c28": 1431655765, "0x2a601c2c": 1431655765}}
+up-a-m7-integrated STATUS PASS M7 UP1 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+up-b-m7-integrated STATUS PASS M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+up-b-m7-integrated concurrent echo PASS: count=1, payload=451, rx_bytes=478, elapsed=0.001s
+up-a-m7-integrated concurrent echo PASS: count=1, payload=451, rx_bytes=478, elapsed=0.007s
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+[up-a boot=21 seq=277] [boot] UP CPU4 entered
+[up-a boot=21 seq=278] [boot] interrupt routing ready
+[up-a boot=21 seq=279] [boot] scheduler task entered
+[up-a boot=21 seq=280] [integrated] UP1 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-a boot=21 seq=281] [diag] before TestOpenamp
+[up-a boot=21 seq=282] [diag] backend enter
+[up-a boot=21 seq=283] [diag] msg sem=0 rc=0
+[up-a boot=21 seq=284] [diag] metal init rc=0
+[up-a boot=21 seq=285] [diag] device register rc=0
+[up-a boot=21 seq=286] [diag] device open rc=0
+[up-a boot=21 seq=287] [openamp] get rsctable 7b2575c8, size a64 
+[up-a boot=21 seq=288] [openamp]: get vring0: da 7a080000
+[up-a boot=21 seq=289] [openamp]: get vring1: da 7a0800e0
+[up-a boot=21 seq=290] [openamp] tty task started
+[up-a boot=21 seq=291] [openamp] ept ready
+[up-a boot=21 seq=292] [boot] RPMsg ready
+[up-a boot=21 seq=293] [integrated] M7 UP1 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+[up-a boot=21 seq=294] [integrated] M7 UP1 ERROR invalid-command
+[up-a boot=21 seq=295] [integrated] M7 UP1 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+[up-b boot=20 seq=273] [boot] UP CPU5 entered
+[up-b boot=20 seq=274] [boot] interrupt routing ready
+[up-b boot=20 seq=275] [boot] scheduler task entered
+[up-b boot=20 seq=276] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=20 seq=277] [diag] before TestOpenamp
+[up-b boot=20 seq=278] [diag] backend enter
+[up-b boot=20 seq=279] [diag] msg sem=0 rc=0
+[up-b boot=20 seq=280] [diag] metal init rc=0
+[up-b boot=20 seq=281] [diag] device register rc=0
+[up-b boot=20 seq=282] [diag] device open rc=0
+[up-b boot=20 seq=283] [openamp] get rsctable 7c2575c8, size a64 
+[up-b boot=20 seq=284] [openamp]: get vring0: da 7a0a0000
+[up-b boot=20 seq=285] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=20 seq=286] [openamp] tty task started
+[up-b boot=20 seq=287] [openamp] ept ready
+[up-b boot=20 seq=288] [boot] RPMsg ready
+[up-b boot=20 seq=289] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+[up-b boot=20 seq=290] [integrated] M7 UP2 ERROR invalid-command
+[up-b boot=20 seq=291] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+[up-b boot=20 seq=292] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+PASSIVE PAIR PASS stop=('up-a-m7-integrated', 'up-b-m7-integrated') start=('up-a-m7-integrated', 'up-b-m7-integrated') cycle=1
+up-a-m7-integrated STATUS PASS M7 UP1 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+up-b-m7-integrated STATUS PASS M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+up-b-m7-integrated concurrent echo PASS: count=1, payload=451, rx_bytes=478, elapsed=0.001s
+up-a-m7-integrated concurrent echo PASS: count=1, payload=451, rx_bytes=478, elapsed=0.007s
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+[up-a boot=22 seq=296] [boot] UP CPU4 entered
+[up-a boot=22 seq=297] [boot] interrupt routing ready
+[up-a boot=22 seq=298] [boot] scheduler task entered
+[up-a boot=22 seq=299] [integrated] UP1 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-a boot=22 seq=300] [diag] before TestOpenamp
+[up-a boot=22 seq=301] [diag] backend enter
+[up-a boot=22 seq=302] [diag] msg sem=0 rc=0
+[up-a boot=22 seq=303] [diag] metal init rc=0
+[up-a boot=22 seq=304] [diag] device register rc=0
+[up-a boot=22 seq=305] [diag] device open rc=0
+[up-a boot=22 seq=306] [openamp] get rsctable 7b2575c8, size a64 
+[up-a boot=22 seq=307] [openamp]: get vring0: da 7a080000
+[up-a boot=22 seq=308] [openamp]: get vring1: da 7a0800e0
+[up-a boot=22 seq=309] [openamp] tty task started
+[up-a boot=22 seq=310] [openamp] ept ready
+[up-a boot=22 seq=311] [boot] RPMsg ready
+[up-a boot=22 seq=312] [integrated] M7 UP1 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+[up-a boot=22 seq=313] [integrated] M7 UP1 ERROR invalid-command
+[up-a boot=22 seq=314] [integrated] M7 UP1 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+[up-a boot=22 seq=315] [integrated] M7 UP1 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+[up-b boot=21 seq=293] [boot] UP CPU5 entered
+[up-b boot=21 seq=294] [boot] interrupt routing ready
+[up-b boot=21 seq=295] [boot] scheduler task entered
+[up-b boot=21 seq=296] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=21 seq=297] [diag] before TestOpenamp
+[up-b boot=21 seq=298] [diag] backend enter
+[up-b boot=21 seq=299] [diag] msg sem=0 rc=0
+[up-b boot=21 seq=300] [diag] metal init rc=0
+[up-b boot=21 seq=301] [diag] device register rc=0
+[up-b boot=21 seq=302] [diag] device open rc=0
+[up-b boot=21 seq=303] [openamp] get rsctable 7c2575c8, size a64 
+[up-b boot=21 seq=304] [openamp]: get vring0: da 7a0a0000
+[up-b boot=21 seq=305] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=21 seq=306] [openamp] tty task started
+[up-b boot=21 seq=307] [openamp] ept ready
+[up-b boot=21 seq=308] [boot] RPMsg ready
+[up-b boot=21 seq=309] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+[up-b boot=21 seq=310] [integrated] M7 UP2 ERROR invalid-command
+[up-b boot=21 seq=311] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0
+PASSIVE PAIR PASS stop=('up-b-m7-integrated', 'up-a-m7-integrated') start=('up-a-m7-integrated', 'up-b-m7-integrated') cycle=1
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+PERIPHERAL SNAPSHOT AFTER {"drivers": {"26500000.serial": "dw-apb-uart", "2ab10000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "registers": {"0x2607400c": 37017, "0x26074010": 2457, "0x26074018": 4, "0x2608203c": 3536, "0x2608404c": 153, "0x2608608c": 56576, "0x26090374": 31488, "0x26090404": 387, "0x26090408": 387, "0x2609040c": 33, "0x26090410": 0, "0x26090414": 279, "0x26090418": 11, "0x2609041c": 768, "0x26090420": 768, "0x26090424": 768, "0x26090428": 768, "0x2609042c": 768, "0x26090430": 768, "0x26090434": 768, "0x26090438": 768, "0x26090808": 24512, "0x2609082c": 32768, "0x26090838": 32736, "0x2609083c": 37449, "0x26090840": 65468, "0x26090a2c": 0, "0x26090a38": 0, "0x26090a3c": 0, "0x26090a40": 0, "0x260b0320": 1, "0x260b0814": 16844, "0x260b0a14": 0, "0x2a601090": 0, "0x2a601094": 0, "0x2a601110": 286331264, "0x2a601114": 4009791488, "0x2a601210": 0, "0x2a601214": 0, "0x2a601310": 0, "0x2a601314": 0, "0x2a60149c": 2694881440, "0x2a6014a0": 2694881440, "0x2a6014a4": 2694881440, "0x2a6014b8": 2694881440, "0x2a60189c": 16843009, "0x2a6018a0": 16843009, "0x2a6018a4": 16843009, "0x2a6018b8": 16843009, "0x2a601c24": 1431655765, "0x2a601c28": 1431655765, "0x2a601c2c": 1431655765}}
+FINAL mcs=Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+micad={'MainPID': '311', 'NRestarts': '0', 'ActiveState': 'active'}
+FINAL fds=55; create/rm MCS fd leak is a known separate issue
+OVERALL PASS integrated passive pairs=2; peripheral jobs=0
+CLEANUP PASS original clients Offline, CPUs OFF, Linux bindings/resources unchanged, micad unchanged

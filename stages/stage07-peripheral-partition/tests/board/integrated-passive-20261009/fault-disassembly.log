@@ -1,0 +1,170 @@
+d22bdf200c326e2727d4c9ff9f19e4aa46c38727b3b7b7dedc7f33503fbf1581  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-final-v2-20261009/demos/rk3572_mica/build/tl3572-m7-integrated-up-a.elf
+b06e93b872fd5dde5c9b572149e09ef930d4368dd58e02cd47da33db7f150ae5  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-passive-diag-20261009/demos/rk3572_mica/build/tl3572-m7-integrated-up-a.elf
+000000007b256360 0000000000000e38 d shm_device
+000000007b259df0 0000000000000208 B g_excInfoInternal
+000000007b2e7b90 0000000000000028 b g_mmu_ctrl
+000000007ba00000 N g_mmu_page_begin
+000000007ba08000 N g_mmu_page_end
+000000007b256418 0000000000000e38 d shm_device
+000000007b259ea0 0000000000000208 B g_excInfoInternal
+000000007b2e7c40 0000000000000028 b g_mmu_ctrl
+000000007ba00000 N g_mmu_page_begin
+000000007ba08000 N g_mmu_page_end
+
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-final-v2-20261009/demos/rk3572_mica/build/tl3572-m7-integrated-up-a.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+
+000000007b2029fc <metal_io_init>:
+    7b2029fc:	a9b87bfd 	stp	x29, x30, [sp, #-128]!
+    7b202a00:	910003fd 	mov	x29, sp
+    7b202a04:	f9001fe0 	str	x0, [sp, #56]
+    7b202a08:	f9001be1 	str	x1, [sp, #48]
+    7b202a0c:	f90017e2 	str	x2, [sp, #40]
+    7b202a10:	f90013e3 	str	x3, [sp, #32]
+    7b202a14:	b9001fe4 	str	w4, [sp, #28]
+    7b202a18:	b9001be5 	str	w5, [sp, #24]
+    7b202a1c:	f9000be6 	str	x6, [sp, #16]
+    7b202a20:	910103e0 	add	x0, sp, #0x40
+    7b202a24:	4f00041f 	movi	v31.4s, #0x0
+    7b202a28:	3d80001f 	str	q31, [x0]
+    7b202a2c:	3d80041f 	str	q31, [x0, #16]
+    7b202a30:	3d80081f 	str	q31, [x0, #32]
+    7b202a34:	3d800c1f 	str	q31, [x0, #48]
+    7b202a38:	f9401fe0 	ldr	x0, [sp, #56]
+    7b202a3c:	f9401be1 	ldr	x1, [sp, #48]
+    7b202a40:	f9000001 	str	x1, [x0]
+    7b202a44:	f9401fe0 	ldr	x0, [sp, #56]
+    7b202a48:	f94017e1 	ldr	x1, [sp, #40]
+    7b202a4c:	f9000401 	str	x1, [x0, #8]
+    7b202a50:	f9401fe0 	ldr	x0, [sp, #56]
+    7b202a54:	f94013e1 	ldr	x1, [sp, #32]
+    7b202a58:	f9000801 	str	x1, [x0, #16]
+    7b202a5c:	b9401fe1 	ldr	w1, [sp, #28]
+    7b202a60:	f9401fe0 	ldr	x0, [sp, #56]
+    7b202a64:	f9000c01 	str	x1, [x0, #24]
+    7b202a68:	b9401fe0 	ldr	w0, [sp, #28]
+    7b202a6c:	7100fc1f 	cmp	w0, #0x3f
+    7b202a70:	540000a9 	b.ls	7b202a84 <metal_io_init+0x88>  // b.plast
+    7b202a74:	f9401fe0 	ldr	x0, [sp, #56]
+    7b202a78:	92800001 	mov	x1, #0xffffffffffffffff    	// #-1
+    7b202a7c:	f9001001 	str	x1, [x0, #32]
+    7b202a80:	14000007 	b	7b202a9c <metal_io_init+0xa0>
+    7b202a84:	b9401fe0 	ldr	w0, [sp, #28]
+    7b202a88:	d2800021 	mov	x1, #0x1                   	// #1
+    7b202a8c:	9ac02020 	lsl	x0, x1, x0
+    7b202a90:	d1000401 	sub	x1, x0, #0x1
+    7b202a94:	f9401fe0 	ldr	x0, [sp, #56]
+    7b202a98:	f9001001 	str	x1, [x0, #32]
+    7b202a9c:	f9401fe0 	ldr	x0, [sp, #56]
+    7b202aa0:	b9401be1 	ldr	w1, [sp, #24]
+    7b202aa4:	b9002801 	str	w1, [x0, #40]
+    7b202aa8:	f9400be0 	ldr	x0, [sp, #16]
+    7b202aac:	f100001f 	cmp	x0, #0x0
+    7b202ab0:	540001a0 	b.eq	7b202ae4 <metal_io_init+0xe8>  // b.none
+    7b202ab4:	f9401fe0 	ldr	x0, [sp, #56]
+    7b202ab8:	9100c000 	add	x0, x0, #0x30
+    7b202abc:	f9400be1 	ldr	x1, [sp, #16]
+    7b202ac0:	3dc0003c 	ldr	q28, [x1]
+    7b202ac4:	3dc0043d 	ldr	q29, [x1, #16]
+    7b202ac8:	3dc0083e 	ldr	q30, [x1, #32]
+    7b202acc:	3dc00c3f 	ldr	q31, [x1, #48]
+    7b202ad0:	3d80001c 	str	q28, [x0]
+    7b202ad4:	3d80041d 	str	q29, [x0, #16]
+    7b202ad8:	3d80081e 	str	q30, [x0, #32]
+    7b202adc:	3d800c1f 	str	q31, [x0, #48]
+    7b202ae0:	1400000d 	b	7b202b14 <metal_io_init+0x118>
+    7b202ae4:	f9401fe0 	ldr	x0, [sp, #56]
+    7b202ae8:	9100c000 	add	x0, x0, #0x30
+    7b202aec:	aa0003e1 	mov	x1, x0
+    7b202af0:	910103e0 	add	x0, sp, #0x40
+    7b202af4:	3dc0001c 	ldr	q28, [x0]
+    7b202af8:	3dc0041d 	ldr	q29, [x0, #16]
+    7b202afc:	3dc0081e 	ldr	q30, [x0, #32]
+    7b202b00:	3dc00c1f 	ldr	q31, [x0, #48]
+    7b202b04:	3d80003c 	str	q28, [x1]
+    7b202b08:	3d80043d 	str	q29, [x1, #16]
+    7b202b0c:	3d80083e 	str	q30, [x1, #32]
+    7b202b10:	3d800c3f 	str	q31, [x1, #48]
+    7b202b14:	f9401fe0 	ldr	x0, [sp, #56]
+    7b202b18:	97ffffb4 	bl	7b2029e8 <metal_sys_io_mem_map>
+    7b202b1c:	d503201f 	nop
+    7b202b20:	a8c87bfd 	ldp	x29, x30, [sp], #128
+    7b202b24:	d65f03c0 	ret
+
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-final-v2-20261009/demos/rk3572_mica/build/tl3572-m7-integrated-up-a.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+000000007b2000a8 <Start>:
+    7b2000a8:	58000101 	ldr	x1, 7b2000c8 <OsEnterReset+0x10>
+    7b2000ac:	927cec3f 	and	sp, x1, #0xfffffffffffffff0
+    7b2000b0:	94006b8a 	bl	7b21aed8 <mmu_init>
+    7b2000b4:	14000007 	b	7b2000d0 <OsResetVector>
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+int metal_io_block_read(struct metal_io_region *io, unsigned long offset,
+	       void *restrict dst, int len)
+{
+	unsigned char *ptr = metal_io_virt(io, offset);
+	unsigned char *dest = dst;
+	int retlen;
+
+	if (!ptr)
+		return -ERANGE;
+	if ((offset + len) > io->size)
+		len = io->size - offset;
+	retlen = len;
+	if (io->ops.block_read) {
+		retlen = (*io->ops.block_read)(
+			io, offset, dst, memory_order_seq_cst, len);
+	} else {
+		atomic_thread_fence(memory_order_seq_cst);
+		while ( len && (
+			((uintptr_t)dest % sizeof(int)) ||
+			((uintptr_t)ptr % sizeof(int)))) {
+			*(unsigned char *)dest =
+				*(const unsigned char *)ptr;
+			dest++;
+			ptr++;
+			len--;
+		}
+		for (; len >= (int)sizeof(int); dest += sizeof(int),
+					ptr += sizeof(int),
+					len -= sizeof(int))
+			*(unsigned int *)dest = *(const unsigned int *)ptr;
+		for (; len != 0; dest++, ptr++, len--)
+			*(unsigned char *)dest =
+				*(const unsigned char *)ptr;
+	}
+	return retlen;
+}
+
+int metal_io_block_write(struct metal_io_region *io, unsigned long offset,
+	       const void *restrict src, int len)
+{
+	unsigned char *ptr = metal_io_virt(io, offset);
+	const unsigned char *source = src;
+	int retlen;
+
+	if (!ptr)
+		return -ERANGE;
+	if ((offset + len) > io->size)
+		len = io->size - offset;
+	retlen = len;
+	if (io->ops.block_write) {
+		retlen = (*io->ops.block_write)(
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-final-v2-20261009/src/arch/cpu/armv8/common/os_cpu_armv8_external.h:142:extern uintptr_t __bss_end__;
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-final-v2-20261009/src/arch/cpu/armv8/common/os_cpu_armv8_external.h:143:extern uintptr_t __bss_start__;
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-final-v2-20261009/src/arch/cpu/armv8/common/boot/prt_bss_init.c:21:    uintptr_t len = (uintptr_t)(&__bss_end__) - (uintptr_t)(&__bss_start__);
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-final-v2-20261009/src/arch/cpu/armv8/common/boot/prt_bss_init.c:22:    if (memset_s((void *)&__bss_start__, len, 0, len) != EOK) {
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-final-v2-20261009/demos/rk3572_mica/bsp/rk3572/rk3572_mica.ld.in:114:        __bss_start__ = .;
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-final-v2-20261009/demos/rk3572_mica/bsp/rk3572/rk3572_mica.ld.in:119:        __bss_end__ = .;

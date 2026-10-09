@@ -1,0 +1,12 @@
+d22bdf200c326e2727d4c9ff9f19e4aa46c38727b3b7b7dedc7f33503fbf1581  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-final-v2-20261009/demos/rk3572_mica/build/tl3572-m7-integrated-up-a.elf
+b06e93b872fd5dde5c9b572149e09ef930d4368dd58e02cd47da33db7f150ae5  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-integrated-passive-diag-20261009/demos/rk3572_mica/build/tl3572-m7-integrated-up-a.elf
+000000007b256360 0000000000000e38 d shm_device
+000000007b259df0 0000000000000208 B g_excInfoInternal
+000000007b2e7b90 0000000000000028 b g_mmu_ctrl
+000000007ba00000 N g_mmu_page_begin
+000000007ba08000 N g_mmu_page_end
+000000007b256418 0000000000000e38 d shm_device
+000000007b259ea0 0000000000000208 B g_excInfoInternal
+000000007b2e7c40 0000000000000028 b g_mmu_ctrl
+000000007ba00000 N g_mmu_page_begin
+000000007ba08000 N g_mmu_page_end

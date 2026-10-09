@@ -1,0 +1,329 @@
+{
+  "exc": [
+    "0x6f746f7250696e55",
+    "0x33302e3232206e",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x300000005",
+    "0x2123400000000",
+    "0x0",
+    "0x100000000",
+    "0x0",
+    "0x7b2d68c0",
+    "0x7b2d6a80",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x0",
+    "0x30d00800",
+    "0x7b22a000",
+    "0x4",
+    "0x7b2d68c0",
+    "0x7b202b04",
+    "0x60000305",
+    "0x7b2563a8",
+    "0x96000061",
+    "0x0",
+    "0x7b21c288",
+    "0x7b2d68c0",
+    "0x28282828",
+    "0x27272727",
+    "0x26262626",
+    "0x25252525",
+    "0x24242424",
+    "0x23232323",
+    "0x22222222",
+    "0x21212121",
+    "0x20202020",
+    "0x7b2d70f0",
+    "0x18181818",
+    "0x17171717",
+    "0x16161616",
+    "0x15151515",
+    "0x14141414",
+    "0x13131313",
+    "0x12121212",
+    "0x11111111",
+    "0x1",
+    "0x1",
+    "0x7b2d6400",
+    "0x7b256378",
+    "0x0",
+    "0x0",
+    "0xffffffff",
+    "0x20000",
+    "0x7b256358",
+    "0x7b2563a8",
+    "0x7b2d6900"
+  ],
+  "metal": [
+    "0x6",
+    "0x7b203044",
+    "0x7b256040",
+    "0x7b256040",
+    "0x7b25aa28",
+    "0x7b25aa28",
+    "0x7b257178",
+    "0x7b257178"
+  ],
+  "tskcb": [
+    "0x7b2d70f0"
+  ],
+  "mmu_ctrl": {
+    "tlb_addr": "0x0",
+    "tlb_size": "0x0",
+    "tlb_fillptr": "0x0",
+    "granule": "0x0",
+    "start_level": "0x0",
+    "va_bits": "0x0"
+  },
+  "mmu_ctrl_note": "BSS is cleared after mmu_init; these zero fields are NOT the original allocation counters.",
+  "exception": {
+    "sctlr": "0x30d00800",
+    "mmu_enabled": false,
+    "elr": "0x7b202b04",
+    "far": "0x7b2563a8",
+    "esr": "0x96000061"
+  },
+  "page_tables": {
+    "nonzero_entries": {
+      "0x7ba00000": 2,
+      "0x7ba01000": 5,
+      "0x7ba02000": 32,
+      "0x7ba03000": 4,
+      "0x7ba04000": 4,
+      "0x7ba05000": 1,
+      "0x7ba06000": 1,
+      "0x7ba07000": 1
+    },
+    "mapping_walks": {
+      "0x7a080000": {
+        "mapped": true,
+        "path": [
+          {
+            "level": 1,
+            "table": "0x7ba00000",
+            "index": 1,
+            "pte": "0x7ba01003"
+          },
+          {
+            "level": 2,
+            "table": "0x7ba01000",
+            "index": 464,
+            "pte": "0x7ba02003"
+          },
+          {
+            "level": 3,
+            "table": "0x7ba02000",
+            "index": 128,
+            "pte": "0x7a080403"
+          }
+        ]
+      },
+      "0x7b200000": {
+        "mapped": true,
+        "path": [
+          {
+            "level": 1,
+            "table": "0x7ba00000",
+            "index": 1,
+            "pte": "0x7ba01003"
+          },
+          {
+            "level": 2,
+            "table": "0x7ba01000",
+            "index": 473,
+            "pte": "0x7b200711"
+          }
+        ]
+      },
+      "0x2a600000": {
+        "mapped": true,
+        "path": [
+          {
+            "level": 1,
+            "table": "0x7ba00000",
+            "index": 0,
+            "pte": "0x7ba03003"
+          },
+          {
+            "level": 2,
+            "table": "0x7ba03000",
+            "index": 339,
+            "pte": "0x7ba04003"
+          },
+          {
+            "level": 3,
+            "table": "0x7ba04000",
+            "index": 0,
+            "pte": "0x2a600403"
+          }
+        ]
+      },
+      "0x2ab10000": {
+        "mapped": true,
+        "path": [
+          {
+            "level": 1,
+            "table": "0x7ba00000",
+            "index": 0,
+            "pte": "0x7ba03003"
+          },
+          {
+            "level": 2,
+            "table": "0x7ba03000",
+            "index": 341,
+            "pte": "0x7ba05003"
+          },
+          {
+            "level": 3,
+            "table": "0x7ba05000",
+            "index": 272,
+            "pte": "0x6000002ab10403"
+          }
+        ]
+      },
+      "0x2c160000": {
+        "mapped": true,
+        "path": [
+          {
+            "level": 1,
+            "table": "0x7ba00000",
+            "index": 0,
+            "pte": "0x7ba03003"
+          },
+          {
+            "level": 2,
+            "table": "0x7ba03000",
+            "index": 352,
+            "pte": "0x7ba06003"
+          },
+          {
+            "level": 3,
+            "table": "0x7ba06000",
+            "index": 352,
+            "pte": "0x6000002c160403"
+          }
+        ]
+      },
+      "0x26500000": {
+        "mapped": true,
+        "path": [
+          {
+            "level": 1,
+            "table": "0x7ba00000",
+            "index": 0,
+            "pte": "0x7ba03003"
+          },
+          {
+            "level": 2,
+            "table": "0x7ba03000",
+            "index": 306,
+            "pte": "0x7ba07003"
+          },
+          {
+            "level": 3,
+            "table": "0x7ba07000",
+            "index": 256,
+            "pte": "0x60000026500403"
+          }
+        ]
+      },
+      "0x26090000": {
+        "mapped": false,
+        "path": [
+          {
+            "level": 1,
+            "table": "0x7ba00000",
+            "index": 0,
+            "pte": "0x7ba03003"
+          },
+          {
+            "level": 2,
+            "table": "0x7ba03000",
+            "index": 304,
+            "pte": "0x0"
+          }
+        ]
+      },
+      "0x260b0000": {
+        "mapped": false,
+        "path": [
+          {
+            "level": 1,
+            "table": "0x7ba00000",
+            "index": 0,
+            "pte": "0x7ba03003"
+          },
+          {
+            "level": 2,
+            "table": "0x7ba03000",
+            "index": 304,
+            "pte": "0x0"
+          }
+        ]
+      },
+      "0x26074000": {
+        "mapped": false,
+        "path": [
+          {
+            "level": 1,
+            "table": "0x7ba00000",
+            "index": 0,
+            "pte": "0x7ba03003"
+          },
+          {
+            "level": 2,
+            "table": "0x7ba03000",
+            "index": 304,
+            "pte": "0x0"
+          }
+        ]
+      },
+      "0x26086000": {
+        "mapped": false,
+        "path": [
+          {
+            "level": 1,
+            "table": "0x7ba00000",
+            "index": 0,
+            "pte": "0x7ba03003"
+          },
+          {
+            "level": 2,
+            "table": "0x7ba03000",
+            "index": 304,
+            "pte": "0x0"
+          }
+        ]
+      },
+      "0x7b000000": {
+        "mapped": false,
+        "path": [
+          {
+            "level": 1,
+            "table": "0x7ba00000",
+            "index": 1,
+            "pte": "0x7ba01003"
+          },
+          {
+            "level": 2,
+            "table": "0x7ba01000",
+            "index": 472,
+            "pte": "0x0"
+          }
+        ]
+      }
+    }
+  }
+}

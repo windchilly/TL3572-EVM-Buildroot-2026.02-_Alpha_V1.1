@@ -1,0 +1,41 @@
+diff --git a/demos/rk3572_mica/apps/openamp/main.c b/demos/rk3572_mica/apps/openamp/main.c
+--- a/demos/rk3572_mica/apps/openamp/main.c
++++ b/demos/rk3572_mica/apps/openamp/main.c
+@@ -50,3 +50,4 @@
+ #endif
+ #if defined(OS_OPTION_OPENAMP)
++    PRT_Printf("[diag] before TestOpenamp\n");
+     TestOpenamp();
+diff --git a/src/component/mica/rpmsg_backend_rsc_table.c b/src/component/mica/rpmsg_backend_rsc_table.c
+--- a/src/component/mica/rpmsg_backend_rsc_table.c
++++ b/src/component/mica/rpmsg_backend_rsc_table.c
+@@ -253,6 +253,8 @@
+     struct metal_device *device;
+ 
++    PRT_Printf("[diag] backend enter\n");
+     rpmsg_ipi_init();
+     err = PRT_SemCreate(0, &msg_sem);
++    PRT_Printf("[diag] msg sem=%u rc=%d\n", msg_sem, err);
+     if (err) {
+         PRT_Printf("[openamp] SemCreate failed %d\n", err);
+@@ -263,5 +265,6 @@
+     /* Libmetal setup */
+     err = metal_init(&metal_params);
++    PRT_Printf("[diag] metal init rc=%d\n", err);
+     if (err) {
+         PRT_Printf("[openamp] metal_init failed %d\n", err);
+         goto cleanup_ipi;
+@@ -269,5 +272,6 @@
+     err = metal_register_generic_device(&shm_device);
++    PRT_Printf("[diag] device register rc=%d\n", err);
+     if (err) {
+         PRT_Printf("[openamp] Couldn't register shared memory device %d\n", err);
+         goto cleanup_metal;
+     }
+@@ -275,5 +279,6 @@
+     err = metal_device_open("generic", SHM_DEVICE_NAME, &device);
++    PRT_Printf("[diag] device open rc=%d\n", err);
+     if (err) {
+         PRT_Printf("[openamp] metal_device_open failed %d\n", err);
+         goto cleanup_metal;
+     }

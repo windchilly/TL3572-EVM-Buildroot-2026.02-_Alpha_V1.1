@@ -1,0 +1,18 @@
+[
+  {
+    "elf": "tl3572-m7-integrated-up-a.elf",
+    "table_pages": 9,
+    "required_bytes": 36864,
+    "available_bytes": 32768,
+    "fits": false,
+    "first_overflow_region": "0x26090000"
+  },
+  {
+    "elf": "tl3572-m7-integrated-up-b.elf",
+    "table_pages": 8,
+    "required_bytes": 32768,
+    "available_bytes": 32768,
+    "fits": true,
+    "first_overflow_region": null
+  }
+]
