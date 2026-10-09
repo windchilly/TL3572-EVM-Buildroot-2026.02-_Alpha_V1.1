@@ -1,0 +1,1 @@
+{"controller": "U21/1-0020", "global_gpio": 517, "interfaces": ["eth2"], "mode": "enable", "new_export": true, "offset": 2, "physical_on": 0, "usb_or_phy_reset": false}

@@ -1,0 +1,46 @@
+[31937.170482] mcs: received ioctl cmd to send ipi to cpu(4)
+[31937.170676] mcs: received ioctl cmd to send ipi to cpu(5)
+[31937.171038] mcs: received ioctl cmd to send ipi to cpu(4)
+[31937.171289] mcs: received ioctl cmd to send ipi to cpu(5)
+[31937.171594] mcs: received ioctl cmd to send ipi to cpu(4)
+[31937.171752] mcs: received ioctl cmd to send ipi to cpu(5)
+[31937.172013] mcs: received ioctl cmd to send ipi to cpu(4)
+[31937.172230] mcs: received ioctl cmd to send ipi to cpu(5)
+[31937.173138] mcs: received ioctl cmd to send ipi to cpu(5)
+[31937.173761] mcs: received ioctl cmd to send ipi to cpu(5)
+[31937.367500] mcs: received ioctl cmd to send ipi to cpu(5)
+[31937.367646] mcs: received ioctl cmd to send ipi to cpu(5)
+[31937.367662] mcs: received ioctl cmd to send ipi to cpu(5)
+[31937.673851] mcs: received ioctl cmd to send ipi to cpu(4)
+[31937.864504] mcs: received ioctl cmd to send ipi to cpu(4)
+[31937.864690] mcs: received ioctl cmd to send ipi to cpu(4)
+[31937.864707] mcs: received ioctl cmd to send ipi to cpu(4)
+[33893.241098] usb 1-1.4: USB disconnect, device number 3
+[33893.241157] usb 1-1.4.3: USB disconnect, device number 4
+[33893.486361] usb 1-1.4: new high-speed USB device number 5 using xhci-hcd
+[33893.594705] usb 1-1.4: New USB device found, idVendor=1a86, idProduct=8091, bcdDevice=13.40
+[33893.594747] usb 1-1.4: New USB device strings: Mfr=0, Product=2, SerialNumber=0
+[33893.594757] usb 1-1.4: Product: USB HUB
+[33893.657062] hub 1-1.4:1.0: USB hub found
+[33893.657178] hub 1-1.4:1.0: 4 ports detected
+[33894.018288] usb 1-1.4.1: new high-speed USB device number 6 using xhci-hcd
+[33894.123935] usb 1-1.4.1: New USB device found, idVendor=0fe6, idProduct=9900, bcdDevice=20.00
+[33894.123971] usb 1-1.4.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[33894.123978] usb 1-1.4.1: Product: USB 10/100 LAN
+[33894.123983] usb 1-1.4.1: Manufacturer: CoreChips
+[33894.123989] usb 1-1.4.1: SerialNumber: 00E09A42BAEB
+[33894.258376] usb 1-1.4.3: new high-speed USB device number 7 using xhci-hcd
+[33894.367460] usb 1-1.4.3: New USB device found, idVendor=349b, idProduct=6160, bcdDevice= 2.00
+[33894.367495] usb 1-1.4.3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[33894.367502] usb 1-1.4.3: Product: Bouffalo CDC DEMO
+[33894.367508] usb 1-1.4.3: Manufacturer: Bouffalo
+[33894.456922] usb 1-1.4.1: reset high-speed USB device number 6 using xhci-hcd
+[33894.616928] kernel version : 60c45
+[33894.616960] mac addr : 0x0:0xe0:0x9a:0x42:0xba:0xeb
+[33894.617324] led sel setting :  0xc38
+[33894.644467] sr9900 1-1.4.1:1.0: skip request firmware
+[33894.671909] sr9900 1-1.4.1:1.0 eth2: v1.12.13
+[33896.650265] sr9900 1-1.4.1:1.0 eth2: carrier on
+[33897.420969] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+192.168.2.1 dev eth0 src 192.168.2.141 uid 0 
+    cache 

@@ -13,6 +13,11 @@ CAN FD/BRS、UART4↔UART8 RS-232 及 UART1↔UART2 RS-485 自主字段初始化
 见[修复与回归记录](stages/stage07-peripheral-partition/tests/board/integrated-mmu-fix-20261009/README.md)，
 原始[失败证据](stages/stage07-peripheral-partition/tests/board/integrated-passive-20261009/README.md)保留在固定提交。
 
+2026-10-09 按“先解决ETH3”要求补齐专用电源使能，恢复SR9900枚举与100M全双工链路；
+ETH2↔ETH3两轮Linux物理对测每方向累计4000帧通过，开机电源服务已启用，冷启动未测。
+这是ETH2直驱的Linux测试对端准备，不是UP2以太网直驱通过；CAN/串口发送限制仍有效。
+见[ETH3恢复记录](stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/README.md)。
+
 ## 从哪里开始
 
 | 目的 | 入口 |

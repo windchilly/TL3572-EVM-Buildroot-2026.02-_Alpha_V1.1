@@ -1,5 +1,14 @@
 # M7 构建输入与 RPC 修复复建
 
+## ETH3 主机电源恢复
+
+2026-10-09新增`source/host/eth3_power_enable.py`、`m7-eth3-power.service`与
+`build/install_m7_eth3_host.sh`，用于openEuler独占的ETH3专用U21/P02电源初始化。
+将三文件放到板端同一目录，以root运行installer；已有不同部署文件会拒绝覆盖。
+只初始化GPIO和安装主机服务，不改M6镜像/DT或统一UP ELF，也没有自动加入旧源码归档/Yocto配方。
+开机服务已enabled且实际执行/重复启动PASS，板卡冷启动未测；电源首次使能可能引发下游USB Hub重枚举。
+完整换板步骤与Linux物理对端验证见[ETH3恢复记录](../tests/board/eth3-recovery-20261009/README.md)。
+
 在固定 M6 构建环境内执行；不能仅靠 Stage07 目录从空系统重建完整镜像。M6 上游源码、工具链和 Yocto 环境的准备步骤见仓库根目录 `repro-inputs/README.md`。
 
 2026-09-28 增加[换机、空目录构建入口](../../../repro-inputs/rk3572/README.md)：

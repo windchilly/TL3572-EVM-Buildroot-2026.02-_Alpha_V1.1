@@ -1,0 +1,13 @@
+[Unit]
+Description=TL3572 ETH3 dedicated U21/P02 power enable (no shared USB reset)
+After=systemd-udev-trigger.service
+Before=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/libexec/m7/eth3_power_enable.py --enable
+RemainAfterExit=yes
+TimeoutStartSec=40
+
+[Install]
+WantedBy=multi-user.target

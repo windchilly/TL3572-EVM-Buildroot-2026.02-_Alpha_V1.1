@@ -1,0 +1,194 @@
+{
+  "utc_epoch": 1791535359.2716088,
+  "boot_id": "91f20083-69fc-4bdb-9008-c621eb8b43e7",
+  "gpiochips": {
+    "gpiochip515": {
+      "label": "1-0020",
+      "base": 515,
+      "device": "/sys/devices/platform/soc/2c030000.i2c/i2c-1/1-0020"
+    },
+    "gpiochip531": {
+      "label": "1-0021",
+      "base": 531,
+      "device": "/sys/devices/platform/soc/2c030000.i2c/i2c-1/1-0021"
+    }
+  },
+  "gpio_debug": "gpiochip0: GPIOs 0-31, parent: platform/26300000.gpio, gpio0:\n gpio-0   (                    |user-key1           ) in  hi IRQ ACTIVE LOW\n gpio-2   (                    |irq                 ) in  hi ACTIVE LOW\n gpio-6   (                    |interrupt           ) in  hi IRQ \n gpio-14  (                    |user-led1           ) out lo \n gpio-19  (                    |heartbeat           ) out lo \n\ngpiochip1: GPIOs 32-63, parent: platform/2b200000.gpio, gpio1:\n\ngpiochip2: GPIOs 64-95, parent: platform/2b300000.gpio, gpio2:\n gpio-72  (                    |interrupt           ) in  hi IRQ \n gpio-74  (                    |pwm@0               ) out lo \n gpio-79  (                    |vcc3v3-lcd          ) out lo \n\ngpiochip3: GPIOs 96-127, parent: platform/2b400000.gpio, gpio3:\n gpio-100 (                    |pendown             ) in  hi IRQ ACTIVE LOW\n gpio-117 (                    |vcc-mipicsi0-regulat) out lo \n gpio-118 (                    |vcc-mipicsi1-regulat) out lo \n gpio-124 (                    |vcc3v3-pcie0        ) out lo \n\ngpiochip4: GPIOs 128-159, parent: platform/2b500000.gpio, gpio4:\n gpio-140 (                    |hp-det              ) in  lo IRQ \n gpio-141 (                    |user-led2           ) out lo \n\ngpiochip5: GPIOs 512-514, parent: platform/rk806-pinctrl.1.auto, rk806-gpio, can sleep:\n\ngpiochip6: GPIOs 515-530, parent: i2c/1-0020, 1-0020, can sleep:\n gpio-517 (                    |sysfs               ) out lo \n gpio-518 (                    |reset               ) in  hi ACTIVE LOW\n gpio-520 (                    |enable              ) in  hi \n gpio-522 (                    |hp-con              ) out lo \n\ngpiochip7: GPIOs 531-546, parent: i2c/1-0021, 1-0021, can sleep:\n gpio-538 (                    |usb_hub_rst         ) out hi \n gpio-543 (                    |select              ) out hi \n gpio-544 (                    |vbus5v0-typec       ) out lo \n",
+  "networks": {
+    "eth1": {
+      "device": "/sys/devices/platform/soc/2a040000.ethernet",
+      "driver": "rk_gmac-dwmac",
+      "address": "da:14:36:8b:78:f0",
+      "operstate": "up",
+      "carrier": "1",
+      "speed": "100",
+      "duplex": "full",
+      "statistics": {
+        "rx_packets": 4016,
+        "tx_packets": 4033,
+        "rx_bytes": 3160570,
+        "tx_bytes": 3162180,
+        "rx_errors": 0,
+        "tx_errors": 0,
+        "rx_dropped": 0,
+        "tx_dropped": 0
+      }
+    },
+    "eth2": {
+      "device": "/sys/devices/platform/soc/24400000.usb/xhci-hcd.0.auto/usb1/1-1/1-1.4/1-1.4.1/1-1.4.1:1.0",
+      "driver": "sr9900",
+      "address": "00:e0:9a:42:ba:eb",
+      "operstate": "up",
+      "carrier": "1",
+      "speed": "100",
+      "duplex": "full",
+      "statistics": {
+        "rx_packets": 4019,
+        "tx_packets": 4033,
+        "rx_bytes": 3104718,
+        "tx_bytes": 3162180,
+        "rx_errors": 0,
+        "tx_errors": 0,
+        "rx_dropped": 0,
+        "tx_dropped": 0
+      }
+    },
+    "eth0": {
+      "device": "/sys/devices/platform/soc/29d20000.ethernet",
+      "driver": "rk_gmac-dwmac",
+      "address": "d6:14:36:8b:78:f0",
+      "operstate": "up",
+      "carrier": "1",
+      "speed": "100",
+      "duplex": "full",
+      "statistics": {
+        "rx_packets": 39217,
+        "tx_packets": 12274,
+        "rx_bytes": 22315254,
+        "tx_bytes": 2041296,
+        "rx_errors": 0,
+        "tx_errors": 0,
+        "rx_dropped": 17104,
+        "tx_dropped": 10
+      }
+    }
+  },
+  "commands": [
+    {
+      "argv": [
+        "lsusb"
+      ],
+      "rc": 0,
+      "stdout": "Bus 002 Device 002: ID 1a86:80a1  USB3.0 HUB\nBus 002 Device 001: ID 1d6b:0003 Linux 6.12.69-gf1b67c293213 xhci-hcd xHCI Host Controller\nBus 001 Device 007: ID 349b:6160 Bouffalo Bouffalo CDC DEMO\nBus 001 Device 006: ID 0fe6:9900 CoreChips USB 10/100 LAN\nBus 001 Device 005: ID 1a86:8091  USB HUB\nBus 001 Device 002: ID 1a86:80a0  USB2.0 HUB\nBus 001 Device 001: ID 1d6b:0002 Linux 6.12.69-gf1b67c293213 xhci-hcd xHCI Host Controller\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsusb",
+        "-t"
+      ],
+      "rc": 0,
+      "stdout": "/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 5000M\n    |__ Port 1: Dev 2, If 0, Class=, Driver=hub/4p, 5000M\n/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci-hcd/1p, 480M\n    |__ Port 1: Dev 2, If 0, Class=, Driver=hub/4p, 480M\n        |__ Port 4: Dev 5, If 0, Class=, Driver=hub/4p, 480M\n            |__ Port 1: Dev 6, If 0, Class=, Driver=sr9900, 480M\n            |__ Port 3: Dev 7, If 0, Class=, Driver=, 480M\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "ip",
+        "-br",
+        "address"
+      ],
+      "rc": 0,
+      "stdout": "lo               UNKNOWN        127.0.0.1/8 ::1/128 \ncan0             DOWN           \ncan2             DOWN           \neth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 \neth1             UP             fe80::d814:36ff:fe8b:78f0/64 \ncan1             DOWN           \ncan3             DOWN           \neth2             UP             fe80::2e0:9aff:fe42:baeb/64 \n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "ip",
+        "route"
+      ],
+      "rc": 0,
+      "stdout": "default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 \n192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 \n192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 \n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "systemctl",
+        "show",
+        "micad",
+        "--property=MainPID,NRestarts,ActiveState"
+      ],
+      "rc": 0,
+      "stdout": "MainPID=311\nNRestarts=0\nActiveState=active\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "mcsctl",
+        "status"
+      ],
+      "rc": 0,
+      "stdout": "Name                          Assigned CPU        State               Service\nup-b                          5                   Offline\nup-a                          4                   Offline\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "findmnt",
+        "-rn",
+        "-o",
+        "SOURCE,TARGET,FSTYPE"
+      ],
+      "rc": 0,
+      "stdout": "/dev/mmcblk0p6 / ext4\ndevtmpfs /dev devtmpfs\nproc /proc proc\nsysfs /sys sysfs\nsecurityfs /sys/kernel/security securityfs\ntmpfs /dev/shm tmpfs\ndevpts /dev/pts devpts\ntmpfs /run tmpfs\ntmpfs /sys/fs/cgroup tmpfs\ncgroup2 /sys/fs/cgroup/unified cgroup2\ncgroup /sys/fs/cgroup/systemd cgroup\ncgroup /sys/fs/cgroup/cpu,cpuacct cgroup\ncgroup /sys/fs/cgroup/devices cgroup\ncgroup /sys/fs/cgroup/freezer cgroup\ndebugfs /sys/kernel/debug debugfs\ntracefs /sys/kernel/tracing tracefs\ntmpfs /tmp tmpfs\nramfs /run/credentials/systemd-sysctl.service ramfs\nfusectl /sys/fs/fuse/connections fusectl\nconfigfs /sys/kernel/config configfs\nramfs /run/credentials/systemd-tmpfiles-setup-dev.service ramfs\nramfs /run/credentials/systemd-tmpfiles-setup.service ramfs\nramfs /run/credentials/systemd-resolved.service ramfs\n/dev/mmcblk0p7 /oem ext4\n/dev/mmcblk0p8 /userdata ext4\ntmpfs /run/user/0 tmpfs\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "ethtool",
+        "eth1"
+      ],
+      "rc": 0,
+      "stdout": "Settings for eth1:\n\tSupported ports: [ TP\t MII ]\n\tSupported link modes:   10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tSupported pause frame use: Symmetric Receive-only\n\tSupports auto-negotiation: Yes\n\tSupported FEC modes: Not reported\n\tAdvertised link modes:  10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tAdvertised pause frame use: Symmetric Receive-only\n\tAdvertised auto-negotiation: Yes\n\tAdvertised FEC modes: Not reported\n\tLink partner advertised link modes:  10baseT/Half 10baseT/Full\n\t                                     100baseT/Half 100baseT/Full\n\tLink partner advertised pause frame use: Symmetric Receive-only\n\tLink partner advertised auto-negotiation: Yes\n\tLink partner advertised FEC modes: Not reported\n\tSpeed: 100Mb/s\n\tDuplex: Full\n\tAuto-negotiation: on\n\tmaster-slave cfg: preferred slave\n\tmaster-slave status: slave\n\tPort: Twisted Pair\n\tPHYAD: 1\n\tTransceiver: external\n\tMDI-X: Unknown\n\tSupports Wake-on: ug\n\tWake-on: d\n        Current message level: 0x0000003f (63)\n                               drv probe link timer ifdown ifup\n\tLink detected: yes\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "ethtool",
+        "eth2"
+      ],
+      "rc": 0,
+      "stdout": "Settings for eth2:\n\tSupported ports: [ TP\t MII ]\n\tSupported link modes:   10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\tSupported pause frame use: No\n\tSupports auto-negotiation: Yes\n\tSupported FEC modes: Not reported\n\tAdvertised link modes:  10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\tAdvertised pause frame use: No\n\tAdvertised auto-negotiation: Yes\n\tAdvertised FEC modes: Not reported\n\tLink partner advertised link modes:  10baseT/Half 10baseT/Full\n\t                                     100baseT/Half 100baseT/Full\n\tLink partner advertised pause frame use: Symmetric Receive-only\n\tLink partner advertised auto-negotiation: Yes\n\tLink partner advertised FEC modes: Not reported\n\tSpeed: 100Mb/s\n\tDuplex: Full\n\tAuto-negotiation: on\n\tPort: MII\n\tPHYAD: 32\n\tTransceiver: internal\n\tSupports Wake-on: pumbg\n\tWake-on: g\n        Current message level: 0x00007fff (32767)\n                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol\n\tLink detected: yes\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "ethtool",
+        "-i",
+        "eth2"
+      ],
+      "rc": 0,
+      "stdout": "driver: sr9900\nversion: v1.12.13\nfirmware-version: \nexpansion-rom-version: \nbus-info: usb-xhci-hcd.0.auto-1.4.1\nsupports-statistics: yes\nsupports-test: no\nsupports-eeprom-access: no\nsupports-register-dump: no\nsupports-priv-flags: no\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "systemctl",
+        "show",
+        "m7-eth3-power.service",
+        "--property=LoadState,ActiveState,SubState,Result,ExecMainStatus"
+      ],
+      "rc": 0,
+      "stdout": "Result=success\nExecMainStatus=0\nLoadState=loaded\nActiveState=active\nSubState=exited\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "systemctl",
+        "is-enabled",
+        "m7-eth3-power.service"
+      ],
+      "rc": 0,
+      "stdout": "enabled\n",
+      "stderr": ""
+    }
+  ]
+}

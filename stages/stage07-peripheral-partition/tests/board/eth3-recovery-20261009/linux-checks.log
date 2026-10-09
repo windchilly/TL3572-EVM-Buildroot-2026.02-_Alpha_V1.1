@@ -1,0 +1,39 @@
+docs/manuals/2-1-����������ֲ�.pdf: OK
+hardware/carrier-board/TL3572-EVM�����װ�ԭ��ͼ/TL3572-EVM-A1.1-000-SCH-202609021543.pdf: OK
+stages/stage07-peripheral-partition/build/install_m7_eth3_host.sh: OK
+stages/stage07-peripheral-partition/firmware/tl3572-m7-integrated-up-a.elf: OK
+stages/stage07-peripheral-partition/firmware/tl3572-m7-integrated-up-b.elf: OK
+stages/stage07-peripheral-partition/source/host/eth3_power_enable.py: OK
+stages/stage07-peripheral-partition/source/host/m7-eth3-power.service: OK
+stages/stage07-peripheral-partition/tests/board/eth3_l2_smoke.py: OK
+stages/stage07-peripheral-partition/tests/board/eth3_recovery_snapshot.py: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/after-enable.json: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/all-unit-tests.log: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/before.json: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/enable.log: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/final.json: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/install-first.log: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/install.log: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/kernel-and-final.log: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/l2-smoke-after-service.log: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/l2-smoke.log: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/preflight.log: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/README.md: OK
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/unit-tests.log: OK
+stages/stage07-peripheral-partition/tests/test_eth3_power.py: OK
+test_absent_controller_rejected (test_eth3_power.Eth3PowerTests.test_absent_controller_rejected) ... ok
+test_active_low_rejected_without_writes (test_eth3_power.Eth3PowerTests.test_active_low_rejected_without_writes) ... ok
+test_dynamic_base_not_hardcoded (test_eth3_power.Eth3PowerTests.test_dynamic_base_not_hardcoded) ... ok
+test_enabled_line_no_writes (test_eth3_power.Eth3PowerTests.test_enabled_line_no_writes) ... ok
+test_failed_export_never_bypassed (test_eth3_power.Eth3PowerTests.test_failed_export_never_bypassed) ... ok
+test_only_own_direction_atomic_low (test_eth3_power.Eth3PowerTests.test_only_own_direction_atomic_low) ... ok
+test_smoke_frames_mac_length_and_crc (test_eth3_power.Eth3PowerTests.test_smoke_frames_mac_length_and_crc) ... ok
+test_smoke_never_accepts_outgoing_copy (test_eth3_power.Eth3PowerTests.test_smoke_never_accepts_outgoing_copy) ... ok
+test_smoke_rejects_corrupt_receive (test_eth3_power.Eth3PowerTests.test_smoke_rejects_corrupt_receive) ... ok
+test_wrong_i2c_controller_rejected (test_eth3_power.Eth3PowerTests.test_wrong_i2c_controller_rejected) ... ok
+test_wrong_width_rejected (test_eth3_power.Eth3PowerTests.test_wrong_width_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.018s
+
+OK

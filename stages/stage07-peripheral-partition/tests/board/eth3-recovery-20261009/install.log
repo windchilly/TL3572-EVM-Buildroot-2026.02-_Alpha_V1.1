@@ -1,0 +1,30 @@
+{"controller": "U21/1-0020", "global_gpio": 517, "interfaces": ["eth2"], "mode": "read-only", "offset": 2, "physical_on": 0, "usb_or_phy_reset": false}
+Result=success
+ExecMainStatus=0
+LoadState=loaded
+ActiveState=active
+SubState=exited
+active
+enabled
+Result=success
+ExecMainStatus=0
+LoadState=loaded
+ActiveState=active
+SubState=exited
+Oct 09 16:41:46 tl3572-openeuler systemd[1]: Starting TL3572 ETH3 dedicated U21/P02 power enable (no shared USB reset)...
+Oct 09 16:41:46 tl3572-openeuler python3[3683]: {"controller": "U21/1-0020", "global_gpio": 517, "interfaces": ["eth2"], "mode": "enable", "new_export": false, "offset": 2, "physical_on": 0, "usb_or_phy_reset": false}
+Oct 09 16:41:46 tl3572-openeuler systemd[1]: Finished TL3572 ETH3 dedicated U21/P02 power enable (no shared USB reset).
+Oct 09 16:41:46 tl3572-openeuler systemd[1]: m7-eth3-power.service: Deactivated successfully.
+Oct 09 16:41:46 tl3572-openeuler systemd[1]: Stopped TL3572 ETH3 dedicated U21/P02 power enable (no shared USB reset).
+Oct 09 16:41:46 tl3572-openeuler systemd[1]: Stopping TL3572 ETH3 dedicated U21/P02 power enable (no shared USB reset)...
+Oct 09 16:41:46 tl3572-openeuler systemd[1]: Starting TL3572 ETH3 dedicated U21/P02 power enable (no shared USB reset)...
+Oct 09 16:41:46 tl3572-openeuler python3[3688]: {"controller": "U21/1-0020", "global_gpio": 517, "interfaces": ["eth2"], "mode": "enable", "new_export": false, "offset": 2, "physical_on": 0, "usb_or_phy_reset": false}
+Oct 09 16:41:47 tl3572-openeuler systemd[1]: Finished TL3572 ETH3 dedicated U21/P02 power enable (no shared USB reset).
+Oct 09 16:41:47 tl3572-openeuler systemd[1]: m7-eth3-power.service: Deactivated successfully.
+Oct 09 16:41:47 tl3572-openeuler systemd[1]: Stopped TL3572 ETH3 dedicated U21/P02 power enable (no shared USB reset).
+Oct 09 16:41:47 tl3572-openeuler systemd[1]: Stopping TL3572 ETH3 dedicated U21/P02 power enable (no shared USB reset)...
+Oct 09 16:41:47 tl3572-openeuler systemd[1]: Starting TL3572 ETH3 dedicated U21/P02 power enable (no shared USB reset)...
+Oct 09 16:41:47 tl3572-openeuler python3[3690]: {"controller": "U21/1-0020", "global_gpio": 517, "interfaces": ["eth2"], "mode": "enable", "new_export": false, "offset": 2, "physical_on": 0, "usb_or_phy_reset": false}
+Oct 09 16:41:47 tl3572-openeuler systemd[1]: Finished TL3572 ETH3 dedicated U21/P02 power enable (no shared USB reset).
+systemd-analyze absent; verify loaded unit and actual oneshot execution below
+Created symlink /etc/systemd/system/multi-user.target.wants/m7-eth3-power.service �� /etc/systemd/system/m7-eth3-power.service.

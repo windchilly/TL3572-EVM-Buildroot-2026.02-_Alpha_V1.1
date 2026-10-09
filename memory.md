@@ -1,5 +1,28 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-09 最新入口：用户先要求ETH2直驱，随后确认ETH2↔ETH3网线连接，最新要求“先解决ETH3”。
+已恢复ETH3：原M6内核SR9900已内置/注册，但U21/I2C1/1-0020/P02专用电源未使能。
+原厂手册69–70页和原理图15页确认P02低电平控制Q18打开SR9900供电；网名ETH2_PWRON实际是ETH3电源。
+动态识别U21 base515+offset2=GPIO517，仅通过sysfs direction=low，不写共享Hub reset或GMAC PHY reset。
+实机通电引发一次下游Hub/Bouffalo重枚举（不得称USB完全无影响）；ETH1 SSH/路由与micad不受影响。
+ETH3枚举为eth2，USB1-1.4.1/0fe6:9900，sr9900 v1.12.13；ETH2是eth1/2a040000.ethernet。
+ETH2↔ETH3协商100Mbps/Full；两轮Linux AF_PACKET实验EtherType0x88b5，每轮64/1514B各每方向1000帧，
+累计每方向4000帧/3156000原始字节，角色/序号/模式/CRC全部PASS，两测试口rx/tx errors/dropped=0。
+这是Linux物理对端基线，不是UP2直驱；没有实现GMAC/MDIO/DMA/PHY恢复，统一UP两ELF哈希不变。
+新增source/host/eth3_power_enable.py、m7-eth3-power.service、build/install_m7_eth3_host.sh，
+板端/root/eth3-recovery-20261009；已装/usr/libexec/m7/eth3_power_enable.py与/etc/systemd/system/m7-eth3-power.service，
+服务enabled/active(exited)/Result success，重启服务两次未再切GPIO或重枚举，实际板卡冷启动未测。
+第一次installer因缺systemd-analyze在安装前停止，原日志保留；修改为实际单元加载/执行验证后成功。
+新增11项安全/幂等/L2 codec单测，全Stage07共53项Python单测PASS；未重新构建/刷写M6或M7整镜像。
+源码/证据镜像在容器/home/openeuler/build/eth3-recovery-20261009/repo，Linux11项新单测及Bash语法PASS，
+初版23项SHA核验PASS；首次镜像路径误指项目子目录的cd失败保留linux-checks-first.log，已更正。
+结束eth0仍192.168.2.141/24、默认路由eth0，eth1/eth2链路UP，既有networkd自动IPv6/DHCP不改，
+micad PID311 active/NRestarts0、两原实例Offline、failed units0、boot_id仍91f20083-69fc-4bdb-9008-c621eb8b43e7。
+详见[ETH3恢复与对端验收](stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/README.md)。
+下一步回到ETH2/UP2直驱软件增量及受控测试；CAN/UART“接线已改变，先不要发送”仍有效，不能沿用旧确认。
+
+以下MMU修复是之前已完成记录，不需重复执行；后续ETH3改变不回写其固定清单。
+
 2026-10-09 最新入口：用户授权“继续修复页表容量和启动检查”，已完成0009，仅统一固件页表32→64KiB，
 Start检查mmu_init返回值；错误原始日志不依赖libc/SIMD，置offline后请求PSCI CPU_OFF，失败不进入OS/RPMsg。
 正常初始化逐项检查48个真实PTE，启动回读SCTLR/TTBR0/TCR/MAIR；早期结果存非零初始化.data避免BSS清零。

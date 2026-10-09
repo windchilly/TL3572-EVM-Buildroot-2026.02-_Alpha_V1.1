@@ -31,3 +31,5 @@ stages/stage07-peripheral-partition/tests/board/integrated-passive-20261009/*.js
 stages/stage07-peripheral-partition/source/patches/uniproton/0009-rk3572-integrated-mmu-boot-guard.patch whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/tests/board/integrated-mmu-fix-20261009/*.log whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/tests/board/integrated-mmu-fix-20261009/*.json whitespace=cr-at-eol
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/*.log -text whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/*.json -text whitespace=cr-at-eol

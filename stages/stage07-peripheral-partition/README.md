@@ -2,6 +2,12 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-10-09 最新实机结果：ETH3专用U21/P02电源初始化已修，SR9900枚举为Linux eth2，
+与ETH2/eth1协商100M全双工，两轮Linux物理L2每方向累计4000帧完整校验通过。
+开机电源服务已安装/启用并执行成功，重复启动幂等；未重启验证，首次通电有下游USB重枚举。
+ETH2的UP2直驱仍未实现/未验收，现有两UP统一ELF未改，CAN/UART发送仍暂停。
+见[ETH3恢复与物理对端基线](tests/board/eth3-recovery-20261009/README.md)。
+
 2026-10-09 最新实机结果：已修复统一目标页表32→64KiB及启动返回值检查，
 修复后的两份正式统一ELF通过四轮被动双实例回归，两种启动/停止顺序、每路400次虚拟echo，
 SCTLR.M=1且全部48个实际PTE完整。构建后强制预算与CBNZ错误分支核验，两新树运行镜像一致。
@@ -80,7 +86,7 @@ M7.0 以已完成的 [M6 双 UniProton 基线](../stage06-multi-uniproton/README
 
 本阶段不增加第三个 UniProton，不实现 2oo3、主备或表决。M6 的 `COMPLETE` 只说明双实例计算/通信资源隔离完成；不能据此宣称 CAN、UART、ADC、GMAC 已由 UniProton 驱动。当前资源分配是目标，不是已生效的设备树或驱动清单；实际运行映射见 [M7.0 实机资源台账](docs/m7.0-live-resource-ledger.md)。
 
-主要候选分配：UP1 独占 CAN FD1/2、RS-485 #1、RS-232 #1 和整个 SARADC；UP2 独占 CAN FD3/4、RS-485 #2、RS-232 #2，并以软件可行性验证为门槛直驱 ETH2。openEuler 保留 ETH1 主有线管理、ETH3 USB 百兆备用、DI/DO、I2C1 及启动/存储/维护/显示等系统资源。ETH2 允许启动阶段一次性初始化 PHY reset，但 UP2 启动后必须独立控制 GMAC1、MDIO、PHY 和运行时链路恢复；做不到则 ETH2 不移交。
+主要候选分配：UP1 独占 CAN FD1/2、RS-485 #1、RS-232 #1 和整个 SARADC；UP2 独占 CAN FD3/4、RS-485 #2、RS-232 #2，并以软件可行性验证为门槛直驱 ETH2。openEuler 保留 ETH1 主有线管理、ETH3 USB 百兆备用/测试对端、DI/DO、I2C1 及启动/存储/维护/显示等系统资源。ETH2 允许启动阶段一次性初始化 PHY reset，但 UP2 启动后必须独立控制 GMAC1、MDIO、PHY 和运行时链路恢复；做不到则 ETH2 不移交。
 
 正式运行时 UART4/8 分别作为 UP1/UP2 工控 RS-232，不占作常驻调试口。两 UP 各用独立保留内存日志环记录早期启动和异常，openEuler 按稳定实例身份收集到 `/userdata`；内存环和 Linux 读取/轮转的首切片已验证，详情见 [实机记录](tests/board/m7-observability-bringup-20260928.md)。独立 RPMsg 诊断端点、心跳告警与异常快照仍待实现。开发期可以临时将 UART4/8 切到物理调试用途，但会占用相应 RS-232 工控口。M7 新固件的打印路径已脱离 Linux UART0；其余条件、板卡依赖和测试标准以详细文档为准。
 

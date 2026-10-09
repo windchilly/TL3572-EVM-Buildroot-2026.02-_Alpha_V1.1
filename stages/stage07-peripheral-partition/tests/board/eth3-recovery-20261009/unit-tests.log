@@ -1,0 +1,16 @@
+test_absent_controller_rejected (test_eth3_power.Eth3PowerTests.test_absent_controller_rejected) ... ok
+test_active_low_rejected_without_writes (test_eth3_power.Eth3PowerTests.test_active_low_rejected_without_writes) ... ok
+test_dynamic_base_not_hardcoded (test_eth3_power.Eth3PowerTests.test_dynamic_base_not_hardcoded) ... ok
+test_enabled_line_no_writes (test_eth3_power.Eth3PowerTests.test_enabled_line_no_writes) ... ok
+test_failed_export_never_bypassed (test_eth3_power.Eth3PowerTests.test_failed_export_never_bypassed) ... ok
+test_only_own_direction_atomic_low (test_eth3_power.Eth3PowerTests.test_only_own_direction_atomic_low) ... ok
+test_smoke_frames_mac_length_and_crc (test_eth3_power.Eth3PowerTests.test_smoke_frames_mac_length_and_crc) ... ok
+test_smoke_never_accepts_outgoing_copy (test_eth3_power.Eth3PowerTests.test_smoke_never_accepts_outgoing_copy) ... ok
+test_smoke_rejects_corrupt_receive (test_eth3_power.Eth3PowerTests.test_smoke_rejects_corrupt_receive) ... ok
+test_wrong_i2c_controller_rejected (test_eth3_power.Eth3PowerTests.test_wrong_i2c_controller_rejected) ... ok
+test_wrong_width_rejected (test_eth3_power.Eth3PowerTests.test_wrong_width_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.083s
+
+OK
