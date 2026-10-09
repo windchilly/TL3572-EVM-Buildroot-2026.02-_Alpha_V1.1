@@ -1,5 +1,39 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-09 最新RS-485切片五轮通过，先读本条；此前RS-232/CAN固件与证据保留。
+用户确认“485已对接”后，按A↔A、B↔B、隔离侧参考地连接理解，未确认/测量端接跳帽。
+保持SoC资源分配UP1=CPU4/UART1/ttyS1，UP2=CPU5/UART2/ttyS2。
+手册板号反向：板上UART2对应SoC1/UP1，板上UART1对应SoC2/UP2；
+原理图A1/B1、A2/B2电气网名是另一编号系统，本次成对测试不单独证明丝印映射。
+CA-IS3082 RE/DE同接RTSN：物理高TX/低RX，UP手动MCR0=TX、2=RX，非自动RTS/CTS。
+不写GPIO bank、不用Linux串口/GPIO/RPMsg代理；字节只在ISR读RBR/写THR。
+UP自主own gate/reset/select/mux：UART1 PMU直选xin24m，UART2主域xin24m/div1；
+INTID157/158、MPIDR0x100/0x101、GIC target0x10/0x20实机正确。
+
+115200/38400/9600 8N1、115200四nice19 Linux CPU worker、A→B停止共五轮；
+每路累计TX/RX各5000帧/160000字节，32字节角色/序号/CRC检查均正确。
+每轮IRQ64000、TXIRQ33000、RXIRQ32000，line/overflow/wrongcpu/busy/storm/方向错误0；
+每轮TX换向1000、RX设置1002、最终MCR2。发送前guard4ticks、启TX后1tick、TEMT后切RX；
+不是外部换向时延测量。24MHz/除数13/39/156计算速率比标称高约0.1603%。
+五轮数据/资源恢复/清理均PASS，没有重启或刷写。结束两CPU OFF、原实例Offline，
+UART1/2/4/8 Linux绑定、四CAN绑定/DOWN、micad PID311 active/NRestarts0、failed units0、ETH1正常，
+boot_id=91f20083-69fc-4bdb-9008-c621eb8b43e7未变，原M6/DT保留，方向mux恢复未申请。
+原mux/上拉恢复后不保证持久RX安全态；此轮不测试执行器。
+
+独立默认OFF驱动、0006、prepare/build、6 AutoBoot=no配置/ELF、执行器及完整证据在
+[rs485-20261009](stages/stage07-peripheral-partition/tests/board/rs485-20261009/README.md)。
+依次应用0001/0002/0003/0005/0006，不应用FD0004，共用既有RS-232 CRC codec。
+容器dev_openeuler两新树src/UniProton-m7-rs485-20261009与
+src/UniProton-m7-rs485-repro-20261009各编六应用，六对运行镜像逐字节一致；
+复用M6库，不是再次全量库/内核/Yocto重建，ELF调试路径导致hash不同。
+Python31项单测及共享codec原生C -Wall/-Wextra/-Werror检查PASS。
+旧RS-232清单在c0e08ae校验；本轮另立清单，不回写历史tar/原始证据。
+下一项SARADC先做资源/消费者/安全输入盘点；无信号源时不能做外部量程/精度验收。
+ETH2仍待UP2完整GMAC/MDIO/PHY驱动；FD2/FD4保持用户选择SKIPPED/未验证。
+仍无外部独立RS-485对端、Modbus、故障恢复/任意时刻停止、实时性或持久DT/冷启动验收。
+共享根总线/晶振/启动电气属性仍系统提供，软件字段约束不是硬件位级隔离。
+M7.0未验收，另一处全局mcs_fd create/rm泄漏仍未修。
+
 2026-10-09 最新 RS-232 切片已通过，先读本条；下方“下一步 FD2/FD4”是历史计划，
 用户已明确跳过这一组，FD2/FD4 保持 SKIPPED/未验证，不能推为 PASS。
 用户确认“UAR3/UART4 对接完成”后，按 J4-1/T4→J4-5/R3、J4-4/T3→J4-2/R4 测试。

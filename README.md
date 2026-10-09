@@ -2,7 +2,7 @@
 
 本仓库保存评估板资料、Stage01–Stage07 的源码/配置、正式阶段记录，以及换机恢复入口。
 M6 双 UniProton 已完成；M7 已完成日志/RPC 软件及 CAN1↔CAN3 的经典 CAN、
-CAN FD/BRS 及 UART4↔UART8 RS-232 自主字段初始化/IRQ 直驱切片，
+CAN FD/BRS、UART4↔UART8 RS-232 及 UART1↔UART2 RS-485 自主字段初始化/IRQ 直驱切片，
 完整外设移交与 M7.0 尚未验收。板上 UART3 对应 SoC UART8；CAN FD2/FD4 本轮跳过、未验证。
 
 ## 从哪里开始

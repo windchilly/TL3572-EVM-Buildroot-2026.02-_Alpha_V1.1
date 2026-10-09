@@ -1,0 +1,84 @@
+diff --git a/demos/rk3572_mica/CMakeLists.txt b/demos/rk3572_mica/CMakeLists.txt
+--- a/demos/rk3572_mica/CMakeLists.txt
++++ b/demos/rk3572_mica/CMakeLists.txt
+@@ -16,2 +16,6 @@
+ option(M7_RS232_TEST "Run direct UART4/UART8 IRQ test (physical UART4/UART3)" OFF)
++option(M7_RS485_TEST "Run direct half-duplex UART1/UART2 IRQ test" OFF)
++if(M7_RS485_TEST AND (M7_CAN_DIRECT_TEST OR M7_RS232_TEST))
++    message(FATAL_ERROR "RS485, RS232 and CAN tests require independent builds")
++endif()
+ set(M7_RS232_BAUD 115200 CACHE STRING "RS232 test baud: 9600, 38400 or 115200")
+@@ -59,2 +63,6 @@
+ endif()
++set(M7_RS485_BAUD 115200 CACHE STRING "RS485 test baud: 9600, 38400 or 115200")
++if(M7_RS485_TEST)
++    add_compile_definitions(M7_RS485_TEST=1 M7_RS485_BAUD=${M7_RS485_BAUD})
++endif()
+ 
+diff --git a/demos/rk3572_mica/apps/openamp/CMakeLists.txt b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+--- a/demos/rk3572_mica/apps/openamp/CMakeLists.txt
++++ b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+@@ -11,2 +11,5 @@
+ endif()
++if(M7_RS485_TEST)
++    list(APPEND SRC rk3572_rs485_test.c)
++endif()
+ add_library(rpmsg OBJECT ${SRC})
+diff --git a/demos/rk3572_mica/apps/openamp/main.c b/demos/rk3572_mica/apps/openamp/main.c
+--- a/demos/rk3572_mica/apps/openamp/main.c
++++ b/demos/rk3572_mica/apps/openamp/main.c
+@@ -20,5 +20,8 @@
+ #if defined(M7_RS232_TEST)
+ extern U32 Rk3572Rs232Test(void);
+ #endif
++#if defined(M7_RS485_TEST)
++extern U32 Rk3572Rs485Test(void);
++#endif
+ 
+ TskHandle g_testTskHandle;
+@@ -55,3 +58,8 @@
+ #endif
++#if defined(M7_RS485_TEST)
++    if (Rk3572Rs485Test() != OS_OK) {
++        PRT_Printf("[rs485] direct test task failed\n");
++    }
++#endif
+ }
+ 
+diff --git a/demos/rk3572_mica/bsp/mmu.c b/demos/rk3572_mica/bsp/mmu.c
+--- a/demos/rk3572_mica/bsp/mmu.c
++++ b/demos/rk3572_mica/bsp/mmu.c
+@@ -30,3 +30,3 @@
+         .phys      = MMU_GIC_ADDR,
+-#if defined(M7_CAN_IRQ_TEST) || defined(M7_RS232_TEST)
++#if defined(M7_CAN_IRQ_TEST) || defined(M7_RS232_TEST) || defined(M7_RS485_TEST)
+         .size      = 0x4000,
+@@ -79,3 +79,28 @@
+         .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++#elif defined(M7_RS485_TEST)
++    }, {
++#if (MCS_CLIENT_CPU_ID == 4)
++        .virt = 0x26500000, .phys = 0x26500000,
++#else
++        .virt = 0x2C140000, .phys = 0x2C140000,
++#endif
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++#if (MCS_CLIENT_CPU_ID == 4)
++        .virt = 0x260B0000, .phys = 0x260B0000,
++#else
++        .virt = 0x26090000, .phys = 0x26090000,
++#endif
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++#if (MCS_CLIENT_CPU_ID == 4)
++        .virt = 0x26074000, .phys = 0x26074000,
++#else
++        .virt = 0x26084000, .phys = 0x26084000,
++#endif
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
+ #endif
+     }, {    

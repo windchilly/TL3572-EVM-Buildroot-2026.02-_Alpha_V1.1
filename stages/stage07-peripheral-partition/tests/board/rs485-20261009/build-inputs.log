@@ -1,0 +1,47 @@
+aarch64-none-linux-gnu-gcc (Arm GNU Toolchain 14.3.Rel1 (Build arm-14.174)) 14.3.1 20250623
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+12db06f05cb2117805b85ca41fb1559d9414cf6054d7da0a139678ca073972bf  /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/libs/libCortexMXsec_c.lib
+ff5781681faee4f3b3e719d5a4241ecbbd62fdf234a3df5819e2bd61688646c8  /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/libs/libRK3572.a
+355739e6fbf2ec678a54e030e7ef49ea876e048f81ef3340d0ba1bfb44abf818  /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/libs/libmetal.a
+3e05c9b2d9508ff114b5775ef2401086c7ac6e13b71a1abdbec13e24ce2cd983  /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/libs/libopen_amp.a
+12db06f05cb2117805b85ca41fb1559d9414cf6054d7da0a139678ca073972bf  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-20261009/demos/rk3572_mica/libs/libCortexMXsec_c.lib
+ff5781681faee4f3b3e719d5a4241ecbbd62fdf234a3df5819e2bd61688646c8  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-20261009/demos/rk3572_mica/libs/libRK3572.a
+355739e6fbf2ec678a54e030e7ef49ea876e048f81ef3340d0ba1bfb44abf818  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-20261009/demos/rk3572_mica/libs/libmetal.a
+3e05c9b2d9508ff114b5775ef2401086c7ac6e13b71a1abdbec13e24ce2cd983  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-20261009/demos/rk3572_mica/libs/libopen_amp.a
+12db06f05cb2117805b85ca41fb1559d9414cf6054d7da0a139678ca073972bf  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-repro-20261009/demos/rk3572_mica/libs/libCortexMXsec_c.lib
+ff5781681faee4f3b3e719d5a4241ecbbd62fdf234a3df5819e2bd61688646c8  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-repro-20261009/demos/rk3572_mica/libs/libRK3572.a
+355739e6fbf2ec678a54e030e7ef49ea876e048f81ef3340d0ba1bfb44abf818  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-repro-20261009/demos/rk3572_mica/libs/libmetal.a
+3e05c9b2d9508ff114b5775ef2401086c7ac6e13b71a1abdbec13e24ce2cd983  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-repro-20261009/demos/rk3572_mica/libs/libopen_amp.a
+8b07b6b32d974ab74ff6bda73f02a62dcf415ce6c0f314adb4185b082114466f  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-115200-up-a.elf
+85bad01944bd865bfb0279148ebd9ac288ef489ffbf6b0bf762ff11a3f61e543  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-115200-up-a.elf
+209d981c1be8105ec3a1a8091da20b078b19fe4896c1733f14c4b58d77368bd3  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-115200-up-a-first.bin
+209d981c1be8105ec3a1a8091da20b078b19fe4896c1733f14c4b58d77368bd3  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-115200-up-a-repro.bin
+RUNTIME IMAGE HASH/CMP PASS tl3572-m7-rs485-115200-up-a
+72d666f1b7d379d4a6bf8e987358e2f5bf73cc643252b93a0061cc733d5ec523  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-115200-up-b.elf
+1e34d6ef55e7c7104157e04213eb0faabc602afaa5180a63cb57b4a299f13e48  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-115200-up-b.elf
+0d6f1efaed3f64b592e1719ad0cf5e2afc89acd88137723ea2fddfea63c39045  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-115200-up-b-first.bin
+0d6f1efaed3f64b592e1719ad0cf5e2afc89acd88137723ea2fddfea63c39045  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-115200-up-b-repro.bin
+RUNTIME IMAGE HASH/CMP PASS tl3572-m7-rs485-115200-up-b
+bbf2020feb9d9e0250ed09eba7f94665e175df9621f759376e551ecd313fb604  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-38400-up-a.elf
+502b587fc70bfec9b86acc7f38851693e246721b497467973cb2879f1f540f63  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-38400-up-a.elf
+e679b0b34708589e494bf2aec073755fba368a56cca314c1e81a039f647bd44f  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-38400-up-a-first.bin
+e679b0b34708589e494bf2aec073755fba368a56cca314c1e81a039f647bd44f  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-38400-up-a-repro.bin
+RUNTIME IMAGE HASH/CMP PASS tl3572-m7-rs485-38400-up-a
+4fc19d3177fe1a710c1ea27fa57700ceda8e04de86c960c3880d311d9ad90095  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-38400-up-b.elf
+45c14a505b299043d274a19c4966311af552e4cd73d32ef50b52d73fb77d69e5  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-38400-up-b.elf
+fe9b75df706bfd8cf7867c5d7dcb1d3aa0506f090ee32140cf85c2065a612e82  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-38400-up-b-first.bin
+fe9b75df706bfd8cf7867c5d7dcb1d3aa0506f090ee32140cf85c2065a612e82  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-38400-up-b-repro.bin
+RUNTIME IMAGE HASH/CMP PASS tl3572-m7-rs485-38400-up-b
+d8cfd5f543a9f27610c3e10db201be46e45dde80aa67cde8d53bfb58c6bac876  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-9600-up-a.elf
+7d25411b48cd7d80e21c9ad9f66e6b96331a444e334f1c90f608e57ce44ddba1  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-9600-up-a.elf
+94bd2618167cf9502799a896dfda9f38abd65f65544cf6bcb5ed658fa4ede8b4  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-9600-up-a-first.bin
+94bd2618167cf9502799a896dfda9f38abd65f65544cf6bcb5ed658fa4ede8b4  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-9600-up-a-repro.bin
+RUNTIME IMAGE HASH/CMP PASS tl3572-m7-rs485-9600-up-a
+0e8e34d7fe56510b07cb639aefc8370caf9497af7ff6200d8c28a363ac77f556  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-9600-up-b.elf
+c479f7e5c257d3f73934d44d6bedb9bb8983a4f32db46c85d42404113d43b38b  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs485-9600-up-b.elf
+380a75958a292c8ffcbb6cc597a83683982646149ab0ad712eff4dfb0412cd31  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-9600-up-b-first.bin
+380a75958a292c8ffcbb6cc597a83683982646149ab0ad712eff4dfb0412cd31  /home/openeuler/build/tl3572-2oo3/m7-rs485-20261009/tl3572-m7-rs485-9600-up-b-repro.bin
+RUNTIME IMAGE HASH/CMP PASS tl3572-m7-rs485-9600-up-b

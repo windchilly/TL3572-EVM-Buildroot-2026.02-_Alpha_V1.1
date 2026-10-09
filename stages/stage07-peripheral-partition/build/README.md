@@ -230,6 +230,70 @@ python3 /root/m7-rs232-20261009/run_rs232_pair.py --baud 115200 --stop-a-first
 只适用于不承载业务的隔离测试窗口；实际结果及未验证项见
 [RS-232 实机记录](../tests/board/rs232-20261009/README.md)。
 
+## UP1 / UP2 RS-485 直驱测试固件（2026-10-09）
+
+保持UP1=SoC UART1/CPU4，UP2=SoC UART2/CPU5。按手册板号分别为UART2、UART1；
+板号与电气网名的差别、方向脚/RTSN语义及原始证据见
+[RS-485记录](../tests/board/rs485-20261009/README.md)。用户需确认两口A↔A、B↔B、
+隔离参考地连接，仅安全隔离对接，不接执行器；不是短接A/B或交叉TX/RX。
+
+`prepare_m7_rs485.sh`内部调用RS-232准备器，复制完整M6源码及已有库，依次应用
+0001/0002/0003/0005/0006（不应用0004），再安装独立RS-485 C，复用CRC codec。
+原RS-232驱动/固件不修改。`M7_RS485_TEST`默认OFF，与CAN/RS-232互斥。
+新目标目录必须不存在；脚本不覆盖M6、CAN、RS-232树，也不重建内核/Yocto/库。
+
+```bash
+export UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485
+bash stages/stage07-peripheral-partition/build/prepare_m7_rs485.sh
+for baud in 115200 38400 9600; do
+    M7_RS485_BAUD="$baud" bash stages/stage07-peripheral-partition/build/build_m7_rs485_test.sh
+done
+```
+
+输出六份`$UNIPROTON_ROOT/demos/rk3572_mica/build/tl3572-m7-rs485-{115200,38400,9600}-up-{a,b}.elf`。
+两路8N1，24MHz/整数除数13、39、156，计算波特率比标称高约0.1603%，不是仪器测量。
+MCR=0物理RTSN高/TX，MCR=2物理RTSN低/RX；由UP手动换向，不使用Linux GPIO代理。
+只有ISR读RBR/写THR；发送后等TEMT，切回RX。单请求在途、32字节带序号CRC的1000次请求/应答，
+不是Modbus/生产队列、自动RTS换向或长时实时性验收。
+
+换机先按[全源码入口](../../../repro-inputs/rk3572/README.md)完成固定Docker摘要/LFS输入、
+`run.sh prepare`及`run.sh m6-up`生成M6库，再在固定容器运行上述两个脚本，例如：
+
+```bash
+docker exec -e UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485 \
+    "$REPRO_CONTAINER" bash /repo/stages/stage07-peripheral-partition/build/prepare_m7_rs485.sh
+for baud in 115200 38400 9600; do
+    docker exec -e UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs485 \
+        -e M7_RS485_BAUD="$baud" \
+        "$REPRO_CONTAINER" bash /repo/stages/stage07-peripheral-partition/build/build_m7_rs485_test.sh
+done
+```
+
+本轮两独立树各编六应用，运行镜像逐字节一致；复用M6库，未再次全量Yocto构建。
+旧Stage07 tar不回写，应克隆包含0006的当前提交，不能只解压旧归档。
+
+原up-a/up-b须Offline、CPU4/5 OFF，修复版micad及独立内存日志读取器正常，
+UART1/2无进程、非console，方向脚GPIO0_D3/GPIO2_B6未被其他用户申请。
+六ELF、六份`tests/board/up-{a,b}-m7-rs485-*.conf`与以下脚本放到`/root/m7-rs485-20261009/`：
+
+- `run_rs485_pair.py`、`run_rs485_with_cpu_load.py`、`rs485_resources.py`；
+- `run_can_direct_pair.py`（仅生命周期/日志助手）、`can_resource_preflight.py`（仅GIC地址助手）。
+
+配置AutoBoot=no，不放入开机自动启动目录，以板端root执行：
+
+```bash
+python3 /root/m7-rs485-20261009/run_rs485_pair.py --baud 115200
+python3 /root/m7-rs485-20261009/run_rs485_pair.py --baud 38400
+python3 /root/m7-rs485-20261009/run_rs485_pair.py --baud 9600
+python3 /root/m7-rs485-20261009/run_rs485_with_cpu_load.py --baud 115200
+python3 /root/m7-rs485-20261009/run_rs485_pair.py --baud 115200 --stop-a-first
+```
+
+执行器临时解绑Linux，保存CRU/IOC/GIC，故意关own clock/保持reset/改错clock selector，
+再由UP恢复。两CPU OFF后才还原资源/rebind，OFF未确认时不自动重启或恢复。
+每轮必须同时有`OVERALL PASS`、`CLEANUP PASS`和方向计数通过；原始失败日志也需保留。
+不改持久DT，不触碰UART0/ETH1；只能在无业务的隔离测试窗口使用。
+
 ## 板卡部署与回退
 
 本轮板卡部署采用独立文件 `/usr/libexec/m7/micad` 和持久 drop-in `/etc/systemd/system/micad.service.d/90-m7-rpc-fix.conf`，原 `/usr/bin/micad` 未覆盖。drop-in 内容来自 `source/host/micad-m7-rpc-fix.conf`。服务仍使用原 PIDFile、MCS 内核模块前置依赖及失败重启策略。临时 M7 配置为 `AutoBoot=no`，没有安装为开机自动启动实例。

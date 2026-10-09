@@ -1,6 +1,15 @@
 # Stage 07 / M7.0：全资源划分与外设直驱
 
-当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN 与 RS-232 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
+当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
+
+2026-10-09 RS-485五轮通过：UP1/SoC UART1/CPU4 ↔ UP2/SoC UART2/CPU5，
+115200/38400/9600 8N1，另测Linux负载和两种停止顺序，每路累计TX/RX各5000帧/160000字节，
+错误为0。UP直接控制UART MCR/RTSN半双工换向、own clock/reset/mux及本核ISR收发，
+无Linux GPIO/串口/RPMsg代理。按手册板上UART2属UP1、UART1属UP2；与SoC序号分开记录。
+独立默认OFF模式、六ELF、两新源码树运行镜像逐字节一致，复用M6库；退出两CPU OFF、
+UART1/2归还Linux、micad不重启，原M6/DT/CAN/RS-232保留。见
+[RS-485实机记录](tests/board/rs485-20261009/README.md)。仍未持久DT/冷启动、独立外部对端、
+工业协议/故障恢复/实时性验收。下一项先做SARADC资源、安全输入与消费者盘点。
 
 2026-10-09 RS-232 五轮通过：板上 UART4（UP1/SoC UART4）↔板上 UART3
 （UP2/SoC UART8），115200/38400/9600、8N1，另测 Linux CPU 负载和两种停止顺序。
@@ -9,7 +18,7 @@ own CRU/reset/mux，数据只由本核 ISR 收发。独立默认关闭模式、�
 第二源码树运行镜像逐字节一致，复用 M6 库。退出两 CPU OFF、UART 归还 Linux、
 micad 不重启，原 M6/DT 保留。见 [RS-232 实机记录](tests/board/rs232-20261009/README.md)。
 仍未持久 DT/未知 pinmux 冷启动/工业协议验收。用户已选择跳过 CAN FD2/FD4，
-两口保持 `SKIPPED / 未验证`，不从 FD1/FD3 推断 PASS；下一项 RS-485 需另行确认接线。
+两口保持 `SKIPPED / 未验证`，不从 FD1/FD3 推断 PASS；RS-485后续结果见上文。
 
 2026-10-09 CAN FD/BRS 切片四轮通过：500 kbit/s 仲裁，数据不变速/约 2/4 Mbit/s，
 16/32/64 字节逐帧全载荷校验。每路累计 TX/RX 各 12000，错误为 0；覆盖四个

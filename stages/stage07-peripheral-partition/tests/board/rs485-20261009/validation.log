@@ -1,0 +1,59 @@
+test_all_three_profiles (test_can_fd_pair.CanFdEvidenceTests.test_all_three_profiles) ... ok
+test_classic_can_pass_cannot_prove_fd (test_can_fd_pair.CanFdEvidenceTests.test_classic_can_pass_cannot_prove_fd) ... ok
+test_missing_flags_payload_or_irq_is_rejected (test_can_fd_pair.CanFdEvidenceTests.test_missing_flags_payload_or_irq_is_rejected) ... ok
+test_no_brs_profile_rejects_brs_and_same_cpu (test_can_fd_pair.CanFdEvidenceTests.test_no_brs_profile_rejects_brs_and_same_cpu) ... ok
+test_complete_evidence_passes (test_can_irq_pair.CanIrqEvidenceTests.test_complete_evidence_passes) ... ok
+test_missing_interrupt_or_error_is_rejected (test_can_irq_pair.CanIrqEvidenceTests.test_missing_interrupt_or_error_is_rejected) ... ok
+test_polling_pass_is_insufficient (test_can_irq_pair.CanIrqEvidenceTests.test_polling_pass_is_insufficient) ... ok
+test_same_cpu_target_is_rejected (test_can_irq_pair.CanIrqEvidenceTests.test_same_cpu_target_is_rejected) ... ok
+test_classic_frame_round_trip (test_can_physical_pair.CanPhysicalPairCodecTests.test_classic_frame_round_trip) ... ok
+test_fd_frame_round_trip_with_brs (test_can_physical_pair.CanPhysicalPairCodecTests.test_fd_frame_round_trip_with_brs) ... ok
+test_sequence_is_encoded_big_endian (test_can_physical_pair.CanPhysicalPairCodecTests.test_sequence_is_encoded_big_endian) ... ok
+test_gate_reset_and_divider_decoding (test_can_resource_preflight.CanResourcePreflightTests.test_gate_reset_and_divider_decoding) ... ok
+test_live_dt_pin_fields_are_disjoint (test_can_resource_preflight.CanResourcePreflightTests.test_live_dt_pin_fields_are_disjoint) ... ok
+test_other_controller_bits_do_not_change_own_state (test_can_resource_preflight.CanResourcePreflightTests.test_other_controller_bits_do_not_change_own_state) ... ok
+test_shared_gic_word_uses_only_own_fields (test_can_resource_preflight.CanResourcePreflightTests.test_shared_gic_word_uses_only_own_fields) ... ok
+test_spi_numbers_are_converted_to_intids (test_can_resource_preflight.CanResourcePreflightTests.test_spi_numbers_are_converted_to_intids) ... ok
+test_decode_disabled (test_rs232_pair.Rs232Tests.test_decode_disabled) ... ok
+test_physical_mapping_and_owned_masks (test_rs232_pair.Rs232Tests.test_physical_mapping_and_owned_masks) ... ok
+test_profiles (test_rs232_pair.Rs232Tests.test_profiles) ... ok
+test_reject_corrupt_reports (test_rs232_pair.Rs232Tests.test_reject_corrupt_reports) ... ok
+test_same_target_rejected (test_rs232_pair.Rs232Tests.test_same_target_rejected) ... ok
+test_decode_disabled (test_rs485_pair.Rs485Tests.test_decode_disabled) ... ok
+test_physical_mapping_and_owned_masks (test_rs485_pair.Rs485Tests.test_physical_mapping_and_owned_masks) ... ok
+test_profiles (test_rs485_pair.Rs485Tests.test_profiles) ... ok
+test_reject_corrupt_reports (test_rs485_pair.Rs485Tests.test_reject_corrupt_reports) ... ok
+test_same_target_rejected (test_rs485_pair.Rs485Tests.test_same_target_rejected) ... ok
+test_file_emitter_separates_instances (test_up_log_reader.UpLogReaderTest.test_file_emitter_separates_instances) ... ok
+test_header_is_bound_to_instance (test_up_log_reader.UpLogReaderTest.test_header_is_bound_to_instance) ... ok
+test_monitor_marks_client_and_boot (test_up_log_reader.UpLogReaderTest.test_monitor_marks_client_and_boot) ... ok
+test_reads_committed_records_only (test_up_log_reader.UpLogReaderTest.test_reads_committed_records_only) ... ok
+test_reports_ring_overwrite_boundary (test_up_log_reader.UpLogReaderTest.test_reports_ring_overwrite_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.022s
+
+OK
+SEQUENTIAL PATCH CHECK PASS baseline M6 + 0001/0002/0003/0005 -> 0006
+UART IRQ VALIDATION PASS targets=[16, 32]; 1000 frames/32000 bytes each direction
+ARCHIVED HARDWARE PASS run-01-115200.log
+UART IRQ VALIDATION PASS targets=[16, 32]; 1000 frames/32000 bytes each direction
+ARCHIVED HARDWARE PASS run-02-38400.log
+UART IRQ VALIDATION PASS targets=[16, 32]; 1000 frames/32000 bytes each direction
+ARCHIVED HARDWARE PASS run-03-9600.log
+UART IRQ VALIDATION PASS targets=[16, 32]; 1000 frames/32000 bytes each direction
+ARCHIVED HARDWARE PASS run-04-cpu-load.log
+UART IRQ VALIDATION PASS targets=[16, 32]; 1000 frames/32000 bytes each direction
+ARCHIVED HARDWARE PASS run-05-reverse-stop.log
+BOARD ELF HASH PASS tl3572-m7-rs485-115200-up-a.elf 8b07b6b32d974ab74ff6bda73f02a62dcf415ce6c0f314adb4185b082114466f
+BOARD ELF HASH PASS tl3572-m7-rs485-115200-up-b.elf 72d666f1b7d379d4a6bf8e987358e2f5bf73cc643252b93a0061cc733d5ec523
+BOARD ELF HASH PASS tl3572-m7-rs485-38400-up-a.elf bbf2020feb9d9e0250ed09eba7f94665e175df9621f759376e551ecd313fb604
+BOARD ELF HASH PASS tl3572-m7-rs485-38400-up-b.elf 4fc19d3177fe1a710c1ea27fa57700ceda8e04de86c960c3880d311d9ad90095
+BOARD ELF HASH PASS tl3572-m7-rs485-9600-up-a.elf d8cfd5f543a9f27610c3e10db201be46e45dde80aa67cde8d53bfb58c6bac876
+BOARD ELF HASH PASS tl3572-m7-rs485-9600-up-b.elf 0e8e34d7fe56510b07cb639aefc8370caf9497af7ff6200d8c28a363ac77f556
+FIRMWARE MANIFEST PASS 25 entries
+FINAL RESOURCE/BOOT/DAEMON IDENTICAL; FIVE PAIR/RESTORE/CLEANUP PASSES; SIX RUNTIME IMAGES MATCH
+SIX TEMPORARY CONFIGS PASS AutoBoot=no, matching image paths
+VERIFIED RS232 SOURCE/HOOK/RUNNER UNCHANGED
+Git LFS fsck OK
+LOCAL VALIDATION PASS
