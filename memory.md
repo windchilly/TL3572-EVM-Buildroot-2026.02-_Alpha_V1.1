@@ -1,5 +1,33 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-09 CAN 自主字段初始化与中断收发已通过。构建机 SSH 连接恢复后，在
+`dev_openeuler` 的 `src/UniProton-m7-can-irq-20261009` 及第二棵
+`src/UniProton-m7-can-irq-repro-20261009` 中独立编译双应用；两树运行镜像逐字节一致。
+准备/编译均用 `M7_CAN_IRQ_TEST=ON`，0003 仅在该模式应用，旧轮询路径默认保留。
+复用已有 M6 库；本轮不是再次空目录构建全部库/Yocto。
+
+板端 FD1/CAN1↔FD3/CAN3 最终固件三轮，每路累计 TX/RX 各 30000，
+TXIRQ/RXIRQ 各 30000，IRQ 各 60000，错误/溢出/错误核心中断均为 0。
+覆盖四个低优先级 Linux CPU worker 及两种停止顺序；早期原型另有一轮，未混入最终累计。
+Linux 解绑后先关闭 own gate、保持 reset、将分频设 /16，由 UP 恢复 /4、初始化
+自己的 gate/reset/mux 和 CAN IRQ。实测 INTID185/187 分别到 target0x10/0x20，
+MPIDR0x100/0x101；只有 ISR 消耗 FIFO，Linux/RPMsg 不代理 CAN 帧。
+UP 退出前自行关中断、清 pending、恢复路由，宿主先确认 CPU4/5 OFF 再恢复资源/rebind。
+最终原 up-a/up-b Offline、四 CAN 绑定 Linux/DOWN、micad PID311 active/NRestarts=0、
+systemd failed units=0、ETH1/SSH 正常，无刷机/重启，原 M6 固件/配置/DT 未覆盖。
+
+实测 UP1 ELF SHA256=`51fa0a5321cc6f6ded061788c14e64dd2c958ccb5b22032512d4893aeea8f0ea`，
+UP2=`a61f220f7910d2b04aedbbab5b4059626a6a416a374e44273b43e6e75b742b8c`。
+本地 17 项单测 PASS；源码、补丁、构建/测试脚本、双 ELF、日志、资源台账和校验
+随本次提交同步 GitHub。完整证据见
+[`CAN IRQ 实机记录`](stages/stage07-peripheral-partition/tests/board/can-irq-20261009/README.md)。
+实施前只读快照及当时已解除的构建连接问题见
+[`资源核验`](stages/stage07-peripheral-partition/tests/board/can-resource-20261009/README.md)。
+
+仍未持久 DT 移交/冷启动，pinmux 没有先故意置错，共享 PLL/父级总线由系统准备，
+不是四口/CAN FD/BRS 或 M7.0 完整验收。下一步沿当前接线测 CAN FD/BRS，随后
+FD2/FD4、四路并发和持久启动所有权。MCS 另一处全局 mcs_fd create/rm 泄漏仍未修。
+
 2026-10-08 CAN 直驱继续回归：从 Stage06 完整源码快照连续应用 M7 两份 UniProton
 补丁通过；板端执行器加入 CPU4/5 PSCI OFF 确认，只有两核均 OFF 才重绑 Linux
 CAN1/CAN3。使用原两份测试 ELF 再通过 1,000 次请求/应答，双方 TX/RX=1000/1000、

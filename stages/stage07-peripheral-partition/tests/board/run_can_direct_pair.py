@@ -2,7 +2,6 @@
 """Run and clean up the UP1/CAN1 <-> UP2/CAN3 direct-register test."""
 
 import importlib.util
-import fcntl
 import mmap
 import os
 from pathlib import Path
@@ -20,6 +19,13 @@ CONFIGS = {
     "up-a-m7-can": TEST_ROOT / "up-a-m7-can.conf",
     "up-b-m7-can": TEST_ROOT / "up-b-m7-can.conf",
 }
+EXPECTED_FRAMES = 1000
+TEST_DEADLINE = 35.0
+STOP_CLIENTS = None
+
+
+def validate_result(text_a, text_b):
+    """The IRQ runner adds interrupt and resource-initialization checks here."""
 
 
 def command(*args, check=True):
@@ -125,13 +131,14 @@ def restore_controllers():
 
 
 def cleanup_clients():
+    stop_order = STOP_CLIENTS or CLIENTS
     status = command("mcsctl", "status", check=False)
-    for client in CLIENTS:
+    for client in stop_order:
         if client in status:
             command("mcsctl", "stop", client, check=False)
     time.sleep(0.2)
     status = command("mcsctl", "status", check=False)
-    for client in CLIENTS:
+    for client in stop_order:
         if client in status:
             command("mcsctl", "rm", client, check=False)
 
@@ -142,6 +149,7 @@ def cleanup_clients():
 
 
 def confirm_up_cpus_off():
+    import fcntl  # Linux-only ioctl; keep evidence validation importable on Windows.
     descriptor = os.open("/dev/mcs", os.O_RDONLY)
     try:
         for cpu in (4, 5):
@@ -163,8 +171,8 @@ def main():
     if "up-a" not in status or "up-b" not in status or status.count("Offline") != 2:
         raise RuntimeError(f"unexpected baseline clients:\n{status}")
     for path in (*CONFIGS.values(),
-                 TEST_ROOT / "tl3572-m7-can-up-a.elf",
-                 TEST_ROOT / "tl3572-m7-can-up-b.elf"):
+                 *(Path(line.split("=", 1)[1]) for config in CONFIGS.values()
+                   for line in config.read_text().splitlines() if line.startswith("ClientPath="))):
         if not path.is_file():
             raise RuntimeError(f"missing test input: {path}")
 
@@ -173,6 +181,7 @@ def main():
         "up-b": log_header(reader, "up-b")[1],
     }
     print(f"BASELINE micad={baseline_daemon} seq={baseline_seq}", flush=True)
+    confirm_up_cpus_off()
     prepare_linux_controllers()
     controllers_unbound = False
     primary_error = None
@@ -183,11 +192,11 @@ def main():
             output = command("mcsctl", "create", str(CONFIGS[client]))
             if "success" not in output.lower():
                 raise RuntimeError(f"create {client}: {output.strip()}")
-        control("start", "up-b-m7-can")
+        control("start", CLIENTS[0])
         time.sleep(1.0)
-        control("start", "up-a-m7-can")
+        control("start", CLIENTS[1])
 
-        deadline = time.monotonic() + 35.0
+        deadline = time.monotonic() + TEST_DEADLINE
         final_messages = {}
         while time.monotonic() < deadline:
             final_messages = {
@@ -198,13 +207,15 @@ def main():
             text_b = "".join(message for _, _, message in final_messages["up-b"])
             if "[can] UP1 direct FAIL" in text_a or "[can] UP2 direct FAIL" in text_b:
                 raise RuntimeError(f"direct CAN test failed\nUP1:\n{text_a}\nUP2:\n{text_b}")
-            if ("[can] UP1 direct PASS tx=1000 rx=1000" in text_a and
-                    "[can] UP2 direct PASS tx=1000 rx=1000" in text_b):
+            if (f"[can] UP1 direct PASS tx={EXPECTED_FRAMES} rx={EXPECTED_FRAMES}" in text_a and
+                    f"[can] UP2 direct PASS tx={EXPECTED_FRAMES} rx={EXPECTED_FRAMES}" in text_b):
+                validate_result(text_a, text_b)
                 for client in ("up-a", "up-b"):
                     for seq, boot, message in final_messages[client]:
                         print(f"[{client} boot={boot} seq={seq}] {message}",
                               end="" if message.endswith("\n") else "\n")
-                print("OVERALL PASS direct CAN requests=1000 responses=1000", flush=True)
+                print(f"OVERALL PASS direct CAN requests={EXPECTED_FRAMES} responses={EXPECTED_FRAMES}",
+                      flush=True)
                 break
             time.sleep(0.2)
         else:

@@ -1,6 +1,16 @@
 # Stage 07 / M7.0：全资源划分与外设直驱
 
-当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 经典 CAN 寄存器直驱基线通过 / 完整外设移交尚未完成 / M7.0 未验收`。
+当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 经典 CAN 自主 gate/reset/divider/pinmux 配置及 IRQ 收发通过 / 持久外设移交尚未完成 / M7.0 未验收`。
+
+2026-10-09 新增默认关闭的 CAN IRQ 模式，Linux 解绑后故意关闭本实例时钟、保持
+复位并改变分频，再由 UP1/CAN1/FD1 与 UP2/CAN3/FD3 自行初始化自己的字段、
+接收各自 SPI。最终固件三轮每路 TX/RX=10000/10000、TXIRQ/RXIRQ=10000/10000，
+错误/溢出/错误核心中断均为 0；覆盖四个低优先级 Linux CPU worker 和两种停止顺序。
+UP 自行关中断/恢复路由，CPU4/5 OFF 后才恢复资源、重绑 Linux，micad 未重启。
+两棵源码树重新编译的运行镜像逐字节一致。原 M6 固件/配置/DT 未覆盖，无刷机或重启。
+见 [CAN 自主初始化与 IRQ 实机证据](tests/board/can-irq-20261009/README.md)。
+共享 PLL/父级总线仍由系统准备；pinmux 未故意置错，冷启动、持久 DT、CAN FD/BRS
+及 FD2/FD4 尚未验证，不能宣称完整 CAN 移交。
 
 2026-09-28 已补齐 [GitHub 换机输入与构建入口](../../repro-inputs/rk3572/README.md)，
 在空目录、固定基础容器中断网重建 M6 完整镜像、M6/M7 双固件、M7 MCS 软件包及
@@ -19,7 +29,7 @@ Linux 驱动下的板级物理链路，不代表 UP1/UP2 已完成 CAN 直驱或
 直接控制 `0x2ab30000`，连续三轮完成每轮 1,000 次经典 CAN 请求/应答；双方每轮
 TX/RX 均为 1000/1000，控制器 TXERR/RXERR 均为 0。每轮结束均停止临时实例、重绑
 Linux CAN，`micad` PID 和重启计数不变。见
-[UP1/UP2 CAN 寄存器直驱记录](tests/board/can-direct-20260928/README.md)。当前驱动仍为
+[UP1/UP2 CAN 寄存器直驱记录](tests/board/can-direct-20260928/README.md)。该历史固件为
 轮询模式，并依赖 Linux 在解绑前一次性准备 CAN pinctrl/clock/reset；CAN FD/BRS、IRQ、
 FD2/FD4 及由 UP 自主初始化 CRU/pinctrl/reset 尚未完成，因此不能宣称 CAN 最终移交。
 2026-10-08 使用相同测试固件再通过一轮 1,000 次请求/应答；执行器增加 CPU4/5

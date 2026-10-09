@@ -1,7 +1,8 @@
 # TL3572 / RK3572：openEuler + MICA + UniProton
 
 本仓库保存评估板资料、Stage01–Stage07 的源码/配置、正式阶段记录，以及换机恢复入口。
-M6 双 UniProton 已完成；M7 当前完成日志/RPC 软件，工业外设直驱尚未实现、未验收。
+M6 双 UniProton 已完成；M7 已完成日志/RPC 软件及 CAN1↔CAN3 的经典 CAN
+自主字段初始化/IRQ 直驱切片，完整外设移交与 M7.0 尚未验收。
 
 ## 从哪里开始
 

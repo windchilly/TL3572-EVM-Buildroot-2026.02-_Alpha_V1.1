@@ -1,0 +1,26 @@
+Fri Oct  9 02:07:42 UTC 2026
+Linux tl3572-openeuler 6.12.69-gf1b67c293213 #1 SMP Mon Sep 21 03:23:13 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+MainPID=311
+NRestarts=0
+ActiveState=active
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed.
+Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP> 
+can0             DOWN           <NOARP,ECHO> 
+can2             DOWN           <NOARP,ECHO> 
+eth0             UP             d6:14:36:8b:78:f0 <BROADCAST,MULTICAST,UP,LOWER_UP> 
+eth1             DOWN           da:14:36:8b:78:f0 <NO-CARRIER,BROADCAST,MULTICAST,UP> 
+can1             DOWN           <NOARP,ECHO> 
+can3             DOWN           <NOARP,ECHO> 
+../../../../bus/platform/drivers/rk3576_can
+../../../../bus/platform/drivers/rk3576_can
+../../../../bus/platform/drivers/rk3576_can
+../../../../bus/platform/drivers/rk3576_can
+51fa0a5321cc6f6ded061788c14e64dd2c958ccb5b22032512d4893aeea8f0ea  /root/m7-can-irq-20261009/tl3572-m7-can-irq-up-a.elf
+a61f220f7910d2b04aedbbab5b4059626a6a416a374e44273b43e6e75b742b8c  /root/m7-can-irq-20261009/tl3572-m7-can-irq-up-b.elf
+91f20083-69fc-4bdb-9008-c621eb8b43e7

@@ -25,7 +25,13 @@ do
     git -C "${m7_root}" apply --check "${patch_file}"
     git -C "${m7_root}" apply "${patch_file}"
 done
+if [[ "${M7_CAN_IRQ_TEST:-OFF}" == ON ]]; then
+    git -C "${m7_root}" apply --check "${patch_dir}/0003-rk3572-can-irq-test-hook.patch"
+    git -C "${m7_root}" apply "${patch_dir}/0003-rk3572-can-irq-test-hook.patch"
+fi
 install -m 0644 "${overlay_file}" "${m7_root}/demos/rk3572_mica/bsp/print.c"
 install -m 0644 "${can_overlay_file}" \
     "${m7_root}/demos/rk3572_mica/apps/openamp/rk3572_can_test.c"
+install -m 0644 "${stage_root}/source/overlay/uniproton/demos/rk3572_mica/apps/openamp/rk3572_can_irq_test.c" \
+    "${m7_root}/demos/rk3572_mica/apps/openamp/rk3572_can_irq_test.c"
 echo "Prepared M7 source: ${m7_root}"

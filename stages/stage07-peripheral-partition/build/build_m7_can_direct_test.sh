@@ -4,12 +4,22 @@ set -euo pipefail
 readonly uniproton_root=${UNIPROTON_ROOT:-/home/openeuler/build/tl3572-2oo3/src/UniProton-m7}
 readonly toolchain_path=${TOOLCHAIN_PATH:-/home/openeuler/build/tl3572-2oo3/toolchain-14.3}
 readonly demo_dir="${uniproton_root}/demos/rk3572_mica"
+readonly irq_test=${M7_CAN_IRQ_TEST:-OFF}
+case "${irq_test}" in
+    ON|OFF) ;;
+    *) echo "M7_CAN_IRQ_TEST must be ON or OFF" >&2; exit 1 ;;
+esac
+if [[ "${irq_test}" == ON ]] && ! grep -q '^option(M7_CAN_IRQ_TEST ' "${demo_dir}/CMakeLists.txt"; then
+    echo "Prepare a fresh source tree with M7_CAN_IRQ_TEST=ON first" >&2
+    exit 1
+fi
+readonly variant=$([[ "${irq_test}" == ON ]] && echo can-irq || echo can)
 
 build_one()
 {
     local name=$1 cpu=$2 sgi=$3 image=$4 mmu=$5
-    local build_dir="${demo_dir}/build/m7-can-${name}"
-    local output="${demo_dir}/build/tl3572-m7-can-${name}.elf"
+    local build_dir="${demo_dir}/build/m7-${variant}-${name}"
+    local output="${demo_dir}/build/tl3572-m7-${variant}-${name}.elf"
 
     cmake -S "${demo_dir}" -B "${build_dir}" \
         -DAPP:STRING=rk3572_mica \
@@ -19,7 +29,8 @@ build_one()
         -DMCS_NOTIFY_SGI_ID:STRING="${sgi}" \
         -DMCS_IMAGE_ADDR:STRING="${image}" \
         -DMCS_MMU_ADDR:STRING="${mmu}" \
-        -DM7_CAN_DIRECT_TEST:BOOL=ON
+        -DM7_CAN_DIRECT_TEST:BOOL=ON \
+        -DM7_CAN_IRQ_TEST:BOOL="${irq_test}"
     cmake --build "${build_dir}" --target rk3572_mica --parallel
     cp "${build_dir}/rk3572_mica" "${output}"
     sha256sum "${output}"

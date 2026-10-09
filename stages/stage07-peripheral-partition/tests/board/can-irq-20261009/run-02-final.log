@@ -1,0 +1,43 @@
+BASELINE micad={'MainPID': '311', 'NRestarts': '0', 'ActiveState': 'active'} seq={'up-a': 13, 'up-b': 13}
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+NO Linux CAN up or bitrate preparation
+UNBOUND 2ab10000.can
+UNBOUND 2ab30000.can
+OWNED resources disabled: gates/resets=0x6600; baud dividers=/16
+IRQ VALIDATION PASS target masks=[16, 32]
+[up-a boot=2 seq=14] [boot] UP CPU4 entered
+[up-a boot=2 seq=15] [boot] interrupt routing ready
+[up-a boot=2 seq=16] [boot] scheduler task entered
+[up-a boot=2 seq=17] [openamp] get rsctable 7b250320, size a64 
+[up-a boot=2 seq=18] [openamp]: get vring0: da 7a080000
+[up-a boot=2 seq=19] [openamp]: get vring1: da 7a0800e0
+[up-a boot=2 seq=20] [openamp] tty task started
+[up-a boot=2 seq=21] [openamp] ept ready
+[up-a boot=2 seq=22] [boot] RPMsg ready
+[up-a boot=2 seq=23] [can-irq] UP1 before gate=0x8600 reset=0x600 select=0x783
+[up-a boot=2 seq=24] [can-irq] UP1 ready mpidr=0x100 intid=185 target=0x10 nbtp=0x1200256d
+[up-a boot=2 seq=25] [can-irq] UP1 counts irq=20000 txirq=10000 rxirq=10000 err=0x0 overflow=0 wrongcpu=0 target=0x10 status=0x20002
+[up-a boot=2 seq=26] [can] UP1 direct PASS tx=10000 rx=10000 txerr=0 rxerr=0 state=0x0 rc=0
+[up-b boot=2 seq=14] [boot] UP CPU5 entered
+[up-b boot=2 seq=15] [boot] interrupt routing ready
+[up-b boot=2 seq=16] [boot] scheduler task entered
+[up-b boot=2 seq=17] [openamp] get rsctable 7c250320, size a64 
+[up-b boot=2 seq=18] [openamp]: get vring0: da 7a0a0000
+[up-b boot=2 seq=19] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=2 seq=20] [openamp] tty task started
+[up-b boot=2 seq=21] [openamp] ept ready
+[up-b boot=2 seq=22] [boot] RPMsg ready
+[up-b boot=2 seq=23] [can-irq] UP2 before gate=0xe600 reset=0x6600 select=0x783
+[up-b boot=2 seq=24] [can-irq] UP2 ready mpidr=0x101 intid=187 target=0x20 nbtp=0x1200256d
+[up-b boot=2 seq=25] [can-irq] UP2 counts irq=20000 txirq=10000 rxirq=10000 err=0x0 overflow=0 wrongcpu=0 target=0x20 status=0x20002
+[up-b boot=2 seq=26] [can] UP2 direct PASS tx=10000 rx=10000 txerr=0 rxerr=0 state=0x0 rc=0
+OVERALL PASS direct CAN requests=10000 responses=10000
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+UP IRQ QUIESCE intid=185 enabled=False pending=False active=False target=1
+UP IRQ QUIESCE intid=187 enabled=False pending=False active=False target=1
+RESOURCE RESTORE PASS; other CAN gate/reset bits unchanged
+REBOUND 2ab10000.can
+REBOUND 2ab30000.can
+CLEANUP PASS temporary clients removed; Linux CAN rebound; micad unchanged

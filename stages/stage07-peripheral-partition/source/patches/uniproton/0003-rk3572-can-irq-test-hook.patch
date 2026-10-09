@@ -1,0 +1,70 @@
+diff --git a/demos/rk3572_mica/CMakeLists.txt b/demos/rk3572_mica/CMakeLists.txt
+--- a/demos/rk3572_mica/CMakeLists.txt
++++ b/demos/rk3572_mica/CMakeLists.txt
+@@ -10,3 +10,7 @@
+ option(M7_CAN_DIRECT_TEST "Run the RK3572 UP1/UP2 direct CAN test" OFF)
++option(M7_CAN_IRQ_TEST "Use owned CRU/IOC initialization and CAN IRQs" OFF)
++if(M7_CAN_IRQ_TEST AND NOT M7_CAN_DIRECT_TEST)
++    message(FATAL_ERROR "M7_CAN_IRQ_TEST requires M7_CAN_DIRECT_TEST")
++endif()
+ 
+ configure_file(
+@@ -37,5 +41,8 @@
+ if(M7_CAN_DIRECT_TEST)
+     add_compile_definitions(M7_CAN_DIRECT_TEST=1)
+ endif()
++if(M7_CAN_IRQ_TEST)
++    add_compile_definitions(M7_CAN_IRQ_TEST=1)
++endif()
+ 
+ include(${HOME_PATH}/cmake/functions/uniproton_functions.cmake)
+diff --git a/demos/rk3572_mica/apps/openamp/CMakeLists.txt b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+--- a/demos/rk3572_mica/apps/openamp/CMakeLists.txt
++++ b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+@@ -1,5 +1,9 @@
+ set(SRC main.c)
+ if(M7_CAN_DIRECT_TEST)
+-    list(APPEND SRC rk3572_can_test.c)
++    if(M7_CAN_IRQ_TEST)
++        list(APPEND SRC rk3572_can_irq_test.c)
++    else()
++        list(APPEND SRC rk3572_can_test.c)
++    endif()
+ endif()
+ add_library(rpmsg OBJECT ${SRC})
+diff --git a/demos/rk3572_mica/bsp/mmu.c b/demos/rk3572_mica/bsp/mmu.c
+--- a/demos/rk3572_mica/bsp/mmu.c
++++ b/demos/rk3572_mica/bsp/mmu.c
+@@ -28,5 +28,32 @@
+         .phys      = MMU_GIC_ADDR,
++#if defined(M7_CAN_IRQ_TEST)
++        .size      = 0x4000,
++        .max_level = 0x3,
++#else
+         .size      = 0x1000000,
+         .max_level = 0x2,
++#endif
+         .attrs     = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RWX,
++#if defined(M7_CAN_IRQ_TEST)
++    }, {
++#if (MCS_CLIENT_CPU_ID == 4)
++        .virt = 0x2AB10000, .phys = 0x2AB10000,
++#else
++        .virt = 0x2AB30000, .phys = 0x2AB30000,
++#endif
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++        .virt = 0x26090000, .phys = 0x26090000,
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++#if (MCS_CLIENT_CPU_ID == 4)
++        .virt = 0x26086000, .phys = 0x26086000,
++#else
++        .virt = 0x26082000, .phys = 0x26082000,
++#endif
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++#endif
+     }, {    

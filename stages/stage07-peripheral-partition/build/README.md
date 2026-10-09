@@ -51,7 +51,64 @@ bash stages/stage07-peripheral-partition/build/build_m7_can_direct_test.sh
 `tl3572-m7-can-up-b.elf`。它们是临时板级测试固件，不替换 M6/M7 基线 ELF，
 也不安装为 AutoBoot。板端配置、带回收的执行器、接线条件和已验证边界见
 [CAN 直驱实机记录](../tests/board/can-direct-20260928/README.md)。当前实现只覆盖经典 CAN
-轮询数据面；最终移交还需要 UP 自主配置 CRU/reset/pinctrl、IRQ 和 CAN FD/BRS。
+轮询数据面；这是保留的历史模式。2026-10-09 新增下述独立 IRQ 模式，
+不覆盖历史固件；最终移交仍须 CAN FD/BRS、四口及持久 DT/冷启动验收。
+
+### CAN 自主字段初始化 / IRQ 模式（2026-10-09）
+
+需使用包含 `0003-rk3572-can-irq-test-hook.patch` 的当前仓库版本；
+旧复现文档固定的 9 月提交不包含这次新增功能。
+准备和编译阶段都设置 `M7_CAN_IRQ_TEST=ON`，并使用尚不存在的独立目标目录：
+
+```bash
+# 容器内，当前工作目录为完整仓库；M6 基线应已完成库构建。
+export M7_CAN_IRQ_TEST=ON
+export UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-irq
+bash stages/stage07-peripheral-partition/build/prepare_m7_uniproton.sh
+bash stages/stage07-peripheral-partition/build/build_m7_can_direct_test.sh
+```
+
+准备脚本复制未加 M7 补丁的 M6 树，顺序应用 0001/0002/0003 并安装覆盖源码。
+默认不应用 0003；`M7_CAN_IRQ_TEST=OFF` 保持历史轮询/观测路径，已有目录不会覆盖。
+编译脚本只接受 ON/OFF；ON 但未准备 IRQ 钩子的源码会拒绝编译。
+该脚本是双固件应用构建，不隐式构建 UniProton/libmetal/OpenAMP/boundscheck 库。
+
+换机的库输入都已归档；按 [RK3572 空目录入口](../../../repro-inputs/rk3572/README.md)
+完成 Git LFS、固定 Docker 摘要和 `run.sh prepare`，然后执行：
+
+```bash
+bash repro-inputs/rk3572/scripts/run.sh m6-up
+docker exec -e M7_CAN_IRQ_TEST=ON \
+    -e UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-irq \
+    "$REPRO_CONTAINER" bash /repo/stages/stage07-peripheral-partition/build/prepare_m7_uniproton.sh
+docker exec -e M7_CAN_IRQ_TEST=ON \
+    -e UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-irq \
+    "$REPRO_CONTAINER" bash /repo/stages/stage07-peripheral-partition/build/build_m7_can_direct_test.sh
+```
+
+输出位于该源码树 `demos/rk3572_mica/build/tl3572-m7-can-irq-up-a.elf` 和
+`tl3572-m7-can-irq-up-b.elf`。仍为 AutoBoot=no 的临时测试，不替换 M6 或原 CAN ELF。
+本轮两棵独立源码树各自重新编译双应用，`objcopy -O binary` 后运行镜像逐字节一致；
+复用已有 M6 库，没有再次执行空目录库/Yocto 全量构建。完整日志及哈希见
+[IRQ 实机与复建记录](../tests/board/can-irq-20261009/README.md)。
+
+板端先确认 FD1↔FD3 接线、无真实执行器、原两实例 Offline、CPU4/5 OFF、
+修复版 micad 正常，以及 `/usr/libexec/m7/up_log_reader.py` 已安装。
+把两 IRQ ELF、`tests/board/up-{a,b}-m7-can-irq.conf`、
+`run_can_direct_pair.py`、`run_can_irq_pair.py`、`can_resource_preflight.py`、
+`run_can_irq_with_cpu_load.py` 放到板卡 `/root/m7-can-irq-20261009/`，不放到 MICA AutoBoot 目录。
+以板端 root 执行：
+
+```bash
+python3 /root/m7-can-irq-20261009/run_can_irq_pair.py
+python3 /root/m7-can-irq-20261009/run_can_irq_with_cpu_load.py
+python3 /root/m7-can-irq-20261009/run_can_irq_pair.py --stop-a-first
+```
+
+每次执行器会运行期解绑 CAN1/CAN3、保存并故意改变自己的时钟/复位字段，
+所以不能在正在承载业务流量的系统上运行。失败时也尝试回收；若任一 CPU OFF 未确认，
+不写回资源、不重绑 Linux，应保留日志并人工恢复，不自动重启板卡。
+测试日志中的最终 `CLEANUP PASS` 与数据面 `OVERALL PASS` 必须同时成立。
 
 ## 板卡部署与回退
 

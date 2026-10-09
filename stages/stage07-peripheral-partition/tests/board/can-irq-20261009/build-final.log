@@ -1,0 +1,26 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-irq-20261009/demos/rk3572_mica/build/m7-can-irq-up-a
+[  5%] Built target config
+[ 23%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 23%] Built target rpmsg
+[ 47%] Built target mica
+[ 64%] Built target proxy
+[ 94%] Built target bsp
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+51fa0a5321cc6f6ded061788c14e64dd2c958ccb5b22032512d4893aeea8f0ea  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-irq-20261009/demos/rk3572_mica/build/tl3572-m7-can-irq-up-a.elf
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-irq-20261009/demos/rk3572_mica/build/m7-can-irq-up-b
+[  5%] Built target config
+[ 11%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 23%] Built target rpmsg
+[ 47%] Built target mica
+[ 64%] Built target proxy
+[ 94%] Built target bsp
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+a61f220f7910d2b04aedbbab5b4059626a6a416a374e44273b43e6e75b742b8c  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-can-irq-20261009/demos/rk3572_mica/build/tl3572-m7-can-irq-up-b.elf
