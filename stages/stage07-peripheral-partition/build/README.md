@@ -171,6 +171,65 @@ profile0 为 FD 不变速，2/4 为 BRS 约 2/4 Mbit/s，仲裁均 500 kbit/s。
 CPU OFF 未确认时不恢复资源/不重绑/不自动重启，保留日志人工处理。
 此版本仅 FD1/FD3 单请求在途的测试切片，尚无四口、故障恢复、冷启动或工业协议验收。
 
+## UP1 / UP2 RS-232 直驱测试固件（2026-10-09）
+
+使用独立源码树，不能在已有 CAN/FD 树叠加：准备器复制未加 M7 补丁、已构建库的
+M6 基线，应用 0001/0002/0003/**0005**（不应用 CAN FD 的 0004），安装 UART C/codec。
+`M7_RS232_TEST` 默认 OFF，与 CAN DIRECT 模式互斥；应用构建显式关闭 CAN。
+原 M6、CAN 轮询/IRQ/FD 源码树和固件均不覆盖。
+
+```bash
+export UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232
+bash stages/stage07-peripheral-partition/build/prepare_m7_rs232.sh
+for baud in 115200 38400 9600; do
+    M7_RS232_BAUD="$baud" bash stages/stage07-peripheral-partition/build/build_m7_rs232_test.sh
+done
+```
+
+输出六份 `$UNIPROTON_ROOT/demos/rk3572_mica/build/tl3572-m7-rs232-{115200,38400,9600}-up-{a,b}.elf`。
+这些是 1000 个固定 32 字节请求/应答的临时测试 ELF，不是业务协议或生产队列驱动。
+选择 xin24m/div1，UART 整数除数为 13/39/156，8N1；计算速率均比标称高约 0.1603%。
+Linux/RPMsg 只启停和读日志，不转发串口字节；RBR/THR 收发仅在各 UP 本核 ISR。
+
+换机需当前 Git 提交及 LFS 输入，先按 [空目录入口](../../../repro-inputs/rk3572/README.md)
+完成固定 Docker 摘要、`run.sh prepare`、`run.sh m6-up`，再对该容器执行：
+
+```bash
+docker exec -e UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232 \
+    "$REPRO_CONTAINER" bash /repo/stages/stage07-peripheral-partition/build/prepare_m7_rs232.sh
+for baud in 115200 38400 9600; do
+    docker exec -e UNIPROTON_ROOT=/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232 \
+        -e M7_RS232_BAUD="$baud" \
+        "$REPRO_CONTAINER" bash /repo/stages/stage07-peripheral-partition/build/build_m7_rs232_test.sh
+done
+```
+
+这组脚本仅重编应用，库由 M6 全源码入口生成；不是一次新的完整 Yocto/内核构建。
+旧 9 月 Stage07 tar 不含本功能，应使用当前跟踪补丁/覆盖层，不回写历史归档。
+
+板上 UART4/T4/R4 是 UP1 的 SoC UART4/ttyS4，**板上 UART3/T3/R3 是 UP2 的
+SoC UART8/ttyS8**；J4-1(T4)→J4-5(R3)，J4-4(T3)→J4-2(R4)，仅隔离接线，不接执行器。
+先确认原 up-a/up-b Offline、CPU4/5 OFF、修复版 micad 和独立内存日志读取器正常，
+两串口没有进程占用。六 ELF、六 `up-{a,b}-m7-rs232-*.conf` 及下列脚本放到
+`/root/m7-rs232-20261009/`，不要安装到 AutoBoot 目录：
+
+- `run_rs232_pair.py`、`run_rs232_with_cpu_load.py`、`rs232_resources.py`；
+- 共用的 `run_can_direct_pair.py`（仅生命周期/日志助手）、`can_resource_preflight.py`（仅 GIC 地址助手）。
+
+```bash
+python3 /root/m7-rs232-20261009/run_rs232_pair.py --baud 115200
+python3 /root/m7-rs232-20261009/run_rs232_pair.py --baud 38400
+python3 /root/m7-rs232-20261009/run_rs232_pair.py --baud 9600
+python3 /root/m7-rs232-20261009/run_rs232_with_cpu_load.py --baud 115200
+python3 /root/m7-rs232-20261009/run_rs232_pair.py --baud 115200 --stop-a-first
+```
+
+执行器解绑 UART4/8，保存 own CRU/IOC/GIC 状态后故意关闭 own 时钟、保持复位、置分频/16，
+由 UP 初始化。只有两 CPU OFF 确认后才恢复资源/rebind；不自动重启。
+每轮必须同时有数据 `OVERALL PASS` 和 `CLEANUP PASS`，失败日志也保留。
+只适用于不承载业务的隔离测试窗口；实际结果及未验证项见
+[RS-232 实机记录](../tests/board/rs232-20261009/README.md)。
+
 ## 板卡部署与回退
 
 本轮板卡部署采用独立文件 `/usr/libexec/m7/micad` 和持久 drop-in `/etc/systemd/system/micad.service.d/90-m7-rpc-fix.conf`，原 `/usr/bin/micad` 未覆盖。drop-in 内容来自 `source/host/micad-m7-rpc-fix.conf`。服务仍使用原 PIDFile、MCS 内核模块前置依赖及失败重启策略。临时 M7 配置为 `AutoBoot=no`，没有安装为开机自动启动实例。

@@ -1,0 +1,73 @@
+diff --git a/demos/rk3572_mica/CMakeLists.txt b/demos/rk3572_mica/CMakeLists.txt
+--- a/demos/rk3572_mica/CMakeLists.txt
++++ b/demos/rk3572_mica/CMakeLists.txt
+@@ -15,2 +15,7 @@
+ endif()
++option(M7_RS232_TEST "Run direct UART4/UART8 IRQ test (physical UART4/UART3)" OFF)
++set(M7_RS232_BAUD 115200 CACHE STRING "RS232 test baud: 9600, 38400 or 115200")
++if(M7_RS232_TEST AND M7_CAN_DIRECT_TEST)
++    message(FATAL_ERROR "RS232 and CAN tests must use independent builds")
++endif()
+ 
+@@ -49,2 +54,5 @@
+ endif()
++if(M7_RS232_TEST)
++    add_compile_definitions(M7_RS232_TEST=1 M7_RS232_BAUD=${M7_RS232_BAUD})
++endif()
+ 
+diff --git a/demos/rk3572_mica/apps/openamp/CMakeLists.txt b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+--- a/demos/rk3572_mica/apps/openamp/CMakeLists.txt
++++ b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+@@ -8,2 +8,5 @@
+ endif()
++if(M7_RS232_TEST)
++    list(APPEND SRC rk3572_rs232_test.c)
++endif()
+ add_library(rpmsg OBJECT ${SRC})
+diff --git a/demos/rk3572_mica/apps/openamp/main.c b/demos/rk3572_mica/apps/openamp/main.c
+--- a/demos/rk3572_mica/apps/openamp/main.c
++++ b/demos/rk3572_mica/apps/openamp/main.c
+@@ -18,2 +18,5 @@
+ #endif
++#if defined(M7_RS232_TEST)
++extern U32 Rk3572Rs232Test(void);
++#endif
+ 
+@@ -45,3 +48,8 @@
+ #endif
++#if defined(M7_RS232_TEST)
++    if (Rk3572Rs232Test() != OS_OK) {
++        PRT_Printf("[rs232] direct test task failed\n");
++    }
++#endif
+ }
+ 
+diff --git a/demos/rk3572_mica/bsp/mmu.c b/demos/rk3572_mica/bsp/mmu.c
+--- a/demos/rk3572_mica/bsp/mmu.c
++++ b/demos/rk3572_mica/bsp/mmu.c
+@@ -29,3 +29,3 @@
+         .phys      = MMU_GIC_ADDR,
+-#if defined(M7_CAN_IRQ_TEST)
++#if defined(M7_CAN_IRQ_TEST) || defined(M7_RS232_TEST)
+         .size      = 0x4000,
+@@ -62,3 +62,20 @@
+         .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++#elif defined(M7_RS232_TEST)
++    }, {
++#if (MCS_CLIENT_CPU_ID == 4)
++        .virt = 0x2C160000, .phys = 0x2C160000,
++#else
++        .virt = 0x2C1A0000, .phys = 0x2C1A0000,
++#endif
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++        .virt = 0x26090000, .phys = 0x26090000,
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++        .virt = 0x26074000, .phys = 0x26074000,
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
+ #endif
+     }, {    

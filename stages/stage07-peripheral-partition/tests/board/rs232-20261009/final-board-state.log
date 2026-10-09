@@ -1,0 +1,34 @@
+Fri Oct  9 05:31:50 UTC 2026
+Linux tl3572-openeuler 6.12.69-gf1b67c293213 #1 SMP Mon Sep 21 03:23:13 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+MainPID=311
+NRestarts=0
+ActiveState=active
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed.
+Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP> 
+can0             DOWN           <NOARP,ECHO> 
+can2             DOWN           <NOARP,ECHO> 
+eth0             UP             d6:14:36:8b:78:f0 <BROADCAST,MULTICAST,UP,LOWER_UP> 
+eth1             DOWN           da:14:36:8b:78:f0 <NO-CARRIER,BROADCAST,MULTICAST,UP> 
+can1             DOWN           <NOARP,ECHO> 
+can3             DOWN           <NOARP,ECHO> 
+../../../../bus/platform/drivers/dw-apb-uart
+../../../../bus/platform/drivers/dw-apb-uart
+../../../../bus/platform/drivers/rk3576_can
+../../../../bus/platform/drivers/rk3576_can
+../../../../bus/platform/drivers/rk3576_can
+../../../../bus/platform/drivers/rk3576_can
+d4ed1222335c9ee380beb79a21f309695514d3b9d560a8ceac228aa19809354c  /root/m7-rs232-20261009/tl3572-m7-rs232-115200-up-a.elf
+da5e178c303d230e22e90a57584eb6cfa97aca6ec03e10145bff940115d3b997  /root/m7-rs232-20261009/tl3572-m7-rs232-115200-up-b.elf
+8b4e0d614a6d0e3481cf529bac97ba184ab8fa846e2fe1918161ac9291c92c9c  /root/m7-rs232-20261009/tl3572-m7-rs232-38400-up-a.elf
+84c6aa342b44dc030b9ace7c6aec9efa2c432b52c01454bc3e7df4dce0ac4fa6  /root/m7-rs232-20261009/tl3572-m7-rs232-38400-up-b.elf
+e2a1b9c58de47eaaa4c8551086ba988254d2f371430b83b3f8009b518e512f1f  /root/m7-rs232-20261009/tl3572-m7-rs232-9600-up-a.elf
+27538b043a4c75daf221cffdb68b351f970092ecc589b914c082151b6abdec3b  /root/m7-rs232-20261009/tl3572-m7-rs232-9600-up-b.elf
+d29bb34fb3302c6bdbd3a573aca5090a8b709c5f91033a4489721dbb71faa215  /sys/firmware/fdt
+91f20083-69fc-4bdb-9008-c621eb8b43e7
+0-3,6-7

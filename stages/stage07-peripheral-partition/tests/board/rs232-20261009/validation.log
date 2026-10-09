@@ -1,0 +1,54 @@
+test_all_three_profiles (test_can_fd_pair.CanFdEvidenceTests.test_all_three_profiles) ... ok
+test_classic_can_pass_cannot_prove_fd (test_can_fd_pair.CanFdEvidenceTests.test_classic_can_pass_cannot_prove_fd) ... ok
+test_missing_flags_payload_or_irq_is_rejected (test_can_fd_pair.CanFdEvidenceTests.test_missing_flags_payload_or_irq_is_rejected) ... ok
+test_no_brs_profile_rejects_brs_and_same_cpu (test_can_fd_pair.CanFdEvidenceTests.test_no_brs_profile_rejects_brs_and_same_cpu) ... ok
+test_complete_evidence_passes (test_can_irq_pair.CanIrqEvidenceTests.test_complete_evidence_passes) ... ok
+test_missing_interrupt_or_error_is_rejected (test_can_irq_pair.CanIrqEvidenceTests.test_missing_interrupt_or_error_is_rejected) ... ok
+test_polling_pass_is_insufficient (test_can_irq_pair.CanIrqEvidenceTests.test_polling_pass_is_insufficient) ... ok
+test_same_cpu_target_is_rejected (test_can_irq_pair.CanIrqEvidenceTests.test_same_cpu_target_is_rejected) ... ok
+test_classic_frame_round_trip (test_can_physical_pair.CanPhysicalPairCodecTests.test_classic_frame_round_trip) ... ok
+test_fd_frame_round_trip_with_brs (test_can_physical_pair.CanPhysicalPairCodecTests.test_fd_frame_round_trip_with_brs) ... ok
+test_sequence_is_encoded_big_endian (test_can_physical_pair.CanPhysicalPairCodecTests.test_sequence_is_encoded_big_endian) ... ok
+test_gate_reset_and_divider_decoding (test_can_resource_preflight.CanResourcePreflightTests.test_gate_reset_and_divider_decoding) ... ok
+test_live_dt_pin_fields_are_disjoint (test_can_resource_preflight.CanResourcePreflightTests.test_live_dt_pin_fields_are_disjoint) ... ok
+test_other_controller_bits_do_not_change_own_state (test_can_resource_preflight.CanResourcePreflightTests.test_other_controller_bits_do_not_change_own_state) ... ok
+test_shared_gic_word_uses_only_own_fields (test_can_resource_preflight.CanResourcePreflightTests.test_shared_gic_word_uses_only_own_fields) ... ok
+test_spi_numbers_are_converted_to_intids (test_can_resource_preflight.CanResourcePreflightTests.test_spi_numbers_are_converted_to_intids) ... ok
+test_decode_disabled (test_rs232_pair.Rs232Tests.test_decode_disabled) ... ok
+test_physical_mapping_and_owned_masks (test_rs232_pair.Rs232Tests.test_physical_mapping_and_owned_masks) ... ok
+test_profiles (test_rs232_pair.Rs232Tests.test_profiles) ... ok
+test_reject_corrupt_reports (test_rs232_pair.Rs232Tests.test_reject_corrupt_reports) ... ok
+test_same_target_rejected (test_rs232_pair.Rs232Tests.test_same_target_rejected) ... ok
+test_file_emitter_separates_instances (test_up_log_reader.UpLogReaderTest.test_file_emitter_separates_instances) ... ok
+test_header_is_bound_to_instance (test_up_log_reader.UpLogReaderTest.test_header_is_bound_to_instance) ... ok
+test_monitor_marks_client_and_boot (test_up_log_reader.UpLogReaderTest.test_monitor_marks_client_and_boot) ... ok
+test_reads_committed_records_only (test_up_log_reader.UpLogReaderTest.test_reads_committed_records_only) ... ok
+test_reports_ring_overwrite_boundary (test_up_log_reader.UpLogReaderTest.test_reports_ring_overwrite_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.020s
+
+OK
+PYTHON SYNTAX PASS 18 files
+PATCH 0005 CHECK PASS on Stage06 complete + 0001/0002/0003
+UART IRQ VALIDATION PASS targets=[16, 32]; 1000 frames/32000 bytes each direction
+ARCHIVED HARDWARE PASS run-02-115200.log
+UART IRQ VALIDATION PASS targets=[16, 32]; 1000 frames/32000 bytes each direction
+ARCHIVED HARDWARE PASS run-03-38400.log
+UART IRQ VALIDATION PASS targets=[16, 32]; 1000 frames/32000 bytes each direction
+ARCHIVED HARDWARE PASS run-04-9600.log
+UART IRQ VALIDATION PASS targets=[16, 32]; 1000 frames/32000 bytes each direction
+ARCHIVED HARDWARE PASS run-05-cpu-load.log
+UART IRQ VALIDATION PASS targets=[16, 32]; 1000 frames/32000 bytes each direction
+ARCHIVED HARDWARE PASS run-06-reverse-stop.log
+BOARD ELF HASH PASS tl3572-m7-rs232-115200-up-a.elf d4ed1222335c9ee380beb79a21f309695514d3b9d560a8ceac228aa19809354c
+BOARD ELF HASH PASS tl3572-m7-rs232-115200-up-b.elf da5e178c303d230e22e90a57584eb6cfa97aca6ec03e10145bff940115d3b997
+BOARD ELF HASH PASS tl3572-m7-rs232-38400-up-a.elf 8b4e0d614a6d0e3481cf529bac97ba184ab8fa846e2fe1918161ac9291c92c9c
+BOARD ELF HASH PASS tl3572-m7-rs232-38400-up-b.elf 84c6aa342b44dc030b9ace7c6aec9efa2c432b52c01454bc3e7df4dce0ac4fa6
+BOARD ELF HASH PASS tl3572-m7-rs232-9600-up-a.elf e2a1b9c58de47eaaa4c8551086ba988254d2f371430b83b3f8009b518e512f1f
+BOARD ELF HASH PASS tl3572-m7-rs232-9600-up-b.elf 27538b043a4c75daf221cffdb68b351f970092ecc589b914c082151b6abdec3b
+FIRMWARE MANIFEST PASS 19 entries
+FINAL RESOURCE/BOOT/DAEMON IDENTICAL; SIX RUNTIME IMAGES MATCH; FAILED PREFLIGHT HONESTLY RETAINED
+SERVER STAGE HASH PASS 11 inputs
+BOARD HASH PASS 17 inputs
+LOCAL VALIDATION PASS

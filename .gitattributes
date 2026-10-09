@@ -18,3 +18,5 @@ stages/stage07-peripheral-partition/source/patches/uniproton/0003-rk3572-can-irq
 stages/stage07-peripheral-partition/tests/board/can-irq-20261009/*.log whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/source/patches/uniproton/0004-rk3572-can-fd-test-hook.patch whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/tests/board/can-fd-20261009/*.log whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/source/patches/uniproton/0005-rk3572-rs232-test-hook.patch whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/board/rs232-20261009/*.log whitespace=-blank-at-eol,-blank-at-eof

@@ -1,6 +1,15 @@
 # Stage 07 / M7.0：全资源划分与外设直驱
 
-当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 经典 CAN 与 CAN FD/BRS 自主配置及 IRQ 收发通过 / 持久外设移交尚未完成 / M7.0 未验收`。
+当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN 与 RS-232 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
+
+2026-10-09 RS-232 五轮通过：板上 UART4（UP1/SoC UART4）↔板上 UART3
+（UP2/SoC UART8），115200/38400/9600、8N1，另测 Linux CPU 负载和两种停止顺序。
+每路累计 TX/RX 各 5000 帧/160000 字节，序号/CRC 和中断检查无错误；UP 自行初始化
+own CRU/reset/mux，数据只由本核 ISR 收发。独立默认关闭模式、六份测试 ELF、
+第二源码树运行镜像逐字节一致，复用 M6 库。退出两 CPU OFF、UART 归还 Linux、
+micad 不重启，原 M6/DT 保留。见 [RS-232 实机记录](tests/board/rs232-20261009/README.md)。
+仍未持久 DT/未知 pinmux 冷启动/工业协议验收。用户已选择跳过 CAN FD2/FD4，
+两口保持 `SKIPPED / 未验证`，不从 FD1/FD3 推断 PASS；下一项 RS-485 需另行确认接线。
 
 2026-10-09 CAN FD/BRS 切片四轮通过：500 kbit/s 仲裁，数据不变速/约 2/4 Mbit/s，
 16/32/64 字节逐帧全载荷校验。每路累计 TX/RX 各 12000，错误为 0；覆盖四个

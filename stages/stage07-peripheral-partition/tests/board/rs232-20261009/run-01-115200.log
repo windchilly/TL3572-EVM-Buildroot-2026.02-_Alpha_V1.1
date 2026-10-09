@@ -1,0 +1,10 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+Traceback (most recent call last):
+  File "/root/m7-rs232-20261009/run_rs232_pair.py", line 257, in <module>
+    main()
+  File "/root/m7-rs232-20261009/run_rs232_pair.py", line 189, in main
+    check_uart_free()
+  File "/root/m7-rs232-20261009/run_rs232_pair.py", line 84, in check_uart_free
+    raise RuntimeError(f"{p['tty']}: wrong controller mapping {tty.resolve()}")
+RuntimeError: ttyS4: wrong controller mapping /sys/devices/platform/soc/2c160000.serial/2c160000.serial:0/2c160000.serial:0.0

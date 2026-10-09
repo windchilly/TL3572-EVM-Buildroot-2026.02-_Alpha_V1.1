@@ -1,5 +1,35 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-09 最新 RS-232 切片已通过，先读本条；下方“下一步 FD2/FD4”是历史计划，
+用户已明确跳过这一组，FD2/FD4 保持 SKIPPED/未验证，不能推为 PASS。
+用户确认“UAR3/UART4 对接完成”后，按 J4-1/T4→J4-5/R3、J4-4/T3→J4-2/R4 测试。
+板上 UART4=SoC UART4/ttyS4/UP1 CPU4；板上 UART3=SoC UART8/ttyS8/UP2 CPU5。
+UP 直接初始化 own clock/reset/divider/mux，并由各自 ISR 收发；不使用 Linux/RPMsg 代理串口字节。
+INTID160/164、MPIDR0x100/0x101、GIC target0x10/0x20 实机正确。
+
+115200/38400/9600、8N1 三档，另测115200四个nice19 Linux CPU worker及A→B停止。
+共五轮每路累计TX/RX各5000帧/160000字节，帧32字节、角色/序号/CRC校验正确，
+line error/overflow/wrongcpu/busy/storm均0；每轮IRQ64000、TXIRQ33000、RXIRQ32000。
+时钟24MHz、UART除数13/39/156，速率按寄存器计算比标称高约0.1603%，不是仪器测量。
+首轮只读预检因Linux6.12的serial-port子目录判断失败，修正祖先路径检查后才解绑/发送；
+失败run-01保留但不计成功。五轮OVERALL PASS及CLEANUP PASS均成立。
+
+独立默认OFF的UART C/codec、0005钩子、prepare/build、六AutoBoot=no配置/ELF、
+执行器与证据在 [rs232-20261009](stages/stage07-peripheral-partition/tests/board/rs232-20261009/README.md)。
+应用补丁次序0001/0002/0003/0005，不应用CAN FD的0004；原M6/CAN各源码与ELF保留。
+容器dev_openeuler主树src/UniProton-m7-rs232-20261009及第二树
+src/UniProton-m7-rs232-repro-20261009各新编六应用，六对运行镜像逐字节一致，
+含调试路径的ELF hash不同；本轮复用M6库，没有再次全量Yocto/库/内核重建。
+Python26项单测通过；原生C -Wall/-Wextra/-Werror通过CRC向量、1000序号及256000位翻转。
+
+板端临时目录/root/m7-rs232-20261009；结束up-a/up-b Offline、CPU4/5 OFF、
+UART4/8重绑Linux、四CAN绑定/DOWN、micad PID311 active/NRestarts0、failed units0、ETH1正常。
+boot_id=91f20083-69fc-4bdb-9008-c621eb8b43e7未变，无重启/刷写、原M6/DT未改。
+仍未持久DT/未知pinmux冷启动、持续全双工、工业协议、独立外部对端或实时性验收；
+共享根总线/晶振/启动电气pinctrl仍由平台提供。M7.0未验收，mcs_fd create/rm泄漏仍未修。
+下一项RS-485两口，先核对硬件方向控制/资源/接线，用户确认接线后再发送。
+历史CAN FD清单在22e80f4校验，本轮另立清单，不改旧归档/原始证据。
+
 2026-10-09 后续 CAN FD/BRS 已通过（先读本条，再看下方历史经典 CAN 条目）。
 UP1/FD1/CAN1 ↔ UP2/FD3/CAN3 当前接线，500 kbit/s 仲裁，FD 不变速、BRS 约
 2.006757/4.013514 Mbit/s 三档，每档 16/32/64 字节各 1000 次请求/应答；另补

@@ -1,0 +1,45 @@
+LINUX CPU LOAD workers=4 nice=19 bounded=150s
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+NO Linux serial open/stty/TX/RX preparation; UART0 untouched
+BASELINE micad={'MainPID': '311', 'NRestarts': '0', 'ActiveState': 'active'} seq={'up-a': 176, 'up-b': 176} baud=115200 stop=('up-b-m7-rs232-115200', 'up-a-m7-rs232-115200')
+UNBOUND 2c160000.serial
+UNBOUND 2c1a0000.serial
+OWNED UART clocks disabled, resets asserted, selectors=xin24m /16
+UART IRQ VALIDATION PASS targets=[16, 32]; 1000 frames/32000 bytes each direction
+OVERALL PASS RS232 baud=115200 requests=1000 responses=1000
+[up-a boot=13 seq=177] [boot] UP CPU4 entered
+[up-a boot=13 seq=178] [boot] interrupt routing ready
+[up-a boot=13 seq=179] [boot] scheduler task entered
+[up-a boot=13 seq=180] [openamp] get rsctable 7b2503d0, size a64 
+[up-a boot=13 seq=181] [openamp]: get vring0: da 7a080000
+[up-a boot=13 seq=182] [openamp]: get vring1: da 7a0800e0
+[up-a boot=13 seq=183] [openamp] tty task started
+[up-a boot=13 seq=184] [openamp] ept ready
+[up-a boot=13 seq=185] [boot] RPMsg ready
+[up-a boot=13 seq=186] [rs232] UP1 before pgate=0x77e0 sgate=0x9249 preset=0x80 sreset=0x40 select=0x30f
+[up-a boot=13 seq=187] [rs232] UP1 ready uart=4 mpidr=0x100 intid=160 target=0x10 baud=115200 clock=24000000 divisor=13 lcr=0x3
+[up-a boot=13 seq=188] [rs232] UP1 counts irq=64000 txirq=33000 rxirq=32000 txbytes=32000 rxbytes=32000 err=0x0 overflow=0 wrongcpu=0 busy=0 storm=0 target=0x10
+[up-a boot=13 seq=189] [rs232] UP1 direct PASS baud=115200 tx=1000 rx=1000 bytes=32 rc=0
+[up-b boot=13 seq=177] [boot] UP CPU5 entered
+[up-b boot=13 seq=178] [boot] interrupt routing ready
+[up-b boot=13 seq=179] [boot] scheduler task entered
+[up-b boot=13 seq=180] [openamp] get rsctable 7c2503d0, size a64 
+[up-b boot=13 seq=181] [openamp]: get vring0: da 7a0a0000
+[up-b boot=13 seq=182] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=13 seq=183] [openamp] tty task started
+[up-b boot=13 seq=184] [openamp] ept ready
+[up-b boot=13 seq=185] [boot] RPMsg ready
+[up-b boot=13 seq=186] [rs232] UP2 before pgate=0x7fe0 sgate=0xffbc preset=0x880 sreset=0x4 select=0x30f
+[up-b boot=13 seq=187] [rs232] UP2 ready uart=8 mpidr=0x101 intid=164 target=0x20 baud=115200 clock=24000000 divisor=13 lcr=0x3
+[up-b boot=13 seq=188] [rs232] UP2 counts irq=64000 txirq=33000 rxirq=32000 txbytes=32000 rxbytes=32000 err=0x0 overflow=0 wrongcpu=0 busy=0 storm=0 target=0x20
+[up-b boot=13 seq=189] [rs232] UP2 direct PASS baud=115200 tx=1000 rx=1000 bytes=32 rc=0
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+UART QUIESCE {'uart': 4, 'cpu': 4, 'physical': 'UART4/T4/R4', 'intid': 160, 'p_gated': False, 's_gated': False, 'p_reset': False, 's_reset': False, 'source': 3, 'divider': 1, 'mux_ok': True, 'enabled': False, 'pending': False, 'active': False, 'edge': False, 'target': 1, 'priority': 160}
+UART QUIESCE {'uart': 8, 'cpu': 5, 'physical': 'UART3/T3/R3', 'intid': 164, 'p_gated': False, 's_gated': False, 'p_reset': False, 's_reset': False, 'source': 3, 'divider': 1, 'mux_ok': True, 'enabled': False, 'pending': False, 'active': False, 'edge': False, 'target': 1, 'priority': 160}
+RESOURCE RESTORE PASS UART CRU/IOC and shared GIC fields unchanged
+REBOUND 2c160000.serial
+REBOUND 2c1a0000.serial
+CLEANUP PASS temporary clients removed; UART4/8 rebound; micad unchanged
+CPU LOAD CLEANUP PASS

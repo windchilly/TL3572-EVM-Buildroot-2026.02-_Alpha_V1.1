@@ -1,0 +1,581 @@
+Prepared M7 source: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009
+Prepared independent RS232 source: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/m7-rs232-115200-up-a
+[  5%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 11%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 17%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 23%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 35%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 35%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 41%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 47%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 52%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 58%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 64%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 70%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 82%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 82%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 88%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 94%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target rpmsg
+[ 94%] Built target mica
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+9f2d5b8b27ac5f4ccbb92eb089c39ea179a9cdf31ec9c19f941c16877c6a24de  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-115200-up-a.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/m7-rs232-115200-up-b
+[  5%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 23%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 23%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 23%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 35%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 35%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 41%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 47%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 52%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 58%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 70%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 70%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 88%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 88%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 88%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 94%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target rpmsg
+[ 94%] Built target mica
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+06f6234ab78981fe6d5f08f552af45a944b906790b5b986001ee437cca2d74b2  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-115200-up-b.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/m7-rs232-38400-up-a
+[  5%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 17%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 17%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 29%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 29%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 47%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 47%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 47%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 52%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 58%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 76%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 76%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 70%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 88%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 88%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 94%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target rpmsg
+[ 94%] Built target mica
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+30cccafee467d4589b905b87c7b5c60c648a8c2ae7b537b6012908e9cd2b91d5  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-38400-up-a.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/m7-rs232-38400-up-b
+[  5%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 29%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 29%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 29%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 29%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 35%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 41%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 47%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 52%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 58%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 64%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 70%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 76%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 88%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 88%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 94%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target rpmsg
+[ 94%] Built target mica
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+d3a625c3910e1a41a3af0b975ab9de0945ce7dc1ac75466b90768b9724f830f2  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-38400-up-b.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/m7-rs232-9600-up-a
+[ 11%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 11%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 23%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 23%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 29%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 35%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 41%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 47%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 58%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 58%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 70%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 70%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 82%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 82%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 88%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 94%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target rpmsg
+[ 94%] Built target mica
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+627fb38a31ca2dbfeb53bd891a49ed2c047a643c853e0e8b4d9817a59036a2ae  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-9600-up-a.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CPU_TYPE
+
+
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/m7-rs232-9600-up-b
+[  5%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 11%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 17%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 29%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 29%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 41%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 41%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 47%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 52%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 64%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 64%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 76%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 76%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 82%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 94%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 94%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 94%] Built target config
+[ 94%] Built target bsp
+[ 94%] Built target rpmsg
+[ 94%] Built target mica
+[ 94%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+36fc5e61bfd1a2ede31ac54ac5a9b292e6545504c1dd634f52f106d2bb8cd839  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-9600-up-b.elf
+aarch64-none-linux-gnu-gcc (Arm GNU Toolchain 14.3.Rel1 (Build arm-14.174)) 14.3.1 20250623
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+12db06f05cb2117805b85ca41fb1559d9414cf6054d7da0a139678ca073972bf  /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/libs/libCortexMXsec_c.lib
+ff5781681faee4f3b3e719d5a4241ecbbd62fdf234a3df5819e2bd61688646c8  /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/libs/libRK3572.a
+355739e6fbf2ec678a54e030e7ef49ea876e048f81ef3340d0ba1bfb44abf818  /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/libs/libmetal.a
+3e05c9b2d9508ff114b5775ef2401086c7ac6e13b71a1abdbec13e24ce2cd983  /home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/libs/libopen_amp.a
+d4ed1222335c9ee380beb79a21f309695514d3b9d560a8ceac228aa19809354c  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-115200-up-a.elf
+9f2d5b8b27ac5f4ccbb92eb089c39ea179a9cdf31ec9c19f941c16877c6a24de  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-115200-up-a.elf
+5d31c33b099318bba940b1f61f40b21e9a9c3e1e6154e60a0e9cc364b70fc1fe  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-115200-up-a-tested.bin
+5d31c33b099318bba940b1f61f40b21e9a9c3e1e6154e60a0e9cc364b70fc1fe  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-115200-up-a-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-rs232-115200-up-a
+da5e178c303d230e22e90a57584eb6cfa97aca6ec03e10145bff940115d3b997  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-115200-up-b.elf
+06f6234ab78981fe6d5f08f552af45a944b906790b5b986001ee437cca2d74b2  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-115200-up-b.elf
+1e38b8affc8ed784248de36bd684ae7376a00d303ee7479292511928697e7a61  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-115200-up-b-tested.bin
+1e38b8affc8ed784248de36bd684ae7376a00d303ee7479292511928697e7a61  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-115200-up-b-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-rs232-115200-up-b
+8b4e0d614a6d0e3481cf529bac97ba184ab8fa846e2fe1918161ac9291c92c9c  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-38400-up-a.elf
+30cccafee467d4589b905b87c7b5c60c648a8c2ae7b537b6012908e9cd2b91d5  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-38400-up-a.elf
+107f6777a9533056d986c0b6718a133abbd0cad1664ddd0ed3edf00638557a9f  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-38400-up-a-tested.bin
+107f6777a9533056d986c0b6718a133abbd0cad1664ddd0ed3edf00638557a9f  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-38400-up-a-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-rs232-38400-up-a
+84c6aa342b44dc030b9ace7c6aec9efa2c432b52c01454bc3e7df4dce0ac4fa6  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-38400-up-b.elf
+d3a625c3910e1a41a3af0b975ab9de0945ce7dc1ac75466b90768b9724f830f2  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-38400-up-b.elf
+d727317759cf747756be186f813e76fa7a2ab9b0d7610b176c4e8264b329f53e  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-38400-up-b-tested.bin
+d727317759cf747756be186f813e76fa7a2ab9b0d7610b176c4e8264b329f53e  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-38400-up-b-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-rs232-38400-up-b
+e2a1b9c58de47eaaa4c8551086ba988254d2f371430b83b3f8009b518e512f1f  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-9600-up-a.elf
+627fb38a31ca2dbfeb53bd891a49ed2c047a643c853e0e8b4d9817a59036a2ae  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-9600-up-a.elf
+391b41ed0ad4cc72103345d1c8e53f8dd0713d29ca943865aab63246b507c0d5  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-9600-up-a-tested.bin
+391b41ed0ad4cc72103345d1c8e53f8dd0713d29ca943865aab63246b507c0d5  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-9600-up-a-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-rs232-9600-up-a
+27538b043a4c75daf221cffdb68b351f970092ecc589b914c082151b6abdec3b  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-9600-up-b.elf
+36fc5e61bfd1a2ede31ac54ac5a9b292e6545504c1dd634f52f106d2bb8cd839  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-rs232-repro-20261009/demos/rk3572_mica/build/tl3572-m7-rs232-9600-up-b.elf
+19b608744532cd290cbe35528714429dbc34df929479af612df1291005b533cb  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-9600-up-b-tested.bin
+19b608744532cd290cbe35528714429dbc34df929479af612df1291005b533cb  /home/openeuler/build/tl3572-2oo3/m7-rs232-20261009/tl3572-m7-rs232-9600-up-b-rebuilt.bin
+RUNTIME IMAGE MATCH tl3572-m7-rs232-9600-up-b
