@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path, PurePosixPath
 import subprocess
 import tarfile
@@ -50,11 +51,19 @@ def prepare(destination, source_root=None):
         else:
             upstream.extractall(destination, members=members)
     tree = destination / lock["archive_prefix"]
+    # git apply must treat this extracted tree as a plain directory, even when
+    # it lives under a user's checkout. Otherwise Git silently skips ALL paths
+    # outside the parent repository's cwd prefix and still returns success.
+    patch_env = os.environ.copy()
+    for name in ("GIT_DIR", "GIT_COMMON_DIR", "GIT_WORK_TREE", "GIT_INDEX_FILE"):
+        patch_env.pop(name, None)
+    patch_env["GIT_CEILING_DIRECTORIES"] = str(tree.parent)
     for name in ("0001-uniproton-target-selection.patch", "0002-uniproton-no-fp-range.patch"):
         patch = root / "port" / name
         # This upstream blob uses CRLF; our tracked patches use LF on Linux/Windows.
-        subprocess.run(["git", "apply", "--ignore-space-change", "--check", str(patch)], cwd=tree, check=True)
-        subprocess.run(["git", "apply", "--ignore-space-change", str(patch)], cwd=tree, check=True)
+        subprocess.run(["git", "apply", "--ignore-space-change", "--check", str(patch)], cwd=tree, env=patch_env, check=True)
+        subprocess.run(["git", "apply", "--ignore-space-change", str(patch)], cwd=tree, env=patch_env, check=True)
+        subprocess.run(["git", "apply", "--reverse", "--ignore-space-change", "--check", str(patch)], cwd=tree, env=patch_env, check=True)
     print(f"POWERLINK PREPARED: {lock['commit']} / {lock['files']} files / {tree}")
     return tree
 

@@ -2,13 +2,18 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+最新P3a入口`build_m7_powerlink_passive_mn.sh`，两新根强制链接完整核心/OD/应用，
+真实被动生命周期、内存CDC与16位置分配失败注入；P0/P1/P2旧入口保留。
+无新增RTOS任务/板端命令，不输出或替换累计ELF。
+见[P3a换机步骤与证据](../tests/powerlink-mn-p3a-20261010/README.md)。
+
 `build_m7_powerlink_core.sh` 固定解包完整上游源码，运行无硬件原生 NMT/OD 检查，
 编译并审计 AArch64 核心库；使用独立 `POWERLINK_BUILD_ROOT`，拒绝覆盖。
 这是 P0，不提供硬件 HAL、不部署/发送、不替换累计 ELF。
 参见[源码入口](../source/powerlink/README.md)与[实际记录](../tests/powerlink-mn-p0-20261010/README.md)。
 
 后续 P1 EDRV 入口 `build_m7_powerlink_edrv.sh` 保留不变。
-当前 P2 软件入口为 `build_m7_powerlink_rtos.sh`；真实累计 UP1/UP2 候选入口
+P2 软件入口为 `build_m7_powerlink_rtos.sh`；真实累计 UP1/UP2 候选入口
 `build_m7_powerlink_rtos_candidate.sh` 会应用 0011/0012 默认关闭补丁，输出仍仅在新源码树内。
 这不是可运行 MN，没有部署/定时器或 PHY 访问，也不覆盖 `firmware/`。
 完整双目录构建、对比和限制见 [P2 换机复现记录](../tests/powerlink-mn-p2-20261010/README.md)。

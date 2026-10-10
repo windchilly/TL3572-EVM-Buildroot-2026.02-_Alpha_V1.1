@@ -1,0 +1,35 @@
+diff --git a/stack/src/kernel/dll/dllkcal.c b/stack/src/kernel/dll/dllkcal.c
+--- a/stack/src/kernel/dll/dllkcal.c
++++ b/stack/src/kernel/dll/dllkcal.c
+@@ -257,6 +257,7 @@ tOplkError dllkcal_init(void)
+                             &instance_l.pQueueCnRequestNmt);
+     if (circErr != kCircBufOk)
+     {
++        ret = kErrorNoResource;
+         DEBUG_LVL_ERROR_TRACE("%s() Allocate CIRCBUF_ASYNC_SCHED_NMT failed\n", __func__);
+         goto Exit;
+     }
+@@ -266,6 +267,7 @@ tOplkError dllkcal_init(void)
+                             &instance_l.pQueueCnRequestGen);
+     if (circErr != kCircBufOk)
+     {
++        ret = kErrorNoResource;
+         DEBUG_LVL_ERROR_TRACE("%s() Allocate CIRCBUF_ASYNC_SCHED_GEN failed\n", __func__);
+         goto Exit;
+     }
+@@ -275,6 +277,7 @@ tOplkError dllkcal_init(void)
+                             &instance_l.pQueueIdentReq);
+     if (circErr != kCircBufOk)
+     {
++        ret = kErrorNoResource;
+         DEBUG_LVL_ERROR_TRACE("%s() Allocate CIRCBUF_DLLCAL_CN_REQ_IDENT failed\n", __func__);
+         goto Exit;
+     }
+@@ -284,6 +287,7 @@ tOplkError dllkcal_init(void)
+                             &instance_l.pQueueStatusReq);
+     if (circErr != kCircBufOk)
+     {
++        ret = kErrorNoResource;
+         DEBUG_LVL_ERROR_TRACE("%s() Allocate CIRCBUF_DLLCAL_CN_REQ_STATUS failed\n", __func__);
+         goto Exit;
+     }

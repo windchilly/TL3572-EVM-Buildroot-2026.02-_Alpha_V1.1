@@ -3,6 +3,7 @@ from pathlib import Path
 import tarfile
 import tempfile
 import unittest
+import subprocess
 
 SPEC = importlib.util.spec_from_file_location(
     "prepare_powerlink", Path(__file__).resolve().parents[1] / "build/prepare_m7_powerlink.py")
@@ -47,6 +48,16 @@ class PowerlinkArchiveTests(unittest.TestCase):
     def test_existing_destination_refused(self):
         with tempfile.TemporaryDirectory() as directory, self.assertRaises(FileExistsError):
             MODULE.prepare(Path(directory))
+
+    def test_nested_parent_git_cannot_silently_skip_patches(self):
+        with tempfile.TemporaryDirectory() as directory:
+            parent = Path(directory)
+            subprocess.run(["git", "init", "-q", str(parent)], check=True)
+            tree = MODULE.prepare(parent / "nested/build/source")
+            target = (tree / "stack/include/oplk/targetsystem.h").read_text()
+            self.assertTrue("OPLK_TARGET_UNIPROTON" in target, "target selection patch was skipped")
+            obd = (tree / "stack/src/user/obd/obdu.c").read_text()
+            self.assertEqual(obd.count("#if !defined(OPLK_TARGET_UNIPROTON)"), 2, "no-FP patch was skipped")
 
 
 class PowerlinkAuditTests(unittest.TestCase):

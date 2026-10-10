@@ -1,0 +1,32 @@
+diff --git a/apps/common/src/obdcreate/obdcreate.c b/apps/common/src/obdcreate/obdcreate.c
+--- a/apps/common/src/obdcreate/obdcreate.c
++++ b/apps/common/src/obdcreate/obdcreate.c
+@@ -184,7 +184,7 @@ All rights reserved.
+ #endif
+ 
+ // Set to true if PResChaining on the CN (DS302-C) is used
+-#if defined(CONFIG_DLL_PRES_CHAINING_CN)
++#if defined(CONFIG_DLL_PRES_CHAINING_CN) && (CONFIG_DLL_PRES_CHAINING_CN != FALSE)
+ #define CONFIG_FF_PRC                       (NMT_FEATUREFLAGS_PRC)
+ #else
+ #define CONFIG_FF_PRC                       0
+diff --git a/apps/common/objdicts/CiA302-4_MN/objdict.h b/apps/common/objdicts/CiA302-4_MN/objdict.h
+--- a/apps/common/objdicts/CiA302-4_MN/objdict.h
++++ b/apps/common/objdicts/CiA302-4_MN/objdict.h
+@@ -137,4 +137,4 @@ OBD_BEGIN()
+-#if (defined(CONFIG_DLL_PRES_CHAINING_CN) && (NMT_MAX_NODE_ID > 0))
++#if (defined(CONFIG_DLL_PRES_CHAINING_CN) && (CONFIG_DLL_PRES_CHAINING_CN != FALSE) && (NMT_MAX_NODE_ID > 0))
+         // Object 1050h: NMT_RelativeLatencyDiff_AU32
+         OBD_RAM_INDEX_RAM_ARRAY(0x1050, NMT_MAX_NODE_ID, FALSE, kObdTypeUInt32, kObdAccR, tObdUnsigned32, NMT_RelativeLatencyDiff_AU32, 0)
+ #endif
+@@ -1114,4 +1114,4 @@ OBD_BEGIN()
+         // Object 1F98h: NMT_CycleTiming_REC
+-#if !defined(CONFIG_DLL_PRES_CHAINING_CN)
++#if !defined(CONFIG_DLL_PRES_CHAINING_CN) || (CONFIG_DLL_PRES_CHAINING_CN == FALSE)
+         OBD_BEGIN_INDEX_RAM(0x1F98, 0x0A, FALSE)
+             OBD_SUBINDEX_RAM_VAR(0x1F98, 0x00, kObdTypeUInt8, kObdAccConst, tObdUnsigned8, NumberOfEntries, 0x09)
+@@ -1130,3 +1130,3 @@ OBD_BEGIN()
+             OBD_SUBINDEX_RAM_VAR_RG(0x1F98, 0x09, kObdTypeUInt16, kObdAccSRW, tObdUnsigned16, Prescaler_U16, 2, 0, 1000)
+-#if defined(CONFIG_DLL_PRES_CHAINING_CN)
++#if defined(CONFIG_DLL_PRES_CHAINING_CN) && (CONFIG_DLL_PRES_CHAINING_CN != FALSE)
+             OBD_SUBINDEX_RAM_VAR_RG(0x1F98, 0x0A, kObdTypeUInt8, kObdAccGR, tObdUnsigned8, PResMode_U8, 0x00, 0x00, 0x01)

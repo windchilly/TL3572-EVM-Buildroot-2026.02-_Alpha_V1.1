@@ -1,0 +1,51 @@
+{
+  "phase": "P3a SOFTWARE ONLY",
+  "identical": true,
+  "artifacts": [
+    {
+      "path": "aarch64/core/libm7_powerlink_mn_core.a",
+      "bytes": 634988,
+      "sha256": "415cabad97a4342d4a1466089013993b2448aba3a70d08a719427c1616fde69f"
+    },
+    {
+      "path": "aarch64/libm7_powerlink_passive_mn.a",
+      "bytes": 459606,
+      "sha256": "6b6a889184bf36f189ce0b78fecf542c71b6f72f939f6ebfa61f2f3366b9a62e"
+    },
+    {
+      "path": "mn-passive-full.o",
+      "bytes": 960192,
+      "sha256": "6b5a697045a6bc2ee696471a66e8dabdfdd718a0245d6830081cd54b1a7e6032"
+    },
+    {
+      "path": "p2/p1/core/aarch64/libm7_powerlink_mn_core.a",
+      "bytes": 634932,
+      "sha256": "d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b"
+    },
+    {
+      "path": "p2/p1/core/aarch64/mn-core.o",
+      "bytes": 509712,
+      "sha256": "f6e1773b6e3b4c0d807bd79a0fc738754170910fa0ee37704cd512cc2f601fbe"
+    },
+    {
+      "path": "p2/p1/edrv-aarch64/libm7_powerlink_eth2_edrv.a",
+      "bytes": 13722,
+      "sha256": "c576132cd1a83b22e056c5d348b46e8c329648fbaa176a84b71968cb6e8f6ef8"
+    },
+    {
+      "path": "p2/p1/mn-core-edrv.o",
+      "bytes": 521472,
+      "sha256": "b199dfe18f3f7ca36eca7192c8f56053de9ba4164a9b5b937b4cc9d1842d4b29"
+    },
+    {
+      "path": "p2/rtos-aarch64/libm7_powerlink_rtos.a",
+      "bytes": 25302,
+      "sha256": "3757a3ba2807c348de48d29b5232f9f9153fed50b0c41a3841fbd1f09e8612f6"
+    },
+    {
+      "path": "p2/mn-core-edrv-rtos.o",
+      "bytes": 542656,
+      "sha256": "a63f52fcacc65dc3b86471b0e861ce24d9f190e0cab798ee4f74a767c4d5c7d3"
+    }
+  ]
+}

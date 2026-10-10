@@ -1,0 +1,79 @@
+diff --git a/stack/src/user/api/generic.c b/stack/src/user/api/generic.c
+--- a/stack/src/user/api/generic.c
++++ b/stack/src/user/api/generic.c
+@@ -167,7 +167,9 @@ tOplkError oplk_initialize(void)
+ {
+     tOplkError  ret;
+ 
+-    target_init();
++    ret = target_init();
++    if (ret != kErrorOk)
++        return ret;
+ 
+     ret = ctrlu_init();
+     if (ret != kErrorOk)
+@@ -179,6 +181,7 @@ tOplkError oplk_initialize(void)
+ 
+     if (memmap_init() != kMemMapOk)
+     {
++        ctrlu_exit();
+         target_cleanup();
+         return kErrorNoResource;
+     }
+@@ -243,9 +246,8 @@ tOplkError oplk_destroy(void)
+ {
+     tOplkError  ret;
+ 
+-    fStackInitialized_l = FALSE;
+-
+     ret = ctrlu_shutdownStack();
+-
++    if (ret == kErrorOk)
++        fStackInitialized_l = FALSE;
+     return ret;
+ }
+@@ -272,8 +274,10 @@ void oplk_exit(void)
+ {
+     if (fStackInitialized_l)
+     {
++        /* Keep the environment/resources alive if hardware cannot quiesce. */
++        if (ctrlu_shutdownStack() != kErrorOk)
++            return;
+         fStackInitialized_l = FALSE;
+-        ctrlu_shutdownStack();
+     }
+ 
+     ctrlu_exit();
+diff --git a/stack/src/user/ctrl/ctrlu.c b/stack/src/user/ctrl/ctrlu.c
+--- a/stack/src/user/ctrl/ctrlu.c
++++ b/stack/src/user/ctrl/ctrlu.c
+@@ -55,6 +55,10 @@ All rights reserved.
+ #include <common/oplkinc.h>
+ #include <common/target.h>
+ #include <common/ami.h>
++#if defined(OPLK_TARGET_UNIPROTON)
++#include <kernel/edrv.h>
++#include <kernel/hrestimer.h>
++#endif
+ #include <user/ctrlu.h>
+ #include <user/ctrlucal.h>
+ #include <user/eventu.h>
+@@ -502,6 +506,18 @@ tOplkError ctrlu_shutdownStack(void)
+     tOplkError  ret = kErrorOk;
+     UINT16      retVal;
+ 
++#if defined(OPLK_TARGET_UNIPROTON)
++    /* Both layers share the UP2 owner. Stop physical DMA/timer BEFORE any
++     * buffer, OD, mutex or callback owner can be freed. Both exits are
++     * idempotent; the normal kernel cleanup calls them again. No rollback of
++     * partial init is attempted: the application retains a terminal FAULT. */
++    ret = edrv_exit();
++    if (ret != kErrorOk)
++        return ret;
++    ret = hrestimer_exit();
++    if (ret != kErrorOk)
++        return ret;
++#endif
+     ctrlInstance_l.fInitialized = FALSE;
+ 
+ #if defined(CONFIG_INCLUDE_CFM)

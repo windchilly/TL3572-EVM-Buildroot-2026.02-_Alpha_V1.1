@@ -1,5 +1,25 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-10 最新 POWERLINK 续做入口：P3a真实完整栈的被动软件接入通过，不是整个P3/硬件验收。
+新增port/m7_mn.c/h、mn/CMakeLists、0003/0004/0005与build_m7_powerlink_passive_mn.sh。
+单owner/非ISR/IRQ启用/防重入；COLD/IDLE/PREPARED/FAULT，timer→EDRV poll8→oplk_process。
+真实CiA302-4 MN OD+静态15B CDC（仅本地1006=1000us，无CN计划），NMT始终GsOff，无start/reset/send API。
+prepare会触真实BSP，非只读；目前只mock边界native执行，没有RTOS常驻任务/命令/最终MN ELF。
+0003 target返回检查/memmap清理/先停DMA与timer再free；部分init/stop失败终止FAULT保留资源到重启，不自动回滚/重试。
+0004修OD PRC FALSE被defined误宣告；0005修四MN request queue malloc失败未设置ret误报创建成功。
+真实完整栈100次被动启停1600alloc/1600free/live0；25组C含16位置分配故障+sem/PHY/timer/owner/CDC通过。
+P0两/P1九/P2十二组C及原parser/18生命周期/3codec回归通过；Windows/Linux各87Python。
+77C强制合并25HAL/API/OD/app存在，无FP/SIMD/Linux代理/atomic runtime；仍22BSP+8libc未解析，非最终RTOS链接。
+完整.o960192B SHA6b5a697045a6bc2ee696471a66e8dabdfdd718a0245d6830081cd54b1a7e6032。
+服务器/home/openeuler/build/powerlink-mn-p3a-20261010；build-checked-final-v2/build-checked-repro，9产物逐字节一致。
+P0/P1/P2核心源/配置/0001/0002不改；prepare helper修父Git内解包时apply全跳过仍exit0问题，ceiling隔离+reverse check。
+新增真实嵌套Git解包回归，旧阶段已正确apply时6个交叉产物不变；旧动态入口SHA须历史commit校验。
+本轮未连接板卡/COM7、发送、绑解绑、改PHY/DT、部署或重启；正式两ELF仍8bfb824b/627545f5，原M6保留。
+P3a完整源码/脚本/修复前失败原始日志/JSON/清单见tests/powerlink-mn-p3a-20261010/README.md；GitHub以最终报告为准。
+下一步P3b累计UP2 owner任务/有界邮箱/跨任务快照/全部MN与OD最终ELF链接；默认休眠不prepare/发送。
+随后先P2 CNTP/PPI30权限/IRQ/最坏响应与P1 100half硬件门槛，再开放MN reset，最后隔离CN/PDO/SDO互操作。
+不能控制真实CN/伺服、无节点容量/周期承诺；CAN/UART接线改变“不发送”持续有效；旧99warning/无sanitizer保留。
+
 2026-10-10 最新 POWERLINK 续做入口：P2 RTOS/cache/highres timer 软件基线通过，非硬件验收。
 新增 target-uniproton.c、hrestimer-rk3572.c、真实 rk3572_powerlink_rtos.c；P0/P1构建输入不改。
 本核 CNTP/PPI30（vendor rk3572.dtsi PPI14）独占，原 CNTV/PPI27/1ms Tick 不动；无新增MMIO页。
