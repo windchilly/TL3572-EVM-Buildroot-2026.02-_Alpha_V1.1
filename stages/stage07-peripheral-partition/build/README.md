@@ -7,6 +7,12 @@
 这是 P0，不提供硬件 HAL、不部署/发送、不替换累计 ELF。
 参见[源码入口](../source/powerlink/README.md)与[实际记录](../tests/powerlink-mn-p0-20261010/README.md)。
 
+后续 P1 EDRV 入口 `build_m7_powerlink_edrv.sh` 保留不变。
+当前 P2 软件入口为 `build_m7_powerlink_rtos.sh`；真实累计 UP1/UP2 候选入口
+`build_m7_powerlink_rtos_candidate.sh` 会应用 0011/0012 默认关闭补丁，输出仍仅在新源码树内。
+这不是可运行 MN，没有部署/定时器或 PHY 访问，也不覆盖 `firmware/`。
+完整双目录构建、对比和限制见 [P2 换机复现记录](../tests/powerlink-mn-p2-20261010/README.md)。
+
 ## ETH3 主机电源恢复
 
 2026-10-09新增`source/host/eth3_power_enable.py`、`m7-eth3-power.service`与

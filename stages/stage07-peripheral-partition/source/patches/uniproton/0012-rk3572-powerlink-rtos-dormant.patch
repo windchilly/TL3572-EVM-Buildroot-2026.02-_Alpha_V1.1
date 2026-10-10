@@ -1,0 +1,21 @@
+diff --git a/demos/rk3572_mica/apps/openamp/CMakeLists.txt b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+--- a/demos/rk3572_mica/apps/openamp/CMakeLists.txt
++++ b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+@@ -1,3 +1,17 @@
+ set(SRC main.c)
++option(M7_POWERLINK_RTOS "Compile dormant UP2 POWERLINK target/timer" OFF)
++if(M7_POWERLINK_RTOS)
++    if(NOT M7_INTEGRATED_FIRMWARE OR NOT M7_POWERLINK_EDRV)
++        message(FATAL_ERROR "RTOS candidate requires cumulative firmware and EDRV")
++    endif()
++    if(MCS_CLIENT_CPU_ID STREQUAL "5")
++        include_directories("${HOME_PATH}/src/arch/include")
++        list(APPEND SRC powerlink-port/target-uniproton.c powerlink-port/hrestimer-rk3572.c
++                        rk3572_powerlink_rtos.c)
++        set_source_files_properties(powerlink-port/target-uniproton.c
++            powerlink-port/hrestimer-rk3572.c rk3572_powerlink_rtos.c PROPERTIES
++            COMPILE_DEFINITIONS "OPLK_TARGET_UNIPROTON;CONFIG_MN;NDEBUG" COMPILE_OPTIONS "-Werror")
++    endif()
++endif()
+ option(M7_POWERLINK_EDRV "Compile dormant UP2 POWERLINK EDRV (not MN runtime)" OFF)
+ if(M7_POWERLINK_EDRV)

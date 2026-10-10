@@ -1,7 +1,7 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
-**P1 EDRV 软件基线：P0 核心 + 持续收发 EDRV/真实 BSP 编译 + 无硬件验证**，
+**P2 软件基线：P0 核心 + P1 EDRV + UniProton target/cache/CNTP 定时器真实 BSP 编译**，
 不是已能上网运行的主站；半双工上板仍待验证。
 
 上游完整源码归档（包括文档、工具和示例）存放于 `upstream/`，采用 Git LFS。
@@ -17,6 +17,12 @@
 P1 单独入口 `port/edrv/CMakeLists.txt` 实现 9 个 EDRV 接口；BSP 编译开关默认为 OFF，
 只在累计 UP2 候选中启用，没有运行入口。TX 独立缓冲池、组播/软件过滤、FCS 处理和
 安全停止的实际范围、串行 owner 约束及证据见 [P1 记录](../../tests/powerlink-mn-p1-20261010/README.md)。
+
+P2 新入口 `port/rtos/CMakeLists.txt`，实现其余 target/cache/hrestimer 接口；
+真实平台只在默认 OFF 的 `M7_POWERLINK_RTOS` 累计 UP2 候选开关中编译。
+CNTP/PPI30 独占，原 CNTV/PPI27 Tick 不动；ISR 只屏蔽/计数，协议回调由同一 UP2 owner 任务泵送。
+**还没有 owner 运行循环、MN 命令、半双工实机或定时精度结论**。
+资源与 RTOS 私有 ABI 限制、12 组原生测试及完整换机步骤见 [P2 记录](../../tests/powerlink-mn-p2-20261010/README.md)。
 
 P0 配置不使用 Socket/UDP、虚拟网卡、文件配置或主站冗余，CDC 配置须以后由内存提供。
 保持整数对象范围检查；REAL32/REAL64 的**范围检查**显式拒绝（`kErrorObdUnknownObjectType`），

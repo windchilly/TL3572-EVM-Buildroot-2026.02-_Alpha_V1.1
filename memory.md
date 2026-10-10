@@ -1,5 +1,29 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-10 最新 POWERLINK 续做入口：P2 RTOS/cache/highres timer 软件基线通过，非硬件验收。
+新增 target-uniproton.c、hrestimer-rk3572.c、真实 rk3572_powerlink_rtos.c；P0/P1构建输入不改。
+本核 CNTP/PPI30（vendor rk3572.dtsi PPI14）独占，原 CNTV/PPI27/1ms Tick 不动；无新增MMIO页。
+ISR只mask/计数，无stack/EDRV回调；下一P3同一UP2 owner任务泵送timer/EDRV/oplk_process。
+2逻辑timer、ceil ns->ticks、stale/generation、64bit wrap、定时先后、回调重入/改删保护，
+周期超期跳过而不突发补发，统计迟到/跳期包含前一回调耗时；callback错误/不支持extSync锁FAULT并关timer。
+真实count1 RTOS sem、8个非递归task-only mutex（不承诺PI）；临界区嵌套保存原DAIF，不无条件开IRQ；
+cache严格UP2 image/NC DMA范围、CTR cacheline+DC CVAC/CIVAC+DSB，拒绝UP1/表/其他地址。
+固定非SMP g_uniFlag私有ABI有编译/flags审计；真实libRK3572.a的RTOS/libc/PRT_MemAlloc/Free符号核验。
+通用PPI Disable/Delete源码走GICR地址，P2不用它；PPI30 handler保留到重启，停止只mask own CNTP/PPI，
+恢复own priority，停不静默时保留lease/FAULT。Group1/level/disabled/no pending/active为启动必要条件。
+最终容器 /home/openeuler/build/powerlink-mn-p2-20261010；build-checked-final-v2/repro-v2，
+UniProton-candidate-final-v2/repro-v2，两新软件根和两新累计候选根9产物逐字节一致。
+12组P2 C+原P0 2/P1 9组C通过；Windows/Linux各79 Python+原parser/18生命周期/3codec通过。
+RTOS .a=25302B SHA3757a3ba...，core/EDRV/RTOS .o=542656B SHAa63f52fc...。
+强制合并全部72核心+EDRV/RTOS+真实BSP，25 HAL/22 BSP均实现，无FP/SIMD/POSIX/atomic runtime；
+剩余13 RTOS+8libc（含g_uniFlag），不把gc删除当完整MN链接。stripped .o SHA9d155941...。
+候选UP1 runtime360676B SHA074cdb3a...；UP2=382596B SHA59d78986...，未上板；页表仍9/16、10/16。
+没有连接板卡/COM7、发送、解绑、改PHY/时钟/DT、重启或部署；正式ELF仍8bfb824b.../627545f5...。
+源码/脚本/所有成功和早期失败日志/JSON/清单见tests/powerlink-mn-p2-20261010/README.md。
+GitHub同步结果以最终报告为准；旧核心/M6告警保留、没有ASan/UBSan。
+下一步P3被动MN任务/OD/内存CDC/日志/启停；P2真实CNTP访问/IRQ/最坏延迟和P1半双工仍须验收。
+尚不能控制CN/伺服，无CN对端互操作，无确定周期/节点数承诺；CAN/UART接线改变“不发送”持续有效。
+
 2026-10-10 POWERLINK 续做入口：P1 EDRV 软件基线通过，P1半双工硬件验收仍未完成。
 新增真实9接口EDRV、8TX描述符/7并发、8RX、32独立TX池/1536B，共61696B NC DMA，
 身份/耗尽/重复释放防护、TX完成回调、组播/软件过滤/FCS处理、bounded poll与复位后安全释放。

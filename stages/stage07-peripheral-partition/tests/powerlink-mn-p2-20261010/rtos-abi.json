@@ -1,0 +1,31 @@
+{
+  "phase": "P2 static RTOS ABI only, not an executed allocation/IRQ test",
+  "archive_sha256": "ff5781681faee4f3b3e719d5a4241ecbbd62fdf234a3df5819e2bd61688646c8",
+  "required_symbols_defined": [
+    "PRT_HwiCreate",
+    "PRT_HwiLock",
+    "PRT_HwiRestore",
+    "PRT_HwiSetAttr",
+    "PRT_MemAlloc",
+    "PRT_MemFree",
+    "PRT_SemCreate",
+    "PRT_SemDelete",
+    "PRT_SemPend",
+    "PRT_SemPost",
+    "PRT_TaskDelay",
+    "PRT_TaskSelf",
+    "PRT_TickGetCount",
+    "calloc",
+    "free",
+    "g_uniFlag",
+    "malloc",
+    "memcmp",
+    "memcpy",
+    "memset",
+    "strlen",
+    "strncpy"
+  ],
+  "context_flags_verified": true,
+  "allocator": "pinned libc malloc -> PRT_MemAlloc default FSC; existing UP2 image heap",
+  "ppis": "do not use generic GICR disable/delete; banked GICv2 PPI30 only"
+}
