@@ -2,6 +2,10 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+最新P3d入口`build_m7_powerlink_eth_candidate.sh`，在P3c全新累计树追加0015/default OFF/UP2-only，
+显式COLD PHY/MAC100-half诊断不启动DMA/MN、不发帧，保留timer诊断。软件双新树复编通过，板端未部署。
+[P3d完整源码/复建记录](../tests/powerlink-eth-p3d-20261010/README.md)。ETH2移交须另确认，脚本不会连接板卡。
+
 当前P3c入口`build_m7_powerlink_timer_candidate.sh`，在全新累计树追加0014/default OFF/UP2-only诊断，
 `PLK timer-probe`显式只调用真实target/hrestimer；boot仍休眠，不启动MN或访问ETH。
 新增GICv2 NS视图检查修正与真实IRQ计数/迟到采样；软件/获准临时实测和完整换机命令见

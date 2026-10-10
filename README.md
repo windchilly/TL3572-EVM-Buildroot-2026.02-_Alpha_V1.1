@@ -1,6 +1,9 @@
 # TL3572 / RK3572：openEuler + MICA + UniProton
 
 本仓库保存评估板资料、Stage01–Stage07 的源码/配置、正式阶段记录，以及换机恢复入口。
+2026-10-10 最新[P3d无帧ETH2诊断软件准备](stages/stage07-peripheral-partition/tests/powerlink-eth-p3d-20261010/README.md)：
+累计UP2保留timer并补COLD显式PHY/MAC100-half检查，禁止DMA/帧/MN启动；8+3原生、104Python及双新树复编通过。
+未部署或改变板端ETH2，半双工实机待单独确认；正式固件/M6/DT不变，CAN/UART不发送仍有效。
 2026-10-10 最新[P3c定时器检查点](stages/stage07-peripheral-partition/tests/powerlink-timer-p3c-20261010/README.md)：
 UP2 CNTP/PPI30权限、72次真实IRQ/任务回调及安全退出通过；修正GICv2非安全分组视图误判。
 99项Python/原生回归、两个全新累计树runtime一致；样本最大IRQ迟到29.292us、任务迟到89.75us，非最坏时延保证。

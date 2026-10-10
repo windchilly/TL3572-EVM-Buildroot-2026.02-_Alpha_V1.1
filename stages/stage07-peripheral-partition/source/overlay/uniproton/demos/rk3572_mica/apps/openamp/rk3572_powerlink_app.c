@@ -18,6 +18,9 @@ enum { ENV_INIT = 1U, ENV_EXIT = 2U };
 #ifdef M7_POWERLINK_TIMER_PROBE
 enum { TIMER_PROBE = 3U };
 #endif
+#ifdef M7_POWERLINK_ETH_PROBE
+enum { ETH_PROBE = 4U };
+#endif
 #define APP_ERROR 0xffffffffU
 static M7PowerlinkSnapshot snapshot;
 static U8 ownerStack[0x8000] __attribute__((aligned(16)));
@@ -52,6 +55,22 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
             return; /* Do not call a blocking RTOS API in an invalid context. */
         }
         if (command) {
+#ifdef M7_POWERLINK_ETH_PROBE
+            if (command == ETH_PROBE) {
+                M7EthProbeResult eth;
+                PRT_Printf("[plk-eth] BEGIN forced100-half; no DMA/MN/frame startup\n");
+                result = m7_eth_probe(&eth);
+                lock = PRT_HwiLock();
+                snapshot.eth = eth; snapshot.result = result;
+                snapshot.running = 0; snapshot.completed = snapshot.submitted;
+                if (!eth.clean) { snapshot.ready = 0; snapshot.runtimeError = APP_ERROR; }
+                PRT_HwiRestore(lock);
+                PRT_Printf("[plk-eth] END rc=%u clean=%u phy=0x%x/0x%x bmcr=0x%x bmsr=0x%x mac=0x%x stop=0x%x/0x%x/0x%x lease=%u/%u\n",
+                    result, eth.clean, eth.configured.phyHigh, eth.configured.phyLow,
+                    eth.configured.bmcr, eth.configured.bmsr, eth.configured.mac,
+                    eth.stopped.mac, eth.stopped.tx, eth.stopped.rx, eth.leaseBefore, eth.leaseAfter);
+            } else {
+#endif
 #ifdef M7_POWERLINK_TIMER_PROBE
             if (command == TIMER_PROBE) {
                 M7TimerProbeResult timer;
@@ -84,6 +103,9 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
             PRT_Printf("[plk] owner=%u command=%u rc=0x%x state=%u (software-only)\n",
                 task, command, result, state.state);
 #ifdef M7_POWERLINK_TIMER_PROBE
+            }
+#endif
+#ifdef M7_POWERLINK_ETH_PROBE
             }
 #endif
         }
@@ -130,6 +152,9 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
 #ifdef M7_POWERLINK_TIMER_PROBE
     int timerStatus = 0;
 #endif
+#ifdef M7_POWERLINK_ETH_PROBE
+    int ethStatus = 0;
+#endif
     M7PowerlinkSnapshot out;
     char reply[384];
     uintptr_t lock;
@@ -146,6 +171,10 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
         else if (matches(data, length, "PLK timer-probe")) command = TIMER_PROBE;
         else if (matches(data, length, "PLK timer-status")) timerStatus = 1;
 #endif
+#ifdef M7_POWERLINK_ETH_PROBE
+        else if (matches(data, length, "PLK eth-probe")) command = ETH_PROBE;
+        else if (matches(data, length, "PLK eth-status")) ethStatus = 1;
+#endif
         else if (!matches(data, length, "PLK status")) error = "invalid-command";
     }
     lock = PRT_HwiLock();
@@ -154,6 +183,9 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
         else if (snapshot.pending || snapshot.running) error = "busy";
 #ifdef M7_POWERLINK_TIMER_PROBE
         else if (command == TIMER_PROBE && snapshot.mn.state != M7_MN_COLD) error = "wrong-state";
+#endif
+#ifdef M7_POWERLINK_ETH_PROBE
+        else if (command == ETH_PROBE && snapshot.mn.state != M7_MN_COLD) error = "wrong-state";
 #endif
         else if ((command == ENV_INIT && snapshot.mn.state != M7_MN_COLD) ||
                  (command == ENV_EXIT && snapshot.mn.state != M7_MN_IDLE)) error = "wrong-state";
@@ -176,6 +208,16 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
         (unsigned long long)out.timer.after.affinity, out.timer.after.enabled & (1U << 30),
         out.timer.after.pending & (1U << 30), out.timer.after.active & (1U << 30),
         out.timer.before.priority30, out.timer.after.priority30, out.timer.before.cntv & 3U, out.timer.after.cntv & 3U);
+#endif
+#ifdef M7_POWERLINK_ETH_PROBE
+    else if (ethStatus) bytes = snprintf(reply, sizeof(reply),
+        "PLK UP2 ETH rc=%u clean=%u phy=0x%x/0x%x bmcr=0x%x bmsr=0x%x mac=0x%x tx=0x%x rx=0x%x dma=0x%x irq=0x%x/0x%x stop=0x%x/0x%x/0x%x/0x%x/0x%x/0x%x lease=%u/%u\n",
+        out.eth.result, out.eth.clean, out.eth.configured.phyHigh, out.eth.configured.phyLow,
+        out.eth.configured.bmcr, out.eth.configured.bmsr, out.eth.configured.mac,
+        out.eth.configured.tx, out.eth.configured.rx, out.eth.configured.dma,
+        out.eth.configured.macIrq, out.eth.configured.dmaIrq,
+        out.eth.stopped.mac, out.eth.stopped.tx, out.eth.stopped.rx, out.eth.stopped.dma,
+        out.eth.stopped.macIrq, out.eth.stopped.dmaIrq, out.eth.leaseBefore, out.eth.leaseAfter);
 #endif
     else bytes = snprintf(reply, sizeof(reply),
         "PLK UP2 ready=%u owner=%u pending=%u running=%u seq=%u done=%u cmd=%u rc=0x%x runtime=0x%x state=%u nmt=0x%x processes=%llu events=%llu mode=software-only\n",

@@ -2,6 +2,10 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-10-10 最新[P3d无DMA/无帧ETH2诊断准备](tests/powerlink-eth-p3d-20261010/README.md)：
+同一UP2 owner/COLD显式PHY/MAC100-half检查和安全停止，保留timer入口；8+3原生/104Python/双新树runtime一致。
+只读预检板卡，未部署/解绑/改PHY/重启；半双工实机待单独确认，原M6/DT/正式ELF保持。
+
 2026-10-10 最新[P3c定时器实测](tests/powerlink-timer-p3c-20261010/README.md)：仅临时UP2，CNTP/PPI30真实72IRQ/72任务回调及退出通过。
 修正NS视图IGROUPR读零误判；样本最大IRQ29.292us、任务89.75us，非工业最坏时延/100us周期承诺。
 12probe+3mailbox原生、99Python及累计双新树复编通过；正式M6/DT/两ELF未改，无PHY/ETH/CAN/UART帧/重启。

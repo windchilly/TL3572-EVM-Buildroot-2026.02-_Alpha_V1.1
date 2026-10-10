@@ -1,0 +1,89 @@
+Linux tl3572-openeuler 6.12.69-gf1b67c293213 #1 SMP Mon Sep 21 03:23:13 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+ 16:27:06 up  6:42,  1 user,  load average: 0.03, 0.01, 0.00
+fa41fc54-86a5-46f4-84a0-d2e820e1ef17
+0-3,6-7
+4096
+MainPID=322
+NRestarts=0
+ActiveState=active
+Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+can0             DOWN           
+can1             DOWN           
+can2             DOWN           
+can3             DOWN           
+eth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 
+eth2             UP             fe80::2e0:9aff:fe42:baeb/64 
+eth1             UP             fe80::d814:36ff:fe8b:78f0/64 
+default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 
+192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 
+192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 
+Settings for eth1:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Half 1000baseT/Full
+	Supported pause frame use: Symmetric Receive-only
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Half 1000baseT/Full
+	Advertised pause frame use: Symmetric Receive-only
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  10baseT/Half 10baseT/Full
+	                                     100baseT/Half 100baseT/Full
+	Link partner advertised pause frame use: Symmetric Receive-only
+	Link partner advertised auto-negotiation: Yes
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Full
+	Auto-negotiation: on
+	master-slave cfg: preferred slave
+	master-slave status: slave
+	Port: Twisted Pair
+	PHYAD: 1
+	Transceiver: external
+	MDI-X: Unknown
+	Supports Wake-on: ug
+	Wake-on: d
+        Current message level: 0x0000003f (63)
+                               drv probe link timer ifdown ifup
+	Link detected: yes
+Settings for eth2:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Supported pause frame use: No
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Advertised pause frame use: No
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  10baseT/Half 10baseT/Full
+	                                     100baseT/Half 100baseT/Full
+	Link partner advertised pause frame use: Symmetric Receive-only
+	Link partner advertised auto-negotiation: Yes
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Full
+	Auto-negotiation: on
+	Port: MII
+	PHYAD: 32
+	Transceiver: internal
+	Supports Wake-on: pumbg
+	Wake-on: g
+        Current message level: 0x00007fff (32767)
+                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol
+	Link detected: yes
+Module                  Size  Used by
+mcs_km                 16384  0
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed.
+
+REMOTE_EXIT_CODE=0

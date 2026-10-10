@@ -1,5 +1,19 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-10 最新 POWERLINK 续做入口：P3d no-DMA/no-frame ETH2诊断软件准备通过，半双工实机未测。
+新增m7_eth_probe.c/h、0015、build_m7_powerlink_eth_candidate.sh，累计owner仅COLD显式eth-probe/eth-status。
+保留P3c timer诊断；PHY100half/ANoff+MACdisabled100half回读，不初始化描述符/启动DMA/EDRV/MN/timer/发送。
+安全acquire拒绝与不安全lease区分；stop一次/回读MAC/TX/RX/IRQ全0再释放，异常保留资源、owner拒绝重试。
+8组mock边界probe+3真实累计mailbox原生、P3c/P3b/旧P0-P3a/累计回归、Windows/Linux各104Python通过。
+两个全新累计树runtime相同；9旧软件对象是明确复用P3c/P3b/P3a，非本轮重编72核心。
+UP2 runtime620564B SHA802a76ac...，image/BSS2146128B/8MiB，页表10/16；UP1不变9/16，零未解析/无新增125旧SIMD。
+候选SHA73689e61...仅LFS归档；正式两ELF/M6/DT/开机不变；build root /home/openeuler/build/powerlink-eth-p3d-20261010。
+本轮板卡只有SSH只读预检：bootfa41fc54.../micadPID322restarts0/两UPOffline/ETH2ETH3仍Linux100fullANon。
+未部署/解绑/改变PHY/开COM7/重启/发帧；CAN/UART“不发送”有效；P3c授权仅timer，不能沿用到ETH接管。
+已询问ETH2ETH3隔离回环是否仍在和临时ETH2移交检查是否允许，未收到新授权前不实施板端。
+tests/powerlink-eth-p3d-20261010/README.md为源码/完整构建/失败路径日志/新机步骤入口，GitHub以最终报告为准。
+下一步获准后无帧runner：UP2临时独占ETH2/共享根hold/PHYMAC100half/对端检查/安全停机归还；再物理EDRV与MN/CN。
+
 2026-10-10 最新 POWERLINK 续做入口：P3c timer-only 软件/临时UP2实测通过，非MN/实时/整个P3验收。
 新增m7_timer_probe.c/h、m7_plk_gic.h、0014、build_m7_powerlink_timer_candidate.sh及完整原生/板端测试。
 PLK timer-probe/timer-status仅诊断开关/COLD显式执行，默认不自动运行，不oplk_initialize/create/EDRV/ETH。

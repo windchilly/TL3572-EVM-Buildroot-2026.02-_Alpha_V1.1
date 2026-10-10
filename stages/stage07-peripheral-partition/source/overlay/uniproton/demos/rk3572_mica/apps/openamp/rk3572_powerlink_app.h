@@ -7,12 +7,18 @@
 #ifdef M7_POWERLINK_TIMER_PROBE
 #include "m7_timer_probe.h"
 #endif
+#ifdef M7_POWERLINK_ETH_PROBE
+#include "m7_eth_probe.h"
+#endif
 typedef struct {
     uint32_t ready, pending, running, submitted, completed, command;
     uint32_t result, runtimeError, owner;
     M7MnStatus mn;
 #ifdef M7_POWERLINK_TIMER_PROBE
     M7TimerProbeResult timer;
+#endif
+#ifdef M7_POWERLINK_ETH_PROBE
+    M7EthProbeResult eth;
 #endif
 } M7PowerlinkSnapshot;
 uint32_t Rk3572PowerlinkInit(void);

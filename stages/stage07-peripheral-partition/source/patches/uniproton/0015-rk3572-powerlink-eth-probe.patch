@@ -1,0 +1,24 @@
+diff --git a/demos/rk3572_mica/CMakeLists.txt b/demos/rk3572_mica/CMakeLists.txt
+--- a/demos/rk3572_mica/CMakeLists.txt
++++ b/demos/rk3572_mica/CMakeLists.txt
+@@ -1,3 +1,13 @@
+ cmake_minimum_required(VERSION 3.12)
++option(M7_POWERLINK_ETH_PROBE "Explicit UP2 PHY/MAC diagnostic without DMA or frames" OFF)
++if(M7_POWERLINK_ETH_PROBE)
++    if(NOT M7_POWERLINK_MN OR NOT M7_POWERLINK_EDRV OR NOT MCS_CLIENT_CPU_ID STREQUAL "5")
++        message(FATAL_ERROR "Ethernet probe requires the UP2 dormant MN/EDRV candidate")
++    endif()
++    if(NOT EXISTS "${M7_POWERLINK_ETH_OBJECT}")
++        message(FATAL_ERROR "Set audited M7_POWERLINK_ETH_OBJECT")
++    endif()
++    add_compile_definitions(M7_POWERLINK_ETH_PROBE=1)
++endif()
+ option(M7_POWERLINK_TIMER_PROBE "Explicit UP2 timer-only hardware diagnostic" OFF)
+ if(M7_POWERLINK_TIMER_PROBE)
+@@ -159,3 +169,6 @@
+ if(M7_POWERLINK_TIMER_PROBE)
+     target_sources(${APP} PRIVATE "${M7_POWERLINK_TIMER_OBJECT}")
+ endif()
++if(M7_POWERLINK_ETH_PROBE)
++    target_sources(${APP} PRIVATE "${M7_POWERLINK_ETH_OBJECT}")
++endif()

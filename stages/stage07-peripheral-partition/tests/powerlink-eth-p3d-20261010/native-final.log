@@ -1,0 +1,50 @@
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d cumulative ETH+timer mailbox native PASS
+P3d cumulative ETH+timer mailbox native PASS
+P3d cumulative ETH+timer mailbox native PASS
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c timer mailbox native PASS
+P3c timer mailbox native PASS
+P3c timer mailbox native PASS
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+P3b REAL FULL-STACK OWNER NATIVE PASS: 12 scenarios + UP1 denial, 100 environment cycles, zero hardware acquire
+P3c native timer 12 + mailbox 3 scenarios PASS; P3b regression PASS
+P3d native 8 probe + 3 cumulative mailbox scenarios PASS; P3c/P3b regressions PASS
+........................................................................................................
+----------------------------------------------------------------------
+Ran 104 tests in 1.420s
+
+OK
+POWERLINK PREPARED: 048650a80db37fa372330c3a900d2c8edb327e47 / 1355 files / /tmp/tmpnil7jle1/nested/build/source/openPOWERLINK_V2-2.7.2
+
+REMOTE_EXIT_CODE=0

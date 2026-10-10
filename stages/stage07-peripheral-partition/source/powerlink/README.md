@@ -1,8 +1,12 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
-**P3c累计候选：休眠owner/完整栈 + 显式timer-only诊断及CNTP/PPI30实测**，
+**P3d累计候选：休眠owner/完整栈 + 已实测timer诊断 + 尚未上板的无DMA/帧ETH2诊断**，
 不是已能上网运行的主站；半双工上板仍待验证。
+
+最新`m7_eth_probe.c/h`/0015只在COLD显式检查PHY/MAC100half并停止，不启动DMA/EDRV/MN；
+8+3原生mock边界/累计owner、104Python与双新树复编通过；[P3d完整记录](../../tests/powerlink-eth-p3d-20261010/README.md)。
+本轮板卡仅只读检查，ETH2临时移交须另确认，正式固件和开机配置不变。
 
 上游完整源码归档（包括文档、工具和示例）存放于 `upstream/`，采用 Git LFS。
 以 `upstream.lock.json` 的提交、SHA256 和源码树为准，不在构建时跟随 master。

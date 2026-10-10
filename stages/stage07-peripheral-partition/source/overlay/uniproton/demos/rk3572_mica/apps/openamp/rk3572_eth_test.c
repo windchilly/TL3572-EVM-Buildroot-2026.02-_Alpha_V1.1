@@ -11,6 +11,9 @@
 #ifdef M7_POWERLINK_EDRV
 #include "m7_eth2_hw.h"
 #endif
+#ifdef M7_POWERLINK_ETH_PROBE
+#include "m7_eth_probe.h"
+#endif
 
 #if (MCS_CLIENT_CPU_ID == 5)
 #define MAC 0x2a040000UL
@@ -246,8 +249,15 @@ U32 Rk3572EthTest(U32 length)
 #ifdef M7_POWERLINK_EDRV
 uint32_t m7_eth2_hw_read(uint32_t offset) { return Reg(offset); }
 void m7_eth2_hw_write(uint32_t offset, uint32_t value) { Set(offset, value); }
-int m7_eth2_hw_stop(void)
+static int PowerlinkStop(
+#ifdef M7_POWERLINK_ETH_PROBE
+    M7EthHardware *out
+#else
+    void *out
+#endif
+)
 {
+    (void)out;
     if (__atomic_load_n(&g_ethLease, __ATOMIC_ACQUIRE) != 2U || (Read(0x260908a8UL) & 0x6U)) { return 0; }
     Set(0x1134U, 0U); Set(0xb4U, 0U);
     Set(0U, Reg(0U) & ~3U); Set(0x1104U, Reg(0x1104U) & ~1U); Set(0x1108U, Reg(0x1108U) & ~1U);
@@ -255,10 +265,39 @@ int m7_eth2_hw_stop(void)
         PRT_Printf("[plk-edrv] UNSAFE reset timeout; retain power/root hold and lease\n");
         return 0;
     }
+    if ((Reg(0U) & 3U) || (Reg(0x1104U) & 1U) || (Reg(0x1108U) & 1U) ||
+        Reg(0xb4U) || Reg(0x1134U)) {
+        PRT_Printf("[plk-edrv] UNSAFE stop readback; retain power/root hold and lease\n");
+        return 0;
+    }
+#ifdef M7_POWERLINK_ETH_PROBE
+    if (out) {
+        out->mac = Reg(0U); out->tx = Reg(0x1104U); out->rx = Reg(0x1108U);
+        out->dma = Reg(0x1000U); out->macIrq = Reg(0xb4U); out->dmaIrq = Reg(0x1134U);
+    }
+#endif
     __atomic_store_n(&g_ethLease, 0U, __ATOMIC_RELEASE);
     PRT_Printf("[plk-edrv] QUIESCED reset=1; aborted TX is not completion\n");
     return 1;
 }
+int m7_eth2_hw_stop(void) { return PowerlinkStop(NULL); }
+#ifdef M7_POWERLINK_ETH_PROBE
+uint32_t m7_eth2_hw_lease(void)
+{ return __atomic_load_n(&g_ethLease, __ATOMIC_ACQUIRE); }
+int m7_eth2_hw_probe_stop(M7EthHardware *out) { return out && PowerlinkStop(out); }
+int m7_eth2_hw_probe_mode(M7EthHardware *out)
+{
+    if (!out || m7_eth2_hw_lease() != 2U || (Read(0x260908a8UL) & 0x6U)) return 0;
+    /* No DMA rings or start bits: configure PS/FES=100M, DM=0 with RE/TE=0. */
+    if ((Reg(0U) & 3U) || (Reg(0x1104U) & 1U) || (Reg(0x1108U) & 1U)) return 0;
+    Set(0U, (1U << 15) | (1U << 14));
+    if (!PhyWrite(31U, 0U) || !Mdio(2U, &out->phyHigh, 0) || !Mdio(3U, &out->phyLow, 0) ||
+        !Mdio(0U, &out->bmcr, 0) || !Mdio(1U, &out->bmsr, 0) || !Mdio(1U, &out->bmsr, 0)) return 0;
+    out->mac = Reg(0U); out->tx = Reg(0x1104U); out->rx = Reg(0x1108U);
+    out->dma = Reg(0x1000U); out->macIrq = Reg(0xb4U); out->dmaIrq = Reg(0x1134U);
+    return 1;
+}
+#endif
 int m7_eth2_hw_acquire(void)
 {
     U32 feature, tx, rx;
