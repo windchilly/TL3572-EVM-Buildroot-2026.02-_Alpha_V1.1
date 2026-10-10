@@ -1,5 +1,24 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-10 POWERLINK 续做入口：P1 EDRV 软件基线通过，P1半双工硬件验收仍未完成。
+新增真实9接口EDRV、8TX描述符/7并发、8RX、32独立TX池/1536B，共61696B NC DMA，
+身份/耗尽/重复释放防护、TX完成回调、组播/软件过滤/FCS处理、bounded poll与复位后安全释放。
+异常TX不报成功，延迟RX拒绝并保留数据，停止失败保留FAULT/lease/host电源根保持；单owner串行调用。
+真实BSP增加forced100half/ANoff及PHY/MAC能力回读；旧100full参数保留，legacy与EDRV互斥。
+candidate开关默认OFF/仅UP2，没有MN命令；核心P0审计/源码归档保持不变，不用假HAL成功。
+9组EDRV C+原NMT/OD 2组通过；Windows/Linux各73Python+原生parser/18生命周期/3codec通过。
+容器 /home/openeuler/build/powerlink-mn-p1-20261010；build-checked-final/checked-repro两软件目录
+核心.a/.o、EDRV.a、核心EDRV.o逐字节一致；EDRV13722B SHA c576132c...。
+UniProton-candidate-final/repro两累计候选runtime bin逐字节一致；UP1=074cdb3a...（与旧实测相同），
+UP2=a6946bf8...（未实测新候选）；页表仍9/16、10/16。强制合并EDRV+BSP14接口、无FP/SIMD/
+Linux/原子运行库，仅PRT_Printf/PRT_TaskDelay/memcmp/memcpy/memset未解析，不把gc删除当链接验收。
+没有连接板卡/COM7，没有发帧/改PHY/解绑/重启/部署。正式ELF SHA仍8bfb824b.../627545f5...，M6/DT不变。
+旧99核心告警和M6 endian/RWX告警保留，无sanitizer；早期include与.obj后缀失败日志不删除。
+下一软件入口P2 target/cache/highres timer/ISR临界区；P1半双工物理收发/FCS/启停仍须验收；
+P3 OD/CDC/MN接入/P4隔离CN互操作未做。32TX池不是32CN保证，后续须预算。
+源码/脚本/完整原始证据见tests/powerlink-mn-p1-20261010/README.md；GitHub结果以最终报告为准。
+CAN/UART接线改变“不发送”持续有效；不能将旧100full以太网或软件模拟当POWERLINK成功。
+
 2026-10-10 POWERLINK 当前入口：用户要求开始流程，明确选择 UP2 做 MN 主站控制外部设备。
 新增 stages/stage07-peripheral-partition/source/powerlink 完整V2.7.2归档1355文件（无submodule），
 commit048650a80db37fa372330c3a900d2c8edb327e47，tar6062267B/SHA d342b8cd...。

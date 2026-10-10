@@ -1,0 +1,22 @@
+diff --git a/demos/rk3572_mica/apps/openamp/CMakeLists.txt b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+--- a/demos/rk3572_mica/apps/openamp/CMakeLists.txt
++++ b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+@@ -1,3 +1,18 @@
+ set(SRC main.c)
++option(M7_POWERLINK_EDRV "Compile dormant UP2 POWERLINK EDRV (not MN runtime)" OFF)
++if(M7_POWERLINK_EDRV)
++    if(NOT M7_INTEGRATED_FIRMWARE)
++        message(FATAL_ERROR "EDRV candidate requires cumulative firmware")
++    endif()
++    if(MCS_CLIENT_CPU_ID STREQUAL "5")
++        include_directories("${CMAKE_CURRENT_SOURCE_DIR}/powerlink-port"
++                            "${CMAKE_CURRENT_SOURCE_DIR}/powerlink-upstream/stack/include"
++                            "${CMAKE_CURRENT_SOURCE_DIR}/powerlink-upstream/contrib")
++        list(APPEND SRC powerlink-port/edrv-rk3572.c)
++        set_source_files_properties(powerlink-port/edrv-rk3572.c PROPERTIES
++            COMPILE_DEFINITIONS "OPLK_TARGET_UNIPROTON;CONFIG_MN;NDEBUG" COMPILE_OPTIONS "-Werror")
++        set_source_files_properties(rk3572_eth_test.c PROPERTIES COMPILE_DEFINITIONS "M7_POWERLINK_EDRV")
++    endif()
++endif()
+ if(M7_INTEGRATED_FIRMWARE)
+     list(APPEND SRC rk3572_integrated.c rk3572_can_irq_test.c rk3572_can_fd_test.c

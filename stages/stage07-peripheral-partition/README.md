@@ -7,6 +7,11 @@
 不等于可运行主站或板端验收，正式累计 ELF 未替换。见[开发路线](docs/m7.0-powerlink-mn-roadmap.md)
 和[P0 软件证据](tests/powerlink-mn-p0-20261010/README.md)。
 
+同日继续完成 [P1 EDRV 软件基线](tests/powerlink-mn-p1-20261010/README.md)：
+独立 DMA 缓冲池、持续轮询收发/回调/组播/过滤/安全停止及 forced 100-half BSP 已编译；
+9 组 EDRV C 和73项 Python 回归通过、两全新目录复编一致。
+半双工未上板，MN/高精度 timer 未接入；只生成休眠的累计候选，正式两 ELF 不变。
+
 2026-10-10 最新：UP2 ETH2直驱100M轮询DMA L2切片通过，新增到同一套累计UP1/UP2两ELF。
 COM7/115200已实际抓取；用户人工重启后V3共享电源/根时钟防护、PHY探测和三轮物理收发通过，
 64/1514B每方向累计6000帧全载荷/序号/CRC正确，覆盖Linux负载及两种停止顺序。

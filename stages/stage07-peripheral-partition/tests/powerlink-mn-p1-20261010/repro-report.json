@@ -1,0 +1,48 @@
+{
+  "phase": "P1 software only; no hardware execution or MN runtime",
+  "independent_build_roots": [
+    "/home/openeuler/build/powerlink-mn-p1-20261010/build-checked-final",
+    "/home/openeuler/build/powerlink-mn-p1-20261010/build-checked-repro",
+    "/home/openeuler/build/powerlink-mn-p1-20261010/UniProton-candidate-final",
+    "/home/openeuler/build/powerlink-mn-p1-20261010/UniProton-candidate-repro"
+  ],
+  "artifacts": [
+    {
+      "artifact": "core/aarch64/libm7_powerlink_mn_core.a",
+      "bytes": 634932,
+      "sha256": "d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b",
+      "byte_identical": true
+    },
+    {
+      "artifact": "core/aarch64/mn-core.o",
+      "bytes": 509712,
+      "sha256": "f6e1773b6e3b4c0d807bd79a0fc738754170910fa0ee37704cd512cc2f601fbe",
+      "byte_identical": true
+    },
+    {
+      "artifact": "edrv-aarch64/libm7_powerlink_eth2_edrv.a",
+      "bytes": 13722,
+      "sha256": "c576132cd1a83b22e056c5d348b46e8c329648fbaa176a84b71968cb6e8f6ef8",
+      "byte_identical": true
+    },
+    {
+      "artifact": "mn-core-edrv.o",
+      "bytes": 521472,
+      "sha256": "b199dfe18f3f7ca36eca7192c8f56053de9ba4164a9b5b937b4cc9d1842d4b29",
+      "byte_identical": true
+    },
+    {
+      "artifact": "demos/rk3572_mica/build/up-a.runtime.bin",
+      "bytes": 360676,
+      "sha256": "074cdb3a020d463a2203a7163e8b59a1329c4e0dce920f0055b1e65d928f64cf",
+      "byte_identical": true
+    },
+    {
+      "artifact": "demos/rk3572_mica/build/up-b.runtime.bin",
+      "bytes": 372132,
+      "sha256": "a6946bf8ff4e8061d3072bef43fa6222e0420b4f0ddfe7e708c39349eb3bca96",
+      "byte_identical": true
+    }
+  ],
+  "elf_debug_path_identity_not_required": true
+}

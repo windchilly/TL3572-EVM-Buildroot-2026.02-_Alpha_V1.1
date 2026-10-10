@@ -1,0 +1,32 @@
+{
+  "phase": "P1 dormant cumulative candidate; compiled real BSP, no PHY/MMIO execution",
+  "backend_defined": [
+    "m7_eth2_hw_acquire",
+    "m7_eth2_hw_read",
+    "m7_eth2_hw_start",
+    "m7_eth2_hw_stop",
+    "m7_eth2_hw_write"
+  ],
+  "edrv_defined": [
+    "edrv_allocTxBuffer",
+    "edrv_changeRxFilter",
+    "edrv_clearRxMulticastMacAddr",
+    "edrv_exit",
+    "edrv_freeTxBuffer",
+    "edrv_getMacAddr",
+    "edrv_init",
+    "edrv_sendTxBuffer",
+    "edrv_setRxMulticastMacAddr"
+  ],
+  "unresolved": [
+    "PRT_Printf",
+    "PRT_TaskDelay",
+    "memcmp",
+    "memcpy",
+    "memset"
+  ],
+  "no_fp_simd_linux_or_atomic_runtime": true,
+  "object_sha256": "9a69692045ec6cc7739942a2057386d983e95a79a09a0860d7d83edec6adf4f7",
+  "half_duplex_hardware_verified": false,
+  "mn_runtime_integrated": false
+}

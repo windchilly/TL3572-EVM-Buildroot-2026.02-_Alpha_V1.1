@@ -1,7 +1,8 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
-**P0：完整源码固定 + AArch64 可移植核心构建 + 无硬件单元验证**，不是已能上网运行的主站。
+**P1 EDRV 软件基线：P0 核心 + 持续收发 EDRV/真实 BSP 编译 + 无硬件验证**，
+不是已能上网运行的主站；半双工上板仍待验证。
 
 上游完整源码归档（包括文档、工具和示例）存放于 `upstream/`，采用 Git LFS。
 以 `upstream.lock.json` 的提交、SHA256 和源码树为准，不在构建时跟随 master。
@@ -11,6 +12,11 @@
 不要求 Linux 内核，也不使用 UP1/openEuler 作为实时数据代理。
 这里的静态库故意不提供 EDRV、hrestimer、target 的硬件实现；它不能独立链接成可运行主站。
 不允许用返回成功的空实现来掩盖未实现的硬件依赖。
+
+上述是 `port/CMakeLists.txt` 的 P0 核心边界，保留其构建/审计不变。
+P1 单独入口 `port/edrv/CMakeLists.txt` 实现 9 个 EDRV 接口；BSP 编译开关默认为 OFF，
+只在累计 UP2 候选中启用，没有运行入口。TX 独立缓冲池、组播/软件过滤、FCS 处理和
+安全停止的实际范围、串行 owner 约束及证据见 [P1 记录](../../tests/powerlink-mn-p1-20261010/README.md)。
 
 P0 配置不使用 Socket/UDP、虚拟网卡、文件配置或主站冗余，CDC 配置须以后由内存提供。
 保持整数对象范围检查；REAL32/REAL64 的**范围检查**显式拒绝（`kErrorObdUnknownObjectType`），

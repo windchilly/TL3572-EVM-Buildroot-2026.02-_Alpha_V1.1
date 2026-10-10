@@ -372,6 +372,11 @@ linux-tl3572配方实际源码/已编译目录(B=S)。模块输出默认项目bu
 
 ## 板卡部署与回退
 
+POWERLINK P1 的软件构建与休眠累计候选由 `build_m7_powerlink_edrv.sh` 和
+`build_m7_powerlink_candidate.sh` 提供；必须选择新输出目录，不写正式 firmware/，不部署板卡。
+候选编译真实 UP2 EDRV/BSP，但没有 MN 启动命令；P2 target/timer 尚未实现。
+命令、双目录复编与实际证据见 [P1 软件记录](../tests/powerlink-mn-p1-20261010/README.md)。
+
 本轮板卡部署采用独立文件 `/usr/libexec/m7/micad` 和持久 drop-in `/etc/systemd/system/micad.service.d/90-m7-rpc-fix.conf`，原 `/usr/bin/micad` 未覆盖。drop-in 内容来自 `source/host/micad-m7-rpc-fix.conf`。服务仍使用原 PIDFile、MCS 内核模块前置依赖及失败重启策略。临时 M7 配置为 `AutoBoot=no`，没有安装为开机自动启动实例。
 
 需要回退时，先停止所有 UP 实例，并用 `tests/board/query_cpu_off.py 4 5` 确认两 CPU 真正 OFF；然后仅移走上述 `90-m7-rpc-fix.conf`，执行 `systemctl daemon-reload`、`systemctl restart micad`，服务即恢复 `/usr/bin/micad`。不要移走原 `10-mcs-km.conf`。若任一 CPU 未 OFF，不能用守护进程重启代替板卡恢复，也不要继续测试旧版已知有问题的双停止路径。
