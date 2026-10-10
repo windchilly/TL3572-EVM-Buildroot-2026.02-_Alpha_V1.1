@@ -1,0 +1,16 @@
+-rw-r--r-- 1 root root 112 Oct 10 09:08 /root/m7-eth-direct-20261010/up-a-m7-eth.conf
+-rw-r--r-- 1 root root 112 Oct 10 09:08 /root/m7-eth-direct-20261010/up-b-m7-eth.conf
+[Mica]
+Name=up-b-m7-eth
+CPU=5
+ClientPath=/root/m7-eth-direct-20261010/tl3572-m7-integrated-up-b.elf
+AutoBoot=no
+crw------- 1 root root 508, 0 Oct 10  2026 /dev/mcs
+-rw-r--r-- 1 root root   5064 Sep 28 09:44 /usr/libexec/m7/up_log_reader.py
+4096
+MainPID=322
+NRestarts=0
+ActiveState=active
+Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline

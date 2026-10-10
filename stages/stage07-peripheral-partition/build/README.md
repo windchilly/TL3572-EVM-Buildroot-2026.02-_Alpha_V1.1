@@ -2,6 +2,11 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+当前P3c入口`build_m7_powerlink_timer_candidate.sh`，在全新累计树追加0014/default OFF/UP2-only诊断，
+`PLK timer-probe`显式只调用真实target/hrestimer；boot仍休眠，不启动MN或访问ETH。
+新增GICv2 NS视图检查修正与真实IRQ计数/迟到采样；软件/获准临时实测和完整换机命令见
+[P3c记录](../tests/powerlink-timer-p3c-20261010/README.md)。脚本本身不部署或修改正式固件。
+
 最新P3b入口`build_m7_powerlink_owner_candidate.sh`，在P3a软件根基础上复制全新M6/累计源码，
 应用0011/0012/0013，只在UP2链接完整核心/OD/适配对象+真实BSP+休眠owner。
 不再用relocatable合并代替最终ELF链接；明确保留全栈，596函数存在且未解析为零。

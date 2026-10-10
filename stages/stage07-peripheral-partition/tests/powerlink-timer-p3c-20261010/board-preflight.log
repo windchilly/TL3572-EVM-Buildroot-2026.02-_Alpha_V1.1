@@ -1,0 +1,39 @@
+Linux tl3572-openeuler 6.12.69-gf1b67c293213 #1 SMP Mon Sep 21 03:23:13 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+ 15:45:07 up  6:00,  1 user,  load average: 0.06, 0.06, 0.00
+fa41fc54-86a5-46f4-84a0-d2e820e1ef17
+0-3,6-7
+MainPID=322
+NRestarts=0
+ActiveState=active
+Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+can0             DOWN           
+can1             DOWN           
+can2             DOWN           
+can3             DOWN           
+eth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 
+eth2             UP             fe80::2e0:9aff:fe42:baeb/64 
+eth1             UP             fe80::d814:36ff:fe8b:78f0/64 
+default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 
+192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 
+192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 
+/root/boot-p3-backup-pre-rmem7a.img
+/root/boot-rmem7a000000.img
+/root/eth3-recovery-20261009
+/root/m7-can-20260928
+/root/m7-can-fd-20261009
+/root/m7-can-irq-20261009
+/root/m7-eth-direct-20261010
+/root/m7-eth-direct-20261010
+/root/m7-integrated-20261009
+/root/m7-integrated-diag-20261009
+/root/m7-integrated-mmu-fix-20261009
+/root/m7-observe-20260928
+/root/m7-rs232-20261009
+/root/m7-rs485-20261009
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed.
+
+READ_ONLY_EXIT=0

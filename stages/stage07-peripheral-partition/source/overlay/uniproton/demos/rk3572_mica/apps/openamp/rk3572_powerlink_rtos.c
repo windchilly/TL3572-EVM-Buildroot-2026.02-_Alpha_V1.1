@@ -12,6 +12,11 @@
 #include "cpu_config.h"
 #include "m7_plk_platform.h"
 #include "m7_plk_cache.h"
+#include "m7_plk_gic.h"
+#ifdef M7_POWERLINK_TIMER_PROBE
+#include "m7_timer_probe.h"
+static volatile uint64_t diagDeadline, diagInterrupts, diagMaxLate;
+#endif
 #if MCS_CLIENT_CPU_ID != 5 || OS_GIC_VER != 2
 #error "POWERLINK platform requires the pinned UP2 GICv2 configuration"
 #endif
@@ -104,12 +109,23 @@ void m7_plk_timer_mask(void)
 void m7_plk_timer_arm(uint64_t deadline)
 {
     uint64_t control = 1U;
+#ifdef M7_POWERLINK_TIMER_PROBE
+    diagDeadline = deadline;
+#endif
     __asm__ volatile("msr cntp_cval_el0, %0\n\tmsr cntp_ctl_el0, %1\n\tisb"
         :: "r"(deadline), "r"(control) : "memory");
 }
 static void timerIsr(uintptr_t argument)
 {
     (void)argument;
+#ifdef M7_POWERLINK_TIMER_PROBE
+    if (running) {
+        uint64_t now = m7_plk_timer_now();
+        uint64_t late = now - diagDeadline;
+        ++diagInterrupts;
+        if (late > diagMaxLate) diagMaxLate = late;
+    }
+#endif
     if (running) m7_hrestimer_interrupt();
     else m7_plk_timer_mask();
 }
@@ -125,8 +141,9 @@ int m7_plk_timer_acquire(uint32_t* frequency)
     __asm__ volatile("mrs %0, cntp_ctl_el0\n\tmrs %1, cntfrq_el0" : "=r"(control), "=r"(freq));
     if ((control & 1U) || !freq || freq > 1000000000U) return 0;
     state = PRT_HwiLock();
-    if (((readGic(0x100) | readGic(0x200) | readGic(0x300)) & PLK_BIT) ||
-        !(readGic(0x80) & PLK_BIT) || (readGic(0xc04) & (1U << 29))) {
+    if (!m7_plk_gic_usable(readGic(4), readGic(0x80),
+        *(volatile uint32_t*)(PLK_GICD + 0x1000U),
+        readGic(0x100), readGic(0x200), readGic(0x300), readGic(0xc04))) {
         PRT_HwiRestore(state); return 0;
     }
     if (!reserved) {
@@ -141,7 +158,14 @@ int m7_plk_timer_acquire(uint32_t* frequency)
     *(volatile uint8_t*)(PLK_GICD + 0x400U + PLK_PPI) = 0xa0U;
     writeGic(0x280, PLK_BIT); running = 1;
     writeGic(0x100, PLK_BIT);
-    if (!(readGic(0x100) & PLK_BIT)) {
+    if (!(readGic(0x100) & PLK_BIT) ||
+        *(volatile uint8_t*)(PLK_GICD + 0x400U + PLK_PPI) != 0xa0U) {
+        writeGic(0x180, PLK_BIT); writeGic(0x280, PLK_BIT);
+        if ((readGic(0x100) | readGic(0x300)) & PLK_BIT) {
+            /* Admit a faulted lease so hrestimer retains ownership if release
+             * cannot prove silence. Never return a false unowned failure. */
+            *frequency = 0; PRT_HwiRestore(state); return 1;
+        }
         running = 0;
         *(volatile uint8_t*)(PLK_GICD + 0x400U + PLK_PPI) = savedPriority;
         PRT_HwiRestore(state); return 0;
@@ -162,3 +186,32 @@ int m7_plk_timer_release(void)
     running = 0; PRT_HwiRestore(state);
     return 1; /* reservation remains; the handler is dormant until next init */
 }
+#ifdef M7_POWERLINK_TIMER_PROBE
+int m7_timer_diag_reset(void)
+{
+    uintptr_t lock;
+    if (m7_plk_in_interrupt() || !m7_plk_irq_enabled() || running) return 0;
+    lock = PRT_HwiLock(); diagDeadline = diagInterrupts = diagMaxLate = 0;
+    PRT_HwiRestore(lock); return 1;
+}
+int m7_timer_diag_snapshot(M7TimerHardware* out)
+{
+    uint64_t level, frequency, cntp, cntv;
+    uintptr_t lock;
+    if (!out || m7_plk_in_interrupt() || !m7_plk_irq_enabled()) return 0;
+    lock = PRT_HwiLock();
+    __asm__ volatile("mrs %0, currentel\n\tmrs %1, cntfrq_el0\n\tmrs %2, cntp_ctl_el0\n\tmrs %3, cntv_ctl_el0"
+        : "=r"(level), "=r"(frequency), "=r"(cntp), "=r"(cntv));
+    out->level = (uint32_t)level; out->frequency = (uint32_t)frequency;
+    out->cntp = (uint32_t)cntp; out->cntv = (uint32_t)cntv;
+    __asm__ volatile("mrs %0, mpidr_el1" : "=r"(out->affinity));
+    out->counter = m7_plk_timer_now(); out->ticks = PRT_TickGetCount();
+    out->enabled = readGic(0x100); out->pending = readGic(0x200);
+    out->active = readGic(0x300); out->group = readGic(0x80); out->config = readGic(0xc04);
+    out->priority30 = *(volatile uint8_t*)(PLK_GICD + 0x400U + 30U);
+    out->priority27 = *(volatile uint8_t*)(PLK_GICD + 0x400U + 27U);
+    out->typer = readGic(4); out->cpuControl = *(volatile uint32_t*)(PLK_GICD + 0x1000U);
+    out->interrupts = diagInterrupts; out->maxIrqLate = diagMaxLate;
+    PRT_HwiRestore(lock); return 1;
+}
+#endif

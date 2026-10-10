@@ -1,7 +1,7 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
-**P3b累计候选接入：完整核心/OD/port/真实BSP + 休眠owner/单槽邮箱/诊断快照**，
+**P3c累计候选：休眠owner/完整栈 + 显式timer-only诊断及CNTP/PPI30实测**，
 不是已能上网运行的主站；半双工上板仍待验证。
 
 上游完整源码归档（包括文档、工具和示例）存放于 `upstream/`，采用 Git LFS。
@@ -55,4 +55,7 @@ P0 之后仍需依次实现和验证：
 参考：[上游移植指南](https://github.com/OpenAutomationTechnologies/openPOWERLINK_V2/blob/V2.7.2/doc/porting-guide.md)、
 [POWERLINK DS301，第3章](https://www.br-automation.com/downloads_br_productcatalogue/assets/EPSG_301_V-1-5-1_DS-c710608e.pdf)。
 
-当前不修改正式累计 ELF，不部署板卡，不改变 CAN/UART 接线或发送状态。
+P3c新增`m7_timer_probe.c/h`、`m7_plk_gic.h`及0014默认OFF检查点，3轮72真实IRQ/任务回调和安全停止通过。
+修正GICv2 NS-EL1读IGROUPR为零的误判，不写安全分组；失败保留资源，不自动重试。
+样本最大IRQ29.292us、任务89.75us，不是最坏实时延迟/周期承诺；详见[P3c记录](../../tests/powerlink-timer-p3c-20261010/README.md)。
+正式累计 ELF不替换；临时UP2已停止/移除，无开机配置/DT修改或外设发送，CAN/UART限制保持。

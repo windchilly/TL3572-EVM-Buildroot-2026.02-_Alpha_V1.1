@@ -1,0 +1,224 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+SCOPE: temporary UP2 ONLY; UP1 offline; no PHY/ETH/CAN/UART frames, unbind, DT, boot config or reboot
+BEFORE {"boot": "fa41fc54-86a5-46f4-84a0-d2e820e1ef17", "micad": {"ActiveState": "active", "MainPID": "322", "NRestarts": "0"}, "resources": {"addresses": "lo               UNKNOWN        127.0.0.1/8 ::1/128 \ncan0             DOWN           \ncan1             DOWN           \ncan2             DOWN           \ncan3             DOWN           \neth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 \neth2             UP             fe80::2e0:9aff:fe42:baeb/64 \neth1             UP             fe80::d814:36ff:fe8b:78f0/64 \n", "drivers": {"26500000.serial": "dw-apb-uart", "29d20000.ethernet": "rk_gmac-dwmac", "2a040000.ethernet": "rk_gmac-dwmac", "2ab00000.can": "rk3576_can", "2ab10000.can": "rk3576_can", "2ab20000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "linux_cpus": "0-3,6-7\n", "routes": "default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 \n192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 \n192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 \n"}}
+REAL MMU {"budget_bytes": 65536, "mapped_units": 67, "rc": 0, "root": "0x7ca00000", "table_pages": 10, "tcr": "0x80003520", "used_bytes": 40960}
+PLK UP2 ready=1 owner=6 pending=0 running=0 seq=0 done=0 cmd=0 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+PLK UP2 ACCEPTED seq=1
+PLK UP2 TIMER rc=2 clean=1 samples=0 hz=24000000 irqs=0 callbacks=0 irqLate=0 taskLate=0 ticks=0 el=4 affinity=0x80000101 ppi30=0x0/0x0/0x0 prio=160/160 cntv=1/1
+[up-b boot=1 seq=1] [boot] UP CPU5 entered
+[up-b boot=1 seq=2] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=1 seq=3] [boot] interrupt routing ready
+[up-b boot=1 seq=4] [boot] scheduler task entered
+[up-b boot=1 seq=5] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=1 seq=6] [openamp] get rsctable 7c257d50, size a64 
+[up-b boot=1 seq=7] [openamp]: get vring0: da 7a0a0000
+[up-b boot=1 seq=8] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=1 seq=9] [openamp] tty task started
+[up-b boot=1 seq=10] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[up-b boot=1 seq=11] [integrated] M7 UP2 ACCEPTED mask=0x8
+[up-b boot=1 seq=12] [integrated] UP2 begin module=3 value=0
+[up-b boot=2 seq=13] [boot] UP CPU5 entered
+[up-b boot=2 seq=14] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=2 seq=15] [boot] interrupt routing ready
+[up-b boot=2 seq=16] [boot] scheduler task entered
+[up-b boot=2 seq=17] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=2 seq=18] [openamp] get rsctable 7c257e50, size a64 
+[up-b boot=2 seq=19] [openamp]: get vring0: da 7a0a0000
+[up-b boot=2 seq=20] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=2 seq=21] [openamp] tty task started
+[up-b boot=2 seq=22] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[up-b boot=2 seq=23] [integrated] M7 UP2 ACCEPTED mask=0x8
+[up-b boot=2 seq=24] [integrated] UP2 begin module=3 value=0
+[up-b boot=2 seq=25] [eth] begin profile=0 CRU42=0xf000
+[up-b boot=2 seq=26] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=2 seq=27] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=2 seq=28] [eth] own clock/reset/mux complete; entering MDIO
+[up-b boot=2 seq=29] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=2 seq=30] [openamp] ept ready
+[up-b boot=2 seq=31] [boot] RPMsg ready
+[up-b boot=2 seq=32] [eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[up-b boot=2 seq=33] [eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[up-b boot=2 seq=34] [integrated] UP2 end module=3 rc=0
+[up-b boot=2 seq=35] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=1
+[up-b boot=3 seq=36] [boot] UP CPU5 entered
+[up-b boot=3 seq=37] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=3 seq=38] [boot] interrupt routing ready
+[up-b boot=3 seq=39] [boot] scheduler task entered
+[up-b boot=3 seq=40] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=3 seq=41] [openamp] get rsctable 7c257e50, size a64 
+[up-b boot=3 seq=42] [openamp]: get vring0: da 7a0a0000
+[up-b boot=3 seq=43] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=3 seq=44] [openamp] tty task started
+[up-b boot=3 seq=45] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[up-b boot=3 seq=46] [integrated] M7 UP2 ACCEPTED mask=0x8
+[up-b boot=3 seq=47] [integrated] UP2 begin module=3 value=0
+[up-b boot=3 seq=48] [eth] begin profile=0 CRU42=0xf000
+[up-b boot=3 seq=49] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=3 seq=50] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=3 seq=51] [eth] own clock/reset/mux complete; entering MDIO
+[up-b boot=3 seq=52] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=3 seq=53] [openamp] ept ready
+[up-b boot=3 seq=54] [boot] RPMsg ready
+[up-b boot=3 seq=55] [eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[up-b boot=3 seq=56] [eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[up-b boot=3 seq=57] [integrated] UP2 end module=3 rc=0
+[up-b boot=3 seq=58] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=1
+[up-b boot=3 seq=59] [integrated] M7 UP2 ACCEPTED mask=0x8
+[up-b boot=3 seq=60] [integrated] UP2 begin module=3 value=64
+[up-b boot=3 seq=61] [eth] begin profile=64 CRU42=0x3000
+[up-b boot=3 seq=62] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=3 seq=63] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=3 seq=64] [eth] own clock/reset/mux complete; entering MDIO
+[up-b boot=3 seq=65] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=3 seq=66] [eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[up-b boot=3 seq=67] [eth] READY raw=64 count=1000 mac=02:55:50:32:00:02 DMA=0x7ca10000 polling
+[up-b boot=3 seq=68] [eth] PASS raw=64 rx=1000 tx=1000 rxbytes=64000 txbytes=64000 ignored=0 status=0xc04 rc=0
+[up-b boot=3 seq=69] [eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[up-b boot=3 seq=70] [integrated] UP2 end module=3 rc=0
+[up-b boot=3 seq=71] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=2
+[up-b boot=3 seq=72] [integrated] M7 UP2 ACCEPTED mask=0x8
+[up-b boot=3 seq=73] [integrated] UP2 begin module=3 value=1514
+[up-b boot=3 seq=74] [eth] begin profile=1514 CRU42=0x3000
+[up-b boot=3 seq=75] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=3 seq=76] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=3 seq=77] [eth] own clock/reset/mux complete; entering MDIO
+[up-b boot=3 seq=78] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=3 seq=79] [eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[up-b boot=3 seq=80] [eth] READY raw=1514 count=1000 mac=02:55:50:32:00:02 DMA=0x7ca10000 polling
+[up-b boot=3 seq=81] [eth] PASS raw=1514 rx=1000 tx=1000 rxbytes=1514000 txbytes=1514000 ignored=1 status=0xc04 rc=0
+[up-b boot=3 seq=82] [eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[up-b boot=3 seq=83] [integrated] UP2 end module=3 rc=0
+[up-b boot=3 seq=84] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=3
+[up-b boot=4 seq=85] [boot] UP CPU5 entered
+[up-b boot=4 seq=86] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=4 seq=87] [boot] interrupt routing ready
+[up-b boot=4 seq=88] [boot] scheduler task entered
+[up-b boot=4 seq=89] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=4 seq=90] [openamp] get rsctable 7c257e50, size a64 
+[up-b boot=4 seq=91] [openamp]: get vring0: da 7a0a0000
+[up-b boot=4 seq=92] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=4 seq=93] [openamp] tty task started
+[up-b boot=4 seq=94] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[up-b boot=4 seq=95] [integrated] M7 UP2 ACCEPTED mask=0x8
+[up-b boot=4 seq=96] [integrated] UP2 begin module=3 value=0
+[up-b boot=4 seq=97] [eth] begin profile=0 CRU42=0xf000
+[up-b boot=4 seq=98] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=4 seq=99] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=4 seq=100] [eth] own clock/reset/mux complete; entering MDIO
+[up-b boot=4 seq=101] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=4 seq=102] [openamp] ept ready
+[up-b boot=4 seq=103] [boot] RPMsg ready
+[up-b boot=4 seq=104] [eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[up-b boot=4 seq=105] [eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[up-b boot=4 seq=106] [integrated] UP2 end module=3 rc=0
+[up-b boot=4 seq=107] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=1
+[up-b boot=4 seq=108] [integrated] M7 UP2 ACCEPTED mask=0x8
+[up-b boot=4 seq=109] [integrated] UP2 begin module=3 value=64
+[up-b boot=4 seq=110] [eth] begin profile=64 CRU42=0x3000
+[up-b boot=4 seq=111] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=4 seq=112] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=4 seq=113] [eth] own clock/reset/mux complete; entering MDIO
+[up-b boot=4 seq=114] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=4 seq=115] [eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[up-b boot=4 seq=116] [eth] READY raw=64 count=1000 mac=02:55:50:32:00:02 DMA=0x7ca10000 polling
+[up-b boot=4 seq=117] [eth] PASS raw=64 rx=1000 tx=1000 rxbytes=64000 txbytes=64000 ignored=0 status=0xc04 rc=0
+[up-b boot=4 seq=118] [eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[up-b boot=4 seq=119] [integrated] UP2 end module=3 rc=0
+[up-b boot=4 seq=120] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=2
+[up-b boot=4 seq=121] [integrated] M7 UP2 ACCEPTED mask=0x8
+[up-b boot=4 seq=122] [integrated] UP2 begin module=3 value=1514
+[up-b boot=4 seq=123] [eth] begin profile=1514 CRU42=0x3000
+[up-b boot=4 seq=124] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=4 seq=125] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=4 seq=126] [eth] own clock/reset/mux complete; entering MDIO
+[up-b boot=4 seq=127] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=4 seq=128] [eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[up-b boot=4 seq=129] [eth] READY raw=1514 count=1000 mac=02:55:50:32:00:02 DMA=0x7ca10000 polling
+[up-b boot=4 seq=130] [eth] PASS raw=1514 rx=1000 tx=1000 rxbytes=1514000 txbytes=1514000 ignored=1 status=0xc04 rc=0
+[up-b boot=4 seq=131] [eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[up-b boot=4 seq=132] [integrated] UP2 end module=3 rc=0
+[up-b boot=4 seq=133] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=3
+[up-b boot=5 seq=134] [boot] UP CPU5 entered
+[up-b boot=5 seq=135] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=5 seq=136] [boot] interrupt routing ready
+[up-b boot=5 seq=137] [boot] scheduler task entered
+[up-b boot=5 seq=138] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=5 seq=139] [openamp] get rsctable 7c257e50, size a64 
+[up-b boot=5 seq=140] [openamp]: get vring0: da 7a0a0000
+[up-b boot=5 seq=141] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=5 seq=142] [openamp] tty task started
+[up-b boot=5 seq=143] [openamp] ept ready
+[up-b boot=5 seq=144] [boot] RPMsg ready
+[up-b boot=5 seq=145] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[up-b boot=5 seq=146] [integrated] M7 UP2 ACCEPTED mask=0x8
+[up-b boot=5 seq=147] [integrated] UP2 begin module=3 value=0
+[up-b boot=5 seq=148] [eth] begin profile=0 CRU42=0xf000
+[up-b boot=5 seq=149] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=5 seq=150] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=5 seq=151] [eth] own clock/reset/mux complete; entering MDIO
+[up-b boot=5 seq=152] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=5 seq=153] [eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[up-b boot=5 seq=154] [eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[up-b boot=5 seq=155] [integrated] UP2 end module=3 rc=0
+[up-b boot=5 seq=156] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=1
+[up-b boot=5 seq=157] [integrated] M7 UP2 ACCEPTED mask=0x8
+[up-b boot=5 seq=158] [integrated] UP2 begin module=3 value=64
+[up-b boot=5 seq=159] [eth] begin profile=64 CRU42=0x3000
+[up-b boot=5 seq=160] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=5 seq=161] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=5 seq=162] [eth] own clock/reset/mux complete; entering MDIO
+[up-b boot=5 seq=163] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=5 seq=164] [eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[up-b boot=5 seq=165] [eth] READY raw=64 count=1000 mac=02:55:50:32:00:02 DMA=0x7ca10000 polling
+[up-b boot=5 seq=166] [eth] PASS raw=64 rx=1000 tx=1000 rxbytes=64000 txbytes=64000 ignored=0 status=0xc04 rc=0
+[up-b boot=5 seq=167] [eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[up-b boot=5 seq=168] [integrated] UP2 end module=3 rc=0
+[up-b boot=5 seq=169] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=2
+[up-b boot=5 seq=170] [integrated] M7 UP2 ACCEPTED mask=0x8
+[up-b boot=5 seq=171] [integrated] UP2 begin module=3 value=1514
+[up-b boot=5 seq=172] [eth] begin profile=1514 CRU42=0x3000
+[up-b boot=5 seq=173] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=5 seq=174] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=5 seq=175] [eth] own clock/reset/mux complete; entering MDIO
+[up-b boot=5 seq=176] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=5 seq=177] [eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[up-b boot=5 seq=178] [eth] READY raw=1514 count=1000 mac=02:55:50:32:00:02 DMA=0x7ca10000 polling
+[up-b boot=5 seq=179] [eth] PASS raw=1514 rx=1000 tx=1000 rxbytes=1514000 txbytes=1514000 ignored=1 status=0xc04 rc=0
+[up-b boot=5 seq=180] [eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[up-b boot=5 seq=181] [integrated] UP2 end module=3 rc=0
+[up-b boot=5 seq=182] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=3
+[up-b boot=6 seq=183] [boot] UP CPU5 entered
+[up-b boot=6 seq=184] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=6 seq=185] [boot] interrupt routing ready
+[up-b boot=6 seq=186] [boot] scheduler task entered
+[up-b boot=6 seq=187] [plk] dormant owner init rc=0; no PHY/timer/MN startup
+[up-b boot=6 seq=188] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=6 seq=189] [openamp] get rsctable 7c294ab0, size a64 
+[up-b boot=6 seq=190] [openamp]: get vring0: da 7a0a0000
+[up-b boot=6 seq=191] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=6 seq=192] [openamp] tty task started
+[up-b boot=6 seq=193] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=0 done=0 cmd=0 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=6 seq=194] [plk] PLK UP2 ACCEPTED seq=1
+[up-b boot=6 seq=195] [plk] PLK UP2 ready=1 owner=6 pending=1 running=0 seq=1 done=0 cmd=3 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=6 seq=196] [plk-timer] BEGIN CNTP access/PPI30; no Ethernet/MN startup
+[up-b boot=6 seq=197] [plk-timer] END rc=2 clean=1 samples=0 irqs=0 callbacks=0 hz=24000000 irqLate=0 taskLate=0 ticks=0
+[up-b boot=6 seq=198] [openamp] ept ready
+[up-b boot=6 seq=199] [boot] RPMsg ready
+[up-b boot=6 seq=200] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=1 done=1 cmd=3 rc=0x2 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=6 seq=201] [plk] PLK UP2 TIMER rc=2 clean=1 samples=0 hz=24000000 irqs=0 callbacks=0 irqLate=0 taskLate=0 ticks=0 el=4 affinity=0x80000101 ppi30=0x0/0x0/0x0 prio=160/160 cntv=1/1
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CLEANUP PASS: temporary client removed, original 2 Offline, CPU4/5 OFF, Linux bindings/routes/micad/boot unchanged
+Traceback (most recent call last):
+  File "/root/m7-powerlink-timer-p3c-20261010/run_powerlink_timer.py", line 141, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/root/m7-powerlink-timer-p3c-20261010/run_powerlink_timer.py", line 133, in main
+    if error: raise error
+              ^^^^^^^^^^^
+  File "/root/m7-powerlink-timer-p3c-20261010/run_powerlink_timer.py", line 110, in main
+    raise RuntimeError('timer hardware diagnostic failed')
+RuntimeError: timer hardware diagnostic failed
+
+BOARD_EXIT_CODE=1

@@ -1,0 +1,26 @@
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+In file included from /home/openeuler/build/powerlink-timer-p3c-20261010/stage/tests/test_powerlink_timer_owner.c:3:
+/home/openeuler/build/powerlink-timer-p3c-20261010/stage/tests/test_powerlink_owner.c:3: error: "main" redefined [-Werror]
+    3 | #define main P3aRegressionMain
+      | 
+/home/openeuler/build/powerlink-timer-p3c-20261010/stage/tests/test_powerlink_timer_owner.c:2: note: this is the location of the previous definition
+    2 | #define main OwnerRegressionMain
+      | 
+/home/openeuler/build/powerlink-timer-p3c-20261010/stage/tests/test_powerlink_timer_owner.c:14:5: error: redefinition of 'main'
+   14 | int main(int argc, char** argv)
+      |     ^~~~
+/home/openeuler/build/powerlink-timer-p3c-20261010/stage/tests/test_powerlink_owner.c:100:5: note: previous definition of 'main' with type 'int(int,  char **)'
+  100 | int main(int argc, char** argv)
+      |     ^~~~
+cc1: all warnings being treated as errors
+
+REMOTE_EXIT_CODE=1

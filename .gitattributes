@@ -44,3 +44,5 @@ stages/stage07-peripheral-partition/tests/powerlink-mn-p2-20261010/*.log -text w
 stages/stage07-peripheral-partition/tests/powerlink-mn-p3a-20261010/*.log -text whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/tests/powerlink-mn-p3b-20261010/*.log -text whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/source/patches/uniproton/0013-rk3572-powerlink-owner-dormant.patch whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/powerlink-timer-p3c-20261010/*.log -text whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/source/patches/uniproton/0014-rk3572-powerlink-timer-probe.patch whitespace=-blank-at-eol,-blank-at-eof

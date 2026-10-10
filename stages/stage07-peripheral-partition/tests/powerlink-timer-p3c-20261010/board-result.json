@@ -1,0 +1,64 @@
+{
+  "phase": "P3c TIMER hardware only",
+  "passed": true,
+  "cycles": [
+    {
+      "rc": "0",
+      "clean": "1",
+      "samples": "24",
+      "hz": "24000000",
+      "irqs": "24",
+      "callbacks": "24",
+      "irqLate": "237",
+      "taskLate": "1735",
+      "ticks": "88",
+      "el": "4",
+      "affinity": "0x80000101",
+      "ppi30": "0x0/0x0/0x0",
+      "prio": "160/160",
+      "cntv": "1/1"
+    },
+    {
+      "rc": "0",
+      "clean": "1",
+      "samples": "24",
+      "hz": "24000000",
+      "irqs": "24",
+      "callbacks": "24",
+      "irqLate": "34",
+      "taskLate": "66",
+      "ticks": "88",
+      "el": "4",
+      "affinity": "0x80000101",
+      "ppi30": "0x0/0x0/0x0",
+      "prio": "160/160",
+      "cntv": "1/1"
+    },
+    {
+      "rc": "0",
+      "clean": "1",
+      "samples": "24",
+      "hz": "24000000",
+      "irqs": "24",
+      "callbacks": "24",
+      "irqLate": "703",
+      "taskLate": "2154",
+      "ticks": "88",
+      "el": "4",
+      "affinity": "0x80000101",
+      "ppi30": "0x0/0x0/0x0",
+      "prio": "160/160",
+      "cntv": "1/1"
+    }
+  ],
+  "candidate_sha256": "a50255ed798c679fd78b7555ff3853698a3a8937934ee4310130473add671b2e",
+  "micad": {
+    "MainPID": "322",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "boot_id": "fa41fc54-86a5-46f4-84a0-d2e820e1ef17",
+  "cleanup": true,
+  "powerlink_frames": 0,
+  "limit": "Idle-board sample maximum only; NOT worst-case realtime acceptance/POWERLINK MN/CN test"
+}

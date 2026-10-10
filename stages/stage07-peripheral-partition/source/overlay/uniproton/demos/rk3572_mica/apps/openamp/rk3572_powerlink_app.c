@@ -15,6 +15,9 @@
 #error "POWERLINK owner task belongs to UP2 only"
 #endif
 enum { ENV_INIT = 1U, ENV_EXIT = 2U };
+#ifdef M7_POWERLINK_TIMER_PROBE
+enum { TIMER_PROBE = 3U };
+#endif
 #define APP_ERROR 0xffffffffU
 static M7PowerlinkSnapshot snapshot;
 static U8 ownerStack[0x8000] __attribute__((aligned(16)));
@@ -49,6 +52,23 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
             return; /* Do not call a blocking RTOS API in an invalid context. */
         }
         if (command) {
+#ifdef M7_POWERLINK_TIMER_PROBE
+            if (command == TIMER_PROBE) {
+                M7TimerProbeResult timer;
+                PRT_Printf("[plk-timer] BEGIN CNTP access/PPI30; no Ethernet/MN startup\n");
+                result = m7_timer_probe(&timer);
+                lock = PRT_HwiLock();
+                snapshot.timer = timer; snapshot.result = result;
+                snapshot.running = 0; snapshot.completed = snapshot.submitted;
+                if (!timer.clean) { snapshot.ready = 0; snapshot.runtimeError = APP_ERROR; }
+                PRT_HwiRestore(lock);
+                PRT_Printf("[plk-timer] END rc=%u clean=%u samples=%u irqs=%llu callbacks=%llu hz=%u irqLate=%llu taskLate=%llu ticks=%llu\n",
+                    result, timer.clean, timer.samples, (unsigned long long)timer.after.interrupts,
+                    (unsigned long long)timer.callbacks, timer.after.frequency,
+                    (unsigned long long)timer.after.maxIrqLate, (unsigned long long)timer.maxTaskLate,
+                    (unsigned long long)(timer.after.ticks - timer.before.ticks));
+            } else {
+#endif
             result = command == ENV_INIT ? m7_mn_initialize() : m7_mn_exit();
             /* Only the owner reads the real stack; consumers copy this cache. */
             if (m7_mn_status(&state)) {
@@ -63,6 +83,9 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
             PRT_HwiRestore(lock);
             PRT_Printf("[plk] owner=%u command=%u rc=0x%x state=%u (software-only)\n",
                 task, command, result, state.state);
+#ifdef M7_POWERLINK_TIMER_PROBE
+            }
+#endif
         }
         result = PRT_TaskDelay(2U);
         if (result) {
@@ -104,6 +127,9 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
 {
     const char* error = NULL;
     uint32_t command = 0, accepted = 0;
+#ifdef M7_POWERLINK_TIMER_PROBE
+    int timerStatus = 0;
+#endif
     M7PowerlinkSnapshot out;
     char reply[384];
     uintptr_t lock;
@@ -116,12 +142,19 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
         }
         if (matches(data, length, "PLK env-init")) command = ENV_INIT;
         else if (matches(data, length, "PLK env-exit")) command = ENV_EXIT;
+#ifdef M7_POWERLINK_TIMER_PROBE
+        else if (matches(data, length, "PLK timer-probe")) command = TIMER_PROBE;
+        else if (matches(data, length, "PLK timer-status")) timerStatus = 1;
+#endif
         else if (!matches(data, length, "PLK status")) error = "invalid-command";
     }
     lock = PRT_HwiLock();
     if (!error && command) {
         if (!snapshot.ready) error = "not-ready";
         else if (snapshot.pending || snapshot.running) error = "busy";
+#ifdef M7_POWERLINK_TIMER_PROBE
+        else if (command == TIMER_PROBE && snapshot.mn.state != M7_MN_COLD) error = "wrong-state";
+#endif
         else if ((command == ENV_INIT && snapshot.mn.state != M7_MN_COLD) ||
                  (command == ENV_EXIT && snapshot.mn.state != M7_MN_IDLE)) error = "wrong-state";
         else if (snapshot.submitted == UINT32_MAX) error = "sequence-exhausted";
@@ -133,6 +166,17 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
     out = snapshot; PRT_HwiRestore(lock);
     if (error) bytes = snprintf(reply, sizeof(reply), "PLK UP2 ERROR %s\n", error);
     else if (accepted) bytes = snprintf(reply, sizeof(reply), "PLK UP2 ACCEPTED seq=%u\n", accepted);
+#ifdef M7_POWERLINK_TIMER_PROBE
+    else if (timerStatus) bytes = snprintf(reply, sizeof(reply),
+        "PLK UP2 TIMER rc=%u clean=%u samples=%u hz=%u irqs=%llu callbacks=%llu irqLate=%llu taskLate=%llu ticks=%llu el=%u affinity=0x%llx ppi30=0x%x/0x%x/0x%x prio=%u/%u cntv=%u/%u\n",
+        out.timer.result, out.timer.clean, out.timer.samples, out.timer.after.frequency,
+        (unsigned long long)out.timer.after.interrupts, (unsigned long long)out.timer.callbacks,
+        (unsigned long long)out.timer.after.maxIrqLate, (unsigned long long)out.timer.maxTaskLate,
+        (unsigned long long)(out.timer.after.ticks - out.timer.before.ticks), out.timer.after.level,
+        (unsigned long long)out.timer.after.affinity, out.timer.after.enabled & (1U << 30),
+        out.timer.after.pending & (1U << 30), out.timer.after.active & (1U << 30),
+        out.timer.before.priority30, out.timer.after.priority30, out.timer.before.cntv & 3U, out.timer.after.cntv & 3U);
+#endif
     else bytes = snprintf(reply, sizeof(reply),
         "PLK UP2 ready=%u owner=%u pending=%u running=%u seq=%u done=%u cmd=%u rc=0x%x runtime=0x%x state=%u nmt=0x%x processes=%llu events=%llu mode=software-only\n",
         out.ready, out.owner, out.pending, out.running, out.submitted, out.completed,

@@ -4,10 +4,16 @@
 #include <stddef.h>
 #include <stdint.h>
 #include "m7_mn.h"
+#ifdef M7_POWERLINK_TIMER_PROBE
+#include "m7_timer_probe.h"
+#endif
 typedef struct {
     uint32_t ready, pending, running, submitted, completed, command;
     uint32_t result, runtimeError, owner;
     M7MnStatus mn;
+#ifdef M7_POWERLINK_TIMER_PROBE
+    M7TimerProbeResult timer;
+#endif
 } M7PowerlinkSnapshot;
 uint32_t Rk3572PowerlinkInit(void);
 int Rk3572PowerlinkInput(const char* data, size_t length);

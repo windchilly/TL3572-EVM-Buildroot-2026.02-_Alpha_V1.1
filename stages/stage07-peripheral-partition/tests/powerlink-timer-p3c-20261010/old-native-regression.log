@@ -1,0 +1,475 @@
+Internal ctest changing into directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/core/native
+UpdateCTestConfiguration  from :/home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/core/native/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/core/native/DartConfiguration.tcl
+Test project /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/core/native
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: mn_state_and_ami
+
+1: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/p1/core/native/test_powerlink_mn_core
+1: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/core/native
+1: Test timeout computed to be: 10000000
+1: PASS: upstream MN boot/gates/operational/cycle-error/reset/conflicting-MN; 21 state changes; LP64/unaligned AMI; no HAL or frames
+1/2 Test #1: mn_state_and_ami .................   Passed    0.00 sec
+test 2
+    Start 2: od_integer_range_and_no_fp
+
+2: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/p1/core/native/test_powerlink_od
+2: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/core/native
+2: Test timeout computed to be: 10000000
+2: PASS: integer range bounds; ranged REAL32/64 rejected unchanged; raw REAL32 bytes preserved
+2/2 Test #2: od_integer_range_and_no_fp .......   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   0.00 sec
+Internal ctest changing into directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native
+UpdateCTestConfiguration  from :/home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native/DartConfiguration.tcl
+Test project /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: edrv_init
+
+1: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/p1/edrv-native/test_powerlink_edrv "init"
+1: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native
+1: Test timeout computed to be: 10000000
+1: PASS init
+1/9 Test #1: edrv_init ........................   Passed    0.00 sec
+test 2
+    Start 2: edrv_buffers
+
+2: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/p1/edrv-native/test_powerlink_edrv "buffers"
+2: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native
+2: Test timeout computed to be: 10000000
+2: PASS buffers
+2/9 Test #2: edrv_buffers .....................   Passed    0.00 sec
+test 3
+    Start 3: edrv_tx_wrap
+
+3: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/p1/edrv-native/test_powerlink_edrv "tx_wrap"
+3: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native
+3: Test timeout computed to be: 10000000
+3: PASS tx_wrap
+3/9 Test #3: edrv_tx_wrap .....................   Passed    0.00 sec
+test 4
+    Start 4: edrv_tx_callback
+
+4: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/p1/edrv-native/test_powerlink_edrv "tx_callback"
+4: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native
+4: Test timeout computed to be: 10000000
+4: PASS tx_callback
+4/9 Test #4: edrv_tx_callback .................   Passed    0.00 sec
+test 5
+    Start 5: edrv_tx_error
+
+5: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/p1/edrv-native/test_powerlink_edrv "tx_error"
+5: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native
+5: Test timeout computed to be: 10000000
+5: PASS tx_error
+5/9 Test #5: edrv_tx_error ....................   Passed    0.00 sec
+test 6
+    Start 6: edrv_stop
+
+6: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/p1/edrv-native/test_powerlink_edrv "stop"
+6: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native
+6: Test timeout computed to be: 10000000
+6: PASS stop
+6/9 Test #6: edrv_stop ........................   Passed    0.00 sec
+test 7
+    Start 7: edrv_rx_filters
+
+7: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/p1/edrv-native/test_powerlink_edrv "rx_filters"
+7: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native
+7: Test timeout computed to be: 10000000
+7: PASS rx_filters
+7/9 Test #7: edrv_rx_filters ..................   Passed    0.00 sec
+test 8
+    Start 8: edrv_rx_invalid
+
+8: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/p1/edrv-native/test_powerlink_edrv "rx_invalid"
+8: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native
+8: Test timeout computed to be: 10000000
+8: PASS rx_invalid
+8/9 Test #8: edrv_rx_invalid ..................   Passed    0.00 sec
+test 9
+    Start 9: edrv_rx_deferred
+
+9: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/p1/edrv-native/test_powerlink_edrv "rx_deferred"
+9: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/p1/edrv-native
+9: Test timeout computed to be: 10000000
+9: PASS rx_deferred
+9/9 Test #9: edrv_rx_deferred .................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 9
+
+Total Test time (real) =   0.01 sec
+Internal ctest changing into directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+UpdateCTestConfiguration  from :/home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native/DartConfiguration.tcl
+Test project /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+      Start  1: rtos_conversion
+
+1: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "conversion"
+1: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+1: Test timeout computed to be: 10000000
+1: P2 native conversion PASS (mock hardware, not IRQ/latency acceptance)
+ 1/12 Test  #1: rtos_conversion ..................   Passed    0.00 sec
+test 2
+      Start  2: rtos_lifecycle
+
+2: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "lifecycle"
+2: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+2: Test timeout computed to be: 10000000
+2: P2 native lifecycle PASS (mock hardware, not IRQ/latency acceptance)
+ 2/12 Test  #2: rtos_lifecycle ...................   Passed    0.00 sec
+test 3
+      Start  3: rtos_expiry
+
+3: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "expiry"
+3: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+3: Test timeout computed to be: 10000000
+3: P2 native expiry PASS (mock hardware, not IRQ/latency acceptance)
+ 3/12 Test  #3: rtos_expiry ......................   Passed    0.00 sec
+test 4
+      Start  4: rtos_periodic
+
+4: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "periodic"
+4: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+4: Test timeout computed to be: 10000000
+4: P2 native periodic PASS (mock hardware, not IRQ/latency acceptance)
+ 4/12 Test  #4: rtos_periodic ....................   Passed    0.00 sec
+test 5
+      Start  5: rtos_callback
+
+5: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "callback"
+5: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+5: Test timeout computed to be: 10000000
+5: P2 native callback PASS (mock hardware, not IRQ/latency acceptance)
+ 5/12 Test  #5: rtos_callback ....................   Passed    0.00 sec
+test 6
+      Start  6: rtos_slow_callback
+
+6: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "slow_callback"
+6: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+6: Test timeout computed to be: 10000000
+6: P2 native slow_callback PASS (mock hardware, not IRQ/latency acceptance)
+ 6/12 Test  #6: rtos_slow_callback ...............   Passed    0.00 sec
+test 7
+      Start  7: rtos_stale
+
+7: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "stale"
+7: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+7: Test timeout computed to be: 10000000
+7: P2 native stale PASS (mock hardware, not IRQ/latency acceptance)
+ 7/12 Test  #7: rtos_stale .......................   Passed    0.00 sec
+test 8
+      Start  8: rtos_fault
+
+8: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "fault"
+8: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+8: Test timeout computed to be: 10000000
+8: P2 native fault PASS (mock hardware, not IRQ/latency acceptance)
+ 8/12 Test  #8: rtos_fault .......................   Passed    0.00 sec
+test 9
+      Start  9: rtos_mutex
+
+9: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "mutex"
+9: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+9: Test timeout computed to be: 10000000
+9: P2 native mutex PASS (mock hardware, not IRQ/latency acceptance)
+ 9/12 Test  #9: rtos_mutex .......................   Passed    0.00 sec
+test 10
+      Start 10: rtos_critical
+
+10: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "critical"
+10: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+10: Test timeout computed to be: 10000000
+10: P2 native critical PASS (mock hardware, not IRQ/latency acceptance)
+10/12 Test #10: rtos_critical ....................   Passed    0.00 sec
+test 11
+      Start 11: rtos_cache
+
+11: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "cache"
+11: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+11: Test timeout computed to be: 10000000
+11: P2 native cache PASS (mock hardware, not IRQ/latency acceptance)
+11/12 Test #11: rtos_cache .......................   Passed    0.00 sec
+test 12
+      Start 12: rtos_owner
+
+12: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/p2/rtos-native/test_powerlink_rtos "owner"
+12: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/p2/rtos-native
+12: Test timeout computed to be: 10000000
+12: P2 native owner PASS (mock hardware, not IRQ/latency acceptance)
+12/12 Test #12: rtos_owner .......................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 12
+
+Total Test time (real) =   0.01 sec
+Internal ctest changing into directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+UpdateCTestConfiguration  from :/home/openeuler/build/powerlink-timer-p3c-20261010/software/native/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/openeuler/build/powerlink-timer-p3c-20261010/software/native/DartConfiguration.tcl
+Test project /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+      Start  1: mn_passive
+
+1: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "passive"
+1: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+1: Test timeout computed to be: 10000000
+1: real stack 100 passive prepare/process/stop: allocations=1600 frees=1600 live=0; no TX/NMT reset
+1: PASS mn_passive (software only)
+ 1/27 Test  #1: mn_passive .......................   Passed    0.15 sec
+test 2
+      Start  2: mn_owner
+
+2: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "owner"
+2: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+2: Test timeout computed to be: 10000000
+2: PASS mn_owner (software only)
+ 2/27 Test  #2: mn_owner .........................   Passed    0.00 sec
+test 3
+      Start  3: mn_cdc
+
+3: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "cdc"
+3: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+3: Test timeout computed to be: 10000000
+3: PASS mn_cdc (software only)
+ 3/27 Test  #3: mn_cdc ...........................   Passed    0.00 sec
+test 4
+      Start  4: mn_target_failure
+
+4: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "target_failure"
+4: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+4: Test timeout computed to be: 10000000
+4: PASS mn_target_failure (software only)
+ 4/27 Test  #4: mn_target_failure ................   Passed    0.00 sec
+test 5
+      Start  5: mn_timer_failure
+
+5: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "timer_failure"
+5: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+5: Test timeout computed to be: 10000000
+5: PASS mn_timer_failure (software only)
+ 5/27 Test  #5: mn_timer_failure .................   Passed    0.00 sec
+test 6
+      Start  6: mn_phy_failure
+
+6: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "phy_failure"
+6: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+6: Test timeout computed to be: 10000000
+6: PASS mn_phy_failure (software only)
+ 6/27 Test  #6: mn_phy_failure ...................   Passed    0.00 sec
+test 7
+      Start  7: mn_sem_failure
+
+7: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "sem_failure"
+7: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+7: Test timeout computed to be: 10000000
+7: PASS mn_sem_failure (software only)
+ 7/27 Test  #7: mn_sem_failure ...................   Passed    0.00 sec
+test 8
+      Start  8: mn_stop_failure
+
+8: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "stop_failure"
+8: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+8: Test timeout computed to be: 10000000
+8: stop_failure retained resources: heap=16 sem=1 ETH=1 timer=1
+ 8/27 Test  #8: mn_stop_failure ..................   Passed    0.00 sec
+test 9
+      Start  9: mn_timer_stop_failure
+
+9: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "timer_stop_failure"
+9: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+9: Test timeout computed to be: 10000000
+9: timer_stop_failure retained resources: heap=16 sem=1 ETH=0 timer=1
+ 9/27 Test  #9: mn_timer_stop_failure ............   Passed    0.00 sec
+test 10
+      Start 10: mn_allocation_failure_1
+
+10: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_1"
+10: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+10: Test timeout computed to be: 10000000
+10: injected malloc failure #1 bytes=32788 caller=0x41e0c0
+10: PASS mn_allocation_failure_1 (software only)
+10/27 Test #10: mn_allocation_failure_1 ..........   Passed    0.00 sec
+test 11
+      Start 11: mn_allocation_failure_2
+
+11: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_2"
+11: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+11: Test timeout computed to be: 10000000
+11: injected malloc failure #2 bytes=32788 caller=0x41e0c0
+11: PASS mn_allocation_failure_2 (software only)
+11/27 Test #11: mn_allocation_failure_2 ..........   Passed    0.00 sec
+test 12
+      Start 12: mn_allocation_failure_3
+
+12: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_3"
+12: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+12: Test timeout computed to be: 10000000
+12: injected malloc failure #3 bytes=16 caller=0x424993
+12: PASS mn_allocation_failure_3 (software only)
+12/27 Test #12: mn_allocation_failure_3 ..........   Passed    0.00 sec
+test 13
+      Start 13: mn_allocation_failure_4
+
+13: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_4"
+13: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+13: Test timeout computed to be: 10000000
+13: injected malloc failure #4 bytes=32788 caller=0x41e0c0
+13: PASS mn_allocation_failure_4 (software only)
+13/27 Test #13: mn_allocation_failure_4 ..........   Passed    0.00 sec
+test 14
+      Start 14: mn_allocation_failure_5
+
+14: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_5"
+14: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+14: Test timeout computed to be: 10000000
+14: injected malloc failure #5 bytes=16 caller=0x424993
+14: PASS mn_allocation_failure_5 (software only)
+14/27 Test #14: mn_allocation_failure_5 ..........   Passed    0.00 sec
+test 15
+      Start 15: mn_allocation_failure_6
+
+15: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_6"
+15: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+15: Test timeout computed to be: 10000000
+15: injected malloc failure #6 bytes=32788 caller=0x41e0c0
+15: PASS mn_allocation_failure_6 (software only)
+15/27 Test #15: mn_allocation_failure_6 ..........   Passed    0.00 sec
+test 16
+      Start 16: mn_allocation_failure_7
+
+16: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_7"
+16: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+16: Test timeout computed to be: 10000000
+16: injected malloc failure #7 bytes=16 caller=0x424993
+16: PASS mn_allocation_failure_7 (software only)
+16/27 Test #16: mn_allocation_failure_7 ..........   Passed    0.00 sec
+test 17
+      Start 17: mn_allocation_failure_8
+
+17: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_8"
+17: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+17: Test timeout computed to be: 10000000
+17: injected malloc failure #8 bytes=8212 caller=0x41e0c0
+17: PASS mn_allocation_failure_8 (software only)
+17/27 Test #17: mn_allocation_failure_8 ..........   Passed    0.00 sec
+test 18
+      Start 18: mn_allocation_failure_9
+
+18: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_9"
+18: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+18: Test timeout computed to be: 10000000
+18: injected malloc failure #9 bytes=2068 caller=0x41e0c0
+18: PASS mn_allocation_failure_9 (software only)
+18/27 Test #18: mn_allocation_failure_9 ..........   Passed    0.00 sec
+test 19
+      Start 19: mn_allocation_failure_10
+
+19: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_10"
+19: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+19: Test timeout computed to be: 10000000
+19: injected malloc failure #10 bytes=2068 caller=0x41e0c0
+19: PASS mn_allocation_failure_10 (software only)
+19/27 Test #19: mn_allocation_failure_10 .........   Passed    0.00 sec
+test 20
+      Start 20: mn_allocation_failure_11
+
+20: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_11"
+20: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+20: Test timeout computed to be: 10000000
+20: injected malloc failure #11 bytes=2068 caller=0x41e0c0
+20: PASS mn_allocation_failure_11 (software only)
+20/27 Test #20: mn_allocation_failure_11 .........   Passed    0.00 sec
+test 21
+      Start 21: mn_allocation_failure_12
+
+21: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_12"
+21: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+21: Test timeout computed to be: 10000000
+21: injected malloc failure #12 bytes=2068 caller=0x41e0c0
+21: PASS mn_allocation_failure_12 (software only)
+21/27 Test #21: mn_allocation_failure_12 .........   Passed    0.00 sec
+test 22
+      Start 22: mn_allocation_failure_13
+
+22: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_13"
+22: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+22: Test timeout computed to be: 10000000
+22: injected malloc failure #13 bytes=24384 caller=0x41ad70
+22: PASS mn_allocation_failure_13 (software only)
+22/27 Test #22: mn_allocation_failure_13 .........   Passed    0.00 sec
+test 23
+      Start 23: mn_allocation_failure_14
+
+23: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_14"
+23: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+23: Test timeout computed to be: 10000000
+23: injected malloc failure #14 bytes=16 caller=0x41ab13
+23: PASS mn_allocation_failure_14 (software only)
+23/27 Test #23: mn_allocation_failure_14 .........   Passed    0.00 sec
+test 24
+      Start 24: mn_allocation_failure_15
+
+24: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_15"
+24: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+24: Test timeout computed to be: 10000000
+24: injected malloc failure #15 bytes=16 caller=0x41ab13
+24: PASS mn_allocation_failure_15 (software only)
+24/27 Test #24: mn_allocation_failure_15 .........   Passed    0.00 sec
+test 25
+      Start 25: mn_allocation_failure_16
+
+25: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/test_powerlink_passive_mn "allocation_failure_16"
+25: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native
+25: Test timeout computed to be: 10000000
+25: injected malloc failure #16 bytes=16 caller=0x41ab13
+25: PASS mn_allocation_failure_16 (software only)
+25/27 Test #25: mn_allocation_failure_16 .........   Passed    0.00 sec
+test 26
+      Start 26: mn_state_and_ami
+
+26: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/core/test_powerlink_mn_core
+26: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native/core
+26: Test timeout computed to be: 10000000
+26: PASS: upstream MN boot/gates/operational/cycle-error/reset/conflicting-MN; 21 state changes; LP64/unaligned AMI; no HAL or frames
+26/27 Test #26: mn_state_and_ami .................   Passed    0.00 sec
+test 27
+      Start 27: od_integer_range_and_no_fp
+
+27: Test command: /home/openeuler/build/powerlink-mn-p3b-20261010/software-checked-final/native/core/test_powerlink_od
+27: Working Directory: /home/openeuler/build/powerlink-timer-p3c-20261010/software/native/core
+27: Test timeout computed to be: 10000000
+27: PASS: integer range bounds; ranged REAL32/64 rejected unchanged; raw REAL32 bytes preserved
+27/27 Test #27: od_integer_range_and_no_fp .......   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 27
+
+Total Test time (real) =   0.23 sec
+
+REMOTE_EXIT_CODE=0

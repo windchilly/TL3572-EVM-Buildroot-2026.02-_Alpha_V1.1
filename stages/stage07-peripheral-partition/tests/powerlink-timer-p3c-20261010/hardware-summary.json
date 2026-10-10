@@ -1,0 +1,42 @@
+{
+  "phase": "P3c hardware diagnostic sample, NOT industrial worst-case certification",
+  "periods_ns": [
+    100000,
+    1000000,
+    10000000
+  ],
+  "samples_per_period_per_cycle": 8,
+  "total_interrupts": 72,
+  "total_task_callbacks": 72,
+  "cycles": [
+    {
+      "irq_late_ticks": 237,
+      "callback_late_ticks": 1735,
+      "irq_late_us": 9.875,
+      "callback_late_us": 72.29166666666667,
+      "system_ticks": 88
+    },
+    {
+      "irq_late_ticks": 34,
+      "callback_late_ticks": 66,
+      "irq_late_us": 1.4166666666666667,
+      "callback_late_us": 2.75,
+      "system_ticks": 88
+    },
+    {
+      "irq_late_ticks": 703,
+      "callback_late_ticks": 2154,
+      "irq_late_us": 29.291666666666668,
+      "callback_late_us": 89.75,
+      "system_ticks": 88
+    }
+  ],
+  "max_observed_irq_late_us": 29.291666666666668,
+  "max_observed_callback_late_us": 89.75,
+  "cntfrq_hz": 24000000,
+  "timer_access_irq_and_cleanup_passed": true,
+  "gic_securityextn": true,
+  "nonsecure_igroupr_read_zero": true,
+  "no_powerlink_mn_or_ethernet_test": true,
+  "candidate_sha256": "a50255ed798c679fd78b7555ff3853698a3a8937934ee4310130473add671b2e"
+}

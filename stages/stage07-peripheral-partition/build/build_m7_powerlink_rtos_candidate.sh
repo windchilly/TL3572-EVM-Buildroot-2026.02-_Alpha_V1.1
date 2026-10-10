@@ -10,7 +10,7 @@ bash "$stage_root/build/build_m7_powerlink_candidate.sh"
 readonly demo="$uni/demos/rk3572_mica"
 readonly app="$demo/apps/openamp"
 install -m 0644 "$stage_root/source/overlay/uniproton/demos/rk3572_mica/apps/openamp/rk3572_powerlink_rtos.c" "$app/rk3572_powerlink_rtos.c"
-for source in target-uniproton.c hrestimer-rk3572.c m7_plk_platform.h m7_plk_rtos.h m7_plk_cache.h; do
+for source in target-uniproton.c hrestimer-rk3572.c m7_plk_platform.h m7_plk_rtos.h m7_plk_cache.h m7_plk_gic.h; do
     install -m 0644 "$stage_root/source/powerlink/port/$source" "$app/powerlink-port/$source"
 done
 git -C "$uni" apply --check "$stage_root/source/patches/uniproton/0012-rk3572-powerlink-rtos-dormant.patch"

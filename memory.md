@@ -1,5 +1,23 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-10 最新 POWERLINK 续做入口：P3c timer-only 软件/临时UP2实测通过，非MN/实时/整个P3验收。
+新增m7_timer_probe.c/h、m7_plk_gic.h、0014、build_m7_powerlink_timer_candidate.sh及完整原生/板端测试。
+PLK timer-probe/timer-status仅诊断开关/COLD显式执行，默认不自动运行，不oplk_initialize/create/EDRV/ETH。
+首次rc2安全退出：旧P2硬要求IGROUPR bit30=1，忽略NS下RAZ/WI。按GICD_TYPER SecurityExtn/CPU接口视图修正，
+仍要求未占用/level/enable+priority回读，不改安全分组；不安全部分租用保留FAULT/lease，不自动重试。
+24MHz CNTP/EL1权限+PPI30真实投递通过，3轮各8x100us/1ms/10ms=72IRQ/72owner回调；无IRQ拒绝不靠轮询fake PASS。
+样本最大ISR迟到703ticks=29.292us，任务迟到2154ticks=89.75us；空闲板卡/RPMsg活动短样本，不是工业最坏上限/100us周期承诺。
+CNTV/PPI27保持，Tick每轮+88；CNTP_CTL2，PPI30 enabled/pending/active0，own priority恢复160。
+板端实测批准后只临时UP2；最终CPU4/5 PSCI OFF、原两UP Offline、micad PID322/restarts0、绑定/地址/路由/boot_id不变。
+本轮不重启、不打开COM7、不发PHY/ETH/CAN/UART帧、不改正式M6/DT/开机配置；CAN/UART“不发送”继续有效。
+新增12probe+3mailbox C、原P3b/累计/既有P0-P3a原生回归通过；Windows/Linux各99Python，旧125FP/SIMD无新增。
+构建根/home/openeuler/build/powerlink-timer-p3c-20261010；UniProton-final/final-repro两全新累计源树runtime一致。
+software/software-repro是明确复用固定P3b/P3a软件根（不是本轮重编72核心）；换机完整源码构建命令在新README。
+UP2 runtime619876B SHA11f1c0e875c37719b70de14a97150ffee1d82777462e5c0c195983385a6d52c6；image/BSS2145344B/8MiB，页表10/16。
+实测候选SHAa50255ed...，candidates中另存LFS；正式两ELF仍8bfb824b.../627545f5...；首次失败/中间候选不删。
+tests/powerlink-timer-p3c-20261010/README.md为完整记录/复建入口，SHA256SUMS当前交付；GitHub结果以最终报告为准。
+下一步forced100-half PHY/MAC/安全停机的受控硬件窗口，另补长稳/负载时延预算；门槛通过才MNreset/隔离CN，不能控制真实伺服。
+
 2026-10-10 最新 POWERLINK 续做入口：P3b累计候选休眠owner/单槽邮箱/跨任务快照/最终ELF通过，仅软件。
 新增overlay rk3572_powerlink_app.c/h、0013、build_m7_powerlink_owner_candidate.sh、audit/compare/manifest/native脚本。
 CPU5单owner32KiB静态栈prio24；默认只创建/休眠，不oplk_initialize/prepare/PHY/timer/MNreset/TX。

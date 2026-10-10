@@ -93,11 +93,15 @@ static void dormant(void)
     }
     assert(Rk3572PowerlinkInput("PLK env-init\0x", 14)); assert(strstr(reply, "invalid-command"));
     input("PLK prepare", "ERROR invalid-command"); input("PLK start", "ERROR invalid-command");
+    input("PLK timer-probe", "ERROR invalid-command"); input("PLK timer-status", "ERROR invalid-command");
     input("PLK reset", "ERROR invalid-command"); input("PLK env-init\n\n", "ERROR invalid-command");
     { char big[100]; memset(big, 'x', sizeof(big)); memcpy(big, "PLK ", 4);
       assert(Rk3572PowerlinkInput(big, sizeof(big)) && strstr(reply, "invalid-command")); }
 }
-int main(int argc, char** argv)
+#ifndef M7_OWNER_TEST_MAIN
+#define M7_OWNER_TEST_MAIN main
+#endif
+int M7_OWNER_TEST_MAIN(int argc, char** argv)
 {
     assert(argc == 2); (void)submittingDuringInit;
     if (!strcmp(argv[1], "integrated")) {

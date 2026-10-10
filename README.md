@@ -1,6 +1,10 @@
 # TL3572 / RK3572：openEuler + MICA + UniProton
 
 本仓库保存评估板资料、Stage01–Stage07 的源码/配置、正式阶段记录，以及换机恢复入口。
+2026-10-10 最新[P3c定时器检查点](stages/stage07-peripheral-partition/tests/powerlink-timer-p3c-20261010/README.md)：
+UP2 CNTP/PPI30权限、72次真实IRQ/任务回调及安全退出通过；修正GICv2非安全分组视图误判。
+99项Python/原生回归、两个全新累计树runtime一致；样本最大IRQ迟到29.292us、任务迟到89.75us，非最坏时延保证。
+仅临时UP2诊断，原两UP已Offline；无外设帧/重启/正式固件替换。半双工、MN运行及CN互操作仍未验收。
 2026-10-10 最新软件增量：UP2/ETH2 POWERLINK MN推进至P3b休眠owner/邮箱/诊断与完整累计候选ELF链接；
 12组原生任务测试、92项Python及双目录11产物一致；[P3b证据与换机入口](stages/stage07-peripheral-partition/tests/powerlink-mn-p3b-20261010/README.md)。
 尚无 MN 运行入口、半双工/定时精度或 CN 互操作验收，正式累计 ELF 保持实测版本。

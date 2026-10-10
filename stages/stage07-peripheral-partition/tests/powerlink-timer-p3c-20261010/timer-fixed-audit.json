@@ -1,0 +1,75 @@
+{
+  "phase": "P3c explicit timer-only candidate SOFTWARE AUDIT",
+  "images": [
+    {
+      "role": "a",
+      "elf_bytes": 678496,
+      "elf_sha256": "bc6743d26343de2e29c91128d2896cf1df41653c9d39f60285b650e64c904f5e",
+      "runtime_bytes": 360716,
+      "runtime_sha256": "d4d80d02fdac5d2f26db2deabeabb1147c54eab5fe355653c382fe1c17157290",
+      "image_used_including_noload_bytes": 969056,
+      "image_remaining_bytes": 7419552,
+      "fsc_pool_bytes": 524288,
+      "page_tables": {
+        "elf": "tl3572-m7-integrated-up-a.elf",
+        "table_pages": 9,
+        "required_bytes": 36864,
+        "available_bytes": 65536,
+        "fits": true,
+        "first_overflow_region": null
+      }
+    },
+    {
+      "role": "b",
+      "elf_bytes": 1149952,
+      "elf_sha256": "20f99d9d395105fd050962296e2e1dc7cc468eb0fa1b9c3aa875e672098d3ed0",
+      "runtime_bytes": 619860,
+      "runtime_sha256": "fe80110e820576e28cd52b27a3947bedfe049a6ec9bb467a24dd6515b57f0a0d",
+      "image_used_including_noload_bytes": 2145328,
+      "image_remaining_bytes": 6243280,
+      "fsc_pool_bytes": 524288,
+      "page_tables": {
+        "elf": "tl3572-m7-integrated-up-b.elf",
+        "table_pages": 10,
+        "required_bytes": 40960,
+        "available_bytes": 65536,
+        "fits": true,
+        "first_overflow_region": null
+      }
+    }
+  ],
+  "complete_global_functions_retained_in_UP2": 596,
+  "all_hal_bsp_resolved": true,
+  "final_undefined_symbols": [],
+  "no_NEW_fp_simd_in_final_UP2": true,
+  "hardware_tested": false,
+  "inherited_simd_instruction_count": 125,
+  "inherited_simd_functions": [
+    "PRT_cvt",
+    "PRT_round",
+    "SecFormatDouble",
+    "SecFormatFloat",
+    "SecOutput",
+    "metal_default_log_handler",
+    "metal_io_init",
+    "modf",
+    "osVsnprintf",
+    "snprintf"
+  ],
+  "simd_limit": "Pinned M6/libmetal instructions remain; site/opcode matches formal UP2 except exactly two PRT_cvt literal-load relocations checked by registers+literal bytes. NOT an all-ELF no-FPU claim.",
+  "default": "dormant; no stack environment init/prepare/PHY/CNTP/NMT/TX",
+  "commands": [
+    "PLK status",
+    "PLK env-init",
+    "PLK env-exit",
+    "PLK timer-probe",
+    "PLK timer-status"
+  ],
+  "limits": "single non-SMP owner; one pending OR running; 32KiB static stack; 2 tick idle polling, NOT cyclic timing",
+  "timer_functions": [
+    "m7_timer_diag_reset",
+    "m7_timer_diag_snapshot",
+    "m7_timer_probe"
+  ],
+  "timer_limit": "24 IRQ-gated one-shots, 100us/1ms/10ms; not worst-case latency certification"
+}

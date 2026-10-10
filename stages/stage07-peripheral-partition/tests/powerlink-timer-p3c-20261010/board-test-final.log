@@ -1,0 +1,57 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+SCOPE: temporary UP2 ONLY; UP1 offline; no PHY/ETH/CAN/UART frames, unbind, DT, boot config or reboot
+BEFORE {"boot": "fa41fc54-86a5-46f4-84a0-d2e820e1ef17", "micad": {"ActiveState": "active", "MainPID": "322", "NRestarts": "0"}, "resources": {"addresses": "lo               UNKNOWN        127.0.0.1/8 ::1/128 \ncan0             DOWN           \ncan1             DOWN           \ncan2             DOWN           \ncan3             DOWN           \neth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 \neth2             UP             fe80::2e0:9aff:fe42:baeb/64 \neth1             UP             fe80::d814:36ff:fe8b:78f0/64 \n", "drivers": {"26500000.serial": "dw-apb-uart", "29d20000.ethernet": "rk_gmac-dwmac", "2a040000.ethernet": "rk_gmac-dwmac", "2ab00000.can": "rk3576_can", "2ab10000.can": "rk3576_can", "2ab20000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "linux_cpus": "0-3,6-7\n", "routes": "default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 \n192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 \n192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 \n"}}
+REAL MMU {"budget_bytes": 65536, "mapped_units": 67, "rc": 0, "root": "0x7ca00000", "table_pages": 10, "tcr": "0x80003520", "used_bytes": 40960}
+PLK UP2 ready=1 owner=6 pending=0 running=0 seq=0 done=0 cmd=0 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+PLK UP2 ACCEPTED seq=1
+PLK UP2 TIMER rc=0 clean=1 samples=24 hz=24000000 irqs=24 callbacks=24 irqLate=237 taskLate=1735 ticks=88 el=4 affinity=0x80000101 ppi30=0x0/0x0/0x0 prio=160/160 cntv=1/1
+TIMER CYCLE 1 PASS
+PLK UP2 ACCEPTED seq=2
+PLK UP2 TIMER rc=0 clean=1 samples=24 hz=24000000 irqs=24 callbacks=24 irqLate=34 taskLate=66 ticks=88 el=4 affinity=0x80000101 ppi30=0x0/0x0/0x0 prio=160/160 cntv=1/1
+TIMER CYCLE 2 PASS
+PLK UP2 ACCEPTED seq=3
+PLK UP2 TIMER rc=0 clean=1 samples=24 hz=24000000 irqs=24 callbacks=24 irqLate=703 taskLate=2154 ticks=88 el=4 affinity=0x80000101 ppi30=0x0/0x0/0x0 prio=160/160 cntv=1/1
+TIMER CYCLE 3 PASS
+M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[up-b boot=7 seq=202] [boot] UP CPU5 entered
+[up-b boot=7 seq=203] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=7 seq=204] [boot] interrupt routing ready
+[up-b boot=7 seq=205] [boot] scheduler task entered
+[up-b boot=7 seq=206] [plk] dormant owner init rc=0; no PHY/timer/MN startup
+[up-b boot=7 seq=207] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=7 seq=208] [openamp] get rsctable 7c296b00, size a64 
+[up-b boot=7 seq=209] [openamp]: get vring0: da 7a0a0000
+[up-b boot=7 seq=210] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=7 seq=211] [openamp] tty task started
+[up-b boot=7 seq=212] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=0 done=0 cmd=0 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=7 seq=213] [plk] PLK UP2 ACCEPTED seq=1
+[up-b boot=7 seq=214] [plk-timer] BEGIN CNTP access/PPI30; no Ethernet/MN startup
+[up-b boot=7 seq=215] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=3 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=7 seq=216] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=3 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=7 seq=217] [plk-timer] END rc=0 clean=1 samples=24 irqs=24 callbacks=24 hz=24000000 irqLate=237 taskLate=1735 ticks=88
+[up-b boot=7 seq=218] [openamp] ept ready
+[up-b boot=7 seq=219] [boot] RPMsg ready
+[up-b boot=7 seq=220] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=1 done=1 cmd=3 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=7 seq=221] [plk] PLK UP2 TIMER rc=0 clean=1 samples=24 hz=24000000 irqs=24 callbacks=24 irqLate=237 taskLate=1735 ticks=88 el=4 affinity=0x80000101 ppi30=0x0/0x0/0x0 prio=160/160 cntv=1/1
+[up-b boot=7 seq=222] [plk] PLK UP2 ACCEPTED seq=2
+[up-b boot=7 seq=223] [plk] PLK UP2 ready=1 owner=6 pending=1 running=0 seq=2 done=1 cmd=3 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=7 seq=224] [plk-timer] BEGIN CNTP access/PPI30; no Ethernet/MN startup
+[up-b boot=7 seq=225] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=3 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=7 seq=226] [plk-timer] END rc=0 clean=1 samples=24 irqs=24 callbacks=24 hz=24000000 irqLate=34 taskLate=66 ticks=88
+[up-b boot=7 seq=227] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=2 done=2 cmd=3 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=7 seq=228] [plk] PLK UP2 TIMER rc=0 clean=1 samples=24 hz=24000000 irqs=24 callbacks=24 irqLate=34 taskLate=66 ticks=88 el=4 affinity=0x80000101 ppi30=0x0/0x0/0x0 prio=160/160 cntv=1/1
+[up-b boot=7 seq=229] [plk] PLK UP2 ACCEPTED seq=3
+[up-b boot=7 seq=230] [plk-timer] BEGIN CNTP access/PPI30; no Ethernet/MN startup
+[up-b boot=7 seq=231] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=3 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=7 seq=232] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=3 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=7 seq=233] [plk-timer] END rc=0 clean=1 samples=24 irqs=24 callbacks=24 hz=24000000 irqLate=703 taskLate=2154 ticks=88
+[up-b boot=7 seq=234] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=3 done=3 cmd=3 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=7 seq=235] [plk] PLK UP2 TIMER rc=0 clean=1 samples=24 hz=24000000 irqs=24 callbacks=24 irqLate=703 taskLate=2154 ticks=88 el=4 affinity=0x80000101 ppi30=0x0/0x0/0x0 prio=160/160 cntv=1/1
+[up-b boot=7 seq=236] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CLEANUP PASS: temporary client removed, original 2 Offline, CPU4/5 OFF, Linux bindings/routes/micad/boot unchanged
+OVERALL PASS P3c real CNTP/PPI30 access+IRQ+task callbacks; no MN/ETH acceptance
+
+BOARD_EXIT_CODE=0

@@ -2,6 +2,11 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-10-10 最新[P3c定时器实测](tests/powerlink-timer-p3c-20261010/README.md)：仅临时UP2，CNTP/PPI30真实72IRQ/72任务回调及退出通过。
+修正NS视图IGROUPR读零误判；样本最大IRQ29.292us、任务89.75us，非工业最坏时延/100us周期承诺。
+12probe+3mailbox原生、99Python及累计双新树复编通过；正式M6/DT/两ELF未改，无PHY/ETH/CAN/UART帧/重启。
+结束两UP Offline/CPU OFF、Linux绑定/地址/路由/micad/boot不变；下一步半双工与安全停机，MN/CN仍未验收。
+
 2026-10-10 最新 [P3b累计候选软件接入](tests/powerlink-mn-p3b-20261010/README.md)：
 UP2新增休眠owner/单槽邮箱/跨任务快照，仅软件env-init/env-exit/status；UP1拒绝PLK命令。
 596个完整核心/OD/port/BSP函数保留，最终ELF未解析为零；12组C、92项Python与双目录11产物一致。
