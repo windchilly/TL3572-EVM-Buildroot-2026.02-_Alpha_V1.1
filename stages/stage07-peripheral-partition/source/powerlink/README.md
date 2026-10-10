@@ -1,7 +1,7 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
-**P3a真实完整栈被动软件接入：P0/P1/P2 + OD/内存CDC/单owner生命周期**，
+**P3b累计候选接入：完整核心/OD/port/真实BSP + 休眠owner/单槽邮箱/诊断快照**，
 不是已能上网运行的主站；半双工上板仍待验证。
 
 上游完整源码归档（包括文档、工具和示例）存放于 `upstream/`，采用 Git LFS。
@@ -21,13 +21,22 @@ P1 单独入口 `port/edrv/CMakeLists.txt` 实现 9 个 EDRV 接口；BSP 编译
 P2 新入口 `port/rtos/CMakeLists.txt`，实现其余 target/cache/hrestimer 接口；
 真实平台只在默认 OFF 的 `M7_POWERLINK_RTOS` 累计 UP2 候选开关中编译。
 CNTP/PPI30 独占，原 CNTV/PPI27 Tick 不动；ISR 只屏蔽/计数，协议回调由同一 UP2 owner 任务泵送。
-**还没有RTOS常驻owner任务、MN命令、半双工实机或定时精度结论**。
+上述P2轮次没有RTOS常驻owner任务；最新P3b已补休眠任务，但仍无MN运行命令、半双工实机或定时精度结论。
 资源与 RTOS 私有 ABI 限制、12 组原生测试及完整换机步骤见 [P2 记录](../../tests/powerlink-mn-p2-20261010/README.md)。
 
 P3a入口`port/mn/CMakeLists.txt`，在另一份解包源码应用0003/0004/0005，
 统一核心/OD配置并补安全停止/错误传播；部分初始化失败保留终止FAULT，不隐式回滚。
 真实栈100次被动启停、16分配位置故障注入通过；仍无RTOS常驻任务/命令/最终MN ELF。
 详见[P3a记录](../../tests/powerlink-mn-p3a-20261010/README.md)。
+
+P3b通过`build_m7_powerlink_owner_candidate.sh`应用0013，完整P3a对象只链接一次，
+明确禁止gc掉未开放的MN/OD代码；最终596个全局函数存在、RTOS/libc依赖全部解析。
+新`rk3572_powerlink_app.c/h`与累计调度器接入，仅UP2创建32KiB静态栈owner，默认休眠。
+`PLK status`读取IRQ锁保护缓存；`PLK env-init/env-exit`只投递单槽命令，owner执行软件环境生命周期。
+没有prepare/process/reset/start/send命令，2tick休眠轮询不是POWERLINK周期或实时性能承诺。
+部分失败/非法上下文/Delay异常保留诊断且拒绝后续命令，不释放未知资源或自动重启。
+完整源代码、独立候选两ELF、12组C/92项Python及双目录11产物比对见[P3b记录](../../tests/powerlink-mn-p3b-20261010/README.md)。
+新增核心/适配无FP/SIMD；原M6/libmetal既有125条仍保留，审计逐点比对，不能称整个最终ELF无FPU。
 
 P0配置不使用Socket/UDP、虚拟网卡、文件配置或主站冗余；P3a CDC由静态内存提供。
 保持整数对象范围检查；REAL32/REAL64 的**范围检查**显式拒绝（`kErrorObdUnknownObjectType`），

@@ -1,8 +1,8 @@
 # TL3572 / RK3572：openEuler + MICA + UniProton
 
 本仓库保存评估板资料、Stage01–Stage07 的源码/配置、正式阶段记录，以及换机恢复入口。
-2026-10-10 最新软件增量：UP2/ETH2 POWERLINK MN推进至P3a真实完整栈被动接入：
-OD/内存CDC/单owner调用与安全启停已软件验证；[P3a证据与换机入口](stages/stage07-peripheral-partition/tests/powerlink-mn-p3a-20261010/README.md)。
+2026-10-10 最新软件增量：UP2/ETH2 POWERLINK MN推进至P3b休眠owner/邮箱/诊断与完整累计候选ELF链接；
+12组原生任务测试、92项Python及双目录11产物一致；[P3b证据与换机入口](stages/stage07-peripheral-partition/tests/powerlink-mn-p3b-20261010/README.md)。
 尚无 MN 运行入口、半双工/定时精度或 CN 互操作验收，正式累计 ELF 保持实测版本。
 M6 双 UniProton 已完成；M7 已完成日志/RPC 软件及 CAN1↔CAN3 的经典 CAN、
 CAN FD/BRS、UART4↔UART8 RS-232 及 UART1↔UART2 RS-485 自主字段初始化/IRQ 直驱切片，

@@ -6,6 +6,9 @@
 #include "test.h"
 #include "rk3572_integrated.h"
 #include "rk3572_integrated_command.h"
+#if defined(M7_POWERLINK_MN) && (MCS_CLIENT_CPU_ID == 5)
+#include "rk3572_powerlink_app.h"
+#endif
 #include <stdio.h>
 #include <string.h>
 
@@ -58,6 +61,10 @@ U32 Rk3572IntegratedInit(void)
         ret = PRT_TaskResume(g_tasks[i]);
         if (ret) { goto fail; }
     }
+#if defined(M7_POWERLINK_MN) && (MCS_CLIENT_CPU_ID == 5)
+    ret = Rk3572PowerlinkInit();
+    if (ret) { goto fail; }
+#endif
     g_ready = 1U;
     PRT_Printf("[integrated] UP%u ready modules=can-classic,can-fd,rs232,rs485 mode=passive\n", MCS_CLIENT_CPU_ID - 3U);
     return 0U;
@@ -76,6 +83,17 @@ int Rk3572IntegratedInput(const char *data, size_t length)
     const char *error = NULL;
     uintptr_t lock;
     int size;
+#if defined(M7_POWERLINK_MN)
+    if (data && length >= 4U && !memcmp(data, "PLK ", 4U)) {
+#if (MCS_CLIENT_CPU_ID == 5)
+        return Rk3572PowerlinkInput(data, length);
+#else
+        static const char denied[] = "PLK UP1 ERROR owned-by-UP2\n";
+        (void)send_message((unsigned char*)denied, sizeof(denied) - 1U);
+        return 1;
+#endif
+    }
+#endif
     /* Ordinary M6 RPMsg echo stays compatible; commands occupy one bounded RPMsg record. */
     if (length < 3U || memcmp(data, "M7 ", 3U)) { return 0; }
     if (!M7ParseCommand(data, length, &command)) { error = "invalid-command"; }

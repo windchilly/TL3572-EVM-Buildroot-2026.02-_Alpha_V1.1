@@ -2,7 +2,13 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
-最新P3a入口`build_m7_powerlink_passive_mn.sh`，两新根强制链接完整核心/OD/应用，
+最新P3b入口`build_m7_powerlink_owner_candidate.sh`，在P3a软件根基础上复制全新M6/累计源码，
+应用0011/0012/0013，只在UP2链接完整核心/OD/适配对象+真实BSP+休眠owner。
+不再用relocatable合并代替最终ELF链接；明确保留全栈，596函数存在且未解析为零。
+`PLK status/env-init/env-exit`仅软件诊断/生命周期，不访问PHY/CNTP或发帧；不覆盖正式firmware/。
+详见[P3b换机命令、候选ELF与证据](../tests/powerlink-mn-p3b-20261010/README.md)。
+
+P3a入口`build_m7_powerlink_passive_mn.sh`，两新根强制链接完整核心/OD/应用，
 真实被动生命周期、内存CDC与16位置分配失败注入；P0/P1/P2旧入口保留。
 无新增RTOS任务/板端命令，不输出或替换累计ELF。
 见[P3a换机步骤与证据](../tests/powerlink-mn-p3a-20261010/README.md)。

@@ -1,0 +1,521 @@
+P3a FULL STACK AUDIT PASS: 77 C sources; all HAL/OD/app present, exact 30 unresolved BSP/libc
+Prepared M7 source: /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked
+Prepared cumulative firmware source: /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/m7-powerlink-p1-up-a
+[  4%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 13%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 13%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 27%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 27%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 31%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 45%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 45%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 45%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 50%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 54%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 63%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o
+[ 63%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 68%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 72%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_irq_test.c.o
+[ 77%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 81%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 86%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 90%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs485_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_eth_test.c.o
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 95%] Built target config
+[ 95%] Built target bsp
+[ 95%] Built target mica
+[ 95%] Built target rpmsg
+[ 95%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+53cf4e5be99fab9f47e96fd16e2625b39bfbf2b996d931d4e60a30e6cff3dd5b  /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/tl3572-m7-integrated-up-a.elf
+074cdb3a020d463a2203a7163e8b59a1329c4e0dce920f0055b1e65d928f64cf  /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/up-a.runtime.bin
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/m7-powerlink-p1-up-b
+[  4%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[  8%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 13%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 30%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 30%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 30%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 30%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 39%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 39%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 47%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 47%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 56%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 56%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 65%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/powerlink-port/edrv-rk3572.c.o
+[ 73%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 73%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 73%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o
+[ 78%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_irq_test.c.o
+[ 86%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 86%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 91%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_eth_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs485_test.c.o
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 95%] Built target config
+[ 95%] Built target bsp
+[ 95%] Built target mica
+[ 95%] Built target rpmsg
+[ 95%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+bfbea7c86c6e67c949279483978e3bf127e847f328ce0ff87664a4a21d275cf0  /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf
+a6946bf8ff4e8061d3072bef43fa6222e0420b4f0ddfe7e708c39349eb3bca96  /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/up-b.runtime.bin
+[
+  {
+    "elf": "tl3572-m7-integrated-up-a.elf",
+    "table_pages": 9,
+    "required_bytes": 36864,
+    "available_bytes": 65536,
+    "fits": true,
+    "first_overflow_region": null
+  },
+  {
+    "elf": "tl3572-m7-integrated-up-b.elf",
+    "table_pages": 10,
+    "required_bytes": 40960,
+    "available_bytes": 65536,
+    "fits": true,
+    "first_overflow_region": null
+  }
+]
+ELF STATIC PASS UP1: cumulative drivers + control/log; Ethernet=True; exact owned mappings
+MMIO pages: 0x26074000 0x26086000 0x26090000 0x260b0000 0x26500000 0x2ab10000 0x2c160000
+ELF STATIC PASS UP2: cumulative drivers + control/log; Ethernet=True; exact owned mappings
+MMIO pages: 0x26074000 0x26082000 0x26084000 0x26090000 0x2ab30000 0x2c140000 0x2c1a0000
+No deployment or hardware result implied by this static verification.
+                 U PRT_Printf
+                 U PRT_TaskDelay
+                 U memcmp
+                 U memcpy
+                 U memset
+REAL BSP/EDRV AUDIT PASS: 14 implementations, only RTOS+libc unresolved; NOT hardware acceptance
+CUMULATIVE CANDIDATE COMPILE PASS; dormant EDRV, no MN runtime, no board acceptance
+P2 RTOS ABI PASS: private flags and real kernel/libc symbols present; NOT hardware acceptance
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/m7-powerlink-p2-up-a
+[  9%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[  9%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 18%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 22%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 27%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 31%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 36%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 50%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 50%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 50%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 54%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o
+[ 68%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 68%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 72%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 72%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_irq_test.c.o
+[ 81%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 81%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 90%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs485_test.c.o
+[ 90%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_eth_test.c.o
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 95%] Built target config
+[ 95%] Built target bsp
+[ 95%] Built target mica
+[ 95%] Built target rpmsg
+[ 95%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+96a018f4c280606dfe00e5b8ce9f9a7a388d06d80fcfd1d43d058f41613f6524  /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/tl3572-m7-integrated-up-a.elf
+074cdb3a020d463a2203a7163e8b59a1329c4e0dce920f0055b1e65d928f64cf  /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/up-a.runtime.bin
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/m7-powerlink-p2-up-b
+[  3%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[  7%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 11%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 15%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 23%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 23%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 26%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 30%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 38%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 38%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 42%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 46%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 53%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 53%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 61%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/powerlink-port/target-uniproton.c.o
+[ 61%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 69%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/powerlink-port/hrestimer-rk3572.c.o
+[ 69%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_powerlink_rtos.c.o
+[ 73%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o
+[ 76%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/powerlink-port/edrv-rk3572.c.o
+[ 84%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 84%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_irq_test.c.o
+[ 88%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 92%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs485_test.c.o
+[ 96%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_eth_test.c.o
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 96%] Built target config
+[ 96%] Built target bsp
+[ 96%] Built target mica
+[ 96%] Built target rpmsg
+[ 96%] Built target proxy
+[100%] Linking C executable rk3572_mica
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+[100%] Built target rk3572_mica
+a02d59ed498a4026db145f1db44c580567a47059baf55b4e5de85f34fb729634  /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf
+59d789865b9f4b8d71a947c160fd9a9e593395abe59dad45d12a0dade4fe46f2  /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/up-b.runtime.bin
+[
+  {
+    "elf": "tl3572-m7-integrated-up-a.elf",
+    "table_pages": 9,
+    "required_bytes": 36864,
+    "available_bytes": 65536,
+    "fits": true,
+    "first_overflow_region": null
+  },
+  {
+    "elf": "tl3572-m7-integrated-up-b.elf",
+    "table_pages": 10,
+    "required_bytes": 40960,
+    "available_bytes": 65536,
+    "fits": true,
+    "first_overflow_region": null
+  }
+]
+ELF STATIC PASS UP1: cumulative drivers + control/log; Ethernet=True; exact owned mappings
+MMIO pages: 0x26074000 0x26086000 0x26090000 0x260b0000 0x26500000 0x2ab10000 0x2c160000
+ELF STATIC PASS UP2: cumulative drivers + control/log; Ethernet=True; exact owned mappings
+MMIO pages: 0x26074000 0x26082000 0x26084000 0x26090000 0x2ab30000 0x2c140000 0x2c1a0000
+No deployment or hardware result implied by this static verification.
+P2 AUDIT PASS: 25 HAL implemented; 21 exact dependencies; real_bsp=True; NOT hardware acceptance
+P2 REAL PLATFORM COMPILE PASS; no MN command / no hardware execution / no formal ELF replacement
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/build/m7-powerlink-p3b-up-a
+[  9%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[  9%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 27%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 27%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 31%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 36%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 45%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 50%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 50%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 54%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o
+[ 59%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 72%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 72%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 77%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 77%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_irq_test.c.o
+[ 81%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 86%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_eth_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs485_test.c.o
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/apps/openamp/rk3572_integrated.c:10:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/apps/openamp/rk3572_powerlink_app.h:6:10: fatal error: m7_mn.h: No such file or directory
+    6 | #include "m7_mn.h"
+      |          ^~~~~~~~~
+compilation terminated.
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+gmake[3]: *** [apps/openamp/CMakeFiles/rpmsg.dir/build.make:90: apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o] Error 1
+gmake[3]: *** Waiting for unfinished jobs....
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/powerlink-mn-p3b-20261010/UniProton-checked/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+[ 95%] Built target config
+[ 95%] Built target bsp
+gmake[2]: *** [CMakeFiles/Makefile2:269: apps/openamp/CMakeFiles/rpmsg.dir/all] Error 2
+gmake[2]: *** Waiting for unfinished jobs....
+[ 95%] Built target mica
+[ 95%] Built target proxy
+gmake[1]: *** [CMakeFiles/Makefile2:198: CMakeFiles/rk3572_mica.dir/rule] Error 2
+gmake: *** [Makefile:124: rk3572_mica] Error 2
+
+REMOTE_EXIT_CODE=2

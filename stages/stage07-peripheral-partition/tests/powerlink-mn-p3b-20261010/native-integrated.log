@@ -1,0 +1,38 @@
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+P3b REAL FULL-STACK OWNER NATIVE PASS: 10 scenarios + UP1 denial, 100 environment cycles, zero hardware acquire
+Native outputs: /tmp/tl3572-integrated-native.x5CTO3
+INTEGRATED COMMAND PASS: runtime profiles/bauds, bounded parse, invalid input has no side effects
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+RS232 codec PASS: CRC vector, 1000 sequences, wrong role/sequence, 256000 bit mutations
+CAN FD CODEC PASS: DLC, flags, 64-byte words, NBTP/DBTP/TDC
+ETH CODEC PASS: CRC vector, 2000 sequences, roles and every payload/CRC bit corruption
+NATIVE VALIDATION PASS: parser + 18 dispatcher/lifecycle runs + 3 codecs; no MMIO
+
+REMOTE_EXIT_CODE=0

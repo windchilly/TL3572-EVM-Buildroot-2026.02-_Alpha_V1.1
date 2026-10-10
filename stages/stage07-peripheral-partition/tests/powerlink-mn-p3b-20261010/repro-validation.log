@@ -1,0 +1,4 @@
+P3b REPRO PASS: 9 full-stack libraries/objects + 2 cumulative runtime images byte-identical
+P3b FINAL ELF AUDIT PASS: 596 complete global functions, zero unresolved, private memory fits; 125 inherited SIMD instructions, zero NEW
+
+REMOTE_EXIT_CODE=0

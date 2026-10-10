@@ -1,5 +1,26 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-10 最新 POWERLINK 续做入口：P3b累计候选休眠owner/单槽邮箱/跨任务快照/最终ELF通过，仅软件。
+新增overlay rk3572_powerlink_app.c/h、0013、build_m7_powerlink_owner_candidate.sh、audit/compare/manifest/native脚本。
+CPU5单owner32KiB静态栈prio24；默认只创建/休眠，不oplk_initialize/prepare/PHY/timer/MNreset/TX。
+PLK status缓存、env-init/env-exit投递单槽，owner执行真实环境初始化/退出；UP1拒绝PLK。
+pending/running互斥、序号拒绝回绕、48B限长/NUL/截断/未知命令拒绝；IRQ只claim/copy，不包API/send/Delay。
+上下文/Delay/栈异常保留快照并拒绝命令，不自动清理/重试；原累计外设/普通echo保留，不触发板端发送。
+完整P3a77C .o只链接一次+真实BSP/owner，明确no-gc；596核心/OD/port/BSP全局函数存在，最终未解析零。
+12组真实完整栈owner C+UP1拒绝、原P0/P1/P2/P3a及累计parser/18生命周期/3codec通过，Windows/Linux各92Python。
+全新软件两根/全新累计两根，9库/对象+2runtime逐字节一致；软件层SHA与P3a/P2旧基线一致。
+根/home/openeuler/build/powerlink-mn-p3b-20261010：software-checked-final/repro，UniProton-verified-final/repro。
+UP1runtime360716B SHAd4d80d02...，UP2runtime610900B SHA59ce0994a824f47c138b77029a5b776388b35e70ad5209a5e7fdf2d3924e1365。
+image含NOLOAD/BSS UP1=969056B、UP2=2136096B/8MiB，FSC512KiB，页表9/16、10/16；非实机堆/栈峰值。
+全ELF发现原M6/libmetal既有125FP/SIMD/10函数；新增代码无FP/SIMD，位点/指令逐点对比原正式UP2。
+仅PRT_cvt两处LDR literal链接重定位，以相同寄存器和实际常量字节校验；不能称整个ELF无FPU。
+没有修改M6静态库，旧上下文行为须板端/生产验证。告警/失败原始日志保留，未有sanitizer。
+本轮未连板卡/COM7、部署、绑定/解绑、改PHY/DT/时钟、重启或发帧。CAN/UART“不发送”继续有效。
+tests/powerlink-mn-p3b-20261010/candidates两ELF另存LFS；正式两ELF仍8bfb824b.../627545f5...。
+tests/powerlink-mn-p3b-20261010/README.md为完整新机复现/日志入口，SHA256SUMS当前清单；历史清单到历史commit核对。
+GitHub以本轮最终报告为准；无真实MN运行/半双工/定时IRQ精度/CN互操作，不代表整个P3完成。
+下一步先timer-only受控入口验证CNTP/PPI30权限/IRQ/延迟，再forced100-half与安全停机，最后MNreset/隔离CN。
+
 2026-10-10 最新 POWERLINK 续做入口：P3a真实完整栈的被动软件接入通过，不是整个P3/硬件验收。
 新增port/m7_mn.c/h、mn/CMakeLists、0003/0004/0005与build_m7_powerlink_passive_mn.sh。
 单owner/非ISR/IRQ启用/防重入；COLD/IDLE/PREPARED/FAULT，timer→EDRV poll8→oplk_process。

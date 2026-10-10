@@ -50,6 +50,10 @@ int main(int argc, char **argv)
     assert(!calls[0] && !calls[1] && !calls[2] && !calls[3]);
     input("M7 status", "pending=0x0 running=0x0 rc=0/0/0 done=0/0/0");
     assert(!Rk3572IntegratedInput("ordinary echo", 13U));
+#if defined(M7_POWERLINK_MN) && (MCS_CLIENT_CPU_ID != 5)
+    input("PLK env-init", "ERROR owned-by-UP2");
+    input("PLK status", "ERROR owned-by-UP2");
+#endif
     input("M7 run can 3", "ERROR invalid-command");
     input("M7 run can 1", "ACCEPTED mask=0x1");
     input("M7 run can 4", "ERROR busy");

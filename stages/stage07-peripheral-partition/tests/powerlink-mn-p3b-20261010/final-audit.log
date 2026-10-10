@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/openeuler/build/powerlink-mn-p3b-20261010/stage/tests/audit_powerlink_owner.py", line 100, in <module>
+    a = p.parse_args(); audit(a.build, a.full, a.toolchain, a.baseline)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/openeuler/build/powerlink-mn-p3b-20261010/stage/tests/audit_powerlink_owner.py", line 66, in audit
+    old_simd = check_simd(asm, old_asm)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/openeuler/build/powerlink-mn-p3b-20261010/stage/tests/audit_powerlink_owner.py", line 40, in check_simd
+    raise ValueError(f"NEW/changed FP/SIMD in UP2: {changed[:8]}")
+ValueError: NEW/changed FP/SIMD in UP2: [('PRT_cvt', 240), ('PRT_cvt', 396)]
+
+REMOTE_EXIT_CODE=1

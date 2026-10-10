@@ -2,10 +2,16 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
-2026-10-10 最新 [P3a被动完整栈软件接入](tests/powerlink-mn-p3a-20261010/README.md)：
+2026-10-10 最新 [P3b累计候选软件接入](tests/powerlink-mn-p3b-20261010/README.md)：
+UP2新增休眠owner/单槽邮箱/跨任务快照，仅软件env-init/env-exit/status；UP1拒绝PLK命令。
+596个完整核心/OD/port/BSP函数保留，最终ELF未解析为零；12组C、92项Python与双目录11产物一致。
+默认不初始化栈/PHY/timer、不启动MN、不发帧。候选两ELF单独归档，正式两ELF和板卡均未改。
+旧M6/libmetal的125条FP/SIMD保留且逐点比对，无新增；不能称整个ELF无FPU，详见记录。
+
+此前 [P3a被动完整栈软件接入](tests/powerlink-mn-p3a-20261010/README.md)：
 真实OD/内存CDC/单owner生命周期、停止失败保留资源、四请求队列错误传播已实现；
 100次被动启停、25组完整栈C、87项Python通过，77个C强制合并与双目录9产物一致。
-RTOS常驻任务/命令/累计ELF接入待P3b；未访问板卡或发送，正式两ELF不变。
+该轮尚无RTOS常驻任务/命令/累计ELF；本轮在上述P3b补齐被动软件入口，运行节点仍未验收。
 
 2026-10-10 POWERLINK 增量：用户确认 UP2 做 MN 主站，通过 ETH2 控制外部设备。
 已完成完整上游源码固定、AArch64 可移植核心构建、无硬件 NMT/OD 检查及独立复编；
