@@ -1,0 +1,246 @@
+Prepared M7 source: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-verified-20261010
+Prepared cumulative firmware source: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-verified-20261010
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-verified-20261010/demos/rk3572_mica/build/m7-integrated-up-a
+[  4%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 22%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 31%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 31%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 40%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 40%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 45%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 50%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 54%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 59%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o
+[ 63%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 72%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_irq_test.c.o
+[ 72%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 77%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 86%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 81%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 90%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs485_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_eth_test.c.o
+[ 95%] Built target config
+[ 95%] Built target bsp
+[ 95%] Built target mica
+[ 95%] Built target rpmsg
+[ 95%] Built target proxy
+[100%] Linking C executable rk3572_mica
+[100%] Built target rk3572_mica
+b2c582b74e194b598e0dd7400b36c2827bb9ee4e7ade9d38bf86cc0b3fe96fe8  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-verified-20261010/demos/rk3572_mica/build/tl3572-m7-integrated-up-a.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-verified-20261010/demos/rk3572_mica/build/m7-integrated-up-b
+[  9%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[  9%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 13%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 18%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 22%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 27%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 36%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 36%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 40%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 45%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 50%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 54%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o
+[ 59%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_irq_test.c.o
+[ 68%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 72%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 72%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 81%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs485_test.c.o
+[ 81%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 90%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_eth_test.c.o
+[ 90%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 95%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 95%] Built target config
+[ 95%] Built target bsp
+[ 95%] Built target mica
+[ 95%] Built target rpmsg
+[ 95%] Built target proxy
+[100%] Linking C executable rk3572_mica
+[100%] Built target rk3572_mica
+131a20643b4b101aaa0fa32024ae24ba1f9ffe5a4668e14e5707720441757668  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-verified-20261010/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf
+[
+  {
+    "elf": "tl3572-m7-integrated-up-a.elf",
+    "table_pages": 9,
+    "required_bytes": 36864,
+    "available_bytes": 65536,
+    "fits": true,
+    "first_overflow_region": null
+  },
+  {
+    "elf": "tl3572-m7-integrated-up-b.elf",
+    "table_pages": 10,
+    "required_bytes": 40960,
+    "available_bytes": 65536,
+    "fits": true,
+    "first_overflow_region": null
+  }
+]
+ELF STATIC PASS UP1: cumulative drivers + control/log; Ethernet=True; exact owned mappings
+MMIO pages: 0x26074000 0x26086000 0x26090000 0x260b0000 0x26500000 0x2ab10000 0x2c160000
+ELF STATIC PASS UP2: cumulative drivers + control/log; Ethernet=True; exact owned mappings
+MMIO pages: 0x26074000 0x26082000 0x26084000 0x26090000 0x2ab30000 0x2c140000 0x2c1a0000
+No deployment or hardware result implied by this static verification.
+Prepared M7 source: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-repro-verified-20261010
+Prepared cumulative firmware source: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-repro-verified-20261010
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-repro-verified-20261010/demos/rk3572_mica/build/m7-integrated-up-a
+[  4%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 18%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 22%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 27%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 31%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 36%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 45%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 45%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 50%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 54%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 59%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 63%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 72%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o
+[ 72%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 77%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_irq_test.c.o
+[ 81%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 86%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 90%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_eth_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs485_test.c.o
+[ 95%] Built target config
+[ 95%] Built target bsp
+[ 95%] Built target mica
+[ 95%] Built target rpmsg
+[ 95%] Built target proxy
+[100%] Linking C executable rk3572_mica
+[100%] Built target rk3572_mica
+5d5dcc31c34940fc6051ce053a940d7b13f2589bbbb753d1510ded6dd5a37417  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-repro-verified-20261010/demos/rk3572_mica/build/tl3572-m7-integrated-up-a.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-repro-verified-20261010/demos/rk3572_mica/build/m7-integrated-up-b
+[  4%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 18%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 22%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 31%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 31%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 36%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 40%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 45%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 50%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 59%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o
+[ 59%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 63%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_irq_test.c.o
+[ 72%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 72%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 81%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 81%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 86%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_eth_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs485_test.c.o
+[ 95%] Built target config
+[ 95%] Built target bsp
+[ 95%] Built target mica
+[ 95%] Built target rpmsg
+[ 95%] Built target proxy
+[100%] Linking C executable rk3572_mica
+[100%] Built target rk3572_mica
+9325d2cd2379ba8d73a7dc8c86e44c2b6e1b450ab3ff9d1204227292dc67c9b5  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-repro-verified-20261010/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf
+[
+  {
+    "elf": "tl3572-m7-integrated-up-a.elf",
+    "table_pages": 9,
+    "required_bytes": 36864,
+    "available_bytes": 65536,
+    "fits": true,
+    "first_overflow_region": null
+  },
+  {
+    "elf": "tl3572-m7-integrated-up-b.elf",
+    "table_pages": 10,
+    "required_bytes": 40960,
+    "available_bytes": 65536,
+    "fits": true,
+    "first_overflow_region": null
+  }
+]
+ELF STATIC PASS UP1: cumulative drivers + control/log; Ethernet=True; exact owned mappings
+MMIO pages: 0x26074000 0x26086000 0x26090000 0x260b0000 0x26500000 0x2ab10000 0x2c160000
+ELF STATIC PASS UP2: cumulative drivers + control/log; Ethernet=True; exact owned mappings
+MMIO pages: 0x26074000 0x26082000 0x26084000 0x26090000 0x2ab30000 0x2c140000 0x2c1a0000
+No deployment or hardware result implied by this static verification.
+Comparison outputs: /tmp/tl3572-integrated-repro.1AyXxB
+074cdb3a020d463a2203a7163e8b59a1329c4e0dce920f0055b1e65d928f64cf  /tmp/tl3572-integrated-repro.1AyXxB/tl3572-m7-integrated-up-a-1.bin
+074cdb3a020d463a2203a7163e8b59a1329c4e0dce920f0055b1e65d928f64cf  /tmp/tl3572-integrated-repro.1AyXxB/tl3572-m7-integrated-up-a-2.bin
+RUNTIME IMAGE REPRO PASS tl3572-m7-integrated-up-a
+a56ed70be2a1f29b51eca1163711d6d6b5ffaab5b6f35a6a75cd45cd95c88579  /tmp/tl3572-integrated-repro.1AyXxB/tl3572-m7-integrated-up-b-1.bin
+a56ed70be2a1f29b51eca1163711d6d6b5ffaab5b6f35a6a75cd45cd95c88579  /tmp/tl3572-integrated-repro.1AyXxB/tl3572-m7-integrated-up-b-2.bin
+RUNTIME IMAGE REPRO PASS tl3572-m7-integrated-up-b
+Native outputs: /tmp/tl3572-integrated-native.Hdhii5
+INTEGRATED COMMAND PASS: runtime profiles/bauds, bounded parse, invalid input has no side effects
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+RS232 codec PASS: CRC vector, 1000 sequences, wrong role/sequence, 256000 bit mutations
+CAN FD CODEC PASS: DLC, flags, 64-byte words, NBTP/DBTP/TDC
+ETH CODEC PASS: CRC vector, 2000 sequences, roles and every payload/CRC bit corruption
+NATIVE VALIDATION PASS: parser + 18 dispatcher/lifecycle runs + 3 codecs; no MMIO
+make: Entering directory '/home/openeuler/build/tl3572-2oo3/kernel-src-pristine'
+make[1]: Entering directory '/home/openeuler/build/tl3572-2oo3/build-kernel'
+make[1]: Leaving directory '/home/openeuler/build/tl3572-2oo3/build-kernel'
+make: Leaving directory '/home/openeuler/build/tl3572-2oo3/kernel-src-pristine'
+b071d4346d0d3310e22ffd2d1ae9ce2dcc1f3a2784ae94efd05a0798a546fc8d  /home/openeuler/build/m7-eth-direct-20261010/stage/source/host/eth2-power-hold/m7_eth2_power_hold.ko

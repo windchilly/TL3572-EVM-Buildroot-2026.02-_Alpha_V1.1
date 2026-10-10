@@ -8,4 +8,5 @@ U32 Rk3572CanClassicTest(void);
 U32 Rk3572CanFdTest(U32 profile);
 U32 Rk3572Rs232Test(U32 baud);
 U32 Rk3572Rs485Test(U32 baud);
+U32 Rk3572EthTest(U32 length);
 #endif

@@ -17,6 +17,9 @@ int main(void)
         "M7 run all 0 4", "M7 run uart 9600", "M7 RUN can 1", "M7 run can 1\nM7 status", "M7\trun can 1"};
     valid("M7 status\n", 0U, 0U, 0U, 0U);
     valid("M7  status\r\n", 0U, 0U, 0U, 0U);
+    assert(M7ParseCommand("M7 run eth 1514", 15U, &command) && command.mask == 8U && command.value[3] == 1514U);
+    assert(!M7ParseCommand("M7 run eth 65", 13U, &command));
+    command.mask = 99U;
     for (unsigned i = 0U; i < 4U; i++) {
         unsigned profiles[] = {1U, 0U, 2U, 4U};
         snprintf(line, sizeof(line), "M7 run can %u\n", profiles[i]); valid(line, 1U, profiles[i], 0U, 0U);

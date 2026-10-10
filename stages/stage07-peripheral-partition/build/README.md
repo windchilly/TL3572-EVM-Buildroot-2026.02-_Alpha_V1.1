@@ -319,15 +319,16 @@ bash stages/stage07-peripheral-partition/tests/run_integrated_native.sh
 
 若仓库挂载为`/repo`，须在容器中先`cd /repo`，或使用上述脚本的`/repo/...`绝对路径。
 准备器复制M6全树/库，应用0001/0002/0003/0007，安装overlay，再用0008适配复制的驱动、0009修复启动；
-不叠加旧0004/0005/0006，不覆盖旧树/ELF。输出位于`$UNIPROTON_ROOT/demos/rk3572_mica/build/`：
+当前再叠0010增加UP2 ETH2资源与驱动；不叠加旧0004/0005/0006，不覆盖旧树/ELF。
+输出位于`$UNIPROTON_ROOT/demos/rk3572_mica/build/`：
 
 - `tl3572-m7-integrated-up-a.elf`：CPU4/SGI8/image 0x7b200000/MMU 0x7ba00000；
 - `tl3572-m7-integrated-up-b.elf`：CPU5/SGI9/image 0x7c200000/MMU 0x7ca00000。
 
 `M7_INTEGRATED_FIRMWARE=ON`，旧启动自动测试开关OFF；默认不初始化或收发工业外设。
 CAN模式与串口波特率均由RPMsg显式运行时命令选择。该通道只控制测试/回报状态，实际数据仍由UP ISR直驱。
-控制源码/四驱动使用`-Werror`；其他M6代码的既有警告不在本次修复范围。
-仅统一目标任务上限8→16，三工作任务各16KiB栈；旧任务上限/构建不改变。
+控制源码/累计驱动使用`-Werror`；其他M6代码的既有警告不在本次修复范围。
+仅统一目标任务上限8→16，当前四工作任务各16KiB栈；旧任务上限/构建不改变。
 0009仅统一目标页表预算32→64KiB；Start必须检查mmu_init返回值，失败记录原始内存日志并请求CPU_OFF，
 不再进入OS/RPMsg。正常启动逐项验证真实PTE，且回读SCTLR/TTBR0/TCR/MAIR后才启动应用。
 构建末尾强制运行页表预算与ELF启动CBNZ分支核验；任一失败，脚本返回非零，产物不可部署。
@@ -345,6 +346,22 @@ ELF静态脚本核验仓库`firmware/`下两个交付文件；本轮复用M6库�
 调用只读实际页表核验；部署助手清单、命令与四轮结果见[MMU修复记录](../tests/board/integrated-mmu-fix-20261009/README.md)。
 不能直接套用旧单项自动执行器。物理run仍须重新确认隔离接线并完成统一独占移交。
 运行时命令/资源分配见[原软件合并记录](../tests/board/integrated-20261009/README.md)，该记录须在17024db复查旧输入。
+
+2026-10-10 ETH增量：同一对累计ELF增加`M7 run eth 0/64/1514`（只允许UP2），
+`run all`不含ETH；ETH数据由UP2轮询DMA直驱，RPMsg仍仅控制。UP2增量映射MAC/GRF和自身非缓存DMA。
+临时共享电源/根时钟辅助模块在匹配内核构建树生成：
+
+```bash
+bash stages/stage07-peripheral-partition/build/build_m7_eth2_power_hold.sh
+```
+
+默认原项目路径含kernel-src-pristine、build-kernel和toolchain-14.3；
+换机先执行换机入口的m6-image，再通过TL3572_KERNEL_SRC/TL3572_KERNEL_BUILD指定
+linux-tl3572配方实际源码/已编译目录(B=S)。模块输出默认项目build-m7-eth2-power-hold，
+不在只读仓库源码旁写生成物；可用M7_ETH2_MODULE_BUILD_DIR指定独立输出目录。
+不得在不同内核直接加载仓库6.12.69模块。辅助只持共享NVM0电源及根时钟，不代理MAC/PHY/DMA数据。
+当前实测ELF/ko、两树复建脚本、固定哈希及预检/受控收发流程见[ETH2直驱记录](../tests/board/eth-direct-20261010/README.md)。
+旧被动执行器保留历史固定ELF与命令白名单，不能直接用于ETH增量版本。
 
 ## 板卡部署与回退
 

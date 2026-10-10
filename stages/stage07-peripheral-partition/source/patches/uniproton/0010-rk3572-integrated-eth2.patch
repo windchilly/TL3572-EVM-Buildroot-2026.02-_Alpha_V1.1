@@ -1,0 +1,38 @@
+diff --git a/demos/rk3572_mica/apps/openamp/CMakeLists.txt b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+--- a/demos/rk3572_mica/apps/openamp/CMakeLists.txt
++++ b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+@@ -2,8 +2,8 @@
+ if(M7_INTEGRATED_FIRMWARE)
+     list(APPEND SRC rk3572_integrated.c rk3572_can_irq_test.c rk3572_can_fd_test.c
+-                    rk3572_rs232_test.c rk3572_rs485_test.c)
++                    rk3572_rs232_test.c rk3572_rs485_test.c rk3572_eth_test.c)
+     set_source_files_properties(rk3572_integrated.c rk3572_can_irq_test.c rk3572_can_fd_test.c
+-                                rk3572_rs232_test.c rk3572_rs485_test.c
++                                rk3572_rs232_test.c rk3572_rs485_test.c rk3572_eth_test.c
+                                 PROPERTIES COMPILE_OPTIONS "-Werror")
+ elseif(M7_CAN_DIRECT_TEST)
+     if(M7_CAN_IRQ_TEST)
+diff --git a/demos/rk3572_mica/bsp/mmu.c b/demos/rk3572_mica/bsp/mmu.c
+--- a/demos/rk3572_mica/bsp/mmu.c
++++ b/demos/rk3572_mica/bsp/mmu.c
+@@ -83,6 +83,20 @@
+ #endif
+         .size = 0x1000, .max_level = 0x3,
+         .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++#if (MCS_CLIENT_CPU_ID == 5)
++    }, {
++        .virt = 0x2A040000, .phys = 0x2A040000,
++        .size = 0x2000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++        .virt = 0x2602A000, .phys = 0x2602A000,
++        .size = 0x1000, .max_level = 0x3,
++        .attrs = MMU_ATTR_DEVICE_NGNRNE | MMU_ACCESS_RW,
++    }, {
++        .virt = 0x7CA10000, .phys = 0x7CA10000,
++        .size = 0x10000, .max_level = 0x3,
++        .attrs = MMU_ATTR_UNCACHE_SHARE | MMU_ACCESS_RW,
++#endif
+ #elif defined(M7_CAN_IRQ_TEST)
+     }, {
+ #if (MCS_CLIENT_CPU_ID == 4)

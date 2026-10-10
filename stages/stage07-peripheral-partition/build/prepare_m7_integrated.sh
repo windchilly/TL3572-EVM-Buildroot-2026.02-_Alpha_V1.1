@@ -9,7 +9,8 @@ M7_CAN_IRQ_TEST=ON UNIPROTON_ROOT="$uni" bash "$stage_root/build/prepare_m7_unip
 git -C "$uni" apply --check "$stage_root/source/patches/uniproton/0007-rk3572-integrated-hooks.patch"
 git -C "$uni" apply "$stage_root/source/patches/uniproton/0007-rk3572-integrated-hooks.patch"
 for source in rk3572_can_fd_test.c rk3572_can_fd_codec.h rk3572_rs232_test.c rk3572_rs232_codec.h \
-              rk3572_rs485_test.c rk3572_integrated.c rk3572_integrated.h rk3572_integrated_command.h; do
+              rk3572_rs485_test.c rk3572_integrated.c rk3572_integrated.h rk3572_integrated_command.h \
+              rk3572_eth_test.c rk3572_eth_codec.h; do
     install -m 0644 "$overlay/$source" "$app_dir/$source"
 done
 # Modify only these copied drivers: runtime parameters, independent exports, repeat-run cleanup.
@@ -17,4 +18,6 @@ git -C "$uni" apply --check "$stage_root/source/patches/uniproton/0008-rk3572-in
 git -C "$uni" apply "$stage_root/source/patches/uniproton/0008-rk3572-integrated-runtime.patch"
 git -C "$uni" apply --check "$stage_root/source/patches/uniproton/0009-rk3572-integrated-mmu-boot-guard.patch"
 git -C "$uni" apply "$stage_root/source/patches/uniproton/0009-rk3572-integrated-mmu-boot-guard.patch"
+git -C "$uni" apply --check "$stage_root/source/patches/uniproton/0010-rk3572-integrated-eth2.patch"
+git -C "$uni" apply "$stage_root/source/patches/uniproton/0010-rk3572-integrated-eth2.patch"
 echo "Prepared cumulative firmware source: $uni"

@@ -1,0 +1,126 @@
+Sat Oct 10 09:48:55 CST 2026
+fa41fc54-86a5-46f4-84a0-d2e820e1ef17
+4096
+ 09:48:55 up 4 min,  1 user,  load average: 0.08, 0.04, 0.00
+MainPID=322
+NRestarts=0
+ActiveState=active
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+can0             DOWN           
+can1             DOWN           
+can2             DOWN           
+can3             DOWN           
+eth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 
+eth1             UP             fe80::d814:36ff:fe8b:78f0/64 
+eth2             UP             fe80::2e0:9aff:fe42:baeb/64 
+default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 
+192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 
+192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 
+Module                  Size  Used by
+mcs_km                 16384  0
+Result=success
+ActiveState=active
+Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+[    6.193498] usb 1-1.4.3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    6.193507] usb 1-1.4.3: Product: Bouffalo CDC DEMO
+[    6.193514] usb 1-1.4.3: Manufacturer: Bouffalo
+[    6.264747] systemd[1]: Started Rule-based Manager for Device Events and Files.
+[    6.302632] usb 1-1.4.1: reset high-speed USB device number 4 using xhci-hcd
+[    6.305475] systemd[1]: Started Journal Service.
+[    6.322573] systemd-journald[200]: Received client request to flush runtime journal.
+[    6.462577] kernel version : 60c45
+[    6.462625] mac addr : 0x0:0xe0:0x9a:0x42:0xba:0xeb
+[    6.462787] led sel setting :  0xc38
+[    6.489250] sr9900 1-1.4.1:1.0: skip request firmware
+[    6.516854] sr9900 1-1.4.1:1.0 eth2: v1.12.13
+[    6.791353] mcs_km: loading out-of-tree module taints kernel.
+[    6.829126] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[0] get remote terminal sensor failed!
+[    6.829158] stream_cif_mipi_id0: update sensor info failed -19
+[    6.843553] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[1] get remote terminal sensor failed!
+[    6.843583] stream_cif_mipi_id1: update sensor info failed -19
+[    6.849724] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[2] get remote terminal sensor failed!
+[    6.849746] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[0] get remote terminal sensor failed!
+[    6.849756] rkcif_scale_ch0: update sensor info failed -19
+[    6.849757] rkcif_tools_id2: update sensor info failed -19
+[    6.853779] rkcif-mipi-lvds2: rkcif_update_sensor_info: stream[2] get remote terminal sensor failed!
+[    6.853806] rkcif_scale_ch2: update sensor info failed -19
+[    6.853964] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[1] get remote terminal sensor failed!
+[    6.853988] rkcif_tools_id1: update sensor info failed -19
+[    6.858354] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[2] get remote terminal sensor failed!
+[    6.858354] rkcif-mipi-lvds2: rkcif_update_sensor_info: stream[1] get remote terminal sensor failed!
+[    6.858368] stream_cif_mipi_id1: update sensor info failed -19
+[    6.858390] rkcif_scale_ch2: update sensor info failed -19
+[    6.858471] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[3] get remote terminal sensor failed!
+[    6.858485] rkcif_scale_ch3: update sensor info failed -19
+[    6.860145] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[3] get remote terminal sensor failed!
+[    6.860169] stream_cif_mipi_id3: update sensor info failed -19
+[    6.861550] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[1] get remote terminal sensor failed!
+[    6.861587] rkcif_scale_ch1: update sensor info failed -19
+[    6.861833] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[0] get remote terminal sensor failed!
+[    6.861861] rkcif_tools_id0: update sensor info failed -19
+[    6.862316] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[2] get remote terminal sensor failed!
+[    6.862350] stream_cif_mipi_id2: update sensor info failed -19
+[    6.865383] rkcif-mipi-lvds2: rkcif_update_sensor_info: stream[0] get remote terminal sensor failed!
+[    6.865414] rkcif_scale_ch0: update sensor info failed -19
+[    6.866012] rkcif-mipi-lvds2: rkcif_update_sensor_info: stream[0] get remote terminal sensor failed!
+[    6.866026] rkcif-mipi-lvds2: rkcif_update_sensor_info: stream[3] get remote terminal sensor failed!
+[    6.866031] rkcif-mipi-lvds2: rkcif_update_sensor_info: stream[3] get remote terminal sensor failed!
+[    6.866037] stream_cif_mipi_id3: update sensor info failed -19
+[    6.866038] rkcif_tools_id0: update sensor info failed -19
+[    6.866043] rkcif_scale_ch3: update sensor info failed -19
+[    6.869464] rkcif-mipi-lvds2: rkcif_update_sensor_info: stream[1] get remote terminal sensor failed!
+[    6.869487] rkcif_scale_ch1: update sensor info failed -19
+[    6.873145] rkcif-mipi-lvds2: rkcif_update_sensor_info: stream[0] get remote terminal sensor failed!
+[    6.873178] stream_cif_mipi_id0: update sensor info failed -19
+[    6.876327] rkcif-mipi-lvds2: rkcif_update_sensor_info: stream[2] get remote terminal sensor failed!
+[    6.876364] stream_cif_mipi_id2: update sensor info failed -19
+[    6.878027] rkcif-mipi-lvds2: rkcif_update_sensor_info: stream[1] get remote terminal sensor failed!
+[    6.878053] rkcif_tools_id1: update sensor info failed -19
+[    6.884131] rkcif-mipi-lvds2: rkcif_update_sensor_info: stream[2] get remote terminal sensor failed!
+[    6.884160] rkcif_tools_id2: update sensor info failed -19
+[    6.955098] rkvpss-offline: CLK_CORE_VPSS set to 396000000 Hz (requested 400000000 Hz)
+[    7.010249] EXT4-fs (mmcblk0p7): recovery complete
+[    7.010367] EXT4-fs (mmcblk0p7): mounted filesystem f3113960-df76-4dc1-ad21-43b23aaf2c00 r/w with ordered data mode. Quota mode: disabled.
+[    7.014657] EXT4-fs (mmcblk0p8): recovery complete
+[    7.014752] EXT4-fs (mmcblk0p8): mounted filesystem 1736c674-d7bd-47c6-ac44-21d75d995792 r/w with ordered data mode. Quota mode: disabled.
+[    7.067092] phy phy-26054000.syscon:usb2-phy@0.1: charger = USB_SDP_CHARGER
+[    7.189236] rk_gmac-dwmac 29d20000.ethernet eth0: Register MEM_TYPE_PAGE_POOL RxQ-0
+[    7.189499] MAXIO_PHY_VER: v1.7.6.1 
+[    7.197874] rk_gmac-dwmac 29d20000.ethernet eth0: PHY [stmmac-0:00] driver [MAE0621A/B-Q3C(I) Gigabit Ethernet] (irq=POLL)
+[    7.198425] dwmac4: Master AXI performs any burst length
+[    7.198442] rk_gmac-dwmac 29d20000.ethernet eth0: No Safety Features support found
+[    7.198464] rk_gmac-dwmac 29d20000.ethernet eth0: IEEE 1588-2008 Advanced Timestamp supported
+[    7.198770] rk_gmac-dwmac 29d20000.ethernet eth0: registered PTP clock
+[    7.199568] rk_gmac-dwmac 29d20000.ethernet eth0: configuring for phy/rgmii-rxid link mode
+[    7.203570] rk_gmac-dwmac 2a040000.ethernet eth1: Register MEM_TYPE_PAGE_POOL RxQ-0
+[    7.203977] MAXIO_PHY_VER: v1.7.6.1 
+[    7.212083] rk_gmac-dwmac 2a040000.ethernet eth1: PHY [stmmac-1:01] driver [MAE0621A/B-Q3C(I) Gigabit Ethernet] (irq=POLL)
+[    7.212627] dwmac4: Master AXI performs any burst length
+[    7.212645] rk_gmac-dwmac 2a040000.ethernet eth1: No Safety Features support found
+[    7.212667] rk_gmac-dwmac 2a040000.ethernet eth1: IEEE 1588-2008 Advanced Timestamp supported
+[    7.212979] rk_gmac-dwmac 2a040000.ethernet eth1: registered PTP clock
+[    7.213304] rk_gmac-dwmac 2a040000.ethernet eth1: configuring for phy/rgmii-rxid link mode
+[    7.502610] rk-pcie 29d10000.pcie: PCIe Link Fail, LTSSM is 0x3, hw_retries=0
+[    9.135535] sr9900 1-1.4.1:1.0 eth2: carrier on
+[    9.261582] rk_gmac-dwmac 29d20000.ethernet eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+[    9.261716] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+[   10.389144] rk_pcie_establish_link: 169 callbacks suppressed
+[   10.389175] rk-pcie 29d10000.pcie: PCIe Linking... LTSSM is 0x3
+[   10.410320] rk-pcie 29d10000.pcie: PCIe Linking... LTSSM is 0x3
+[   10.431478] rk-pcie 29d10000.pcie: PCIe Linking... LTSSM is 0x3
+[   10.452637] rk-pcie 29d10000.pcie: PCIe Linking... LTSSM is 0x3
+[   10.473781] rk-pcie 29d10000.pcie: PCIe Linking... LTSSM is 0x3
+[   10.494919] rk-pcie 29d10000.pcie: PCIe Linking... LTSSM is 0x3
+[   10.515035] rk-pcie 29d10000.pcie: PCIe Linking... LTSSM is 0x3
+[   10.536175] rk-pcie 29d10000.pcie: PCIe Linking... LTSSM is 0x3
+[   10.557317] rk-pcie 29d10000.pcie: PCIe Linking... LTSSM is 0x3
+[   10.578464] rk-pcie 29d10000.pcie: PCIe Linking... LTSSM is 0x3
+[   10.733789] ttyFIQ ttyFIQ0: tty_port_close_start: tty->count = 1 port count = 2
+[   10.831095] rk-pcie 29d10000.pcie: PCIe Link Fail, LTSSM is 0x3, hw_retries=1
+[   11.851039] rk-pcie 29d10000.pcie: failed to initialize host
+[   15.883536] platform mtd_vendor_storage: deferred probe pending: (reason unknown)
+[   37.130982] vcc3v3_lcd: disabling
+[   51.096415] systemd-journald[200]: Time jumped backwards, rotating.
+total 0

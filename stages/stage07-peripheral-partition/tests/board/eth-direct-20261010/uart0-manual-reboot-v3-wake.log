@@ -1,0 +1,286 @@
+
+tl3572-openeuler login: [  298.384227] M7 shared fabric aclk_nvm0_root held at 297000000 Hz; no rate/parent changes
+[  298.384294] M7 shared fabric pclk_nvm0_root held at 100000000 Hz; no rate/parent changes
+[  298.384302] M7 ETH2 shared nvm0 power/fabric held; MAC remains independently owned
+[  298.391324] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Down
+[  298.396707] rk_gmac-dwmac 2a040000.ethernet eth1: stmmac_dvr_remove: removing driver
+[  298.437882] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  298.901497] mcs: received ioctl cmd to send ipi to cpu(4)
+[ I /2T9C9:. 1S0e3c2o7n6d]a rmyc sC:P Us t4a ritn ibtoioatliinzging
+I/TC: Secondary CPU 4 switching to normal world boot
+ clientos on cpu4(100) addr(0x7b200000)
+[  299.103363] mcs: received ioctl cmd to send ipi to cpu(4)
+[  299.103399] mcs: received ioctl cmd to send ipi to cpu(4)
+[  299.204276] mcs: received ioctl cmd to send ipi to cpu(4)
+[  299.275563] mcs: received ioctl cmd to send ipi to cpu(4)
+I/TC: Secon[d a r2y9 9C.P7U2 159 1i0n]i tmicasl:i zsitnagrt
+ booI/TC: Secondary CPU 5 switching to normal world boot
+ting clientos on cpu5(101) addr(0x7c200000)
+[  299.722000] mcs: received ioctl cmd to send ipi to cpu(5)
+[  299.722035] mcs: received ioctl cmd to send ipi to cpu(5)
+[  299.831844] mcs: received ioctl cmd to send ipi to cpu(5)
+[  299.920129] mcs: received ioctl cmd to send ipi to cpu(5)
+[  299.922598] mcs: received ioctl cmd to send ipi to cpu(5)
+[  302.415839] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  302.587260] mcs: received ioctl cmd to send ipi to cpu(5)
+[  303.028125] mcs: received ioctl cmd to send ipi to cpu(4)
+[  303.028326] mcs: received ioctl cmd to send ipi to cpu(4)
+[  303.028345] mcs: received ioctl cmd to send ipi to cpu(4)
+[  303.273277] mcs: received ioctl cmd to send ipi to cpu(5)
+[  303.273476] mcs: received ioctl cmd to send ipi to cpu(5)
+[  303.273489] mcs: received ioctl cmd to send ipi to cpu(5)
+[  304.507075] rk_gmac-dwmac 2a040000.ethernet: IRQ eth_lpi not found
+[  304.507121] rk_gmac-dwmac 2a040000.ethernet: IRQ sfty not found
+[  304.507650] rk_gmac-dwmac 2a040000.ethernet: supply phy not found, using dummy regulator
+[  304.507897] rk_gmac-dwmac 2a040000.ethernet: clock input or output? (output).
+[  304.507914] rk_gmac-dwmac 2a040000.ethernet: TX delay(0x20).
+[  304.507921] rk_gmac-dwmac 2a040000.ethernet: Can not read property: rx_delay.
+[  304.507926] rk_gmac-dwmac 2a040000.ethernet: set rx_delay to 0xffffffff
+[  304.508112] rk_gmac-dwmac 2a040000.ethernet: integrated PHY? (no).
+[  304.508129] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_rx
+[  304.508135] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_tx
+[  304.508160] rk_gmac-dwmac 2a040000.ethernet: cannot get clock clk_mac_speed
+[  304.508398] rk_gmac-dwmac 2a040000.ethernet: init for RGMII_RXID
+[  304.508976] rk_gmac-dwmac 2a040000.ethernet: User ID: 0x50, Synopsys ID: 0x51
+[  304.509004] rk_gmac-dwmac 2a040000.ethernet: 	DWMAC4/5
+[  304.509015] rk_gmac-dwmac 2a040000.ethernet: DMA HW capability register supported
+[  304.509023] rk_gmac-dwmac 2a040000.ethernet: RX Checksum Offload Engine supported
+[  304.509030] rk_gmac-dwmac 2a040000.ethernet: TX Checksum insertion supported
+[  304.509037] rk_gmac-dwmac 2a040000.ethernet: Wake-Up On Lan supported
+[  304.509044] rk_gmac-dwmac 2a040000.ethernet: TSO supported
+[  304.509052] rk_gmac-dwmac 2a040000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[  304.509062] rk_gmac-dwmac 2a040000.ethernet: Enabled L3L4 Flow TC (entries=2)
+[  304.509070] rk_gmac-dwmac 2a040000.ethernet: Enabled RFS Flow TC (entries=10)
+[  304.509079] rk_gmac-dwmac 2a040000.ethernet: TSO feature enabled
+[  304.509087] rk_gmac-dwmac 2a040000.ethernet: Using 40/40 bits DMA host/device width
+[  304.565783] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  304.748312] rk_gmac-dwmac 2a040000.ethernet eth1: Register MEM_TYPE_PAGE_POOL RxQ-0
+[  304.748942] MAXIO_PHY_VER: v1.7.6.1 
+[  304.757427] rk_gmac-dwmac 2a040000.ethernet eth1: PHY [stmmac-1:01] driver [MAE0621A/B-Q3C(I) Gigabit Ethernet] (irq=POLL)
+[  304.758009] dwmac4: Master AXI performs any burst length
+[  304.758037] rk_gmac-dwmac 2a040000.ethernet eth1: No Safety Features support found
+[  304.758072] rk_gmac-dwmac 2a040000.ethernet eth1: IEEE 1588-2008 Advanced Timestamp supported
+[  304.758422] rk_gmac-dwmac 2a040000.ethernet eth1: registered PTP clock
+[  304.758830] rk_gmac-dwmac 2a040000.ethernet eth1: configuring for phy/rgmii-rxid link mode
+[  306.735978] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  307.822450] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+[  307.886426] M7 ETH2 shared nvm0 power reference released
+[  326.190800] M7 shared fabric aclk_nvm0_root held at 297000000 Hz; no rate/parent changes
+[  326.190867] M7 shared fabric pclk_nvm0_root held at 100000000 Hz; no rate/parent changes
+[  326.190876] M7 ETH2 shared nvm0 power/fabric held; MAC remains independently owned
+[  326.198061] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Down
+[  326.202690] rk_gmac-dwmac 2a040000.ethernet eth1: stmmac_dvr_remove: removing driver
+[  326.245690] sr9900 1-1.4.1:1.0 eth2: carrier off
+I/TC: S[e c o3n2d6a.r6y6 6C6P2U3 ]4  micnsi:t isatlairzti nbgoo
+I/TC: Secondary CPU 4 switching to normal world boot
+ing clientos on cpu4(100) addr(0x7b200000)
+[  326.666704] mcs: received ioctl cmd to send ipi to cpu(4)
+[  326.666739] mcs: received ioctl cmd to send ipi to cpu(4)
+[  326.767169] mcs: received ioctl cmd to send ipi to cpu(4)
+[  326.839238] mcs: received ioctl cmd to send ipi to cpu(4)
+[  327.280450] mcs: start booting clientos on cpu5(101) addr(0x7cI/TC: Secondary CPU 5 initializing
+I/TC: Secondary CPU 5 switching to normal world boot
+200000)
+[  327.280524] mcs: received ioctl cmd to send ipi to cpu(5)
+[  327.280559] mcs: received ioctl cmd to send ipi to cpu(5)
+[  327.393553] mcs: received ioctl cmd to send ipi to cpu(5)
+[  327.482483] mcs: received ioctl cmd to send ipi to cpu(5)
+[  327.484817] mcs: received ioctl cmd to send ipi to cpu(5)
+[  329.663910] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  329.894489] mcs: received ioctl cmd to send ipi to cpu(5)
+[  329.896511] mcs: received ioctl cmd to send ipi to cpu(5)
+[  330.005590] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  331.522176] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  332.746095] mcs: received ioctl cmd to send ipi to cpu(5)
+[  332.748148] mcs: received ioctl cmd to send ipi to cpu(5)
+[  332.858029] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  334.384696] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  339.544708] mcs: received ioctl cmd to send ipi to cpu(5)
+[  339.982333] mcs: received ioctl cmd to send ipi to cpu(4)
+[  339.982486] mcs: received ioctl cmd to send ipi to cpu(4)
+[  339.982499] mcs: received ioctl cmd to send ipi to cpu(4)
+[  340.229290] mcs: received ioctl cmd to send ipi to cpu(5)
+[  340.229485] mcs: received ioctl cmd to send ipi to cpu(5)
+[  340.229498] mcs: received ioctl cmd to send ipi to cpu(5)
+[  341.458353] rk_gmac-dwmac 2a040000.ethernet: IRQ eth_lpi not found
+[  341.458395] rk_gmac-dwmac 2a040000.ethernet: IRQ sfty not found
+[  341.458550] rk_gmac-dwmac 2a040000.ethernet: supply phy not found, using dummy regulator
+[  341.458701] rk_gmac-dwmac 2a040000.ethernet: clock input or output? (output).
+[  341.458709] rk_gmac-dwmac 2a040000.ethernet: TX delay(0x20).
+[  341.458716] rk_gmac-dwmac 2a040000.ethernet: Can not read property: rx_delay.
+[  341.458721] rk_gmac-dwmac 2a040000.ethernet: set rx_delay to 0xffffffff
+[  341.458745] rk_gmac-dwmac 2a040000.ethernet: integrated PHY? (no).
+[  341.458754] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_rx
+[  341.458761] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_tx
+[  341.458775] rk_gmac-dwmac 2a040000.ethernet: cannot get clock clk_mac_speed
+[  341.459003] rk_gmac-dwmac 2a040000.ethernet: init for RGMII_RXID
+[  341.459404] rk_gmac-dwmac 2a040000.ethernet: User ID: 0x50, Synopsys ID: 0x51
+[  341.459415] rk_gmac-dwmac 2a040000.ethernet: 	DWMAC4/5
+[  341.459423] rk_gmac-dwmac 2a040000.ethernet: DMA HW capability register supported
+[  341.459428] rk_gmac-dwmac 2a040000.ethernet: RX Checksum Offload Engine supported
+[  341.459433] rk_gmac-dwmac 2a040000.ethernet: TX Checksum insertion supported
+[  341.459438] rk_gmac-dwmac 2a040000.ethernet: Wake-Up On Lan supported
+[  341.459444] rk_gmac-dwmac 2a040000.ethernet: TSO supported
+[  341.459450] rk_gmac-dwmac 2a040000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[  341.459456] rk_gmac-dwmac 2a040000.ethernet: Enabled L3L4 Flow TC (entries=2)
+[  341.459463] rk_gmac-dwmac 2a040000.ethernet: Enabled RFS Flow TC (entries=10)
+[  341.459468] rk_gmac-dwmac 2a040000.ethernet: TSO feature enabled
+[  341.459475] rk_gmac-dwmac 2a040000.ethernet: Using 40/40 bits DMA host/device width
+[  341.509383] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  341.699017] rk_gmac-dwmac 2a040000.ethernet eth1: Register MEM_TYPE_PAGE_POOL RxQ-0
+[  341.699781] MAXIO_PHY_VER: v1.7.6.1 
+[  341.708118] rk_gmac-dwmac 2a040000.ethernet eth1: PHY [stmmac-1:01] driver [MAE0621A/B-Q3C(I) Gigabit Ethernet] (irq=POLL)
+[  341.708694] dwmac4: Master AXI performs any burst length
+[  341.708718] rk_gmac-dwmac 2a040000.ethernet eth1: No Safety Features support found
+[  341.708753] rk_gmac-dwmac 2a040000.ethernet eth1: IEEE 1588-2008 Advanced Timestamp supported
+[  341.709224] rk_gmac-dwmac 2a040000.ethernet eth1: registered PTP clock
+[  341.709642] rk_gmac-dwmac 2a040000.ethernet eth1: configuring for phy/rgmii-rxid link mode
+[  343.663453] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  344.782233] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+[  344.876591] M7 ETH2 shared nvm0 power reference released
+[  358.173580] M7 shared fabric aclk_nvm0_root held at 297000000 Hz; no rate/parent changes
+[  358.173646] M7 shared fabric pclk_nvm0_root held at 100000000 Hz; no rate/parent changes
+[  358.173654] M7 ETH2 shared nvm0 power/fabric held; MAC remains independently owned
+[  358.180837] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Down
+[  358.187025] rk_gmac-dwmac 2a040000.ethernet eth1: stmmac_dvr_remove: removing driver
+[  358.230289] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  358.665134] mcs: start booting clientos on cpu4(100) addr(0x7bI/TC: Secondary CPU 4 initializing
+I/TC: Secondary CPU 4 switching to normal world boot
+200000)
+[  358.665220] mcs: received ioctl cmd to send ipi to cpu(4)
+[  358.665256] mcs: received ioctl cmd to send ipi to cpu(4)
+[  358.769759] mcs: received ioctl cmd to send ipi to cpu(4)
+[  358.851411] mcs: received ioctl cmd to send ipi to cpu(4)
+[  359.293645] mcs: start booting clientos on cpu5(101) addr(0x7cI/TC: Secondary CPU 5 initializing
+I/TC: Secondary CPU 5 switching to normal world boot
+200000)
+[  359.293728] mcs: received ioctl cmd to send ipi to cpu(5)
+[  359.293763] mcs: received ioctl cmd to send ipi to cpu(5)
+[  359.406853] mcs: received ioctl cmd to send ipi to cpu(5)
+[  359.479562] mcs: received ioctl cmd to send ipi to cpu(5)
+[  359.481533] mcs: received ioctl cmd to send ipi to cpu(5)
+[  361.103970] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  361.259638] mcs: received ioctl cmd to send ipi to cpu(5)
+[  361.261088] mcs: received ioctl cmd to send ipi to cpu(5)
+[  361.365409] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  362.959480] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  364.191719] mcs: received ioctl cmd to send ipi to cpu(5)
+[  364.193335] mcs: received ioctl cmd to send ipi to cpu(5)
+[  364.293406] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  365.855580] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  370.905813] mcs: received ioctl cmd to send ipi to cpu(5)
+[  371.348521] mcs: received ioctl cmd to send ipi to cpu(5)
+[  371.348671] mcs: received ioctl cmd to send ipi to cpu(5)
+[  371.348686] mcs: received ioctl cmd to send ipi to cpu(5)
+[  371.590204] mcs: received ioctl cmd to send ipi to cpu(4)
+[  371.590397] mcs: received ioctl cmd to send ipi to cpu(4)
+[  371.590412] mcs: received ioctl cmd to send ipi to cpu(4)
+[  372.815912] rk_gmac-dwmac 2a040000.ethernet: IRQ eth_lpi not found
+[  372.815952] rk_gmac-dwmac 2a040000.ethernet: IRQ sfty not found
+[  372.816104] rk_gmac-dwmac 2a040000.ethernet: supply phy not found, using dummy regulator
+[  372.816254] rk_gmac-dwmac 2a040000.ethernet: clock input or output? (output).
+[  372.816262] rk_gmac-dwmac 2a040000.ethernet: TX delay(0x20).
+[  372.816268] rk_gmac-dwmac 2a040000.ethernet: Can not read property: rx_delay.
+[  372.816273] rk_gmac-dwmac 2a040000.ethernet: set rx_delay to 0xffffffff
+[  372.816296] rk_gmac-dwmac 2a040000.ethernet: integrated PHY? (no).
+[  372.816306] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_rx
+[  372.816312] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_tx
+[  372.816325] rk_gmac-dwmac 2a040000.ethernet: cannot get clock clk_mac_speed
+[  372.816554] rk_gmac-dwmac 2a040000.ethernet: init for RGMII_RXID
+[  372.817064] rk_gmac-dwmac 2a040000.ethernet: User ID: 0x50, Synopsys ID: 0x51
+[  372.817087] rk_gmac-dwmac 2a040000.ethernet: 	DWMAC4/5
+[  372.817096] rk_gmac-dwmac 2a040000.ethernet: DMA HW capability register supported
+[  372.817102] rk_gmac-dwmac 2a040000.ethernet: RX Checksum Offload Engine supported
+[  372.817107] rk_gmac-dwmac 2a040000.ethernet: TX Checksum insertion supported
+[  372.817112] rk_gmac-dwmac 2a040000.ethernet: Wake-Up On Lan supported
+[  372.817117] rk_gmac-dwmac 2a040000.ethernet: TSO supported
+[  372.817123] rk_gmac-dwmac 2a040000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[  372.817129] rk_gmac-dwmac 2a040000.ethernet: Enabled L3L4 Flow TC (entries=2)
+[  372.817135] rk_gmac-dwmac 2a040000.ethernet: Enabled RFS Flow TC (entries=10)
+[  372.817141] rk_gmac-dwmac 2a040000.ethernet: TSO feature enabled
+[  372.817147] rk_gmac-dwmac 2a040000.ethernet: Using 40/40 bits DMA host/device width
+[  372.868909] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  373.054773] rk_gmac-dwmac 2a040000.ethernet eth1: Register MEM_TYPE_PAGE_POOL RxQ-0
+[  373.055104] MAXIO_PHY_VER: v1.7.6.1 
+[  373.063127] rk_gmac-dwmac 2a040000.ethernet eth1: PHY [stmmac-1:01] driver [MAE0621A/B-Q3C(I) Gigabit Ethernet] (irq=POLL)
+[  373.063671] dwmac4: Master AXI performs any burst length
+[  373.063691] rk_gmac-dwmac 2a040000.ethernet eth1: No Safety Features support found
+[  373.063718] rk_gmac-dwmac 2a040000.ethernet eth1: IEEE 1588-2008 Advanced Timestamp supported
+[  373.064230] rk_gmac-dwmac 2a040000.ethernet eth1: registered PTP clock
+[  373.064683] rk_gmac-dwmac 2a040000.ethernet eth1: configuring for phy/rgmii-rxid link mode
+[  374.977064] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  375.117910] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+[  375.161356] M7 ETH2 shared nvm0 power reference released
+[  437.643200] M7 shared fabric aclk_nvm0_root held at 297000000 Hz; no rate/parent changes
+[  437.643267] M7 shared fabric pclk_nvm0_root held at 100000000 Hz; no rate/parent changes
+[  437.643275] M7 ETH2 shared nvm0 power/fabric held; MAC remains independently owned
+[  437.656175] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Down
+[  437.661672] rk_gmac-dwmac 2a040000.ethernet eth1: stmmac_dvr_remove: removing driver
+[  437.700260] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  438.291379] mcs: start booting clientos on cpu4(100) addr(0x7bI/TC: Secondary CPU 4 initializing
+I/TC: Secondary CPU 4 switching to normal world boot
+200000)
+[  438.291484] mcs: received ioctl cmd to send ipi to cpu(4)
+[  438.291521] mcs: received ioctl cmd to send ipi to cpu(4)
+[  438.392003] mcs: received ioctl cmd to send ipi to cpu(4)
+[  438.522955] mcs: received ioctl cmd to send ipi to cpu(4)
+I/TC: Secondary CPU 5 initializing
+[  439.134111] mcs: start bootI/TC: Secondary CPU 5 switching to normal world boot
+ing clientos on cpu5(101) addr(0x7c200000)
+[  439.134236] mcs: received ioctl cmd to send ipi to cpu(5)
+[  439.134277] mcs: received ioctl cmd to send ipi to cpu(5)
+[  439.240276] mcs: received ioctl cmd to send ipi to cpu(5)
+[  439.352452] mcs: received ioctl cmd to send ipi to cpu(5)
+[  439.354589] mcs: received ioctl cmd to send ipi to cpu(5)
+[  441.569280] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  441.763763] mcs: received ioctl cmd to send ipi to cpu(5)
+[  441.765579] mcs: received ioctl cmd to send ipi to cpu(5)
+[  441.860939] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  443.455453] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  444.716674] mcs: received ioctl cmd to send ipi to cpu(5)
+[  444.718444] mcs: received ioctl cmd to send ipi to cpu(5)
+[  444.820468] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  446.335449] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  451.515645] mcs: received ioctl cmd to send ipi to cpu(5)
+[  452.116079] mcs: received ioctl cmd to send ipi to cpu(4)
+[  452.116327] mcs: received ioctl cmd to send ipi to cpu(4)
+[  452.116346] mcs: received ioctl cmd to send ipi to cpu(4)
+[  452.458602] mcs: received ioctl cmd to send ipi to cpu(5)
+[  452.458859] mcs: received ioctl cmd to send ipi to cpu(5)
+[  452.458881] mcs: received ioctl cmd to send ipi to cpu(5)
+[  454.119749] rk_gmac-dwmac 2a040000.ethernet: IRQ eth_lpi not found
+[  454.119809] rk_gmac-dwmac 2a040000.ethernet: IRQ sfty not found
+[  454.120036] rk_gmac-dwmac 2a040000.ethernet: supply phy not found, using dummy regulator
+[  454.120251] rk_gmac-dwmac 2a040000.ethernet: clock input or output? (output).
+[  454.120262] rk_gmac-dwmac 2a040000.ethernet: TX delay(0x20).
+[  454.120272] rk_gmac-dwmac 2a040000.ethernet: Can not read property: rx_delay.
+[  454.120279] rk_gmac-dwmac 2a040000.ethernet: set rx_delay to 0xffffffff
+[  454.120309] rk_gmac-dwmac 2a040000.ethernet: integrated PHY? (no).
+[  454.120321] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_rx
+[  454.120330] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_tx
+[  454.120348] rk_gmac-dwmac 2a040000.ethernet: cannot get clock clk_mac_speed
+[  454.120587] rk_gmac-dwmac 2a040000.ethernet: init for RGMII_RXID
+[  454.120853] rk_gmac-dwmac 2a040000.ethernet: User ID: 0x50, Synopsys ID: 0x51
+[  454.120883] rk_gmac-dwmac 2a040000.ethernet: 	DWMAC4/5
+[  454.120894] rk_gmac-dwmac 2a040000.ethernet: DMA HW capability register supported
+[  454.120902] rk_gmac-dwmac 2a040000.ethernet: RX Checksum Offload Engine supported
+[  454.120910] rk_gmac-dwmac 2a040000.ethernet: TX Checksum insertion supported
+[  454.120917] rk_gmac-dwmac 2a040000.ethernet: Wake-Up On Lan supported
+[  454.120924] rk_gmac-dwmac 2a040000.ethernet: TSO supported
+[  454.120932] rk_gmac-dwmac 2a040000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[  454.120940] rk_gmac-dwmac 2a040000.ethernet: Enabled L3L4 Flow TC (entries=2)
+[  454.120950] rk_gmac-dwmac 2a040000.ethernet: Enabled RFS Flow TC (entries=10)
+[  454.120959] rk_gmac-dwmac 2a040000.ethernet: TSO feature enabled
+[  454.120968] rk_gmac-dwmac 2a040000.ethernet: Using 40/40 bits DMA host/device width
+[  454.168284] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  454.370768] rk_gmac-dwmac 2a040000.ethernet eth1: Register MEM_TYPE_PAGE_POOL RxQ-0
+[  454.371425] MAXIO_PHY_VER: v1.7.6.1 
+[  454.386154] rk_gmac-dwmac 2a040000.ethernet eth1: PHY [stmmac-1:01] driver [MAE0621A/B-Q3C(I) Gigabit Ethernet] (irq=POLL)
+[  454.386570] dwmac4: Master AXI performs any burst length
+[  454.386598] rk_gmac-dwmac 2a040000.ethernet eth1: No Safety Features support found
+[  454.386634] rk_gmac-dwmac 2a040000.ethernet eth1: IEEE 1588-2008 Advanced Timestamp supported
+[  454.387216] rk_gmac-dwmac 2a040000.ethernet eth1: registered PTP clock
+[  454.390611] rk_gmac-dwmac 2a040000.ethernet eth1: configuring for phy/rgmii-rxid link mode
+[  456.303717] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  456.429146] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+[  456.515204] M7 ETH2 shared nvm0 power reference released

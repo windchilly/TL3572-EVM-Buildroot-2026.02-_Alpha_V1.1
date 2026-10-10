@@ -1,5 +1,77 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-10 最新入口：用户确认COM7一直存在并人工重启板卡，已恢复并完成V3 ETH2/UP2直驱切片。
+pyserial实际打开COM7/115200 8N1，UART0发送一个回车得到Linux登录提示并持续抓取；不占工控UART。
+新boot_id=fa41fc54-86a5-46f4-84a0-d2e820e1ef17，micad PID322/NRestarts0，taint4096/noTAINT_DIE。
+本轮未自动重启、刷写或改原M6/DT；成套部署V3两个累计ELF/ko/helper/runner至/root/m7-eth-direct-20261010。
+四轮PASS：probe(0)、frames(64/1514各1000)、reverse-stop frames、四nice19 Linux worker frames。
+每方向累计6000目标帧/4734000原始字节；序号/角色/载荷/CRC正确，UP2 DMA rc0；每轮1514B过滤1非目标帧。
+UP2自主own clocks/reset/mux/MDIO/PHY/MAC/DMA；Linux只持共享NVM0电源和ACLK/PCLK根，无数据代理。
+PHY ID7b744412/MAC5051、100full；实际PTE UP1 9/16页48项、UP2 10/16页67项，每轮核验PASS。
+每轮QUIESCED reset1后双CPU OFF、临时客户端/端点清理、Linux ETH2/3 100full恢复、helper卸载PASS。
+ETH1地址/路由、micad/boot不变，failed units0。final-v3-readonly.log显示eth2 TX dropped累计28，
+eth0 RX dropped244，缺初始对应计数，不能宣称整机零丢包；目标请求/应答全部完整校验。
+新两独立树src/UniProton-m7-eth-direct-{verified-20261010,repro-verified-20261010}的运行镜像
+互相及与实测V3逐字节一致；UP1 bin074cdb3a020d463a2203a7163e8b59a1329c4e0dce920f0055b1e65d928f64cf，
+UP2 bina56ed70be2a1f29b51eca1163711d6d6b5ffaab5b6f35a6a75cd45cd95c88579；ELF目录调试路径不同。
+正式firmware更新为实测V3累计两ELF，旧MMU pair由e1add984 Git/LFS恢复；新增firmware/m7_eth2_power_hold.ko。
+实测ELF UP1=8bfb824b9f73967add8d27535bc275f9bcbb9dbbdb671ffaf3bf83edf375d14c，
+UP2=627545f53ffba3d876973371042c70174c254734f433f01afc1b47578057e660，
+ko=b071d4346d0d3310e22ffd2d1ae9ce2dcc1f3a2784ae94efd05a0798a546fc8d，新runner固定这三SHA。
+复用M6库/匹配kernel-build；native parser+18生命周期+3codec、Windows/Linux55单测通过。
+ETH仅轮询L2切片，IRQ/IP/吞吐实时性/拔插与单边故障恢复/持久DT/冷启动未验收。
+CAN/UART仍不发送或解绑，本次新ELF未重测工业物理并发；SARADC未加入、FD2/4 SKIPPED，M7.0未验收。
+V2失联根因缺现场CRU/栈，不能由V3成功断言根因已完全证实；已补共享根防护缺口。
+MCS create/rm fd泄漏另待修。详见[ETH直驱与复现](stages/stage07-peripheral-partition/tests/board/eth-direct-20261010/README.md)。
+辅助模块新构建器不在只读源码旁写输出，可显式指定Yocto内核S/B；原手工树和此前干净Yocto树编译PASS。
+新路径ko哈希不同，仅构建核验，未上板/未替换实测ko。无run.sh kernel模式，换机应m6-image后指定实际linux-tl3572树。
+本轮交付以本记录所在提交及新SHA256SUMS为固定点，GitHub同步结果见当轮最终报告；以下V2文字均为历史。
+
+2026-10-10 续测当前入口：用户回复上一条重启请求“继续”，已执行一次systemctl reboot，
+boot_id=a10d48bb-941b-4e25-9df2-2969e81cfcba，V1 coming消失/TAINT_DIE清除(taint4096)，
+micad PID319 active/NRestarts0，ETH3电源服务success/active，ETH1地址/路由和ETH2/3链路恢复。
+V2供电模块实际加载成功；GMAC1解绑且NVM0 ON；累计双UP启动、真实PTE核验UP1 9/16页/48项、
+UP2 10/16页/67项通过。进入PHY探测阶段后ETH1 Ping/SSH失联，日志止于UP2 MMU核验。
+没有捕获MDIO/PHY PASS或QUIESCED，未发送frames测试帧，当前UP/CPU/GMAC/清理状态无法确认，
+不得称结束CPU OFF/恢复Linux或ETH直驱通过。远程执行器SSH180秒超时不代表板端已退出。
+用户“硬接线还在的，你再试一下”后重试仍Ping无回应/SSH协议banner失败；本机和构建服务器未枚举USB串口。
+需用户明确UART0调试串口接在哪台电脑/COM(ttyUSB)并取现场日志，或人工断电重启恢复SSH。
+静态核对确认V2只保持电源，缺少共享aclk/pclk_nvm0_root门控前提；这是防护缺口，失联根因未由现场数据证实。
+已补V3辅助模块仅CCF保持共享ACLK/PCLK根、不保留GMAC叶/不改rate或parent；UP仍直控独占资源和数据。
+新增eth2_resources.py只读CRU后拒绝gated根；固件GRF/MAC访问前同样检查、SAFE-NO-START返回9并增加阶段日志。
+V3树src/UniProton-m7-eth-direct-guard-v3-20261010编译/ELF/预算/native通过，Windows/Linux55项Python最终通过，
+Linux初次缺镜像输入失败日志保留。V3本地候选.local-only/work/up2-eth-direct-guard-v3-20261010；尚未部署板端。
+V3模块SHA b071d4346d0d3310e22ffd2d1ae9ce2dcc1f3a2784ae94efd05a0798a546fc8d；
+UP1=8bfb824b9f73967add8d27535bc275f9bcbb9dbbdb671ffaf3bf83edf375d14c，
+UP2=627545f53ffba3d876973371042c70174c254734f433f01afc1b47578057e660；新runner固定这些SHA。
+恢复后必须同时更新V3两候选ELF/module/runner和新增eth2_resources.py，先probe再frames，不直接重跑板端旧V2。
+原正式两ELF、M6/DT保留；本轮仅授权的一次重启已用，CAN/UART仍不发送，变更尚未提交/推送GitHub。
+详见[ETH2直驱续测记录](stages/stage07-peripheral-partition/tests/board/eth-direct-20261010/README.md)。
+
+以下是上轮V1故障时的状态，不能覆盖上述续测失联结果。
+
+2026-10-10 当前入口：用户“测试UP2直驱ETH / 继续”。累计固件新增ETH第四任务、UP1拒绝ETH命令、
+run all不含ETH；00010补丁（文件名0010）、UP2精确GMAC/NVM0 GRF及自身DDR非缓存DMA映射。
+容器src/UniProton-m7-eth-direct-20261010完成双候选ELF构建及静态页表/映射核验，UP1 9/16、UP2 10/16页；
+原生解析/18调度生命周期/3codec与53 Python单测PASS。复用M6库，不是全量内核/Yocto/OS库重建。
+正式firmware目录仍保留上一版MMU修复两ELF；候选在.local-only/work/up2-eth-direct-20261010及板端临时目录，
+没有把软件构建通过称为实机通过。UP2轮询DMA/MDIO/PHY收发代码尚未实际运行。
+首轮/root/m7-eth-direct-20261010/run_eth_direct.py在insmod新增NVM0供电辅助模块处失败：
+我新增虚拟platform device没有of_node，vendor rockchip_pd_attach_dev无条件of_clk_get(NULL)，
+内核OOPS空指针0x10，模块m7_eth2_power_hold残留coming/ref1，kernel taint4224含TAINT_DIE。
+不能强卸载/再次加载/污染内核继续交接，需用户新授权重启恢复。没有解绑ETH2、启动UP或发送ETH测试帧。
+run-01-probe.log中CLEANUP PASS/power hold removed误判已明确作废，final-readonly.log确认残留；
+新执行器增加TAINT_DIE及残留模块拒绝条件。V1源码/执行器/模块/dmesg完整保存在新证据目录。
+V2取得真实且无clocks的/chosen of_node再注册/attach，已匹配6.12.69重新编译通过，未部署/加载实机验证；
+模块SHA e1eeb61717c60519e521c6ded719a83050b58642f776a6b649240a150b85cab3。
+结束原up-a/b Offline、CPU4/5 OFF、RPMsg为空，ETH2仍Linux绑定、ETH2/3 100Mbps链路UP、
+ETH1/路由正常、micad PID320 active/NRestarts0、failed units0；CAN/UART绑定/寄存器未改变，不称内核健康。
+进入时板卡已有新boot_id=1ac51aef-439d-4234-8948-f9bbe7365585，本轮未重启/刷写/改DT，前后ID不变。
+下一步取得一次板卡重启授权→核验OOPS/coming清除、链路/服务/CPU/原实例→更新板端V2/module哈希→
+--profile probe通过→--profile frames做64/1514B各1000次请求应答及清理，仍禁止CAN/UART发送。
+详见[ETH2直驱增量与交接故障](stages/stage07-peripheral-partition/tests/board/eth-direct-20261010/README.md)。
+当前变更未提交/推送GitHub，需后续实机恢复后继续完成；不要覆盖历史固定清单。
+
 2026-10-09 最新入口：用户先要求ETH2直驱，随后确认ETH2↔ETH3网线连接，最新要求“先解决ETH3”。
 已恢复ETH3：原M6内核SR9900已内置/注册，但U21/I2C1/1-0020/P02专用电源未使能。
 原厂手册69–70页和原理图15页确认P02低电平控制Q18打开SR9900供电；网名ETH2_PWRON实际是ETH3电源。

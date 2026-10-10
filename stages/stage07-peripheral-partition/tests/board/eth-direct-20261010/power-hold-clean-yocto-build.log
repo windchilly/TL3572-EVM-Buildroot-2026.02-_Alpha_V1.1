@@ -1,0 +1,8 @@
+make: Entering directory '/home/openeuler/build/projects/tl3572/reproduction/20260928/github/work-v4/tl3572-2oo3/build/build-tl3572/tmp/work/tl3572_evm-openeuler-linux/linux-tl3572/6.12.69-r0/linux-6.12.69-v1.0-gf1b67c2'
+  CC [M]  /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold-yocto-repro/m7_eth2_power_hold.o
+  MODPOST /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold-yocto-repro/Module.symvers
+  CC [M]  /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold-yocto-repro/m7_eth2_power_hold.mod.o
+  CC [M]  /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold-yocto-repro/.module-common.o
+  LD [M]  /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold-yocto-repro/m7_eth2_power_hold.ko
+make: Leaving directory '/home/openeuler/build/projects/tl3572/reproduction/20260928/github/work-v4/tl3572-2oo3/build/build-tl3572/tmp/work/tl3572_evm-openeuler-linux/linux-tl3572/6.12.69-r0/linux-6.12.69-v1.0-gf1b67c2'
+4f48f62a9cc37f7c880a062ee29b174df5558cdb2bf435630a80f733ce8872d4  /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold-yocto-repro/m7_eth2_power_hold.ko

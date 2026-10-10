@@ -1,0 +1,205 @@
+Sat Oct 10 09:52:44 CST 2026
+fa41fc54-86a5-46f4-84a0-d2e820e1ef17
+4096
+Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+MainPID=322
+NRestarts=0
+ActiveState=active
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed.
+Module                  Size  Used by
+mcs_km                 16384  0
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+can0             DOWN           
+can1             DOWN           
+can2             DOWN           
+can3             DOWN           
+eth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 
+eth2             UP             fe80::2e0:9aff:fe42:baeb/64 
+eth1             UP             fe80::d814:36ff:fe8b:78f0/64 
+default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 
+192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 
+192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 
+Settings for eth1:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Half 1000baseT/Full
+	Supported pause frame use: Symmetric Receive-only
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Half 1000baseT/Full
+	Advertised pause frame use: Symmetric Receive-only
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  10baseT/Half 10baseT/Full
+	                                     100baseT/Half 100baseT/Full
+	Link partner advertised pause frame use: Symmetric Receive-only
+	Link partner advertised auto-negotiation: Yes
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Full
+	Auto-negotiation: on
+	master-slave cfg: preferred slave
+	master-slave status: slave
+	Port: Twisted Pair
+	PHYAD: 1
+	Transceiver: external
+	MDI-X: Unknown
+	Supports Wake-on: ug
+	Wake-on: d
+        Current message level: 0x0000003f (63)
+                               drv probe link timer ifdown ifup
+	Link detected: yes
+Settings for eth2:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Supported pause frame use: No
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Advertised pause frame use: No
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  10baseT/Half 10baseT/Full
+	                                     100baseT/Half 100baseT/Full
+	Link partner advertised pause frame use: Symmetric Receive-only
+	Link partner advertised auto-negotiation: Yes
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Full
+	Auto-negotiation: on
+	Port: MII
+	PHYAD: 32
+	Transceiver: internal
+	Supports Wake-on: pumbg
+	Wake-on: g
+        Current message level: 0x00007fff (32767)
+                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol
+	Link detected: yes
+6: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether d6:14:36:8b:78:f0 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+       1571206    1671      0     244       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+        166729    1007      0       0       0       0 
+12: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether da:14:36:8b:78:f0 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+          1948       7      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+          4270      25      0       0       0       0 
+8: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 00:e0:9a:42:ba:eb brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+       4665766    6071      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+       4759418    6155      0      28       0       0 
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+[  372.816268] rk_gmac-dwmac 2a040000.ethernet: Can not read property: rx_delay.
+[  372.816273] rk_gmac-dwmac 2a040000.ethernet: set rx_delay to 0xffffffff
+[  372.816296] rk_gmac-dwmac 2a040000.ethernet: integrated PHY? (no).
+[  372.816306] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_rx
+[  372.816312] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_tx
+[  372.816325] rk_gmac-dwmac 2a040000.ethernet: cannot get clock clk_mac_speed
+[  372.816554] rk_gmac-dwmac 2a040000.ethernet: init for RGMII_RXID
+[  372.817064] rk_gmac-dwmac 2a040000.ethernet: User ID: 0x50, Synopsys ID: 0x51
+[  372.817087] rk_gmac-dwmac 2a040000.ethernet: 	DWMAC4/5
+[  372.817096] rk_gmac-dwmac 2a040000.ethernet: DMA HW capability register supported
+[  372.817102] rk_gmac-dwmac 2a040000.ethernet: RX Checksum Offload Engine supported
+[  372.817107] rk_gmac-dwmac 2a040000.ethernet: TX Checksum insertion supported
+[  372.817112] rk_gmac-dwmac 2a040000.ethernet: Wake-Up On Lan supported
+[  372.817117] rk_gmac-dwmac 2a040000.ethernet: TSO supported
+[  372.817123] rk_gmac-dwmac 2a040000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[  372.817129] rk_gmac-dwmac 2a040000.ethernet: Enabled L3L4 Flow TC (entries=2)
+[  372.817135] rk_gmac-dwmac 2a040000.ethernet: Enabled RFS Flow TC (entries=10)
+[  372.817141] rk_gmac-dwmac 2a040000.ethernet: TSO feature enabled
+[  372.817147] rk_gmac-dwmac 2a040000.ethernet: Using 40/40 bits DMA host/device width
+[  372.868909] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  373.054773] rk_gmac-dwmac 2a040000.ethernet eth1: Register MEM_TYPE_PAGE_POOL RxQ-0
+[  373.055104] MAXIO_PHY_VER: v1.7.6.1 
+[  373.063127] rk_gmac-dwmac 2a040000.ethernet eth1: PHY [stmmac-1:01] driver [MAE0621A/B-Q3C(I) Gigabit Ethernet] (irq=POLL)
+[  373.063671] dwmac4: Master AXI performs any burst length
+[  373.063691] rk_gmac-dwmac 2a040000.ethernet eth1: No Safety Features support found
+[  373.063718] rk_gmac-dwmac 2a040000.ethernet eth1: IEEE 1588-2008 Advanced Timestamp supported
+[  373.064230] rk_gmac-dwmac 2a040000.ethernet eth1: registered PTP clock
+[  373.064683] rk_gmac-dwmac 2a040000.ethernet eth1: configuring for phy/rgmii-rxid link mode
+[  374.977064] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  375.117910] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+[  375.161356] M7 ETH2 shared nvm0 power reference released
+[  437.643200] M7 shared fabric aclk_nvm0_root held at 297000000 Hz; no rate/parent changes
+[  437.643267] M7 shared fabric pclk_nvm0_root held at 100000000 Hz; no rate/parent changes
+[  437.643275] M7 ETH2 shared nvm0 power/fabric held; MAC remains independently owned
+[  437.656175] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Down
+[  437.661672] rk_gmac-dwmac 2a040000.ethernet eth1: stmmac_dvr_remove: removing driver
+[  437.700260] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  438.291379] mcs: start booting clientos on cpu4(100) addr(0x7b200000)
+[  438.291484] mcs: received ioctl cmd to send ipi to cpu(4)
+[  438.291521] mcs: received ioctl cmd to send ipi to cpu(4)
+[  438.392003] mcs: received ioctl cmd to send ipi to cpu(4)
+[  438.522955] mcs: received ioctl cmd to send ipi to cpu(4)
+[  439.134111] mcs: start booting clientos on cpu5(101) addr(0x7c200000)
+[  439.134236] mcs: received ioctl cmd to send ipi to cpu(5)
+[  439.134277] mcs: received ioctl cmd to send ipi to cpu(5)
+[  439.240276] mcs: received ioctl cmd to send ipi to cpu(5)
+[  439.352452] mcs: received ioctl cmd to send ipi to cpu(5)
+[  439.354589] mcs: received ioctl cmd to send ipi to cpu(5)
+[  441.569280] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  441.763763] mcs: received ioctl cmd to send ipi to cpu(5)
+[  441.765579] mcs: received ioctl cmd to send ipi to cpu(5)
+[  441.860939] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  443.455453] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  444.716674] mcs: received ioctl cmd to send ipi to cpu(5)
+[  444.718444] mcs: received ioctl cmd to send ipi to cpu(5)
+[  444.820468] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  446.335449] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  451.515645] mcs: received ioctl cmd to send ipi to cpu(5)
+[  452.116079] mcs: received ioctl cmd to send ipi to cpu(4)
+[  452.116327] mcs: received ioctl cmd to send ipi to cpu(4)
+[  452.116346] mcs: received ioctl cmd to send ipi to cpu(4)
+[  452.458602] mcs: received ioctl cmd to send ipi to cpu(5)
+[  452.458859] mcs: received ioctl cmd to send ipi to cpu(5)
+[  452.458881] mcs: received ioctl cmd to send ipi to cpu(5)
+[  454.119749] rk_gmac-dwmac 2a040000.ethernet: IRQ eth_lpi not found
+[  454.119809] rk_gmac-dwmac 2a040000.ethernet: IRQ sfty not found
+[  454.120036] rk_gmac-dwmac 2a040000.ethernet: supply phy not found, using dummy regulator
+[  454.120251] rk_gmac-dwmac 2a040000.ethernet: clock input or output? (output).
+[  454.120262] rk_gmac-dwmac 2a040000.ethernet: TX delay(0x20).
+[  454.120272] rk_gmac-dwmac 2a040000.ethernet: Can not read property: rx_delay.
+[  454.120279] rk_gmac-dwmac 2a040000.ethernet: set rx_delay to 0xffffffff
+[  454.120309] rk_gmac-dwmac 2a040000.ethernet: integrated PHY? (no).
+[  454.120321] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_rx
+[  454.120330] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_tx
+[  454.120348] rk_gmac-dwmac 2a040000.ethernet: cannot get clock clk_mac_speed
+[  454.120587] rk_gmac-dwmac 2a040000.ethernet: init for RGMII_RXID
+[  454.120853] rk_gmac-dwmac 2a040000.ethernet: User ID: 0x50, Synopsys ID: 0x51
+[  454.120883] rk_gmac-dwmac 2a040000.ethernet: 	DWMAC4/5
+[  454.120894] rk_gmac-dwmac 2a040000.ethernet: DMA HW capability register supported
+[  454.120902] rk_gmac-dwmac 2a040000.ethernet: RX Checksum Offload Engine supported
+[  454.120910] rk_gmac-dwmac 2a040000.ethernet: TX Checksum insertion supported
+[  454.120917] rk_gmac-dwmac 2a040000.ethernet: Wake-Up On Lan supported
+[  454.120924] rk_gmac-dwmac 2a040000.ethernet: TSO supported
+[  454.120932] rk_gmac-dwmac 2a040000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[  454.120940] rk_gmac-dwmac 2a040000.ethernet: Enabled L3L4 Flow TC (entries=2)
+[  454.120950] rk_gmac-dwmac 2a040000.ethernet: Enabled RFS Flow TC (entries=10)
+[  454.120959] rk_gmac-dwmac 2a040000.ethernet: TSO feature enabled
+[  454.120968] rk_gmac-dwmac 2a040000.ethernet: Using 40/40 bits DMA host/device width
+[  454.168284] sr9900 1-1.4.1:1.0 eth2: carrier off
+[  454.370768] rk_gmac-dwmac 2a040000.ethernet eth1: Register MEM_TYPE_PAGE_POOL RxQ-0
+[  454.371425] MAXIO_PHY_VER: v1.7.6.1 
+[  454.386154] rk_gmac-dwmac 2a040000.ethernet eth1: PHY [stmmac-1:01] driver [MAE0621A/B-Q3C(I) Gigabit Ethernet] (irq=POLL)
+[  454.386570] dwmac4: Master AXI performs any burst length
+[  454.386598] rk_gmac-dwmac 2a040000.ethernet eth1: No Safety Features support found
+[  454.386634] rk_gmac-dwmac 2a040000.ethernet eth1: IEEE 1588-2008 Advanced Timestamp supported
+[  454.387216] rk_gmac-dwmac 2a040000.ethernet eth1: registered PTP clock
+[  454.390611] rk_gmac-dwmac 2a040000.ethernet eth1: configuring for phy/rgmii-rxid link mode
+[  456.303717] sr9900 1-1.4.1:1.0 eth2: carrier on
+[  456.429146] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+[  456.515204] M7 ETH2 shared nvm0 power reference released

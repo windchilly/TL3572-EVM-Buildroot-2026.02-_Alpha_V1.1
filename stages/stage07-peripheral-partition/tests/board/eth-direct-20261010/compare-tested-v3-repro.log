@@ -1,0 +1,7 @@
+Comparison outputs: /tmp/tl3572-integrated-repro.1gvN8G
+074cdb3a020d463a2203a7163e8b59a1329c4e0dce920f0055b1e65d928f64cf  /tmp/tl3572-integrated-repro.1gvN8G/tl3572-m7-integrated-up-a-1.bin
+074cdb3a020d463a2203a7163e8b59a1329c4e0dce920f0055b1e65d928f64cf  /tmp/tl3572-integrated-repro.1gvN8G/tl3572-m7-integrated-up-a-2.bin
+RUNTIME IMAGE REPRO PASS tl3572-m7-integrated-up-a
+a56ed70be2a1f29b51eca1163711d6d6b5ffaab5b6f35a6a75cd45cd95c88579  /tmp/tl3572-integrated-repro.1gvN8G/tl3572-m7-integrated-up-b-1.bin
+a56ed70be2a1f29b51eca1163711d6d6b5ffaab5b6f35a6a75cd45cd95c88579  /tmp/tl3572-integrated-repro.1gvN8G/tl3572-m7-integrated-up-b-2.bin
+RUNTIME IMAGE REPRO PASS tl3572-m7-integrated-up-b

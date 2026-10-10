@@ -1,0 +1,26 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+MCS Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+
+MICAD {"MainPID": "320", "NRestarts": "0", "ActiveState": "active"}
+BOOT 1ac51aef-439d-4234-8948-f9bbe7365585
+KERNEL_TAINT 4224
+MODULES Module                  Size  Used by
+m7_eth2_power_hold     12288  1
+mcs_km                 16384  0
+
+POWER_HOLD_INITSTATE coming
+RPMSG_ENDPOINTS []
+ETH1 eth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 
+
+ROUTE default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 
+192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 
+192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 
+
+ETH2_OWNER /sys/bus/platform/drivers/rk_gmac-dwmac
+ETH2/3_LINK [{'port': 'eth1', 'carrier': '1', 'speed': '100'}, {'port': 'eth2', 'carrier': '1', 'speed': '100'}]
+INDUSTRIAL_SNAPSHOT {"drivers": {"26500000.serial": "dw-apb-uart", "2ab10000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "registers": {"0x2607400c": 37017, "0x26074010": 2457, "0x26074018": 4, "0x2608203c": 3536, "0x2608404c": 153, "0x2608608c": 56576, "0x26090374": 31488, "0x26090404": 387, "0x26090408": 387, "0x2609040c": 33, "0x26090410": 0, "0x26090414": 279, "0x26090418": 11, "0x2609041c": 768, "0x26090420": 768, "0x26090424": 768, "0x26090428": 768, "0x2609042c": 768, "0x26090430": 768, "0x26090434": 768, "0x26090438": 768, "0x26090808": 24512, "0x2609082c": 32768, "0x26090838": 32736, "0x2609083c": 37449, "0x26090840": 65468, "0x26090a2c": 0, "0x26090a38": 0, "0x26090a3c": 0, "0x26090a40": 0, "0x260b0320": 1, "0x260b0814": 16844, "0x260b0a14": 0, "0x2a601090": 0, "0x2a601094": 0, "0x2a601110": 286331264, "0x2a601114": 4009791488, "0x2a601210": 0, "0x2a601214": 0, "0x2a601310": 0, "0x2a601314": 0, "0x2a60149c": 2694881440, "0x2a6014a0": 2694881440, "0x2a6014a4": 2694881440, "0x2a6014b8": 2694881440, "0x2a60189c": 16843009, "0x2a6018a0": 16843009, "0x2a6018a4": 16843009, "0x2a6018b8": 16843009, "0x2a601c24": 1431655765, "0x2a601c28": 1431655765, "0x2a601c2c": 1431655765}}
+FAILED_UNITS 
+NO forced unload, module retry, controller handoff, network transmit, reboot or flash

@@ -1,0 +1,22 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+BASELINE boot=1ac51aef-439d-4234-8948-f9bbe7365585 micad={'MainPID': '320', 'NRestarts': '0', 'ActiveState': 'active'} ETH1 management untouched
+FINAL LOG up-a
+
+FINAL LOG up-b
+
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CLEANUP PASS CPUs OFF, original instances Offline, Linux ETH2/3 restored, power hold removed, CAN/UART snapshot unchanged, ETH1/micad/boot unchanged
+Traceback (most recent call last):
+  File "/root/m7-eth-direct-20261010/run_eth_direct.py", line 228, in <module>
+    main()
+  File "/root/m7-eth-direct-20261010/run_eth_direct.py", line 223, in main
+    raise error
+  File "/root/m7-eth-direct-20261010/run_eth_direct.py", line 113, in main
+    common.command('insmod', str(module)); held = True
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/m7-eth-direct-20261010/run_can_direct_pair.py", line 35, in command
+    raise RuntimeError(f"command failed ({result.returncode}): {' '.join(args)}\n{result.stdout}")
+RuntimeError: command failed (-11): insmod /root/m7-eth-direct-20261010/m7_eth2_power_hold.ko
+

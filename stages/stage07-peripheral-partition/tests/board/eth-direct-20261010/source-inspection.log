@@ -1,0 +1,225 @@
+ENTRY(__text_start)
+
+_stack_size = 0x10000;
+_heap_size = 0x10000;
+
+MEMORY
+{
+    IMU_SRAM (rwx) : ORIGIN = @MCS_IMAGE_ADDR@, LENGTH = 0x800000
+    MMU_MEM (rwx) : ORIGIN = @MCS_MMU_ADDR@, LENGTH = 0x600000
+}
+
+SECTIONS
+{
+    __os_section_start = .;
+    text_start = .;
+    .start_bspinit :
+    {
+        __text_start = .;
+        KEEP(*(.text.bspinit))
+    } > IMU_SRAM
+
+    .start_text :
+    {
+        KEEP(*(.text.startup))
+    } > IMU_SRAM
+
+    .text :
+    {
+        *(.text)
+        *(.text.*)
+        *(*.text)
+        __os_stub_text_start = .;
+        *(.stub.text)
+        __os_stub_text_end = .;
+        . = ALIGN(8);
+        __text_end = .;
+    } > IMU_SRAM
+    . = ALIGN(8);
+    data_copy_start = .;
+
+    .rodata :
+    {
+        . = ALIGN(8);
+        __rodata_start = .;
+        *(.rodata)
+        *(.rodata.*)
+        . = ALIGN(8);
+        __rodata_end = .;
+    } > IMU_SRAM
+
+    .eh_frame :
+    {
+        . = ALIGN(8);
+        __os_unwind_table_start = .;
+        *(.eh_frame)
+        __os_unwind_table_end = .;
+    } > IMU_SRAM
+
+    .heap (NOLOAD) :
+    {
+        . = ALIGN(8);
+        PROVIDE (__HEAP_INIT = .);
+        . = . + _heap_size;
+        . = ALIGN(8);
+        PROVIDE (__HEAP_END = .);
+    } > IMU_SRAM
+
+    .stack (NOLOAD) :
+    {
+        . = ALIGN(8);
+        PROVIDE (__os_sys_sp_start = .);
+        . = . + _stack_size;
+        . = ALIGN(8);
+        PROVIDE (__os_sys_sp_end = .);
+    } > IMU_SRAM
+    end = .;
+
+    .percpu.data :
+    {
+        __os_per_cpu_start = .;
+        *(.os.percpu.data)
+        __os_per_cpu_end = .;
+        LONG (ALIGNOF(.percpu.data))
+    } > IMU_SRAM
+
+    .data :
+    {
+        . = ALIGN(8);
+        __data_start = .;
+        *(*.data)
+        *(.data.*)
+        __os_stub_data_start = .;
+        *(.stub.data)
+        __os_stub_data_end = .;
+        . = ALIGN(8);
+        __os_text_start = .;
+        QUAD(__text_start)
+        QUAD(__text_end)
+        __os_text_end = .;
+        __data_end = .;
+    } > IMU_SRAM
+
+    .llt.bss :
+    {
+        _llt_bss_start = .;
+        *__code_measure_stub*.o(.bss)
+        *__code_measure_stub*.o(.bss.*)
+        _llt_bss_end = .;
+    } > IMU_SRAM
+
+10:#define MT_DEVICE_NGNRNE     0
+11:#define MT_DEVICE_NGNRE      1
+12:#define MT_DEVICE_GRE        2
+13:#define MT_NORMAL_NC         3
+14:#define MT_NORMAL            4
+16:#define MEMORY_ATTRIBUTES    ((0x00 << (MT_DEVICE_NGNRNE * 8)) | \
+17:                              (0x04 << (MT_DEVICE_NGNRE * 8))  | \
+18:                              (0x0c << (MT_DEVICE_GRE * 8))    | \
+19:                              (0x44 << (MT_NORMAL_NC * 8))     | \
+20:                              (0xffUL << (MT_NORMAL * 8)))
+84:#define MMU_ATTR_DEVICE_NGNRNE    (PTE_BLOCK_MEMTYPE(MT_DEVICE_NGNRNE))
+85:#define MMU_ATTR_DEVICE           (PTE_BLOCK_MEMTYPE(MT_DEVICE_NGNRE))
+86:#define MMU_ATTR_UNCACHE_UNSHARE  (PTE_BLOCK_MEMTYPE(MT_NORMAL_NC) | PTE_BLOCK_NON_SHARE)
+87:#define MMU_ATTR_UNCACHE_SHARE    (PTE_BLOCK_MEMTYPE(MT_NORMAL_NC) | PTE_BLOCK_INNER_SHARE)
+88:#define MMU_ATTR_CACHE_UNSHARE    (PTE_BLOCK_MEMTYPE(MT_NORMAL)    | PTE_BLOCK_NON_SHARE)
+89:#define MMU_ATTR_CACHE_SHARE      (PTE_BLOCK_MEMTYPE(MT_NORMAL)    | PTE_BLOCK_INNER_SHARE)
+0x00000000	pm_genpd_add_device	vmlinux	EXPORT_SYMBOL_GPL	
+0x00000000	pm_genpd_remove_device	vmlinux	EXPORT_SYMBOL_GPL	
+214:static inline struct generic_pm_domain *pd_to_genpd(struct dev_pm_domain *pd)
+269:int pm_genpd_add_device(struct generic_pm_domain *genpd, struct device *dev);
+270:int pm_genpd_remove_device(struct device *dev);
+300:static inline int pm_genpd_add_device(struct generic_pm_domain *genpd,
+305:static inline int pm_genpd_remove_device(struct device *dev)
+build-kernel/.config
+build-kernel/Makefile
+	struct list_head list_node;
+	struct device *dev;
+};
+
+struct generic_pm_domain_data {
+	struct pm_domain_data base;
+	struct gpd_timing_data *td;
+	struct notifier_block nb;
+	struct notifier_block *power_nb;
+	int cpu;
+	unsigned int performance_state;
+	unsigned int default_pstate;
+	unsigned int rpm_pstate;
+	bool hw_mode;
+	bool rpm_always_on;
+	void *data;
+};
+
+#ifdef CONFIG_PM_GENERIC_DOMAINS
+static inline struct generic_pm_domain_data *to_gpd_data(struct pm_domain_data *pdd)
+{
+	return container_of(pdd, struct generic_pm_domain_data, base);
+}
+
+static inline struct generic_pm_domain_data *dev_gpd_data(struct device *dev)
+{
+	return to_gpd_data(dev->power.subsys_data->domain_data);
+}
+
+int pm_genpd_add_device(struct generic_pm_domain *genpd, struct device *dev);
+int pm_genpd_remove_device(struct device *dev);
+int pm_genpd_add_subdomain(struct generic_pm_domain *genpd,
+			   struct generic_pm_domain *subdomain);
+int pm_genpd_remove_subdomain(struct generic_pm_domain *genpd,
+			      struct generic_pm_domain *subdomain);
+int pm_genpd_init(struct generic_pm_domain *genpd,
+		  struct dev_power_governor *gov, bool is_off);
+int pm_genpd_remove(struct generic_pm_domain *genpd);
+struct device *dev_to_genpd_dev(struct device *dev);
+int dev_pm_genpd_set_performance_state(struct device *dev, unsigned int state);
+int dev_pm_genpd_add_notifier(struct device *dev, struct notifier_block *nb);
+int dev_pm_genpd_remove_notifier(struct device *dev);
+void dev_pm_genpd_set_next_wakeup(struct device *dev, ktime_t next);
+ktime_t dev_pm_genpd_get_next_hrtimer(struct device *dev);
+void dev_pm_genpd_synced_poweroff(struct device *dev);
+int dev_pm_genpd_set_hwmode(struct device *dev, bool enable);
+bool dev_pm_genpd_get_hwmode(struct device *dev);
+int dev_pm_genpd_rpm_always_on(struct device *dev, bool on);
+
+extern struct dev_power_governor simple_qos_governor;
+extern struct dev_power_governor pm_domain_always_on_gov;
+#ifdef CONFIG_CPU_IDLE
+extern struct dev_power_governor pm_domain_cpu_gov;
+#endif
+#else
+
+
+    .bss (NOLOAD) :
+    {
+        . = ALIGN(8);
+        __bss_start__ = .;
+        *(*.bss)
+        *(.bss.*)
+        *(COMMON)
+        . = ALIGN(8);
+        __bss_end__ = .;
+    } > IMU_SRAM
+    __os_section_end = .;
+
+    .mmu.table.base :
+    {
+        PROVIDE (g_mmu_page_begin = .);
+        PROVIDE (g_mmu_page_end = g_mmu_page_begin + @M7_MMU_TABLE_BYTES@);
+    } > MMU_MEM
+}
+static void platform_device_release(struct device *dev)
+{
+	struct platform_object *pa = container_of(dev, struct platform_object,
+						  pdev.dev);
+
+	of_node_put(pa->pdev.dev.of_node);
+	kfree(pa->pdev.dev.platform_data);
+	kfree(pa->pdev.mfd_cell);
+	kfree(pa->pdev.resource);
+	kfree(pa->pdev.driver_override);
+	kfree(pa);
+}
+
+/**
+ * platform_device_alloc - create a platform device

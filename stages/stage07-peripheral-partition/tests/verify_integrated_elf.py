@@ -49,9 +49,10 @@ def verify(path, cpu):
     if immediate & 0x40000:
         immediate -= 0x80000
     assert start + 12 + immediate * 4 == symbols['MmuBootFatal'][0], 'MMU failure must branch to fatal path'
-    assert symbols['g_stacks'][1] == 3 * 0x4000 and symbols['g_stacks'][0] % 16 == 0
+    ethernet = 'Rk3572EthTest' in symbols
+    assert symbols['g_stacks'][1] == (4 if ethernet else 3) * 0x4000 and symbols['g_stacks'][0] % 16 == 0
     regions = list(struct.iter_unpack('<5Q', symbols['g_mem_map_info'][2]))
-    assert len(regions) == 11
+    assert len(regions) == (14 if ethernet and cpu == 5 else 11)
     image = 0x7B200000 if cpu == 4 else 0x7C200000
     shared = 0x7A080000 if cpu == 4 else 0x7A0A0000
     log = 0x7B000000 if cpu == 4 else 0x7C000000
@@ -59,7 +60,8 @@ def verify(path, cpu):
              if cpu == 4 else
              {0x2AB30000, 0x2C1A0000, 0x2C140000, 0x26090000, 0x26084000, 0x26074000, 0x26082000})
     assert {(r[0], r[2]) for r in regions if r[0] in pages} == {(p, 0x1000) for p in pages}
-    assert {r[0] for r in regions} == pages | {image, shared, log, 0x2A600000}
+    extra = {0x2A040000, 0x2602A000, 0x7CA10000} if ethernet and cpu == 5 else set()
+    assert {r[0] for r in regions} == pages | {image, shared, log, 0x2A600000} | extra
     for virtual, physical, size, level, attrs in regions:
         assert virtual == physical
         if virtual in pages:
@@ -68,7 +70,14 @@ def verify(path, cpu):
             assert size == 0x4000 and level == 3, 'GIC mapping is not the verified 16 KiB window'
         if virtual == image:
             assert size == 0x800000
-    print(f'ELF STATIC PASS UP{cpu - 3}: all four drivers + control/log; 3 aligned workers; 7 exact MMIO pages')
+        if virtual == 0x2A040000:
+            assert size == 0x2000 and level == 3 and attrs == 0x60000000000400
+        if virtual == 0x2602A000:
+            assert size == 0x1000 and level == 3 and attrs == 0x60000000000400
+        if virtual == 0x7CA10000:
+            assert size == 0x10000 and level == 3 and attrs == 0x6000000000070c
+            assert virtual >= symbols['g_mmu_page_end'][0] and virtual + size <= 0x7D000000
+    print(f'ELF STATIC PASS UP{cpu - 3}: cumulative drivers + control/log; Ethernet={ethernet}; exact owned mappings')
     print('MMIO pages:', ' '.join(f'0x{p:08x}' for p in sorted(pages)))
 
 

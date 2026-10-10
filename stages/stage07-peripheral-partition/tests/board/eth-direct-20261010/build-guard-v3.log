@@ -1,0 +1,286 @@
+Native outputs: /tmp/tl3572-integrated-native.hoNgB0
+INTEGRATED COMMAND PASS: runtime profiles/bauds, bounded parse, invalid input has no side effects
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+RS232 codec PASS: CRC vector, 1000 sequences, wrong role/sequence, 256000 bit mutations
+CAN FD CODEC PASS: DLC, flags, 64-byte words, NBTP/DBTP/TDC
+ETH CODEC PASS: CRC vector, 2000 sequences, roles and every payload/CRC bit corruption
+NATIVE VALIDATION PASS: parser + 18 dispatcher/lifecycle runs + 3 codecs; no MMIO
+Prepared M7 source: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010
+Prepared cumulative firmware source: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/build/m7-integrated-up-a
+[  4%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[  9%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 27%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 27%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 27%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[ 27%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 36%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 36%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 40%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 54%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 54%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 54%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 63%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 63%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 72%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o
+[ 72%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 77%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_irq_test.c.o
+[ 81%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 86%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_eth_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs485_test.c.o
+[ 95%] Built target config
+[ 95%] Built target bsp
+[ 95%] Built target mica
+[ 95%] Built target rpmsg
+[ 95%] Built target proxy
+[100%] Linking C executable rk3572_mica
+[100%] Built target rk3572_mica
+8bfb824b9f73967add8d27535bc275f9bcbb9dbbdb671ffaf3bf83edf375d14c  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/build/tl3572-m7-integrated-up-a.elf
+-- The C compiler identification is GNU 12.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/cc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/build/m7-integrated-up-b
+[  9%] Building C object config/CMakeFiles/config.dir/prt_config.c.o
+[  9%] Building C object mica/CMakeFiles/mica.dir/resource_table.c.o
+[ 18%] Building C object mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+[ 27%] Building ASM object bsp/CMakeFiles/bsp.dir/start.S.o
+[ 27%] Building C object mica/CMakeFiles/mica.dir/rpmsg_backend_rsc_table.c.o
+[ 27%] Building C object mica/CMakeFiles/mica.dir/mica_init.c.o
+[ 31%] Building C object bsp/CMakeFiles/bsp.dir/hwi_init.c.o
+[ 36%] Building ASM object bsp/CMakeFiles/bsp.dir/cache_asm.S.o
+[ 40%] Building C object bsp/CMakeFiles/bsp.dir/print.c.o
+[ 45%] Building C object bsp/CMakeFiles/bsp.dir/mmu.c.o
+[ 50%] Building C object bsp/CMakeFiles/bsp.dir/timer.c.o
+[ 54%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/main.c.o
+[ 59%] Building C object proxy/CMakeFiles/proxy.dir/rpc_helper.c.o
+[ 63%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_integrated.c.o
+[ 72%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_irq_test.c.o
+[ 72%] Building C object proxy/CMakeFiles/proxy.dir/rpc_routines.c.o
+[ 81%] Building C object proxy/CMakeFiles/proxy.dir/rpcmsg_workers.c.o
+[ 81%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_can_fd_test.c.o
+[ 86%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs232_test.c.o
+[ 90%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_rs485_test.c.o
+[ 95%] Building C object apps/openamp/CMakeFiles/rpmsg.dir/rk3572_eth_test.c.o
+[ 95%] Built target config
+[ 95%] Built target bsp
+[ 95%] Built target mica
+[ 95%] Built target rpmsg
+[ 95%] Built target proxy
+[100%] Linking C executable rk3572_mica
+[100%] Built target rk3572_mica
+627545f53ffba3d876973371042c70174c254734f433f01afc1b47578057e660  /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf
+[
+  {
+    "elf": "tl3572-m7-integrated-up-a.elf",
+    "table_pages": 9,
+    "required_bytes": 36864,
+    "available_bytes": 65536,
+    "fits": true,
+    "first_overflow_region": null
+  },
+  {
+    "elf": "tl3572-m7-integrated-up-b.elf",
+    "table_pages": 10,
+    "required_bytes": 40960,
+    "available_bytes": 65536,
+    "fits": true,
+    "first_overflow_region": null
+  }
+]
+ELF STATIC PASS UP1: cumulative drivers + control/log; Ethernet=True; exact owned mappings
+MMIO pages: 0x26074000 0x26086000 0x26090000 0x260b0000 0x26500000 0x2ab10000 0x2c160000
+ELF STATIC PASS UP2: cumulative drivers + control/log; Ethernet=True; exact owned mappings
+MMIO pages: 0x26074000 0x26082000 0x26084000 0x26090000 0x2ab30000 0x2c140000 0x2c1a0000
+No deployment or hardware result implied by this static verification.
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpcmsg_workers.c:7:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_helper.c:20:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_helper.c: In function 'OsProxyDecodeAddrList':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_helper.c:129:26: warning: the comparison will always evaluate as 'false' for the pointer operand in 'buf + (sizetype)bi' must not be NULL [-Waddress]
+  129 |             if (&buf[bi] == NULL) {
+      |                          ^~
+In file included from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/sys/types.h:70,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/ioctl_rpc.h:4,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_internal_model.h:19,
+                 from /home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/src/component/proxy/rpc_routines.c:30:
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap32':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:32: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                          ~~~~~~^~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:26:48: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+   26 |         return __x>>24 | __x>>8&0xff00 | __x<<8&0xff0000 | __x<<24;
+      |                                          ~~~~~~^~~~~~~~~
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h: In function '__bswap64':
+/home/openeuler/build/tl3572-2oo3/src/UniProton-m7-eth-direct-guard-v3-20261010/demos/rk3572_mica/../../output/libc/include/endian.h:31:30: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
+   31 |         return __bswap32(__x)+0ULL<<32 | __bswap32(__x>>32);
+      |                ~~~~~~~~~~~~~~^~~~~
+/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/../lib/gcc/aarch64-none-linux-gnu/14.3.1/../../../../aarch64-none-linux-gnu/bin/ld: warning: rk3572_mica has a LOAD segment with RWX permissions
+..................E....E................E
+======================================================================
+ERROR: test_eth3_power (unittest.loader._FailedTest.test_eth3_power)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_eth3_power
+Traceback (most recent call last):
+  File "/usr/lib64/python3.11/unittest/loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/unittest/loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "/home/openeuler/build/m7-eth-direct-20261010/stage/tests/test_eth3_power.py", line 13, in <module>
+    spec.loader.exec_module(power)
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1073, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1130, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/home/openeuler/build/m7-eth-direct-20261010/stage/source/host/eth3_power_enable.py'
+
+
+======================================================================
+ERROR: test_up1_integration_regression_old_budget_fails_new_budget_fits (test_integrated_mmu_budget.BudgetTests.test_up1_integration_regression_old_budget_fails_new_budget_fits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/openeuler/build/m7-eth-direct-20261010/stage/tests/test_integrated_mmu_budget.py", line 16, in test_up1_integration_regression_old_budget_fails_new_budget_fits
+    regions = list(struct.iter_unpack('<5Q', symbols_and_data(image)['g_mem_map_info'][2]))
+                                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/openeuler/build/m7-eth-direct-20261010/stage/tests/verify_integrated_elf.py", line 8, in symbols_and_data
+    data = path.read_bytes()
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/pathlib.py", line 1050, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/openeuler/build/m7-eth-direct-20261010/stage/firmware/tl3572-m7-integrated-up-a.elf'
+
+======================================================================
+ERROR: test_up_log_reader (unittest.loader._FailedTest.test_up_log_reader)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_up_log_reader
+Traceback (most recent call last):
+  File "/usr/lib64/python3.11/unittest/loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/unittest/loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "/home/openeuler/build/m7-eth-direct-20261010/stage/tests/test_up_log_reader.py", line 11, in <module>
+    SPEC.loader.exec_module(reader)
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1073, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1130, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/home/openeuler/build/m7-eth-direct-20261010/stage/source/host/up_log_reader.py'
+
+
+----------------------------------------------------------------------
+Ran 41 tests in 0.034s
+
+FAILED (errors=3)

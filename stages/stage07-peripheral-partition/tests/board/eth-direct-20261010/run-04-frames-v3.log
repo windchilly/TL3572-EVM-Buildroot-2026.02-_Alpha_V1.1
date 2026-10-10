@@ -1,0 +1,180 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+BASELINE boot=fa41fc54-86a5-46f4-84a0-d2e820e1ef17 micad={'MainPID': '322', 'NRestarts': '0', 'ActiveState': 'active'} ETH1 management untouched
+POWER HOLD
+domain                          status          children        performance
+    /device                         runtime status                  managed by
+------------------------------------------------------------------------------
+nvm0                            on                              0
+    2a010000.mmc                    suspended                   0           SW
+    2a040000.ethernet               active                      0           SW
+    m7-eth2-power-hold              active                      0           SW
+vo                              on                              0
+    276d0000.dsi                    suspended                   0           SW
+    27610000.sai                    suspended                   0           SW
+    27680000.hdmi                   active                      0           SW
+vop_pre                         off-0                           0
+    27500000.vop                    suspended                   0           SW
+vop                             on                              0
+                                                vop_pre, vo, nvm0
+venc                            off-0                           0
+    2720f000.iommu                  suspended                   0           SW
+    27200000.rkvenc                 suspended                   0           SW
+vi                              off-0                           0
+                                                venc
+    27400f00.iommu                  suspended                   0           SW
+    27427f00.iommu                  suspended                   0           SW
+    27433f00.iommu                  suspended                   0           SW
+    27400000.rkcif                  suspended                   0           SW
+    27420000.isp                    suspended                   0           SW
+    27430000.vpss                   suspended                   0           SW
+vdec                            off-0                           0
+    27300800.iommu                  suspended                   0           SW
+    27300100.rkvdec                 suspended                   0           SW
+img                             off-0                           0
+    27110f00.iommu                  suspended                   0           SW
+    27120f00.iommu                  suspended                   0           SW
+    27130800.iommu                  suspended                   0           SW
+    27120000.rga                    suspended                   0           SW
+    27130000.iep                    suspended                   0           SW
+    27110000.jpegd                  suspended                   0           SW
+    27110800.jpege                  suspended                   0           SW
+    27131000.vdpp                   suspended                   0           SW
+audio                           off-0                           0
+    2a500000.sai                    suspended                   0           SW
+php                             on                              0
+    24000000.usb                    active                      0           SW
+    24400000.usb                    active                      0           SW
+    29d20000.ethernet               active                      0           SW
+dsmc                            off-0                           0
+nvm1                            on                              0
+    2a090000.mmc                    unsupported                 0           SW
+gpu                             off-0                           0
+    2d000000.gpu                    suspended                   0           SW
+npu                             off-0                           0
+    26b02000.iommu                  suspended                   0           SW
+    26b00000.npu                    suspended                   0           SW
+
+GMAC1 UNBOUND; NVM0 ON; UP2 exclusively owns MAC/MDIO/PHY/DMA
+SHARED FABRIC CLOCKS PASS CRU42=0xf000
+up-a-m7-eth MMU {"table_pages": 9, "mapped_units": 48, "root": "0x7ba00000", "used_bytes": 36864, "budget_bytes": 65536, "rc": 0, "tcr": "0x80003520"}
+up-b-m7-eth MMU {"table_pages": 10, "mapped_units": 67, "root": "0x7ca00000", "used_bytes": 40960, "budget_bytes": 65536, "rc": 0, "tcr": "0x80003520"}
+UP2 COMMAND M7 run eth 0; log_seq=45
+UP2 COMMAND REPLY M7 UP2 ACCEPTED mask=0x8
+[integrated] M7 UP2 ACCEPTED mask=0x8
+[integrated] UP2 begin module=3 value=0
+[eth] begin profile=0 CRU42=0xf000
+[eth] own clocks/mux ready; entering NVM0 GRF
+[eth] RGMII/delay configured; resetting own MAC
+[eth] own clock/reset/mux complete; entering MDIO
+[eth] PHY id=0x7b744412 MAC version=0x5051
+[openamp] ept ready
+[boot] RPMsg ready
+[eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[integrated] UP2 end module=3 rc=0
+
+M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=1
+UP2 COMMAND M7 run eth 64; log_seq=58
+UP2 COMMAND REPLY M7 UP2 ACCEPTED mask=0x8
+PHYSICAL PEER PASS raw=64 tx=1000 rx=1000 bytes_each=64000 elapsed=1.001
+[integrated] M7 UP2 ACCEPTED mask=0x8
+[integrated] UP2 begin module=3 value=64
+[eth] begin profile=64 CRU42=0x3000
+[eth] own clocks/mux ready; entering NVM0 GRF
+[eth] RGMII/delay configured; resetting own MAC
+[eth] own clock/reset/mux complete; entering MDIO
+[eth] PHY id=0x7b744412 MAC version=0x5051
+[eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[eth] READY raw=64 count=1000 mac=02:55:50:32:00:02 DMA=0x7ca10000 polling
+[eth] PASS raw=64 rx=1000 tx=1000 rxbytes=64000 txbytes=64000 ignored=0 status=0xc04 rc=0
+[eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[integrated] UP2 end module=3 rc=0
+
+M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=2
+UP2 COMMAND M7 run eth 1514; log_seq=71
+UP2 COMMAND REPLY M7 UP2 ACCEPTED mask=0x8
+PHYSICAL PEER PASS raw=1514 tx=1000 rx=1000 bytes_each=1514000 elapsed=5.001
+[integrated] M7 UP2 ACCEPTED mask=0x8
+[integrated] UP2 begin module=3 value=1514
+[eth] begin profile=1514 CRU42=0x3000
+[eth] own clocks/mux ready; entering NVM0 GRF
+[eth] RGMII/delay configured; resetting own MAC
+[eth] own clock/reset/mux complete; entering MDIO
+[eth] PHY id=0x7b744412 MAC version=0x5051
+[eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[eth] READY raw=1514 count=1000 mac=02:55:50:32:00:02 DMA=0x7ca10000 polling
+[eth] PASS raw=1514 rx=1000 tx=1000 rxbytes=1514000 txbytes=1514000 ignored=1 status=0xc04 rc=0
+[eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[integrated] UP2 end module=3 rc=0
+
+M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=3
+FINAL LOG up-a
+[boot] UP CPU4 entered
+[boot] MMU PASS sctlr=0x30d01805 tables=9/16 mapped=48 ttbr=0x7ba00000
+[boot] interrupt routing ready
+[boot] scheduler task entered
+[integrated] UP1 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[openamp] get rsctable 7b257680, size a64 
+[openamp]: get vring0: da 7a080000
+[openamp]: get vring1: da 7a0800e0
+[openamp] tty task started
+[integrated] M7 UP1 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[openamp] ept ready
+[boot] RPMsg ready
+
+FINAL LOG up-b
+[boot] UP CPU5 entered
+[boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[boot] interrupt routing ready
+[boot] scheduler task entered
+[integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[openamp] get rsctable 7c257e50, size a64 
+[openamp]: get vring0: da 7a0a0000
+[openamp]: get vring1: da 7a0a00e0
+[openamp] tty task started
+[integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[integrated] M7 UP2 ACCEPTED mask=0x8
+[integrated] UP2 begin module=3 value=0
+[eth] begin profile=0 CRU42=0xf000
+[eth] own clocks/mux ready; entering NVM0 GRF
+[eth] RGMII/delay configured; resetting own MAC
+[eth] own clock/reset/mux complete; entering MDIO
+[eth] PHY id=0x7b744412 MAC version=0x5051
+[openamp] ept ready
+[boot] RPMsg ready
+[eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[integrated] UP2 end module=3 rc=0
+[integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=1
+[integrated] M7 UP2 ACCEPTED mask=0x8
+[integrated] UP2 begin module=3 value=64
+[eth] begin profile=64 CRU42=0x3000
+[eth] own clocks/mux ready; entering NVM0 GRF
+[eth] RGMII/delay configured; resetting own MAC
+[eth] own clock/reset/mux complete; entering MDIO
+[eth] PHY id=0x7b744412 MAC version=0x5051
+[eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[eth] READY raw=64 count=1000 mac=02:55:50:32:00:02 DMA=0x7ca10000 polling
+[eth] PASS raw=64 rx=1000 tx=1000 rxbytes=64000 txbytes=64000 ignored=0 status=0xc04 rc=0
+[eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[integrated] UP2 end module=3 rc=0
+[integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=2
+[integrated] M7 UP2 ACCEPTED mask=0x8
+[integrated] UP2 begin module=3 value=1514
+[eth] begin profile=1514 CRU42=0x3000
+[eth] own clocks/mux ready; entering NVM0 GRF
+[eth] RGMII/delay configured; resetting own MAC
+[eth] own clock/reset/mux complete; entering MDIO
+[eth] PHY id=0x7b744412 MAC version=0x5051
+[eth] MDIO/PHY PASS link=100-full bmsr=0x796d partner=0xcde1
+[eth] READY raw=1514 count=1000 mac=02:55:50:32:00:02 DMA=0x7ca10000 polling
+[eth] PASS raw=1514 rx=1000 tx=1000 rxbytes=1514000 txbytes=1514000 ignored=1 status=0xc04 rc=0
+[eth] QUIESCED reset=1 MAC=0x0 txctl=0x0 rxctl=0x0
+[integrated] UP2 end module=3 rc=0
+[integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=3
+
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CLEANUP PASS CPUs OFF, original instances Offline, Linux ETH2/3 restored, power hold removed, CAN/UART snapshot unchanged, ETH1/micad/boot unchanged
+OVERALL PASS UP2 direct Ethernet profile=frames; DMA polling, NOT IRQ/IP/throughput/coldboot acceptance

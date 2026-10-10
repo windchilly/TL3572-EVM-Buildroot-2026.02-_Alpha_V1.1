@@ -1,0 +1,39 @@
+struct clk *clk_get_parent(struct clk *clk)
+{
+	struct clk *parent;
+
+	if (!clk)
+		return NULL;
+
+	clk_prepare_lock();
+	/* TODO: Create a per-user clk and change callers to call clk_put */
+	parent = !clk->core->parent ? NULL : clk->core->parent->hw->clk;
+	clk_prepare_unlock();
+
+	return parent;
+struct clk *clk_hw_get_clk(struct clk_hw *hw, const char *con_id)
+{
+	struct device *dev = hw->core->dev;
+	const char *name = dev ? dev_name(dev) : NULL;
+
+	return clk_hw_create_clk(dev, hw, name, con_id);
+}
+EXPORT_SYMBOL(clk_hw_get_clk);
+
+static int clk_cpy_name(const char **dst_p, const char *src, bool must_exist)
+{
+	const char *dst;
+
+	if (!src) {
+		if (must_exist)
+			return -EINVAL;
+		return 0;
+	}
+
+	*dst_p = dst = kstrdup_const(src, GFP_KERNEL);
+	if (!dst)
+		return -ENOMEM;
+
+0x00000000	__clk_get_name	vmlinux	EXPORT_SYMBOL_GPL	
+0x00000000	__clk_get_hw	vmlinux	EXPORT_SYMBOL_GPL	
+0x00000000	clk_hw_get_clk	vmlinux	EXPORT_SYMBOL	

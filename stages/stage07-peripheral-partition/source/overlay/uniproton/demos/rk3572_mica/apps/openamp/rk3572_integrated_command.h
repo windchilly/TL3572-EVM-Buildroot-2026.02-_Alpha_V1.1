@@ -4,10 +4,12 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <string.h>
-#define M7_MODULES 3U
+#define M7_MODULES 4U
 #define M7_CAN_MASK 1U
 #define M7_RS232_MASK 2U
 #define M7_RS485_MASK 4U
+#define M7_ETH_MASK 8U
+/* Preserve 'all' as the three industrial tests; Ethernet requires explicit selection. */
 #define M7_ALL_MASK 7U
 #define M7_COMMAND_LIMIT 63U
 struct M7Command { uint32_t mask, value[M7_MODULES]; };
@@ -61,6 +63,8 @@ static inline int M7ParseCommand(const char *data, size_t length, struct M7Comma
             parsed.mask = M7_RS232_MASK; parsed.value[1] = value;
         } else if (!strcmp(tokens[2], "rs485") && M7BaudValid(value)) {
             parsed.mask = M7_RS485_MASK; parsed.value[2] = value;
+        } else if (!strcmp(tokens[2], "eth") && (value == 0U || value == 64U || value == 1514U)) {
+            parsed.mask = M7_ETH_MASK; parsed.value[3] = value;
         } else { return 0; }
     } else { return 0; }
     *command = parsed; return 1;

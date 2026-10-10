@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\.local-only\work\m7-can-irq-20261009\remote.py", line 14, in <module>
+    client.connect({"server": "10.100.60.226", "board": "192.168.2.141"}[options.host],
+  File "C:\Users\limew\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 364, in connect
+    sock.connect(addr)
+TimeoutError: timed out

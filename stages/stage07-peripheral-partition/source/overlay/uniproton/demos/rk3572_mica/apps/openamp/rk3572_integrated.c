@@ -31,7 +31,8 @@ static void Worker(uintptr_t index, uintptr_t unused1, uintptr_t unused2, uintpt
             PRT_Printf("[integrated] UP%u begin module=%u value=%u\n", MCS_CLIENT_CPU_ID - 3U, (U32)index, value);
             if (index == 0U) { ret = value == 1U ? Rk3572CanClassicTest() : Rk3572CanFdTest(value); }
             else if (index == 1U) { ret = Rk3572Rs232Test(value); }
-            else { ret = Rk3572Rs485Test(value); }
+            else if (index == 2U) { ret = Rk3572Rs485Test(value); }
+            else { ret = Rk3572EthTest(value); }
             lock = PRT_HwiLock();
             g_jobs[index].result = ret; g_jobs[index].running = 0U; g_jobs[index].completed++;
             PRT_HwiRestore(lock);
@@ -78,6 +79,9 @@ int Rk3572IntegratedInput(const char *data, size_t length)
     /* Ordinary M6 RPMsg echo stays compatible; commands occupy one bounded RPMsg record. */
     if (length < 3U || memcmp(data, "M7 ", 3U)) { return 0; }
     if (!M7ParseCommand(data, length, &command)) { error = "invalid-command"; }
+#if (MCS_CLIENT_CPU_ID != 5)
+    if (!error && (command.mask & M7_ETH_MASK)) { error = "eth-owned-by-UP2"; }
+#endif
     lock = PRT_HwiLock();
     for (i = 0U; i < M7_MODULES; i++) {
         pending |= g_jobs[i].pending << i; running |= g_jobs[i].running << i; results[i] = g_jobs[i].result;
@@ -98,9 +102,9 @@ int Rk3572IntegratedInput(const char *data, size_t length)
     else if (accepted) {
         size = snprintf(reply, sizeof(reply), "M7 UP%u ACCEPTED mask=0x%x\n", MCS_CLIENT_CPU_ID - 3U, accepted);
     } else {
-        size = snprintf(reply, sizeof(reply), "M7 UP%u ready=%u pending=0x%x running=0x%x rc=%u/%u/%u done=%u/%u/%u\n",
+        size = snprintf(reply, sizeof(reply), "M7 UP%u ready=%u pending=0x%x running=0x%x rc=%u/%u/%u done=%u/%u/%u eth_rc=%u eth_done=%u\n",
                         MCS_CLIENT_CPU_ID - 3U, g_ready, pending, running, results[0], results[1], results[2],
-                        completed[0], completed[1], completed[2]);
+                        completed[0], completed[1], completed[2], results[3], completed[3]);
     }
     if (size > 0 && size < (int)sizeof(reply)) {
         PRT_Printf("[integrated] %s", reply);

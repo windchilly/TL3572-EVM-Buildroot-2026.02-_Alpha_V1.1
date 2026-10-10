@@ -11,7 +11,7 @@ for task_cpu in 4 5; do
         -I "$task_stage/tests/integrated-stubs" -I "$task_app" \
         "$task_app/rk3572_integrated.c" "$task_stage/tests/test_integrated_dispatch.c" -o "$task_out/test-dispatch-$task_cpu"
     "$task_out/test-dispatch-$task_cpu"
-    for task_fail in 1 2 3; do
+    for task_fail in 1 2 3 4; do
         "$task_out/test-dispatch-$task_cpu" create "$task_fail"
         "$task_out/test-dispatch-$task_cpu" resume "$task_fail"
     done
@@ -20,4 +20,6 @@ for task_codec in test_rs232_codec test_can_fd_codec; do
     gcc -std=c11 -O2 -Wall -Wextra -Werror -I "$task_app" "$task_stage/tests/$task_codec.c" -o "$task_out/$task_codec"
     "$task_out/$task_codec"
 done
-echo "NATIVE VALIDATION PASS: parser + 14 dispatcher/lifecycle runs + 2 existing codecs; no MMIO"
+gcc -std=c11 -O2 -Wall -Wextra -Werror -I "$task_app" "$task_stage/tests/test_eth_codec.c" -o "$task_out/test-eth"
+"$task_out/test-eth"
+echo "NATIVE VALIDATION PASS: parser + 18 dispatcher/lifecycle runs + 3 codecs; no MMIO"

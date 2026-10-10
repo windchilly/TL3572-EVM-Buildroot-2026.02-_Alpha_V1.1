@@ -1,0 +1,10 @@
+make: Entering directory '/home/openeuler/build/tl3572-2oo3/kernel-src-pristine'
+make[1]: Entering directory '/home/openeuler/build/tl3572-2oo3/build-kernel'
+  CC [M]  /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold/m7_eth2_power_hold.o
+  MODPOST /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold/Module.symvers
+  CC [M]  /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold/m7_eth2_power_hold.mod.o
+  CC [M]  /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold/.module-common.o
+  LD [M]  /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold/m7_eth2_power_hold.ko
+make[1]: Leaving directory '/home/openeuler/build/tl3572-2oo3/build-kernel'
+make: Leaving directory '/home/openeuler/build/tl3572-2oo3/kernel-src-pristine'
+2d4d6611134259edd288ba4b58f5dc2f14765f8799951aea5bc438db92da20d3  /home/openeuler/build/tl3572-2oo3/build-m7-eth2-power-hold/m7_eth2_power_hold.ko

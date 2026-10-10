@@ -6,8 +6,8 @@
 #include <string.h>
 #include "prt_task.h"
 #include "rk3572_integrated.h"
-static struct TskInitParam tasks[3];
-static unsigned created, resumed, deleted, failCreate, failResume, calls[4], lastValue[3];
+static struct TskInitParam tasks[4];
+static unsigned created, resumed, deleted, failCreate, failResume, calls[5], lastValue[4];
 static char reply[200];
 static jmp_buf workerExit;
 uintptr_t PRT_HwiLock(void) { return 0U; }
@@ -18,7 +18,7 @@ int send_message(unsigned char *message, int length)
 U32 PRT_TaskCreate(TskHandle *task, struct TskInitParam *param)
 {
     if (failCreate && created + 1U == failCreate) { return 101U; }
-    assert(created < 3U && param->stackSize == 0x4000U && !(param->stackAddr & 15U));
+    assert(created < 4U && param->stackSize == 0x4000U && !(param->stackAddr & 15U));
     tasks[created] = *param; *task = created++; return 0U;
 }
 U32 PRT_TaskResume(TskHandle task) { assert(task < created); resumed++; return resumed == failResume ? 102U : 0U; }
@@ -28,6 +28,7 @@ U32 Rk3572CanClassicTest(void) { calls[0]++; lastValue[0] = 1U; return 0U; }
 U32 Rk3572CanFdTest(U32 profile) { calls[1]++; lastValue[0] = profile; return 0U; }
 U32 Rk3572Rs232Test(U32 baud) { calls[2]++; lastValue[1] = baud; return 0U; }
 U32 Rk3572Rs485Test(U32 baud) { calls[3]++; lastValue[2] = baud; return 17U; }
+U32 Rk3572EthTest(U32 length) { calls[4]++; lastValue[3] = length; return 0U; }
 static void input(const char *text, const char *expected)
 { assert(Rk3572IntegratedInput(text, strlen(text))); assert(strstr(reply, expected)); }
 static void worker(unsigned index)
@@ -45,7 +46,7 @@ int main(int argc, char **argv)
         assert(!calls[0] && !calls[1] && !calls[2] && !calls[3]);
         puts("INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution"); return 0;
     }
-    assert(!Rk3572IntegratedInit() && !Rk3572IntegratedInit() && created == 3U && resumed == 3U);
+    assert(!Rk3572IntegratedInit() && !Rk3572IntegratedInit() && created == 4U && resumed == 4U);
     assert(!calls[0] && !calls[1] && !calls[2] && !calls[3]);
     input("M7 status", "pending=0x0 running=0x0 rc=0/0/0 done=0/0/0");
     assert(!Rk3572IntegratedInput("ordinary echo", 13U));
@@ -63,6 +64,16 @@ int main(int argc, char **argv)
     input("M7 status", "pending=0x0 running=0x0 rc=0/0/17 done=2/1/1");
     input("M7 run rs232 9600", "ACCEPTED mask=0x2");
     worker(1); assert(calls[2] == 2U && lastValue[1] == 9600U);
+    assert(!calls[4]); /* 'all' must never queue Ethernet. */
+#if (MCS_CLIENT_CPU_ID == 5)
+    input("M7 run eth 64", "ACCEPTED mask=0x8");
+    input("M7 run eth 0", "ERROR busy");
+    worker(3); assert(calls[4] == 1U && lastValue[3] == 64U);
+    input("M7 status", "eth_rc=0 eth_done=1");
+#else
+    input("M7 run eth 64", "ERROR eth-owned-by-UP2");
+    worker(3); assert(!calls[4]);
+#endif
     puts("INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status");
     return 0;
 }

@@ -1,0 +1,204 @@
+Linux tl3572-openeuler 6.12.69-gf1b67c293213 #1 SMP Mon Sep 21 03:23:13 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+a10d48bb-941b-4e25-9df2-2969e81cfcba
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+can0             DOWN           
+can1             DOWN           
+can2             DOWN           
+can3             DOWN           
+eth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 
+eth1             UP             fe80::d814:36ff:fe8b:78f0/64 
+eth2             UP             fe80::2e0:9aff:fe42:baeb/64 
+default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 
+192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 
+192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 
+Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+MainPID=319
+NRestarts=0
+ActiveState=active
+domain                          status          children        performance
+    /device                         runtime status                  managed by
+------------------------------------------------------------------------------
+nvm0                            on                              0
+    2a010000.mmc                    active                      0           SW
+    2a040000.ethernet               active                      0           SW
+vo                              on                              0
+    276d0000.dsi                    suspended                   0           SW
+    27610000.sai                    suspended                   0           SW
+    27680000.hdmi                   active                      0           SW
+vop_pre                         on                              0
+    27500000.vop                    suspended                   0           SW
+vop                             on                              0
+                                                vop_pre, vo, nvm0
+venc                            off-0                           0
+    2720f000.iommu                  suspended                   0           SW
+    27200000.rkvenc                 suspended                   0           SW
+vi                              off-0                           0
+                                                venc
+    27400f00.iommu                  suspended                   0           SW
+    27427f00.iommu                  suspended                   0           SW
+    27433f00.iommu                  suspended                   0           SW
+    27400000.rkcif                  suspended                   0           SW
+    27420000.isp                    suspended                   0           SW
+    27430000.vpss                   suspended                   0           SW
+vdec                            off-0                           0
+    27300800.iommu                  suspended                   0           SW
+    27300100.rkvdec                 suspended                   0           SW
+img                             on                              0
+    27110f00.iommu                  suspended                   0           SW
+    27120f00.iommu                  suspended                   0           SW
+    27130800.iommu                  suspended                   0           SW
+    27120000.rga                    suspended                   0           SW
+    27130000.iep                    suspended                   0           SW
+    27110000.jpegd                  suspended                   0           SW
+    27110800.jpege                  suspended                   0           SW
+    27131000.vdpp                   suspended                   0           SW
+audio                           off-0                           0
+    2a500000.sai                    suspended                   0           SW
+php                             on                              0
+    24000000.usb                    active                      0           SW
+    24400000.usb                    active                      0           SW
+    29d20000.ethernet               active                      0           SW
+dsmc                            off-0                           0
+nvm1                            on                              0
+    2a090000.mmc                    unsupported                 0           SW
+gpu                             off-0                           0
+    2d000000.gpu                    suspended                   0           SW
+npu                             off-0                           0
+    26b02000.iommu                  suspended                   0           SW
+    26b00000.npu                    suspended                   0           SW
+../../../../bus/platform/drivers/rk_gmac-dwmac
+da:14:36:8b:78:f0
+00:e0:9a:42:ba:eb
+100
+100
+          aclk_nvm0_root             2       2        0        297000000   0          0     50000      Y            deviceless                      no_connection_id         
+             aclk_gmac1              1       2        0        297000000   0          0     50000      Y               2a040000.ethernet               aclk_mac                 
+                                                                                                                       ethernet@2a040000               no_connection_id         
+             aclk_gmac0              1       2        0        297000000   0          0     50000      Y               29d20000.ethernet               aclk_mac                 
+                                                                                                                       ethernet@29d20000               no_connection_id         
+             hclk_nvm0_root          1       1        0        198000000   0          0     50000      Y               deviceless                      no_connection_id         
+          clk_gmac1_ptp_ref_src      1       1        0        62500000    0          0     50000      Y            deviceless                      no_connection_id         
+             clk_gmac1_ptp_ref       1       2        0        62500000    0          0     50000      Y               2a040000.ethernet               ptp_ref                  
+                                                                                                                       ethernet@2a040000               no_connection_id         
+          clk_gmac0_ptp_ref_pre      1       1        0        62500000    0          0     50000      Y            deviceless                      no_connection_id         
+             clk_gmac0_ptp_ref_src   1       2        0        62500000    0          0     50000      Y               29d20000.ethernet               ptp_ref                  
+                                                                                                                       ethernet@29d20000               no_connection_id         
+          refclko25m_gmac1_out       1       1        0        25000000    0          0     50000      Y            phy@1                           no_connection_id         
+          refclko25m_gmac0_out       1       1        0        25000000    0          0     50000      Y            phy@0                           no_connection_id         
+          clk_gmac1_125m_src         1       2        0        125000000   0          0     50000      Y            2a040000.ethernet               stmmaceth                
+                                                                                                                    2a040000.ethernet               stmmaceth                
+                                                                                                                    ethernet@2a040000               no_connection_id         
+          clk_gmac0_125m_src         1       2        0        125000000   0          0     50000      Y            29d20000.ethernet               stmmaceth                
+                                                                                                                    29d20000.ethernet               stmmaceth                
+                                                                                                                    ethernet@29d20000               no_connection_id         
+             pclk_nvm0_root          1       2        0        100000000   0          0     50000      Y               syscon@2602a000                 no_connection_id         
+                pclk_gmac1           2       3        0        100000000   0          0     50000      Y                  2a040000.ethernet               pclk_mac                 
+                                                                                                                          2a040000.ethernet               pclk_mac                 
+                                                                                                                          ethernet@2a040000               no_connection_id         
+                pclk_gmac0           2       3        0        100000000   0          0     50000      Y                  29d20000.ethernet               pclk_mac                 
+                                                                                                                          29d20000.ethernet               pclk_mac                 
+                                                                                                                          ethernet@29d20000               no_connection_id         
+             clk_gmac1_rmii_cru      0       1        0        50000000    0          0     50000      N               ethernet@2a040000               no_connection_id         
+             clk_gmac0_rmii_cru      0       1        0        50000000    0          0     50000      N               ethernet@29d20000               no_connection_id         
+           CPU0       CPU1       CPU2       CPU3       CPU6       CPU7       
+  9:          0          0          0          0          0          0     GICv2   8 Edge      MCS IPI8
+ 10:          0          0          0          0          0          0     GICv2   9 Edge      MCS IPI9
+ 13:       1633       1214       1024        845        767        885     GICv2  30 Level     arch_timer
+ 16:        965        675        474        441         85        167     GICv2  59 Level     rk_timer
+ 37:          0          0          0          0          0          0     GICv2 372 Edge      debug-signal
+ 38:          0          0          0          0          0          0     GICv2 156 Level     debug
+ 39:          1          0          0          0          0          0     GICv2 120 Level     rockchip_thermal
+ 40:          0          0          0          0          0          0     GICv2 322 Level     rockchip_usb2phy_ls
+ 41:          0          0          0          0          0          0     GICv2 320 Level     rockchip_usb2phy_bvalid
+ 42:          0          0          0          0          0          0     GICv2 321 Level     rockchip_usb2phy_id
+ 43:          0          0          0          0          0          0     GICv2 327 Level     rockchip_usb2phy_ls
+ 44:          0          0          0          0          0          0     GICv2 172 Level     rk_pwm_irq
+ 45:          0          0          0          0          0          0     GICv2 175 Level     rk_pwm_irq
+ 46:          0          0          0          0          0          0     GICv2 190 Level     2bfe0000.dma-controller
+ 47:          0          0          0          0          0          0     GICv2 191 Level     2bff0000.dma-controller
+ 48:          0          0          0          0          0          0     GICv2 192 Level     2c000000.dma-controller
+ 49:          0          0          0          0          0          0     GICv2 193 Level     2c010000.dma-controller
+ 54:          0          0          0          0          0          0     GICv2 220 Level     26b02000.iommu, 26b00000.npu
+ 55:          0          0          0          0          0          0     GICv2 229 Level     27110f00.iommu
+ 56:          0          0          0          0          0          0     GICv2 226 Level     27120f00.iommu, rga2
+ 57:          0          0          0          0          0          0     GICv2 230 Level     27130800.iommu, 27130000.iep, 27131000.vdpp
+ 58:          0          0          0          0          0          0     GICv2 223 Level     2720f000.iommu
+ 59:          0          0          0          0          0          0     GICv2 221 Level     27300800.iommu
+ 60:          0          0          0          0          0          0     GICv2 242 Level     27400f00.iommu
+ 61:          0          0          0          0          0          0     GICv2 246 Level     27427f00.iommu
+ 62:          0          0          0          0          0          0     GICv2 249 Level     27433f00.iommu
+ 63:          0          0          0          0          0          0     GICv2 361 Level     27507e00.iommu, 27500000.vop
+ 64:          6          0          0          0          0          0     GICv2 135 Level     2c120000.spi
+ 65:          0          0          0          0          0          0     GICv2 184 Level     can0
+ 66:          0          0          0          0          0          0     GICv2 185 Level     can1
+ 67:          0          0          0          0          0          0     GICv2 186 Level     can2
+ 68:          0          0          0          0          0          0     GICv2 187 Level     can3
+ 70:       1773          0          0          0          0          0     GICv2 286 Level     xhci-hcd:usb1
+ 71:          0          0          0          0          0          0  rockchip_gpio_irq   4 Edge      ads7846
+ 72:        228          0          0          0          0          0     GICv2 121 Level     26520000.i2c
+ 73:          0          0          0          0          0          0  rockchip_gpio_irq   6 Level     rk806
+ 74:          0          0          0          0          0          0     rk806   0 Edge      rk805_pwrkey_fall
+ 75:          0          0          0          0          0          0     rk806   1 Edge      rk805_pwrkey_rise
+ 76:        186          0          0          0          0          0     GICv2 122 Level     2c030000.i2c
+ 77:          0          0          0          0          0          0     GICv2 126 Level     2c070000.i2c
+ 79:         74          0          0          0          0          0     GICv2 127 Level     2c080000.i2c
+ 81:          0          0          0          0          0          0     GICv2 240 Level     rkcifhw
+ 82:          0          0          0          0          0          0     GICv2 232 Level     rockchip-mipi-csi2-hw
+ 83:          0          0          0          0          0          0     GICv2 233 Level     rockchip-mipi-csi2-hw
+ 84:          0          0          0          0          0          0     GICv2 234 Level     rockchip-mipi-csi2-hw
+ 85:          0          0          0          0          0          0     GICv2 235 Level     rockchip-mipi-csi2-hw
+ 86:          0          0          0          0          0          0     GICv2 236 Level     rockchip-mipi-csi2-hw
+ 87:          0          0          0          0          0          0     GICv2 237 Level     rockchip-mipi-csi2-hw
+ 88:          0          0          0          0          0          0     GICv2 238 Level     rockchip-mipi-csi2-hw
+ 89:          0          0          0          0          0          0     GICv2 239 Level     rockchip-mipi-csi2-hw
+ 90:          0          0          0          0          0          0     GICv2 245 Level     rkisp_hw
+ 91:          0          0          0          0          0          0     GICv2 244 Level     rkisp_hw
+ 92:          0          0          0          0          0          0     GICv2 243 Level     rkisp_hw
+ 93:          0          0          0          0          0          0     GICv2 248 Level     rkvpss_hw
+ 94:          0          0          0          0          0          0     GICv2 247 Level     rkvpss_hw
+ 95:          0          0          0          0          0          0     GICv2 276 Level     dw-mci
+ 96:       1466          0          0          0          0          0     GICv2 275 Level     mmc0
+ 97:          0          0          0          0          0          0     GICv2 197 Level     2a100000.crypto
+ 98:        464          0          0          0          0          0     GICv2 189 Level     2c1e0000.adc
+ 99:          0          0          0          0          0          0     GICv2  49 Level     arm-pmu
+100:          0          0          0          0          0          0     GICv2  50 Level     arm-pmu
+101:          0          0          0          0          0          0     GICv2  51 Level     arm-pmu
+102:          0          0          0          0          0          0     GICv2  52 Level     arm-pmu
+103:          0          0          0          0          0          0     GICv2  47 Level     arm-pmu
+104:          0          0          0          0          0          0     GICv2  48 Level     arm-pmu
+105:          0          0          0          0          0          0     GICv2  45 Level     arm-pmu
+106:          0          0          0          0          0          0     GICv2  46 Level     arm-pmu
+107:          0          0          0          0          0          0     GICv2 211 Level     sai
+108:          0          0          0          0          0          0     GICv2 207 Level     sai
+109:          0          0          0          0          0          0  rockchip_gpio_irq  12 Edge      headset_detect
+113:          0          0          0          0          0          0     GICv2 228 Level     27110000.jpegd
+115:          0          0          0          0          0          0     GICv2 227 Level     27110800.jpege
+116:          0          0          0          0          0          0     GICv2 222 Level     27300100.rkvdec
+117:          0          0          0          0          0          0     GICv2 224 Level     27200000.rkvenc
+118:          0          0          0          0          0          0     GICv2 360 Level     27500000.vop
+119:          0          0          0          0          0          0     GICv2 359 Level     27500000.vop
+120:          1          0          0          0          0          0     GICv2 256 Level     dw-hdmi-qp-hpd
+121:          0          0          0          0          0          0     GICv2 252 Level     27680000.hdmi
+122:          0          0          0          0          0          0     GICv2 254 Level     27680000.hdmi
+123:          0          0          0          0          0          0     GICv2 255 Level     27680000.hdmi
+124:          1          0          0          0          0          0     GICv2 365 Level     2d000000.gpu
+125:          1          0          0          0          0          0     GICv2 364 Level     2d000000.gpu
+126:          3          0          0          0          0          0     GICv2 366 Level     2d000000.gpu
+127:         38          0          0          0          0          0     GICv2 260 Level     eth0
+128:          0          0          0          0          0          0     GICv2 265 Level     eth0
+129:         13          0          0          0          0          0     GICv2 268 Level     eth1
+130:          0          0          0          0          0          0     GICv2 273 Level     eth1
+131:          8          0          0          0          0          0  rockchip_gpio_irq   8 Level     husb311
+132:          5          0          0          0          0          0     GICv2  96 Level     dmc
+133:          0          0          0          0          0          0  rockchip_gpio_irq   0 Edge      user-key1
+IPI0:       178        119        178        170         78         69       Rescheduling interrupts
+IPI1:      1386       1739       1420       1449       1332       1313       Function call interrupts
+IPI2:         0          0          0          0          0          0       CPU stop interrupts
+IPI3:         0          0          0          0          0          0       CPU stop NMIs
+IPI4:       104        157        169        149         34         87       Timer broadcast interrupts
+IPI5:         0          0          0          0          0          0       IRQ work interrupts
+IPI6:         0          0          0          0          0          0       CPU backtrace interrupts
+IPI7:         0          0          0          0          0          0       KGDB roundup interrupts
+Err:          0

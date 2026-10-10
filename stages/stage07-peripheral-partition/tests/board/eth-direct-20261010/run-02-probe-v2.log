@@ -1,0 +1,86 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+BASELINE boot=a10d48bb-941b-4e25-9df2-2969e81cfcba micad={'MainPID': '319', 'NRestarts': '0', 'ActiveState': 'active'} ETH1 management untouched
+POWER HOLD
+domain                          status          children        performance
+    /device                         runtime status                  managed by
+------------------------------------------------------------------------------
+nvm0                            on                              0
+    2a010000.mmc                    active                      0           SW
+    2a040000.ethernet               active                      0           SW
+    m7-eth2-power-hold              active                      0           SW
+vo                              on                              0
+    276d0000.dsi                    suspended                   0           SW
+    27610000.sai                    suspended                   0           SW
+    27680000.hdmi                   active                      0           SW
+vop_pre                         off-0                           0
+    27500000.vop                    suspended                   0           SW
+vop                             on                              0
+                                                vop_pre, vo, nvm0
+venc                            off-0                           0
+    2720f000.iommu                  suspended                   0           SW
+    27200000.rkvenc                 suspended                   0           SW
+vi                              off-0                           0
+                                                venc
+    27400f00.iommu                  suspended                   0           SW
+    27427f00.iommu                  suspended                   0           SW
+    27433f00.iommu                  suspended                   0           SW
+    27400000.rkcif                  suspended                   0           SW
+    27420000.isp                    suspended                   0           SW
+    27430000.vpss                   suspended                   0           SW
+vdec                            off-0                           0
+    27300800.iommu                  suspended                   0           SW
+    27300100.rkvdec                 suspended                   0           SW
+img                             off-0                           0
+    27110f00.iommu                  suspended                   0           SW
+    27120f00.iommu                  suspended                   0           SW
+    27130800.iommu                  suspended                   0           SW
+    27120000.rga                    suspended                   0           SW
+    27130000.iep                    suspended                   0           SW
+    27110000.jpegd                  suspended                   0           SW
+    27110800.jpege                  suspended                   0           SW
+    27131000.vdpp                   suspended                   0           SW
+audio                           off-0                           0
+    2a500000.sai                    suspended                   0           SW
+php                             on                              0
+    24000000.usb                    active                      0           SW
+    24400000.usb                    active                      0           SW
+    29d20000.ethernet               active                      0           SW
+dsmc                            off-0                           0
+nvm1                            on                              0
+    2a090000.mmc                    unsupported                 0           SW
+gpu                             off-0                           0
+    2d000000.gpu                    suspended                   0           SW
+npu                             off-0                           0
+    26b02000.iommu                  suspended                   0           SW
+    26b00000.npu                    suspended                   0           SW
+
+GMAC1 UNBOUND; NVM0 ON; UP2 exclusively owns MAC/MDIO/PHY/DMA
+up-a-m7-eth MMU {"table_pages": 9, "mapped_units": 48, "root": "0x7ba00000", "used_bytes": 36864, "budget_bytes": 65536, "rc": 0, "tcr": "0x80003520"}
+up-b-m7-eth MMU {"table_pages": 10, "mapped_units": 67, "root": "0x7ca00000", "used_bytes": 40960, "budget_bytes": 65536, "rc": 0, "tcr": "0x80003520"}
+Traceback (most recent call last):
+  File "C:\Users\limew\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\channel.py", line 697, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\limew\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\buffered_pipe.py", line 154, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\.local-only\work\m7-can-irq-20261009\remote.py", line 24, in <module>
+    for line in stdout:
+                ^^^^^^
+  File "C:\Users\limew\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\file.py", line 109, in __next__
+    line = self.readline()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\limew\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\file.py", line 275, in readline
+    new_data = self._read(n)
+               ^^^^^^^^^^^^^
+  File "C:\Users\limew\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\channel.py", line 1359, in _read
+    return self.channel.recv(size)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\limew\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\channel.py", line 699, in recv
+    raise socket.timeout()
+TimeoutError
