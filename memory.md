@@ -1,5 +1,24 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-10 POWERLINK 当前入口：用户要求开始流程，明确选择 UP2 做 MN 主站控制外部设备。
+新增 stages/stage07-peripheral-partition/source/powerlink 完整V2.7.2归档1355文件（无submodule），
+commit048650a80db37fa372330c3a900d2c8edb327e47，tar6062267B/SHA d342b8cd...。
+P0仅portable MN核心：两逻辑层均在UP2，direct/local/noos CAL、MN/PDO/ASnd-SDO/CFM，
+无Socket/UDP/veth/fileconfig/冗余；CDC后续由内存提供。targetdefs为LP64/小端，不提供硬件HAL。
+整数范围检查保留，REAL32/64范围检查显式拒绝（不改数据），无范围浮点对象可原始字节搬运。
+容器 /home/openeuler/build/powerlink-mn-p0-20261010/stage，build-checked和build-checked-repro
+两次全新解包/编译72个BSD文件头上游C，AArch64/GCC14.3/A53/general-regs-only/strict-align。
+静态库634932B，SHA d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b，
+完整.a和合并.o均逐字节一致。原工具链ar含时间戳，已强制ar/ranlib确定性D选项。
+native两C测试：真实NMT21状态变化/错误/复位/冲突MN；OD整数范围与浮点范围拒绝。
+Windows67 Python（原55+新12）、容器新12通过；依赖/指令审计25 HAL+8libc未解析，
+没有Linux/socket/pcap/pthread/fileIO/libatomic或FP/SIMD。未提供返回成功的假HAL。
+旧上游fallthrough/array-bounds告警未修，原始失败及告警完整保留，不能称零告警/生产认证。
+没有SSH/串口连接板卡、物理发送/解绑/调PHY/重启/刷写，正式累计两ELF及原M6/DT不变。
+P0不等于可运行MN；P1通用EDRV/半双工，P2RTOS与高精度timer，P3累计UP2接入，P4隔离CN/集成回归待做。
+下一入口 docs/m7.0-powerlink-mn-roadmap.md，证据tests/powerlink-mn-p0-20261010/README.md。
+GitHub同步结果以当轮最终报告为准；此前所有CAN/UART“接线改变，先不要发送”仍有效。
+
 2026-10-10 最新入口：用户确认COM7一直存在并人工重启板卡，已恢复并完成V3 ETH2/UP2直驱切片。
 pyserial实际打开COM7/115200 8N1，UART0发送一个回车得到Linux登录提示并持续抓取；不占工控UART。
 新boot_id=fa41fc54-86a5-46f4-84a0-d2e820e1ef17，micad PID322/NRestarts0，taint4096/noTAINT_DIE。

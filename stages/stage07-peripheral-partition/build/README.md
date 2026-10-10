@@ -1,5 +1,12 @@
 # M7 构建输入与 RPC 修复复建
 
+## POWERLINK MN 核心软件准备入口（2026-10-10）
+
+`build_m7_powerlink_core.sh` 固定解包完整上游源码，运行无硬件原生 NMT/OD 检查，
+编译并审计 AArch64 核心库；使用独立 `POWERLINK_BUILD_ROOT`，拒绝覆盖。
+这是 P0，不提供硬件 HAL、不部署/发送、不替换累计 ELF。
+参见[源码入口](../source/powerlink/README.md)与[实际记录](../tests/powerlink-mn-p0-20261010/README.md)。
+
 ## ETH3 主机电源恢复
 
 2026-10-09新增`source/host/eth3_power_enable.py`、`m7-eth3-power.service`与

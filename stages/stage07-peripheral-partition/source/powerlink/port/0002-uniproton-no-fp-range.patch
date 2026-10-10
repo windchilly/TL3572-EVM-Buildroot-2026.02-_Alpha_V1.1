@@ -1,0 +1,39 @@
+diff --git a/stack/src/user/obd/obdu.c b/stack/src/user/obd/obdu.c
+--- a/stack/src/user/obd/obdu.c
++++ b/stack/src/user/obd/obdu.c
+@@ -3080,6 +3080,7 @@
+             break;
+ 
+         case kObdTypeReal32:
++#if !defined(OPLK_TARGET_UNIPROTON)
+             pRangeData = ((const tObdReal32*)pRangeData) + 1;       // switch to lower limit
+             if (*((const tObdReal32*)pData_p) < *((const tObdReal32*)pRangeData))
+             {
+@@ -3092,6 +3093,9 @@
+             {
+                 ret = kErrorObdValueTooHigh;
+             }
++#else
++            ret = kErrorObdUnknownObjectType;
++#endif
+             break;
+ 
+         case kObdTypeInt40:
+@@ -3131,6 +3135,7 @@
+             break;
+ 
+         case kObdTypeReal64:
++#if !defined(OPLK_TARGET_UNIPROTON)
+             pRangeData = ((const tObdReal64*)pRangeData) + 1;       // switch to lower limit
+             if (*((const tObdReal64*)pData_p) < *((const tObdReal64*)pRangeData))
+             {
+@@ -3143,6 +3148,9 @@
+             {
+                 ret = kErrorObdValueTooHigh;
+             }
++#else
++            ret = kErrorObdUnknownObjectType;
++#endif
+             break;
+ 
+         case kObdTypeTimeOfDay:

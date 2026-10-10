@@ -1,0 +1,63 @@
+P0_FINAL_BYTE_IDENTICAL_STATIC_LIBRARY_AND_MERGED_OBJECT
+d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b  /home/openeuler/build/powerlink-mn-p0-20261010/build-checked/aarch64/libm7_powerlink_mn_core.a
+d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b  /home/openeuler/build/powerlink-mn-p0-20261010/build-checked-repro/aarch64/libm7_powerlink_mn_core.a
+-- The C compiler identification is GNU 12.3.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc - broken
+-- Configuring incomplete, errors occurred!
+test_directory (test_powerlink_source.PowerlinkArchiveTests.test_directory) ... ok
+test_duplicate (test_powerlink_source.PowerlinkArchiveTests.test_duplicate) ... ok
+test_existing_destination_refused (test_powerlink_source.PowerlinkArchiveTests.test_existing_destination_refused) ... ok
+test_file_count (test_powerlink_source.PowerlinkArchiveTests.test_file_count) ... ok
+test_regular_file (test_powerlink_source.PowerlinkArchiveTests.test_regular_file) ... ok
+test_special_files (test_powerlink_source.PowerlinkArchiveTests.test_special_files) ... ok
+test_unsafe_paths (test_powerlink_source.PowerlinkArchiveTests.test_unsafe_paths) ... ok
+test_expected_boundary (test_powerlink_source.PowerlinkAuditTests.test_expected_boundary) ... ok
+test_fake_hal_success_rejected (test_powerlink_source.PowerlinkAuditTests.test_fake_hal_success_rejected) ... ok
+test_fp_simd_instructions_rejected (test_powerlink_source.PowerlinkAuditTests.test_fp_simd_instructions_rejected) ... ok
+test_integer_instructions_accepted (test_powerlink_source.PowerlinkAuditTests.test_integer_instructions_accepted) ... ok
+test_linux_or_atomic_dependency_rejected (test_powerlink_source.PowerlinkAuditTests.test_linux_or_atomic_dependency_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.023s
+
+OK
+CMake Error at /usr/share/cmake/Modules/CMakeTestCCompiler.cmake:67 (message):
+  The C compiler
+
+    "/usr/bin/cc"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: '/home/openeuler/build/powerlink-mn-p0-20261010/native-sanitized/CMakeFiles/CMakeScratch/TryCompile-uF2sw7'
+    
+    Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fcb54/fast
+    /usr/bin/gmake  -f CMakeFiles/cmTC_fcb54.dir/build.make CMakeFiles/cmTC_fcb54.dir/build
+    gmake[1]: Entering directory '/home/openeuler/build/powerlink-mn-p0-20261010/native-sanitized/CMakeFiles/CMakeScratch/TryCompile-uF2sw7'
+    Building C object CMakeFiles/cmTC_fcb54.dir/testCCompiler.c.o
+    /usr/bin/cc   -fsanitize=address,undefined -fno-omit-frame-pointer  -o CMakeFiles/cmTC_fcb54.dir/testCCompiler.c.o -c /home/openeuler/build/powerlink-mn-p0-20261010/native-sanitized/CMakeFiles/CMakeScratch/TryCompile-uF2sw7/testCCompiler.c
+    Linking C executable cmTC_fcb54
+    /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fcb54.dir/link.txt --verbose=1
+    /usr/bin/cc -fsanitize=address,undefined -fno-omit-frame-pointer  CMakeFiles/cmTC_fcb54.dir/testCCompiler.c.o -o cmTC_fcb54 
+    /usr/bin/ld: cannot find -lasan: No such file or directory
+    /usr/bin/ld: cannot find -lubsan: No such file or directory
+    collect2: error: ld returned 1 exit status
+    gmake[1]: *** [CMakeFiles/cmTC_fcb54.dir/build.make:99: cmTC_fcb54] Error 1
+    gmake[1]: Leaving directory '/home/openeuler/build/powerlink-mn-p0-20261010/native-sanitized/CMakeFiles/CMakeScratch/TryCompile-uF2sw7'
+    gmake: *** [Makefile:127: cmTC_fcb54/fast] Error 2
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+
+REMOTE_EXIT_CODE=1

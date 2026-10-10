@@ -1,0 +1,12 @@
+error: patch failed: stack/include/oplk/targetsystem.h:144
+error: stack/include/oplk/targetsystem.h: patch does not apply
+Traceback (most recent call last):
+  File "/home/openeuler/build/powerlink-mn-p0-20261010/stage/build/prepare_m7_powerlink.py", line 64, in <module>
+    prepare(args.destination)
+  File "/home/openeuler/build/powerlink-mn-p0-20261010/stage/build/prepare_m7_powerlink.py", line 54, in prepare
+    subprocess.run(["git", "apply", "--check", str(patch)], cwd=tree, check=True)
+  File "/usr/lib64/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'apply', '--check', '/home/openeuler/build/powerlink-mn-p0-20261010/stage/source/powerlink/port/0001-uniproton-target-selection.patch']' returned non-zero exit status 1.
+
+REMOTE_EXIT_CODE=1

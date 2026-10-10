@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/OpenAutomationTechnologies/openPOWERLINK_V2.git",
+  "tag": "V2.7.2",
+  "commit": "048650a80db37fa372330c3a900d2c8edb327e47",
+  "tree": "0d33af5588578055f5f112167170c67115a19d13",
+  "archive": "upstream/openPOWERLINK_V2-2.7.2.tar.gz",
+  "archive_prefix": "openPOWERLINK_V2-2.7.2",
+  "archive_sha256": "d342b8cd2b8a743a077c3b8cd1e262f0d6f9f8a5f0d8b49f4b14197e945fa381",
+  "archive_bytes": 6062267,
+  "files": 1355,
+  "role": "MN",
+  "owner": "UP2",
+  "interface": "ETH2 / GMAC1",
+  "phase": "P0 portable core only; no hardware HAL or board deployment"
+}

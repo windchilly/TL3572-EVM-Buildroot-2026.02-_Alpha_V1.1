@@ -1,0 +1,13 @@
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR aarch64)
+if(NOT DEFINED ENV{TOOLCHAIN_PATH})
+    message(FATAL_ERROR "Export TOOLCHAIN_PATH (fixed RK3572 GCC 14.3 directory)")
+endif()
+set(CMAKE_C_COMPILER "$ENV{TOOLCHAIN_PATH}/bin/aarch64-none-elf-gcc")
+set(CMAKE_AR "$ENV{TOOLCHAIN_PATH}/bin/aarch64-none-elf-ar")
+set(CMAKE_RANLIB "$ENV{TOOLCHAIN_PATH}/bin/aarch64-none-elf-ranlib")
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+# This bundled ar defaults to timestamped archives; make full .a reproducible.
+set(CMAKE_C_ARCHIVE_CREATE "<CMAKE_AR> qcD <TARGET> <LINK_FLAGS> <OBJECTS>")
+set(CMAKE_C_ARCHIVE_APPEND "<CMAKE_AR> qD <TARGET> <LINK_FLAGS> <OBJECTS>")
+set(CMAKE_C_ARCHIVE_FINISH "<CMAKE_RANLIB> -D <TARGET>")

@@ -1,0 +1,26 @@
+diff --git a/stack/include/oplk/targetsystem.h b/stack/include/oplk/targetsystem.h
+--- a/stack/include/oplk/targetsystem.h
++++ b/stack/include/oplk/targetsystem.h
+@@ -144,7 +144,10 @@
+ //------------------------------------------------------------------------------
+ // GNU C compiler
+ //------------------------------------------------------------------------------
+-#if (defined(LINUX) || defined(__linux__))                  // x86 / Linux
++#if defined(OPLK_TARGET_UNIPROTON)
++#define TARGET_SYSTEM   _NO_OS_
++#define DEV_SYSTEM      (_DEV_BIT64_ | _DEV_LINUX_GCC_ | _DEV_64BIT_SUPPORT_ | _DEV_COMMA_EXT_)
++#elif (defined(LINUX) || defined(__linux__))                  // x86 / Linux
+ #define TARGET_SYSTEM   _LINUX_
+ #define DEV_SYSTEM      _DEV_LINUX_
+ #elif defined(__NIOS2__)                                    // NIOS II / no-os
+@@ -226,7 +229,9 @@
+ 
+ #elif (TARGET_SYSTEM == _NO_OS_)
+ 
+-#if (DEV_SYSTEM == _DEV_NIOS2_)
++#if defined(OPLK_TARGET_UNIPROTON)
++#include <oplk/targetdefs/uniproton.h>
++#elif (DEV_SYSTEM == _DEV_NIOS2_)
+ #include <oplk/targetdefs/nios2.h>
+ #elif ((DEV_SYSTEM == _DEV_MICROBLAZE_BIG_) || (DEV_SYSTEM == _DEV_MICROBLAZE_LITTLE_))
+ #include <oplk/targetdefs/microblaze.h>

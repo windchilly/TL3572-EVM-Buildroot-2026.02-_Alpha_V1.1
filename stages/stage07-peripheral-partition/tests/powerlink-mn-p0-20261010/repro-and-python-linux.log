@@ -1,0 +1,6 @@
+P0_BYTE_IDENTICAL_STATIC_LIBRARY_AND_MERGED_OBJECT
+d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b  /home/openeuler/build/powerlink-mn-p0-20261010/build-verified/aarch64/libm7_powerlink_mn_core.a
+d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b  /home/openeuler/build/powerlink-mn-p0-20261010/build-verified-repro/aarch64/libm7_powerlink_mn_core.a
+bash: line 1: /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-size: No such file or directory
+
+REMOTE_EXIT_CODE=127

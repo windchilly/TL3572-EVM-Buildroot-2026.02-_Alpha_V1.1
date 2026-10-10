@@ -1,0 +1,52 @@
+P0_FINAL_BYTE_IDENTICAL_STATIC_LIBRARY_AND_MERGED_OBJECT
+d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b  /home/openeuler/build/powerlink-mn-p0-20261010/build-checked/aarch64/libm7_powerlink_mn_core.a
+d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b  /home/openeuler/build/powerlink-mn-p0-20261010/build-checked-repro/aarch64/libm7_powerlink_mn_core.a
+Internal ctest changing into directory: /home/openeuler/build/powerlink-mn-p0-20261010/build-checked/native
+UpdateCTestConfiguration  from :/home/openeuler/build/powerlink-mn-p0-20261010/build-checked/native/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/openeuler/build/powerlink-mn-p0-20261010/build-checked/native/DartConfiguration.tcl
+Test project /home/openeuler/build/powerlink-mn-p0-20261010/build-checked/native
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: mn_state_and_ami
+
+1: Test command: /home/openeuler/build/powerlink-mn-p0-20261010/build-checked/native/test_powerlink_mn_core
+1: Working Directory: /home/openeuler/build/powerlink-mn-p0-20261010/build-checked/native
+1: Test timeout computed to be: 10000000
+1: PASS: upstream MN boot/gates/operational/cycle-error/reset/conflicting-MN; 21 state changes; LP64/unaligned AMI; no HAL or frames
+1/2 Test #1: mn_state_and_ami .................   Passed    0.00 sec
+test 2
+    Start 2: od_integer_range_and_no_fp
+
+2: Test command: /home/openeuler/build/powerlink-mn-p0-20261010/build-checked/native/test_powerlink_od
+2: Working Directory: /home/openeuler/build/powerlink-mn-p0-20261010/build-checked/native
+2: Test timeout computed to be: 10000000
+2: PASS: integer range bounds; ranged REAL32/64 rejected unchanged; raw REAL32 bytes preserved
+2/2 Test #2: od_integer_range_and_no_fp .......   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   0.00 sec
+test_directory (test_powerlink_source.PowerlinkArchiveTests.test_directory) ... ok
+test_duplicate (test_powerlink_source.PowerlinkArchiveTests.test_duplicate) ... ok
+test_existing_destination_refused (test_powerlink_source.PowerlinkArchiveTests.test_existing_destination_refused) ... ok
+test_file_count (test_powerlink_source.PowerlinkArchiveTests.test_file_count) ... ok
+test_regular_file (test_powerlink_source.PowerlinkArchiveTests.test_regular_file) ... ok
+test_special_files (test_powerlink_source.PowerlinkArchiveTests.test_special_files) ... ok
+test_unsafe_paths (test_powerlink_source.PowerlinkArchiveTests.test_unsafe_paths) ... ok
+test_expected_boundary (test_powerlink_source.PowerlinkAuditTests.test_expected_boundary) ... ok
+test_fake_hal_success_rejected (test_powerlink_source.PowerlinkAuditTests.test_fake_hal_success_rejected) ... ok
+test_fp_simd_instructions_rejected (test_powerlink_source.PowerlinkAuditTests.test_fp_simd_instructions_rejected) ... ok
+test_integer_instructions_accepted (test_powerlink_source.PowerlinkAuditTests.test_integer_instructions_accepted) ... ok
+test_linux_or_atomic_dependency_rejected (test_powerlink_source.PowerlinkAuditTests.test_linux_or_atomic_dependency_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.023s
+
+OK
+
+REMOTE_EXIT_CODE=0

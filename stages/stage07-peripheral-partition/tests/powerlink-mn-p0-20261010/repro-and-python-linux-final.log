@@ -1,0 +1,23 @@
+P0_BYTE_IDENTICAL_STATIC_LIBRARY_AND_MERGED_OBJECT
+d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b  /home/openeuler/build/powerlink-mn-p0-20261010/build-verified/aarch64/libm7_powerlink_mn_core.a
+d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b  /home/openeuler/build/powerlink-mn-p0-20261010/build-verified-repro/aarch64/libm7_powerlink_mn_core.a
+634932 /home/openeuler/build/powerlink-mn-p0-20261010/build-verified/aarch64/libm7_powerlink_mn_core.a
+test_directory (test_powerlink_source.PowerlinkArchiveTests.test_directory) ... ok
+test_duplicate (test_powerlink_source.PowerlinkArchiveTests.test_duplicate) ... ok
+test_existing_destination_refused (test_powerlink_source.PowerlinkArchiveTests.test_existing_destination_refused) ... ok
+test_file_count (test_powerlink_source.PowerlinkArchiveTests.test_file_count) ... ok
+test_regular_file (test_powerlink_source.PowerlinkArchiveTests.test_regular_file) ... ok
+test_special_files (test_powerlink_source.PowerlinkArchiveTests.test_special_files) ... ok
+test_unsafe_paths (test_powerlink_source.PowerlinkArchiveTests.test_unsafe_paths) ... ok
+test_expected_boundary (test_powerlink_source.PowerlinkAuditTests.test_expected_boundary) ... ok
+test_fake_hal_success_rejected (test_powerlink_source.PowerlinkAuditTests.test_fake_hal_success_rejected) ... ok
+test_fp_simd_instructions_rejected (test_powerlink_source.PowerlinkAuditTests.test_fp_simd_instructions_rejected) ... ok
+test_integer_instructions_accepted (test_powerlink_source.PowerlinkAuditTests.test_integer_instructions_accepted) ... ok
+test_linux_or_atomic_dependency_rejected (test_powerlink_source.PowerlinkAuditTests.test_linux_or_atomic_dependency_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.023s
+
+OK
+
+REMOTE_EXIT_CODE=0
