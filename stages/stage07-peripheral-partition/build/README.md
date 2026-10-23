@@ -2,6 +2,10 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+2026-10-23 P3g runner增量：`audit_powerlink_nmt_abi.py`用native/AArch64真实编译器比对23项布局与固定85e78eb4候选1504B快照。
+新独立board runner仅允许新NMT隔离授权、单次命令，停核私有证明通过后才rm/重绑Linux；168Python/旧原生通过，未部署板卡。
+[源码/复现/安全收尾入口](../tests/powerlink-nmt-p3g-runner-20261023/README.md)；本轮不改或重编运行ELF，host hold KO/源码/Makefile/构建脚本列入新清单。
+
 2026-10-23 最新P3g入口`build_m7_powerlink_nmt.sh`从完整归档重编核心，追加0006/0007修复reset新增分配失败等待/NULL访问；
 `build_m7_powerlink_nmt_probe_candidate.sh`保留所有累计功能，追加0019默认OFF/UP2-only有界reset→NotActive→SwitchOff诊断。
 100次真实栈/25+4原生、144Python、双新软件/累计根11产物一致；TTY关键栈预算仍2944B+1KiB≤4096B。

@@ -4,6 +4,10 @@
 **P3g累计软件候选：保留P3f全部功能 + 有界NMT reset/NotActive/SwitchOff软件诊断**，
 不是已运行的主站；MN/CN互操作、持续负载/实时性仍待验证。
 
+最新[P3g独立runner/ABI准备](../../tests/powerlink-nmt-p3g-runner-20261023/README.md)保持85e78eb4候选不变；
+native/AArch6423项布局一致、168Python及旧原生通过，补独立隔离许可/单次命令/停核后新快照证明/未知保留。
+本轮未连接或部署板卡，尚无NMT reset硬件结果，不能复用旧GsOff runner/快照或许可。
+
 P3g新增`m7_nmt_probe.c/h`、0019、完整软件构建入口与25+4原生/144Python回归；100次真实栈状态迁移通过，物理边界mock。
 0006修正UniProton direct PDO setup错误未传递/NULL无限等待并移除无用500ms等待；0007拒绝失败循环TX表NULL访问。
 双全新软件/累计根9个核心产物+两runtime一致；[源码/构建/原始失败/复现记录](../../tests/powerlink-nmt-p3g-20261023/README.md)。

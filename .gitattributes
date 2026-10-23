@@ -67,3 +67,5 @@ stages/stage07-peripheral-partition/tests/powerlink-nmt-p3g-20261023/*.json whit
 stages/stage07-peripheral-partition/source/powerlink/port/0006-uniproton-pdo-setup-no-wait.patch whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/source/powerlink/port/0007-uniproton-cyclic-allocation-guards.patch whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/source/patches/uniproton/0019-rk3572-powerlink-nmt-probe.patch whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/powerlink-nmt-p3g-runner-20261023/*.log -text whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/powerlink-nmt-p3g-runner-20261023/*.json whitespace=cr-at-eol

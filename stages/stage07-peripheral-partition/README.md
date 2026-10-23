@@ -2,6 +2,10 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-10-23 [P3g独立runner/新快照ABI准备](tests/powerlink-nmt-p3g-runner-20261023/README.md)：
+不改上一候选，新增独立许可/单次标记/命令白名单/停核后1504B私有缓存交叉证明/未知保留策略。
+23项双编译器ABI、168Python和旧原生回归通过；未连接/部署板卡，NMT reset硬件窗口已另询问，不能套用旧GsOff许可/1008B解码器。
+
 2026-10-23 最新[P3g有界NMT reset/NotActive/SwitchOff软件准备](tests/powerlink-nmt-p3g-20261023/README.md)：
 同一累计UP2增加defaultOFF/COLD显式nmt-probe/nmt-status，不开放持续MN/任意NMT命令。
 修复PDO分配失败无限等待和循环TX指针表NULL；100次真实栈/25+4原生、144Python、双全新软件/累计根11产物一致。

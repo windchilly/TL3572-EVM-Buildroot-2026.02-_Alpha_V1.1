@@ -1,5 +1,20 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-23 最新入口：用户继续，完成P3g独立板端runner/停核快照软件准备，本轮未连接/部署板卡，不执行reset或发送。
+新增tests/board/run_powerlink_nmt_probe.py及独立conf、powerlink_nmt_checks.py、read_powerlink_nmt_snapshot.py；旧GsOff runner不改。
+固定85e78eb4...候选/6.12.69-gf1b67c293213 kernel/b071d434...hold；原两实例必须唯一Offline/物理OFF，ETH2ETH3须100Full/ANon且管理/工控不变。
+新窗口/root/m7-powerlink-nmt-p3g-20261023，client up-b-m7-plk-nmt-probe、AutoBoot=no；ATTEMPTED独占永久单次标记，结果文件不覆盖。
+只有新--confirm-isolated-bounded-nmt-reset许可开关，白名单M7status/PLKstatus/nmt-probe/nmt-status，唯一一次投递；超时仅观察、不重投。
+严格NMT完成+owner计数/工控idle后才停UP2一次；独立CPUOFF后读1504B快照、异常0/lease0/真实TTYlisten4096、DMA/timer/GIC证明并与RPMsg一致后才rm/rebind/去hold。
+insmod不确定、启动/提交/停核/私有证明等任何未知都保留资源，无CPU_OFF/rm/rebind/rmmod/重启/重试；已停核后证明失败也不第二次stop。
+test_powerlink_nmt_abi.c与audit_powerlink_nmt_abi.py的native/AArch64真实编译23布局一致：snapshot1504/nmtOffset80/result496/life472，拒绝旧1008B。
+TCB stride800/异常520仍固定M6私有ABI，不是自动发现；只读停核私有DRAM，不访问控制器MMIO，不替代候选实际停止回读/实时证明。
+新增24Python故障/顺序/单次/白名单/ANon测试，Windows/Linux共168通过；旧25+4NMT/P3f/P3e/P3d/P3c/P3b/累计parser18lifecycle3codec原生通过。
+构建准备根/home/openeuler/build/powerlink-nmt-p3g-runner-20261023，首次漏传正式UP1 ELF导致旧MMU测试缺文件，补齐后全过，日志保留；候选/核心/正式两ELF均未改或重编。
+tests/powerlink-nmt-p3g-runner-20261023/README.md为当前软件入口；新清单显式补hold KO/源码/Makefile/构建脚本。GitHub状态以最终报告为准。
+已经另询问“ETH2ETH3仍隔离+允许一次NMT reset→NotActive→SwitchOff、可能有限协议帧”的新窗口；未获新回复前不能接管/部署/执行，CAN/UART不发送保持。
+后续硬件若获准建立独立窗口证据，不能把这页软件准备写成实板PASS；原P3f修正版仍是最新硬件通过基线。
+
 2026-10-23 最新入口：用户继续，本轮仅软件P3g bounded NMT reset/NotActive/SwitchOff，无板卡SSH/COM7/部署/移交/重启/物理reset或发送。
 新增m7_nmt_probe.c/h、0019、build_m7_powerlink_nmt.sh和候选入口；defaultOFF/UP2-only/COLD单槽邮箱nmt-probe/nmt-status。
 真实initialize/prepare→一次SwReset→MsNotActive立即一次SwitchOff→实际GsOff→一次stop/静默证明/exitCOLD，无持续MN/StartNode/任意NMT API。
