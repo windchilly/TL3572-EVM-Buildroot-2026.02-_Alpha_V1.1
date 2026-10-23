@@ -29,7 +29,7 @@ def fixture():
     mn(160, 1, 0, 0); mn(200, 2, 0, 0); mn(240, 0, 6, 6)
     struct.pack_into('<6I', raw, 296, 0xc003, 1, 1, 0, 0, 0)
     for offset, counter in ((360, 100), (456, 200)):
-        struct.pack_into('<5Q13I', raw, offset, counter, counter, 5, 0, 0, 1, 24000000,
+        struct.pack_into('<5Q13I', raw, offset, counter, counter, 5, 0, 0, 4, 24000000,
             2, 1, 1 << 27, 0, 0, 0, 0, 160, 0, 0x43f, 1)
     struct.pack_into('<5I', raw, 552, 1, 1, 5, 1, 0x21c)
     return raw
@@ -102,6 +102,12 @@ class NmtBoardTests(unittest.TestCase):
         for offset, value in ((504, 1), (512, (1 << 27) | (1 << 30)), (516, 1 << 30), (520, 1 << 30)):
             raw = fixture(); struct.pack_into('<I', raw, offset, value)
             with self.subTest(offset=offset), self.assertRaises(ValueError): checks.validate_snapshot(raw)
+
+    def test_raw_currentel_register_is_four_not_one(self):
+        checks.validate_snapshot(fixture())
+        for offset in (400, 496):
+            raw = fixture(); struct.pack_into('<I', raw, offset, 1)
+            with self.assertRaises(ValueError): checks.validate_snapshot(raw)
 
     def test_snapshot_tick_or_gic_preservation(self):
         for offset in (472, 500, 508, 524, 528, 532, 536, 540, 544):

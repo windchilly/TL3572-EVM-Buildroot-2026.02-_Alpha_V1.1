@@ -1,0 +1,16 @@
+{
+  "phase": "P3g bounded NMT hardware window",
+  "passed": false,
+  "candidate_sha256": "85e78eb4bb150633e695014b5ecc55401a048a2707175a031b97a2e00567f68e",
+  "submitted": true,
+  "completion": null,
+  "private_stopped": null,
+  "cleanup": false,
+  "boot_id": "6974ac40-f3a2-4433-a5b8-11ec4318248f",
+  "micad": {
+    "MainPID": "328",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "error": "RuntimeError: NMT completion/cleanup unproved; retain UP2+hold; UNSAFE/UNKNOWN: retain UP2/client/ETH handoff/hold; NO CPU_OFF/rebind/rmmod/reboot/retry"
+}

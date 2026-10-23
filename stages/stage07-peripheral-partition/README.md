@@ -2,6 +2,15 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-10-23 当前[P3h完整PDO内存预算/首错修复](tests/powerlink-nmt-p3h-20261023/README.md)：
+UP2显式NMT候选1MiB/defaultOFF，原40/40通道及254映射不裁减，受限宿主堆100轮通过并保存原始0xb3首错。
+175Python、双全新软件/累计树11产物一致，静态预算通过但新候选未部署；板卡已另获准重启一次恢复Linux，复测需新授权。
+
+2026-10-23 当前[P3g单次NMT实板失败/保留现场](tests/powerlink-nmt-p3g-hw-20261023/README.md)：
+唯一reset在0x39故障，NotActive未达/未SwitchOff；真实RTOS堆剩148920B，TX PDO映射需162560B，交叉编译已核实。
+当时CPU5/ETH2/CNTP/hold保留，之后另获准重启恢复。原固件不变；离线检查器修正及169项通过不代表MN实板通过。
+下列检查点按历史时序保留，其中“当前/本轮”不覆盖本条最新现场。
+
 2026-10-23 [P3g独立runner/新快照ABI准备](tests/powerlink-nmt-p3g-runner-20261023/README.md)：
 不改上一候选，新增独立许可/单次标记/命令白名单/停核后1504B私有缓存交叉证明/未知保留策略。
 23项双编译器ABI、168Python和旧原生回归通过；未连接/部署板卡，NMT reset硬件窗口已另询问，不能套用旧GsOff许可/1008B解码器。

@@ -1,0 +1,70 @@
+{
+  "candidate_sha256": "85e78eb4bb150633e695014b5ecc55401a048a2707175a031b97a2e00567f68e",
+  "scalars": {
+    "g_memTotalSize": 524256,
+    "g_memUsage": 375336,
+    "g_memPeakUsage": 375336,
+    "g_memStartAddr": 2083115352,
+    "g_uniFlag": 8195,
+    "g_uniTaskLock": 0,
+    "irqDepth": 0,
+    "faulted": 1,
+    "pdokcalmem_pPdo_g": 0,
+    "g_fscMemBitMap": 16385
+  },
+  "mutexes": [
+    {
+      "token": 17,
+      "sem": 3,
+      "locked": 0
+    },
+    {
+      "token": 0,
+      "sem": 0,
+      "locked": 0
+    },
+    {
+      "token": 0,
+      "sem": 0,
+      "locked": 0
+    },
+    {
+      "token": 0,
+      "sem": 0,
+      "locked": 0
+    },
+    {
+      "token": 0,
+      "sem": 0,
+      "locked": 0
+    },
+    {
+      "token": 0,
+      "sem": 0,
+      "locked": 0
+    },
+    {
+      "token": 0,
+      "sem": 0,
+      "locked": 0
+    },
+    {
+      "token": 0,
+      "sem": 0,
+      "locked": 0
+    }
+  ],
+  "pdou_tail_qwords": [
+    "0x2800000028",
+    "0x7c2e9500",
+    "0x7c2c1730",
+    "0x7c2c19d8",
+    "0x0",
+    "0xff0000",
+    "0x7c239bf0",
+    "0x11"
+  ],
+  "limit": "Point-in-time private metadata only, not an atomic heap snapshot, first-error record, stop proof or cleanup authorization."
+}
+
+EXIT=0

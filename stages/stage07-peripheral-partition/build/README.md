@@ -2,6 +2,14 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+2026-10-23 当前[P3h软件修复/复现](../tests/powerlink-nmt-p3h-20261023/README.md)：
+`build_m7_powerlink_nmt_heap_candidate.sh`追加0020/defaultOFF/UP2-only的1MiB FSC，核心保留首错，原OD不减。
+双全新软件/累计构建11产物一致、175Python/受限堆原生回归通过；候选未部署，板卡一次授权重启已恢复Linux。
+
+2026-10-23 当前[P3g单次NMT实板故障](../tests/powerlink-nmt-p3g-hw-20261023/README.md)：真实FSC堆预算不足，非MMU/TTY栈故障。
+新增compile-only `audit_powerlink_pdo_memory.py`/`test_powerlink_pdo_memory.c`核实40×254×16B映射请求与剩余堆。
+CurrentEL验收器离线改为raw4，169项通过；未改/重编运行候选。板端资源保留，不得重跑旧runner或自动恢复。
+
 2026-10-23 P3g runner增量：`audit_powerlink_nmt_abi.py`用native/AArch64真实编译器比对23项布局与固定85e78eb4候选1504B快照。
 新独立board runner仅允许新NMT隔离授权、单次命令，停核私有证明通过后才rm/重绑Linux；168Python/旧原生通过，未部署板卡。
 [源码/复现/安全收尾入口](../tests/powerlink-nmt-p3g-runner-20261023/README.md)；本轮不改或重编运行ELF，host hold KO/源码/Makefile/构建脚本列入新清单。

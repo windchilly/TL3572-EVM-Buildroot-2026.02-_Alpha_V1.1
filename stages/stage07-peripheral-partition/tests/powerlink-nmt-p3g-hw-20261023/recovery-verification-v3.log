@@ -1,0 +1,18 @@
+{
+  "boot_id": "cd4f03d6-005d-473d-b6ce-0cc745314a08",
+  "formal": {
+    "up-a": {
+      "path": "/lib/firmware/rk3572-uniproton-up-a.elf",
+      "sha256": "9c5e55a268d9f59e180998848b79297945f2b7eb92ba6512d3869e9cd9ae89b8"
+    },
+    "up-b": {
+      "path": "/lib/firmware/rk3572-uniproton-up-b.elf",
+      "sha256": "3357eb979263332a7a4ee606e90fbec90ac0363977a908c5c3a6862c250edde4"
+    }
+  },
+  "mcsctl": "Name                          Assigned CPU        State               Service\nup-b                          5                   Offline\nup-a                          4                   Offline\n",
+  "eth1": "Settings for eth1:\n\tSupported ports: [ TP\t MII ]\n\tSupported link modes:   10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tSupported pause frame use: Symmetric Receive-only\n\tSupports auto-negotiation: Yes\n\tSupported FEC modes: Not reported\n\tAdvertised link modes:  10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tAdvertised pause frame use: Symmetric Receive-only\n\tAdvertised auto-negotiation: Yes\n\tAdvertised FEC modes: Not reported\n\tLink partner advertised link modes:  10baseT/Half 10baseT/Full\n\t                                     100baseT/Half 100baseT/Full\n\tLink partner advertised pause frame use: Symmetric Receive-only\n\tLink partner advertised auto-negotiation: Yes\n\tLink partner advertised FEC modes: Not reported\n\tSpeed: 100Mb/s\n\tDuplex: Full\n\tAuto-negotiation: on\n\tmaster-slave cfg: preferred slave\n\tmaster-slave status: slave\n\tPort: Twisted Pair\n\tPHYAD: 1\n\tTransceiver: external\n\tMDI-X: Unknown\n\tSupports Wake-on: ug\n\tWake-on: d\n        Current message level: 0x0000003f (63)\n                               drv probe link timer ifdown ifup\n\tLink detected: yes\n",
+  "eth2": "Settings for eth2:\n\tSupported ports: [ TP\t MII ]\n\tSupported link modes:   10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\tSupported pause frame use: No\n\tSupports auto-negotiation: Yes\n\tSupported FEC modes: Not reported\n\tAdvertised link modes:  10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\tAdvertised pause frame use: No\n\tAdvertised auto-negotiation: Yes\n\tAdvertised FEC modes: Not reported\n\tLink partner advertised link modes:  10baseT/Half 10baseT/Full\n\t                                     100baseT/Half 100baseT/Full\n\tLink partner advertised pause frame use: Symmetric Receive-only\n\tLink partner advertised auto-negotiation: Yes\n\tLink partner advertised FEC modes: Not reported\n\tSpeed: 100Mb/s\n\tDuplex: Full\n\tAuto-negotiation: on\n\tPort: MII\n\tPHYAD: 32\n\tTransceiver: internal\n\tSupports Wake-on: pumbg\n\tWake-on: g\n        Current message level: 0x00007fff (32767)\n                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol\n\tLink detected: yes\n"
+}
+
+EXIT=0

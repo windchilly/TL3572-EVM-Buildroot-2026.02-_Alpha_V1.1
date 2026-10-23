@@ -12,7 +12,7 @@ flags=(-std=c11 -O2 -Wall -Wextra -Werror -UNDEBUG -DOPLK_TARGET_UNIPROTON -DCON
 libs=(-Wl,--start-group "$output/native/libm7_powerlink_passive_mn.a" "$output/native/core/libm7_powerlink_mn_core.a"
     -Wl,--end-group -no-pie -Wl,--wrap=malloc,--wrap=calloc,--wrap=free,--wrap=oplk_execNmtCommand,--wrap=m7_mn_process,--wrap=nmtu_processEvent)
 gcc "${flags[@]}" "$stage/tests/test_powerlink_nmt_probe.c" "$port/m7_nmt_probe.c" "$port/m7_mn_probe.c" "${libs[@]}" -o "$work/probe"
-for scenario in normal context reset_command off_command reset_timeout off_timeout process phy stop timer_stop sleep dma mode readback tx wall_timeout; do
+for scenario in normal context reset_command off_command reset_timeout off_timeout process phy stop timer_stop sleep dma mode readback tx wall_timeout heap_small heap_full; do
     timeout 15s "$work/probe" "$scenario"
 done
 for position in {17..25}; do timeout 15s "$work/probe" "allocation_$position"; done
@@ -28,4 +28,4 @@ gcc "${flags[@]}" "${gates[@]}" -I "$app" -I "$stage/tests/integrated-stubs" "$s
     "$work/owner.o" "$work/integrated.o" "${ownerlibs[@]}" -o "$work/owner"
 for scenario in normal unsafe reentrant invalid; do timeout 15s "$work/owner" "$scenario"; done
 bash "$stage/tests/run_powerlink_mn_probe_native.sh"
-echo 'P3g bounded real NMT 25 + mailbox 4 scenarios PASS; prior cumulative regressions PASS; NO BOARD'
+echo 'P3h bounded real NMT 27 + mailbox 4 scenarios PASS (includes constrained host heap); prior cumulative regressions PASS; NO BOARD'

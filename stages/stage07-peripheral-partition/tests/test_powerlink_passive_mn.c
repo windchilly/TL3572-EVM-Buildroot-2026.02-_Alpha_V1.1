@@ -20,15 +20,30 @@ static uint64_t now;
 static unsigned writes, sems, timerAcquires, ethAcquires, timerReleases, ethStops;
 static unsigned allocations, failAllocation, live, frees;
 static void* blocks[4096];
+/* Optional bounded host model. Charge conservative 64B metadata/alignment per
+ * live allocation, PLUS explicit non-POWERLINK RTOS reserve. Not the real FSC
+ * allocator, fragmentation or a measured production high-water guarantee. */
+static size_t blockBytes[4096], heapUsed, heapPeak, heapLimit = SIZE_MAX;
+static unsigned budgetFailures;
+static size_t budgetFailedRequest;
 void* __real_malloc(size_t bytes);
 void* __real_calloc(size_t count, size_t bytes);
 void __real_free(void* pointer);
-static void* remember(void* pointer)
+static void* remember(void* pointer, size_t bytes)
 {
     unsigned i;
     if (!pointer) return NULL;
     for (i = 0; i < 4096 && blocks[i]; ++i) {}
-    assert(i < 4096); blocks[i] = pointer; ++live; return pointer;
+    assert(i < 4096); blocks[i] = pointer; ++live;
+    blockBytes[i] = ((bytes + 15U) & ~(size_t)15U) + 64U;
+    heapUsed += blockBytes[i]; if (heapUsed > heapPeak) heapPeak = heapUsed;
+    return pointer;
+}
+static int budgetAllows(size_t bytes)
+{
+    size_t charge = ((bytes + 15U) & ~(size_t)15U) + 64U;
+    if (charge <= heapLimit && heapUsed <= heapLimit - charge) return 1;
+    ++budgetFailures; budgetFailedRequest = bytes; return 0;
 }
 void* __wrap_malloc(size_t bytes)
 {
@@ -36,7 +51,8 @@ void* __wrap_malloc(size_t bytes)
         fprintf(stderr, "injected malloc failure #%u bytes=%zu caller=%p\n", allocations, bytes, __builtin_return_address(0));
         return NULL;
     }
-    return remember(__real_malloc(bytes));
+    if (!budgetAllows(bytes)) return NULL;
+    return remember(__real_malloc(bytes), bytes);
 }
 void* __wrap_calloc(size_t count, size_t bytes)
 {
@@ -44,14 +60,16 @@ void* __wrap_calloc(size_t count, size_t bytes)
         fprintf(stderr, "injected calloc failure #%u count=%zu bytes=%zu caller=%p\n", allocations, count, bytes, __builtin_return_address(0));
         return NULL;
     }
-    return remember(__real_calloc(count, bytes));
+    if (!budgetAllows(count * bytes)) return NULL;
+    return remember(__real_calloc(count, bytes), count * bytes);
 }
 void __wrap_free(void* pointer)
 {
     unsigned i;
     if (!pointer) return;
     for (i = 0; i < 4096 && blocks[i] != pointer; ++i) {}
-    assert(i < 4096); blocks[i] = NULL; --live; ++frees; __real_free(pointer);
+    assert(i < 4096); blocks[i] = NULL; heapUsed -= blockBytes[i]; blockBytes[i] = 0;
+    --live; ++frees; __real_free(pointer);
 }
 int m7_plk_task_id(uint32_t* id) { *id = task; return 1; }
 int m7_plk_in_interrupt(void) { return isr; }

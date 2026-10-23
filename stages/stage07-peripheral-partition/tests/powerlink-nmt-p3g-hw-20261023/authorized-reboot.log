@@ -1,0 +1,144 @@
+READONLY: cat /proc/sys/kernel/random/boot_id
+6974ac40-f3a2-4433-a5b8-11ec4318248f
+
+EXIT=0
+READONLY: cat /root/m7-powerlink-nmt-p3g-20261023/board-result.json
+{
+  "phase": "P3g bounded NMT hardware window",
+  "passed": false,
+  "candidate_sha256": "85e78eb4bb150633e695014b5ecc55401a048a2707175a031b97a2e00567f68e",
+  "submitted": true,
+  "completion": null,
+  "private_stopped": null,
+  "cleanup": false,
+  "boot_id": "6974ac40-f3a2-4433-a5b8-11ec4318248f",
+  "micad": {
+    "MainPID": "328",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "error": "RuntimeError: NMT completion/cleanup unproved; retain UP2+hold; UNSAFE/UNKNOWN: retain UP2/client/ETH handoff/hold; NO CPU_OFF/rebind/rmmod/reboot/retry"
+}
+EXIT=0
+READONLY: test -f /root/m7-powerlink-nmt-p3g-20261023/ATTEMPTED && mcsctl status && systemctl show micad -p ActiveState -p MainPID -p NRestarts
+Name                          Assigned CPU        State               Service
+up-b-m7-plk-nmt-probe         5                   Running             rpmsg-tty(/dev/ttyRPMSG0) rpmsg-rpc rpmsg-umt
+up-b                          5                   Offline
+up-a                          4                   Offline
+MainPID=328
+NRestarts=0
+ActiveState=active
+
+EXIT=0
+NEW HUMAN AUTHORITY: ONE systemctl reboot, software fix only; NO new candidate/test.
+REBOOT_SUBMITTED_ONCE
+READONLY: cat /proc/sys/kernel/random/boot_id
+cd4f03d6-005d-473d-b6ce-0cc745314a08
+
+EXIT=0
+READONLY: set -e
+uname -a
+cat /sys/devices/system/cpu/online
+cat /proc/sys/kernel/tainted
+systemctl show micad -p MainPID -p NRestarts -p ActiveState
+mcsctl status
+ip -brief address
+ip route
+ethtool eth1
+ethtool eth2
+test -L /sys/bus/platform/devices/2a040000.ethernet/driver
+test ! -d /sys/module/m7_eth2_power_hold
+test ! -e /dev/ttyRPMSG0
+systemctl --failed --no-pager
+PYTHONDONTWRITEBYTECODE=1 python3 -c "import sys; sys.path.insert(0,'/root/m7-powerlink-mn-p3f-fixed-20261023'); import run_can_direct_pair as c; c.confirm_up_cpus_off()"
+sha256sum /lib/firmware/rk3572-mica-up-a.elf /lib/firmware/rk3572-mica-up-b.elf
+
+Linux tl3572-openeuler 6.12.69-gf1b67c293213 #1 SMP Mon Sep 21 03:23:13 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+0-3,6-7
+4096
+MainPID=325
+NRestarts=0
+ActiveState=active
+Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+can0             DOWN           
+can1             DOWN           
+can2             DOWN           
+can3             DOWN           
+eth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 
+eth1             UP             fe80::d814:36ff:fe8b:78f0/64 
+eth2             UP             fe80::2e0:9aff:fe42:baeb/64 
+default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 
+192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 
+192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 
+Settings for eth1:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Half 1000baseT/Full
+	Supported pause frame use: Symmetric Receive-only
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Half 1000baseT/Full
+	Advertised pause frame use: Symmetric Receive-only
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  10baseT/Half 10baseT/Full
+	                                     100baseT/Half 100baseT/Full
+	Link partner advertised pause frame use: Symmetric Receive-only
+	Link partner advertised auto-negotiation: Yes
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Full
+	Auto-negotiation: on
+	master-slave cfg: preferred slave
+	master-slave status: slave
+	Port: Twisted Pair
+	PHYAD: 1
+	Transceiver: external
+	MDI-X: Unknown
+	Supports Wake-on: ug
+	Wake-on: d
+        Current message level: 0x0000003f (63)
+                               drv probe link timer ifdown ifup
+	Link detected: yes
+Settings for eth2:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Supported pause frame use: No
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Advertised pause frame use: No
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  10baseT/Half 10baseT/Full
+	                                     100baseT/Half 100baseT/Full
+	Link partner advertised pause frame use: Symmetric Receive-only
+	Link partner advertised auto-negotiation: Yes
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Full
+	Auto-negotiation: on
+	Port: MII
+	PHYAD: 32
+	Transceiver: internal
+	Supports Wake-on: pumbg
+	Wake-on: g
+        Current message level: 0x00007fff (32767)
+                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol
+	Link detected: yes
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed.
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+sha256sum: /lib/firmware/rk3572-mica-up-a.elf: No such file or directory
+sha256sum: /lib/firmware/rk3572-mica-up-b.elf: No such file or directory
+
+EXIT=1

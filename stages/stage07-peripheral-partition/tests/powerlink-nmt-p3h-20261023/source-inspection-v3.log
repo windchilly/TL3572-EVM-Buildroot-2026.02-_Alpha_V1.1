@@ -1,0 +1,30 @@
+#define OS_CONFIG_CPUP_WARN                             NO
+/* CPU占用率告警阈值(精度为万分比) */
+#define OS_CPUP_SHORT_WARN                              8500
+/* CPU占用率告警恢复阈值(精度为万分比) */
+#define OS_CPUP_SHORT_RESUME                            7500
+
+/* ***************************** 配置内存管理模块 ************************** */
+/* 用户可以创建的最大分区数，取值范围[0,253] */
+#define OS_MEM_MAX_PT_NUM                               200
+/* 私有FSC内存分区起始地址 */
+#define OS_MEM_FSC_PT_ADDR                              (uintptr_t)&g_memRegion00[0]
+/* 私有FSC内存分区大小 */
+#define OS_MEM_FSC_PT_SIZE                              0x80000
+
+/* ***************************** 配置信号量管理模块 ************************* */
+/* 信号量模块裁剪开关 */
+#define OS_INCLUDE_SEM                                  YES
+
+/* 最大支持的信号量数 */
+#define OS_SEM_MAX_SUPPORT_NUM                          10
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/config/prt_config.h:77:#define OS_MEM_FSC_PT_ADDR                              (uintptr_t)&g_memRegion00[0]
+/home/openeuler/build/tl3572-2oo3/src/UniProton/demos/rk3572_mica/config/prt_config.h:104:extern U8 g_memRegion00[];
+/home/openeuler/build/tl3572-2oo3/src/UniProton/src/mem/include/prt_mem_external.h:30:#define OS_FSC_MEM_USED_HEAD_SIZE                           (sizeof(struct TagFscMemCtrl))
+/home/openeuler/build/tl3572-2oo3/src/UniProton/src/mem/fsc/prt_fscmem.c:95:        OS_FSC_MEM_USED_HEAD_SIZE + OS_FSC_MEM_TAIL_SIZE;
+/home/openeuler/build/tl3572-2oo3/src/UniProton/src/mem/fsc/prt_fscmem.c:96:    if ((allocSize < size) || allocSize >= ((OS_FSC_MEM_MAXVAL - OS_FSC_MEM_USED_HEAD_SIZE) - OS_FSC_MEM_TAIL_SIZE)) {
+/home/openeuler/build/tl3572-2oo3/src/UniProton/src/mem/fsc/prt_fscmem.c:223:OS_SEC_TEXT U32 OsFscMemInit(uintptr_t addr, U32 size)
+/home/openeuler/build/tl3572-2oo3/src/UniProton/src/mem/fsc/prt_fscmem.c:243:    if (size < OS_FSC_MEM_USED_HEAD_SIZE) {
+/home/openeuler/build/tl3572-2oo3/src/UniProton/src/mem/fsc/prt_fscmem.c:262:    size -= OS_FSC_MEM_USED_HEAD_SIZE;
+
+REMOTE_EXIT=0

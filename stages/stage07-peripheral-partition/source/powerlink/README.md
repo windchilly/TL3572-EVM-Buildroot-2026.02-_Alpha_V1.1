@@ -4,6 +4,14 @@
 **P3g累计软件候选：保留P3f全部功能 + 有界NMT reset/NotActive/SwitchOff软件诊断**，
 不是已运行的主站；MN/CN互操作、持续负载/实时性仍待验证。
 
+当前后续[P3h软件修复](../../tests/powerlink-nmt-p3h-20261023/README.md)：保留首个错误码，UP2显式NMT候选堆增至1MiB/defaultOFF，完整OD不裁减。
+受限宿主堆100轮/175Python/两全新软件与累计树11产物一致，最终静态预算通过；板卡已另获准重启恢复，未部署新候选。
+
+当前硬件结果为[P3g单次reset失败](../../tests/powerlink-nmt-p3g-hw-20261023/README.md)：停在ResetCommunication，
+尚未NotActive/SwitchOff；512KiB共用堆剩148920B，TX PDO映射表需162560B，真实指针/编译布局已核实。
+该窗口没有修改固件/重试，先保留CPU5/ETH2/CNTP/hold，后另获准重启恢复；原169项离线通过仅含独立CurrentEL验收器修正。
+以下“未上板”等为历史准备检查点，不覆盖当前失败状态；first-error/动态内存预算仍须修复。
+
 最新[P3g独立runner/ABI准备](../../tests/powerlink-nmt-p3g-runner-20261023/README.md)保持85e78eb4候选不变；
 native/AArch6423项布局一致、168Python及旧原生通过，补独立隔离许可/单次命令/停核后新快照证明/未知保留。
 本轮未连接或部署板卡，尚无NMT reset硬件结果，不能复用旧GsOff runner/快照或许可。

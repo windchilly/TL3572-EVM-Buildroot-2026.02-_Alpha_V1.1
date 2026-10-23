@@ -40,9 +40,12 @@ static int owner(void)
 }
 static uint32_t fault(tOplkError error)
 {
-    status.lastError = (uint32_t)error; status.state = M7_MN_FAULT;
+    /* Critical-event errors must survive the following process() readiness
+     * check; that secondary InvalidOperation used to hide PDO allocation errors. */
+    if (status.lastError == kErrorOk) status.lastError = (uint32_t)error;
+    status.state = M7_MN_FAULT;
     m7_plk_fault(); entered = 0;
-    return (uint32_t)error;
+    return status.lastError;
 }
 static tOplkError event(tOplkApiEventType type, const tOplkApiEventArg* arg, void* user)
 {
@@ -50,7 +53,7 @@ static tOplkError event(tOplkApiEventType type, const tOplkApiEventArg* arg, voi
     ++status.events; status.lastEvent = (uint32_t)type;
     if (type == kOplkApiEventNmtStateChange) status.nmtState = (uint32_t)arg->nmtStateChange.newNmtState;
     if (type == kOplkApiEventCriticalError) {
-        status.lastError = (uint32_t)arg->internalError.oplkError;
+        if (status.lastError == kErrorOk) status.lastError = (uint32_t)arg->internalError.oplkError;
         status.state = M7_MN_FAULT; m7_plk_fault();
     }
     return kErrorOk;

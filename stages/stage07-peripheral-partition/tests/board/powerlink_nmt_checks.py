@@ -86,7 +86,8 @@ def validate_snapshot(raw):
     for value in (before, after):
         if value['cntp'] & 1 or (value['enabled'] | value['pending'] | value['active']) & (1 << 30):
             raise ValueError('CNTP/PPI30 not quiet')
-        if value['frequency'] != 24000000 or value['level'] != 1: raise ValueError('timer context/frequency changed')
+        # Snapshot stores raw CurrentEL (EL1 == 0b0100), not the EL number 1.
+        if value['frequency'] != 24000000 or value['level'] != 4: raise ValueError('timer context/frequency changed')
     for name in ('affinity', 'priority30', 'priority27', 'typer', 'cpuControl'):
         if before[name] != after[name]: raise ValueError('timer/GIC preservation changed: ' + name)
     if ((before['cntv'] ^ after['cntv']) & 3 or (before['enabled'] ^ after['enabled']) & (1 << 27) or

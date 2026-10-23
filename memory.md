@@ -1,5 +1,43 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-23 最新软件入口：P3h完整PDO预算/首错修复及双全新构建通过，未部署新候选，原P3g硬件结果仍FAILED。
+tests/powerlink-nmt-p3h-20261023/README.md为当前源码/构建/失败恢复/复现入口；m7_mn.c只保存第一个非0错误，process不再用InvalidOperation覆盖原critical。
+0020/defaultOFF/M7_POWERLINK_NMT_HEAP仅CPU5显式NMT候选允许1MiB FSC；UP1/default/正式ELF仍512KiB，40RX/40TX及254映射/原OD不裁减，缓存1504B ABI不扩展。
+真实栈受限宿主模型每块16B对齐+64B开销/128KiB非PLK预留：512KiB下一162560B失败并保留0xb3，1MiB100轮无泄漏/峰636816/余411728且断言余≥256KiB。
+这是HOST模型，非实际FSC碎片/实机峰值/实时证明；后续仍须板端usage/peak与完整启停复测，不能将模型预算写成实板保证。
+真实NMT27+邮箱4、原P3f29+4/P3e/P3d/P3c/P3b/P0-P2/累计原生回归，Windows/Linux各175Python通过；独立CurrentEL验收器修正raw4仍保留。
+构建根/home/openeuler/build/powerlink-nmt-p3h-20261023；software/software-repro均完整编译归档核心，UniProton-fixed-v2/repro两新累计树，9软件产物+2runtime逐字节相同，非复制旧预构建核心。
+初版0020最小hunk上下文不足，两次apply检查失败均保留，核对实际LF/前序task-count补丁后补全上下文，两新树成功；不是行尾问题。Windows新中文补丁测试默认GBK读取失败保留，显式UTF8后通过。
+新候选ccfba235f8f3bcc79ab0c2a0e603b2d9cc01a7f3785985566660fb1672882ea8，1196696B；UP2runtime630676B/a39e781aa5eaa5aa48c3508882b6e2a5c7fd9fbfbf210e0433986abd8cec42bb。
+UP2image/BSS2685248B/8MiB/FSC1MiB/页表10/16；UP1runtime仍360716B/d4d80d02.../512KiB/9页。最终596旧函数/U0/LSE0/125旧SIMD无新增，TTY320B/关键链2944+1024≤4096保持。
+实际config.c编译命令预处理确认初始化大小0x100000且ELF g_memRegion00实际1MiB；默认/UP1保持旧值。不是全ELF无FPU/所有IRQ最坏栈证明。
+板卡当前已按新授权只重启一次恢复（详见下一条），新boot cd4f03d6-005d-473d-b6ce-0cc745314a08/micadPID325/NRestarts0/active，未再次操作板端或加载P3h。
+下一步先准备独立P3h runner/新SHA与ABI证明/永久单次新root，再另问隔离回环及一次受控NMT复测；不能改旧P3g ATTEMPTED或沿用已消耗授权。
+完整清单/原始故障与恢复/构建/候选同步GitHub和服务器delivery，具体提交和后验验证以最终报告为准。
+
+2026-10-23 当前覆盖：用户随后批准“允许重启恢复并继续软件修复”，已只重启一次，原保留现场为重启前证据。
+新boot cd4f03d6-005d-473d-b6ce-0cc745314a08；CPU4/5 OFF/原两UP Offline/临时client端点消失/hold卸载/ETH2ETH3 Linux100FullANon/linkyes。
+板端M6路径真实SHA为9c5e55a2.../3357eb97...，与仓库M6一致；本地正式M7累计ELF仍8bfb824b.../627545f5...，二者不是同一文件，不能混用哈希。
+首次恢复脚本路径假设/本地M7与板端M6哈希混用导致只读复核失败，日志保留，查实际M6配置修正后recovery-verification-v3通过，无第二次重启。
+本次新授权仅恢复+软件修复/离线回归，不包含P3h部署或NMT复测；仍需另行确认。软件修复在独立tests/powerlink-nmt-p3h-20261023归档，进展以最终报告为准。
+
+2026-10-23 最新入口：用户明确ETH2ETH3隔离回环仍在，允许固定P3g单次受控NMT；本次已经执行且失败，授权窗口已消耗。
+硬件入口tests/powerlink-nmt-p3g-hw-20261023/README.md；原执行提交7281943595b082b408933771e18d4c123d7e3b3a，候选仍85e78eb4...，18输入SHA/原始日志/真实结果保留。
+只投递一次nmt-probe，reset1/off0/resetLoops4/offLoops0/reached0；rc4/clean0/stage3，初始化IDLE/preparePREPARED后NMT0x39进入FAULT，未NotActive/未SwitchOff。
+异常cause/ELR/ESR0、RPMsg响应；不是旧MMU/TTY栈异常。只读缓存ETHlease2/timerlease1，尚未执行的stopped/timerFinal全0不是停止证明。
+只读元数据g_memTotalSize524256/usage=peak375336/剩148920；PDO RX/TX各40，RX映射非NULL/TX映射NULL，PDO共享区未建立。
+实际AArch64编译私有类型/偏移10项16,254,254,16,576,512,512,516,536,544；TX映射16*40*254=162560B，至少差13640B不含分配器开销。
+原生malloc未模拟MICA/RTOS共用512KiB FSC堆；旧GsOff不走reset新增PDO分配，因此此前通过不代表该动态预算足够。
+原critical error被process后续InvalidOperation5覆盖，不能称捕获了原PDO错误；后续应保存first-error/完整堆预算与峰值，不悄悄裁通道，本轮未修改或重编固件。
+当前boot6974ac40-f3a2-4433-a5b8-11ec4318248f、micadPID328/NRestarts0/active，原up-a/up-b Offline，临时up-b-m7-plk-nmt-probe仍Running/CPU5活着。
+ETH2解绑/eth1缺失，ETH3/eth2 100Half/linkyes，hold加载，ttyRPMSG0保留，管理eth0地址路由正常/CAN全DOWN/failed0，正式两ELF/M6/DT/开机不变。
+故障后只读小范围私有DRAM/系统清点，无控制器MMIO/堆遍历；没有stop/rm/CPU_OFF/rebind/rmmod/retry/reboot，未开COM7。旧故障恢复工具不适用。
+新root/root/m7-powerlink-nmt-p3g-20261023已有ATTEMPTED，严禁覆盖/重新执行；没有新的重启/恢复/复测授权，必须再问用户。
+另发现独立停止验收器把rawCurrentEL=4误写成1，离线修正及双快照拒绝1回归，Windows/Linux各169项通过；不是stage3失败原因，未将修改覆盖板端或用于清理。
+tests/audit_powerlink_pdo_memory.py为仅编译几何/离线计算，inspect_powerlink_nmt_fault.py/allocator.py为固定失败候选只读工具，不是恢复入口。
+构建服务器本轮只读编译/测试归档根/home/openeuler/build/powerlink-nmt-p3g-hw-20261023；GitHub/清单状态以最终报告为准。
+以下全部“最新/本轮/未上板”是历史时序，不覆盖以上当前失败保留现场。下一步先获得恢复授权，再修复预算，复测须另开新授权窗口。
+
 2026-10-23 最新入口：用户继续，完成P3g独立板端runner/停核快照软件准备，本轮未连接/部署板卡，不执行reset或发送。
 新增tests/board/run_powerlink_nmt_probe.py及独立conf、powerlink_nmt_checks.py、read_powerlink_nmt_snapshot.py；旧GsOff runner不改。
 固定85e78eb4...候选/6.12.69-gf1b67c293213 kernel/b071d434...hold；原两实例必须唯一Offline/物理OFF，ETH2ETH3须100Full/ANon且管理/工控不变。

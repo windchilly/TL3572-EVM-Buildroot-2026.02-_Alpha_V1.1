@@ -70,7 +70,8 @@ def inherited_literal(path, load_offset, adrp_offset):
     return load & 0xffc003ff, read_address(path, address, 8)
 
 
-def audit(build, full, toolchain, baseline):
+def audit(build, full, toolchain, baseline, up2_fsc=0x80000):
+    if up2_fsc not in (0x80000, 0x100000): raise ValueError('Unapproved FSC candidate budget')
     prefix = str(toolchain / "bin/aarch64-none-elf-")
     required = text_symbols(prefix, full) | HAL | BSP | PLATFORM | {
         "Rk3572PowerlinkInit", "Rk3572PowerlinkInput", "Rk3572PowerlinkSnapshot"}
@@ -100,8 +101,9 @@ def audit(build, full, toolchain, baseline):
         end = symbols["__os_section_end"][0]
         if not image < end <= image + 0x800000:
             raise ValueError(f"Image/BSS exceeds private reservation: {hex(end)}")
-        if symbols["g_memRegion00"][1] != 0x80000:
-            raise ValueError("Pinned 512KiB FSC allocator pool changed")
+        expected_fsc = up2_fsc if role == 'b' else 0x80000
+        if symbols["g_memRegion00"][1] != expected_fsc:
+            raise ValueError("Pinned per-role FSC allocator pool changed")
         runtime = build / f"up-{role}.runtime.bin"
         images.append({"role": role, "elf_bytes": path.stat().st_size,
             "elf_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
@@ -109,7 +111,7 @@ def audit(build, full, toolchain, baseline):
             "runtime_sha256": hashlib.sha256(runtime.read_bytes()).hexdigest(),
             "image_used_including_noload_bytes": end - image,
             "image_remaining_bytes": image + 0x800000 - end,
-            "fsc_pool_bytes": 0x80000, "page_tables": mmu_audit(path)})
+            "fsc_pool_bytes": expected_fsc, "page_tables": mmu_audit(path)})
     report = {"phase": "P3b final cumulative SOFTWARE ONLY", "images": images,
         "complete_global_functions_retained_in_UP2": len(required),
         "all_hal_bsp_resolved": True, "final_undefined_symbols": [],

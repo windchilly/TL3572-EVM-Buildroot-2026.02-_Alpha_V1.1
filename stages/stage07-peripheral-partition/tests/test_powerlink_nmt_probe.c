@@ -35,6 +35,34 @@ int main(int argc, char** argv)
 {
     M7NmtProbeResult out; uint32_t expected = 0; unsigned i, stops, releases, freed;
     assert(argc == 2 && m7_nmt_probe(NULL) == M7_MPROBE_CONTEXT);
+    if (!strcmp(argv[1], "heap_small") || !strcmp(argv[1], "heap_full")) {
+        /* 128KiB non-PLK reserve is an explicit stress model, not a measured
+         * baseline. Keep the full original 40 RX/TX channels and 254 mappings. */
+        const size_t reserve = 128U * 1024U;
+        int small = !strcmp(argv[1], "heap_small");
+        heapLimit = small ? 524256U : 1048544U;
+        heapUsed = heapPeak = reserve;
+        for (i = 0; i < (small ? 1U : 100U); ++i) {
+            traceCount = 0;
+            uint32_t rc = m7_nmt_probe(&out);
+            if (small) {
+                assert(rc == M7_MPROBE_PROCESS && !out.lifecycle.clean && budgetFailures);
+                assert(budgetFailedRequest == 162560U);
+                assert(out.lifecycle.stackError == kErrorPdoInitError);
+                assert(out.lifecycle.final.lastError == kErrorPdoInitError);
+                assert(!out.offSubmitted && out.lifecycle.final.nmtState == kNmtGsResetCommunication);
+                assert(m7_nmt_probe(&out) == M7_MPROBE_CONTEXT);
+            } else {
+                assert(!rc && out.lifecycle.clean && out.reached == kNmtMsNotActive);
+                assert(!live && heapUsed == reserve && !budgetFailures);
+            }
+        }
+        if (!small) assert(heapLimit - heapPeak >= 256U * 1024U);
+        printf("P3h bounded host heap %s: total=%zu reserve=%zu charged_peak=%zu headroom=%zu failed_request=%zu failures=%u; first_error=%x; full OD retained; NOT real FSC/hardware peak\n",
+            argv[1], heapLimit, reserve, heapPeak, heapLimit-heapPeak, budgetFailedRequest, budgetFailures,
+            small ? (unsigned)kErrorPdoInitError : 0U);
+        return 0;
+    }
     if (!strcmp(argv[1], "normal")) {
         for (i = 0; i < 100; ++i) {
             static const uint32_t expectedTrace[] = {kNmtGsInitialising, kNmtGsResetApplication,

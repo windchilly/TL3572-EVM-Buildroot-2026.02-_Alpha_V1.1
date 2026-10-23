@@ -69,3 +69,8 @@ stages/stage07-peripheral-partition/source/powerlink/port/0007-uniproton-cyclic-
 stages/stage07-peripheral-partition/source/patches/uniproton/0019-rk3572-powerlink-nmt-probe.patch whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/tests/powerlink-nmt-p3g-runner-20261023/*.log -text whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/tests/powerlink-nmt-p3g-runner-20261023/*.json whitespace=cr-at-eol
+stages/stage07-peripheral-partition/tests/powerlink-nmt-p3g-hw-20261023/*.log -text whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/powerlink-nmt-p3g-hw-20261023/*.json whitespace=cr-at-eol
+stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-20261023/*.log -text whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-20261023/*.json whitespace=cr-at-eol
+stages/stage07-peripheral-partition/source/patches/uniproton/0020-rk3572-powerlink-nmt-heap.patch whitespace=-blank-at-eol,-blank-at-eof

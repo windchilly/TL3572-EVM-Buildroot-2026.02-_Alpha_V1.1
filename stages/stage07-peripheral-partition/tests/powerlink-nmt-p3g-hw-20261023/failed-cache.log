@@ -1,0 +1,144 @@
+{
+  "cache": {
+    "ready": 0,
+    "pending": 0,
+    "running": 0,
+    "seq": 1,
+    "done": 1,
+    "cmd": 7,
+    "rc": 4,
+    "runtime": 4294967295,
+    "owner": 6
+  },
+  "mn": {
+    "state": 3,
+    "owner": 6,
+    "lastError": 5,
+    "lastEvent": 18,
+    "nmtState": 57,
+    "processes": 3,
+    "events": 4
+  },
+  "lifecycle": {
+    "result": 4,
+    "clean": 0,
+    "stage": 3,
+    "stackError": 5,
+    "loops": 4,
+    "leaseBefore": 0,
+    "leaseAfter": 2,
+    "timerBefore": 0,
+    "timerAfter": 1,
+    "rx": 0,
+    "tx": 0,
+    "txDescriptors": 0,
+    "dropped": 0,
+    "rxErrors": 0,
+    "txErrors": 0,
+    "fatal": 0,
+    "timerIrqs": 0,
+    "timerCallbacks": 0,
+    "initialized": {
+      "state": 1,
+      "owner": 6,
+      "lastError": 0,
+      "lastEvent": 0,
+      "nmtState": 0,
+      "processes": 0,
+      "events": 0
+    },
+    "prepared": {
+      "state": 2,
+      "owner": 6,
+      "lastError": 0,
+      "lastEvent": 0,
+      "nmtState": 0,
+      "processes": 0,
+      "events": 0
+    },
+    "final": {
+      "state": 3,
+      "owner": 6,
+      "lastError": 5,
+      "lastEvent": 18,
+      "nmtState": 57,
+      "processes": 3,
+      "events": 4
+    },
+    "active": {
+      "mac": 49155,
+      "tx": 524289,
+      "rx": 527361,
+      "dma": 0,
+      "macIrq": 0,
+      "dmaIrq": 0
+    },
+    "stopped": {
+      "mac": 0,
+      "tx": 0,
+      "rx": 0,
+      "dma": 0,
+      "macIrq": 0,
+      "dmaIrq": 0
+    },
+    "timerInitial": {
+      "counter": 734000117423,
+      "ticks": 84,
+      "affinity": 2147483905,
+      "interrupts": 0,
+      "maxIrqLate": 0,
+      "level": 4,
+      "frequency": 24000000,
+      "cntp": 0,
+      "cntv": 1,
+      "enabled": 134266879,
+      "pending": 0,
+      "active": 0,
+      "group": 0,
+      "config": 1364459520,
+      "priority30": 160,
+      "priority27": 0,
+      "typer": 64749,
+      "cpuControl": 1
+    },
+    "timerFinal": {
+      "counter": 0,
+      "ticks": 0,
+      "affinity": 0,
+      "interrupts": 0,
+      "maxIrqLate": 0,
+      "level": 0,
+      "frequency": 0,
+      "cntp": 0,
+      "cntv": 0,
+      "enabled": 0,
+      "pending": 0,
+      "active": 0,
+      "group": 0,
+      "config": 0,
+      "priority30": 0,
+      "priority27": 0,
+      "typer": 0,
+      "cpuControl": 0
+    }
+  },
+  "nmt": {
+    "resetSubmitted": 1,
+    "offSubmitted": 0,
+    "resetLoops": 4,
+    "offLoops": 0,
+    "reached": 0
+  },
+  "other_probes_untouched": true,
+  "candidate_sha256": "85e78eb4bb150633e695014b5ecc55401a048a2707175a031b97a2e00567f68e",
+  "ethLease": 2,
+  "exception": {
+    "cause": 0,
+    "elr": 0,
+    "esr": 0
+  },
+  "snapshot_sha256": "a81b8235964d7d9a7e1c33d43a3c0bb009bee1f4d2d2e2ad37fcc7ac75409f8e",
+  "limit": "Stable FAILED owner cache only; UP2/ETH/CNTP resources retained. No MMIO readback or safe-to-stop/rebind proof."
+}
+
+EXIT=0

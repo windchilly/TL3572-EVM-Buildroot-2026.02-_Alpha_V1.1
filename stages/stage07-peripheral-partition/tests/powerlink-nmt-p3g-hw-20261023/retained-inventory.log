@@ -1,0 +1,57 @@
+Linux tl3572-openeuler 6.12.69-gf1b67c293213 #1 SMP Mon Sep 21 03:23:13 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+6974ac40-f3a2-4433-a5b8-11ec4318248f
+0-3,6-7
+4096
+MainPID=328
+NRestarts=0
+ActiveState=active
+Name                          Assigned CPU        State               Service
+up-b-m7-plk-nmt-probe         5                   Running             rpmsg-tty(/dev/ttyRPMSG0) rpmsg-rpc rpmsg-umt
+up-b                          5                   Offline
+up-a                          4                   Offline
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+can0             DOWN           
+can1             DOWN           
+can2             DOWN           
+can3             DOWN           
+eth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 
+eth2             UP             fe80::2e0:9aff:fe42:baeb/64 
+default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 
+192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 
+192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 
+Module                  Size  Used by
+m7_eth2_power_hold     12288  0
+mcs_km                 16384  0
+Settings for eth2:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Supported pause frame use: No
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Advertised pause frame use: No
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  100baseT/Half
+	Link partner advertised pause frame use: No
+	Link partner advertised auto-negotiation: No
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Half
+	Auto-negotiation: on
+	Port: MII
+	PHYAD: 32
+	Transceiver: internal
+	Supports Wake-on: pumbg
+	Wake-on: g
+        Current message level: 0x00007fff (32767)
+                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol
+	Link detected: yes
+ls: cannot access '/sys/bus/platform/devices/2a040000.ethernet/driver': No such file or directory
+lrwxrwxrwx 1 root root 10 Oct 23 15:36 /dev/ttyRPMSG0 -> /dev/pts/0
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed.
+
+EXIT=0
