@@ -1,5 +1,25 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-23 最新入口：用户进一步明确“允许清理、修复并复测”；旧故障已精确清理/归还Linux，新P3f候选单次GsOff实板通过。
+精确恢复工具restore_powerlink_mn_dormant_fault.py要求旧b00cdf ELF、boot、task9/PC26262626/ESR8a000000、COLDseq0/零lease和独立CPU4/5OFF，非通用unsafe覆盖。
+清理失效临时client/端点、重绑ETH2并确认两端100full后才去hold，没有强停活核或整板重启；旧故障/输入完整保留。
+状态查询out快照和reply[384]移到函数静态BSS，inputActive覆盖copy/format/log/send全过程；意外重入消费不二次发回包/不修改邮箱，IRQ锁不包send。
+新Rk3572PowerlinkInput真实帧320B(旧1712)，关键日志链2944B+1024B预留=3968≤4096，额外余量128；默认TTY/listen仍4096B。
+新增audit_powerlink_stack.py由最终P3f ELF审计强制调用，验证8函数帧和调用边；7Python预算/旧4336回归/重入保护+1原生重入场景。
+Windows/Linux136Python、真实完整栈29+邮箱4原生、旧P3e/P3d/P3c/P3b/P0-P3a与累计parser/18生命周期/3codec通过，无sanitizer。
+构建根/home/openeuler/build/powerlink-mn-p3f-fixed-20261023；UniProton-first/repro两全新累计树runtime一致，9旧软件对象明确复制P3f根非重编核心。
+实际新ELF47c0bb5425b9121b3db83572f47d684179962d226c1850123ecb19d1b662fda4，1186944B；UP2runtime630100B SHA518b2e7315a816ebb195532561a07bcba7031f9920745c34bac426a3b3dde4ff。
+image/BSS2159392B/8MiB/FSC512KiB/页表10/16，UP1runtime仍d4d80d02.../9页；596旧函数/U0/LSE0/125旧SIMD无新增。
+新独立board root /root/m7-powerlink-mn-p3f-fixed-20261023/临时client up-b-m7-plk-mn-probe-fixed，仅一次新候选检查，无自动二次尝试。
+实板rc0/clean1/stage5，initializeIDLE→preparePREPARED→128process→stop/exitCOLD；actualNMT始终GsOff/processes128/events0。
+RX/TX/TX描述符占用0，rxerr/txerr/fatal0、timer IRQ/回调0，背景drop1；MACc003半双工，停止六回读0、lease0/0、timer0/0。
+退役DRAM读回PPI30 enable/pending/active0、CNTP_CTL2、24MHz；CNTV_CTL1、prio30=160、prio27=0和group/config保持；exception cause/ELR/ESR全0。
+最终CPU4/5独立PSCI OFF、原两UP Offline、临时client/hold/端点清理、LinuxETH2/3恢复100fullANon；CAN/UART寄存器绑定/ETH1管理地址路由/CPU集合不变。
+boot6974ac40-f3a2-4433-a5b8-11ec4318248f、micadPID328/restarts0全程不变；不打开COM7、不reset/start/发测试或工控帧、不改M6/DT/开机/正式ELF。
+tests/powerlink-mn-p3f-fixed-20261023/README.md为当前源码/复建/证据入口，GitHub状态以最终报告为准。
+栈审计只是固定整数/字符串关键路径+显式预留，不是所有路径/浮点格式/IRQ最坏栈证明，仍需生产栈峰值与长稳验证。
+下一步先准备受控NMT reset/停止的软件状态迁移/有界入口；本次许可不扩展至MN物理发帧/CN/伺服，不能直接启动MN。
+
 2026-10-23 最新入口：用户批准一次P3f联合ETH2/CNTP GsOff检查；首次只读PLK status回包超时，尚未提交PLK mn-probe。
 故障证据tests/powerlink-mn-p3f-hw-20261023/README.md。实际候选仍b00cdf67837d3359488385f4709fa1a162cd4ea6a791855c6f9708c1411992c1。
 MMU真实10/16通过、启动休眠；共享日志boot4 seq160..172，seq172仅status COLD/seq0/cmd0/owner6，无BEGIN/PHY/timer/MN初始化。

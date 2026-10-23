@@ -2,6 +2,13 @@
 #include "test_powerlink_owner.c"
 static unsigned mnProbes;
 static int unsafe;
+static void reenter(void)
+{
+    M7PowerlinkSnapshot before = app_status(), after;
+    assert(Rk3572PowerlinkInput("PLK env-init", 12));
+    after = app_status();
+    assert(after.submitted == before.submitted && after.pending == before.pending);
+}
 uint32_t m7_timer_probe(M7TimerProbeResult* out)
 { assert(task == ownerId && !locked); *out = (M7TimerProbeResult){0}; out->clean = 1; return 0; }
 uint32_t m7_eth_probe(M7EthProbeResult* out)
@@ -33,6 +40,11 @@ int main(int argc, char** argv)
         unsafe = 1; input("PLK mn-probe", "ACCEPTED"); step(); assert(!app_status().ready);
         input("PLK mn-probe", "ERROR not-ready"); input("PLK edrv-probe", "ERROR not-ready");
         input("PLK mn-status", "clean=0");
+    } else if (!strcmp(argv[1], "reentrant")) {
+        sendHook = reenter; input("PLK status", "seq=0");
+        assert(!sendHook && !app_status().submitted);
+        input("PLK env-init", "ACCEPTED"); step();
+        input("PLK env-exit", "ACCEPTED"); step();
     } else if (!strcmp(argv[1], "invalid")) {
         input("PLK mn-probe\n\n", "invalid-command");
         assert(Rk3572PowerlinkInput("PLK mn-probe\0x", 14) && strstr(reply, "invalid-command"));

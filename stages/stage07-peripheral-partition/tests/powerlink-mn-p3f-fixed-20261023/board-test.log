@@ -1,0 +1,65 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+SCOPE: one 128-process full-stack GsOff lifecycle; no reset/start/frame/CAN/UART/boot change/reboot
+BEFORE {"boot": "6974ac40-f3a2-4433-a5b8-11ec4318248f", "management": {"address": [["inet", "192.168.2.141", 24, "global"], ["inet6", "fe80::d414:36ff:fe8b:78f0", 64, "link"]], "cpus": "0-3,6-7\n", "driver": "/sys/bus/platform/drivers/rk_gmac-dwmac", "routes": "default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 \n192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 \n192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 \n"}, "micad": {"ActiveState": "active", "MainPID": "328", "NRestarts": "0"}, "peripherals": {"drivers": {"26500000.serial": "dw-apb-uart", "2ab10000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "registers": {"0x2607400c": 37017, "0x26074010": 2457, "0x26074018": 4, "0x2608203c": 3536, "0x2608404c": 153, "0x2608608c": 56576, "0x26090374": 31488, "0x26090404": 387, "0x26090408": 387, "0x2609040c": 33, "0x26090410": 0, "0x26090414": 279, "0x26090418": 11, "0x2609041c": 768, "0x26090420": 768, "0x26090424": 768, "0x26090428": 768, "0x2609042c": 768, "0x26090430": 768, "0x26090434": 768, "0x26090438": 768, "0x26090808": 24512, "0x2609082c": 32768, "0x26090838": 32736, "0x2609083c": 37449, "0x26090840": 65468, "0x26090a2c": 0, "0x26090a38": 0, "0x26090a3c": 0, "0x26090a40": 0, "0x260b0320": 1, "0x260b0814": 16844, "0x260b0a14": 0, "0x2a601090": 0, "0x2a601094": 0, "0x2a601110": 286331264, "0x2a601114": 4009791488, "0x2a601210": 0, "0x2a601214": 0, "0x2a601310": 0, "0x2a601314": 0, "0x2a60149c": 2694881440, "0x2a6014a0": 2694881440, "0x2a6014a4": 2694881440, "0x2a6014b8": 2694881440, "0x2a60189c": 16843009, "0x2a6018a0": 16843009, "0x2a6018a4": 16843009, "0x2a6018b8": 16843009, "0x2a601c24": 1431655765, "0x2a601c28": 1431655765, "0x2a601c2c": 1431655765}}}
+POWER/ROOT HOLD PASS CRU42=0xf000
+REAL MMU {"budget_bytes": 65536, "mapped_units": 67, "rc": 0, "root": "0x7ca00000", "table_pages": 10, "tcr": "0x80003520", "used_bytes": 40960}
+PLK UP2 ACCEPTED seq=1
+PLK UP2 MN rc=0 clean=1 stage=5 stack=0x0 loops=128 state=0 nmt=0x0 rx=0 tx=0 txdesc=0 drop=1 rxerr=0 txerr=0 fatal=0 irqs=0 callbacks=0 mac=0xc003 stop=0x0/0x0/0x0/0x0/0x0/0x0 lease=0/0 timer=0/0
+[up-b boot=5 seq=173] [boot] UP CPU5 entered
+[up-b boot=5 seq=174] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=5 seq=175] [boot] interrupt routing ready
+[up-b boot=5 seq=176] [boot] scheduler task entered
+[up-b boot=5 seq=177] [plk] dormant owner init rc=0; no PHY/timer/MN startup
+[up-b boot=5 seq=178] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=5 seq=179] [openamp] get rsctable 7c2992f0, size a64 
+[up-b boot=5 seq=180] [openamp]: get vring0: da 7a0a0000
+[up-b boot=5 seq=181] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=5 seq=182] [openamp] tty task started
+[up-b boot=5 seq=183] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=0 done=0 cmd=0 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=184] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[up-b boot=5 seq=185] [plk] PLK UP2 ACCEPTED seq=1
+[up-b boot=5 seq=186] [plk] PLK UP2 ready=1 owner=6 pending=1 running=0 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=187] [plk-mn-probe] BEGIN full stack GsOff; no reset/start
+[up-b boot=5 seq=188] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=5 seq=189] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=5 seq=190] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=5 seq=191] [openamp] ept ready
+[up-b boot=5 seq=192] [boot] RPMsg ready
+[up-b boot=5 seq=193] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=194] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=195] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=196] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=197] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=198] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=199] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=200] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=201] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=202] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=203] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=204] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=205] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=206] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=207] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=208] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=209] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=210] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=211] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=212] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=213] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=214] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=215] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=216] [eth] PHY forced 100-half link ready; AN disabled, bmsr=0x794d
+[up-b boot=5 seq=217] [plk-edrv] started 100-half polling, DMA=0x7ca10000 bytes=61696; not MN runtime
+[up-b boot=5 seq=218] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=219] [plk-edrv] QUIESCED reset=1; aborted TX is not completion
+[up-b boot=5 seq=220] [plk-mn-probe] END rc=0 clean=1 loops=128 stage=5; no reset/start
+[up-b boot=5 seq=221] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=1 done=1 cmd=6 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=128 events=0 mode=GsOff-diagnostic
+[up-b boot=5 seq=222] [plk] PLK UP2 MN rc=0 clean=1 stage=5 stack=0x0 loops=128 state=0 nmt=0x0 rx=0 tx=0 txdesc=0 drop=1 rxerr=0 txerr=0 fatal=0 irqs=0 callbacks=0 mac=0xc003 stop=0x0/0x0/0x0/0x0/0x0/0x0 lease=0/0 timer=0/0
+[up-b boot=5 seq=223] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CLEANUP PASS: CPU4/5 OFF, Linux full restored, peripherals/management/micad/boot unchanged
+OVERALL PASS full-stack GsOff lifecycle; NOT NMT reset/start/CN acceptance
+
+BOARD_EXIT_CODE=0

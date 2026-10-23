@@ -1,0 +1,35 @@
+{
+  "phase": "P3f GsOff lifecycle",
+  "passed": true,
+  "candidate_sha256": "47c0bb5425b9121b3db83572f47d684179962d226c1850123ecb19d1b662fda4",
+  "result": {
+    "rc": "0",
+    "clean": "1",
+    "stage": "5",
+    "stack": "0x0",
+    "loops": "128",
+    "state": "0",
+    "nmt": "0x0",
+    "rx": "0",
+    "tx": "0",
+    "txdesc": "0",
+    "drop": "1",
+    "rxerr": "0",
+    "txerr": "0",
+    "fatal": "0",
+    "irqs": "0",
+    "callbacks": "0",
+    "mac": "0xc003",
+    "stop": "0x0/0x0/0x0/0x0/0x0/0x0",
+    "lease": "0/0",
+    "timer": "0/0"
+  },
+  "cleanup": true,
+  "boot_id": "6974ac40-f3a2-4433-a5b8-11ec4318248f",
+  "micad": {
+    "MainPID": "328",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "error": null
+}

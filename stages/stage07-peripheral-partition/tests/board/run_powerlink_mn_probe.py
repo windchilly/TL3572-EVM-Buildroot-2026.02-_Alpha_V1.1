@@ -15,8 +15,8 @@ import run_powerlink_eth_probe as base
 from powerlink_eth_checks import fields
 from powerlink_mn_checks import validate_lifecycle, passive_owner
 common, passive, mmu, fabric, ethernet = base.common, base.passive, base.mmu, base.fabric, base.ethernet
-ROOT = Path('/root/m7-powerlink-mn-p3f-20261023')
-CLIENT = 'up-b-m7-plk-mn-probe'
+ROOT = Path('/root/m7-powerlink-mn-p3f-fixed-20261023')
+CLIENT = 'up-b-m7-plk-mn-probe-fixed'
 ALLOWED = ('M7 status', 'PLK status', 'PLK mn-probe', 'PLK mn-status')
 
 def diagnostic(fd, text):

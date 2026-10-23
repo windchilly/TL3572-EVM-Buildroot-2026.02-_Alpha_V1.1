@@ -1,0 +1,132 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+{
+  "limit": "Stopped-core private cache; physical hardware stop/rebind proof is in board-test.log",
+  "owner_cache": {
+    "ready": 1,
+    "pending": 0,
+    "running": 0,
+    "seq": 1,
+    "done": 1,
+    "cmd": 6,
+    "rc": 0,
+    "runtime": 0,
+    "owner": 6
+  },
+  "mn": {
+    "state": 0,
+    "owner": 6,
+    "lastError": 0,
+    "lastEvent": 0,
+    "nmtState": 0,
+    "processes": 128,
+    "events": 0
+  },
+  "lifecycle": {
+    "result": 0,
+    "clean": 1,
+    "stage": 5,
+    "stackError": 0,
+    "loops": 128,
+    "leaseBefore": 0,
+    "leaseAfter": 0,
+    "timerBefore": 0,
+    "timerAfter": 0,
+    "rx": 0,
+    "tx": 0,
+    "txDescriptors": 0,
+    "dropped": 1,
+    "rxErrors": 0,
+    "txErrors": 0,
+    "fatal": 0,
+    "timerIrqs": 0,
+    "timerCallbacks": 0,
+    "initialized": {
+      "state": 1,
+      "owner": 6,
+      "lastError": 0,
+      "lastEvent": 0,
+      "nmtState": 0,
+      "processes": 0,
+      "events": 0
+    },
+    "prepared": {
+      "state": 2,
+      "owner": 6,
+      "lastError": 0,
+      "lastEvent": 0,
+      "nmtState": 0,
+      "processes": 0,
+      "events": 0
+    },
+    "final": {
+      "state": 0,
+      "owner": 6,
+      "lastError": 0,
+      "lastEvent": 0,
+      "nmtState": 0,
+      "processes": 128,
+      "events": 0
+    },
+    "timerInitial": {
+      "counter": 544959794075,
+      "ticks": 88,
+      "affinity": 2147483905,
+      "interrupts": 0,
+      "maxIrqLate": 0,
+      "level": 4,
+      "frequency": 24000000,
+      "cntp": 0,
+      "cntv": 1,
+      "enabled": 134266879,
+      "pending": 0,
+      "active": 0,
+      "group": 0,
+      "config": 1364459520,
+      "priority30": 160,
+      "priority27": 0,
+      "typer": 64749,
+      "cpuControl": 1
+    },
+    "timerFinal": {
+      "counter": 545019608206,
+      "ticks": 2579,
+      "affinity": 2147483905,
+      "interrupts": 0,
+      "maxIrqLate": 0,
+      "level": 4,
+      "frequency": 24000000,
+      "cntp": 2,
+      "cntv": 1,
+      "enabled": 134266879,
+      "pending": 0,
+      "active": 0,
+      "group": 0,
+      "config": 1364459520,
+      "priority30": 160,
+      "priority27": 0,
+      "typer": 64749,
+      "cpuControl": 1
+    }
+  },
+  "ethLease": 0,
+  "exception": {
+    "cause": 0,
+    "elr": "0x0",
+    "esr": "0x0"
+  },
+  "threads": [
+    {
+      "name": "rpmsg_tty_task",
+      "id": 8,
+      "allocated_stack": 4096
+    },
+    {
+      "name": "rpmsg_listen_task",
+      "id": 9,
+      "allocated_stack": 4096
+    }
+  ]
+}
+
+READ_ONLY_EXIT=0

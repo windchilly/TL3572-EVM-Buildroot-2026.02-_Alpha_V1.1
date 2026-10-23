@@ -1,5 +1,5 @@
 /* Dormant UP2 owner. One pending OR running command, no heap mailbox.
- * P3b exposes SOFTWARE environment only. No prepare/process/NMT/TX calls.
+ * P3b environment commands plus separately gated, bounded hardware probes.
  * IRQ locks protect copies/claims, never wrap a stack API or RPMsg send.
  * This is pinned non-SMP UP2 code, not a cross-CPU queue or timing promise. */
 #include "prt_config.h"
@@ -34,7 +34,7 @@ enum { EDRV_PROBE = 5U };
 static M7PowerlinkSnapshot snapshot;
 static U8 ownerStack[0x8000] __attribute__((aligned(16)));
 static TskHandle ownerTask;
-static uint32_t attempted, initError;
+static uint32_t attempted, initError, inputActive;
 extern int send_message(unsigned char* message, int length);
 
 int Rk3572PowerlinkSnapshot(M7PowerlinkSnapshot* out)
@@ -204,8 +204,10 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
 #ifdef M7_POWERLINK_EDRV_PROBE
     int edrvStatus = 0;
 #endif
-    M7PowerlinkSnapshot out;
-    char reply[384];
+    /* One serialized TTY consumer: keep growing diagnostics off its 4 KiB
+     * stack. The guard covers formatting/log/send, not just the cache copy. */
+    static M7PowerlinkSnapshot out;
+    static char reply[384];
     uintptr_t lock;
     int bytes;
     if (!data || length < 4 || memcmp(data, "PLK ", 4)) return 0;
@@ -235,6 +237,10 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
         else if (!matches(data, length, "PLK status")) error = "invalid-command";
     }
     lock = PRT_HwiLock();
+    /* Do not issue a nested RPMsg send or overwrite the active reply/cache.
+     * Consume an unexpected reentrant caller; normal TTY delivery is serial. */
+    if (inputActive) { PRT_HwiRestore(lock); return 1; }
+    inputActive = 1;
     if (!error && command) {
         if (!snapshot.ready) error = "not-ready";
         else if (snapshot.pending || snapshot.running) error = "busy";
@@ -311,5 +317,6 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
     if (bytes > 0 && bytes < (int)sizeof(reply)) {
         PRT_Printf("[plk] %s", reply); (void)send_message((unsigned char*)reply, bytes);
     }
+    lock = PRT_HwiLock(); inputActive = 0; PRT_HwiRestore(lock);
     return 1;
 }

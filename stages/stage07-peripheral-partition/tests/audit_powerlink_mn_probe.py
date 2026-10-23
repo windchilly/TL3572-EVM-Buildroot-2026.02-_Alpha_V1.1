@@ -6,6 +6,7 @@ import re
 import subprocess
 import sys
 from audit_powerlink_owner import text_symbols
+from audit_powerlink_stack import audit as stack_audit
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__)
     for name in ('build', 'full', 'toolchain', 'baseline'): p.add_argument(name, type=Path)
@@ -21,9 +22,13 @@ if __name__ == '__main__':
     bsp = [x['command'] for x in commands if x['file'].endswith('/rk3572_eth_test.c')]
     if len(bsp) != 1 or re.findall(r'-march=(\S+)', bsp[0])[-1:] != ['armv8-a']: raise ValueError('Wrong P3f actual BSP ISA')
     report = json.loads((a.build / 'edrv-probe-audit.json').read_text())
+    assembly = subprocess.check_output([prefix + 'objdump', '-d', str(a.build / 'tl3572-m7-integrated-up-b.elf')], text=True)
+    stack = stack_audit(assembly)
+    (a.build / 'stack-budget.json').write_text(json.dumps(stack, indent=2) + '\n')
     report.update(phase='P3f full-stack GsOff lifecycle SOFTWARE ONLY', hardware_tested=False,
         commands=report['commands'] + ['PLK mn-probe', 'PLK mn-status'],
         limits='128 process calls/2-second guard; full stack remains GsOff, no NMT reset/start/CN or real-time acceptance')
+    report['rpmsg_stack_budget'] = stack
     report['diagnostic_functions'].append('m7_mn_probe')
     (a.build / 'mn-probe-audit.json').write_text(json.dumps(report, indent=2) + '\n')
     print('P3f cumulative ELF/full-stack lifecycle/BSP ISA audit PASS')

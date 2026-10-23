@@ -21,6 +21,6 @@ gcc -std=c11 -O2 -Wall -Wextra -Werror -DMCS_CLIENT_CPU_ID=5 -DM7_POWERLINK_MN=1
     -I "$stage/tests/integrated-stubs" -I "$app" -I "$port" -c "$app/rk3572_integrated.c" -o "$work/integrated.o"
 gcc "${flags[@]}" "${gates[@]}" -I "$stage/tests/integrated-stubs" "$stage/tests/test_powerlink_mn_probe_owner.c" \
     "$work/owner.o" "$work/integrated.o" "${libs[@]}" -o "$work/owner"
-for scenario in normal unsafe invalid; do "$work/owner" "$scenario"; done
+for scenario in normal unsafe invalid reentrant; do "$work/owner" "$scenario"; done
 bash "$stage/tests/run_powerlink_edrv_probe_native.sh"
-echo 'P3f REAL full-stack 29 + mailbox 3 scenarios PASS; prior cumulative regressions PASS; NO BOARD'
+echo 'P3f REAL full-stack 29 + mailbox 4 scenarios PASS; prior cumulative regressions PASS; NO BOARD'

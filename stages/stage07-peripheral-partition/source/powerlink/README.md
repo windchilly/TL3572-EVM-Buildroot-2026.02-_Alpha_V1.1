@@ -1,8 +1,12 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
-**P3f累计候选：保留P3e全部功能 + 完整MN栈GsOff生命周期诊断（新增部分仅软件验证）**，
+**P3f修正版累计候选：保留P3e全部功能 + 完整MN栈GsOff生命周期诊断已单次实板通过**，
 不是已运行的主站；MN/CN互操作、持续负载/实时性仍待验证。
+
+获准清理和修复后，状态快照/回复移到受重入保护的BSS，输入帧降至320B，最终关键调用链2944B+1KiB预留通过。
+新候选实板initialize/prepare/128次process/stop/exit与归还Linux通过，始终GsOff、无reset/start或测试帧。
+[最新修复/原始故障/复建记录](../../tests/powerlink-mn-p3f-fixed-20261023/README.md)；旧故障说明以下保留作历史。
 
 2026-10-23 P3f首次硬件窗口在只读PLK status查询异常，MN诊断未提交；查询/日志栈预算超出默认4KiB线程。
 当前原P3f候选不要再次部署，等待栈修复/预算检查及独立复测；[故障与保留现场](../../tests/powerlink-mn-p3f-hw-20261023/README.md)。

@@ -1,0 +1,21 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+EXACT FAULT/DORMANT CACHE/ZERO LEASE/CPU4+5 ALREADY OFF PASS; reconcile only, no forced CPU_OFF/reboot
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+can0             DOWN           
+can1             DOWN           
+can2             DOWN           
+can3             DOWN           
+eth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 
+eth2             UP             fe80::2e0:9aff:fe42:baeb/64 
+eth1             UP             fe80::d814:36ff:fe8b:78f0/64 
+
+RECOVERY PASS: Linux ETH2/3 full restored, hold/endpoints/client removed, CPU4/5 OFF; no board reboot
+
+RECOVERY_EXIT=0

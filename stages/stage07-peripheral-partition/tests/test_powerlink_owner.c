@@ -14,6 +14,7 @@ static unsigned locked;
 static jmp_buf workerExit;
 static char reply[400];
 static int submittingDuringInit;
+static void (*sendHook)(void);
 uintptr_t PRT_HwiLock(void) { ++locked; return m7_plk_irq_save(); }
 void PRT_HwiRestore(uintptr_t state) {
     assert(locked); --locked; m7_plk_irq_restore(state);
@@ -26,7 +27,11 @@ void PRT_HwiRestore(uintptr_t state) {
 }
 int PRT_Printf(const char* format, ...) { (void)format; return 0; }
 int send_message(unsigned char* message, int length)
-{ assert(!locked && length > 0 && length < (int)sizeof(reply)); memcpy(reply, message, (size_t)length); reply[length] = 0; return length; }
+{
+    assert(!locked && length > 0 && length < (int)sizeof(reply));
+    if (sendHook) { void (*hook)(void) = sendHook; sendHook = NULL; hook(); }
+    memcpy(reply, message, (size_t)length); reply[length] = 0; return length;
+}
 U32 PRT_TaskCreate(TskHandle* id, struct TskInitParam* param)
 {
     ++created;

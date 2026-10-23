@@ -2,6 +2,11 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+2026-10-23 栈修复后`build_m7_powerlink_mn_probe_candidate.sh`的最终审计新增`audit_powerlink_stack.py`，
+拒绝旧4336B/4KiB关键调用链，修正版2944B+1KiB预留通过；实际输入帧1712→320B，默认线程栈不增大。
+新候选已获准单次GsOff实板联合生命周期/安全归还通过，[完整记录/换机入口](../tests/powerlink-mn-p3f-fixed-20261023/README.md)。
+原b00cdf候选仍禁止重部署；新board runner使用独立fixed根/conf，严格无reset/start/测试帧。
+
 2026-10-23 最新`build_m7_powerlink_mn_probe_candidate.sh`继承P3e/0016，追加0018/defaultOFF/UP2-only。
 `PLK mn-probe`是完整栈GsOff生命周期诊断，确实会在执行时获取ETH2/CNTP，但不发NMT reset/start；默认启动不执行。
 29+3新增原生/129Python、双新累计树复编通过；本轮无板端部署/接管。[源码/复建/证据](../tests/powerlink-mn-p3f-20261023/README.md)。

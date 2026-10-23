@@ -2,7 +2,12 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
-2026-10-23 最新[P3f硬件窗口故障](tests/powerlink-mn-p3f-hw-20261023/README.md)：
+2026-10-23 最新[P3f栈修复/完整栈GsOff实板](tests/powerlink-mn-p3f-fixed-20261023/README.md)：
+二次明确授权后精确清理旧故障并归还Linux；修正状态查询栈增长、增加重入保护及最终ELF关键路径预算。
+新候选真实初始化/准备/128次GsOff处理/停止/退出通过，最终双核OFF/Linux full恢复，boot/micad/工控资源不变，无reset/start或发帧。
+136Python、新增重入/预算回归、29+4原生、双新树runtime一致；旧故障完整保留，不代表MN/CN运行或实时性通过。
+
+2026-10-23 [P3f硬件窗口故障](tests/powerlink-mn-p3f-hw-20261023/README.md)：
 首次PLK status回包超时、MN命令未提交；状态查询帧从1136B增至1712B，日志链至少4336B超出默认线程栈4096B。
 CPU5异常后自行OFF，CPU4/5已独立确认为OFF；管理表仍Running/ETH2解绑/hold保留，未清理或重试，非生命周期通过。
 

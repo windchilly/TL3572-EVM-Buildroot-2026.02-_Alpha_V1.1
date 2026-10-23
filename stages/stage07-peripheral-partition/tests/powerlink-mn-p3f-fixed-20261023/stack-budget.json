@@ -1,0 +1,18 @@
+{
+  "path": {
+    "rpmsg_tty_task": 576,
+    "Rk3572IntegratedInput": 352,
+    "Rk3572PowerlinkInput": 320,
+    "PRT_Printf": 176,
+    "UpLogVprintf": 608,
+    "vsnprintf_s": 80,
+    "SecVsnprintfImpl": 80,
+    "SecOutput": 752
+  },
+  "known_frames": 2944,
+  "reserve": 1024,
+  "pinned_tty_stack": 4096,
+  "remaining_after_reserve": 128,
+  "passed": true,
+  "limit": "Critical integer/string logging path only. Reserve is not a measured worst-case IRQ/leaf bound; pinned M6 default stack assumed, actual TCB must be checked on board."
+}
