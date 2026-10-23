@@ -1,0 +1,30 @@
+{
+  "candidate_sha256": "85e78eb4bb150633e695014b5ecc55401a048a2707175a031b97a2e00567f68e",
+  "geometry": [
+    16,
+    254,
+    254,
+    16,
+    576,
+    512,
+    512,
+    516,
+    536,
+    544
+  ],
+  "compiler": "aarch64-none-elf-gcc (Arm GNU Toolchain 14.3.Rel1 (Build arm-14.174)) 14.3.1 20250623",
+  "pdou_source_sha256": "794194644c3d0ae0a9f6aacfe005282f4ed393ff7424d3ba1d316ffcee5b3d04",
+  "pdou_source_lf_sha256": "b4247cb8946cd40b6ce402918dea6b0207f2c5aa86ee9bb7d8e40132a0836f06",
+  "heap_total_bytes": 524256,
+  "heap_used_bytes": 375336,
+  "heap_free_bytes": 148920,
+  "rx_channels": 40,
+  "tx_channels": 40,
+  "mapping_object_bytes": 16,
+  "tx_objects_per_channel": 254,
+  "tx_mapping_request_bytes": 162560,
+  "minimum_shortfall_bytes": 13640,
+  "tx_mapping_pointer": "0x0",
+  "conclusion": "TX PDO mapping request exceeds total remaining RTOS FSC heap, even before allocation overhead.",
+  "limit": "Point-in-time metadata plus source geometry; original error was overwritten, not a heap/stack peak or stop proof. Native host malloc did not model shared MICA/RTOS heap usage."
+}

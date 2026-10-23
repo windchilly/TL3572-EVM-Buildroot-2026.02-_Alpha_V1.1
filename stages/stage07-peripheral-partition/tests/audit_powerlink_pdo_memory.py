@@ -37,6 +37,7 @@ if __name__ == '__main__':
     report = dict(candidate_sha256=scalar['candidate_sha256'], geometry=geometry,
         compiler=subprocess.check_output([str(compiler), '--version'], text=True).splitlines()[0],
         pdou_source_sha256=hashlib.sha256((a.upstream / 'stack/src/user/pdo/pdou.c').read_bytes()).hexdigest(),
+        pdou_source_lf_sha256=hashlib.sha256((a.upstream / 'stack/src/user/pdo/pdou.c').read_bytes().replace(b'\r\n', b'\n')).hexdigest(),
         heap_total_bytes=total, heap_used_bytes=used, heap_free_bytes=free,
         rx_channels=rx, tx_channels=tx, mapping_object_bytes=geometry[0], tx_objects_per_channel=geometry[2],
         tx_mapping_request_bytes=request, minimum_shortfall_bytes=request-free,

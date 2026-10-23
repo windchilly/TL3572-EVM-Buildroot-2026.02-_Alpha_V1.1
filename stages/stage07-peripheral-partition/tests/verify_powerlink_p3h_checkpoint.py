@@ -67,6 +67,13 @@ if __name__ == '__main__':
         subprocess.run(args + ['--check', path], env=env, check=True)
         subprocess.run(args + [path], env=env, check=True)
         subprocess.run(args + ['--reverse', '--check', path], env=env, check=True)
-    if hashlib.sha256((tree / 'stack/src/user/pdo/pdou.c').read_bytes()).hexdigest() != geometry['pdou_source_sha256']:
-        raise ValueError('PDO geometry source mismatch')
+    canonical = json.loads((evidence / 'pdo-memory-canonical.json').read_text())
+    if canonical['pdou_source_sha256'] != geometry['pdou_source_sha256'] or canonical['geometry'] != EXPECTED:
+        raise ValueError('compiled Linux PDO geometry source changed')
+    # Original archive is CRLF. git apply preserves mixed endings on Linux but
+    # Windows Git normalizes changed files. Compare ONLY CRLF->LF, not spaces,
+    # while keeping the actual compiler-input raw SHA and archive/patch SHA.
+    source = (tree / 'stack/src/user/pdo/pdou.c').read_bytes()
+    if hashlib.sha256(source.replace(b'\r\n', b'\n')).hexdigest() != canonical['pdou_source_lf_sha256']:
+        raise ValueError('PDO geometry canonical source mismatch')
     print(f'GITHUB FRESH PASS: {count} SHA / 175 Python / 1355 upstream files + REAL 0001-0007 patches / raw failure+recovery+software proof; NO BOARD', flush=True)

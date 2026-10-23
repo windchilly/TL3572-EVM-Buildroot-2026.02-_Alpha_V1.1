@@ -69,6 +69,14 @@ UP2 runtime630676B，SHA `a39e781aa5eaa5aa48c3508882b6e2a5c7fd9fbfbf210e0433986a
 不是源码或工具链损坏，先前“行尾问题”的初判已被证据纠正。
 Windows首次新source测试误用系统GBK读含中文UTF8补丁，`windows-tests.log`失败保留；显式UTF8后windows-final通过。
 
+首次[GitHub新检出日志](github-verification-first.log)已通过580SHA/原18输入/175项/1355文件真实补丁，
+但最后用Linux编译输入的raw PDO源码SHA核对Windows补丁输出时失败。
+原归档为CRLF，Linux应用补丁后为混合行尾，Windows Git输出为CRLF；不是代码差异。
+[再次真实交叉编译](canonical-source-proof.log)保留raw SHA `79419464...`，并增加只做CRLF→LF的
+[规范化SHA](pdo-memory-canonical.json) `b4247cb8...`，与Windows实际输出一致。
+验证器现在同时保留归档/补丁/实际编译源raw SHA和LF规范化SHA；不忽略空格或代码变更。
+原始硬件pdo-memory.json未被覆盖，最终再次GitHub检出日志为github-verification.log。
+
 ## 当前板卡与授权边界
 
 [一次授权重启和最终复核](../powerlink-nmt-p3g-hw-20261023/README.md#后续新授权一次重启恢复不是-nmt-复测)：

@@ -1,6 +1,8 @@
 # 项目交接记录（2026-09-23）
 
 2026-10-23 最新软件入口：P3h完整PDO预算/首错修复及双全新构建通过，未部署新候选，原P3g硬件结果仍FAILED。
+GitHub首次新检出580SHA/175项/1355文件补丁均通过，最后PDO raw SHA遇Windows CRLF与Linux补丁后混合行尾差异；首次失败日志保留。
+实际重编PDO几何并补raw79419464.../仅CRLF→LF规范化b4247cb8...双哈希，Windows内容一致；不忽略代码/空格，不覆盖原硬件报告，新清单包含此修正/首次失败证据。
 tests/powerlink-nmt-p3h-20261023/README.md为当前源码/构建/失败恢复/复现入口；m7_mn.c只保存第一个非0错误，process不再用InvalidOperation覆盖原critical。
 0020/defaultOFF/M7_POWERLINK_NMT_HEAP仅CPU5显式NMT候选允许1MiB FSC；UP1/default/正式ELF仍512KiB，40RX/40TX及254映射/原OD不裁减，缓存1504B ABI不扩展。
 真实栈受限宿主模型每块16B对齐+64B开销/128KiB非PLK预留：512KiB下一162560B失败并保留0xb3，1MiB100轮无泄漏/峰636816/余411728且断言余≥256KiB。
