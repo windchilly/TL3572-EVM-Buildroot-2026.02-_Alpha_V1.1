@@ -1,6 +1,9 @@
 # TL3572 / RK3572：openEuler + MICA + UniProton
 
 本仓库保存评估板资料、Stage01–Stage07 的源码/配置、正式阶段记录，以及换机恢复入口。
+2026-10-23 当前[P3h独立复测入口/真实堆检查准备](stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-runner-20261023/README.md)：
+固定同一候选，新窗口/许可/永久单次标记，增加COLD可用堆与停核实际峰值门槛；203Python、双编译器cache/FSC布局及旧原生回归通过。
+本软件阶段未连接或部署板卡，不改固件；已另问隔离单次NMT窗口，许可与归档门槛满足前不执行。
 2026-10-23 当前[P3h完整PDO堆预算/首错修复](stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-20261023/README.md)：
 P3g失败后获新授权重启一次，Linux ETH2/3已恢复；UP2显式NMT候选堆1MiB/defaultOFF，完整通道保留、首个PDO错误不再被覆盖。
 受限宿主堆100轮/175Python/两全新软件与累计树11产物一致，静态镜像/页表/栈预算通过；新候选尚未上板，硬件复测需新窗口和授权。

@@ -2,6 +2,10 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-10-23 当前[P3h独立runner/真实堆门槛软件准备](tests/powerlink-nmt-p3h-runner-20261023/README.md)：
+新root/client/许可开关不改旧P3g窗口；native/AArch64缓存1504B与FSC头32B一致，203Python/旧原生通过，21精确运行输入已列。
+本软件阶段不连接/部署板卡、不改ELF；后续另获隔离单次NMT许可并完成归档门槛后才执行，非MN实板通过。
+
 2026-10-23 当前[P3h完整PDO内存预算/首错修复](tests/powerlink-nmt-p3h-20261023/README.md)：
 UP2显式NMT候选1MiB/defaultOFF，原40/40通道及254映射不裁减，受限宿主堆100轮通过并保存原始0xb3首错。
 175Python、双全新软件/累计树11产物一致，静态预算通过但新候选未部署；板卡已另获准重启一次恢复Linux，复测需新授权。

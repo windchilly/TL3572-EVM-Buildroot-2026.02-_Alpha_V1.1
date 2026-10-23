@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "candidate_sha256": "ccfba235f8f3bcc79ab0c2a0e603b2d9cc01a7f3785985566660fb1672882ea8",
+  "cache_native": [
+    1504,
+    40,
+    80,
+    576,
+    496,
+    472,
+    472,
+    488,
+    40,
+    16,
+    24,
+    64,
+    80,
+    120,
+    160,
+    216,
+    256,
+    280,
+    376,
+    96,
+    40,
+    48,
+    88
+  ],
+  "cache_aarch64": [
+    1504,
+    40,
+    80,
+    576,
+    496,
+    472,
+    472,
+    488,
+    40,
+    16,
+    24,
+    64,
+    80,
+    120,
+    160,
+    216,
+    256,
+    280,
+    376,
+    96,
+    40,
+    48,
+    88
+  ],
+  "fsc_native": [
+    32,
+    8
+  ],
+  "fsc_aarch64": [
+    32,
+    8
+  ],
+  "symbols": {
+    "snapshot": [
+      2084230328,
+      1504
+    ],
+    "g_ethLease": [
+      2084230324,
+      4
+    ],
+    "g_excInfoInternal": [
+      2083112168,
+      520
+    ],
+    "g_memRegion00": [
+      2083115336,
+      1048576
+    ],
+    "g_memTotalSize": [
+      2085154784,
+      8
+    ],
+    "g_memUsage": [
+      2085154776,
+      8
+    ],
+    "g_memPeakUsage": [
+      2085154768,
+      8
+    ],
+    "g_memStartAddr": [
+      2085154760,
+      8
+    ],
+    "g_tskCbArray": [
+      2083112816,
+      8
+    ],
+    "g_tskMaxNum": [
+      2083112824,
+      4
+    ]
+  },
+  "fsc_header_sha256": "02745bef27ad2688557ac19f6879bed8f4b91bc6fd0adfe70d561d54a5d19370",
+  "fsc_source_sha256": "346f40871089b193f0a7159bef643fd9e782f05de12ab0cdc3065935725ff843",
+  "rtos_archive_sha256": "ff5781681faee4f3b3e719d5a4241ecbbd62fdf234a3df5819e2bd61688646c8",
+  "limit": "Real native/cross header cache layout + exact source-extracted FSC struct; not RTOS execution/heap peak or M6 TCB/exception offset discovery. No firmware change."
+}

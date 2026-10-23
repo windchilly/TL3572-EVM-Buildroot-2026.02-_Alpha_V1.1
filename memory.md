@@ -1,5 +1,23 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-23 最新软件入口：P3h独立runner/真实FSC门槛/ABI准备通过，本软件阶段未连接/上传/部署板卡或接管/reset/发帧/重启。
+tests/powerlink-nmt-p3h-runner-20261023/README.md为当前软件入口；新增run_powerlink_nmt_p3h_probe.py/p3h_checks/p3h_snapshot/conf，不改旧P3g runner/固定SHA/root/ATTEMPTED。
+候选仍ccfba235...原P3h ELF，无固件/核心修改或重编；新root/root/m7-powerlink-nmt-p3h-20261023/client up-b-m7-plk-nmt-p3h/AutoBoot=no，本软件阶段未在板创建。
+仅--confirm-isolated-p3h-nmt-reset，新永久单次标记/独占结果；复用旧四命令白名单和Observe-only transport，不改旧模块全局量，独立client stop/private proof。
+新p3h-abi.json强制候选SHA/23项双编译器cache布局/实际ELF私有符号匹配，拒绝旧P3g或缺证明；缓存1504B ABI不扩展。
+audit_powerlink_nmt_p3h_abi.py两次native/AArch64实际编译一致，固定RTOS头原样抽取FSC struct独立编译为32B/uintptr8；初始化源码减头/total/start关系和头/源/libRK3572 SHA已记录。
+两次ABI JSON逐字节SHA33c89c21680c4f7e137e509e02e493a1bbfc21dfc5c4e355092166af7729aac8；不是执行RTOS分配器或自动发现M6 TCB800/异常520偏移。
+启动后唯一命令前只读COLD/seq0/all probe cache0/ETHlease0/异常0，双读稳定FSCtotal/used/peak/start；不是stop证明，不访问控制器MMIO/遍历堆。
+真实FSC必须1MiB/total1048544/start等于ELF池地址/used≤peak≤total；前可用≥767888=宿主PLK峰505744+256KiB，停止后实际peak也须留≥256KiB。
+这是本轮保守门槛而非实际RTOS最坏预算；记录前后used差但不当作严格泄漏结论。只在独立CPU4/5 OFF前后证明下读最终缓存/真实堆/TTY两栈4096才rm/rebind/去hold。
+未知或失败保留资源，不重投/NMT/第二次stop/自动CPU_OFF/rebind/reboot；即使已停核私有/峰值失败也保留。短写/ACK模糊只观察。
+Windows/Linux各203Python（原175+新28含完整模拟流程、故障/堆/私有证明保留、ABI/地址/只读顺序）；双编译器ABI及原生27+4/旧P3f-P0/累计回归通过。
+新原生harness重编链接；核心库/旧CTest二进制明确复用P3h software-repro，不称本轮从头重编。首次Windows mock少POSIX flags失败保留，仅fixture补全后通过，中间202项也保留。
+runtime-inputs.json列未来平铺的21精确输入+既有hold模块路径/哈希，仅准备清单，不是板端上传回执或执行许可。
+服务器独立准备根/home/openeuler/build/powerlink-nmt-p3h-runner-20261023；原P3h软件/累计根不变。新清单/GitHub/交付状态以最终报告为准。
+已另问用户“ETH2ETH3仍隔离+固定P3h单次reset→NotActive→SwitchOff/真实堆证明/安全归还”的新许可；回复和归档门槛均满足前不能上板，旧P3g/恢复软件许可不可复用。
+以下均为历史；本软件阶段无新板卡状态快照，最近已知仍是上次boot cd4f03d6...一次恢复Linux。若之后获准上板，必须另建硬件证据并覆盖最新状态，不能把本软件页写成实板PASS。
+
 2026-10-23 最新软件入口：P3h完整PDO预算/首错修复及双全新构建通过，未部署新候选，原P3g硬件结果仍FAILED。
 GitHub首次新检出580SHA/175项/1355文件补丁均通过，最后PDO raw SHA遇Windows CRLF与Linux补丁后混合行尾差异；首次失败日志保留。
 实际重编PDO几何并补raw79419464.../仅CRLF→LF规范化b4247cb8...双哈希，Windows内容一致；不忽略代码/空格，不覆盖原硬件报告，新清单包含此修正/首次失败证据。

@@ -2,6 +2,10 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+2026-10-23 当前[P3h runner/ABI与堆校验准备](../tests/powerlink-nmt-p3h-runner-20261023/README.md)：
+`audit_powerlink_nmt_p3h_abi.py`用双真实编译器验证同一候选缓存布局，并从固定RTOS头提取原样FSC结构编译，确认32B头/8B uintptr。
+两次证明逐字节相同，203Python及旧原生通过；本轮不重编核心/ELF，不访问板卡。21输入清单只是准备，不是上传回执/执行许可。
+
 2026-10-23 当前[P3h软件修复/复现](../tests/powerlink-nmt-p3h-20261023/README.md)：
 `build_m7_powerlink_nmt_heap_candidate.sh`追加0020/defaultOFF/UP2-only的1MiB FSC，核心保留首错，原OD不减。
 双全新软件/累计构建11产物一致、175Python/受限堆原生回归通过；候选未部署，板卡一次授权重启已恢复Linux。

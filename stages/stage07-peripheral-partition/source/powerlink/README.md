@@ -4,6 +4,10 @@
 **P3g累计软件候选：保留P3f全部功能 + 有界NMT reset/NotActive/SwitchOff软件诊断**，
 不是已运行的主站；MN/CN互操作、持续负载/实时性仍待验证。
 
+当前[P3h独立复测入口准备](../../tests/powerlink-nmt-p3h-runner-20261023/README.md)固定原候选不改ELF，
+新增COLD真实FSC可用堆/停止后峰值与256KiB余量门槛，双编译器ABI/203Python及旧原生通过。
+本软件阶段没有板卡连接/部署，新的隔离NMT许可与归档检查满足前不得执行；不是P3h硬件通过。
+
 当前后续[P3h软件修复](../../tests/powerlink-nmt-p3h-20261023/README.md)：保留首个错误码，UP2显式NMT候选堆增至1MiB/defaultOFF，完整OD不裁减。
 受限宿主堆100轮/175Python/两全新软件与累计树11产物一致，最终静态预算通过；板卡已另获准重启恢复，未部署新候选。
 

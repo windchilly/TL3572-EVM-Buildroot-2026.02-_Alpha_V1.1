@@ -1,0 +1,76 @@
+test_abi_proof_exact_image_layout_symbols (test_powerlink_nmt_p3h_board.P3hHeapTests.test_abi_proof_exact_image_layout_symbols) ... ok
+test_heap_bad_total_start_or_counters (test_powerlink_nmt_p3h_board.P3hHeapTests.test_heap_bad_total_start_or_counters) ... ok
+test_heap_full_and_usage_delta_not_leak_verdict (test_powerlink_nmt_p3h_board.P3hHeapTests.test_heap_full_and_usage_delta_not_leak_verdict) ... ok
+test_heap_pair_cannot_forge_report_or_regress_peak (test_powerlink_nmt_p3h_board.P3hHeapTests.test_heap_pair_cannot_forge_report_or_regress_peak) ... ok
+test_heap_types_phase_or_missing_fields (test_powerlink_nmt_p3h_board.P3hHeapTests.test_heap_types_phase_or_missing_fields) ... ok
+test_initial_allowance_and_peak_margin (test_powerlink_nmt_p3h_board.P3hHeapTests.test_initial_allowance_and_peak_margin) ... ok
+test_old_profile_unchanged_and_new_conf_separate (test_powerlink_nmt_p3h_board.P3hHeapTests.test_old_profile_unchanged_and_new_conf_separate) ... ok
+test_wrong_elf_identity_before_private_io (test_powerlink_nmt_p3h_board.P3hHeapTests.test_wrong_elf_identity_before_private_io) ... ok
+test_cold_exception_rejected (test_powerlink_nmt_p3h_board.P3hReaderTests.test_cold_exception_rejected) ... ok
+test_cold_heap_live_not_stop_proof (test_powerlink_nmt_p3h_board.P3hReaderTests.test_cold_heap_live_not_stop_proof) ... ok
+test_cold_rejects_any_prior_command_or_lease (test_powerlink_nmt_p3h_board.P3hReaderTests.test_cold_rejects_any_prior_command_or_lease) ... ok
+test_cpu_not_off_never_reads_dram (test_powerlink_nmt_p3h_board.P3hReaderTests.test_cpu_not_off_never_reads_dram) ... ok
+test_stopped_exception_or_actual_stack_mismatch (test_powerlink_nmt_p3h_board.P3hReaderTests.test_stopped_exception_or_actual_stack_mismatch) ... ok
+test_stopped_off_before_and_after_metadata_only (test_powerlink_nmt_p3h_board.P3hReaderTests.test_stopped_off_before_and_after_metadata_only) ... ok
+test_unstable_heap_rejected (test_powerlink_nmt_p3h_board.P3hReaderTests.test_unstable_heap_rejected) ... ok
+test_approval_before_board_imports (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_approval_before_board_imports) ... ok
+test_marker_exclusive_and_new_sha (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_marker_exclusive_and_new_sha) ... ok
+test_no_stop_before_heap_and_completion_proof (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_no_stop_before_heap_and_completion_proof) ... ok
+test_old_candidate_rejected_before_board_imports (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_old_candidate_rejected_before_board_imports) ... ok
+test_private_or_heap_failure_never_second_stop (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_private_or_heap_failure_never_second_stop) ... ok
+test_runner_scope_and_order_source (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_runner_scope_and_order_source) ... ok
+test_stop_once_then_off_private_and_heap_match (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_stop_once_then_off_private_and_heap_match) ... ok
+test_workflow_ambiguous_ack_only_observes_no_resubmit (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_workflow_ambiguous_ack_only_observes_no_resubmit) ... FAIL
+test_workflow_fault_no_stop_or_rebind (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_workflow_fault_no_stop_or_rebind) ... FAIL
+test_workflow_precommand_heap_failure_retains_without_submission (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_workflow_precommand_heap_failure_retains_without_submission) ... ok
+test_workflow_private_failure_retains_after_one_stop (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_workflow_private_failure_retains_after_one_stop) ... FAIL
+test_workflow_success_complete_stop_restore (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_workflow_success_complete_stop_restore) ... ERROR
+
+======================================================================
+ERROR: test_workflow_success_complete_stop_restore (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_workflow_success_complete_stop_restore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_nmt_p3h_board.py", line 224, in test_workflow_success_complete_stop_restore
+    result,calls,state=self.workflow('normal')
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_nmt_p3h_board.py", line 218, in workflow
+    if scenario=='normal': runner.main()
+                           ^^^^^^^^^^^^^
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\board\run_powerlink_nmt_p3h_probe.py", line 151, in main
+    if error or not cleanup: raise RuntimeError(error or 'cleanup incomplete')
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: AttributeError: module 'os' has no attribute 'O_NONBLOCK'; UNSAFE/UNKNOWN: retain UP2/client/ETH/hold; NO CPU_OFF/rebind/rmmod/reboot/retry
+
+======================================================================
+FAIL: test_workflow_ambiguous_ack_only_observes_no_resubmit (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_workflow_ambiguous_ack_only_observes_no_resubmit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_nmt_p3h_board.py", line 240, in test_workflow_ambiguous_ack_only_observes_no_resubmit
+    self.assertFalse(result['passed']); self.assertTrue(result['cleanup'])
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_workflow_fault_no_stop_or_rebind (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_workflow_fault_no_stop_or_rebind)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_nmt_p3h_board.py", line 235, in test_workflow_fault_no_stop_or_rebind
+    self.assertTrue(result['submitted']); self.assertFalse(result['cleanup']); self.assertTrue(state['hold'] and state['running'])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_workflow_private_failure_retains_after_one_stop (test_powerlink_nmt_p3h_board.P3hRunnerTests.test_workflow_private_failure_retains_after_one_stop)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_nmt_p3h_board.py", line 244, in test_workflow_private_failure_retains_after_one_stop
+    self.assertFalse(result['cleanup']); self.assertTrue(state['hold']); self.assertFalse(state['running'])
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.156s
+
+FAILED (failures=3, errors=1)
+
+EXIT=1

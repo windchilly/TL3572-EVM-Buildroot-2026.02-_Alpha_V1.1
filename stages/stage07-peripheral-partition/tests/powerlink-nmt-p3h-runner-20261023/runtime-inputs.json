@@ -1,0 +1,119 @@
+{
+  "prepared_only": true,
+  "board_root": "/root/m7-powerlink-nmt-p3h-20261023",
+  "client": "up-b-m7-plk-nmt-p3h",
+  "kernel": "6.12.69-gf1b67c293213",
+  "files": {
+    "run_powerlink_nmt_p3h_probe.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/run_powerlink_nmt_p3h_probe.py",
+      "bytes": 10704,
+      "sha256": "d868b78200ec464f51e39f5eebbb02ab747147fb5d71b7e47a76a12c51ac7e9e"
+    },
+    "powerlink_nmt_p3h_checks.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/powerlink_nmt_p3h_checks.py",
+      "bytes": 3781,
+      "sha256": "951ad652efb5a43d6420d7f71c0906fe70f65cda7c4641e62c89ca625dc37625"
+    },
+    "read_powerlink_nmt_p3h_snapshot.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/read_powerlink_nmt_p3h_snapshot.py",
+      "bytes": 4947,
+      "sha256": "d6725d1f2c6f150ca330985be75379aed7d16e5e15ce0626e10acab82b9da81d"
+    },
+    "run_powerlink_nmt_probe.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/run_powerlink_nmt_probe.py",
+      "bytes": 12627,
+      "sha256": "9d23f559016e5b4f9cda2b015c5f7127552906292cd8b10eaf8507abca169c8d"
+    },
+    "powerlink_nmt_checks.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/powerlink_nmt_checks.py",
+      "bytes": 7753,
+      "sha256": "6e4c6a0b70962d2361b9be9b5e9974c368d76700e71ed99137e88562590f4e94"
+    },
+    "read_powerlink_nmt_snapshot.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/read_powerlink_nmt_snapshot.py",
+      "bytes": 3069,
+      "sha256": "f6ec7ee64ee64e91f595e9a9c1fc727d2fb45b25ebb223478a84e8245eac364f"
+    },
+    "run_powerlink_eth_probe.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/run_powerlink_eth_probe.py",
+      "bytes": 11445,
+      "sha256": "5b69652d68e17f6faca60a90fbd7b512dd9317c4af3e3aff7aafab1a16cd251a"
+    },
+    "powerlink_eth_checks.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/powerlink_eth_checks.py",
+      "bytes": 2178,
+      "sha256": "ecdff54acd330f7b9e442fabbac0afea6683ef43452b7781ffd8f5c15acbe674"
+    },
+    "run_can_direct_pair.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/run_can_direct_pair.py",
+      "bytes": 9896,
+      "sha256": "68cf00b53e6c5cd7c3ad39834b381c1a561e422395478a1cd7bd36c94f3fce8d"
+    },
+    "integrated_mmu_resources.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/integrated_mmu_resources.py",
+      "bytes": 3376,
+      "sha256": "32382cd1a99e58739c3aeeb23800e8fc018e175f83a4defe51b6e60c5b63df22"
+    },
+    "eth3_l2_smoke.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/eth3_l2_smoke.py",
+      "bytes": 4409,
+      "sha256": "a9b6d84c40fc8913cfbb61dbeffa701dc12a54d257c218f1b2e0d91a65846fbe"
+    },
+    "eth2_resources.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/eth2_resources.py",
+      "bytes": 827,
+      "sha256": "f543bba6b8edd50e040fdd72bf216c09efefc4cccc9efea82052017a79226b9c"
+    },
+    "run_integrated_passive.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/run_integrated_passive.py",
+      "bytes": 12727,
+      "sha256": "a9c5442aa86d08f2f1c313efc13538536797701f0b858a85b4ebe263f4defc53"
+    },
+    "can_resource_preflight.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/can_resource_preflight.py",
+      "bytes": 6169,
+      "sha256": "2d0c7ab0eb2ad18efff75573dc4898213f3eebad4d583d816103c3ccfb422450"
+    },
+    "rs232_resources.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/rs232_resources.py",
+      "bytes": 4400,
+      "sha256": "0c4bc30b9fbd8ca9b6136ef08ff10e948741c7eb7ad1012386d3c4555624733e"
+    },
+    "rs485_resources.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/rs485_resources.py",
+      "bytes": 4867,
+      "sha256": "4f8e1727b8821eccd0c9f3a3d1d81789fcfbf3c330fa72322b3994e6890306e0"
+    },
+    "up-b-m7-plk-nmt-p3h.conf": {
+      "path": "stages/stage07-peripheral-partition/tests/board/up-b-m7-plk-nmt-p3h.conf",
+      "bytes": 130,
+      "sha256": "54ea4aef9e2bc71542b03c61e979e7acb9816af3d4a7e23b4dc55aeb3feb343f"
+    },
+    "audit_integrated_mmu.py": {
+      "path": "stages/stage07-peripheral-partition/tests/audit_integrated_mmu.py",
+      "bytes": 2189,
+      "sha256": "9ca28f1a61a7320c2836c25f259379460d3bfea83590989fde964f4e005f8536"
+    },
+    "verify_integrated_elf.py": {
+      "path": "stages/stage07-peripheral-partition/tests/verify_integrated_elf.py",
+      "bytes": 5048,
+      "sha256": "2648a42ca0150b579e6c8fde6c53e95bd6e73238d47a6d1b7db9b9c180e31134"
+    },
+    "tl3572-m7-powerlink-p3h-up-b.elf": {
+      "path": "stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-20261023/candidates/tl3572-m7-powerlink-p3h-up-b.elf",
+      "bytes": 1196696,
+      "sha256": "ccfba235f8f3bcc79ab0c2a0e603b2d9cc01a7f3785985566660fb1672882ea8"
+    },
+    "p3h-abi.json": {
+      "path": "stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-runner-20261023/p3h-abi.json",
+      "bytes": 1663,
+      "sha256": "33c89c21680c4f7e137e509e02e493a1bbfc21dfc5c4e355092166af7729aac8"
+    }
+  },
+  "existing_hold": {
+    "board_path": "/root/m7-eth-direct-20261010/m7_eth2_power_hold.ko",
+    "path": "stages/stage07-peripheral-partition/firmware/m7_eth2_power_hold.ko",
+    "sha256": "b071d4346d0d3310e22ffd2d1ae9ce2dcc1f3a2784ae94efd05a0798a546fc8d"
+  },
+  "limit": "Preparation only; this manifest is not board upload/physical NMT approval or a readback receipt."
+}
