@@ -1,0 +1,82 @@
+{
+  "phase": "P3f full-stack GsOff lifecycle SOFTWARE ONLY",
+  "images": [
+    {
+      "role": "a",
+      "elf_bytes": 677952,
+      "elf_sha256": "7491a2db04ca8cea8c55c9c1aa9e18e887b150d949ad23a73627190ed4f82cb5",
+      "runtime_bytes": 360716,
+      "runtime_sha256": "d4d80d02fdac5d2f26db2deabeabb1147c54eab5fe355653c382fe1c17157290",
+      "image_used_including_noload_bytes": 969056,
+      "image_remaining_bytes": 7419552,
+      "fsc_pool_bytes": 524288,
+      "page_tables": {
+        "elf": "tl3572-m7-integrated-up-a.elf",
+        "table_pages": 9,
+        "required_bytes": 36864,
+        "available_bytes": 65536,
+        "fits": true,
+        "first_overflow_region": null
+      }
+    },
+    {
+      "role": "b",
+      "elf_bytes": 1178160,
+      "elf_sha256": "71b029587a626c09de8c5f6b433339a875798cc432e67783666f8c37a3f65e19",
+      "runtime_bytes": 621924,
+      "runtime_sha256": "9cca16c01c63795b8ee069bf0f844b478945f039f8dc6b22e304f4229c3a6229",
+      "image_used_including_noload_bytes": 2149824,
+      "image_remaining_bytes": 6238784,
+      "fsc_pool_bytes": 524288,
+      "page_tables": {
+        "elf": "tl3572-m7-integrated-up-b.elf",
+        "table_pages": 10,
+        "required_bytes": 40960,
+        "available_bytes": 65536,
+        "fits": true,
+        "first_overflow_region": null
+      }
+    }
+  ],
+  "complete_global_functions_retained_in_UP2": 596,
+  "all_hal_bsp_resolved": true,
+  "final_undefined_symbols": [],
+  "no_NEW_fp_simd_in_final_UP2": true,
+  "hardware_tested": false,
+  "inherited_simd_instruction_count": 125,
+  "inherited_simd_functions": [
+    "PRT_cvt",
+    "PRT_round",
+    "SecFormatDouble",
+    "SecFormatFloat",
+    "SecOutput",
+    "metal_default_log_handler",
+    "metal_io_init",
+    "modf",
+    "osVsnprintf",
+    "snprintf"
+  ],
+  "simd_limit": "Pinned M6/libmetal instructions remain; site/opcode matches formal UP2 except exactly two PRT_cvt literal-load relocations checked by registers+literal bytes. NOT an all-ELF no-FPU claim.",
+  "default": "dormant; no stack environment init/prepare/PHY/CNTP/NMT/TX",
+  "commands": [
+    "PLK status",
+    "PLK env-init",
+    "PLK env-exit",
+    "PLK timer-probe",
+    "PLK eth-probe",
+    "PLK edrv-probe",
+    "PLK edrv-status",
+    "PLK mn-probe",
+    "PLK mn-status"
+  ],
+  "limits": "128 process calls/2-second guard; full stack remains GsOff, no NMT reset/start/CN or real-time acceptance",
+  "diagnostic_functions": [
+    "m7_edrv_probe",
+    "m7_eth_probe",
+    "m7_timer_diag_reset",
+    "m7_timer_diag_snapshot",
+    "m7_timer_probe",
+    "m7_mn_probe"
+  ],
+  "final_up2_lse_instructions": []
+}

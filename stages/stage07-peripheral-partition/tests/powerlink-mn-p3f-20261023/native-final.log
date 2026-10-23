@@ -1,0 +1,144 @@
+P3f 100 REAL full-stack lifecycles: 12800 processes, 1600 alloc/free, GsOff, no TX/timer arm
+P3f REAL stack fault phy PASS, terminal retained; heap=2 ETH=0 timer=1
+P3f REAL stack fault timer PASS, terminal retained; heap=2 ETH=0 timer=0
+P3f REAL stack fault sem PASS, terminal retained; heap=16 ETH=1 timer=1
+P3f REAL stack fault stop PASS, terminal retained; heap=16 ETH=1 timer=1
+P3f REAL stack fault timer_stop PASS, terminal retained; heap=16 ETH=0 timer=1
+P3f REAL stack fault sleep PASS, terminal retained; heap=16 ETH=1 timer=1
+P3f REAL stack fault dma PASS, terminal retained; heap=16 ETH=1 timer=1
+P3f REAL stack fault mode PASS, terminal retained; heap=16 ETH=1 timer=1
+P3f REAL stack fault readback PASS, terminal retained; heap=0 ETH=0 timer=0
+P3f REAL stack fault tx PASS, terminal retained; heap=16 ETH=1 timer=1
+P3f REAL stack fault timeout PASS, terminal retained; heap=16 ETH=1 timer=1
+injected malloc failure #1 bytes=32788 caller=0x41ee60
+P3f REAL stack fault allocation_1 PASS, terminal retained; heap=0 ETH=0 timer=0
+injected malloc failure #2 bytes=32788 caller=0x41ee60
+P3f REAL stack fault allocation_2 PASS, terminal retained; heap=0 ETH=0 timer=0
+P3f REAL stack fault allocation_3 PASS, terminal retained; heap=2 ETH=1 timer=1
+injected malloc failure #3 bytes=16 caller=0x425733
+injected malloc failure #4 bytes=32788 caller=0x41ee60
+P3f REAL stack fault allocation_4 PASS, terminal retained; heap=3 ETH=1 timer=1
+injected malloc failure #5 bytes=16 caller=0x425733
+P3f REAL stack fault allocation_5 PASS, terminal retained; heap=4 ETH=1 timer=1
+P3f REAL stack fault allocation_6 PASS, terminal retained; heap=5 ETH=1 timer=1
+injected malloc failure #6 bytes=32788 caller=0x41ee60
+injected malloc failure #7 bytes=16 caller=0x425733
+P3f REAL stack fault allocation_7 PASS, terminal retained; heap=6 ETH=1 timer=1
+P3f REAL stack fault allocation_8 PASS, terminal retained; heap=7 ETH=1 timer=1
+injected malloc failure #8 bytes=8212 caller=0x41ee60
+P3f REAL stack fault allocation_9 PASS, terminal retained; heap=8 ETH=1 timer=1
+injected malloc failure #9 bytes=2068 caller=0x41ee60
+injected malloc failure #10 bytes=2068 caller=0x41ee60
+P3f REAL stack fault allocation_10 PASS, terminal retained; heap=9 ETH=1 timer=1
+injected malloc failure #11 bytes=2068 caller=0x41ee60
+P3f REAL stack fault allocation_11 PASS, terminal retained; heap=10 ETH=1 timer=1
+injected malloc failure #12 bytes=2068 caller=0x41ee60
+P3f REAL stack fault allocation_12 PASS, terminal retained; heap=11 ETH=1 timer=1
+injected malloc failure #13 bytes=24384 caller=0x41bb10
+P3f REAL stack fault allocation_13 PASS, terminal retained; heap=12 ETH=1 timer=1
+injected malloc failure #14 bytes=16 caller=0x41b8b3
+P3f REAL stack fault allocation_14 PASS, terminal retained; heap=13 ETH=1 timer=1
+injected malloc failure #15 bytes=16 caller=0x41b8b3
+P3f REAL stack fault allocation_15 PASS, terminal retained; heap=14 ETH=1 timer=1
+injected malloc failure #16 bytes=16 caller=0x41b8b3
+P3f REAL stack fault allocation_16 PASS, terminal retained; heap=15 ETH=1 timer=1
+P3f cumulative mailbox native PASS
+P3f cumulative mailbox native PASS
+P3f cumulative mailbox native PASS
+P3e C/Python packet vectors match: 64/1514 bytes, nonce/role/sequence/pattern/CRC
+P3e real EDRV/probe native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e context native PASS
+P3e cumulative mailbox native PASS
+P3e cumulative mailbox native PASS
+P3e cumulative mailbox native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d cumulative ETH+timer mailbox native PASS
+P3d cumulative ETH+timer mailbox native PASS
+P3d cumulative ETH+timer mailbox native PASS
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c timer mailbox native PASS
+P3c timer mailbox native PASS
+P3c timer mailbox native PASS
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+P3b REAL FULL-STACK OWNER NATIVE PASS: 12 scenarios + UP1 denial, 100 environment cycles, zero hardware acquire
+P3c native timer 12 + mailbox 3 scenarios PASS; P3b regression PASS
+P3d native 8 probe + 3 cumulative mailbox scenarios PASS; P3c/P3b regressions PASS
+P3e real EDRV/probe/target 17 + mailbox 3 scenarios PASS; previous cumulative regressions PASS
+P3f REAL full-stack 29 + mailbox 3 scenarios PASS; prior cumulative regressions PASS; NO BOARD
+Native outputs: /tmp/tl3572-integrated-native.Cbo2ek
+INTEGRATED COMMAND PASS: runtime profiles/bauds, bounded parse, invalid input has no side effects
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+INTEGRATED INIT FAILURE PASS: all partial tasks deleted, no driver execution
+RS232 codec PASS: CRC vector, 1000 sequences, wrong role/sequence, 256000 bit mutations
+CAN FD CODEC PASS: DLC, flags, 64-byte words, NBTP/DBTP/TDC
+ETH CODEC PASS: CRC vector, 2000 sequences, roles and every payload/CRC bit corruption
+NATIVE VALIDATION PASS: parser + 18 dispatcher/lifecycle runs + 3 codecs; no MMIO
+.................................................................................................................................
+----------------------------------------------------------------------
+Ran 129 tests in 1.434s
+
+OK
+POWERLINK PREPARED: 048650a80db37fa372330c3a900d2c8edb327e47 / 1355 files / /tmp/tmpct379s1s/nested/build/source/openPOWERLINK_V2-2.7.2
+
+REMOTE_EXIT=0

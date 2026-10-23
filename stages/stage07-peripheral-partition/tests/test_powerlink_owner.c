@@ -96,6 +96,7 @@ static void dormant(void)
     input("PLK timer-probe", "ERROR invalid-command"); input("PLK timer-status", "ERROR invalid-command");
     input("PLK eth-probe", "ERROR invalid-command"); input("PLK eth-status", "ERROR invalid-command");
     input("PLK edrv-probe", "ERROR invalid-command"); input("PLK edrv-status", "ERROR invalid-command");
+    input("PLK mn-probe", "ERROR invalid-command"); input("PLK mn-status", "ERROR invalid-command");
     input("PLK reset", "ERROR invalid-command"); input("PLK env-init\n\n", "ERROR invalid-command");
     { char big[100]; memset(big, 'x', sizeof(big)); memcpy(big, "PLK ", 4);
       assert(Rk3572PowerlinkInput(big, sizeof(big)) && strstr(reply, "invalid-command")); }

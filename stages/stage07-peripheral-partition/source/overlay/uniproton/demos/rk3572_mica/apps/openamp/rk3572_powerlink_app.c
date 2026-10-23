@@ -15,6 +15,12 @@
 #error "POWERLINK owner task belongs to UP2 only"
 #endif
 enum { ENV_INIT = 1U, ENV_EXIT = 2U };
+#ifdef M7_POWERLINK_MN_PROBE
+enum { MN_PROBE = 6U };
+#define STATUS_MODE "GsOff-diagnostic"
+#else
+#define STATUS_MODE "software-only"
+#endif
 #ifdef M7_POWERLINK_TIMER_PROBE
 enum { TIMER_PROBE = 3U };
 #endif
@@ -58,6 +64,20 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
             return; /* Do not call a blocking RTOS API in an invalid context. */
         }
         if (command) {
+#ifdef M7_POWERLINK_MN_PROBE
+            if (command == MN_PROBE) {
+                M7MnProbeResult lifecycle;
+                PRT_Printf("[plk-mn-probe] BEGIN full stack GsOff; no reset/start\n");
+                result = m7_mn_probe(&lifecycle);
+                lock = PRT_HwiLock();
+                snapshot.lifecycle = lifecycle; snapshot.mn = lifecycle.final; snapshot.result = result;
+                snapshot.running = 0; snapshot.completed = snapshot.submitted;
+                if (!lifecycle.clean) { snapshot.ready = 0; snapshot.runtimeError = APP_ERROR; }
+                PRT_HwiRestore(lock);
+                PRT_Printf("[plk-mn-probe] END rc=%u clean=%u loops=%u stage=%u; no reset/start\n",
+                    result, lifecycle.clean, lifecycle.loops, lifecycle.stage);
+            } else {
+#endif
 #ifdef M7_POWERLINK_EDRV_PROBE
             if (command == EDRV_PROBE) {
                 M7EdrvProbeResult edrv;
@@ -128,6 +148,9 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
 #ifdef M7_POWERLINK_EDRV_PROBE
             }
 #endif
+#ifdef M7_POWERLINK_MN_PROBE
+            }
+#endif
         }
         result = PRT_TaskDelay(2U);
         if (result) {
@@ -169,6 +192,9 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
 {
     const char* error = NULL;
     uint32_t command = 0, accepted = 0;
+#ifdef M7_POWERLINK_MN_PROBE
+    int mnStatus = 0;
+#endif
 #ifdef M7_POWERLINK_TIMER_PROBE
     int timerStatus = 0;
 #endif
@@ -190,6 +216,10 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
         }
         if (matches(data, length, "PLK env-init")) command = ENV_INIT;
         else if (matches(data, length, "PLK env-exit")) command = ENV_EXIT;
+#ifdef M7_POWERLINK_MN_PROBE
+        else if (matches(data, length, "PLK mn-probe")) command = MN_PROBE;
+        else if (matches(data, length, "PLK mn-status")) mnStatus = 1;
+#endif
 #ifdef M7_POWERLINK_TIMER_PROBE
         else if (matches(data, length, "PLK timer-probe")) command = TIMER_PROBE;
         else if (matches(data, length, "PLK timer-status")) timerStatus = 1;
@@ -208,6 +238,9 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
     if (!error && command) {
         if (!snapshot.ready) error = "not-ready";
         else if (snapshot.pending || snapshot.running) error = "busy";
+#ifdef M7_POWERLINK_MN_PROBE
+        else if (command == MN_PROBE && snapshot.mn.state != M7_MN_COLD) error = "wrong-state";
+#endif
 #ifdef M7_POWERLINK_TIMER_PROBE
         else if (command == TIMER_PROBE && snapshot.mn.state != M7_MN_COLD) error = "wrong-state";
 #endif
@@ -228,6 +261,18 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
     out = snapshot; PRT_HwiRestore(lock);
     if (error) bytes = snprintf(reply, sizeof(reply), "PLK UP2 ERROR %s\n", error);
     else if (accepted) bytes = snprintf(reply, sizeof(reply), "PLK UP2 ACCEPTED seq=%u\n", accepted);
+#ifdef M7_POWERLINK_MN_PROBE
+    else if (mnStatus) bytes = snprintf(reply, sizeof(reply),
+        "PLK UP2 MN rc=%u clean=%u stage=%u stack=0x%x loops=%u state=%u nmt=0x%x rx=%u tx=%u txdesc=%u drop=%u rxerr=%u txerr=%u fatal=%u irqs=%llu callbacks=%llu mac=0x%x stop=0x%x/0x%x/0x%x/0x%x/0x%x/0x%x lease=%u/%u timer=%u/%u\n",
+        out.lifecycle.result, out.lifecycle.clean, out.lifecycle.stage, out.lifecycle.stackError,
+        out.lifecycle.loops, out.lifecycle.final.state, out.lifecycle.final.nmtState,
+        out.lifecycle.rx, out.lifecycle.tx, out.lifecycle.txDescriptors, out.lifecycle.dropped, out.lifecycle.rxErrors,
+        out.lifecycle.txErrors, out.lifecycle.fatal, (unsigned long long)out.lifecycle.timerIrqs,
+        (unsigned long long)out.lifecycle.timerCallbacks, out.lifecycle.active.mac,
+        out.lifecycle.stopped.mac, out.lifecycle.stopped.tx, out.lifecycle.stopped.rx, out.lifecycle.stopped.dma,
+        out.lifecycle.stopped.macIrq, out.lifecycle.stopped.dmaIrq, out.lifecycle.leaseBefore,
+        out.lifecycle.leaseAfter, out.lifecycle.timerBefore, out.lifecycle.timerAfter);
+#endif
 #ifdef M7_POWERLINK_TIMER_PROBE
     else if (timerStatus) bytes = snprintf(reply, sizeof(reply),
         "PLK UP2 TIMER rc=%u clean=%u samples=%u hz=%u irqs=%llu callbacks=%llu irqLate=%llu taskLate=%llu ticks=%llu el=%u affinity=0x%llx ppi30=0x%x/0x%x/0x%x prio=%u/%u cntv=%u/%u\n",
@@ -259,7 +304,7 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
         out.edrv.stopped.macIrq, out.edrv.stopped.dmaIrq, out.edrv.leaseBefore, out.edrv.leaseAfter);
 #endif
     else bytes = snprintf(reply, sizeof(reply),
-        "PLK UP2 ready=%u owner=%u pending=%u running=%u seq=%u done=%u cmd=%u rc=0x%x runtime=0x%x state=%u nmt=0x%x processes=%llu events=%llu mode=software-only\n",
+        "PLK UP2 ready=%u owner=%u pending=%u running=%u seq=%u done=%u cmd=%u rc=0x%x runtime=0x%x state=%u nmt=0x%x processes=%llu events=%llu mode=" STATUS_MODE "\n",
         out.ready, out.owner, out.pending, out.running, out.submitted, out.completed,
         out.command, out.result, out.runtimeError, out.mn.state, out.mn.nmtState,
         (unsigned long long)out.mn.processes, (unsigned long long)out.mn.events);

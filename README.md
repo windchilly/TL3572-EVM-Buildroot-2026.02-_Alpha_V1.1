@@ -1,6 +1,9 @@
 # TL3572 / RK3572：openEuler + MICA + UniProton
 
 本仓库保存评估板资料、Stage01–Stage07 的源码/配置、正式阶段记录，以及换机恢复入口。
+2026-10-23 最新[P3f MN完整栈GsOff生命周期软件检查点](stages/stage07-peripheral-partition/tests/powerlink-mn-p3f-20261023/README.md)：
+同一UP2 owner累计接入初始化/准备/128次处理/停止/退出，100轮真实栈原生、29+3场景及129Python通过，两新树runtime一致。
+默认关闭/无reset或start/未上板；真实MN启动、CN互操作及实时验收仍未完成。
 2026-10-23 最新[P3e EDRV隔离物理收发](stages/stage07-peripheral-partition/tests/powerlink-edrv-p3e-20261023/README.md)：
 UP2直驱ETH2，100M half下64B/1514B各32组请求应答；RX/TX完成/FCS各64、硬件错误0、安全停止及Linux归还通过。
 122Python/新增17+3原生场景及累计回归、双新树runtime一致；无MN/CAN/UART发送、重启或正式固件替换，MN/CN互操作尚未验收。

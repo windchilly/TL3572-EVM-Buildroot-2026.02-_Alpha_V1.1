@@ -1,5 +1,19 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-23 最新入口：P3f完整MN栈GsOff生命周期软件准备通过；用户“继续”，本轮明确仅软件，无板卡SSH/部署/移交/重启/发帧。
+新增m7_mn_probe.c/h、0018/defaultOFF/UP2-only、累计owner COLD显式mn-probe/mn-status；旧timer/PHY/EDRV/工控功能全部保留。
+真实initialize→prepare→128次process→stop→exit；始终实际NMT GsOff，不调用reset/start/switch-off；prepare执行时会取ETH2/CNTP，不是只读。
+核对TX描述符全部零（不是只看TX完成0）、回调/IRQ0、DMA六回读、timer/PPI30静默、CNTV/PPI27和priority保持、lease0。
+部分init/过程/停止/证明失败均终止，保留owner/资源，不自动第二次stop/退出；worker ready0，缓存故障可读。
+真实完整栈/EDRV/target/hrestimer原生100轮12800处理、1600alloc=free/live0；29场景含16malloc位置+3真实邮箱mockprobe场景通过。
+Windows/Linux129Python及旧P3e/P3d/P3c/P3b/P0-P3a/累计parser/18生命周期/3codec通过；无sanitizer/旧M6告警保留。
+构建根/home/openeuler/build/powerlink-mn-p3f-20261023，UniProton-first/repro两全新累计树runtime一致，9旧软件对象明确复用P3e而非重编核心。
+候选b00cdf67837d3359488385f4709fa1a162cd4ea6a791855c6f9708c1411992c1，1178136B；UP2runtime621924B SHA9cca16c0...。
+image/BSS2149824B/8MiB/FSC512KiB/页表10/16；UP1runtime仍d4d80d02.../9页，最终596旧函数/U0/LSE0/125旧SIMD无新增。
+tests/board/run_powerlink_mn_probe.py及conf/纯checker已备妥但未部署，固定一次128process/no发送；未知状态保留UP2+hold，禁强停/重绑/重启/重试。
+tests/powerlink-mn-p3f-20261023/README.md为源码/完整复建/证据入口；GitHub状态以最终报告为准。正式两ELF/M6/DT/开机不变。
+下一步须单独确认隔离ETH2ETH3仍在、临时ETH2/CNTP联合GsOff生命周期检查授权；未获准前不接管、不执行mn-probe，不扩展NMT reset/start/CN/伺服控制。
+
 2026-10-23 最新入口：P3e真实EDRV隔离有限物理帧/FCS/停止归还全部通过；用户明确批准ETH2↔ETH3隔离回环及有限测试帧。
 新增m7_edrv_probe.c/h/codec、0017/defaultOFF/UP2-only、累计COLD显式edrv-probe/edrv-status，保留旧timer/PHY/全部累计外设。
 使用现有真实EDRV+target，未改EDRV/BSP核心、未oplk_initialize/create/MNreset、高精度timer租用；freecounter仅派生每轮标记。

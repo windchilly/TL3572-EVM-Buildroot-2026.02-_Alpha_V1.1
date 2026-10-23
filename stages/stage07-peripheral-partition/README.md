@@ -2,7 +2,11 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
-2026-10-23 最新[P3e EDRV隔离物理收发](tests/powerlink-edrv-p3e-20261023/README.md)：
+2026-10-23 最新[P3f MN完整栈GsOff生命周期软件准备](tests/powerlink-mn-p3f-20261023/README.md)：
+同一累计owner/COLD显式初始化→准备→128次处理→停止→退出；真实栈原生100轮/12800次处理/1600alloc-free、29+3场景通过。
+129Python、两新累计树runtime一致，新增默认OFF的mn-probe/mn-status及有界板端runner。本轮不访问/部署板卡、不reset/start。
+
+2026-10-23 [P3e EDRV隔离物理收发](tests/powerlink-edrv-p3e-20261023/README.md)：
 UP2直驱ETH2、Linux ETH3对端，64B/1514B各32组；接收/发送完成/FCS各64、错误0、停止六回读0/lease0通过。
 保持MN COLD，未运行CAN/UART worker；CPU4/5最终OFF，Linux两端恢复100full，管理口/micad/boot不变。
 122Python、17+3新增原生及旧累计回归、两全新累计树runtime一致。仅有界轮询EDRV基线，非MN/CN/实时性验收。

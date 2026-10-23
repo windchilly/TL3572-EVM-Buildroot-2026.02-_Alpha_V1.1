@@ -1,8 +1,13 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
-**P3e累计候选：休眠owner/完整栈 + 已实测timer/PHY诊断 + 有界真实EDRV物理帧/FCS与安全停止**，
+**P3f累计候选：保留P3e全部功能 + 完整MN栈GsOff生命周期诊断（新增部分仅软件验证）**，
 不是已运行的主站；MN/CN互操作、持续负载/实时性仍待验证。
+
+`m7_mn_probe.c/h`和0018显式执行真实initialize/prepare/128次process/stop/exit，不调用reset/start。
+检查真实NMT GsOff、TX描述符未使用、timer回调0和DMA/timer停止；失败终止保留资源、禁止自动重试。
+100轮真实完整栈原生、29+3场景及129Python、双新累计树runtime一致，未访问或部署板卡。
+[P3f源码/构建/测试入口](../../tests/powerlink-mn-p3f-20261023/README.md)。执行时会获取ETH/CNTP，不能因名字“被动”而当只读。
 
 2026-10-23获准有限测试帧，ETH2由UP2自己驱动MAC/DMA/PHY，Linux ETH3仅作物理对端。
 `m7_edrv_probe.c/h`及0017提供COLD显式诊断，使用现有真实EDRV/target，不改旧EDRV/BSP，不启动MN/高精度timer。
