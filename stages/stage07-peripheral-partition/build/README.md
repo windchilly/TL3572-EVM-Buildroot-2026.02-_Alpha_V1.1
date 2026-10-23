@@ -2,6 +2,10 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+2026-10-23：`build_m7_powerlink_eth_candidate.sh`现追加0016，将真实ETH BSP最后march约束为ARMv8-A，
+全UP2 ELF审计拒绝LSE，修复首次TakeLease/CASAL异常；三轮获准无帧半双工实测及安全归还通过。
+旧P1-P3c/P3d初版候选不能用于新EDRV硬件路径。[当前复建/实测入口](../tests/powerlink-eth-p3d-hw-20261023/README.md)。
+
 最新P3d入口`build_m7_powerlink_eth_candidate.sh`，在P3c全新累计树追加0015/default OFF/UP2-only，
 显式COLD PHY/MAC100-half诊断不启动DMA/MN、不发帧，保留timer诊断。软件双新树复编通过，板端未部署。
 [P3d完整源码/复建记录](../tests/powerlink-eth-p3d-20261010/README.md)。ETH2移交须另确认，脚本不会连接板卡。

@@ -1,0 +1,225 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+SCOPE: temporary UP2 ONLY; ETH2 PHY/MAC100-half; no DMA/test frames/MN/timer/CAN/UART/reboot/boot config
+BEFORE {"boot": "6974ac40-f3a2-4433-a5b8-11ec4318248f", "management": {"address": [["inet", "192.168.2.141", 24, "global"], ["inet6", "fe80::d414:36ff:fe8b:78f0", 64, "link"]], "cpus": "0-3,6-7\n", "driver": "/sys/bus/platform/drivers/rk_gmac-dwmac", "routes": "default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 \n192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 \n192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 \n"}, "micad": {"ActiveState": "active", "MainPID": "328", "NRestarts": "0"}, "peripherals": {"drivers": {"26500000.serial": "dw-apb-uart", "2ab10000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "registers": {"0x2607400c": 37017, "0x26074010": 2457, "0x26074018": 4, "0x2608203c": 3536, "0x2608404c": 153, "0x2608608c": 56576, "0x26090374": 31488, "0x26090404": 387, "0x26090408": 387, "0x2609040c": 33, "0x26090410": 0, "0x26090414": 279, "0x26090418": 11, "0x2609041c": 768, "0x26090420": 768, "0x26090424": 768, "0x26090428": 768, "0x2609042c": 768, "0x26090430": 768, "0x26090434": 768, "0x26090438": 768, "0x26090808": 24512, "0x2609082c": 32768, "0x26090838": 32736, "0x2609083c": 37449, "0x26090840": 65468, "0x26090a2c": 0, "0x26090a38": 0, "0x26090a3c": 0, "0x26090a40": 0, "0x260b0320": 1, "0x260b0814": 16844, "0x260b0a14": 0, "0x2a601090": 0, "0x2a601094": 0, "0x2a601110": 286331264, "0x2a601114": 4009791488, "0x2a601210": 0, "0x2a601214": 0, "0x2a601310": 0, "0x2a601314": 0, "0x2a60149c": 2694881440, "0x2a6014a0": 2694881440, "0x2a6014a4": 2694881440, "0x2a6014b8": 2694881440, "0x2a60189c": 16843009, "0x2a6018a0": 16843009, "0x2a6018a4": 16843009, "0x2a6018b8": 16843009, "0x2a601c24": 1431655765, "0x2a601c28": 1431655765, "0x2a601c2c": 1431655765}}}
+POWER/ROOT HOLD PASS CRU42=0xf000
+REAL MMU {"budget_bytes": 65536, "mapped_units": 67, "rc": 0, "root": "0x7ca00000", "table_pages": 10, "tcr": "0x80003520", "used_bytes": 40960}
+PLK UP2 ACCEPTED seq=1
+PLK UP2 ETH rc=0 clean=1 phy=0x7b74/0x4412 bmcr=0x2000 bmsr=0x794d mac=0xc000 tx=0x0 rx=0x0 dma=0x0 irq=0x0/0x0 stop=0x0/0x0/0x0/0x0/0x0/0x0 lease=0/0
+ETH CYCLE 1 PASS
+PEER
+Settings for eth2:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Supported pause frame use: No
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Advertised pause frame use: No
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  100baseT/Half
+	Link partner advertised pause frame use: No
+	Link partner advertised auto-negotiation: No
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Half
+	Auto-negotiation: on
+	Port: MII
+	PHYAD: 32
+	Transceiver: internal
+	Supports Wake-on: pumbg
+	Wake-on: g
+        Current message level: 0x00007fff (32767)
+                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol
+	Link detected: yes
+
+PLK UP2 ACCEPTED seq=2
+PLK UP2 ETH rc=0 clean=1 phy=0x7b74/0x4412 bmcr=0x2000 bmsr=0x794d mac=0xc000 tx=0x0 rx=0x0 dma=0x0 irq=0x0/0x0 stop=0x0/0x0/0x0/0x0/0x0/0x0 lease=0/0
+ETH CYCLE 2 PASS
+PEER
+Settings for eth2:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Supported pause frame use: No
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Advertised pause frame use: No
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  100baseT/Half
+	Link partner advertised pause frame use: No
+	Link partner advertised auto-negotiation: No
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Half
+	Auto-negotiation: on
+	Port: MII
+	PHYAD: 32
+	Transceiver: internal
+	Supports Wake-on: pumbg
+	Wake-on: g
+        Current message level: 0x00007fff (32767)
+                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol
+	Link detected: yes
+
+PLK UP2 ACCEPTED seq=3
+PLK UP2 ETH rc=0 clean=1 phy=0x7b74/0x4412 bmcr=0x2000 bmsr=0x794d mac=0xc000 tx=0x0 rx=0x0 dma=0x0 irq=0x0/0x0 stop=0x0/0x0/0x0/0x0/0x0/0x0 lease=0/0
+ETH CYCLE 3 PASS
+PEER
+Settings for eth2:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Supported pause frame use: No
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Advertised pause frame use: No
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  100baseT/Half
+	Link partner advertised pause frame use: No
+	Link partner advertised auto-negotiation: No
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Half
+	Auto-negotiation: on
+	Port: MII
+	PHYAD: 32
+	Transceiver: internal
+	Supports Wake-on: pumbg
+	Wake-on: g
+        Current message level: 0x00007fff (32767)
+                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol
+	Link detected: yes
+
+[up-b boot=2 seq=15] [boot] UP CPU5 entered
+[up-b boot=2 seq=16] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=2 seq=17] [boot] interrupt routing ready
+[up-b boot=2 seq=18] [boot] scheduler task entered
+[up-b boot=2 seq=19] [plk] dormant owner init rc=0; no PHY/timer/MN startup
+[up-b boot=2 seq=20] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=2 seq=21] [openamp] get rsctable 7c296db0, size a64 
+[up-b boot=2 seq=22] [openamp]: get vring0: da 7a0a0000
+[up-b boot=2 seq=23] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=2 seq=24] [openamp] tty task started
+[up-b boot=2 seq=25] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=0 done=0 cmd=0 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=26] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[up-b boot=2 seq=27] [plk] PLK UP2 ACCEPTED seq=1
+[up-b boot=2 seq=28] [plk-eth] BEGIN forced100-half; no DMA/MN/frame startup
+[up-b boot=2 seq=29] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=2 seq=30] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=2 seq=31] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=32] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=2 seq=33] [openamp] ept ready
+[up-b boot=2 seq=34] [boot] RPMsg ready
+[up-b boot=2 seq=35] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=36] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=37] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=38] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=39] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=40] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=41] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=42] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=43] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=44] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=45] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=46] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=47] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=48] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=49] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=50] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=51] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=52] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=53] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=54] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=55] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=56] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=57] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=58] [eth] PHY forced 100-half link ready; AN disabled, bmsr=0x794d
+[up-b boot=2 seq=59] [plk-edrv] QUIESCED reset=1; aborted TX is not completion
+[up-b boot=2 seq=60] [plk-eth] END rc=0 clean=1 phy=0x7b74/0x4412 bmcr=0x2000 bmsr=0x794d mac=0xc000 stop=0x0/0x0/0x0 lease=0/0
+[up-b boot=2 seq=61] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=1 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=62] [plk] PLK UP2 ETH rc=0 clean=1 phy=0x7b74/0x4412 bmcr=0x2000 bmsr=0x794d mac=0xc000 tx=0x0 rx=0x0 dma=0x0 irq=0x0/0x0 stop=0x0/0x0/0x0/0x0/0x0/0x0 lease=0/0
+[up-b boot=2 seq=63] [plk] PLK UP2 ACCEPTED seq=2
+[up-b boot=2 seq=64] [plk-eth] BEGIN forced100-half; no DMA/MN/frame startup
+[up-b boot=2 seq=65] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=2 seq=66] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=2 seq=67] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=68] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=2 seq=69] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=70] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=71] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=72] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=73] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=74] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=75] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=76] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=77] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=78] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=79] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=80] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=81] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=82] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=83] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=84] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=85] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=86] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=87] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=88] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=89] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=90] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=91] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=2 done=1 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=92] [eth] PHY forced 100-half link ready; AN disabled, bmsr=0x794d
+[up-b boot=2 seq=93] [plk-edrv] QUIESCED reset=1; aborted TX is not completion
+[up-b boot=2 seq=94] [plk-eth] END rc=0 clean=1 phy=0x7b74/0x4412 bmcr=0x2000 bmsr=0x794d mac=0xc000 stop=0x0/0x0/0x0 lease=0/0
+[up-b boot=2 seq=95] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=2 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=96] [plk] PLK UP2 ETH rc=0 clean=1 phy=0x7b74/0x4412 bmcr=0x2000 bmsr=0x794d mac=0xc000 tx=0x0 rx=0x0 dma=0x0 irq=0x0/0x0 stop=0x0/0x0/0x0/0x0/0x0/0x0 lease=0/0
+[up-b boot=2 seq=97] [plk] PLK UP2 ACCEPTED seq=3
+[up-b boot=2 seq=98] [plk-eth] BEGIN forced100-half; no DMA/MN/frame startup
+[up-b boot=2 seq=99] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=2 seq=100] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=2 seq=101] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=102] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=2 seq=103] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=104] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=105] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=106] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=107] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=108] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=109] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=110] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=111] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=112] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=113] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=114] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=115] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=116] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=117] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=118] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=119] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=120] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=121] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=122] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=123] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=124] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=125] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=3 done=2 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=126] [eth] PHY forced 100-half link ready; AN disabled, bmsr=0x794d
+[up-b boot=2 seq=127] [plk-edrv] QUIESCED reset=1; aborted TX is not completion
+[up-b boot=2 seq=128] [plk-eth] END rc=0 clean=1 phy=0x7b74/0x4412 bmcr=0x2000 bmsr=0x794d mac=0xc000 stop=0x0/0x0/0x0 lease=0/0
+[up-b boot=2 seq=129] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=3 done=3 cmd=4 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=2 seq=130] [plk] PLK UP2 ETH rc=0 clean=1 phy=0x7b74/0x4412 bmcr=0x2000 bmsr=0x794d mac=0xc000 tx=0x0 rx=0x0 dma=0x0 irq=0x0/0x0 stop=0x0/0x0/0x0/0x0/0x0/0x0 lease=0/0
+[up-b boot=2 seq=131] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CLEANUP PASS: CPU4/5 OFF, original clients Offline, Linux ETH2/3 full restored, hold removed, CAN/UART/ETH1/micad/boot unchanged
+OVERALL PASS P3d real PHY/MAC100-half + safe restoration; NO frame/MN acceptance
+
+BOARD_EXIT_CODE=0

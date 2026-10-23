@@ -1,0 +1,83 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+EXACT PRE-MMIO FAULT + ZERO LEASE + CPU4/5 ALREADY OFF: reconcile client only; no forced CPU_OFF/reboot
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+Name                          Assigned CPU        State               Service
+up-b                          5                   Offline
+up-a                          4                   Offline
+
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+can0             DOWN           
+can1             DOWN           
+can2             DOWN           
+can3             DOWN           
+eth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 
+eth2             UP             fe80::2e0:9aff:fe42:baeb/64 
+eth1             UP             fe80::d814:36ff:fe8b:78f0/64 
+
+Settings for eth1:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Half 1000baseT/Full
+	Supported pause frame use: Symmetric Receive-only
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	                        1000baseT/Half 1000baseT/Full
+	Advertised pause frame use: Symmetric Receive-only
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  10baseT/Half 10baseT/Full
+	                                     100baseT/Half 100baseT/Full
+	Link partner advertised pause frame use: Symmetric Receive-only
+	Link partner advertised auto-negotiation: Yes
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Full
+	Auto-negotiation: on
+	master-slave cfg: preferred slave
+	master-slave status: slave
+	Port: Twisted Pair
+	PHYAD: 1
+	Transceiver: external
+	MDI-X: Unknown
+	Supports Wake-on: ug
+	Wake-on: d
+        Current message level: 0x0000003f (63)
+                               drv probe link timer ifdown ifup
+	Link detected: yes
+ Settings for eth2:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Supported pause frame use: No
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Advertised pause frame use: No
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  10baseT/Half 10baseT/Full
+	                                     100baseT/Half 100baseT/Full
+	Link partner advertised pause frame use: Symmetric Receive-only
+	Link partner advertised auto-negotiation: Yes
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Full
+	Auto-negotiation: on
+	Port: MII
+	PHYAD: 32
+	Transceiver: internal
+	Supports Wake-on: pumbg
+	Wake-on: g
+        Current message level: 0x00007fff (32767)
+                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol
+	Link detected: yes
+
+RECOVERY PASS: Linux100full restored, hold removed, original clients Offline, CPU4/5 OFF; no board reboot
+
+RESTORE_EXIT=0

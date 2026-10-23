@@ -1,0 +1,55 @@
+set(SRC main.c)
+option(M7_POWERLINK_RTOS "Compile dormant UP2 POWERLINK target/timer" OFF)
+if(M7_POWERLINK_RTOS)
+    if(NOT M7_INTEGRATED_FIRMWARE OR NOT M7_POWERLINK_EDRV)
+        message(FATAL_ERROR "RTOS candidate requires cumulative firmware and EDRV")
+    endif()
+    if(MCS_CLIENT_CPU_ID STREQUAL "5")
+        include_directories("${HOME_PATH}/src/arch/include")
+        list(APPEND SRC powerlink-port/target-uniproton.c powerlink-port/hrestimer-rk3572.c
+                        rk3572_powerlink_rtos.c)
+        set_source_files_properties(powerlink-port/target-uniproton.c
+            powerlink-port/hrestimer-rk3572.c rk3572_powerlink_rtos.c PROPERTIES
+            COMPILE_DEFINITIONS "OPLK_TARGET_UNIPROTON;CONFIG_MN;NDEBUG" COMPILE_OPTIONS "-Werror")
+    endif()
+endif()
+option(M7_POWERLINK_EDRV "Compile dormant UP2 POWERLINK EDRV (not MN runtime)" OFF)
+if(M7_POWERLINK_EDRV)
+    if(NOT M7_INTEGRATED_FIRMWARE)
+        message(FATAL_ERROR "EDRV candidate requires cumulative firmware")
+    endif()
+    if(MCS_CLIENT_CPU_ID STREQUAL "5")
+        include_directories("${CMAKE_CURRENT_SOURCE_DIR}/powerlink-port"
+                            "${CMAKE_CURRENT_SOURCE_DIR}/powerlink-upstream/stack/include"
+                            "${CMAKE_CURRENT_SOURCE_DIR}/powerlink-upstream/contrib")
+        list(APPEND SRC powerlink-port/edrv-rk3572.c)
+        set_source_files_properties(powerlink-port/edrv-rk3572.c PROPERTIES
+            COMPILE_DEFINITIONS "OPLK_TARGET_UNIPROTON;CONFIG_MN;NDEBUG" COMPILE_OPTIONS "-Werror")
+        set_source_files_properties(rk3572_eth_test.c PROPERTIES COMPILE_DEFINITIONS "M7_POWERLINK_EDRV")
+    endif()
+endif()
+if(M7_INTEGRATED_FIRMWARE)
+    list(APPEND SRC rk3572_integrated.c rk3572_can_irq_test.c rk3572_can_fd_test.c
+                    rk3572_rs232_test.c rk3572_rs485_test.c rk3572_eth_test.c)
+    set_source_files_properties(rk3572_integrated.c rk3572_can_irq_test.c rk3572_can_fd_test.c
+                                rk3572_rs232_test.c rk3572_rs485_test.c rk3572_eth_test.c
+                                PROPERTIES COMPILE_OPTIONS "-Werror")
+elseif(M7_CAN_DIRECT_TEST)
+    if(M7_CAN_IRQ_TEST)
+        list(APPEND SRC rk3572_can_irq_test.c)
+    else()
+        list(APPEND SRC rk3572_can_test.c)
+    endif()
+endif()
+if(M7_POWERLINK_MN AND MCS_CLIENT_CPU_ID STREQUAL "5")
+    # Already supplied once by the audited full object; avoid duplicate ports.
+    list(REMOVE_ITEM SRC powerlink-port/edrv-rk3572.c
+         powerlink-port/target-uniproton.c powerlink-port/hrestimer-rk3572.c)
+    list(APPEND SRC rk3572_powerlink_app.c)
+    # Deliberately NO oplkinc.h force include on RTOS translation units.
+    set_source_files_properties(rk3572_powerlink_app.c PROPERTIES
+        COMPILE_OPTIONS "-Werror;-mgeneral-regs-only;-mno-outline-atomics")
+endif()
+add_library(rpmsg OBJECT ${SRC})
+
+REMOTE_EXIT=0

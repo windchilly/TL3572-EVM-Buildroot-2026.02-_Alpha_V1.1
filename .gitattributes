@@ -48,3 +48,7 @@ stages/stage07-peripheral-partition/tests/powerlink-timer-p3c-20261010/*.log -te
 stages/stage07-peripheral-partition/source/patches/uniproton/0014-rk3572-powerlink-timer-probe.patch whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/tests/powerlink-eth-p3d-20261010/*.log -text whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/source/patches/uniproton/0015-rk3572-powerlink-eth-probe.patch whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/powerlink-eth-p3d-hw-20261023/*.log -text whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/powerlink-eth-p3d-hw-20261023/*.json whitespace=cr-at-eol
+stages/stage07-peripheral-partition/tests/powerlink-eth-p3d-hw-20261023/inputs-first/*.json whitespace=cr-at-eol
+stages/stage07-peripheral-partition/source/patches/uniproton/0016-rk3572-powerlink-eth-armv8a.patch whitespace=-blank-at-eol,-blank-at-eof

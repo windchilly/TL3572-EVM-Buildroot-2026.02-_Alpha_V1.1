@@ -1,0 +1,33 @@
+bash: line 1: rg: command not found
+
+/home/openeuler/build/powerlink-eth-p3d-20261010/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+
+000000007c20fe40 <TakeLease>:
+    7c20fe40:	d10083ff 	sub	sp, sp, #0x20
+    7c20fe44:	b9000fe0 	str	w0, [sp, #12]
+    7c20fe48:	b9001fff 	str	wzr, [sp, #28]
+    7c20fe4c:	90000000 	adrp	x0, 7c20f000 <InitializeController+0x188>
+    7c20fe50:	913a4000 	add	x0, x0, #0xe90
+    7c20fe54:	f9400003 	ldr	x3, [x0]
+    7c20fe58:	910073e1 	add	x1, sp, #0x1c
+    7c20fe5c:	b9400022 	ldr	w2, [x1]
+    7c20fe60:	b9400fe4 	ldr	w4, [sp, #12]
+    7c20fe64:	2a0203e0 	mov	w0, w2
+    7c20fe68:	88e0fc64 	casal	w0, w4, [x3]
+    7c20fe6c:	6b02001f 	cmp	w0, w2
+    7c20fe70:	1a9f17e2 	cset	w2, eq	// eq = none
+    7c20fe74:	7100005f 	cmp	w2, #0x0
+    7c20fe78:	54000041 	b.ne	7c20fe80 <TakeLease+0x40>  // b.any
+    7c20fe7c:	b9000020 	str	w0, [x1]
+    7c20fe80:	2a0203e0 	mov	w0, w2
+    7c20fe84:	910083ff 	add	sp, sp, #0x20
+    7c20fe88:	d65f03c0 	ret
+
+REMOTE_EXIT=0

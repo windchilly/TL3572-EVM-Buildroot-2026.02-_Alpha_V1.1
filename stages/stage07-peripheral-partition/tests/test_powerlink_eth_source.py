@@ -1,4 +1,5 @@
 from pathlib import Path
+import importlib.util
 import unittest
 STAGE = Path(__file__).resolve().parents[1]
 PORT = STAGE / 'source/powerlink/port'
@@ -40,5 +41,20 @@ class EthProbeSourceTests(unittest.TestCase):
         self.assertNotIn('oplk/', header)
         self.assertNotIn('prt_', header)
         self.assertIn('M7EthProbeResult', header)
+
+    def test_lse_detection_and_llsc_allowed(self):
+        spec = importlib.util.spec_from_file_location('audit_eth', STAGE / 'tests/audit_powerlink_eth.py')
+        module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+        for mnemonic in ('cas', 'casal', 'casalb', 'caspal', 'swpalh', 'ldaddal', 'staddl',
+                         'ldclra', 'steor', 'ldset', 'ldsmax', 'stsmin', 'ldumax', 'stumin'):
+            self.assertTrue(module.lse_instructions('    7c20fe68: 88e0fc64 ' + mnemonic + ' w0, w4, [x3]'))
+        for mnemonic in ('ldaxr', 'stlxr', 'ldar', 'stlr', 'ldxr', 'stxr', 'dmb', 'dsb', 'bl'):
+            self.assertFalse(module.lse_instructions('    7c20fe68: 88e0fc64 ' + mnemonic + ' w0, [x3]'))
+
+    def test_actual_bsp_arch_overridden(self):
+        patch = (STAGE / 'source/patches/uniproton/0016-rk3572-powerlink-eth-armv8a.patch').read_text()
+        self.assertIn('SOURCE rk3572_eth_test.c APPEND PROPERTY', patch)
+        self.assertIn('-march=armv8-a;-mgeneral-regs-only;-mno-outline-atomics', patch)
+        self.assertIn('0016-rk3572-powerlink-eth-armv8a.patch', (STAGE / 'build/build_m7_powerlink_eth_candidate.sh').read_text())
 
 if __name__ == '__main__': unittest.main()

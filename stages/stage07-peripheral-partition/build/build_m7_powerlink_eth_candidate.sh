@@ -15,10 +15,13 @@ install -m 0644 "$stage/source/powerlink/port/m7_eth_probe.h" "$app/powerlink-po
     -I "$stage/source/powerlink/port" -I "$output/source/openPOWERLINK_V2-2.7.2/stack/include" \
     -I "$output/source/openPOWERLINK_V2-2.7.2/contrib" \
     -c "$stage/source/powerlink/port/m7_eth_probe.c" -o "$demo/build/eth-probe.o"
-git -C "$uni" apply --check "$stage/source/patches/uniproton/0015-rk3572-powerlink-eth-probe.patch"
-git -C "$uni" apply "$stage/source/patches/uniproton/0015-rk3572-powerlink-eth-probe.patch"
+for patch in 0015-rk3572-powerlink-eth-probe.patch 0016-rk3572-powerlink-eth-armv8a.patch; do
+    git -C "$uni" apply --check "$stage/source/patches/uniproton/$patch"
+    git -C "$uni" apply "$stage/source/patches/uniproton/$patch"
+done
 readonly build="$demo/build/m7-powerlink-p3d-up-b"
 cmake -S "$demo" -B "$build" -DAPP:STRING=rk3572_mica -DTOOLCHAIN_PATH:STRING="$toolchain" \
+    -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON \
     -DMCS_CLIENT_CPU_ID:STRING=5 -DMCS_NOTIFY_SGI_ID:STRING=9 \
     -DMCS_IMAGE_ADDR:STRING=0x7c200000 -DMCS_MMU_ADDR:STRING=0x7ca00000 \
     -DM7_CAN_DIRECT_TEST:BOOL=OFF -DM7_CAN_IRQ_TEST:BOOL=OFF \

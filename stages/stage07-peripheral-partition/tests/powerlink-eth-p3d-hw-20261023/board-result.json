@@ -1,0 +1,86 @@
+{
+  "phase": "P3d PHY/MAC100-half hardware only",
+  "passed": true,
+  "cycles": [
+    {
+      "cycle": 1,
+      "up2": {
+        "rc": "0",
+        "clean": "1",
+        "phy": "0x7b74/0x4412",
+        "bmcr": "0x2000",
+        "bmsr": "0x794d",
+        "mac": "0xc000",
+        "tx": "0x0",
+        "rx": "0x0",
+        "dma": "0x0",
+        "irq": "0x0/0x0",
+        "stop": "0x0/0x0/0x0/0x0/0x0/0x0",
+        "lease": "0/0"
+      },
+      "peer": {
+        "Speed": "100Mb/s",
+        "Duplex": "Half",
+        "Auto-negotiation": "on",
+        "Link detected": "yes"
+      }
+    },
+    {
+      "cycle": 2,
+      "up2": {
+        "rc": "0",
+        "clean": "1",
+        "phy": "0x7b74/0x4412",
+        "bmcr": "0x2000",
+        "bmsr": "0x794d",
+        "mac": "0xc000",
+        "tx": "0x0",
+        "rx": "0x0",
+        "dma": "0x0",
+        "irq": "0x0/0x0",
+        "stop": "0x0/0x0/0x0/0x0/0x0/0x0",
+        "lease": "0/0"
+      },
+      "peer": {
+        "Speed": "100Mb/s",
+        "Duplex": "Half",
+        "Auto-negotiation": "on",
+        "Link detected": "yes"
+      }
+    },
+    {
+      "cycle": 3,
+      "up2": {
+        "rc": "0",
+        "clean": "1",
+        "phy": "0x7b74/0x4412",
+        "bmcr": "0x2000",
+        "bmsr": "0x794d",
+        "mac": "0xc000",
+        "tx": "0x0",
+        "rx": "0x0",
+        "dma": "0x0",
+        "irq": "0x0/0x0",
+        "stop": "0x0/0x0/0x0/0x0/0x0/0x0",
+        "lease": "0/0"
+      },
+      "peer": {
+        "Speed": "100Mb/s",
+        "Duplex": "Half",
+        "Auto-negotiation": "on",
+        "Link detected": "yes"
+      }
+    }
+  ],
+  "candidate_sha256": "69720472a318b7d086926d13d105470250676ac98d442eaed18701012319bef7",
+  "micad": {
+    "MainPID": "328",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "boot_id": "6974ac40-f3a2-4433-a5b8-11ec4318248f",
+  "cleanup": true,
+  "test_frames": 0,
+  "error": null,
+  "limit": "No DMA descriptors/start, EDRV physical TX/RX, FCS, MN/CN or realtime acceptance"
+}

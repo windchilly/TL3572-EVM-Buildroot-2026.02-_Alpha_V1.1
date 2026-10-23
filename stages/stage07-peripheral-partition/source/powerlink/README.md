@@ -1,8 +1,12 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
-**P3d累计候选：休眠owner/完整栈 + 已实测timer诊断 + 尚未上板的无DMA/帧ETH2诊断**，
-不是已能上网运行的主站；半双工上板仍待验证。
+**P3d累计候选：休眠owner/完整栈 + 已实测timer诊断 + 三轮无DMA/帧PHY/MAC100-half实测**，
+不是已能上网运行的主站；EDRV物理帧、MN/CN互操作仍待验证。
+
+2026-10-23修正BSP继承ARMv8.2导致的CASAL异常，0016追加实际BSP ARMv8-A约束/最终ELF LSE拒绝审计。
+旧P1-P3c/P3d初版不能执行EDRV新路径；当前三轮half/ANoff及安全归还通过、无测试帧/整板重启。
+详见[修复/原始失败/完整复建证据](../../tests/powerlink-eth-p3d-hw-20261023/README.md)。
 
 最新`m7_eth_probe.c/h`/0015只在COLD显式检查PHY/MAC100half并停止，不启动DMA/EDRV/MN；
 8+3原生mock边界/累计owner、104Python与双新树复编通过；[P3d完整记录](../../tests/powerlink-eth-p3d-20261010/README.md)。

@@ -2,6 +2,10 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-10-23 [P3d PHY/MAC100-half实测](tests/powerlink-eth-p3d-hw-20261023/README.md)：
+修正BSP默认ARMv8.2发出CASAL，最终LSE零；三轮UP2强制half/ANoff、ETH3匹配和安全停止/归还通过。
+未发测试帧/启动MN/重启整板；最终两UPOffline、LinuxETH2/3全双工、micad/管理网/工控资源保持；正式两ELF不变。
+
 2026-10-10 最新[P3d无DMA/无帧ETH2诊断准备](tests/powerlink-eth-p3d-20261010/README.md)：
 同一UP2 owner/COLD显式PHY/MAC100-half检查和安全停止，保留timer入口；8+3原生/104Python/双新树runtime一致。
 只读预检板卡，未部署/解绑/改PHY/重启；半双工实机待单独确认，原M6/DT/正式ELF保持。

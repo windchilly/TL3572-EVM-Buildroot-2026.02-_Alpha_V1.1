@@ -1,5 +1,22 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-23 最新入口：获准临时ETH2移交后，P3d PHY/MAC forced100-half三轮与安全归还实测通过。
+首次旧候选73689e61...在TakeLease CASAL(0x7c20fe68/0x88e0fc64)异常，ESR02000000/EC0，未访问PHY/MAC。
+旧模板全局armv8.2，移植核心的cortex-a53约束没覆盖真实BSP；零lease，UP2异常后PSCI自行OFF但micad表仍Running。
+初次runner按未知状态保留资源，后独立CPU4/5OFF+固定异常/opcode/ELF确认，精确清理/归还；未强停或重启整板。
+0016给ETH BSP在公共属性之后追加-march=armv8-a/general-regs-only/no-outline-atomics；最终全UP2 LSE扫描零。
+新增无帧runner/纯检查/DRAM解码/固定故障恢复工具，DHCP租期倒计时不计为地址drift。
+修正版三轮BMCR2000/BMSR794d/MACc000，RX/TX/SWR/IRQ启用0；stop六回读全0、lease0/0。
+ETH3每轮实测100M Half/link yes，自身ANon/对端ANoff；不改ETH3、不初始化DMA、不EDRV物理收发/MN/timer诊断/工控发送。
+最终原两UP Offline/CPU4/5OFF，LinuxETH2/3恢复100fullANon，hold/端点/临时client清理；CAN/UART寄存器绑定/ETH1地址路由不变。
+boot6974ac40-f3a2-4433-a5b8-11ec4318248f，micad PID328/restarts0全程不变；无COM7/开机/DT/正式ELF修改。
+Windows/Linux各115Python及P3d/P3c/P3b/累计/旧P0-P3a原生回归通过，两个全新累计树runtime一致；9旧软件对象明确复用。
+构建根/home/openeuler/build/powerlink-eth-p3d-hw-20261023，UniProton-fixed-v2/repro-v2；早期失败与inputs-first完整保留。
+实测候选69720472...，UP2runtime620564B SHA92862487...、image2146128B/8MiB、页表10/16；UP1未改runtime，9/16。
+最终596+7函数/未解析0/LSE0，无新增旧125SIMD；旧P1-P3c/P3d初版候选不得用于执行EDRV新路径。
+tests/powerlink-eth-p3d-hw-20261023/README.md是完整记录/复建/证据入口，GitHub状态以最终报告为准。
+只验收PHY/MAC半双工与停止，不代表EDRV物理帧/FCS/MN/CN/实时性/M7完成；下一步发送必须另确认，CAN/UART禁发保持。
+
 2026-10-10 最新 POWERLINK 续做入口：P3d no-DMA/no-frame ETH2诊断软件准备通过，半双工实机未测。
 新增m7_eth_probe.c/h、0015、build_m7_powerlink_eth_candidate.sh，累计owner仅COLD显式eth-probe/eth-status。
 保留P3c timer诊断；PHY100half/ANoff+MACdisabled100half回读，不初始化描述符/启动DMA/EDRV/MN/timer/发送。

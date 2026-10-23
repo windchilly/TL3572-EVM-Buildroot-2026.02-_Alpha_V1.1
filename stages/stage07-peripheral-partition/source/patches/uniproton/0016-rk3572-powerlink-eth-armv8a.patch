@@ -1,0 +1,11 @@
+diff --git a/demos/rk3572_mica/apps/openamp/CMakeLists.txt b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+--- a/demos/rk3572_mica/apps/openamp/CMakeLists.txt
++++ b/demos/rk3572_mica/apps/openamp/CMakeLists.txt
+@@ -53,2 +53,7 @@
+ endif()
++if(M7_POWERLINK_EDRV AND MCS_CLIENT_CPU_ID STREQUAL "5")
++    # Override ARMv8.2 after all common source properties; deployed UP lacks LSE.
++    set_property(SOURCE rk3572_eth_test.c APPEND PROPERTY COMPILE_OPTIONS
++        "-march=armv8-a;-mgeneral-regs-only;-mno-outline-atomics")
++endif()
+ add_library(rpmsg OBJECT ${SRC})
