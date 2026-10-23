@@ -4,6 +4,9 @@
 **P3f累计候选：保留P3e全部功能 + 完整MN栈GsOff生命周期诊断（新增部分仅软件验证）**，
 不是已运行的主站；MN/CN互操作、持续负载/实时性仍待验证。
 
+2026-10-23 P3f首次硬件窗口在只读PLK status查询异常，MN诊断未提交；查询/日志栈预算超出默认4KiB线程。
+当前原P3f候选不要再次部署，等待栈修复/预算检查及独立复测；[故障与保留现场](../../tests/powerlink-mn-p3f-hw-20261023/README.md)。
+
 `m7_mn_probe.c/h`和0018显式执行真实initialize/prepare/128次process/stop/exit，不调用reset/start。
 检查真实NMT GsOff、TX描述符未使用、timer回调0和DMA/timer停止；失败终止保留资源、禁止自动重试。
 100轮真实完整栈原生、29+3场景及129Python、双新累计树runtime一致，未访问或部署板卡。

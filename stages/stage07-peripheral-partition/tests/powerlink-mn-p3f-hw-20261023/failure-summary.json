@@ -1,0 +1,27 @@
+{
+  "phase": "P3f first hardware window: pre-command status failure",
+  "passed": false,
+  "candidate_sha256": "b00cdf67837d3359488385f4709fa1a162cd4ea6a791855c6f9708c1411992c1",
+  "mn_probe_submitted": false,
+  "completed_process_calls": 0,
+  "boot_id": "6974ac40-f3a2-4433-a5b8-11ec4318248f",
+  "micad": {"MainPID": "328", "NRestarts": "0", "ActiveState": "active"},
+  "exception": {"cause": 7, "task": 9, "elr": "0x26262626", "far": "0x26262626", "esr": "0x8a000000", "ec": 34},
+  "physical_cpu4_off": true,
+  "physical_cpu5_off": true,
+  "eth_lease": 0,
+  "management_client_table": "temporary client Running (stale, not physical CPU state)",
+  "retained": ["temporary client/ttyRPMSG0", "Linux ETH2 unbound", "m7_eth2_power_hold"],
+  "cleanup_performed": false,
+  "repair_performed": false,
+  "automatic_retry_or_reboot": false,
+  "stack_analysis": {
+    "tty_thread_bytes": 4096,
+    "previous_powerlink_input_frame": 1136,
+    "current_powerlink_input_frame": 1712,
+    "snapshot_bytes": 1008,
+    "call_chain_frames": {"rpmsg_tty_task": 576, "Rk3572IntegratedInput": 352, "Rk3572PowerlinkInput": 1712, "PRT_Printf": 176, "UpLogVprintf": 608, "vsnprintf_s": 80, "SecVsnprintfImpl": 80, "SecOutput": 752},
+    "lower_bound_bytes": 4336,
+    "limit": "Static capacity breach proved; exact corruption/neighbor-thread failure mechanism still needs validation. This excludes further leaf/interrupt/context overhead."
+  }
+}

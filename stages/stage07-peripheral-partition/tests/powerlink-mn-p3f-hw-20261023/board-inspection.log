@@ -1,0 +1,100 @@
+ 13:02:26 up  5:55,  1 user,  load average: 0.02, 0.01, 0.00
+6974ac40-f3a2-4433-a5b8-11ec4318248f
+4096
+MainPID=328
+NRestarts=0
+ActiveState=active
+Name                          Assigned CPU        State               Service
+up-b-m7-plk-mn-probe          5                   Running             rpmsg-tty(/dev/ttyRPMSG0) rpmsg-rpc rpmsg-umt
+up-b                          5                   Offline
+up-a                          4                   Offline
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+can0             DOWN           
+can1             DOWN           
+can2             DOWN           
+can3             DOWN           
+eth0             UP             192.168.2.141/24 metric 1024 fe80::d414:36ff:fe8b:78f0/64 
+eth2             DOWN           fe80::2e0:9aff:fe42:baeb/64 
+default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 
+192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 
+192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 
+Module                  Size  Used by
+m7_eth2_power_hold     12288  0
+mcs_km                 16384  0
+lrwxrwxrwx 1 root root 10 Oct 23 13:01 /dev/ttyRPMSG0 -> /dev/pts/0
+[13026.432018] mcs: received ioctl cmd to send ipi to cpu(5)
+[13026.515349] mcs: received ioctl cmd to send ipi to cpu(5)
+[13026.516318] mcs: received ioctl cmd to send ipi to cpu(5)
+[13026.517202] mcs: received ioctl cmd to send ipi to cpu(5)
+[13028.941970] sr9900 1-1.4.1:1.0 eth2: carrier on
+[13029.345561] mcs: received ioctl cmd to send ipi to cpu(5)
+[13029.446896] mcs: received ioctl cmd to send ipi to cpu(5)
+[13029.447881] mcs: received ioctl cmd to send ipi to cpu(5)
+[13029.448997] mcs: received ioctl cmd to send ipi to cpu(5)
+[13029.641954] mcs: received ioctl cmd to send ipi to cpu(5)
+[13029.642195] mcs: received ioctl cmd to send ipi to cpu(5)
+[13029.642214] mcs: received ioctl cmd to send ipi to cpu(5)
+[13029.946943] rk_gmac-dwmac 2a040000.ethernet: IRQ eth_lpi not found
+[13029.947004] rk_gmac-dwmac 2a040000.ethernet: IRQ sfty not found
+[13029.947235] rk_gmac-dwmac 2a040000.ethernet: supply phy not found, using dummy regulator
+[13029.947452] rk_gmac-dwmac 2a040000.ethernet: clock input or output? (output).
+[13029.947463] rk_gmac-dwmac 2a040000.ethernet: TX delay(0x20).
+[13029.947472] rk_gmac-dwmac 2a040000.ethernet: Can not read property: rx_delay.
+[13029.947479] rk_gmac-dwmac 2a040000.ethernet: set rx_delay to 0xffffffff
+[13029.947510] rk_gmac-dwmac 2a040000.ethernet: integrated PHY? (no).
+[13029.947522] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_rx
+[13029.947530] rk_gmac-dwmac 2a040000.ethernet: cannot get clock mac_clk_tx
+[13029.947551] rk_gmac-dwmac 2a040000.ethernet: cannot get clock clk_mac_speed
+[13029.947789] rk_gmac-dwmac 2a040000.ethernet: init for RGMII_RXID
+[13029.948353] rk_gmac-dwmac 2a040000.ethernet: User ID: 0x50, Synopsys ID: 0x51
+[13029.948379] rk_gmac-dwmac 2a040000.ethernet: 	DWMAC4/5
+[13029.948390] rk_gmac-dwmac 2a040000.ethernet: DMA HW capability register supported
+[13029.948398] rk_gmac-dwmac 2a040000.ethernet: RX Checksum Offload Engine supported
+[13029.948405] rk_gmac-dwmac 2a040000.ethernet: TX Checksum insertion supported
+[13029.948412] rk_gmac-dwmac 2a040000.ethernet: Wake-Up On Lan supported
+[13029.948420] rk_gmac-dwmac 2a040000.ethernet: TSO supported
+[13029.948428] rk_gmac-dwmac 2a040000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[13029.948438] rk_gmac-dwmac 2a040000.ethernet: Enabled L3L4 Flow TC (entries=2)
+[13029.948446] rk_gmac-dwmac 2a040000.ethernet: Enabled RFS Flow TC (entries=10)
+[13029.948455] rk_gmac-dwmac 2a040000.ethernet: TSO feature enabled
+[13029.948463] rk_gmac-dwmac 2a040000.ethernet: Using 40/40 bits DMA host/device width
+[13030.008054] sr9900 1-1.4.1:1.0 eth2: carrier off
+[13030.188304] rk_gmac-dwmac 2a040000.ethernet eth1: Register MEM_TYPE_PAGE_POOL RxQ-0
+[13030.188866] MAXIO_PHY_VER: v1.7.6.1 
+[13030.197152] rk_gmac-dwmac 2a040000.ethernet eth1: PHY [stmmac-1:01] driver [MAE0621A/B-Q3C(I) Gigabit Ethernet] (irq=POLL)
+[13030.197709] dwmac4: Master AXI performs any burst length
+[13030.197727] rk_gmac-dwmac 2a040000.ethernet eth1: No Safety Features support found
+[13030.197752] rk_gmac-dwmac 2a040000.ethernet eth1: IEEE 1588-2008 Advanced Timestamp supported
+[13030.198187] rk_gmac-dwmac 2a040000.ethernet eth1: registered PTP clock
+[13030.198700] rk_gmac-dwmac 2a040000.ethernet eth1: configuring for phy/rgmii-rxid link mode
+[13032.142214] sr9900 1-1.4.1:1.0 eth2: carrier on
+[13033.281105] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Up - 100Mbps/Full - flow control rx/tx
+[13033.344909] M7 ETH2 shared nvm0 power reference released
+[21227.392937] M7 shared fabric aclk_nvm0_root held at 297000000 Hz; no rate/parent changes
+[21227.393005] M7 shared fabric pclk_nvm0_root held at 100000000 Hz; no rate/parent changes
+[21227.393013] M7 ETH2 shared nvm0 power/fabric held; MAC remains independently owned
+[21227.398949] rk_gmac-dwmac 2a040000.ethernet eth1: Link is Down
+[21227.404510] rk_gmac-dwmac 2a040000.ethernet eth1: stmmac_dvr_remove: removing driver
+[21227.445837] sr9900 1-1.4.1:1.0 eth2: carrier off
+[21227.898441] mcs: start booting clientos on cpu5(101) addr(0x7c200000)
+[21227.898529] mcs: received ioctl cmd to send ipi to cpu(5)
+[21227.898565] mcs: received ioctl cmd to send ipi to cpu(5)
+[21228.017925] mcs: received ioctl cmd to send ipi to cpu(5)
+[21228.132496] mcs: received ioctl cmd to send ipi to cpu(5)
+[21228.133547] mcs: received ioctl cmd to send ipi to cpu(5)
+PRIVATE_DRAM_MAY_BE_STALE {"g_ethLease": {"address": "0x7c32b284", "raw_hex": "00000000", "symbol_bytes": 4, "value": 0}, "g_excInfoInternal": {"address": "0x7c29a2b8", "raw_hex": "556e6950726f746f6e2032322e30330000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007000000030000000900000034120200000000000000000000000000010000000000000000000000302c317c00000000902c317c000000000000a07c000000000000a07c00000000203500800000000000040c44ff0000000518d030000000000040257c000000000400000000000000302c317c000000002626262600000000c50300400000000026262626000000000000008a000000000000000000000000262626260000000029292929000000002828282800000000272727270000000026262626000000002525252500000000242424249300000023232323d0ffffff22222222000000002121212100000000282828280000000027272727000000008e2f317c0000000017171717000000008d000000000000009cb0247c00000000242c317c000000008d000000000000005032317c000000004cb3247c000000005032317c00000000d0ffffff000000005032317c0000000004b8247c00000000882f317c00000000f001000000000000c869257c00000000ef01000000000000232323230000000024242424000000006033317c00000000", "symbol_bytes": 520}, "g_uniFlag": {"address": "0x7c28f200", "raw_hex": "23200000", "symbol_bytes": 4, "value": 8227}, "snapshot": {"address": "0x7c32b288", "mn": {"events": 0, "lastError": 0, "lastEvent": 0, "nmt": 0, "owner": 0, "processes": 0, "state": 0}, "owner_cache": {"cmd": 0, "done": 0, "owner": 6, "pending": 0, "rc": 0, "ready": 1, "running": 0, "runtime": 0, "seq": 0}, "raw_hex": "0100000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "symbol_bytes": 1008}}
+[boot=4 seq=160] [boot] UP CPU5 entered
+[boot=4 seq=161] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[boot=4 seq=162] [boot] interrupt routing ready
+[boot=4 seq=163] [boot] scheduler task entered
+[boot=4 seq=164] [plk] dormant owner init rc=0; no PHY/timer/MN startup
+[boot=4 seq=165] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[boot=4 seq=166] [openamp] get rsctable 7c297300, size a64 
+[boot=4 seq=167] [openamp]: get vring0: da 7a0a0000
+[boot=4 seq=168] [openamp]: get vring1: da 7a0a00e0
+[boot=4 seq=169] [openamp] tty task started
+[boot=4 seq=170] [openamp] ept ready
+[boot=4 seq=171] [boot] RPMsg ready
+[boot=4 seq=172] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=0 done=0 cmd=0 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=GsOff-diagnostic
+
+READ_ONLY_EXIT=0

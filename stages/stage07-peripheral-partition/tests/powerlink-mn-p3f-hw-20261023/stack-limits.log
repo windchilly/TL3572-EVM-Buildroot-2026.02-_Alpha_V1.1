@@ -1,0 +1,149 @@
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/include/prt_task.h:1066: * <li>若指定的任务栈大小为0，则使用配置项#OS_TSK_DEFAULT_STACK_SIZE指定的默认的任务栈大小。</li>
+000000007c29a540 0000000000000008 B g_tskCbArray
+000000007c29a548 0000000000000004 B g_tskMaxNum
+000000007c29a570 0000000000000010 B g_tskModInfo
+
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+
+000000007c251630 <PRT_TaskGetInfo>:
+    7c251630:	b4000ca1 	cbz	x1, 7c2517c4 <PRT_TaskGetInfo+0x194>
+    7c251634:	a9b94ffe 	stp	x30, x19, [sp, #-112]!
+    7c251638:	aa0103f3 	mov	x19, x1
+    7c25163c:	a90157f4 	stp	x20, x21, [sp, #16]
+    7c251640:	2a0003f5 	mov	w21, w0
+    7c251644:	90000000 	adrp	x0, 7c251000 <OsTaskCreateParaCheck+0x88>
+    7c251648:	a9025ff6 	stp	x22, x23, [sp, #32]
+    7c25164c:	f943ec00 	ldr	x0, [x0, #2008]
+    7c251650:	f9001bf8 	str	x24, [sp, #48]
+    7c251654:	b9400001 	ldr	w1, [x0]
+    7c251658:	90000000 	adrp	x0, 7c251000 <OsTaskCreateParaCheck+0x88>
+    7c25165c:	f943f000 	ldr	x0, [x0, #2016]
+    7c251660:	4b0102a2 	sub	w2, w21, w1
+    7c251664:	b9400000 	ldr	w0, [x0]
+    7c251668:	11000400 	add	w0, w0, #0x1
+    7c25166c:	6b00005f 	cmp	w2, w0
+    7c251670:	54000b02 	b.cs	7c2517d0 <PRT_TaskGetInfo+0x1a0>  // b.hs, b.nlast
+    7c251674:	90000000 	adrp	x0, 7c251000 <OsTaskCreateParaCheck+0x88>
+    7c251678:	2a1503f6 	mov	w22, w21
+    7c25167c:	cb2142d6 	sub	x22, x22, w1, uxtw
+    7c251680:	d2806401 	mov	x1, #0x320                 	// #800
+    7c251684:	f943f400 	ldr	x0, [x0, #2024]
+    7c251688:	9b017ed6 	mul	x22, x22, x1
+    7c25168c:	f9400018 	ldr	x24, [x0]
+    7c251690:	97fff5c4 	bl	7c24eda0 <PRT_HwiLock>
+    7c251694:	92790017 	and	x23, x0, #0x80
+    7c251698:	8b160314 	add	x20, x24, x22
+    7c25169c:	b9400a80 	ldr	w0, [x20, #8]
+    7c2516a0:	35000100 	cbnz	w0, 7c2516c0 <PRT_TaskGetInfo+0x90>
+    7c2516a4:	b50000b7 	cbnz	x23, 7c2516b8 <PRT_TaskGetInfo+0x88>
+    7c2516a8:	d50343ff 	msr	daifclr, #0x3
+    7c2516ac:	52806160 	mov	w0, #0x30b                 	// #779
+    7c2516b0:	72a04000 	movk	w0, #0x200, lsl #16
+    7c2516b4:	1400003d 	b	7c2517a8 <PRT_TaskGetInfo+0x178>
+    7c2516b8:	d50343df 	msr	daifset, #0x3
+    7c2516bc:	17fffffc 	b	7c2516ac <PRT_TaskGetInfo+0x7c>
+    7c2516c0:	aa1403e0 	mov	x0, x20
+    7c2516c4:	aa1303e1 	mov	x1, x19
+    7c2516c8:	97ffff6e 	bl	7c251480 <OsTaskSpPcGet>
+    7c2516cc:	f90027ff 	str	xzr, [sp, #72]
+    7c2516d0:	b9400a80 	ldr	w0, [x20, #8]
+    7c2516d4:	79002260 	strh	w0, [x19, #16]
+    7c2516d8:	79401a80 	ldrh	w0, [x20, #12]
+    7c2516dc:	79002660 	strh	w0, [x19, #18]
+    7c2516e0:	b9401280 	ldr	w0, [x20, #16]
+    7c2516e4:	b9001660 	str	w0, [x19, #20]
+    7c2516e8:	f9400e80 	ldr	x0, [x20, #24]
+    7c2516ec:	f9000e60 	str	x0, [x19, #24]
+    7c2516f0:	90000000 	adrp	x0, 7c251000 <OsTaskCreateParaCheck+0x88>
+    7c2516f4:	f943f800 	ldr	x0, [x0, #2032]
+    7c2516f8:	f9400002 	ldr	x2, [x0]
+    7c2516fc:	b4000182 	cbz	x2, 7c25172c <PRT_TaskGetInfo+0xfc>
+    7c251700:	910123e1 	add	x1, sp, #0x48
+    7c251704:	2a1503e0 	mov	w0, w21
+    7c251708:	d63f0040 	blr	x2
+    7c25170c:	f94027e2 	ldr	x2, [sp, #72]
+    7c251710:	91008260 	add	x0, x19, #0x20
+    7c251714:	d28001e3 	mov	x3, #0xf                   	// #15
+    7c251718:	d2800201 	mov	x1, #0x10                  	// #16
+    7c25171c:	97fff4be 	bl	7c24ea14 <strncpy_s>
+    7c251720:	34000040 	cbz	w0, 7c251728 <PRT_TaskGetInfo+0xf8>
+    7c251724:	97fff5b1 	bl	7c24ede8 <OsAsmIll>
+    7c251728:	3900be7f 	strb	wzr, [x19, #47]
+    7c25172c:	f9401280 	ldr	x0, [x20, #32]
+    7c251730:	a903d260 	stp	x0, x20, [x19, #56]
+    7c251734:	90000000 	adrp	x0, 7c251000 <OsTaskCreateParaCheck+0x88>
+    7c251738:	f943fc00 	ldr	x0, [x0, #2040]
+    7c25173c:	b9400001 	ldr	w1, [x0]
+    7c251740:	52800720 	mov	w0, #0x39                  	// #57
+    7c251744:	6a00003f 	tst	w1, w0
+    7c251748:	540000e1 	b.ne	7c251764 <PRT_TaskGetInfo+0x134>  // b.any
+    7c25174c:	90000000 	adrp	x0, 7c251000 <OsTaskCreateParaCheck+0x88>
+    7c251750:	f9440000 	ldr	x0, [x0, #2048]
+    7c251754:	f9400000 	ldr	x0, [x0]
+    7c251758:	b9401400 	ldr	w0, [x0, #20]
+    7c25175c:	6b15001f 	cmp	w0, w21
+    7c251760:	54000080 	b.eq	7c251770 <PRT_TaskGetInfo+0x140>  // b.none
+    7c251764:	f8766b00 	ldr	x0, [x24, x22]
+    7c251768:	91018261 	add	x1, x19, #0x60
+    7c25176c:	97fff597 	bl	7c24edc8 <OsTskContextGet>
+    7c251770:	b5000277 	cbnz	x23, 7c2517bc <PRT_TaskGetInfo+0x18c>
+    7c251774:	d50343ff 	msr	daifclr, #0x3
+    7c251778:	910123e1 	add	x1, sp, #0x48
+    7c25177c:	2a1503e0 	mov	w0, w21
+    7c251780:	a904ffff 	stp	xzr, xzr, [sp, #72]
+    7c251784:	a905ffff 	stp	xzr, xzr, [sp, #88]
+    7c251788:	f90037ff 	str	xzr, [sp, #104]
+    7c25178c:	97ffff69 	bl	7c251530 <OsTaskStackInfoGet>
+    7c251790:	350000c0 	cbnz	w0, 7c2517a8 <PRT_TaskGetInfo+0x178>
+    7c251794:	f9402be2 	ldr	x2, [sp, #80]
+    7c251798:	f94033e3 	ldr	x3, [sp, #96]
+    7c25179c:	3941a3e1 	ldrb	w1, [sp, #104]
+    7c2517a0:	a9048e62 	stp	x2, x3, [x19, #72]
+    7c2517a4:	39016261 	strb	w1, [x19, #88]
+    7c2517a8:	f9401bf8 	ldr	x24, [sp, #48]
+    7c2517ac:	a94157f4 	ldp	x20, x21, [sp, #16]
+    7c2517b0:	a9425ff6 	ldp	x22, x23, [sp, #32]
+    7c2517b4:	a8c74ffe 	ldp	x30, x19, [sp], #112
+    7c2517b8:	d65f03c0 	ret
+
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+
+000000007c220ff0 <PRT_Printf>:
+    7c220ff0:	f8150ffe 	str	x30, [sp, #-176]!
+    7c220ff4:	f9001fe0 	str	x0, [sp, #56]
+    7c220ff8:	f9003fe1 	str	x1, [sp, #120]
+    7c220ffc:	f90043e2 	str	x2, [sp, #128]
+    7c221000:	f90047e3 	str	x3, [sp, #136]
+    7c221004:	f9004be4 	str	x4, [sp, #144]
+    7c221008:	f9004fe5 	str	x5, [sp, #152]
+    7c22100c:	f90053e6 	str	x6, [sp, #160]
+    7c221010:	f90057e7 	str	x7, [sp, #168]
+    7c221014:	9102c3e0 	add	x0, sp, #0xb0
+    7c221018:	f90027e0 	str	x0, [sp, #72]
+    7c22101c:	9102c3e0 	add	x0, sp, #0xb0
+    7c221020:	f9002be0 	str	x0, [sp, #80]
+    7c221024:	9101c3e0 	add	x0, sp, #0x70
+    7c221028:	f9002fe0 	str	x0, [sp, #88]
+    7c22102c:	128006e0 	mov	w0, #0xffffffc8            	// #-56
+    7c221030:	b90063e0 	str	w0, [sp, #96]
+    7c221034:	b90067ff 	str	wzr, [sp, #100]
+    7c221038:	f94027e0 	ldr	x0, [sp, #72]
+    7c22103c:	f9000be0 	str	x0, [sp, #16]
+    7c221040:	f9402be0 	ldr	x0, [sp, #80]
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/src/core/kernel/include/prt_task_external.h
+
+REMOTE_EXIT=0

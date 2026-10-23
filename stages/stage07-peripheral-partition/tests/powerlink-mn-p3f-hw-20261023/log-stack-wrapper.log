@@ -1,0 +1,75 @@
+
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+
+000000007c24a098 <vsnprintf_s>:
+    7c24a098:	a9bb4ffe 	stp	x30, x19, [sp, #-80]!
+    7c24a09c:	f100007f 	cmp	x3, #0x0
+    7c24a0a0:	aa0003f3 	mov	x19, x0
+    7c24a0a4:	a90157f4 	stp	x20, x21, [sp, #16]
+    7c24a0a8:	fa401804 	ccmp	x0, #0x0, #0x4, ne	// ne = any
+    7c24a0ac:	aa0103f4 	mov	x20, x1
+    7c24a0b0:	f90013f6 	str	x22, [sp, #32]
+    7c24a0b4:	b27f77e0 	mov	x0, #0x7ffffffe            	// #2147483646
+    7c24a0b8:	aa0203f6 	mov	x22, x2
+    7c24a0bc:	d1000422 	sub	x2, x1, #0x1
+    7c24a0c0:	540000e0 	b.eq	7c24a0dc <vsnprintf_s+0x44>  // b.none
+    7c24a0c4:	eb00005f 	cmp	x2, x0
+    7c24a0c8:	54000108 	b.hi	7c24a0e8 <vsnprintf_s+0x50>  // b.pmore
+    7c24a0cc:	eb0002df 	cmp	x22, x0
+    7c24a0d0:	54000169 	b.ls	7c24a0fc <vsnprintf_s+0x64>  // b.plast
+    7c24a0d4:	3900027f 	strb	wzr, [x19]
+    7c24a0d8:	14000004 	b	7c24a0e8 <vsnprintf_s+0x50>
+    7c24a0dc:	f100027f 	cmp	x19, #0x0
+    7c24a0e0:	fa401042 	ccmp	x2, x0, #0x2, ne	// ne = any
+    7c24a0e4:	54ffff89 	b.ls	7c24a0d4 <vsnprintf_s+0x3c>  // b.plast
+    7c24a0e8:	12800000 	mov	w0, #0xffffffff            	// #-1
+    7c24a0ec:	f94013f6 	ldr	x22, [sp, #32]
+    7c24a0f0:	a94157f4 	ldp	x20, x21, [sp, #16]
+    7c24a0f4:	a8c54ffe 	ldp	x30, x19, [sp], #80
+    7c24a0f8:	d65f03c0 	ret
+    7c24a0fc:	aa0303f5 	mov	x21, x3
+    7c24a100:	aa0403e1 	mov	x1, x4
+    7c24a104:	9100c3e0 	add	x0, sp, #0x30
+    7c24a108:	d2800402 	mov	x2, #0x20                  	// #32
+    7c24a10c:	eb16029f 	cmp	x20, x22
+    7c24a110:	54000169 	b.ls	7c24a13c <vsnprintf_s+0xa4>  // b.plast
+    7c24a114:	97fefc7d 	bl	7c209308 <__wrap_memcpy>
+    7c24a118:	9100c3e3 	add	x3, sp, #0x30
+    7c24a11c:	aa1503e2 	mov	x2, x21
+    7c24a120:	910006c1 	add	x1, x22, #0x1
+    7c24a124:	aa1303e0 	mov	x0, x19
+    7c24a128:	940005a8 	bl	7c24b7c8 <SecVsnprintfImpl>
+    7c24a12c:	3100081f 	cmn	w0, #0x2
+    7c24a130:	54fffdc0 	b.eq	7c24a0e8 <vsnprintf_s+0x50>  // b.none
+    7c24a134:	36fffdc0 	tbz	w0, #31, 7c24a0ec <vsnprintf_s+0x54>
+    7c24a138:	17ffffe7 	b	7c24a0d4 <vsnprintf_s+0x3c>
+    7c24a13c:	97fefc73 	bl	7c209308 <__wrap_memcpy>
+    7c24a140:	9100c3e3 	add	x3, sp, #0x30
+    7c24a144:	aa1503e2 	mov	x2, x21
+    7c24a148:	aa1403e1 	mov	x1, x20
+    7c24a14c:	aa1303e0 	mov	x0, x19
+    7c24a150:	9400059e 	bl	7c24b7c8 <SecVsnprintfImpl>
+    7c24a154:	17fffff8 	b	7c24a134 <vsnprintf_s+0x9c>
+
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+    7c20ace0:	f9402be1 	ldr	x1, [sp, #80]
+    7c20ace4:	f9402fe0 	ldr	x0, [sp, #88]
+    7c20ace8:	940021be 	bl	7c2133e0 <Rk3572PowerlinkInput>
+    7c20acec:	140000f6 	b	7c20b0c4 <Rk3572IntegratedInput+0x444>
+    7c20acf0:	f9402be0 	ldr	x0, [sp, #80]
+
+REMOTE_EXIT=0

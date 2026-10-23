@@ -1,0 +1,171 @@
+0000000000010000 A _stack_size
+000000007c200190 t OsStackBssInit
+000000007c204948 0000000000000068 t rpmsg_get_address
+000000007c2049b0 0000000000000054 t rpmsg_release_address
+000000007c204a04 0000000000000058 t rpmsg_is_address_set
+000000007c204a5c 000000000000005c t rpmsg_set_address
+000000007c204ab8 00000000000000b8 T rpmsg_send_offchannel_raw
+000000007c204b70 0000000000000080 T rpmsg_send_ns_message
+000000007c204bf0 0000000000000078 T rpmsg_hold_rx_buffer
+000000007c204c68 0000000000000078 T rpmsg_release_rx_buffer
+000000007c204ce0 0000000000000080 T rpmsg_release_tx_buffer
+000000007c204d60 0000000000000088 T rpmsg_get_tx_payload_buffer
+000000007c204de8 00000000000000b0 T rpmsg_send_offchannel_nocopy
+000000007c204e98 000000000000011c T rpmsg_get_endpoint
+000000007c204fb4 0000000000000080 t rpmsg_unregister_endpoint
+000000007c205034 00000000000000b4 T rpmsg_register_endpoint
+000000007c2050e8 00000000000001b0 T rpmsg_create_ept
+000000007c205298 000000000000008c T rpmsg_destroy_ept
+000000007c20561c 000000000000001c t rpmsg_virtio_get_role
+000000007c205638 000000000000003c t rpmsg_virtio_set_status
+000000007c205674 0000000000000034 t rpmsg_virtio_get_status
+000000007c2056a8 0000000000000030 t rpmsg_virtio_get_features
+000000007c2056d8 0000000000000040 t rpmsg_virtio_create_virtqueues
+000000007c205718 000000000000002c t rpmsg_get_ept_from_addr
+000000007c205744 0000000000000088 W rpmsg_virtio_shm_pool_get_buffer
+000000007c2057cc 0000000000000068 T rpmsg_virtio_init_shm_pool
+000000007c205834 0000000000000088 t rpmsg_virtio_return_buffer
+000000007c2058bc 0000000000000090 t rpmsg_virtio_enqueue_buffer
+000000007c20594c 0000000000000170 t rpmsg_virtio_get_tx_buffer
+000000007c205abc 0000000000000078 t rpmsg_virtio_get_rx_buffer
+000000007c205b34 0000000000000054 t rpmsg_virtio_wait_remote_ready
+000000007c205b88 0000000000000078 t _rpmsg_virtio_get_buffer_size
+000000007c205c00 0000000000000038 t rpmsg_virtio_hold_rx_buffer
+000000007c205c38 0000000000000088 t rpmsg_virtio_release_rx_buffer
+000000007c205cc0 0000000000000108 t rpmsg_virtio_get_tx_payload_buffer
+000000007c205dc8 0000000000000110 t rpmsg_virtio_send_offchannel_nocopy
+000000007c205ed8 0000000000000080 t rpmsg_virtio_release_tx_buffer
+000000007c205f58 00000000000000c0 t rpmsg_virtio_send_offchannel_raw
+000000007c206018 0000000000000014 t rpmsg_virtio_tx_callback
+000000007c20602c 00000000000001a0 t rpmsg_virtio_rx_callback
+000000007c2061cc 00000000000001b4 t rpmsg_virtio_ns_callback
+000000007c206380 0000000000000058 T rpmsg_virtio_get_buffer_size
+000000007c2063d8 0000000000000060 T rpmsg_init_vdev
+000000007c206438 00000000000004b0 T rpmsg_init_vdev_with_config
+000000007c2068e8 000000000000007c T rpmsg_deinit_vdev
+000000007c20ac80 0000000000000450 T Rk3572IntegratedInput
+000000007c2133e0 0000000000000a40 T Rk3572PowerlinkInput
+000000007c214ab4 0000000000000054 t rpmsg_send
+000000007c216080 0000000000000038 T rpmsg_set_default_ept
+000000007c2160c0 00000000000000dc T rpmsg_client_cb
+000000007c221748 0000000000000028 t rpmsg_virtio_get_rpmsg_device
+000000007c221978 000000000000010c t rpmsg_ipi_handler
+000000007c221b70 0000000000000024 t rpmsg_ipi_init
+000000007c221eb8 0000000000000310 T rpmsg_backend_init
+000000007c222250 000000000000004c T rpmsg_backend_remove
+000000007c2222b8 0000000000000054 t rpmsg_send
+000000007c22230c 0000000000000048 t is_rpmsg_ept_ready
+000000007c222354 000000000000001c t rpmsg_service_unbind
+000000007c222370 000000000000001c T is_tty_ready
+000000007c222398 0000000000000054 T send_message
+000000007c2223f8 0000000000000088 t rpmsg_rpc_task
+000000007c2224b0 0000000000000138 t rpmsg_rx_tty_callback
+000000007c222610 0000000000000298 t rpmsg_tty_task
+000000007c222908 0000000000000010 t rpmsg_listen_task
+000000007c222918 00000000000001cc T rpmsg_service_init
+000000007c222b88 0000000000000068 T RpmsgHwiInit
+000000007c223f60 0000000000000028 T oplk_checkKernelStack
+000000007c223fb0 0000000000000004 T oplk_getStackConfiguration
+000000007c223fc0 0000000000000074 T oplk_getStackInfo
+000000007c226be0 000000000000016c T obdu_getType
+000000007c239210 00000000000000e0 T ctrlu_checkKernelStackInfo
+000000007c2392f0 0000000000000280 T ctrlu_initStack
+000000007c239570 0000000000000080 T ctrlu_shutdownStack
+000000007c2395f0 0000000000000024 T ctrlu_processStack
+000000007c239620 0000000000000078 T ctrlu_checkKernelStack
+000000007c239790 000000000000000c T ctrlu_stackIsInitialized
+000000007c23a4c0 0000000000000008 T ctrlucal_checkKernelStack
+000000007c244870 000000000000002c T debugstr_getEventTypeStr
+000000007c2449d0 0000000000000024 T debugstr_getNmtNodeEventTypeStr
+000000007c244a00 0000000000000024 T debugstr_getNmtBootEventTypeStr
+000000007c24ba30 000000000000006c T OsSwitchToSysStack
+000000007c24bad8 0000000000000010 T OsGetSysStackStart
+000000007c24baf0 0000000000000010 T OsGetSysStackEnd
+000000007c24e08c 0000000000000044 T pthread_attr_setstacksize
+000000007c24e1d4 0000000000000020 T pthread_mutexattr_settype
+000000007c24edc4 0000000000000004 T OsGetSysStackSP
+000000007c2510d8 0000000000000034 T OsTskStackInit
+000000007c2514c0 0000000000000068 T OsTaskStackPeakGet
+000000007c251530 00000000000000e8 T OsTaskStackInfoGet
+000000007c253e00 T OsSetSysStackSP
+000000007c25a978 0000000000000030 r nmtBootEventTypeStr_l
+000000007c25a9a8 0000000000000040 r nmtNodeEventTypeStr_l
+000000007c25b6f8 0000000000000148 r eventTypeStr_l
+000000007c28f1d0 0000000000000008 D g_sysStackLow
+000000007c28f1d8 0000000000000008 D g_sysStackHigh
+000000007c31af90 0000000000010000 b g_stacks
+000000007c32b680 0000000000008000 b ownerStack
+000000007c334650 0000000000000002 b tty_sem
+000000007c334658 0000000000000058 b tty_ept
+000000007c3346b0 0000000000000080 b tty_msg_queue
+000000007c334730 0000000000000004 b tty_msg_head
+000000007c334734 0000000000000004 b tty_msg_tail
+000000007c334738 0000000000000004 b tty_msg_count
+000000007c334740 0000000000000008 B g_rpmsg_ipi_handler
+000000007c334748 0000000000000001 b fStackInitialized_l
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/include/prt_task.h:895:    U32 stackSize;
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/include/prt_task.h:1045:    U32 stackSize;
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/apps/openamp/main.c:74:    param.stackSize = 0x2000;
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/apps/openamp/rk3572_powerlink_app.c:38:extern int send_message(unsigned char* message, int length);
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/apps/openamp/rk3572_powerlink_app.c:172:    param.stackAddr = (uintptr_t)ownerStack; param.stackSize = sizeof(ownerStack);
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/apps/openamp/rk3572_integrated.c:20:extern int send_message(unsigned char *message, int len);
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/apps/openamp/rk3572_integrated.c:54:        param.stackAddr = (uintptr_t)g_stacks[i]; param.stackSize = sizeof(g_stacks[i]);
+"""One exact recovery: P3d CASAL undefined instruction BEFORE hardware acquire.
+Requires physical CPU4/5 OFF, exact fault/image/lease; never stops a live CPU.
+Not a generic override for unsafe DMA or unknown UP state.
+"""
+import hashlib
+import json
+from pathlib import Path
+import struct
+import time
+import run_can_direct_pair as common
+import eth3_l2_smoke as ethernet
+from integrated_mmu_resources import read_reserved_dram
+from verify_integrated_elf import symbols_and_data
+
+ROOT = Path('/root/m7-powerlink-eth-p3d-20261023')
+CLIENT = 'up-b-m7-plk-eth'
+BOOT = '6974ac40-f3a2-4433-a5b8-11ec4318248f'
+IMAGE = '73689e61b9edbd6f337b6affb47faf057db96ec03d7ba195efad8e3832d6f348'
+
+if __name__ == '__main__':
+    image = ROOT / 'tl3572-m7-powerlink-p3d-up-b.elf'
+    if hashlib.sha256(image.read_bytes()).hexdigest() != IMAGE: raise RuntimeError('not exact failed candidate')
+    if Path('/proc/sys/kernel/random/boot_id').read_text().strip() != BOOT: raise RuntimeError('boot changed')
+    daemon = common.micad_state()
+    if daemon != {'MainPID': '328', 'NRestarts': '0', 'ActiveState': 'active'}: raise RuntimeError('daemon changed')
+    symbols = symbols_and_data(image)
+    addr, size, _ = symbols['g_excInfoInternal']
+    if size != 520: raise RuntimeError('exception layout mismatch')
+    raw = read_reserved_dram(addr, size)
+    elr, esr = struct.unpack_from('<Q', raw, 232)[0], struct.unpack_from('<Q', raw, 256)[0]
+    start, size, code = symbols['TakeLease']
+    if elr != 0x7c20fe68 or esr != 0x02000000 or not start <= elr < start + size or struct.unpack_from('<I', code, elr - start)[0] != 0x88e0fc64:
+        raise RuntimeError('not exact pre-MMIO CASAL exception')
+    addr, size, _ = symbols['g_ethLease']
+    if size != 4 or struct.unpack('<I', read_reserved_dram(addr, size))[0]: raise RuntimeError('ETH lease not zero')
+    common.confirm_up_cpus_off()  # Mandatory physical proof BEFORE any writes.
+    print('EXACT PRE-MMIO FAULT + ZERO LEASE + CPU4/5 ALREADY OFF: reconcile client only; no forced CPU_OFF/reboot', flush=True)
+    common.control('stop', CLIENT); common.control('rm', CLIENT)
+    common.confirm_up_cpus_off()
+    device = Path('/sys/bus/platform/devices/2a040000.ethernet')
+    if (device / 'driver').exists(): raise RuntimeError('unexpected existing owner')
+    Path('/sys/bus/platform/drivers/rk_gmac-dwmac/bind').write_text(device.name)
+    common.command('ip', 'link', 'set', 'eth1', 'up')
+    end = time.monotonic() + 20
+    while time.monotonic() < end:
+        try: ethernet.preflight(); break
+        except (RuntimeError, OSError): time.sleep(.2)
+    else: raise RuntimeError('Linux100full not restored; retain shared hold')
+    common.command('rmmod', 'm7_eth2_power_hold')
+    if Path('/sys/module/m7_eth2_power_hold').exists(): raise RuntimeError('residual hold')
+    if common.micad_state() != daemon or Path('/proc/sys/kernel/random/boot_id').read_text().strip() != BOOT:
+        raise RuntimeError('daemon/boot drift')
+    if list(Path('/dev').glob('ttyRPMSG*')): raise RuntimeError('RPMsg still present')
+    print(common.command('mcsctl', 'status'), flush=True)
+    print(common.command('ip', '-brief', 'address'), flush=True)
+    print(common.command('ethtool', 'eth1'), common.command('ethtool', 'eth2'), flush=True)
+    print('RECOVERY PASS: Linux100full restored, hold removed, original clients Offline, CPU4/5 OFF; no board reboot', flush=True)
+
+REMOTE_EXIT=0

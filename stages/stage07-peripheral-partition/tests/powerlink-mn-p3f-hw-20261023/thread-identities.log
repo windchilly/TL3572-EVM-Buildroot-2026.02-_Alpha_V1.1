@@ -1,0 +1,8 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+{"task": 8, "arg0": "0x7c222610", "arg1": "0x0"}
+{"task": 9, "arg0": "0x7c222908", "arg1": "0x0"}
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+
+READ_ONLY_EXIT=0

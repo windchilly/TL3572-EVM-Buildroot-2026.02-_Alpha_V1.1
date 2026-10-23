@@ -1,0 +1,238 @@
+    7c24d6b8:	f943d400 	ldr	x0, [x0, #1960]
+    7c24d6bc:	a9018275 	stp	x21, x0, [x19, #24]
+    7c24d6c0:	528000a0 	mov	w0, #0x5                   	// #5
+    7c24d6c4:	b9000a60 	str	w0, [x19, #8]
+    7c24d6c8:	b94053e0 	ldr	w0, [sp, #80]
+    7c24d6cc:	3902e260 	strb	w0, [x19, #184]
+    7c24d6d0:	9101c260 	add	x0, x19, #0x70
+    7c24d6d4:	a9065274 	stp	x20, x20, [x19, #96]
+    7c24d6d8:	a9070260 	stp	x0, x0, [x19, #112]
+    7c24d6dc:	9107e260 	add	x0, x19, #0x1f8
+    7c24d6e0:	b900aa7f 	str	wzr, [x19, #168]
+    7c24d6e4:	3902e67f 	strb	wzr, [x19, #185]
+    7c24d6e8:	7901767f 	strh	wzr, [x19, #186]
+    7c24d6ec:	a90c7e7f 	stp	xzr, xzr, [x19, #192]
+    7c24d6f0:	b900d27f 	str	wzr, [x19, #208]
+    7c24d6f4:	b901da7f 	str	wzr, [x19, #472]
+    7c24d6f8:	a91e7e7f 	stp	xzr, xzr, [x19, #480]
+    7c24d6fc:	a91f027f 	stp	xzr, x0, [x19, #496]
+    7c24d700:	f9010260 	str	x0, [x19, #512]
+    7c24d704:	aa1303e0 	mov	x0, x19
+    7c24d708:	f9018e7f 	str	xzr, [x19, #792]
+    7c24d70c:	94001c57 	bl	7c254868 <OsInitSigVectors>
+    7c24d710:	a9036e7a 	stp	x26, x27, [x19, #48]
+    7c24d714:	a9047e7f 	stp	xzr, xzr, [x19, #64]
+    7c24d718:	b40000b6 	cbz	x22, 7c24d72c <__pthread_create+0x1cc>
+    7c24d71c:	d50343df 	msr	daifset, #0x3
+    7c24d720:	14000004 	b	7c24d730 <__pthread_create+0x1d0>
+    7c24d724:	d50343df 	msr	daifset, #0x3
+    7c24d728:	17ffffad 	b	7c24d5dc <__pthread_create+0x7c>
+    7c24d72c:	d50343ff 	msr	daifclr, #0x3
+    7c24d730:	3942e260 	ldrb	w0, [x19, #184]
+    7c24d734:	34000120 	cbz	w0, 7c24d758 <__pthread_create+0x1f8>
+    7c24d738:	2a1703e0 	mov	w0, w23
+    7c24d73c:	940013f9 	bl	7c252720 <PRT_TaskResume>
+    7c24d740:	34000180 	cbz	w0, 7c24d770 <__pthread_create+0x210>
+    7c24d744:	3942e260 	ldrb	w0, [x19, #184]
+    7c24d748:	35000100 	cbnz	w0, 7c24d768 <__pthread_create+0x208>
+    7c24d74c:	7941a660 	ldrh	w0, [x19, #210]
+    7c24d750:	940009c4 	bl	7c24fe60 <PRT_SemDelete>
+    7c24d754:	14000005 	b	7c24d768 <__pthread_create+0x208>
+    7c24d758:	91034a61 	add	x1, x19, #0xd2
+    7c24d75c:	52800000 	mov	w0, #0x0                   	// #0
+    7c24d760:	940009b6 	bl	7c24fe38 <PRT_SemCreate>
+    7c24d764:	34fffea0 	cbz	w0, 7c24d738 <__pthread_create+0x1d8>
+    7c24d768:	52800160 	mov	w0, #0xb                   	// #11
+    7c24d76c:	17ffff9d 	b	7c24d5e0 <__pthread_create+0x80>
+    7c24d770:	2a1703f7 	mov	w23, w23
+    7c24d774:	52800000 	mov	w0, #0x0                   	// #0
+    7c24d778:	f9000337 	str	x23, [x25]
+    7c24d77c:	17ffff99 	b	7c24d5e0 <__pthread_create+0x80>
+    7c24d780:	528002c0 	mov	w0, #0x16                  	// #22
+    7c24d784:	17ffff97 	b	7c24d5e0 <__pthread_create+0x80>
+Disassembly of section .start_bspinit:
+Disassembly of section .start_text:
+Disassembly of section .text:
+    7c220ff0:	f8150ffe 	str	x30, [sp, #-176]!
+    7c220ff4:	f9001fe0 	str	x0, [sp, #56]
+    7c220ff8:	f9003fe1 	str	x1, [sp, #120]
+    7c220ffc:	f90043e2 	str	x2, [sp, #128]
+    7c221000:	f90047e3 	str	x3, [sp, #136]
+    7c221004:	f9004be4 	str	x4, [sp, #144]
+    7c221008:	f9004fe5 	str	x5, [sp, #152]
+    7c22100c:	f90053e6 	str	x6, [sp, #160]
+    7c221010:	f90057e7 	str	x7, [sp, #168]
+    7c221018:	f90027e0 	str	x0, [sp, #72]
+    7c221020:	f9002be0 	str	x0, [sp, #80]
+    7c221028:	f9002fe0 	str	x0, [sp, #88]
+    7c221030:	b90063e0 	str	w0, [sp, #96]
+    7c221034:	b90067ff 	str	wzr, [sp, #100]
+    7c22103c:	f9000be0 	str	x0, [sp, #16]
+    7c221044:	f9000fe0 	str	x0, [sp, #24]
+    7c22104c:	f90013e0 	str	x0, [sp, #32]
+    7c221054:	f90017e0 	str	x0, [sp, #40]
+    7c221064:	97ffff5b 	bl	7c220dd0 <UpLogVprintf>
+    7c221068:	b9006fe0 	str	w0, [sp, #108]
+
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+
+000000007c222398 <send_message>:
+    7c222398:	f81d0ffe 	str	x30, [sp, #-48]!
+    7c22239c:	f9000fe0 	str	x0, [sp, #24]
+    7c2223a0:	b90017e1 	str	w1, [sp, #20]
+    7c2223a4:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c2223a8:	910fc000 	add	x0, x0, #0x3f0
+    7c2223ac:	f9400000 	ldr	x0, [x0]
+    7c2223b0:	97ffffd7 	bl	7c22230c <is_rpmsg_ept_ready>
+    7c2223b4:	7100001f 	cmp	w0, #0x0
+    7c2223b8:	54000061 	b.ne	7c2223c4 <send_message+0x2c>  // b.any
+    7c2223bc:	52800000 	mov	w0, #0x0                   	// #0
+    7c2223c0:	14000009 	b	7c2223e4 <send_message+0x4c>
+    7c2223c4:	b94017e2 	ldr	w2, [sp, #20]
+    7c2223c8:	f9400fe1 	ldr	x1, [sp, #24]
+    7c2223cc:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c2223d0:	910fc000 	add	x0, x0, #0x3f0
+    7c2223d4:	f9400000 	ldr	x0, [x0]
+    7c2223d8:	97ffffb8 	bl	7c2222b8 <rpmsg_send>
+88:struct TagTskCb;
+89-struct TagOsRunQue;
+90-
+91-/* 调度类 */
+92-struct TagScheduleClass {
+93:    void (*osEnqueueTask)(struct TagOsRunQue *runQue, struct TagTskCb *tsk, U32 flags);
+94:    void (*osDequeueTask)(struct TagOsRunQue *runQue, struct TagTskCb *tsk, U32 flags);
+95:    void (*osPutPrevTask)(struct TagOsRunQue *runQue, struct TagTskCb *prevTsk);
+96:    struct TagTskCb *(*osPickNextTask)(struct TagOsRunQue *runQue);
+97:    struct TagTskCb *(*osNextReadyTask)(struct TagOsRunQue *runQue);
+98-};
+99-#endif
+100-
+101-/*
+102- * 任务线程及进程控制块的结构体统一定义。
+103- */
+104:struct TagTskCb {
+105-    /* 当前任务的SP */
+106-    void *stackPointer;
+107-    /* 任务状态,后续内部全改成U32 */
+108-    U32 taskStatus;
+109-    /* 任务的运行优先级 */
+110-    TskPrior priority;
+111-    /* 任务栈配置标记 */
+112-    U16 stackCfgFlg;
+113-#if defined(OS_OPTION_SMP)
+114-    
+115-    /* 任务正在进行的操作类型 */
+116-    volatile U32 taskOperating;
+117-    /* 用于任务做关键不可打断的操作时不被打断如绑定，挂起，删任务，被删。0可以做这些事，为1不能做*/
+118-    U32 opBusy;
+119-#endif
+120-    /* 任务栈大小 */
+121-    U32 stackSize;
+122-    TskHandle taskPid;
+123-
+124-    /* 任务栈顶 */
+125-    uintptr_t topOfStack;
+126-
+127-    /* 任务入口函数 */
+128-    TskEntryFunc taskEntry;
+129-    /* 任务Pend的信号量指针 */
+130-    void *taskSem;
+131-
+132-    /* 任务的参数 */
+133-    uintptr_t args[4];
+134-#if (defined(OS_OPTION_TASK_INFO))
+135-    /* 存放任务名 */
+136-    char name[OS_TSK_NAME_LEN];
+137-#endif
+138-    /* 信号量链表指针 */
+139-    struct TagListObject pendList;
+140-    /* 任务延时链表指针 */
+141-    struct TagListObject timerList;
+142-    /* 持有互斥信号量链表 */
+143-    struct TagListObject semBList;
+144-    /* 记录条件变量的等待线程 */
+145-    struct TagListObject condNode;
+146-#if defined(OS_OPTION_LINUX)
+147-    /* 等待队列指针 */
+{
+    int ret;
+    uintptr_t intSave;
+    struct rpmsg_rcv_msg tty_msg;
+#ifndef LOSCFG_SHELL_MICA_INPUT
+    char tx_buff[RPMSG_TTY_TX_BUFFER_SIZE];
+#endif
+    char *tty_data;
+
+    ret = PRT_SemCreate(0, &tty_sem);
+    if (ret != OS_OK) {
+        PRT_Printf("[openamp] failed to create tty sem\n");
+        goto err;
+    }
+
+    PRT_Printf("[openamp] tty task started\n");
+
+    ret = rpmsg_create_ept(&tty_ept, rpdev, RPMSG_TTY_EPT_NAME,
+                   RPMSG_ADDR_ANY, RPMSG_ADDR_ANY,
+                   rpmsg_rx_tty_callback, NULL);
+    if (ret != 0) {
+        PRT_Printf("[openamp] tty endpoint ret:%d \n", ret);
+        goto err;
+    }
+
+    while (tty_ept.addr !=  RPMSG_ADDR_ANY) {
+        PRT_SemPend(tty_sem, OS_WAIT_FOREVER);
+        intSave = PRT_HwiLock();
+        if (tty_msg_count == 0U) {
+            PRT_HwiRestore(intSave);
+            continue;
+        }
+        tty_msg = tty_msg_queue[tty_msg_head];
+        tty_msg_head = (tty_msg_head + 1U) % RPMSG_TTY_RX_QUEUE_DEPTH;
+        tty_msg_count--;
+        PRT_HwiRestore(intSave);
+        if (tty_msg.len) {
+            tty_data = (char *)tty_msg.data;
+#if defined(M7_INTEGRATED_FIRMWARE)
+            if (Rk3572IntegratedInput(tty_data, tty_msg.len)) {
+                rpmsg_release_rx_buffer(&tty_ept, tty_msg.data);
+                continue;
+            }
+#endif
+            #ifdef LOSCFG_SHELL_MICA_INPUT
+                ShellCB *shellCb = OsGetShellCB();
+                if (shellCb == NULL) {
+                    send_message((void *)g_s1, strlen(g_s1) * sizeof(char));
+                } else {
+                    for(int i = 0; i < tty_msg.len; i++){
+                        char c = tty_data[i];
+                        ShellCmdLineParse(c, (pf_OUTPUT)printf, shellCb);
+                    }
+                }
+            #else
+                ret = snprintf(tx_buff, sizeof(tx_buff), "Hello, UniProton! Recv: %.*s\r\n",
+                               (int)tty_msg.len, tty_data);
+                if (ret > 0) {
+                    size_t tx_len = (ret < (int)sizeof(tx_buff)) ? (size_t)ret : sizeof(tx_buff) - 1U;
+                    rpmsg_send(&tty_ept, tx_buff, tx_len);
+                }
+            #endif
+                rpmsg_release_rx_buffer(&tty_ept, tty_msg.data);
+
+
+REMOTE_EXIT=0

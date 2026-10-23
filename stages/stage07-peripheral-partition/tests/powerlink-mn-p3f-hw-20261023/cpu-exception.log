@@ -1,0 +1,5 @@
+{"cause": 7, "ec": 34, "elr": "0x26262626", "esr": "0x8a000000", "far": "0x26262626", "sp": "0x7c312c30", "task": 9, "x3": "0x1ef"}
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+
+READ_ONLY_EXIT=0

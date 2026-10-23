@@ -1,0 +1,255 @@
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/src/component/mica/rpmsg_service.c
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/uvp/apps/openamp/rpmsg_service.c
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/atlasa1/apps/openamp/rpmsg_service.c
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/rk3572_mica-build/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/rk3572_mica-build/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3e-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3e-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p1-up-a/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p1-up-a/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3d-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3d-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m6-up-a/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m6-up-a/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3c-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3c-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m6-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m6-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3b-up-a/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3b-up-a/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3b-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3b-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p2-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p2-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3f-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p3f-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p2-up-a/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p2-up-a/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p1-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/m7-powerlink-p1-up-b/mica/CMakeFiles/mica.dir/rpmsg_service.c.o.d
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3588/apps/openamp/rpmsg_service.c
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/x86_64/apps/ethercat/rpmsg_service.c
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3568_jailhouse/apps/ivshmem/rpmsg_service.c
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/kp920/apps/openamp/rpmsg_service.c
+
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+
+000000007c2133e0 <Rk3572PowerlinkInput>:
+    7c2133e0:	d11ac3ff 	sub	sp, sp, #0x6b0
+    7c2133e4:	a90b4ffe 	stp	x30, x19, [sp, #176]
+    7c2133e8:	a90c57f4 	stp	x20, x21, [sp, #192]
+    7c2133ec:	a90d5ff6 	stp	x22, x23, [sp, #208]
+    7c2133f0:	a90e67f8 	stp	x24, x25, [sp, #224]
+    7c2133f4:	a90f6ffa 	stp	x26, x27, [sp, #240]
+    7c2133f8:	f90087e0 	str	x0, [sp, #264]
+    7c2133fc:	f90083e1 	str	x1, [sp, #256]
+    7c213400:	f90357ff 	str	xzr, [sp, #1704]
+    7c213404:	b906a7ff 	str	wzr, [sp, #1700]
+    7c213408:	b906a3ff 	str	wzr, [sp, #1696]
+    7c21340c:	b9069fff 	str	wzr, [sp, #1692]
+    7c213410:	b9069bff 	str	wzr, [sp, #1688]
+    7c213414:	b90697ff 	str	wzr, [sp, #1684]
+    7c213418:	b90693ff 	str	wzr, [sp, #1680]
+    7c21341c:	f94087e0 	ldr	x0, [sp, #264]
+    7c213420:	f100001f 	cmp	x0, #0x0
+    7c213424:	54000180 	b.eq	7c213454 <Rk3572PowerlinkInput+0x74>  // b.none
+    7c213428:	f94083e0 	ldr	x0, [sp, #256]
+    7c21342c:	f1000c1f 	cmp	x0, #0x3
+    7c213430:	54000129 	b.ls	7c213454 <Rk3572PowerlinkInput+0x74>  // b.plast
+    7c213434:	d2800082 	mov	x2, #0x4                   	// #4
+    7c213438:	90000000 	adrp	x0, 7c213000 <Worker+0x6e0>
+    7c21343c:	91388000 	add	x0, x0, #0xe20
+
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+
+000000007c222610 <rpmsg_tty_task>:
+    7c222610:	d10903ff 	sub	sp, sp, #0x240
+    7c222614:	f90003fe 	str	x30, [sp]
+    7c222618:	f9000fe0 	str	x0, [sp, #24]
+    7c22261c:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222620:	9122a000 	add	x0, x0, #0x8a8
+    7c222624:	f9400001 	ldr	x1, [x0]
+    7c222628:	52800000 	mov	w0, #0x0                   	// #0
+    7c22262c:	9400b603 	bl	7c24fe38 <PRT_SemCreate>
+    7c222630:	b9023fe0 	str	w0, [sp, #572]
+    7c222634:	b9423fe0 	ldr	w0, [sp, #572]
+    7c222638:	7100001f 	cmp	w0, #0x0
+    7c22263c:	540000c0 	b.eq	7c222654 <rpmsg_tty_task+0x44>  // b.none
+    7c222640:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222644:	9122c000 	add	x0, x0, #0x8b0
+    7c222648:	f9400000 	ldr	x0, [x0]
+    7c22264c:	97fffa69 	bl	7c220ff0 <PRT_Printf>
+    7c222650:	14000094 	b	7c2228a0 <rpmsg_tty_task+0x290>
+    7c222654:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222658:	9122e000 	add	x0, x0, #0x8b8
+    7c22265c:	f9400000 	ldr	x0, [x0]
+    7c222660:	97fffa64 	bl	7c220ff0 <PRT_Printf>
+
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+
+000000007c20ac80 <Rk3572IntegratedInput>:
+    7c20ac80:	d10583ff 	sub	sp, sp, #0x160
+    7c20ac84:	f90023fe 	str	x30, [sp, #64]
+    7c20ac88:	f9002fe0 	str	x0, [sp, #88]
+    7c20ac8c:	f9002be1 	str	x1, [sp, #80]
+    7c20ac90:	a9127fff 	stp	xzr, xzr, [sp, #288]
+    7c20ac94:	b90133ff 	str	wzr, [sp, #304]
+    7c20ac98:	b9015bff 	str	wzr, [sp, #344]
+    7c20ac9c:	b90157ff 	str	wzr, [sp, #340]
+    7c20aca0:	b90153ff 	str	wzr, [sp, #336]
+    7c20aca4:	f900a7ff 	str	xzr, [sp, #328]
+    7c20aca8:	f9402fe0 	ldr	x0, [sp, #88]
+    7c20acac:	f100001f 	cmp	x0, #0x0
+    7c20acb0:	54000200 	b.eq	7c20acf0 <Rk3572IntegratedInput+0x70>  // b.none
+    7c20acb4:	f9402be0 	ldr	x0, [sp, #80]
+
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .start_bspinit:
+
+Disassembly of section .start_text:
+
+Disassembly of section .text:
+
+000000007c222918 <rpmsg_service_init>:
+    7c222918:	f8160ffe 	str	x30, [sp, #-160]!
+    7c22291c:	97fffd67 	bl	7c221eb8 <rpmsg_backend_init>
+    7c222920:	aa0003e1 	mov	x1, x0
+    7c222924:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222928:	912ba000 	add	x0, x0, #0xae8
+    7c22292c:	f9400000 	ldr	x0, [x0]
+    7c222930:	f9000001 	str	x1, [x0]
+    7c222934:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222938:	912ba000 	add	x0, x0, #0xae8
+    7c22293c:	f9400000 	ldr	x0, [x0]
+    7c222940:	f9400000 	ldr	x0, [x0]
+    7c222944:	f100001f 	cmp	x0, #0x0
+    7c222948:	540000e1 	b.ne	7c222964 <rpmsg_service_init+0x4c>  // b.any
+    7c22294c:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222950:	912bc000 	add	x0, x0, #0xaf0
+    7c222954:	f9400000 	ldr	x0, [x0]
+    7c222958:	97fff9a6 	bl	7c220ff0 <PRT_Printf>
+    7c22295c:	12800000 	mov	w0, #0xffffffff            	// #-1
+    7c222960:	1400005f 	b	7c222adc <rpmsg_service_init+0x1c4>
+    7c222964:	9100c3e0 	add	x0, sp, #0x30
+    7c222968:	9400aac8 	bl	7c24d488 <pthread_attr_init>
+    7c22296c:	7100001f 	cmp	w0, #0x0
+    7c222970:	540000c0 	b.eq	7c222988 <rpmsg_service_init+0x70>  // b.none
+    7c222974:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222978:	912be000 	add	x0, x0, #0xaf8
+    7c22297c:	f9400000 	ldr	x0, [x0]
+    7c222980:	97fff99c 	bl	7c220ff0 <PRT_Printf>
+    7c222984:	14000054 	b	7c222ad4 <rpmsg_service_init+0x1bc>
+    7c222988:	9100c3e0 	add	x0, sp, #0x30
+    7c22298c:	52800021 	mov	w1, #0x1                   	// #1
+    7c222990:	9400aad4 	bl	7c24d4e0 <pthread_attr_setdetachstate>
+    7c222994:	7100001f 	cmp	w0, #0x0
+    7c222998:	54000100 	b.eq	7c2229b8 <rpmsg_service_init+0xa0>  // b.none
+    7c22299c:	9100c3e0 	add	x0, sp, #0x30
+    7c2229a0:	9400aab0 	bl	7c24d460 <pthread_attr_destroy>
+    7c2229a4:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c2229a8:	912c0000 	add	x0, x0, #0xb00
+    7c2229ac:	f9400000 	ldr	x0, [x0]
+    7c2229b0:	97fff990 	bl	7c220ff0 <PRT_Printf>
+    7c2229b4:	14000048 	b	7c222ad4 <rpmsg_service_init+0x1bc>
+    7c2229b8:	9100c3e1 	add	x1, sp, #0x30
+    7c2229bc:	9100a3e4 	add	x4, sp, #0x28
+    7c2229c0:	d2800003 	mov	x3, #0x0                   	// #0
+    7c2229c4:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c2229c8:	912c2000 	add	x0, x0, #0xb08
+    7c2229cc:	f9400002 	ldr	x2, [x0]
+    7c2229d0:	aa0403e0 	mov	x0, x4
+    7c2229d4:	9400aae3 	bl	7c24d560 <__pthread_create>
+    7c2229d8:	b9009fe0 	str	w0, [sp, #156]
+    7c2229dc:	9100c3e1 	add	x1, sp, #0x30
+    7c2229e0:	910083e4 	add	x4, sp, #0x20
+    7c2229e4:	d2800003 	mov	x3, #0x0                   	// #0
+    7c2229e8:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c2229ec:	912c4000 	add	x0, x0, #0xb10
+    7c2229f0:	f9400002 	ldr	x2, [x0]
+    7c2229f4:	aa0403e0 	mov	x0, x4
+    7c2229f8:	9400aada 	bl	7c24d560 <__pthread_create>
+    7c2229fc:	b9009be0 	str	w0, [sp, #152]
+    7c222a00:	9100c3e1 	add	x1, sp, #0x30
+    7c222a04:	910063e4 	add	x4, sp, #0x18
+    7c222a08:	d2800003 	mov	x3, #0x0                   	// #0
+    7c222a0c:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222a10:	912c6000 	add	x0, x0, #0xb18
+    7c222a14:	f9400002 	ldr	x2, [x0]
+    7c222a18:	aa0403e0 	mov	x0, x4
+    7c222a1c:	9400aad1 	bl	7c24d560 <__pthread_create>
+    7c222a20:	b90097e0 	str	w0, [sp, #148]
+    7c222a24:	9100c3e0 	add	x0, sp, #0x30
+    7c222a28:	9400aa8e 	bl	7c24d460 <pthread_attr_destroy>
+    7c222a2c:	b9409fe0 	ldr	w0, [sp, #156]
+    7c222a30:	7100001f 	cmp	w0, #0x0
+    7c222a34:	540000e1 	b.ne	7c222a50 <rpmsg_service_init+0x138>  // b.any
+    7c222a38:	b9409be0 	ldr	w0, [sp, #152]
+    7c222a3c:	7100001f 	cmp	w0, #0x0
+    7c222a40:	54000081 	b.ne	7c222a50 <rpmsg_service_init+0x138>  // b.any
+    7c222a44:	b94097e0 	ldr	w0, [sp, #148]
+    7c222a48:	7100001f 	cmp	w0, #0x0
+    7c222a4c:	54000160 	b.eq	7c222a78 <rpmsg_service_init+0x160>  // b.none
+    7c222a50:	b94097e3 	ldr	w3, [sp, #148]
+    7c222a54:	b9409be2 	ldr	w2, [sp, #152]
+    7c222a58:	b9409fe1 	ldr	w1, [sp, #156]
+    7c222a5c:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222a60:	912c8000 	add	x0, x0, #0xb20
+    7c222a64:	f9400000 	ldr	x0, [x0]
+    7c222a68:	97fff962 	bl	7c220ff0 <PRT_Printf>
+    7c222a6c:	1400001a 	b	7c222ad4 <rpmsg_service_init+0x1bc>
+    7c222a70:	52800c80 	mov	w0, #0x64                  	// #100
+    7c222a74:	9400bc0d 	bl	7c251aa8 <PRT_TaskDelay>
+    7c222a78:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222a7c:	912ca000 	add	x0, x0, #0xb28
+    7c222a80:	f9400000 	ldr	x0, [x0]
+    7c222a84:	97fffe22 	bl	7c22230c <is_rpmsg_ept_ready>
+    7c222a88:	7100001f 	cmp	w0, #0x0
+    7c222a8c:	54ffff20 	b.eq	7c222a70 <rpmsg_service_init+0x158>  // b.none
+    7c222a90:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222a94:	912cc000 	add	x0, x0, #0xb30
+    7c222a98:	f9400000 	ldr	x0, [x0]
+    7c222a9c:	97fff955 	bl	7c220ff0 <PRT_Printf>
+    7c222aa0:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222aa4:	912ca000 	add	x0, x0, #0xb28
+    7c222aa8:	f9400000 	ldr	x0, [x0]
+    7c222aac:	97ffcd75 	bl	7c216080 <rpmsg_set_default_ept>
+    7c222ab0:	d2808000 	mov	x0, #0x400                 	// #1024
+    7c222ab4:	9400a556 	bl	7c24c00c <malloc>
+    7c222ab8:	aa0003e1 	mov	x1, x0
+    7c222abc:	90000000 	adrp	x0, 7c222000 <rpmsg_backend_init+0x148>
+    7c222ac0:	912ce000 	add	x0, x0, #0xb38
+    7c222ac4:	f9400000 	ldr	x0, [x0]
+    7c222ac8:	f9000001 	str	x1, [x0]
+000000007c28f2f0 0000000000000230 d g_mem_map_info
+000000007c29a540 0000000000000008 B g_tskCbArray
+000000007c29ada0 0000000000000020 B g_memArithAPI
+000000007c29af18 0000000000080000 B g_memRegion00
+000000007c40c448 0000000000000008 B g_memStartAddr
+000000007c40c450 0000000000000008 B g_memPeakUsage
+000000007c40c458 0000000000000008 B g_memUsage
+000000007c40c460 0000000000000008 B g_memTotalSize
+
+REMOTE_EXIT=0

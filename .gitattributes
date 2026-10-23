@@ -58,3 +58,5 @@ stages/stage07-peripheral-partition/tests/powerlink-edrv-p3e-20261023/*.json whi
 stages/stage07-peripheral-partition/source/patches/uniproton/0018-rk3572-powerlink-mn-probe.patch whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/tests/powerlink-mn-p3f-20261023/*.log -text whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/tests/powerlink-mn-p3f-20261023/*.json whitespace=cr-at-eol
+stages/stage07-peripheral-partition/tests/powerlink-mn-p3f-hw-20261023/*.log -text whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/powerlink-mn-p3f-hw-20261023/*.json whitespace=cr-at-eol

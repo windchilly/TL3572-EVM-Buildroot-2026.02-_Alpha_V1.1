@@ -1,0 +1,110 @@
+FUNCTION=UpLogVprintf
+000000007c220dd0 <UpLogVprintf>:
+    7c220dd0:	d10983ff 	sub	sp, sp, #0x260
+    7c220dec:	54000061 	b.ne	7c220df8 <UpLogVprintf+0x28>  // b.any
+    7c220df4:	1400007a 	b	7c220fdc <UpLogVprintf+0x20c>
+    7c220e30:	9400a49a 	bl	7c24a098 <vsnprintf_s>
+    7c220e40:	5400032a 	b.ge	7c220ea4 <UpLogVprintf+0xd4>  // b.tcont
+    7c220e58:	1400000c 	b	7c220e88 <UpLogVprintf+0xb8>
+    7c220e5c:	90000000 	adrp	x0, 7c220000 <mmu_get_pte_type+0x18>
+    7c220e94:	54fffe43 	b.cc	7c220e5c <UpLogVprintf+0x8c>  // b.lo, b.ul, b.last
+    7c220ea4:	97ffff3b 	bl	7c220b90 <UpLogIrqSave>
+    7c220eac:	97ffff47 	bl	7c220bc8 <UpLogInitLocked>
+    7c220ebc:	54000081 	b.ne	7c220ecc <UpLogVprintf+0xfc>  // b.any
+    7c220ed4:	540000a0 	b.eq	7c220ee8 <UpLogVprintf+0x118>  // b.none
+    7c220f60:	1400000c 	b	7c220f90 <UpLogVprintf+0x1c0>
+    7c220f9c:	54fffe43 	b.cc	7c220f64 <UpLogVprintf+0x194>  // b.lo, b.ul, b.last
+    7c220fd4:	97fffef6 	bl	7c220bac <UpLogIrqRestore>
+FUNCTION=vsnprintf
+000000007c24d3f0 <vsnprintf>:
+    7c24d3f8:	540002c0 	b.eq	7c24d450 <vsnprintf+0x60>  // b.none
+    7c24d3fc:	a9bc4ffe 	stp	x30, x19, [sp, #-64]!
+    7c24d408:	b4000281 	cbz	x1, 7c24d458 <vsnprintf+0x68>
+    7c24d420:	97feefba 	bl	7c209308 <__wrap_memcpy>
+    7c24d438:	97fffd24 	bl	7c24c8c8 <osVsnprintf>
+    7c24d45c:	17fffffa 	b	7c24d444 <vsnprintf+0x54>
+FUNCTION=osVsnprintf
+000000007c24c8c8 <osVsnprintf>:
+    7c24c8c8:	d10803ff 	sub	sp, sp, #0x200
+    7c24c8fc:	b0000000 	adrp	x0, 7c24d000 <osVsnprintf+0x738>
+    7c24c910:	340053a1 	cbz	w1, 7c24d384 <osVsnprintf+0xabc>
+    7c24c918:	540002c1 	b.ne	7c24c970 <osVsnprintf+0xa8>  // b.any
+    7c24c938:	54000108 	b.hi	7c24c958 <osVsnprintf+0x90>  // b.pmore
+    7c24c940:	54000348 	b.hi	7c24c9a8 <osVsnprintf+0xe0>  // b.pmore
+    7c24c944:	34005202 	cbz	w2, 7c24d384 <osVsnprintf+0xabc>
+    7c24c954:	540003c9 	b.ls	7c24c9cc <osVsnprintf+0x104>  // b.plast
+    7c24c958:	34005139 	cbz	w25, 7c24d37c <osVsnprintf+0xab4>
+    7c24c960:	340000f8 	cbz	w24, 7c24c97c <osVsnprintf+0xb4>
+    7c24c96c:	1400024a 	b	7c24d294 <osVsnprintf+0x9cc>
+    7c24c970:	340000d9 	cbz	w25, 7c24c988 <osVsnprintf+0xc0>
+    7c24c978:	350000b8 	cbnz	w24, 7c24c98c <osVsnprintf+0xc4>
+    7c24c984:	14000285 	b	7c24d398 <osVsnprintf+0xad0>
+    7c24c998:	17ffffdd 	b	7c24c90c <osVsnprintf+0x44>
+    7c24c9a4:	17ffffe2 	b	7c24c92c <osVsnprintf+0x64>
+    7c24c9b0:	54fffd48 	b.hi	7c24c958 <osVsnprintf+0x90>  // b.pmore
+    7c24c9b4:	b0000003 	adrp	x3, 7c24d000 <osVsnprintf+0x738>
+    7c24c9c0:	10000060 	adr	x0, 7c24c9cc <osVsnprintf+0x104>
+    7c24c9d0:	54fffc48 	b.hi	7c24c958 <osVsnprintf+0x90>  // b.pmore
+    7c24c9d4:	b0000003 	adrp	x3, 7c24d000 <osVsnprintf+0x738>
+    7c24c9e0:	10000060 	adr	x0, 7c24c9ec <osVsnprintf+0x124>
+    7c24c9f4:	17ffffeb 	b	7c24c9a0 <osVsnprintf+0xd8>
+    7c24c9fc:	17ffffe9 	b	7c24c9a0 <osVsnprintf+0xd8>
+    7c24ca00:	37f80134 	tbnz	w20, #31, 7c24ca24 <osVsnprintf+0x15c>
+    7c24ca14:	36fffc68 	tbz	w8, #31, 7c24c9a0 <osVsnprintf+0xd8>
+    7c24ca20:	17ffffe0 	b	7c24c9a0 <osVsnprintf+0xd8>
+    7c24ca2c:	540000cd 	b.le	7c24ca44 <osVsnprintf+0x17c>
+    7c24ca40:	17fffff4 	b	7c24ca10 <osVsnprintf+0x148>
+FUNCTION=SecVsnprintfImpl
+000000007c24b7c8 <SecVsnprintfImpl>:
+    7c24b7c8:	a9bb4ffe 	stp	x30, x19, [sp, #-80]!
+    7c24b7f0:	97fef6c6 	bl	7c209308 <__wrap_memcpy>
+    7c24b800:	97fffe3a 	bl	7c24b0e8 <SecOutput>
+    7c24b804:	36f800e0 	tbz	w0, #31, 7c24b820 <SecVsnprintfImpl+0x58>
+    7c24b80c:	36f801a0 	tbz	w0, #31, 7c24b840 <SecVsnprintfImpl+0x78>
+    7c24b81c:	14000005 	b	7c24b830 <SecVsnprintfImpl+0x68>
+    7c24b828:	97fffcac 	bl	7c24aad8 <SecPutZeroChar>
+    7c24b82c:	35fffee0 	cbnz	w0, 7c24b808 <SecVsnprintfImpl+0x40>
+    7c24b848:	17fffffa 	b	7c24b830 <SecVsnprintfImpl+0x68>
+FUNCTION=SecOutput
+000000007c24b0e8 <SecOutput>:
+    7c24b0e8:	d10bc3ff 	sub	sp, sp, #0x2f0
+    7c24b0f4:	90000000 	adrp	x0, 7c24b000 <SecUpdateXpxFlags+0x40>
+    7c24b110:	9000001b 	adrp	x27, 7c24b000 <SecUpdateXpxFlags+0x40>
+    7c24b150:	35003164 	cbnz	w4, 7c24b77c <SecOutput+0x694>
+    7c24b15c:	360004a0 	tbz	w0, #0, 7c24b1f0 <SecOutput+0x108>
+    7c24b164:	14000024 	b	7c24b1f4 <SecOutput+0x10c>
+    7c24b174:	97fffc74 	bl	7c24a344 <SecWriteChar>
+    7c24b17c:	17fffff3 	b	7c24b148 <SecOutput+0x60>
+    7c24b198:	17fffff8 	b	7c24b178 <SecOutput+0x90>
+    7c24b1a4:	97fffcdf 	bl	7c24a520 <SecDecodeFlags>
+    7c24b1a8:	17fffff4 	b	7c24b178 <SecOutput+0x90>
+    7c24b1b0:	54000161 	b.ne	7c24b1dc <SecOutput+0xf4>  // b.any
+    7c24b1b4:	37f80314 	tbnz	w20, #31, 7c24b214 <SecOutput+0x12c>
+    7c24b1e8:	97fffd9e 	bl	7c24a860 <SecDecodeWidth>
+    7c24b1ec:	34fffc60 	cbz	w0, 7c24b178 <SecOutput+0x90>
+    7c24b21c:	5400008d 	b.le	7c24b22c <SecOutput+0x144>
+    7c24b228:	17ffffe7 	b	7c24b1c4 <SecOutput+0xdc>
+    7c24b234:	17ffffe4 	b	7c24b1c4 <SecOutput+0xdc>
+    7c24b23c:	17ffffcf 	b	7c24b178 <SecOutput+0x90>
+    7c24b244:	54000161 	b.ne	7c24b270 <SecOutput+0x188>  // b.any
+    7c24b248:	37f801d4 	tbnz	w20, #31, 7c24b280 <SecOutput+0x198>
+    7c24b278:	97fffd62 	bl	7c24a800 <SecDecodePrecision>
+    7c24b27c:	17ffffdc 	b	7c24b1ec <SecOutput+0x104>
+    7c24b288:	5400008d 	b.le	7c24b298 <SecOutput+0x1b0>
+    7c24b294:	17fffff1 	b	7c24b258 <SecOutput+0x170>
+    7c24b2a0:	17ffffee 	b	7c24b258 <SecOutput+0x170>
+    7c24b2b0:	97fffce1 	bl	7c24a634 <SecDecodeSize>
+    7c24b2b4:	34fff620 	cbz	w0, 7c24b178 <SecOutput+0x90>
+    7c24b2c8:	97fffc1f 	bl	7c24a344 <SecWriteChar>
+FUNCTION=OsPthreadEntry
+FUNCTION=OsTskEntry
+000000007c250cc8 <OsTskEntry>:
+    7c250cc8:	90000000 	adrp	x0, 7c250000 <OsHwiDeleteFormResume+0x10>
+    7c250ccc:	a9bf4ffe 	stp	x30, x19, [sp, #-16]!
+    7c250ce8:	97fff82e 	bl	7c24eda0 <PRT_HwiLock>
+    7c250cec:	90000001 	adrp	x1, 7c250000 <OsHwiDeleteFormResume+0x10>
+    7c250cf8:	373800a0 	tbnz	w0, #7, 7c250d0c <OsTskEntry+0x44>
+    7c250d08:	17ffff8f 	b	7c250b44 <OsTaskExit>
+    7c250d10:	17fffffc 	b	7c250d00 <OsTskEntry+0x38>
+
+REMOTE_EXIT=0

@@ -2,7 +2,11 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
-2026-10-23 最新[P3f MN完整栈GsOff生命周期软件准备](tests/powerlink-mn-p3f-20261023/README.md)：
+2026-10-23 最新[P3f硬件窗口故障](tests/powerlink-mn-p3f-hw-20261023/README.md)：
+首次PLK status回包超时、MN命令未提交；状态查询帧从1136B增至1712B，日志链至少4336B超出默认线程栈4096B。
+CPU5异常后自行OFF，CPU4/5已独立确认为OFF；管理表仍Running/ETH2解绑/hold保留，未清理或重试，非生命周期通过。
+
+2026-10-23 [P3f MN完整栈GsOff生命周期软件准备](tests/powerlink-mn-p3f-20261023/README.md)：
 同一累计owner/COLD显式初始化→准备→128次处理→停止→退出；真实栈原生100轮/12800次处理/1600alloc-free、29+3场景通过。
 129Python、两新累计树runtime一致，新增默认OFF的mn-probe/mn-status及有界板端runner。本轮不访问/部署板卡、不reset/start。
 

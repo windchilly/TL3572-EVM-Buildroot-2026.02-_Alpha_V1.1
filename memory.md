@@ -1,5 +1,22 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-23 最新入口：用户批准一次P3f联合ETH2/CNTP GsOff检查；首次只读PLK status回包超时，尚未提交PLK mn-probe。
+故障证据tests/powerlink-mn-p3f-hw-20261023/README.md。实际候选仍b00cdf67837d3359488385f4709fa1a162cd4ea6a791855c6f9708c1411992c1。
+MMU真实10/16通过、启动休眠；共享日志boot4 seq160..172，seq172仅status COLD/seq0/cmd0/owner6，无BEGIN/PHY/timer/MN初始化。
+私有DRAM缓存ready1/pending0/running0/seq0/done0/cmd0，MN owner0/processes0/events0/stateCOLD，g_ethLease0。
+异常cause7/task9，ELR/FAR26262626、ESR8a000000/EC34(PC alignment)。CPU4/5已多次独立PSCI OFF，CPU5异常自行下线，非强停。
+MICA表临时up-b-m7-plk-mn-probe仍Running；当前ETH2解绑/eth1消失，ETH3无link/eth2DOWN，m7_eth2_power_hold仍加载，ttyRPMSG0残留。
+本轮按unknown保护没有stop/rm/rebind/rmmod/reboot/二次启动/任何MN命令或工控/测试帧；等待下一次用户确认再处理，不自动套用旧CASAL恢复脚本。
+boot6974ac40-f3a2-4433-a5b8-11ec4318248f、micadPID328/restarts0/active、ETH1管理192.168.2.141/路由/CPU集合仍不变。
+TCB实际stride800，最大16；任务8=rpmsg_tty_task、任务9=rpmsg_listen_task，栈均4096B；owner任务6栈32768B。
+实测反汇编：Rk3572PowerlinkInput帧1712B(6b0)，旧P3e1136B(470)，增加576B；完整快照1008B。
+查询/日志链下界：TTY576+Integrated352+Powerlink1712+PRTPrintf176+UpLog608+vsnprintf_s80+SecImpl80+SecOutput752=4336B>4096。
+这已证明栈预算超限，符合查询异常；具体越界损坏点/邻接listen异常因果仍需修复后复测，不能仅因栈底哨兵未变就排除越界。
+初始反汇编误用不存在的cross addr2line和错误rpmsg_service路径，失败日志保留；后用系统addr2line/真实src/component/mica定位，无板端写。
+本轮未修改软件代码/修复或重编候选；原129Python/双新树软件结果仍有效但不等同硬件通过。GitHub状态以最终报告为准。
+已询问新批准：再次确认双核OFF/未提交MN/lease0后清理失效client并归还Linux，修复状态路径栈占用并加预算，再用新候选做一次同范围检查。
+未收到该新问题回复前不得清理、修复后重部署或扩大至NMT reset/start；无重启授权。
+
 2026-10-23 最新入口：P3f完整MN栈GsOff生命周期软件准备通过；用户“继续”，本轮明确仅软件，无板卡SSH/部署/移交/重启/发帧。
 新增m7_mn_probe.c/h、0018/defaultOFF/UP2-only、累计owner COLD显式mn-probe/mn-status；旧timer/PHY/EDRV/工控功能全部保留。
 真实initialize→prepare→128次process→stop→exit；始终实际NMT GsOff，不调用reset/start/switch-off；prepare执行时会取ETH2/CNTP，不是只读。

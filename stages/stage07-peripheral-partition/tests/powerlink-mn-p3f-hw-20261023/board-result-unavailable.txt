@@ -1,0 +1,3 @@
+The board runner retained resources and raised before writing board-result.json.
+The SSH transport's failed download created an empty local placeholder; it was removed.
+Use board-test.log and failure-summary.json, not a nonexistent board PASS report.

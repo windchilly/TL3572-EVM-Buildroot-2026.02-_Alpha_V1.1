@@ -1,0 +1,63 @@
+/usr/bin/addr2line
+PRT_HwiCreate
+??:?
+SecVsnprintfImpl
+??:?
+$d
+rk3572_powerlink_app.c:?
+
+/home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/build/tl3572-m7-integrated-up-b.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+000000007c2501b0 <PRT_HwiSetAttr+0x68>:
+    7c2501b0:	a8c34ffe 	ldp	x30, x19, [sp], #48
+    7c2501b4:	d65f03c0 	ret
+    7c2501b8:	90000000 	adrp	x0, 7c250000 <OsHwiDeleteFormResume+0x10>
+    7c2501bc:	d37e7e94 	ubfiz	x20, x20, #2, #32
+    7c2501c0:	f940f000 	ldr	x0, [x0, #480]
+    7c2501c4:	8b140001 	add	x1, x0, x20
+    7c2501c8:	78346817 	strh	w23, [x0, x20]
+    7c2501cc:	aa1503e0 	mov	x0, x21
+    7c2501d0:	79000436 	strh	w22, [x1, #2]
+    7c2501d4:	97fffaf7 	bl	7c24edb0 <PRT_HwiRestore>
+    7c2501d8:	17fffff3 	b	7c2501a4 <PRT_HwiSetAttr+0x5c>
+    7c2501dc:	d503201f 	nop
+    7c2501e0:	7c298488 	.word	0x7c298488
+    7c2501e4:	00000000 	.word	0x00000000
+
+000000007c2501e8 <PRT_HwiCreate>:
+    7c2501e8:	a9be4ffe 	stp	x30, x19, [sp, #-32]!
+    7c2501ec:	a90157f4 	stp	x20, x21, [sp, #16]
+    7c2501f0:	7106041f 	cmp	w0, #0x181
+    7c2501f4:	54000408 	b.hi	7c250274 <PRT_HwiCreate+0x8c>  // b.pmore
+    7c2501f8:	aa0103f4 	mov	x20, x1
+    7c2501fc:	b4000401 	cbz	x1, 7c25027c <PRT_HwiCreate+0x94>
+    7c250200:	2a0003f3 	mov	w19, w0
+    7c250204:	aa0203f5 	mov	x21, x2
+    7c250208:	97fffae6 	bl	7c24eda0 <PRT_HwiLock>
+    7c25020c:	aa0003e7 	mov	x7, x0
+    7c250210:	90000001 	adrp	x1, 7c250000 <OsHwiDeleteFormResume+0x10>
+    7c250214:	f9414422 	ldr	x2, [x1, #648]
+    7c250218:	d37e7e61 	ubfiz	x1, x19, #2, #32
+    7c25021c:	78616841 	ldrh	w1, [x2, x1]
+    7c250220:	7140103f 	cmp	w1, #0x4, lsl #12
+    7c250224:	540000a0 	b.eq	7c250238 <PRT_HwiCreate+0x50>  // b.none
+    7c250228:	52810173 	mov	w19, #0x80b                 	// #2059
+    7c25022c:	97fffae1 	bl	7c24edb0 <PRT_HwiRestore>
+    7c250230:	72a04013 	movk	w19, #0x200, lsl #16
+    7c250234:	1400000c 	b	7c250264 <PRT_HwiCreate+0x7c>
+    7c250238:	2a1303e0 	mov	w0, w19
+    7c25023c:	aa1503e2 	mov	x2, x21
+    7c250240:	aa1403e1 	mov	x1, x20
+    7c250244:	97ffff56 	bl	7c24ff9c <OsHwiConnectHandle>
+    7c250248:	2a0003f3 	mov	w19, w0
+    7c25024c:	aa0703e0 	mov	x0, x7
+    7c250250:	34000093 	cbz	w19, 7c250260 <PRT_HwiCreate+0x78>
+    7c250254:	52810073 	mov	w19, #0x803                 	// #2051
+    7c250258:	97fffad6 	bl	7c24edb0 <PRT_HwiRestore>
+    7c25025c:	17fffff5 	b	7c250230 <PRT_HwiCreate+0x48>
+grep: /home/openeuler/build/powerlink-mn-p3f-20261023/UniProton-first/demos/rk3572_mica/apps/openamp/rpmsg_service.c: No such file or directory
+
+REMOTE_EXIT=2

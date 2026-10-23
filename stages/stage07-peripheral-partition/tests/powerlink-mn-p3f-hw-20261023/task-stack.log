@@ -1,0 +1,107 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+{
+  "maximum": 16,
+  "tcb_stride_from_actual_asm": 800,
+  "mod_info": "100000000010000000100000cacacaca",
+  "tasks": [
+    {
+      "slot": 1,
+      "id": 1,
+      "status": "0x41",
+      "priority": 63,
+      "bytes": 4096,
+      "low": "0x7c313f10",
+      "high": "0x7c314f10",
+      "saved_sp": "0x7c314db0",
+      "entry": "0x7c250780",
+      "low_64_hex": "aaaaaaaacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaca"
+    },
+    {
+      "slot": 2,
+      "id": 2,
+      "status": "0x21",
+      "priority": 26,
+      "bytes": 16384,
+      "low": "0x7c31af90",
+      "high": "0x7c31ef90",
+      "saved_sp": "0x7c31ede0",
+      "entry": "0x7c20a7c0",
+      "low_64_hex": "aaaaaaaacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaca"
+    },
+    {
+      "slot": 3,
+      "id": 3,
+      "status": "0x21",
+      "priority": 27,
+      "bytes": 16384,
+      "low": "0x7c31ef90",
+      "high": "0x7c322f90",
+      "saved_sp": "0x7c322de0",
+      "entry": "0x7c20a7c0",
+      "low_64_hex": "aaaaaaaacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaca"
+    },
+    {
+      "slot": 4,
+      "id": 4,
+      "status": "0x21",
+      "priority": 28,
+      "bytes": 16384,
+      "low": "0x7c322f90",
+      "high": "0x7c326f90",
+      "saved_sp": "0x7c326de0",
+      "entry": "0x7c20a7c0",
+      "low_64_hex": "aaaaaaaacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaca"
+    },
+    {
+      "slot": 5,
+      "id": 5,
+      "status": "0x21",
+      "priority": 29,
+      "bytes": 16384,
+      "low": "0x7c326f90",
+      "high": "0x7c32af90",
+      "saved_sp": "0x7c32ade0",
+      "entry": "0x7c20a7c0",
+      "low_64_hex": "aaaaaaaacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaca"
+    },
+    {
+      "slot": 6,
+      "id": 6,
+      "status": "0x21",
+      "priority": 24,
+      "bytes": 32768,
+      "low": "0x7c32b680",
+      "high": "0x7c333680",
+      "saved_sp": "0x7c3332c0",
+      "entry": "0x7c212920",
+      "low_64_hex": "aaaaaaaacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaca"
+    },
+    {
+      "slot": 8,
+      "id": 8,
+      "status": "0x9",
+      "priority": 10,
+      "bytes": 4096,
+      "low": "0x7c312cc0",
+      "high": "0x7c313cc0",
+      "saved_sp": "0x7c313900",
+      "entry": "0x7c24d544",
+      "low_64_hex": "aaaaaaaacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaca"
+    },
+    {
+      "slot": 9,
+      "id": 9,
+      "status": "0xc1",
+      "priority": 10,
+      "bytes": 4096,
+      "low": "0x7c311c90",
+      "high": "0x7c312c90",
+      "saved_sp": "0x7c312b10",
+      "entry": "0x7c24d544",
+      "low_64_hex": "aaaaaaaacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaca"
+    }
+  ]
+}
+
+READ_ONLY_EXIT=0
