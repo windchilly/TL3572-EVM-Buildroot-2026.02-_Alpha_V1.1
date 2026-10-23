@@ -1,0 +1,6 @@
+error: patch failed: stack/src/user/pdo/pdou.c:1034
+error: stack/src/user/pdo/pdou.c: patch does not apply
+error: patch failed: stack/src/user/pdo/pdoucalmem-local.c:147
+error: stack/src/user/pdo/pdoucalmem-local.c: patch does not apply
+
+REMOTE_EXIT=1

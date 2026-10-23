@@ -1,5 +1,22 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-23 最新入口：用户继续，本轮仅软件P3g bounded NMT reset/NotActive/SwitchOff，无板卡SSH/COM7/部署/移交/重启/物理reset或发送。
+新增m7_nmt_probe.c/h、0019、build_m7_powerlink_nmt.sh和候选入口；defaultOFF/UP2-only/COLD单槽邮箱nmt-probe/nmt-status。
+真实initialize/prepare→一次SwReset→MsNotActive立即一次SwitchOff→实际GsOff→一次stop/静默证明/exitCOLD，无持续MN/StartNode/任意NMT API。
+两段各32process+返回后1秒门槛，不是能抢占单次栈调用的watchdog；任何错误保留terminalFAULT/资源，不自动cleanup/retry。
+故障注入第23分配发现PDO内存NULL无限等待，精确PID19564/exe/参数检查后仅TERM构建容器原生进程，未操作板卡；原日志保留。
+0006仅UniProton direct CAL传播PDO setup错误，去无用500ms等待，NULL立即失败；别的平台不改。第25分配循环TX表NULL崩溃，0007三处guard。
+100次真实栈NMT序列19→29→39→79→21c→0、reset/off各5/1process，2500alloc/free/live0、无TXdoorbell/高精timerarm；mocktime4ms非实机性能。
+25真实栈含新增17–25分配位置+4邮箱、旧P3f29+4/P3e/P3d/P3c/P3b/P0-P2/累计parser/18lifecycle/3codec、Windows/Linux144Python通过。
+构建根/home/openeuler/build/powerlink-nmt-p3g-20261023：software/software-repro均全量从归档编译，非复用9对象；第一根调试修复，第二根fresh wrapper全过。
+UniProton-first/repro两全新累计树，9软件产物+两runtime逐字节一致；首版harness/补丁CRLF/导出工具链失败均保留。
+新候选85e78eb4bb150633e695014b5ecc55401a048a2707175a031b97a2e00567f68e，1196584B；UP2runtime630700B SHAbff9f26c5e7302a763a40caf5d2753c3d146f433a59e712e3035b7f5055d28aa。
+image/BSS2160976B/8MiB、FSC512KiB、页表10/16；UP1runtime仍d4d80d02.../9页；596旧函数保留/U0/LSE0/125旧SIMD无新增。
+最终TTY输入帧仍320B、关键链2944B+1024B预留≤4096B，不是全路径/IRQ最坏栈证明；无sanitizer/真实heap峰值/实时保证。
+tests/powerlink-nmt-p3g-20261023/README.md为源码/原始失败/复建/证据入口，GitHub状态以最终报告为准；正式两ELF/M6/DT/开机不变。
+P3f修正版仍是最新硬件通过基线；本轮无新板卡状态快照。下一步先准备独立板端runner/候选哈希/快照ABI/未知状态保留，再另询问隔离reset窗口。
+不能沿用P3f的无NMT授权和board runner/缓存decoder到新候选，也不能启动持续MN/接真实CN伺服；CAN/UART不发送继续有效。
+
 2026-10-23 最新入口：用户进一步明确“允许清理、修复并复测”；旧故障已精确清理/归还Linux，新P3f候选单次GsOff实板通过。
 精确恢复工具restore_powerlink_mn_dormant_fault.py要求旧b00cdf ELF、boot、task9/PC26262626/ESR8a000000、COLDseq0/零lease和独立CPU4/5OFF，非通用unsafe覆盖。
 清理失效临时client/端点、重绑ETH2并确认两端100full后才去hold，没有强停活核或整板重启；旧故障/输入完整保留。

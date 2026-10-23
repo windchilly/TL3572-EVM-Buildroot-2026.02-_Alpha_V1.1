@@ -21,7 +21,12 @@ uint32_t m7_eth2_hw_read(uint32_t offset)
 }
 int m7_plk_sleep(uint32_t ms)
 {
-    assert(ms == 1U && m7_plk_ready()); now += slow ? 1000 : ms;
+#ifdef M7_NMT_PROBE_TEST
+    assert((ms == 1U || ms == CONFIG_PDO_SETUP_WAIT_TIME) && m7_plk_ready());
+#else
+    assert(ms == 1U && m7_plk_ready());
+#endif
+    now += slow ? 1000 : ms;
     if (touchedTx) m7_edrv_test_dma.tx[0].d[0] = 0x7ca10000;
     return !sleepFail;
 }
@@ -32,7 +37,10 @@ int m7_timer_diag_snapshot(M7TimerHardware* out)
     if (wrongReadback && timerReleases) out->priority27 = 99;
     return 1;
 }
-int main(int argc, char** argv)
+#ifndef M7_MN_PROBE_TEST_MAIN
+#define M7_MN_PROBE_TEST_MAIN main
+#endif
+int M7_MN_PROBE_TEST_MAIN(int argc, char** argv)
 {
     M7MnProbeResult out; uint32_t expected = M7_MPROBE_OK; unsigned i, stops, releases;
     assert(argc == 2 && m7_mn_probe(NULL) == M7_MPROBE_CONTEXT);

@@ -1,0 +1,65 @@
+/tmp/tl3572-plk-nmt-probe.tjclap/probe
+edrvcyclic_setMaxTxBufferListSize
+??:?
+
+/tmp/tl3572-plk-nmt-probe.tjclap/probe:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000420530 <edrvcyclic_exit+0x20>:
+  420530:	00 00                	add    %al,(%rax)
+  420532:	c7 05 cc ea 0f 00 00 	movl   $0x0,0xfeacc(%rip)        # 51f008 <edrvcyclicInstance_l+0x8>
+  420539:	00 00 00 
+  42053c:	48 83 c4 08          	add    $0x8,%rsp
+  420540:	c3                   	ret
+  420541:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  420548:	31 c0                	xor    %eax,%eax
+  42054a:	c3                   	ret
+  42054b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000420550 <edrvcyclic_setMaxTxBufferListSize>:
+  420550:	39 3d b2 ea 0f 00    	cmp    %edi,0xfeab2(%rip)        # 51f008 <edrvcyclicInstance_l+0x8>
+  420556:	74 48                	je     4205a0 <edrvcyclic_setMaxTxBufferListSize+0x50>
+  420558:	53                   	push   %rbx
+  420559:	89 fb                	mov    %edi,%ebx
+  42055b:	89 3d a7 ea 0f 00    	mov    %edi,0xfeaa7(%rip)        # 51f008 <edrvcyclicInstance_l+0x8>
+  420561:	48 8b 3d 98 ea 0f 00 	mov    0xfea98(%rip),%rdi        # 51f000 <edrvcyclicInstance_l>
+  420568:	48 85 ff             	test   %rdi,%rdi
+  42056b:	74 05                	je     420572 <edrvcyclic_setMaxTxBufferListSize+0x22>
+  42056d:	e8 de 17 fe ff       	call   401d50 <__wrap_free>
+  420572:	89 df                	mov    %ebx,%edi
+  420574:	be 01 00 00 00       	mov    $0x1,%esi
+  420579:	48 c1 e7 04          	shl    $0x4,%rdi
+  42057d:	e8 3e 17 fe ff       	call   401cc0 <__wrap_calloc>
+  420582:	48 89 05 77 ea 0f 00 	mov    %rax,0xfea77(%rip)        # 51f000 <edrvcyclicInstance_l>
+  420589:	48 85 c0             	test   %rax,%rax
+  42058c:	74 15                	je     4205a3 <edrvcyclic_setMaxTxBufferListSize+0x53>
+  42058e:	c7 05 74 ea 0f 00 00 	movl   $0x0,0xfea74(%rip)        # 51f00c <edrvcyclicInstance_l+0xc>
+  420595:	00 00 00 
+  420598:	31 c0                	xor    %eax,%eax
+  42059a:	5b                   	pop    %rbx
+  42059b:	c3                   	ret
+  42059c:	0f 1f 40 00          	nopl   0x0(%rax)
+  4205a0:	31 c0                	xor    %eax,%eax
+  4205a2:	c3                   	ret
+  4205a3:	b8 14 00 00 00       	mov    $0x14,%eax
+  4205a8:	5b                   	pop    %rbx
+  4205a9:	c3                   	ret
+  4205aa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000004205b0 <edrvcyclic_setNextTxBufferList>:
+  4205b0:	8b 15 52 ea 0f 00    	mov    0xfea52(%rip),%edx        # 51f008 <edrvcyclicInstance_l+0x8>
+  4205b6:	48 8b 05 43 ea 0f 00 	mov    0xfea43(%rip),%rax        # 51f000 <edrvcyclicInstance_l>
+  4205bd:	89 d1                	mov    %edx,%ecx
+  4205bf:	33 0d 47 ea 0f 00    	xor    0xfea47(%rip),%ecx        # 51f00c <edrvcyclicInstance_l+0xc>
+  4205c5:	4c 8d 04 c8          	lea    (%rax,%rcx,8),%r8
+  4205c9:	b8 1d 00 00 00       	mov    $0x1d,%eax
+  4205ce:	49 83 38 00          	cmpq   $0x0,(%r8)
+  4205d2:	75 13                	jne    4205e7 <edrvcyclic_setNextTxBufferList+0x37>
+  4205d4:	8d 4e ff             	lea    -0x1(%rsi),%ecx
+  4205d7:	b8 1c 00 00 00       	mov    $0x1c,%eax
+  4205dc:	39 d1                	cmp    %edx,%ecx
+  4205de:	73 07                	jae    4205e7 <edrvcyclic_setNextTxBufferList+0x37>
+
+REMOTE_EXIT=0

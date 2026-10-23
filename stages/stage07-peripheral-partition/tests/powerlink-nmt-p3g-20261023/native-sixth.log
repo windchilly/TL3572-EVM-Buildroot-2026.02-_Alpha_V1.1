@@ -1,0 +1,32 @@
+REAL NMT trace: 19 -> 29 -> 39 -> 79 -> 21c -> 0; loops=5/1, time=504ms (MOCK time)
+P3g 100 REAL NMT resets to NotActive/SwitchOff: alloc/free=2500, no TX/timer arm; hardware MOCKED
+P3g REAL stack negative reset_command PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative off_command PASS, terminal retained; heap=25 ETH=1 timer=1
+P3g REAL stack negative reset_timeout PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative off_timeout PASS, terminal retained; heap=24 ETH=1 timer=1
+P3g REAL stack negative process PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative phy PASS, terminal retained; heap=2 ETH=0 timer=1
+P3g REAL stack negative stop PASS, terminal retained; heap=24 ETH=1 timer=1
+P3g REAL stack negative timer_stop PASS, terminal retained; heap=24 ETH=0 timer=1
+P3g REAL stack negative sleep PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative dma PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative mode PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative readback PASS, terminal retained; heap=0 ETH=0 timer=0
+P3g REAL stack negative tx PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative wall_timeout PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative allocation_17 PASS, terminal retained; heap=16 ETH=1 timer=1
+injected malloc failure #17 bytes=640 caller=0x4113d7
+injected malloc failure #18 bytes=162560 caller=0x4113f6
+P3g REAL stack negative allocation_18 PASS, terminal retained; heap=17 ETH=1 timer=1
+P3g REAL stack negative allocation_19 PASS, terminal retained; heap=18 ETH=1 timer=1
+injected malloc failure #19 bytes=640 caller=0x41141f
+P3g REAL stack negative allocation_20 PASS, terminal retained; heap=19 ETH=1 timer=1
+injected malloc failure #20 bytes=162560 caller=0x41143e
+P3g REAL stack negative allocation_21 PASS, terminal retained; heap=20 ETH=1 timer=1
+injected malloc failure #21 bytes=640 caller=0x425f4b
+P3g REAL stack negative allocation_22 PASS, terminal retained; heap=21 ETH=1 timer=1
+injected malloc failure #22 bytes=640 caller=0x425f73
+injected malloc failure #23 bytes=4108 caller=0x41f529
+Terminated
+
+REMOTE_EXIT=143

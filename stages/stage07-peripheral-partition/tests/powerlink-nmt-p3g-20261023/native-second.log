@@ -1,0 +1,4 @@
+probe: /home/openeuler/build/powerlink-nmt-p3g-20261023/stage/tests/test_powerlink_mn_probe.c:24: m7_plk_sleep: Assertion `ms == 1U && m7_plk_ready()' failed.
+/home/openeuler/build/powerlink-nmt-p3g-20261023/stage/tests/run_powerlink_nmt_probe_native.sh: line 14: 19240 Aborted                 (core dumped) "$work/probe" "$scenario"
+
+REMOTE_EXIT=134

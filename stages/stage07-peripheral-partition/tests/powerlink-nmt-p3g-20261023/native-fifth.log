@@ -1,0 +1,5 @@
+/usr/bin/ld: /tmp/ccRESp3x.o: in function `__wrap_nmtu_process':
+test_powerlink_nmt_probe.c:(.text+0x1af8): undefined reference to `nmtu_process'
+collect2: error: ld returned 1 exit status
+
+REMOTE_EXIT=1

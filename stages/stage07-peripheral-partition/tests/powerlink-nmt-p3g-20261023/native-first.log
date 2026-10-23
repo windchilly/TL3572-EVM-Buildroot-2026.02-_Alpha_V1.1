@@ -1,0 +1,10 @@
+/usr/bin/ld: /tmp/ccTkK9Rh.o: in function `GsOffRegressionMain':
+test_powerlink_nmt_probe.c:(.text+0x146c): undefined reference to `m7_mn_probe'
+/usr/bin/ld: test_powerlink_nmt_probe.c:(.text+0x14a4): undefined reference to `m7_mn_probe'
+/usr/bin/ld: test_powerlink_nmt_probe.c:(.text+0x161e): undefined reference to `m7_mn_probe'
+/usr/bin/ld: test_powerlink_nmt_probe.c:(.text+0x1656): undefined reference to `m7_mn_probe'
+/usr/bin/ld: test_powerlink_nmt_probe.c:(.text+0x16ed): undefined reference to `m7_mn_probe'
+/usr/bin/ld: /tmp/ccTkK9Rh.o:test_powerlink_nmt_probe.c:(.text+0x1712): more undefined references to `m7_mn_probe' follow
+collect2: error: ld returned 1 exit status
+
+REMOTE_EXIT=1

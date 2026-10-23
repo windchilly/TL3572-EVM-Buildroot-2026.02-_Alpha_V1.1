@@ -2,6 +2,11 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-10-23 最新[P3g有界NMT reset/NotActive/SwitchOff软件准备](tests/powerlink-nmt-p3g-20261023/README.md)：
+同一累计UP2增加defaultOFF/COLD显式nmt-probe/nmt-status，不开放持续MN/任意NMT命令。
+修复PDO分配失败无限等待和循环TX指针表NULL；100次真实栈/25+4原生、144Python、双全新软件/累计根11产物一致。
+本轮无板卡连接/部署/物理reset或发送；下一步先独立板端runner再另确认隔离窗口，P3f是最新硬件通过基线。
+
 2026-10-23 最新[P3f栈修复/完整栈GsOff实板](tests/powerlink-mn-p3f-fixed-20261023/README.md)：
 二次明确授权后精确清理旧故障并归还Linux；修正状态查询栈增长、增加重入保护及最终ELF关键路径预算。
 新候选真实初始化/准备/128次GsOff处理/停止/退出通过，最终双核OFF/Linux full恢复，boot/micad/工控资源不变，无reset/start或发帧。

@@ -2,6 +2,11 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+2026-10-23 最新P3g入口`build_m7_powerlink_nmt.sh`从完整归档重编核心，追加0006/0007修复reset新增分配失败等待/NULL访问；
+`build_m7_powerlink_nmt_probe_candidate.sh`保留所有累计功能，追加0019默认OFF/UP2-only有界reset→NotActive→SwitchOff诊断。
+100次真实栈/25+4原生、144Python、双新软件/累计根11产物一致；TTY关键栈预算仍2944B+1KiB≤4096B。
+[完整换机/原始失败/候选证据](../tests/powerlink-nmt-p3g-20261023/README.md)。本轮无板卡连接、部署或物理reset/start/发送，正式ELF不变。
+
 2026-10-23 栈修复后`build_m7_powerlink_mn_probe_candidate.sh`的最终审计新增`audit_powerlink_stack.py`，
 拒绝旧4336B/4KiB关键调用链，修正版2944B+1KiB预留通过；实际输入帧1712→320B，默认线程栈不增大。
 新候选已获准单次GsOff实板联合生命周期/安全归还通过，[完整记录/换机入口](../tests/powerlink-mn-p3f-fixed-20261023/README.md)。

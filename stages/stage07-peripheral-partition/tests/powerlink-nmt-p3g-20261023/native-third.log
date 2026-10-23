@@ -1,0 +1,18 @@
+P3g 100 REAL NMT resets to NotActive/SwitchOff: alloc/free=2500, no TX/timer arm; hardware MOCKED
+P3g REAL stack negative reset_command PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative off_command PASS, terminal retained; heap=25 ETH=1 timer=1
+P3g REAL stack negative reset_timeout PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative off_timeout PASS, terminal retained; heap=24 ETH=1 timer=1
+P3g REAL stack negative process PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative phy PASS, terminal retained; heap=2 ETH=0 timer=1
+P3g REAL stack negative stop PASS, terminal retained; heap=24 ETH=1 timer=1
+P3g REAL stack negative timer_stop PASS, terminal retained; heap=24 ETH=0 timer=1
+P3g REAL stack negative sleep PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative dma PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative mode PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative readback PASS, terminal retained; heap=0 ETH=0 timer=0
+P3g REAL stack negative tx PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g REAL stack negative wall_timeout PASS, terminal retained; heap=16 ETH=1 timer=1
+P3g bounded real NMT 16 scenarios PASS; NO BOARD
+
+REMOTE_EXIT=0

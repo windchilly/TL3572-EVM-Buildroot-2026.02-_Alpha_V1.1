@@ -1,0 +1,70 @@
+{
+  "phase": "P3g independently rebuilt full cores and cumulative source roots, SOFTWARE ONLY",
+  "independent_roots": [
+    "/home/openeuler/build/powerlink-nmt-p3g-20261023/software",
+    "/home/openeuler/build/powerlink-nmt-p3g-20261023/software-repro",
+    "/home/openeuler/build/powerlink-nmt-p3g-20261023/UniProton-first",
+    "/home/openeuler/build/powerlink-nmt-p3g-20261023/UniProton-repro"
+  ],
+  "identical": true,
+  "artifacts": [
+    {
+      "path": "aarch64/core/libm7_powerlink_mn_core.a",
+      "bytes": 634892,
+      "sha256": "294900eccf95a6246417f12d681e12a8c3f224cf06484019c8521cae7ce858a3"
+    },
+    {
+      "path": "aarch64/libm7_powerlink_passive_mn.a",
+      "bytes": 459606,
+      "sha256": "6b6a889184bf36f189ce0b78fecf542c71b6f72f939f6ebfa61f2f3366b9a62e"
+    },
+    {
+      "path": "mn-passive-full.o",
+      "bytes": 960168,
+      "sha256": "2f59d79162e0a4c8bb8e868d8bf100bdb4ae9340d854f7ca4987e3d7c6bb905a"
+    },
+    {
+      "path": "p2/p1/core/aarch64/libm7_powerlink_mn_core.a",
+      "bytes": 634932,
+      "sha256": "d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b"
+    },
+    {
+      "path": "p2/p1/core/aarch64/mn-core.o",
+      "bytes": 509712,
+      "sha256": "f6e1773b6e3b4c0d807bd79a0fc738754170910fa0ee37704cd512cc2f601fbe"
+    },
+    {
+      "path": "p2/p1/edrv-aarch64/libm7_powerlink_eth2_edrv.a",
+      "bytes": 13722,
+      "sha256": "c576132cd1a83b22e056c5d348b46e8c329648fbaa176a84b71968cb6e8f6ef8"
+    },
+    {
+      "path": "p2/p1/mn-core-edrv.o",
+      "bytes": 521472,
+      "sha256": "b199dfe18f3f7ca36eca7192c8f56053de9ba4164a9b5b937b4cc9d1842d4b29"
+    },
+    {
+      "path": "p2/rtos-aarch64/libm7_powerlink_rtos.a",
+      "bytes": 25302,
+      "sha256": "3757a3ba2807c348de48d29b5232f9f9153fed50b0c41a3841fbd1f09e8612f6"
+    },
+    {
+      "path": "p2/mn-core-edrv-rtos.o",
+      "bytes": 542656,
+      "sha256": "a63f52fcacc65dc3b86471b0e861ce24d9f190e0cab798ee4f74a767c4d5c7d3"
+    },
+    {
+      "path": "demos/rk3572_mica/build/up-a.runtime.bin",
+      "bytes": 360716,
+      "sha256": "d4d80d02fdac5d2f26db2deabeabb1147c54eab5fe355653c382fe1c17157290"
+    },
+    {
+      "path": "demos/rk3572_mica/build/up-b.runtime.bin",
+      "bytes": 630700,
+      "sha256": "bff9f26c5e7302a763a40caf5d2753c3d146f433a59e712e3035b7f5055d28aa"
+    }
+  ],
+  "elf_debug_paths_excluded": true,
+  "hardware_tested": false,
+  "software_origin": "Both full software roots compiled from the fixed upstream archive; 0006/0007 applied only to P3g full stack. No reused prebuilt core artifacts."
+}

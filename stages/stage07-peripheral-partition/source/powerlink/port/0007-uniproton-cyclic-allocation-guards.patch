@@ -1,0 +1,40 @@
+diff --git a/stack/src/kernel/edrv/edrvcyclic.c b/stack/src/kernel/edrv/edrvcyclic.c
+--- a/stack/src/kernel/edrv/edrvcyclic.c
++++ b/stack/src/kernel/edrv/edrvcyclic.c
+@@ -251,6 +251,11 @@
+     // Check parameter validity
+     ASSERT(ppTxBuffer_p != NULL);
+ 
++#if defined(OPLK_TARGET_UNIPROTON)
++    if (edrvcyclicInstance_l.ppTxBufferList == NULL)
++        return kErrorEdrvNoFreeBufEntry;
++#endif
++
+     nextTxBufferList = edrvcyclicInstance_l.curTxBufferList ^ edrvcyclicInstance_l.maxTxBufferCount;
+ 
+     // check if next list is free
+@@ -323,6 +328,11 @@
+ tOplkError edrvcyclic_startCycle(BOOL fContinuousMode_p)
+ {
+     tOplkError ret = kErrorOk;
++#if defined(OPLK_TARGET_UNIPROTON)
++    if (edrvcyclicInstance_l.ppTxBufferList == NULL)
++        return kErrorEdrvNoFreeBufEntry;
++#endif
++
+ 
+     if (edrvcyclicInstance_l.cycleTimeUs == 0)
+     {
+@@ -375,6 +385,12 @@
+ tOplkError edrvcyclic_stopCycle(BOOL fKeepCycle_p)
+ {
+     tOplkError ret = kErrorOk;
++#if defined(OPLK_TARGET_UNIPROTON)
++    /* Failed list allocation leaves a nonzero requested count. Do not
++     * dereference/clear NULL while its queued error reaches the API. */
++    if (edrvcyclicInstance_l.ppTxBufferList == NULL && edrvcyclicInstance_l.maxTxBufferCount != 0)
++        return kErrorEdrvNoFreeBufEntry;
++#endif
+ 
+     if (!fKeepCycle_p)
+     {

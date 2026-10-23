@@ -1,0 +1,40 @@
+diff --git a/stack/src/user/pdo/pdou.c b/stack/src/user/pdo/pdou.c
+--- a/stack/src/user/pdo/pdou.c
++++ b/stack/src/user/pdo/pdou.c
+@@ -1034,10 +1034,18 @@
+         goto Exit;
+ 
+     calcPdoMemSize(&pdouInstance_g.pdoChannels, &rxPdoMemSize, &txPdoMemSize);
++#if defined(OPLK_TARGET_UNIPROTON)
++    /* Direct CAL executes kernel setup on this same owner. Propagate its
++     * failure; sleeping cannot make a failed allocation become ready. */
++    ret = pdoucal_postSetupPdoBuffers(rxPdoMemSize, txPdoMemSize);
++    if (ret != kErrorOk)
++        goto Exit;
++#else
+     pdoucal_postSetupPdoBuffers(rxPdoMemSize, txPdoMemSize);
+ 
+     // TODO how to be sure that kernel is ready before starting??
+     target_msleep(CONFIG_PDO_SETUP_WAIT_TIME);
++#endif
+ 
+     ret = pdoucal_initPdoMem(&pdouInstance_g.pdoChannels,
+                              rxPdoMemSize,
+diff --git a/stack/src/user/pdo/pdoucalmem-local.c b/stack/src/user/pdo/pdoucalmem-local.c
+--- a/stack/src/user/pdo/pdoucalmem-local.c
++++ b/stack/src/user/pdo/pdoucalmem-local.c
+@@ -147,8 +147,14 @@
+     ASSERT(ppPdoMem_p != NULL);
+ 
++#if defined(OPLK_TARGET_UNIPROTON)
++    /* Single-owner direct CAL: there is no concurrent producer to wait for. */
++    if (pdokcalmem_pPdo_g == NULL)
++        return kErrorNoResource;
++#else
+     /* be sure that kernel memory is allocated! */
+     while (pdokcalmem_pPdo_g == NULL)
+         target_msleep(1);
++#endif
+ 
+     *ppPdoMem_p = pdokcalmem_pPdo_g;
+ 

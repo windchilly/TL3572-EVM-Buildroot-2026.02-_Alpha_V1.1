@@ -1,0 +1,15 @@
+/home/openeuler/build/powerlink-nmt-p3g-20261023/stage/tests/test_powerlink_nmt_probe.c:8:17: error: 'trace' redeclared as different kind of symbol
+    8 | static uint32_t trace[16];
+      |                 ^~~~~
+In file included from /home/openeuler/build/powerlink-mn-p3f-fixed-20261023/software/source/openPOWERLINK_V2-2.7.2/stack/include/common/debug.h:44,
+                 from /home/openeuler/build/powerlink-mn-p3f-fixed-20261023/software/source/openPOWERLINK_V2-2.7.2/stack/include/common/oplkinc.h:47,
+                 from <command-line>:
+/home/openeuler/build/powerlink-mn-p3f-fixed-20261023/software/source/openPOWERLINK_V2-2.7.2/contrib/trace/trace.h:53:6: note: previous declaration of 'trace' with type 'void(const char *, ...)'
+   53 | void trace(const char* fmt, ...);
+      |      ^~~~~
+/home/openeuler/build/powerlink-nmt-p3g-20261023/stage/tests/test_powerlink_nmt_probe.c:8:17: error: 'trace' defined but not used [-Werror=unused-variable]
+    8 | static uint32_t trace[16];
+      |                 ^~~~~
+cc1: all warnings being treated as errors
+
+REMOTE_EXIT=1

@@ -15,9 +15,16 @@
 #error "POWERLINK owner task belongs to UP2 only"
 #endif
 enum { ENV_INIT = 1U, ENV_EXIT = 2U };
+#ifdef M7_POWERLINK_NMT_PROBE
+enum { NMT_PROBE = 7U };
+#endif
 #ifdef M7_POWERLINK_MN_PROBE
 enum { MN_PROBE = 6U };
+#ifdef M7_POWERLINK_NMT_PROBE
+#define STATUS_MODE "bounded-NMT-diagnostic"
+#else
 #define STATUS_MODE "GsOff-diagnostic"
+#endif
 #else
 #define STATUS_MODE "software-only"
 #endif
@@ -64,6 +71,20 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
             return; /* Do not call a blocking RTOS API in an invalid context. */
         }
         if (command) {
+#ifdef M7_POWERLINK_NMT_PROBE
+            if (command == NMT_PROBE) {
+                M7NmtProbeResult probe;
+                PRT_Printf("[plk-nmt-probe] BEGIN bounded reset/NotActive/SwitchOff; isolated window required\n");
+                result = m7_nmt_probe(&probe);
+                lock = PRT_HwiLock();
+                snapshot.nmtProbe = probe; snapshot.mn = probe.lifecycle.final; snapshot.result = result;
+                snapshot.running = 0; snapshot.completed = snapshot.submitted;
+                if (!probe.lifecycle.clean) { snapshot.ready = 0; snapshot.runtimeError = APP_ERROR; }
+                PRT_HwiRestore(lock);
+                PRT_Printf("[plk-nmt-probe] END rc=%u clean=%u reached=0x%x stage=%u\n",
+                    result, probe.lifecycle.clean, probe.reached, probe.lifecycle.stage);
+            } else {
+#endif
 #ifdef M7_POWERLINK_MN_PROBE
             if (command == MN_PROBE) {
                 M7MnProbeResult lifecycle;
@@ -151,6 +172,9 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
 #ifdef M7_POWERLINK_MN_PROBE
             }
 #endif
+#ifdef M7_POWERLINK_NMT_PROBE
+            }
+#endif
         }
         result = PRT_TaskDelay(2U);
         if (result) {
@@ -192,6 +216,9 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
 {
     const char* error = NULL;
     uint32_t command = 0, accepted = 0;
+#ifdef M7_POWERLINK_NMT_PROBE
+    int nmtStatus = 0;
+#endif
 #ifdef M7_POWERLINK_MN_PROBE
     int mnStatus = 0;
 #endif
@@ -218,6 +245,10 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
         }
         if (matches(data, length, "PLK env-init")) command = ENV_INIT;
         else if (matches(data, length, "PLK env-exit")) command = ENV_EXIT;
+#ifdef M7_POWERLINK_NMT_PROBE
+        else if (matches(data, length, "PLK nmt-probe")) command = NMT_PROBE;
+        else if (matches(data, length, "PLK nmt-status")) nmtStatus = 1;
+#endif
 #ifdef M7_POWERLINK_MN_PROBE
         else if (matches(data, length, "PLK mn-probe")) command = MN_PROBE;
         else if (matches(data, length, "PLK mn-status")) mnStatus = 1;
@@ -244,6 +275,9 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
     if (!error && command) {
         if (!snapshot.ready) error = "not-ready";
         else if (snapshot.pending || snapshot.running) error = "busy";
+#ifdef M7_POWERLINK_NMT_PROBE
+        else if (command == NMT_PROBE && snapshot.mn.state != M7_MN_COLD) error = "wrong-state";
+#endif
 #ifdef M7_POWERLINK_MN_PROBE
         else if (command == MN_PROBE && snapshot.mn.state != M7_MN_COLD) error = "wrong-state";
 #endif
@@ -267,6 +301,17 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
     out = snapshot; PRT_HwiRestore(lock);
     if (error) bytes = snprintf(reply, sizeof(reply), "PLK UP2 ERROR %s\n", error);
     else if (accepted) bytes = snprintf(reply, sizeof(reply), "PLK UP2 ACCEPTED seq=%u\n", accepted);
+#ifdef M7_POWERLINK_NMT_PROBE
+    else if (nmtStatus) bytes = snprintf(reply, sizeof(reply),
+        "PLK UP2 NMT rc=%u clean=%u stage=%u stack=0x%x reset=%u off=%u resetLoops=%u offLoops=%u reached=0x%x state=%u nmt=0x%x rx=%u tx=%u txdesc=%u rxerr=%u txerr=%u fatal=%u lease=%u/%u timer=%u/%u\n",
+        out.nmtProbe.lifecycle.result, out.nmtProbe.lifecycle.clean, out.nmtProbe.lifecycle.stage,
+        out.nmtProbe.lifecycle.stackError, out.nmtProbe.resetSubmitted, out.nmtProbe.offSubmitted,
+        out.nmtProbe.resetLoops, out.nmtProbe.offLoops, out.nmtProbe.reached, out.nmtProbe.lifecycle.final.state,
+        out.nmtProbe.lifecycle.final.nmtState, out.nmtProbe.lifecycle.rx, out.nmtProbe.lifecycle.tx,
+        out.nmtProbe.lifecycle.txDescriptors, out.nmtProbe.lifecycle.rxErrors, out.nmtProbe.lifecycle.txErrors,
+        out.nmtProbe.lifecycle.fatal, out.nmtProbe.lifecycle.leaseBefore, out.nmtProbe.lifecycle.leaseAfter,
+        out.nmtProbe.lifecycle.timerBefore, out.nmtProbe.lifecycle.timerAfter);
+#endif
 #ifdef M7_POWERLINK_MN_PROBE
     else if (mnStatus) bytes = snprintf(reply, sizeof(reply),
         "PLK UP2 MN rc=%u clean=%u stage=%u stack=0x%x loops=%u state=%u nmt=0x%x rx=%u tx=%u txdesc=%u drop=%u rxerr=%u txerr=%u fatal=%u irqs=%llu callbacks=%llu mac=0x%x stop=0x%x/0x%x/0x%x/0x%x/0x%x/0x%x lease=%u/%u timer=%u/%u\n",

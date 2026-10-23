@@ -1,0 +1,9 @@
+    PID    PPID %CPU COMMAND
+      1       0  0.0 sshd: /usr/sbin/sshd -D -e [listener] 0 of 10-100 startups
+  19470       0  0.0 bash /home/openeuler/build/powerlink-nmt-p3g-20261023/stage/tests/run_powerlink_nmt_probe_native.sh
+  19564   19470 99.6 /tmp/tl3572-plk-nmt-probe.TbQJJM/probe allocation_23
+  19565       0 30.0 bash -lc ps -eo pid,ppid,pcpu,args; command -v gdb || true; command -v timeout
+  19625   19565  0.0 ps -eo pid,ppid,pcpu,args
+/usr/bin/timeout
+
+REMOTE_EXIT=0

@@ -1,8 +1,14 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
-**P3f修正版累计候选：保留P3e全部功能 + 完整MN栈GsOff生命周期诊断已单次实板通过**，
+**P3g累计软件候选：保留P3f全部功能 + 有界NMT reset/NotActive/SwitchOff软件诊断**，
 不是已运行的主站；MN/CN互操作、持续负载/实时性仍待验证。
+
+P3g新增`m7_nmt_probe.c/h`、0019、完整软件构建入口与25+4原生/144Python回归；100次真实栈状态迁移通过，物理边界mock。
+0006修正UniProton direct PDO setup错误未传递/NULL无限等待并移除无用500ms等待；0007拒绝失败循环TX表NULL访问。
+双全新软件/累计根9个核心产物+两runtime一致；[源码/构建/原始失败/复现记录](../../tests/powerlink-nmt-p3g-20261023/README.md)。
+默认休眠/诊断开关OFF，只有新候选显式nmt-probe可reset；没有实板许可或部署，不能套用P3f runner。
+以下P3f修正版仍是最新硬件通过基线，后续reset软件通过不替代硬件验收。
 
 获准清理和修复后，状态快照/回复移到受重入保护的BSS，输入帧降至320B，最终关键调用链2944B+1KiB预留通过。
 新候选实板initialize/prepare/128次process/stop/exit与归还Linux通过，始终GsOff、无reset/start或测试帧。

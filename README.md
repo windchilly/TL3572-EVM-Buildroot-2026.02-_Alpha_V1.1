@@ -1,6 +1,9 @@
 # TL3572 / RK3572：openEuler + MICA + UniProton
 
 本仓库保存评估板资料、Stage01–Stage07 的源码/配置、正式阶段记录，以及换机恢复入口。
+2026-10-23 最新[P3g有界NMT reset/关断软件准备](stages/stage07-peripheral-partition/tests/powerlink-nmt-p3g-20261023/README.md)：
+修复reset新增PDO分配失败无限等待/循环TX表NULL访问；100次真实栈reset→NotActive→SwitchOff、25+4原生/144Python及双根11产物一致。
+默认关闭、累计旧功能保留，最终TTY关键栈预算不增长；本轮未访问/部署板卡，物理reset/MN/CN/实时性尚未验收。
 2026-10-23 最新[P3f栈修复与GsOff实板复测](stages/stage07-peripheral-partition/tests/powerlink-mn-p3f-fixed-20261023/README.md)：
 获准精确清理后，状态路径快照/回复移至受保护BSS，输入帧1712→320B；最终调用链2944B+1KiB预留通过。
 真实完整栈128次GsOff处理/停止/退出及Linux归还通过，136Python/29+4原生/双新树runtime一致；未重启/reset/start/发帧，正式固件不变。

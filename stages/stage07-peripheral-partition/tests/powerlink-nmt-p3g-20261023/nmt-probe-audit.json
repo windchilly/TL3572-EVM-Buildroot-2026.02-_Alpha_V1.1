@@ -1,0 +1,103 @@
+{
+  "phase": "P3g bounded reset/NotActive/SwitchOff SOFTWARE ONLY",
+  "images": [
+    {
+      "role": "a",
+      "elf_bytes": 677992,
+      "elf_sha256": "9c266f0ad4698f468a927032c8248bdc58b3266b0c75c7ada323fc151b727c11",
+      "runtime_bytes": 360716,
+      "runtime_sha256": "d4d80d02fdac5d2f26db2deabeabb1147c54eab5fe355653c382fe1c17157290",
+      "image_used_including_noload_bytes": 969056,
+      "image_remaining_bytes": 7419552,
+      "fsc_pool_bytes": 524288,
+      "page_tables": {
+        "elf": "tl3572-m7-integrated-up-a.elf",
+        "table_pages": 9,
+        "required_bytes": 36864,
+        "available_bytes": 65536,
+        "fits": true,
+        "first_overflow_region": null
+      }
+    },
+    {
+      "role": "b",
+      "elf_bytes": 1196584,
+      "elf_sha256": "85e78eb4bb150633e695014b5ecc55401a048a2707175a031b97a2e00567f68e",
+      "runtime_bytes": 630700,
+      "runtime_sha256": "bff9f26c5e7302a763a40caf5d2753c3d146f433a59e712e3035b7f5055d28aa",
+      "image_used_including_noload_bytes": 2160976,
+      "image_remaining_bytes": 6227632,
+      "fsc_pool_bytes": 524288,
+      "page_tables": {
+        "elf": "tl3572-m7-integrated-up-b.elf",
+        "table_pages": 10,
+        "required_bytes": 40960,
+        "available_bytes": 65536,
+        "fits": true,
+        "first_overflow_region": null
+      }
+    }
+  ],
+  "complete_global_functions_retained_in_UP2": 596,
+  "all_hal_bsp_resolved": true,
+  "final_undefined_symbols": [],
+  "no_NEW_fp_simd_in_final_UP2": true,
+  "hardware_tested": false,
+  "inherited_simd_instruction_count": 125,
+  "inherited_simd_functions": [
+    "PRT_cvt",
+    "PRT_round",
+    "SecFormatDouble",
+    "SecFormatFloat",
+    "SecOutput",
+    "metal_default_log_handler",
+    "metal_io_init",
+    "modf",
+    "osVsnprintf",
+    "snprintf"
+  ],
+  "simd_limit": "Pinned M6/libmetal instructions remain; site/opcode matches formal UP2 except exactly two PRT_cvt literal-load relocations checked by registers+literal bytes. NOT an all-ELF no-FPU claim.",
+  "default": "dormant; no stack environment init/prepare/PHY/CNTP/NMT/TX",
+  "commands": [
+    "PLK status",
+    "PLK env-init",
+    "PLK env-exit",
+    "PLK timer-probe",
+    "PLK eth-probe",
+    "PLK edrv-probe",
+    "PLK edrv-status",
+    "PLK mn-probe",
+    "PLK mn-status",
+    "PLK nmt-probe",
+    "PLK nmt-status"
+  ],
+  "limits": "32 process calls per transition, checked 1-second guard after returning calls; not a preemptive deadline for each stack call. UniProton direct PDO setup has no wait. Not real-time or MN/CN acceptance; separate physical window required.",
+  "diagnostic_functions": [
+    "m7_edrv_probe",
+    "m7_eth_probe",
+    "m7_timer_diag_reset",
+    "m7_timer_diag_snapshot",
+    "m7_timer_probe",
+    "m7_mn_probe",
+    "m7_nmt_probe"
+  ],
+  "final_up2_lse_instructions": [],
+  "rpmsg_stack_budget": {
+    "path": {
+      "rpmsg_tty_task": 576,
+      "Rk3572IntegratedInput": 352,
+      "Rk3572PowerlinkInput": 320,
+      "PRT_Printf": 176,
+      "UpLogVprintf": 608,
+      "vsnprintf_s": 80,
+      "SecVsnprintfImpl": 80,
+      "SecOutput": 752
+    },
+    "known_frames": 2944,
+    "reserve": 1024,
+    "pinned_tty_stack": 4096,
+    "remaining_after_reserve": 128,
+    "passed": true,
+    "limit": "Critical integer/string logging path only. Reserve is not a measured worst-case IRQ/leaf bound; pinned M6 default stack assumed, actual TCB must be checked on board."
+  }
+}
