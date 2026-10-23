@@ -10,6 +10,9 @@
 #ifdef M7_POWERLINK_ETH_PROBE
 #include "m7_eth_probe.h"
 #endif
+#ifdef M7_POWERLINK_EDRV_PROBE
+#include "m7_edrv_probe.h"
+#endif
 typedef struct {
     uint32_t ready, pending, running, submitted, completed, command;
     uint32_t result, runtimeError, owner;
@@ -19,6 +22,9 @@ typedef struct {
 #endif
 #ifdef M7_POWERLINK_ETH_PROBE
     M7EthProbeResult eth;
+#endif
+#ifdef M7_POWERLINK_EDRV_PROBE
+    M7EdrvProbeResult edrv;
 #endif
 } M7PowerlinkSnapshot;
 uint32_t Rk3572PowerlinkInit(void);

@@ -2,6 +2,11 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+2026-10-23 最新入口`build_m7_powerlink_edrv_probe_candidate.sh`：继承P3d/0016，追加0017默认OFF/UP2-only有界EDRV诊断。
+默认休眠，COLD显式`PLK edrv-probe`才运行；不初始化/启动MN或租用高精度timer。累计CAN/FD/串口、旧timer/PHY入口均保留。
+获准单次隔离64组物理请求应答/FCS及安全归还通过；[完整源码/换机复建/实测证据](../tests/powerlink-edrv-p3e-20261023/README.md)。
+构建脚本不部署/发帧，板端runner必须单独获得隔离回环和有限帧授权；不替换正式固件。
+
 2026-10-23：`build_m7_powerlink_eth_candidate.sh`现追加0016，将真实ETH BSP最后march约束为ARMv8-A，
 全UP2 ELF审计拒绝LSE，修复首次TakeLease/CASAL异常；三轮获准无帧半双工实测及安全归还通过。
 旧P1-P3c/P3d初版候选不能用于新EDRV硬件路径。[当前复建/实测入口](../tests/powerlink-eth-p3d-hw-20261023/README.md)。

@@ -1,0 +1,73 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+SCOPE: EDRV experimental frames only; 64 each direction, no MN/timer/CAN/UART/boot change/reboot
+BEFORE {"boot": "6974ac40-f3a2-4433-a5b8-11ec4318248f", "management": {"address": [["inet", "192.168.2.141", 24, "global"], ["inet6", "fe80::d414:36ff:fe8b:78f0", 64, "link"]], "cpus": "0-3,6-7\n", "driver": "/sys/bus/platform/drivers/rk_gmac-dwmac", "routes": "default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 \n192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 \n192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 \n"}, "micad": {"ActiveState": "active", "MainPID": "328", "NRestarts": "0"}, "peripherals": {"drivers": {"26500000.serial": "dw-apb-uart", "2ab10000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "registers": {"0x2607400c": 37017, "0x26074010": 2457, "0x26074018": 4, "0x2608203c": 3536, "0x2608404c": 153, "0x2608608c": 56576, "0x26090374": 31488, "0x26090404": 387, "0x26090408": 387, "0x2609040c": 33, "0x26090410": 0, "0x26090414": 279, "0x26090418": 11, "0x2609041c": 768, "0x26090420": 768, "0x26090424": 768, "0x26090428": 768, "0x2609042c": 768, "0x26090430": 768, "0x26090434": 768, "0x26090438": 768, "0x26090808": 24512, "0x2609082c": 32768, "0x26090838": 32736, "0x2609083c": 37449, "0x26090840": 65468, "0x26090a2c": 0, "0x26090a38": 0, "0x26090a3c": 0, "0x26090a40": 0, "0x260b0320": 1, "0x260b0814": 16844, "0x260b0a14": 0, "0x2a601090": 0, "0x2a601094": 0, "0x2a601110": 286331264, "0x2a601114": 4009791488, "0x2a601210": 0, "0x2a601214": 0, "0x2a601310": 0, "0x2a601314": 0, "0x2a60149c": 2694881440, "0x2a6014a0": 2694881440, "0x2a6014a4": 2694881440, "0x2a6014b8": 2694881440, "0x2a60189c": 16843009, "0x2a6018a0": 16843009, "0x2a6018a4": 16843009, "0x2a6018b8": 16843009, "0x2a601c24": 1431655765, "0x2a601c28": 1431655765, "0x2a601c2c": 1431655765}}}
+POWER/ROOT HOLD PASS CRU42=0xf000
+REAL MMU {"budget_bytes": 65536, "mapped_units": 67, "rc": 0, "root": "0x7ca00000", "table_pages": 10, "tcr": "0x80003520", "used_bytes": 40960}
+PLK UP2 ACCEPTED seq=1
+EDRV READY nonce=0xce3f922b
+Settings for eth2:
+	Supported ports: [ TP	 MII ]
+	Supported link modes:   10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Supported pause frame use: No
+	Supports auto-negotiation: Yes
+	Supported FEC modes: Not reported
+	Advertised link modes:  10baseT/Half 10baseT/Full
+	                        100baseT/Half 100baseT/Full
+	Advertised pause frame use: No
+	Advertised auto-negotiation: Yes
+	Advertised FEC modes: Not reported
+	Link partner advertised link modes:  100baseT/Half
+	Link partner advertised pause frame use: No
+	Link partner advertised auto-negotiation: No
+	Link partner advertised FEC modes: Not reported
+	Speed: 100Mb/s
+	Duplex: Half
+	Auto-negotiation: on
+	Port: MII
+	PHYAD: 32
+	Transceiver: internal
+	Supports Wake-on: pumbg
+	Wake-on: g
+        Current message level: 0x00007fff (32767)
+                               drv probe link timer ifdown ifup rx_err tx_err tx_queued intr tx_done rx_status pktdata hw wol
+	Link detected: yes
+
+PHYSICAL PROFILE PASS raw=64 each=32 peer_tx=32 peer_rx=32
+PHYSICAL PROFILE PASS raw=1514 each=32 peer_tx=64 peer_rx=64
+PLK UP2 EDRV rc=0 clean=1 nonce=0xffffffffce3f922b rx=64 submitted=64 tx=64 fcs=64 rxerr=0 txerr=0 fatal=0 drop=1 mac=0xc003 stop=0x0/0x0/0x0/0x0/0x0/0x0 lease=0/0
+[up-b boot=3 seq=132] [boot] UP CPU5 entered
+[up-b boot=3 seq=133] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=3 seq=134] [boot] interrupt routing ready
+[up-b boot=3 seq=135] [boot] scheduler task entered
+[up-b boot=3 seq=136] [plk] dormant owner init rc=0; no PHY/timer/MN startup
+[up-b boot=3 seq=137] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=3 seq=138] [openamp] get rsctable 7c2970c8, size a64 
+[up-b boot=3 seq=139] [openamp]: get vring0: da 7a0a0000
+[up-b boot=3 seq=140] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=3 seq=141] [openamp] tty task started
+[up-b boot=3 seq=142] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=0 done=0 cmd=0 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=3 seq=143] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[up-b boot=3 seq=144] [plk] PLK UP2 ACCEPTED seq=1
+[up-b boot=3 seq=145] [plk-edrv-probe] BEGIN bounded diagnostic; no MN startup
+[up-b boot=3 seq=146] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=3 seq=147] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=3 seq=148] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=3 seq=149] [openamp] ept ready
+[up-b boot=3 seq=150] [boot] RPMsg ready
+[up-b boot=3 seq=151] [eth] PHY forced 100-half link ready; AN disabled, bmsr=0x794d
+[up-b boot=3 seq=152] [plk-edrv] started 100-half polling, DMA=0x7ca10000 bytes=61696; not MN runtime
+[up-b boot=3 seq=153] [plk-edrv-probe] READY nonce=0xce3f922b each=32 profiles=64/1514; EDRV ONLY, no MN
+[up-b boot=3 seq=154] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=5 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=3 seq=155] [plk-edrv] QUIESCED reset=1; aborted TX is not completion
+[up-b boot=3 seq=156] [plk-edrv-probe] END rc=0 clean=1 rx=64 tx=64 fcs=64
+[up-b boot=3 seq=157] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=1 done=1 cmd=5 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=software-only
+[up-b boot=3 seq=158] [plk] PLK UP2 EDRV rc=0 clean=1 nonce=0xffffffffce3f922b rx=64 submitted=64 tx=64 fcs=64 rxerr=0 txerr=0 fatal=0 drop=1 mac=0xc003 stop=0x0/0x0/0x0/0x0/0x0/0x0 lease=0/0
+[up-b boot=3 seq=159] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CLEANUP PASS: CPU4/5 OFF, Linux full restored, hold/client/endpoints removed, CAN/UART/management/micad/boot unchanged
+OVERALL PASS P3e EDRV physical RX/TX, RX FCS, TX callbacks and safe restoration; NO MN
+
+BOARD_EXIT_CODE=0

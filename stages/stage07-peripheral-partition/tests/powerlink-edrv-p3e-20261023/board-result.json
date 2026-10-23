@@ -1,0 +1,32 @@
+{
+  "phase": "P3e real EDRV bounded physical baseline",
+  "passed": true,
+  "candidate_sha256": "03af506dad24fe31060aed037fa5b6c7246d7d4e5c0a6cf189fc079e888973d1",
+  "peer_tx": 64,
+  "peer_rx": 64,
+  "up2": {
+    "rc": "0",
+    "clean": "1",
+    "nonce": "0xffffffffce3f922b",
+    "rx": "64",
+    "submitted": "64",
+    "tx": "64",
+    "fcs": "64",
+    "rxerr": "0",
+    "txerr": "0",
+    "fatal": "0",
+    "drop": "1",
+    "mac": "0xc003",
+    "stop": "0x0/0x0/0x0/0x0/0x0/0x0",
+    "lease": "0/0"
+  },
+  "cleanup": true,
+  "micad": {
+    "MainPID": "328",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "boot_id": "6974ac40-f3a2-4433-a5b8-11ec4318248f",
+  "error": null,
+  "limit": "UP2 RX FCS bytes checked; no bad-FCS wire injection/TX-FCS capture, MN/CN, IRQ/throughput/realtime certification"
+}

@@ -21,6 +21,9 @@ enum { TIMER_PROBE = 3U };
 #ifdef M7_POWERLINK_ETH_PROBE
 enum { ETH_PROBE = 4U };
 #endif
+#ifdef M7_POWERLINK_EDRV_PROBE
+enum { EDRV_PROBE = 5U };
+#endif
 #define APP_ERROR 0xffffffffU
 static M7PowerlinkSnapshot snapshot;
 static U8 ownerStack[0x8000] __attribute__((aligned(16)));
@@ -55,6 +58,20 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
             return; /* Do not call a blocking RTOS API in an invalid context. */
         }
         if (command) {
+#ifdef M7_POWERLINK_EDRV_PROBE
+            if (command == EDRV_PROBE) {
+                M7EdrvProbeResult edrv;
+                PRT_Printf("[plk-edrv-probe] BEGIN bounded diagnostic; no MN startup\n");
+                result = m7_edrv_probe(&edrv);
+                lock = PRT_HwiLock();
+                snapshot.edrv = edrv; snapshot.result = result;
+                snapshot.running = 0; snapshot.completed = snapshot.submitted;
+                if (!edrv.clean) { snapshot.ready = 0; snapshot.runtimeError = APP_ERROR; }
+                PRT_HwiRestore(lock);
+                PRT_Printf("[plk-edrv-probe] END rc=%u clean=%u rx=%u tx=%u fcs=%u\n",
+                    result, edrv.clean, edrv.received, edrv.completed, edrv.fcs);
+            } else {
+#endif
 #ifdef M7_POWERLINK_ETH_PROBE
             if (command == ETH_PROBE) {
                 M7EthProbeResult eth;
@@ -108,6 +125,9 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
 #ifdef M7_POWERLINK_ETH_PROBE
             }
 #endif
+#ifdef M7_POWERLINK_EDRV_PROBE
+            }
+#endif
         }
         result = PRT_TaskDelay(2U);
         if (result) {
@@ -155,6 +175,9 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
 #ifdef M7_POWERLINK_ETH_PROBE
     int ethStatus = 0;
 #endif
+#ifdef M7_POWERLINK_EDRV_PROBE
+    int edrvStatus = 0;
+#endif
     M7PowerlinkSnapshot out;
     char reply[384];
     uintptr_t lock;
@@ -175,6 +198,10 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
         else if (matches(data, length, "PLK eth-probe")) command = ETH_PROBE;
         else if (matches(data, length, "PLK eth-status")) ethStatus = 1;
 #endif
+#ifdef M7_POWERLINK_EDRV_PROBE
+        else if (matches(data, length, "PLK edrv-probe")) command = EDRV_PROBE;
+        else if (matches(data, length, "PLK edrv-status")) edrvStatus = 1;
+#endif
         else if (!matches(data, length, "PLK status")) error = "invalid-command";
     }
     lock = PRT_HwiLock();
@@ -186,6 +213,9 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
 #endif
 #ifdef M7_POWERLINK_ETH_PROBE
         else if (command == ETH_PROBE && snapshot.mn.state != M7_MN_COLD) error = "wrong-state";
+#endif
+#ifdef M7_POWERLINK_EDRV_PROBE
+        else if (command == EDRV_PROBE && snapshot.mn.state != M7_MN_COLD) error = "wrong-state";
 #endif
         else if ((command == ENV_INIT && snapshot.mn.state != M7_MN_COLD) ||
                  (command == ENV_EXIT && snapshot.mn.state != M7_MN_IDLE)) error = "wrong-state";
@@ -218,6 +248,15 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
         out.eth.configured.macIrq, out.eth.configured.dmaIrq,
         out.eth.stopped.mac, out.eth.stopped.tx, out.eth.stopped.rx, out.eth.stopped.dma,
         out.eth.stopped.macIrq, out.eth.stopped.dmaIrq, out.eth.leaseBefore, out.eth.leaseAfter);
+#endif
+#ifdef M7_POWERLINK_EDRV_PROBE
+    else if (edrvStatus) bytes = snprintf(reply, sizeof(reply),
+        "PLK UP2 EDRV rc=%u clean=%u nonce=0x%x rx=%u submitted=%u tx=%u fcs=%u rxerr=%u txerr=%u fatal=%u drop=%u mac=0x%x stop=0x%x/0x%x/0x%x/0x%x/0x%x/0x%x lease=%u/%u\n",
+        out.edrv.result, out.edrv.clean, out.edrv.nonce, out.edrv.received,
+        out.edrv.submitted, out.edrv.completed, out.edrv.fcs, out.edrv.rxErrors,
+        out.edrv.txErrors, out.edrv.dmaFatal, out.edrv.dropped, out.edrv.active.mac,
+        out.edrv.stopped.mac, out.edrv.stopped.tx, out.edrv.stopped.rx, out.edrv.stopped.dma,
+        out.edrv.stopped.macIrq, out.edrv.stopped.dmaIrq, out.edrv.leaseBefore, out.edrv.leaseAfter);
 #endif
     else bytes = snprintf(reply, sizeof(reply),
         "PLK UP2 ready=%u owner=%u pending=%u running=%u seq=%u done=%u cmd=%u rc=0x%x runtime=0x%x state=%u nmt=0x%x processes=%llu events=%llu mode=software-only\n",

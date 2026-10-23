@@ -1,5 +1,25 @@
 # 项目交接记录（2026-09-23）
 
+2026-10-23 最新入口：P3e真实EDRV隔离有限物理帧/FCS/停止归还全部通过；用户明确批准ETH2↔ETH3隔离回环及有限测试帧。
+新增m7_edrv_probe.c/h/codec、0017/defaultOFF/UP2-only、累计COLD显式edrv-probe/edrv-status，保留旧timer/PHY/全部累计外设。
+使用现有真实EDRV+target，未改EDRV/BSP核心、未oplk_initialize/create/MNreset、高精度timer租用；freecounter仅派生每轮标记。
+64B/1514B各32组请求应答，LinuxETH3 tx/rx各64；UP2 rx/submitted/txcallback/fcs各64、rxerr/txerr/fatal0，背景drop1。
+FCS直接校验真实DMA接收缓冲保留4字节；Linux逐字节核对完整应答并拒绝PACKET_OUTGOING/旧标记。无物理坏FCS注入/TXFCS抓取。
+MACc003/100half，ETH3实测100Half/linkyes/自身ANon/对端ANoff；stop六项0、lease0/0、clean1，MN始终COLD/processes/events0。
+本轮一次上板成功，无失败/重试/重启；原两UP最终Offline/CPU4/5PSCI OFF，LinuxETH2/3恢复100fullANon。
+临时client/hold/端点已清理，CAN/UART绑定寄存器/ETH1管理地址路由/CPU集合不变；工业worker done全0、没有CAN/UART发送。
+boot6974ac40-f3a2-4433-a5b8-11ec4318248f、micadPID328/restarts0全程不变，不开COM7/改DT/开机/正式ELF。
+真实probe+EDRV+target原生17场景含超时/坏FCS/坏载荷/nonce/重复/截断/TXerror/DMAfatal/安全不安全失败，真实owner邮箱3场景通过。
+C/Python独立codec向量通过；Windows/Linux各122Python、旧P3d/P3c/P3b/P0-P3a及parser/18生命周期/3codec回归通过，无sanitizer。
+构建根/home/openeuler/build/powerlink-edrv-p3e-20261023，UniProton-first/repro两个全新累计源树真实复编runtime一致。
+software/software-repro明确复制已验证P3d软件根，9旧核心对象不是本轮重编。换机从完整源码构建入口在新README。
+实测ELF03af506dad24fe31060aed037fa5b6c7246d7d4e5c0a6cf189fc079e888973d1，LFS归档；UP2runtime621356B SHA9b41c399...。
+image/BSS2148768B/8MiB/FSC512KiB/页表10/16；UP1runtime保持d4d80d02...、页表9/16。最终596旧函数保留/U0/LSE0/125旧SIMD无新增。
+缓存nonce显示ffffffffce3f922b为旧PRT格式化高位符号扩展，真实帧/READY低32位ce3f922b；不把计数器标记称密码学随机数。
+tests/powerlink-edrv-p3e-20261023/README.md为源码/证据/复建入口，当前清单SHA256SUMS；GitHub状态以最终报告为准。
+板端/root/m7-powerlink-edrv-p3e-20261023保留输入/结果、不AutoBoot；正式两ELF仍8bfb824b.../627545f5...，M6不变。
+只验收有限轮询EDRV物理基线，不等同POWERLINK MN/CN、IRQ收发、持续负载、最坏时延或M7完成；下一步MN reset/隔离CN需单独受控授权。
+
 2026-10-23 最新入口：获准临时ETH2移交后，P3d PHY/MAC forced100-half三轮与安全归还实测通过。
 首次旧候选73689e61...在TakeLease CASAL(0x7c20fe68/0x88e0fc64)异常，ESR02000000/EC0，未访问PHY/MAC。
 旧模板全局armv8.2，移植核心的cortex-a53约束没覆盖真实BSP；零lease，UP2异常后PSCI自行OFF但micad表仍Running。

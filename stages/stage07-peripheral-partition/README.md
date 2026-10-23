@@ -2,6 +2,11 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-10-23 最新[P3e EDRV隔离物理收发](tests/powerlink-edrv-p3e-20261023/README.md)：
+UP2直驱ETH2、Linux ETH3对端，64B/1514B各32组；接收/发送完成/FCS各64、错误0、停止六回读0/lease0通过。
+保持MN COLD，未运行CAN/UART worker；CPU4/5最终OFF，Linux两端恢复100full，管理口/micad/boot不变。
+122Python、17+3新增原生及旧累计回归、两全新累计树runtime一致。仅有界轮询EDRV基线，非MN/CN/实时性验收。
+
 2026-10-23 [P3d PHY/MAC100-half实测](tests/powerlink-eth-p3d-hw-20261023/README.md)：
 修正BSP默认ARMv8.2发出CASAL，最终LSE零；三轮UP2强制half/ANoff、ETH3匹配和安全停止/归还通过。
 未发测试帧/启动MN/重启整板；最终两UPOffline、LinuxETH2/3全双工、micad/管理网/工控资源保持；正式两ELF不变。

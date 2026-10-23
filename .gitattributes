@@ -52,3 +52,6 @@ stages/stage07-peripheral-partition/tests/powerlink-eth-p3d-hw-20261023/*.log -t
 stages/stage07-peripheral-partition/tests/powerlink-eth-p3d-hw-20261023/*.json whitespace=cr-at-eol
 stages/stage07-peripheral-partition/tests/powerlink-eth-p3d-hw-20261023/inputs-first/*.json whitespace=cr-at-eol
 stages/stage07-peripheral-partition/source/patches/uniproton/0016-rk3572-powerlink-eth-armv8a.patch whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/source/patches/uniproton/0017-rk3572-powerlink-edrv-probe.patch whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/powerlink-edrv-p3e-20261023/*.log -text whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/powerlink-edrv-p3e-20261023/*.json whitespace=cr-at-eol

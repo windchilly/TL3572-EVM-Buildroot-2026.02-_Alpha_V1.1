@@ -1,0 +1,79 @@
+{
+  "phase": "P3e bounded EDRV diagnostic SOFTWARE ONLY",
+  "images": [
+    {
+      "role": "a",
+      "elf_bytes": 678032,
+      "elf_sha256": "2568c7e7ef8e9a997400144e43d60b7c531a466fddfb448200559793186cdf6b",
+      "runtime_bytes": 360716,
+      "runtime_sha256": "d4d80d02fdac5d2f26db2deabeabb1147c54eab5fe355653c382fe1c17157290",
+      "image_used_including_noload_bytes": 969056,
+      "image_remaining_bytes": 7419552,
+      "fsc_pool_bytes": 524288,
+      "page_tables": {
+        "elf": "tl3572-m7-integrated-up-a.elf",
+        "table_pages": 9,
+        "required_bytes": 36864,
+        "available_bytes": 65536,
+        "fits": true,
+        "first_overflow_region": null
+      }
+    },
+    {
+      "role": "b",
+      "elf_bytes": 1169512,
+      "elf_sha256": "c55231307193d6740a6ab18aa8d884de2268a1e3f305f070a51a27925637770f",
+      "runtime_bytes": 621356,
+      "runtime_sha256": "9b41c399a687d2c29c40cdc0f016e581363acdbb0ea602d15735fe54e838b79a",
+      "image_used_including_noload_bytes": 2148768,
+      "image_remaining_bytes": 6239840,
+      "fsc_pool_bytes": 524288,
+      "page_tables": {
+        "elf": "tl3572-m7-integrated-up-b.elf",
+        "table_pages": 10,
+        "required_bytes": 40960,
+        "available_bytes": 65536,
+        "fits": true,
+        "first_overflow_region": null
+      }
+    }
+  ],
+  "complete_global_functions_retained_in_UP2": 596,
+  "all_hal_bsp_resolved": true,
+  "final_undefined_symbols": [],
+  "no_NEW_fp_simd_in_final_UP2": true,
+  "hardware_tested": false,
+  "inherited_simd_instruction_count": 125,
+  "inherited_simd_functions": [
+    "PRT_cvt",
+    "PRT_round",
+    "SecFormatDouble",
+    "SecFormatFloat",
+    "SecOutput",
+    "metal_default_log_handler",
+    "metal_io_init",
+    "modf",
+    "osVsnprintf",
+    "snprintf"
+  ],
+  "simd_limit": "Pinned M6/libmetal instructions remain; site/opcode matches formal UP2 except exactly two PRT_cvt literal-load relocations checked by registers+literal bytes. NOT an all-ELF no-FPU claim.",
+  "default": "dormant; no stack environment init/prepare/PHY/CNTP/NMT/TX",
+  "commands": [
+    "PLK status",
+    "PLK env-init",
+    "PLK env-exit",
+    "PLK timer-probe",
+    "PLK eth-probe",
+    "PLK edrv-probe",
+    "PLK edrv-status"
+  ],
+  "limits": "One owner, 32x64B+32x1514B request/reply, 20s bound, no MN/timer acquire; NOT realtime acceptance",
+  "diagnostic_functions": [
+    "m7_edrv_probe",
+    "m7_eth_probe",
+    "m7_timer_diag_reset",
+    "m7_timer_diag_snapshot",
+    "m7_timer_probe"
+  ],
+  "final_up2_lse_instructions": []
+}

@@ -3,6 +3,11 @@
 目录说明（2026-09-28）：本文已归入 `docs/project/`；文中的 `stages/` 等内联路径
 均相对仓库根目录。原厂文件新位置见 [目录规范](../operations/workspace-layout.md)。
 
+2026-10-23 外设阶段最新进展：UP2/ETH2 POWERLINK适配的有界EDRV物理基线通过，
+100M half下64B/1514B各32组请求应答，RX/TX完成/FCS各64，安全停止并归还Linux。
+本轮仅隔离回环专用帧，未启动MN或真实设备控制，未改正式固件；M7.0仍按独立外设划分推进，不扩展2oo3。
+[完整证据与复建入口](../../stages/stage07-peripheral-partition/tests/powerlink-edrv-p3e-20261023/README.md)。
+
 文档版本：V1.5  
 编制日期：2026-09-14  
 最近验证：2026-09-21  

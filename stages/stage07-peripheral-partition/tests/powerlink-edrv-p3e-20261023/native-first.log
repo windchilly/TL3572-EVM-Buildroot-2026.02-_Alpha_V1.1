@@ -1,0 +1,65 @@
+P3e real EDRV/probe native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e real EDRV/probe fault native PASS
+P3e context native PASS
+P3e cumulative mailbox native PASS
+P3e cumulative mailbox native PASS
+P3e cumulative mailbox native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d no-frame probe native PASS
+P3d cumulative ETH+timer mailbox native PASS
+P3d cumulative ETH+timer mailbox native PASS
+P3d cumulative ETH+timer mailbox native PASS
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c actual target/timer/probe native PASS (mock IRQ, NOT physical IRQ proof)
+P3c timer mailbox native PASS
+P3c timer mailbox native PASS
+P3c timer mailbox native PASS
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+P3b real owner/mailbox PASS: no prepare/timer/PHY/TX
+INTEGRATED DISPATCH PASS: passive boot, classic/FD serialization, atomic group, independent workers, rerun, failure status
+P3b REAL FULL-STACK OWNER NATIVE PASS: 12 scenarios + UP1 denial, 100 environment cycles, zero hardware acquire
+P3c native timer 12 + mailbox 3 scenarios PASS; P3b regression PASS
+P3d native 8 probe + 3 cumulative mailbox scenarios PASS; P3c/P3b regressions PASS
+P3e real EDRV/probe/target 17 + mailbox 3 scenarios PASS; previous cumulative regressions PASS
+
+REMOTE_EXIT=0

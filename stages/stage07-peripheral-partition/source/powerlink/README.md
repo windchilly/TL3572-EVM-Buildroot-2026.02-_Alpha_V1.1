@@ -1,8 +1,13 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
-**P3d累计候选：休眠owner/完整栈 + 已实测timer诊断 + 三轮无DMA/帧PHY/MAC100-half实测**，
-不是已能上网运行的主站；EDRV物理帧、MN/CN互操作仍待验证。
+**P3e累计候选：休眠owner/完整栈 + 已实测timer/PHY诊断 + 有界真实EDRV物理帧/FCS与安全停止**，
+不是已运行的主站；MN/CN互操作、持续负载/实时性仍待验证。
+
+2026-10-23获准有限测试帧，ETH2由UP2自己驱动MAC/DMA/PHY，Linux ETH3仅作物理对端。
+`m7_edrv_probe.c/h`及0017提供COLD显式诊断，使用现有真实EDRV/target，不改旧EDRV/BSP，不启动MN/高精度timer。
+64B/1514B各32组，接收/发送完成/FCS各64、错误0、安全停止/归还通过；17+3新原生场景、122Python及旧回归通过。
+[实测/源码/换机复建入口](../../tests/powerlink-edrv-p3e-20261023/README.md)。只按本轮有限帧授权发送，不扩大至MN/工业控制。
 
 2026-10-23修正BSP继承ARMv8.2导致的CASAL异常，0016追加实际BSP ARMv8-A约束/最终ELF LSE拒绝审计。
 旧P1-P3c/P3d初版不能执行EDRV新路径；当前三轮half/ANoff及安全归还通过、无测试帧/整板重启。
