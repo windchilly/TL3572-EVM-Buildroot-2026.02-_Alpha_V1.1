@@ -9,6 +9,7 @@ def inputs():
               ('SHA256SUMS', 'github-verification.log') and '__pycache__' not in x.parts]
     files += [STAGE / 'tests/run_powerlink_edrv_probe_native.sh', STAGE / 'tests/board/up-b-m7-plk-edrv.conf']
     files += [REPO / 'docs/project/migration-plan.md']
+    files += [STAGE / 'build/prepare_m7_powerlink.py']
     return sorted(set(files), key=lambda x: x.relative_to(REPO).as_posix())
 
 if __name__ == '__main__':

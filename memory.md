@@ -17,6 +17,7 @@ software/software-repro明确复制已验证P3d软件根，9旧核心对象不�
 image/BSS2148768B/8MiB/FSC512KiB/页表10/16；UP1runtime保持d4d80d02...、页表9/16。最终596旧函数保留/U0/LSE0/125旧SIMD无新增。
 缓存nonce显示ffffffffce3f922b为旧PRT格式化高位符号扩展，真实帧/READY低32位ce3f922b；不把计数器标记称密码学随机数。
 tests/powerlink-edrv-p3e-20261023/README.md为源码/证据/复建入口，当前清单SHA256SUMS；GitHub状态以最终报告为准。
+GitHub首次精确稀疏检出403SHA均匹配，旧清单漏列已有prepare_m7_powerlink.py导致测试导入失败；已补显式输入，首次日志保留，不影响实板结果。
 板端/root/m7-powerlink-edrv-p3e-20261023保留输入/结果、不AutoBoot；正式两ELF仍8bfb824b.../627545f5...，M6不变。
 只验收有限轮询EDRV物理基线，不等同POWERLINK MN/CN、IRQ收发、持续负载、最坏时延或M7完成；下一步MN reset/隔离CN需单独受控授权。
 

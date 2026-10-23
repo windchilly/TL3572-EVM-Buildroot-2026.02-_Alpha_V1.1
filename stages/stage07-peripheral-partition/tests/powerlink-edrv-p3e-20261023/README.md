@@ -95,4 +95,6 @@ python3 -m unittest discover -s "$stage/tests" -p 'test_*.py' -v
 
 服务器`delivery/`按本目录SHA256SUMS保存完整输入/源码/脚本/候选/证据，根README为入口；
 历史清单须到历史commit核对。GitHub后验日志不列入自身清单，最终上传状态以最终报告为准。
+首次GitHub精确稀疏检出403项SHA均匹配，但发现旧清单漏列已在仓库的`build/prepare_m7_powerlink.py`，导致测试导入失败；
+[首次记录](github-verification-first.log)保留。当前清单显式补齐准备脚本，后验完整重测记录见`github-verification.log`。
 板端保留临时输入/结果但无AutoBoot注册。下一步可准备受控MN reset/停止及隔离CN互操作，须单独授权，不能直接控制真实伺服。
