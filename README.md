@@ -1,6 +1,11 @@
 # TL3572 / RK3572：openEuler + MICA + UniProton
 
 本仓库保存评估板资料、Stage01–Stage07 的源码/配置、正式阶段记录，以及换机恢复入口。
+2026-10-23 最新[P3h单次NMT/真实FSC/安全归还实板通过](stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-hw-20261023/README.md)：
+新授权下固定候选仅一次reset→NotActive→SwitchOff，rc0/clean1；真实堆峰543648B、峰值余量504896B，CPU4/5 OFF后证明/归还Linux通过。
+boot/micad/管理口/正式固件不变，无重启或CAN/UART发送；窗口已用完，不代表持续MN、真实CN、PDO/SDO或周期性能通过。
+以下为历史检查点；其中“当前/未部署/待授权”不覆盖本条最新硬件结果。
+
 2026-10-23 当前[P3h独立复测入口/真实堆检查准备](stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-runner-20261023/README.md)：
 固定同一候选，新窗口/许可/永久单次标记，增加COLD可用堆与停核实际峰值门槛；203Python、双编译器cache/FSC布局及旧原生回归通过。
 本软件阶段未连接或部署板卡，不改固件；已另问隔离单次NMT窗口，许可与归档门槛满足前不执行。
@@ -10,7 +15,7 @@ P3g失败后获新授权重启一次，Linux ETH2/3已恢复；UP2显式NMT候�
 2026-10-23 当前[P3g单次NMT实板失败/保留现场](stages/stage07-peripheral-partition/tests/powerlink-nmt-p3g-hw-20261023/README.md)：
 获准单次reset后在ResetCommunication故障，尚未NotActive/SwitchOff；真实512KiB共用堆剩148920B，小于TX PDO映射所需162560B。
 已用交叉编译核实布局；独立CurrentEL检查器修正后169Python通过，不是实板通过。先保留资源，后另获准重启恢复；原失败结果保持。
-下列各“本轮”描述是历史检查点，当前状态以上述故障记录为准；正式固件仍未改变。
+下列各“本轮”描述是历史检查点，当前状态以页首P3h通过记录为准；正式固件仍未改变。
 2026-10-23 最新[P3g独立板端runner/停核快照准备](stages/stage07-peripheral-partition/tests/powerlink-nmt-p3g-runner-20261023/README.md)：
 固定同一候选，补独立NMT授权/单次窗口/严格命令及收尾门槛，native与AArch64的23项ABI布局一致、168Python及旧原生回归通过。
 先停核证明再rm/归还Linux，未知状态保留资源不重试；本轮未连接或部署板卡，已另询问隔离NMT reset许可，非硬件验收。

@@ -1,0 +1,72 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+P3h SCOPE: ONE reset -> NotActive -> SwitchOff; real FSC pre/post proof; no continuous MN/CN/test frames/CAN/UART/boot/reboot
+BEFORE {"boot": "cd4f03d6-005d-473d-b6ce-0cc745314a08", "management": {"address": [["inet", "192.168.2.141", 24, "global"], ["inet6", "fe80::d414:36ff:fe8b:78f0", 64, "link"]], "cpus": "0-3,6-7\n", "driver": "/sys/bus/platform/drivers/rk_gmac-dwmac", "routes": "default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 \n192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 \n192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 \n"}, "micad": {"ActiveState": "active", "MainPID": "325", "NRestarts": "0"}, "peripherals": {"drivers": {"26500000.serial": "dw-apb-uart", "2ab10000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "registers": {"0x2607400c": 37017, "0x26074010": 2457, "0x26074018": 4, "0x2608203c": 3536, "0x2608404c": 153, "0x2608608c": 56576, "0x26090374": 31488, "0x26090404": 387, "0x26090408": 387, "0x2609040c": 33, "0x26090410": 0, "0x26090414": 279, "0x26090418": 11, "0x2609041c": 768, "0x26090420": 768, "0x26090424": 768, "0x26090428": 768, "0x2609042c": 768, "0x26090430": 768, "0x26090434": 768, "0x26090438": 768, "0x26090808": 24512, "0x2609082c": 32768, "0x26090838": 32736, "0x2609083c": 37449, "0x26090840": 65468, "0x26090a2c": 0, "0x26090a38": 0, "0x26090a3c": 0, "0x26090a40": 0, "0x260b0320": 1, "0x260b0814": 16844, "0x260b0a14": 0, "0x2a601090": 0, "0x2a601094": 0, "0x2a601110": 286331264, "0x2a601114": 4009791488, "0x2a601210": 0, "0x2a601214": 0, "0x2a601310": 0, "0x2a601314": 0, "0x2a60149c": 2694881440, "0x2a6014a0": 2694881440, "0x2a6014a4": 2694881440, "0x2a6014b8": 2694881440, "0x2a60189c": 16843009, "0x2a6018a0": 16843009, "0x2a6018a4": 16843009, "0x2a6018b8": 16843009, "0x2a601c24": 1431655765, "0x2a601c28": 1431655765, "0x2a601c2c": 1431655765}}}
+POWER/ROOT HOLD PASS CRU42=0xf000
+REAL MMU {"budget_bytes": 65536, "mapped_units": 67, "rc": 0, "root": "0x7ca00000", "table_pages": 10, "tcr": "0x80003520", "used_bytes": 40960}
+LIVE COLD HEAP (NOT STOP PROOF) {"candidate_sha256": "ccfba235f8f3bcc79ab0c2a0e603b2d9cc01a7f3785985566660fb1672882ea8", "free_bytes": 1011024, "limit": "Scalar FSC counters only, not a heap traversal, fragmentation/whole-program leak proof or real-time guarantee.", "minimum_headroom_bytes": 262144, "minimum_initial_free_bytes": 767888, "model_stack_peak_bytes": 505744, "peak_headroom_bytes": 1011024, "phase": "COLD", "pool_bytes": 1048576, "pool_start": 2083115336, "scalars": {"g_memPeakUsage": 37520, "g_memStartAddr": 2083115336, "g_memTotalSize": 1048544, "g_memUsage": 37520}}
+PLK UP2 ACCEPTED seq=1
+PLK UP2 NMT rc=0 clean=1 stage=6 stack=0x0 reset=1 off=1 resetLoops=5 offLoops=1 reached=0x21c state=0 nmt=0x0 rx=0 tx=0 txdesc=0 rxerr=0 txerr=0 fatal=0 lease=0/0 timer=0/0
+[up-b boot=7 seq=1006] [boot] UP CPU5 entered
+[up-b boot=7 seq=1007] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=7 seq=1008] [boot] interrupt routing ready
+[up-b boot=7 seq=1009] [boot] scheduler task entered
+[up-b boot=7 seq=1010] [plk] dormant owner init rc=0; no PHY/timer/MN startup
+[up-b boot=7 seq=1011] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=7 seq=1012] [openamp] get rsctable 7c299530, size a64 
+[up-b boot=7 seq=1013] [openamp]: get vring0: da 7a0a0000
+[up-b boot=7 seq=1014] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=7 seq=1015] [openamp] tty task started
+[up-b boot=7 seq=1016] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=0 done=0 cmd=0 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1017] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[up-b boot=7 seq=1018] [openamp] ept ready
+[up-b boot=7 seq=1019] [boot] RPMsg ready
+[up-b boot=7 seq=1020] [plk] PLK UP2 ACCEPTED seq=1
+[up-b boot=7 seq=1021] [plk-nmt-probe] BEGIN bounded reset/NotActive/SwitchOff; isolated window required
+[up-b boot=7 seq=1022] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1023] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=7 seq=1024] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=7 seq=1025] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=7 seq=1026] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1027] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1028] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1029] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1030] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1031] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1032] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1033] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1034] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1035] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1036] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1037] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1038] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1039] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1040] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1041] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1042] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1043] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1044] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1045] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1046] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1047] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1048] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1049] [eth] PHY forced 100-half link ready; AN disabled, bmsr=0x794d
+[up-b boot=7 seq=1050] [plk-edrv] started 100-half polling, DMA=0x7ca10000 bytes=61696; not MN runtime
+[up-b boot=7 seq=1051] [plk-edrv] QUIESCED reset=1; aborted TX is not completion
+[up-b boot=7 seq=1052] [plk-nmt-probe] END rc=0 clean=1 reached=0x21c stage=6
+[up-b boot=7 seq=1053] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=1 done=1 cmd=7 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=6 events=6 mode=bounded-NMT-diagnostic
+[up-b boot=7 seq=1054] [plk] PLK UP2 NMT rc=0 clean=1 stage=6 stack=0x0 reset=1 off=1 resetLoops=5 offLoops=1 reached=0x21c state=0 nmt=0x0 rx=0 tx=0 txdesc=0 rxerr=0 txerr=0 fatal=0 lease=0/0 timer=0/0
+[up-b boot=7 seq=1055] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+P3h PRIVATE STOPPED PROOF {"cache": {"cmd": 7, "done": 1, "owner": 6, "pending": 0, "rc": 0, "ready": 1, "running": 0, "runtime": 0, "seq": 1}, "candidate_sha256": "ccfba235f8f3bcc79ab0c2a0e603b2d9cc01a7f3785985566660fb1672882ea8", "ethLease": 0, "exception": {"cause": 0, "elr": 0, "esr": 0}, "heap": {"candidate_sha256": "ccfba235f8f3bcc79ab0c2a0e603b2d9cc01a7f3785985566660fb1672882ea8", "free_bytes": 1009960, "limit": "Scalar FSC counters only, not a heap traversal, fragmentation/whole-program leak proof or real-time guarantee.", "minimum_headroom_bytes": 262144, "minimum_initial_free_bytes": 767888, "model_stack_peak_bytes": 505744, "peak_headroom_bytes": 504896, "phase": "STOPPED", "pool_bytes": 1048576, "pool_start": 2083115336, "scalars": {"g_memPeakUsage": 543648, "g_memStartAddr": 2083115336, "g_memTotalSize": 1048544, "g_memUsage": 38584}}, "heap_comparison": {"limit": "Usage delta recorded, not an exact leak verdict; RTOS/RPMsg background allocation is included.", "peak_bytes": 543648, "peak_headroom_bytes": 504896, "used_delta_bytes": 1064}, "lifecycle": {"active": {"dma": 0, "dmaIrq": 0, "mac": 49155, "macIrq": 0, "rx": 527361, "tx": 524289}, "clean": 1, "dropped": 0, "fatal": 0, "final": {"events": 6, "lastError": 0, "lastEvent": 16, "nmtState": 0, "owner": 6, "processes": 6, "state": 0}, "initialized": {"events": 0, "lastError": 0, "lastEvent": 0, "nmtState": 0, "owner": 6, "processes": 0, "state": 1}, "leaseAfter": 0, "leaseBefore": 0, "loops": 6, "prepared": {"events": 0, "lastError": 0, "lastEvent": 0, "nmtState": 0, "owner": 6, "processes": 0, "state": 2}, "result": 0, "rx": 0, "rxErrors": 0, "stackError": 0, "stage": 6, "stopped": {"dma": 0, "dmaIrq": 0, "mac": 0, "macIrq": 0, "rx": 0, "tx": 0}, "timerAfter": 0, "timerBefore": 0, "timerCallbacks": 0, "timerFinal": {"active": 0, "affinity": 2147483905, "cntp": 2, "cntv": 1, "config": 1364459520, "counter": 103540835046, "cpuControl": 1, "enabled": 134266879, "frequency": 24000000, "group": 0, "interrupts": 0, "level": 4, "maxIrqLate": 0, "pending": 0, "priority27": 0, "priority30": 160, "ticks": 2484, "typer": 64749}, "timerInitial": {"active": 0, "affinity": 2147483905, "cntp": 0, "cntv": 1, "config": 1364459520, "counter": 103483875599, "cpuControl": 1, "enabled": 134266879, "frequency": 24000000, "group": 0, "interrupts": 0, "level": 4, "maxIrqLate": 0, "pending": 0, "priority27": 0, "priority30": 160, "ticks": 112, "typer": 64749}, "timerIrqs": 0, "tx": 0, "txDescriptors": 0, "txErrors": 0}, "limit": "Stopped-core cache/real FSC metadata, not controller MMIO, fragmentation or real-time proof. M6 TCB/exception offsets remain pinned.", "mn": {"events": 6, "lastError": 0, "lastEvent": 16, "nmtState": 0, "owner": 6, "processes": 6, "state": 0}, "nmt": {"offLoops": 1, "offSubmitted": 1, "reached": 540, "resetLoops": 5, "resetSubmitted": 1}, "other_probes_untouched": true, "snapshot_sha256": "39b81245a1ccfbedd2c55868cf2a729286dc08e36ff2c35c28c5184606b9f690", "threads": [{"allocated_stack": 4096, "id": 8, "name": "rpmsg_tty_task"}, {"allocated_stack": 4096, "id": 9, "name": "rpmsg_listen_task"}]}
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CLEANUP PASS CPU4/5 OFF, Linux full, original clients Offline; management/peripherals unchanged
+OVERALL P3h PASS bounded NMT/real FSC/stop; NOT continuous MN/CN/realtime acceptance
+
+BOARD_EXIT_CODE=0

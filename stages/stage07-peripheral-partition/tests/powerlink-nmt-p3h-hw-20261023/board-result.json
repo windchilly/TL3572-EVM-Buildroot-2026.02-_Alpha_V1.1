@@ -1,0 +1,249 @@
+{
+  "phase": "P3h bounded NMT hardware window",
+  "passed": true,
+  "candidate_sha256": "ccfba235f8f3bcc79ab0c2a0e603b2d9cc01a7f3785985566660fb1672882ea8",
+  "submitted": true,
+  "completion": {
+    "owner": {
+      "ready": "1",
+      "owner": "6",
+      "pending": "0",
+      "running": "0",
+      "seq": "1",
+      "done": "1",
+      "cmd": "7",
+      "rc": "0x0",
+      "runtime": "0x0",
+      "state": "0",
+      "nmt": "0x0",
+      "processes": "6",
+      "events": "6",
+      "mode": "bounded-NMT-diagnostic"
+    },
+    "result": {
+      "rc": "0",
+      "clean": "1",
+      "stage": "6",
+      "stack": "0x0",
+      "reset": "1",
+      "off": "1",
+      "resetLoops": "5",
+      "offLoops": "1",
+      "reached": "0x21c",
+      "state": "0",
+      "nmt": "0x0",
+      "rx": "0",
+      "tx": "0",
+      "txdesc": "0",
+      "rxerr": "0",
+      "txerr": "0",
+      "fatal": "0",
+      "lease": "0/0",
+      "timer": "0/0"
+    }
+  },
+  "heap_before": {
+    "candidate_sha256": "ccfba235f8f3bcc79ab0c2a0e603b2d9cc01a7f3785985566660fb1672882ea8",
+    "phase": "COLD",
+    "pool_start": 2083115336,
+    "pool_bytes": 1048576,
+    "scalars": {
+      "g_memTotalSize": 1048544,
+      "g_memUsage": 37520,
+      "g_memPeakUsage": 37520,
+      "g_memStartAddr": 2083115336
+    },
+    "free_bytes": 1011024,
+    "peak_headroom_bytes": 1011024,
+    "model_stack_peak_bytes": 505744,
+    "minimum_initial_free_bytes": 767888,
+    "minimum_headroom_bytes": 262144,
+    "limit": "Scalar FSC counters only, not a heap traversal, fragmentation/whole-program leak proof or real-time guarantee."
+  },
+  "private_stopped": {
+    "cache": {
+      "ready": 1,
+      "pending": 0,
+      "running": 0,
+      "seq": 1,
+      "done": 1,
+      "cmd": 7,
+      "rc": 0,
+      "runtime": 0,
+      "owner": 6
+    },
+    "mn": {
+      "state": 0,
+      "owner": 6,
+      "lastError": 0,
+      "lastEvent": 16,
+      "nmtState": 0,
+      "processes": 6,
+      "events": 6
+    },
+    "lifecycle": {
+      "result": 0,
+      "clean": 1,
+      "stage": 6,
+      "stackError": 0,
+      "loops": 6,
+      "leaseBefore": 0,
+      "leaseAfter": 0,
+      "timerBefore": 0,
+      "timerAfter": 0,
+      "rx": 0,
+      "tx": 0,
+      "txDescriptors": 0,
+      "dropped": 0,
+      "rxErrors": 0,
+      "txErrors": 0,
+      "fatal": 0,
+      "timerIrqs": 0,
+      "timerCallbacks": 0,
+      "initialized": {
+        "state": 1,
+        "owner": 6,
+        "lastError": 0,
+        "lastEvent": 0,
+        "nmtState": 0,
+        "processes": 0,
+        "events": 0
+      },
+      "prepared": {
+        "state": 2,
+        "owner": 6,
+        "lastError": 0,
+        "lastEvent": 0,
+        "nmtState": 0,
+        "processes": 0,
+        "events": 0
+      },
+      "final": {
+        "state": 0,
+        "owner": 6,
+        "lastError": 0,
+        "lastEvent": 16,
+        "nmtState": 0,
+        "processes": 6,
+        "events": 6
+      },
+      "active": {
+        "mac": 49155,
+        "tx": 524289,
+        "rx": 527361,
+        "dma": 0,
+        "macIrq": 0,
+        "dmaIrq": 0
+      },
+      "stopped": {
+        "mac": 0,
+        "tx": 0,
+        "rx": 0,
+        "dma": 0,
+        "macIrq": 0,
+        "dmaIrq": 0
+      },
+      "timerInitial": {
+        "counter": 103483875599,
+        "ticks": 112,
+        "affinity": 2147483905,
+        "interrupts": 0,
+        "maxIrqLate": 0,
+        "level": 4,
+        "frequency": 24000000,
+        "cntp": 0,
+        "cntv": 1,
+        "enabled": 134266879,
+        "pending": 0,
+        "active": 0,
+        "group": 0,
+        "config": 1364459520,
+        "priority30": 160,
+        "priority27": 0,
+        "typer": 64749,
+        "cpuControl": 1
+      },
+      "timerFinal": {
+        "counter": 103540835046,
+        "ticks": 2484,
+        "affinity": 2147483905,
+        "interrupts": 0,
+        "maxIrqLate": 0,
+        "level": 4,
+        "frequency": 24000000,
+        "cntp": 2,
+        "cntv": 1,
+        "enabled": 134266879,
+        "pending": 0,
+        "active": 0,
+        "group": 0,
+        "config": 1364459520,
+        "priority30": 160,
+        "priority27": 0,
+        "typer": 64749,
+        "cpuControl": 1
+      }
+    },
+    "nmt": {
+      "resetSubmitted": 1,
+      "offSubmitted": 1,
+      "resetLoops": 5,
+      "offLoops": 1,
+      "reached": 540
+    },
+    "other_probes_untouched": true,
+    "ethLease": 0,
+    "exception": {
+      "cause": 0,
+      "elr": 0,
+      "esr": 0
+    },
+    "heap": {
+      "candidate_sha256": "ccfba235f8f3bcc79ab0c2a0e603b2d9cc01a7f3785985566660fb1672882ea8",
+      "phase": "STOPPED",
+      "pool_start": 2083115336,
+      "pool_bytes": 1048576,
+      "scalars": {
+        "g_memTotalSize": 1048544,
+        "g_memUsage": 38584,
+        "g_memPeakUsage": 543648,
+        "g_memStartAddr": 2083115336
+      },
+      "free_bytes": 1009960,
+      "peak_headroom_bytes": 504896,
+      "model_stack_peak_bytes": 505744,
+      "minimum_initial_free_bytes": 767888,
+      "minimum_headroom_bytes": 262144,
+      "limit": "Scalar FSC counters only, not a heap traversal, fragmentation/whole-program leak proof or real-time guarantee."
+    },
+    "threads": [
+      {
+        "name": "rpmsg_tty_task",
+        "id": 8,
+        "allocated_stack": 4096
+      },
+      {
+        "name": "rpmsg_listen_task",
+        "id": 9,
+        "allocated_stack": 4096
+      }
+    ],
+    "candidate_sha256": "ccfba235f8f3bcc79ab0c2a0e603b2d9cc01a7f3785985566660fb1672882ea8",
+    "snapshot_sha256": "39b81245a1ccfbedd2c55868cf2a729286dc08e36ff2c35c28c5184606b9f690",
+    "limit": "Stopped-core cache/real FSC metadata, not controller MMIO, fragmentation or real-time proof. M6 TCB/exception offsets remain pinned.",
+    "heap_comparison": {
+      "used_delta_bytes": 1064,
+      "peak_bytes": 543648,
+      "peak_headroom_bytes": 504896,
+      "limit": "Usage delta recorded, not an exact leak verdict; RTOS/RPMsg background allocation is included."
+    }
+  },
+  "cleanup": true,
+  "boot_id": "cd4f03d6-005d-473d-b6ce-0cc745314a08",
+  "micad": {
+    "MainPID": "325",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "error": null
+}

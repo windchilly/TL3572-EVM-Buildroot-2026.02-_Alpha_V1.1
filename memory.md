@@ -1,5 +1,24 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-02 继续上次中断的P3h硬件证据归档/同步；不连接板卡、不重新执行已消耗窗口。
+实板测试日期仍2026-10-23，不能把下方历史boot/服务/资源状态描述成11月2日的新快照；本次仅离线复核/GitHub新检出与构建服务器delivery。
+同步完成状态和验证日志以tests/powerlink-nmt-p3h-hw-20261023及最终报告为准，用户新增reports/结构/硬件资料保持未动。
+
+2026-10-23 最新硬件入口：用户新确认隔离回环并允许一次P3h复测；该窗口已执行一次且PASS，不能重跑。
+tests/powerlink-nmt-p3h-hw-20261023/README.md为最新结果；执行前提交5830ecf8048e029ef9fae3b3bcc47a5386587c3f，原603SHA与21固定输入预检通过。
+候选仍ccfba235...未重编/改动，新root/root/m7-powerlink-nmt-p3h-20261023/临时up-b-m7-plk-nmt-p3h，上传21项逐一读回SHA一致。
+永久ATTEMPTED已消费，仅一次PLK nmt-probe：reset/off1/1，resetLoops5/offLoops1，reached0x21c，rc0/clean1/stage6，process/events6/6，最终COLD/GsOff。
+真实FSC总量1048544/池1MiB；COLD used/peak37520/free1011024，停止后used38584/peak543648/free1009960，峰值余量504896>256KiB。
+前后used差1064包含RTOS/RPMsg背景分配，不是严格无泄漏/碎片/最坏实时证明；此值不是宿主模型636816峰。完整PDO配置未裁减。
+完成证明后只stop新client一次；独立PSCI CPU4/5 OFF、1504B私有缓存与RPMsg一致、异常0/ETHlease0、真实TTY/listen栈4096合格后才rm/归还Linux/卸载hold。
+cache原始1504B hex后验只读SHA39b81245a1ccfbedd2c55868cf2a729286dc08e36ff2c35c28c5184606b9f690，与原停止报告相同；ATTEMPTED原文和全部日志/实际JSON已归档。
+RX/TX/描述符/硬件错误/timerIRQ回调0，activeMACc003半双工，stop六回读0、CNTP_CTL2/PPI30静默；不代表持续MN/CN/PDO/SDO周期通信或线路绝对无背景帧。
+最终boot仍cd4f03d6-005d-473d-b6ce-0cc745314a08，micadPID325/NRestarts0/active，原两UP Offline/CPU4、5OFF/新client端点hold清理/Linux两端100FullANon/linkyes。
+管理口地址路由/工控快照不变、CAN全DOWN/failed0/taint4096无Oops；板端原M6 SHA9c5e55a2.../3357eb97...不变，本地正式M7两ELF不变，未重启/开COM7/发CAN或串口/专用测试帧。
+本次授权窗口已结束。后续先软件设计有界MN运行/安全停机，再另问隔离发帧窗口，真实CN及实时验收仍未完成，不自动持续运行或连接执行器。
+新离线verify_powerlink_p3h_hw_checkpoint.py不访问板卡，校验实际21回执/rawcache/真实堆/恢复及203项/真实源码补丁；新清单继承源码，旧清单不重生成。同步状态以最终报告为准。
+以下“当前/未上板/等待许可/失败现场”等均为历史时序，不覆盖本条最新P3h实板PASS和已归还状态。
+
 2026-10-23 最新软件入口：P3h独立runner/真实FSC门槛/ABI准备通过，本软件阶段未连接/上传/部署板卡或接管/reset/发帧/重启。
 tests/powerlink-nmt-p3h-runner-20261023/README.md为当前软件入口；新增run_powerlink_nmt_p3h_probe.py/p3h_checks/p3h_snapshot/conf，不改旧P3g runner/固定SHA/root/ATTEMPTED。
 候选仍ccfba235...原P3h ELF，无固件/核心修改或重编；新root/root/m7-powerlink-nmt-p3h-20261023/client up-b-m7-plk-nmt-p3h/AutoBoot=no，本软件阶段未在板创建。

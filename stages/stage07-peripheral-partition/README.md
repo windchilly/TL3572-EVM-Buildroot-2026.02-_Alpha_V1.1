@@ -2,6 +2,11 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-10-23 最新[P3h单次NMT与真实堆实板通过](tests/powerlink-nmt-p3h-hw-20261023/README.md)：
+独立授权的一次reset/off均1，实际NotActive→GsOff/退出通过，真实FSC峰543648B/余504896B；停核证明后清理并归还Linux100Full。
+CPU4/5 OFF、boot/micad/工控/正式固件保持，无重启；已消耗窗口，不重复执行。持续MN/真实CN及周期性能仍未验收。
+以下“未上板/待许可/失败”等为历史记录，不覆盖本条最新P3h结果。
+
 2026-10-23 当前[P3h独立runner/真实堆门槛软件准备](tests/powerlink-nmt-p3h-runner-20261023/README.md)：
 新root/client/许可开关不改旧P3g窗口；native/AArch64缓存1504B与FSC头32B一致，203Python/旧原生通过，21精确运行输入已列。
 本软件阶段不连接/部署板卡、不改ELF；后续另获隔离单次NMT许可并完成归档门槛后才执行，非MN实板通过。

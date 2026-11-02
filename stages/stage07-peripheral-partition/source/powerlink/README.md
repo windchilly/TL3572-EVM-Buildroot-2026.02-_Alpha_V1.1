@@ -1,8 +1,10 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
-**P3g累计软件候选：保留P3f全部功能 + 有界NMT reset/NotActive/SwitchOff软件诊断**，
-不是已运行的主站；MN/CN互操作、持续负载/实时性仍待验证。
+**P3h累计候选：保留全部旧功能 + 完整PDO预算/首错修复 + 有界NMT诊断**。
+最新[P3h单次NMT实板](../../tests/powerlink-nmt-p3h-hw-20261023/README.md)通过：reset/NotActive/SwitchOff、真实FSC峰543648B/余504896B及安全归还。
+不是持续运行的主站；MN/CN互操作、PDO/SDO通信、持续负载/实时性仍待验证，单次授权已用完。
+以下“当前/未上板/待修复”等为历史检查点，不覆盖本条最新结果。
 
 当前[P3h独立复测入口准备](../../tests/powerlink-nmt-p3h-runner-20261023/README.md)固定原候选不改ELF，
 新增COLD真实FSC可用堆/停止后峰值与256KiB余量门槛，双编译器ABI/203Python及旧原生通过。
