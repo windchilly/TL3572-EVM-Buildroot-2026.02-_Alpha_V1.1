@@ -20,7 +20,9 @@ enum { NMT_PROBE = 7U };
 #endif
 #ifdef M7_POWERLINK_MN_PROBE
 enum { MN_PROBE = 6U };
-#ifdef M7_POWERLINK_NMT_PROBE
+#ifdef M7_POWERLINK_CYCLE_PROBE
+#define STATUS_MODE "bounded-cycle-diagnostic"
+#elif defined(M7_POWERLINK_NMT_PROBE)
 #define STATUS_MODE "bounded-NMT-diagnostic"
 #else
 #define STATUS_MODE "GsOff-diagnostic"
@@ -42,6 +44,22 @@ static M7PowerlinkSnapshot snapshot;
 static U8 ownerStack[0x8000] __attribute__((aligned(16)));
 static TskHandle ownerTask;
 static uint32_t attempted, initError, inputActive;
+#ifdef M7_POWERLINK_CYCLE_PROBE
+enum { CYCLE_PROBE=8U };
+/* Separate versioned BSS; keep old M7PowerlinkSnapshot exactly 1504 bytes.
+ * Not exposed while core writes it. Never put this on a 4KiB TTY stack. */
+static M7CycleProbeResult cycleResult;
+static uint32_t cycleReady, cycleAttempted;
+int Rk3572PowerlinkCycleSnapshot(M7CycleProbeResult* out)
+{
+    uintptr_t lock;
+    int valid;
+    if (!out) return 0;
+    lock=PRT_HwiLock(); valid=cycleReady && !(snapshot.running && snapshot.command==CYCLE_PROBE);
+    if (valid) *out=cycleResult;
+    PRT_HwiRestore(lock); return valid;
+}
+#endif
 extern int send_message(unsigned char* message, int length);
 
 int Rk3572PowerlinkSnapshot(M7PowerlinkSnapshot* out)
@@ -71,6 +89,19 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
             return; /* Do not call a blocking RTOS API in an invalid context. */
         }
         if (command) {
+#ifdef M7_POWERLINK_CYCLE_PROBE
+            if (command==CYCLE_PROBE) {
+                PRT_Printf("[plk-cycle] BEGIN one-shot bounded MN, isolated window required\n");
+                result=m7_cycle_probe(&cycleResult);
+                lock=PRT_HwiLock();
+                snapshot.mn=cycleResult.lifecycle.final; snapshot.result=result;
+                snapshot.running=0; snapshot.completed=snapshot.submitted; cycleReady=1;
+                if (!cycleResult.lifecycle.clean) { snapshot.ready=0; snapshot.runtimeError=APP_ERROR; }
+                PRT_HwiRestore(lock);
+                PRT_Printf("[plk-cycle] END rc=%u clean=%u stage=%u tx=%u; one-shot consumed\n",
+                    result,cycleResult.lifecycle.clean,cycleResult.lifecycle.stage,cycleResult.lifecycle.tx);
+            } else {
+#endif
 #ifdef M7_POWERLINK_NMT_PROBE
             if (command == NMT_PROBE) {
                 M7NmtProbeResult probe;
@@ -175,6 +206,9 @@ static void Worker(uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d)
 #ifdef M7_POWERLINK_NMT_PROBE
             }
 #endif
+#ifdef M7_POWERLINK_CYCLE_PROBE
+            }
+#endif
         }
         result = PRT_TaskDelay(2U);
         if (result) {
@@ -216,6 +250,10 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
 {
     const char* error = NULL;
     uint32_t command = 0, accepted = 0;
+#ifdef M7_POWERLINK_CYCLE_PROBE
+    int cycleStatus=0;
+    static M7CycleProbeResult cycleOut;
+#endif
 #ifdef M7_POWERLINK_NMT_PROBE
     int nmtStatus = 0;
 #endif
@@ -245,6 +283,10 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
         }
         if (matches(data, length, "PLK env-init")) command = ENV_INIT;
         else if (matches(data, length, "PLK env-exit")) command = ENV_EXIT;
+#ifdef M7_POWERLINK_CYCLE_PROBE
+        else if (matches(data,length,"PLK cycle-probe")) command=CYCLE_PROBE;
+        else if (matches(data,length,"PLK cycle-status")) cycleStatus=1;
+#endif
 #ifdef M7_POWERLINK_NMT_PROBE
         else if (matches(data, length, "PLK nmt-probe")) command = NMT_PROBE;
         else if (matches(data, length, "PLK nmt-status")) nmtStatus = 1;
@@ -275,6 +317,10 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
     if (!error && command) {
         if (!snapshot.ready) error = "not-ready";
         else if (snapshot.pending || snapshot.running) error = "busy";
+#ifdef M7_POWERLINK_CYCLE_PROBE
+        else if (command==CYCLE_PROBE && cycleAttempted) error="cycle-consumed";
+        else if (command==CYCLE_PROBE && snapshot.mn.state!=M7_MN_COLD) error="wrong-state";
+#endif
 #ifdef M7_POWERLINK_NMT_PROBE
         else if (command == NMT_PROBE && snapshot.mn.state != M7_MN_COLD) error = "wrong-state";
 #endif
@@ -294,13 +340,30 @@ int Rk3572PowerlinkInput(const char* data, size_t length)
                  (command == ENV_EXIT && snapshot.mn.state != M7_MN_IDLE)) error = "wrong-state";
         else if (snapshot.submitted == UINT32_MAX) error = "sequence-exhausted";
         else {
+#ifdef M7_POWERLINK_CYCLE_PROBE
+            if (command==CYCLE_PROBE) { cycleAttempted=1; cycleReady=0; }
+#endif
             snapshot.command = command; ++snapshot.submitted;
             snapshot.pending = 1; accepted = snapshot.submitted;
         }
     }
+#ifdef M7_POWERLINK_CYCLE_PROBE
+    if (!error && cycleStatus) {
+        if (!cycleReady || (snapshot.running && snapshot.command==CYCLE_PROBE)) error="cycle-unavailable";
+        else cycleOut=cycleResult;
+    }
+#endif
     out = snapshot; PRT_HwiRestore(lock);
     if (error) bytes = snprintf(reply, sizeof(reply), "PLK UP2 ERROR %s\n", error);
     else if (accepted) bytes = snprintf(reply, sizeof(reply), "PLK UP2 ACCEPTED seq=%u\n", accepted);
+#ifdef M7_POWERLINK_CYCLE_PROBE
+    else if (cycleStatus) bytes=snprintf(reply,sizeof(reply),
+        "PLK UP2 CYCLE abi=%u bytes=%u rc=%u clean=%u stage=%u stack=0x%x reset=%u off=%u reached=0x%x loops=%u run=%u drain=%u tx=%u pending=%u stopCalls=%u trips=%u context=%u\n",
+        cycleOut.abi,cycleOut.bytes,cycleOut.lifecycle.result,cycleOut.lifecycle.clean,cycleOut.lifecycle.stage,
+        cycleOut.lifecycle.stackError,cycleOut.resetSubmitted,cycleOut.offSubmitted,cycleOut.reached,cycleOut.lifecycle.loops,
+        cycleOut.runLoops,cycleOut.drainLoops,cycleOut.lifecycle.tx,cycleOut.pending,cycleOut.stopCycleCalls,
+        cycleOut.watchdogTrips,cycleOut.contextValid);
+#endif
 #ifdef M7_POWERLINK_NMT_PROBE
     else if (nmtStatus) bytes = snprintf(reply, sizeof(reply),
         "PLK UP2 NMT rc=%u clean=%u stage=%u stack=0x%x reset=%u off=%u resetLoops=%u offLoops=%u reached=0x%x state=%u nmt=0x%x rx=%u tx=%u txdesc=%u rxerr=%u txerr=%u fatal=%u lease=%u/%u timer=%u/%u\n",

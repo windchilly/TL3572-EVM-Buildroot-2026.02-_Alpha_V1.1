@@ -2,6 +2,10 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+2026-11-02 最新[P3j有界生产诊断构建](../tests/powerlink-cycle-p3j-20261102/README.md)：
+`build_m7_powerlink_cycle_probe.sh`全量native/AArch64+18/4及累计原生，`build_m7_powerlink_cycle_probe_candidate.sh`在新累计树追加0021默认OFF/UP2-only一次性入口。
+两新根11对象/runtime一致，215Python/旧1504+新608 ABI/最终审计通过；TTY关键链2960+1024≤4096，非全程序栈峰值证明，不部署或授予硬件测试许可。
+
 2026-11-02 最新[P3i周期路径软件构建](../tests/powerlink-cycle-p3i-20261102/README.md)：
 `build_m7_powerlink_cycle.sh`完整重编native+AArch64再运行真实周期测试；两新根9产物一致，无runtime/ELF构建或板卡操作。
 可选同步通知修复并显式拒绝外部硬件配置；9原生场景/208Python通过，但owner进度保护未接入，不能生成运行候选。

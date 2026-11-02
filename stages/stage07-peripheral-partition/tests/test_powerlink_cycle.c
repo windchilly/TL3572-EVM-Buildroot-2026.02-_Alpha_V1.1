@@ -93,7 +93,10 @@ static uint32_t step(unsigned microseconds)
     }
     return m7_mn_process();
 }
-int main(int argc, char** argv)
+#ifndef M7_CYCLE_TEST_MAIN
+#define M7_CYCLE_TEST_MAIN main
+#endif
+int M7_CYCLE_TEST_MAIN(int argc, char** argv)
 {
     unsigned iteration, i, rounds;
     const char* scenario;

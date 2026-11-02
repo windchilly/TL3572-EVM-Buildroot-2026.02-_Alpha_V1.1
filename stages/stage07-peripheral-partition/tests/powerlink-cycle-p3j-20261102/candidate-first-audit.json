@@ -1,0 +1,131 @@
+{
+  "phase": "P3j one-shot guarded MN cycle SOFTWARE ONLY",
+  "images": [
+    {
+      "role": "a",
+      "elf_bytes": 678072,
+      "elf_sha256": "6a2b2f300158cad443e8bbf3a498af7086bf2c3f12b96f76afeabf7b2a1c3a84",
+      "runtime_bytes": 360716,
+      "runtime_sha256": "d4d80d02fdac5d2f26db2deabeabb1147c54eab5fe355653c382fe1c17157290",
+      "image_used_including_noload_bytes": 969056,
+      "image_remaining_bytes": 7419552,
+      "fsc_pool_bytes": 524288,
+      "page_tables": {
+        "elf": "tl3572-m7-integrated-up-a.elf",
+        "table_pages": 9,
+        "required_bytes": 36864,
+        "available_bytes": 65536,
+        "fits": true,
+        "first_overflow_region": null
+      }
+    },
+    {
+      "role": "b",
+      "elf_bytes": 1220888,
+      "elf_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+      "runtime_bytes": 639868,
+      "runtime_sha256": "2e9520061e436e4c04ee990c41e43b8914546166e89ac81b778bb1dcab47ab8e",
+      "image_used_including_noload_bytes": 2695664,
+      "image_remaining_bytes": 5692944,
+      "fsc_pool_bytes": 1048576,
+      "page_tables": {
+        "elf": "tl3572-m7-integrated-up-b.elf",
+        "table_pages": 10,
+        "required_bytes": 40960,
+        "available_bytes": 65536,
+        "fits": true,
+        "first_overflow_region": null
+      }
+    }
+  ],
+  "complete_global_functions_retained_in_UP2": 598,
+  "all_hal_bsp_resolved": true,
+  "final_undefined_symbols": [],
+  "no_NEW_fp_simd_in_final_UP2": true,
+  "hardware_tested": false,
+  "inherited_simd_instruction_count": 125,
+  "inherited_simd_functions": [
+    "PRT_cvt",
+    "PRT_round",
+    "SecFormatDouble",
+    "SecFormatFloat",
+    "SecOutput",
+    "metal_default_log_handler",
+    "metal_io_init",
+    "modf",
+    "osVsnprintf",
+    "snprintf"
+  ],
+  "simd_limit": "Pinned M6/libmetal instructions remain; site/opcode matches formal UP2 except exactly two PRT_cvt literal-load relocations checked by registers+literal bytes. NOT an all-ELF no-FPU claim.",
+  "default": "dormant; no stack environment init/prepare/PHY/CNTP/NMT/TX",
+  "commands": [
+    "PLK status",
+    "PLK env-init",
+    "PLK env-exit"
+  ],
+  "limits": "No board runner, cache/FSC stopped-core proof or isolated cycle authorization. Software guards check only after calls return; not a preemptive watchdog or real-time acceptance.",
+  "cycle_abi": 1,
+  "cycle_layout_native": [
+    608,
+    8,
+    480,
+    496,
+    520,
+    532,
+    544,
+    576,
+    584,
+    1504
+  ],
+  "cycle_layout_aarch64": [
+    608,
+    8,
+    480,
+    496,
+    520,
+    532,
+    544,
+    576,
+    584,
+    1504
+  ],
+  "old_snapshot_bytes": 1504,
+  "cycle_private_symbols": {
+    "cycleResult": [
+      2084273824,
+      608
+    ],
+    "cycleReady": [
+      2084274432,
+      4
+    ],
+    "cycleAttempted": [
+      2084274436,
+      4
+    ]
+  },
+  "rpmsg_stack_budget": {
+    "path": {
+      "rpmsg_tty_task": 576,
+      "Rk3572IntegratedInput": 352,
+      "Rk3572PowerlinkInput": 336,
+      "PRT_Printf": 176,
+      "UpLogVprintf": 608,
+      "vsnprintf_s": 80,
+      "SecVsnprintfImpl": 80,
+      "SecOutput": 752
+    },
+    "known_frames": 2960,
+    "reserve": 1024,
+    "pinned_tty_stack": 4096,
+    "remaining_after_reserve": 112,
+    "passed": true,
+    "limit": "Critical integer/string logging path only. Reserve is not a measured worst-case IRQ/leaf bound; pinned M6 default stack assumed, actual TCB must be checked on board."
+  },
+  "known_owner_frames": {
+    "Worker": 624,
+    "m7_cycle_probe": 144
+  },
+  "owner_stack_limit": "Known frames+8KiB reserve only, NOT full call/IRQ worst-case proof",
+  "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35"
+}

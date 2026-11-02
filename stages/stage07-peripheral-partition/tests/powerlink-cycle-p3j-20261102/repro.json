@@ -1,0 +1,71 @@
+{
+  "phase": "P3j guarded one-shot cycle, SOFTWARE ONLY",
+  "independent_roots": [
+    "/home/openeuler/build/powerlink-cycle-p3j-20261102/software",
+    "/home/openeuler/build/powerlink-cycle-p3j-20261102/software-repro",
+    "/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-first",
+    "/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro"
+  ],
+  "identical": true,
+  "artifacts": [
+    {
+      "path": "aarch64/core/libm7_powerlink_mn_core.a",
+      "bytes": 634892,
+      "sha256": "294900eccf95a6246417f12d681e12a8c3f224cf06484019c8521cae7ce858a3"
+    },
+    {
+      "path": "aarch64/libm7_powerlink_passive_mn.a",
+      "bytes": 460462,
+      "sha256": "309c26859cf8f12e0328fd02144367639b9692c3f7d064cd76ede38f84a0ae60"
+    },
+    {
+      "path": "mn-passive-full.o",
+      "bytes": 960976,
+      "sha256": "d2eb354908a6cce4f6ab2fef038e422b1f27080a0da5552ca3c516a7205aed98"
+    },
+    {
+      "path": "p2/p1/core/aarch64/libm7_powerlink_mn_core.a",
+      "bytes": 634932,
+      "sha256": "d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b"
+    },
+    {
+      "path": "p2/p1/core/aarch64/mn-core.o",
+      "bytes": 509712,
+      "sha256": "f6e1773b6e3b4c0d807bd79a0fc738754170910fa0ee37704cd512cc2f601fbe"
+    },
+    {
+      "path": "p2/p1/edrv-aarch64/libm7_powerlink_eth2_edrv.a",
+      "bytes": 14242,
+      "sha256": "b5cfc21874225bbe3b7b90f256c58ea745748cb9432dce2d01c9f69a8e3fafd7"
+    },
+    {
+      "path": "p2/p1/mn-core-edrv.o",
+      "bytes": 521968,
+      "sha256": "e01dfd098488a8060aa208dd1578b1aa909945072a56cb739a83dab65a7550d3"
+    },
+    {
+      "path": "p2/rtos-aarch64/libm7_powerlink_rtos.a",
+      "bytes": 25616,
+      "sha256": "585b6933d2fdc0afeb41ef1063b1eb859c9df2b0de3624f8de36522a901bf526"
+    },
+    {
+      "path": "p2/mn-core-edrv-rtos.o",
+      "bytes": 543440,
+      "sha256": "39a845d5aa492f9166edcb1ecd353ee4b2f16ef0ab52cc11c00605e231a62ab6"
+    },
+    {
+      "path": "demos/rk3572_mica/build/up-a.runtime.bin",
+      "bytes": 360716,
+      "sha256": "d4d80d02fdac5d2f26db2deabeabb1147c54eab5fe355653c382fe1c17157290"
+    },
+    {
+      "path": "demos/rk3572_mica/build/up-b.runtime.bin",
+      "bytes": 639868,
+      "sha256": "2e9520061e436e4c04ee990c41e43b8914546166e89ac81b778bb1dcab47ab8e"
+    }
+  ],
+  "elf_debug_paths_excluded": true,
+  "hardware_tested": false,
+  "software_origin": "Two fresh full native/AArch64 roots from pinned source; two fresh cumulative trees",
+  "limit": "9 AArch64 objects/libraries plus 2 runtime images compared; ELF debug paths excluded, no board or realtime proof"
+}

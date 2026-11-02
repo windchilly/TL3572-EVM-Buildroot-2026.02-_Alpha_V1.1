@@ -1,6 +1,10 @@
 # TL3572 / RK3572：openEuler + MICA + UniProton
 
 本仓库保存评估板资料、Stage01–Stage07 的源码/配置、正式阶段记录，以及换机恢复入口。
+2026-11-02 最新[P3j一次性MN周期保护/累计候选](stages/stage07-peripheral-partition/tests/powerlink-cycle-p3j-20261102/README.md)：
+进度/定时/预算保护已接PLKowner，默认OFF/同boot一次，先停调度再排空；18+4原生、215Python、双根11产物一致及最终ELF审计通过。
+旧1504B快照保留，独立608B结果；候选未上板，无物理发送或正式固件替换，仍须独立板端证明工具和新授权，非持续MN/CN/实时验收。
+
 2026-11-02 最新[P3i真实MN周期路径离线验证](stages/stage07-peripheral-partition/tests/powerlink-cycle-p3i-20261102/README.md)：
 修复可选external-sync通知误FAULT，真实完整栈自然进Operational，10轮1280SoC及有序停止原生通过，双全新构建9产物一致、208Python通过。
 DMA停滞的owner进度保护尚未接入，故无新运行候选/板卡操作；模拟结果不代表实板周期或CN验收，最近硬件基线仍下方P3h。

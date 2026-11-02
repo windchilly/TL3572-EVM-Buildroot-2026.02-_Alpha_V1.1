@@ -1,0 +1,13 @@
+P3i native fault at 1003050us
+/tmp/tl3572-plk-cycle-guard.65HWeZ/probe(__wrap_m7_plk_fault+0x19)[0x40aec9]
+/tmp/tl3572-plk-cycle-guard.65HWeZ/probe(m7_cycle_probe+0x1c4)[0x40c4c4]
+/tmp/tl3572-plk-cycle-guard.65HWeZ/probe(main+0xbb)[0x40920b]
+/lib64/libc.so.6(+0x23ad0)[0x7f3ee8c63ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f3ee8c63b89]
+/tmp/tl3572-plk-cycle-guard.65HWeZ/probe(_start+0x25)[0x409855]
+P3j PRODUCTION guard normal result=0x305 stack=0x0 clean=0 stage=3 reset/off=1/0 reached=0x0 loops=20061 run/drain=0/0 tx=0 pending=1 max=1 stopCalls=0 trips=1 context=1 SoC_mock=0 time_us=1003050 heap_model=505744 live=25
+probe: /home/openeuler/build/powerlink-cycle-p3j-20261102/stage/tests/test_powerlink_cycle_probe.c:61: main: Assertion `!result && out.lifecycle.clean && out.lifecycle.stage==9 && out.reached==kNmtMsOperational' failed.
+timeout: the monitored command dumped core
+/home/openeuler/build/powerlink-cycle-p3j-20261102/stage/tests/run_powerlink_cycle_probe_native.sh: line 15:  7096 Aborted                 timeout 20s "$work/probe" "$scenario"
+
+REMOTE_EXIT=134

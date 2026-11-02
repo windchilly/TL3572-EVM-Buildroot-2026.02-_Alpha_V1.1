@@ -16,6 +16,8 @@ int m7_hrestimer_active(void);
 void m7_hrestimer_interrupt(void);
 tOplkError m7_hrestimer_process(void);
 void m7_hrestimer_stats(M7PlkTimerStats* stats);
+/* Owner-only logical armed count, UINT32_MAX if context/dispatch unproved. */
+uint32_t m7_hrestimer_pending(void);
 /* Exact conversion, ceil; 0/overflow or > INT64_MAX ticks are rejected. */
 int m7_hrestimer_ticks(uint64_t ns, uint32_t frequency, uint64_t* ticks);
 #endif

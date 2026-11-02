@@ -1,5 +1,23 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-02 最新软件入口：tests/powerlink-cycle-p3j-20261102/README.md；进度保护已接实际PLKowner一次性诊断，软件/候选审计通过，未上板。
+新增m7_cycle_probe.c/h，0021/defaultOFF/CPU5/显式NMT+1MiB；PLK cycle-probe/status，不开放持续run/start，同boot成功或失败均不可重投。原1504B快照不变，独立608B版本1 BSS，pending/running时拒绝不完整结果。
+生产probe8s总预算/3sNMT/4Mprocess上限，Operational后100ms或256TX完成、总提交≤1024；pending2ms和idle10ms独立计时，24MHz/无丢周期/迟到≤500us，均为保守软件诊断值非实板保证。
+自然SwReset→Operational→停调度一次→5ms内真实EDRV软件pending排空且1ms安静/armed0→一次SwitchOff/GsOff→stop/exit，首错/失败当次IO定时证据保留，未知不补发off或自动cleanup。
+检查仅在调用返回后，不能抢占卡死栈调用；上下文非法时不调用栈或mask其他上下文CNTP，保留资源。旧通用m7_mn_process本身仍不是watchdog，保护属于新有界入口。
+18真实栈生产probe场景+4实际owner/模拟probe场景通过。正常100ms/105模拟SoC/374TX完成/live0；1MiB+128KiB预留宿主模型峰636816，不是新实机堆峰。
+首次fixture漏lease/owner漏integrated.o的链接错误均保留；最初将PreOp1正常3ms空闲算入首帧pending导致误停，改独立pendingCounter而非放宽门槛，原失败/debug日志保留。
+首错小堆0xb3保留；DMA不完成0x305、无进展0x306、迟到0x307等由生产函数触发而非HOST手动fault，失败不off/不释放/不重投；默认旧owner拒绝cycle命令。
+双全新software/software-repro均完整native+AArch64，UniProton-first/repro两新累计树；9AArch64产物+2runtime逐字节相同，native测试但不逐字节比，ELF debug路径不比。
+候选tl3572-m7-powerlink-p3j-up-b.elf SHA4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35/1220888B；UP2runtime639868B/2e952006...，UP1runtime360716B/d4d80d02...不变。
+最终598既有核心函数/全部旧诊断保留，undefined0/LSE0/125旧SIMD无新增；UP2image2695664B/8MiB/FSC1MiB/MMU10/16，UP1FSC512KiB/MMU9页。
+两个真实编译器608B布局[608,8,480,496,520,532,544,576,584,1504]一致，独立结果地址2084273824；不是已具备板端解码/停核证明。
+TTY输入336B(旧320)，关键链2960+1024=3984≤4096余112；Worker624/probe144/owner32KiB+8KiB预留只是局部静态预算，非全路径/IRQ峰值保证。
+Windows/Linux215Python、原P3i/P3h及更早原生通过；linux-final-repro整体EXIT1因末项历史目录依赖，构建/比较已成功，修正单元测试选逻辑后linux-final-fixed完整通过，日志不覆盖。
+服务器独立/home/openeuler/build/powerlink-cycle-p3j-20261102；正式M7两ELF/M6/DT/开机未改，未SSH板卡/开COM7/发物理帧/重启。新清单/GitHub/交付状态以最终报告为准。
+下一步先准备新候选身份/608B/FSC/停核交叉检查与独立单次runner，再另问ETH2ETH3隔离及有限协议帧授权；不能用旧P3h许可/旧runner上板。真实CN/PDO/SDO/实时性未验收，CAN/UART不发保持。
+以下均为历史；P3i的“owner进度保护未接入”已由本软件阶段的新一次性入口解决，但仍不是实板或抢占式watchdog通过。
+
 2026-11-02 最新软件入口：tests/powerlink-cycle-p3i-20261102/README.md，真实MN周期原生路径预研通过；未连接板卡/生成新累计ELF/新增运行命令/改正式固件。
 首次GitHub精简检出漏清单中的新cycle原生sh依赖，原脚本已提交但恢复时缺文件；github-first-failed.log保留，补清单/入口依赖断言/原5用例中的覆盖回归后另做全新检出，不改运行源码。
 P3h归档已完成，前两提交b4ea67c/0d61c70已推GitHub，616SHA/新检出203Python/服务器203通过。最近实板仍10月23日P3h，旧授权已消耗。

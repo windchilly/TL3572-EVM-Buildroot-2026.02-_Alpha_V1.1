@@ -2,6 +2,10 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-11-02 最新[P3j生产周期保护/一次性owner候选](tests/powerlink-cycle-p3j-20261102/README.md)：
+实际probe检出pending超时/无进展/迟到并保留资源，100ms有界运行及有序停止原生通过；18+4/215Python/双根9对象+2runtime一致。
+旧1504+新608B ABI/最终ISA内存栈预算通过，候选4b485415...未上板，正式固件不变，待独立新runner/新硬件授权。
+
 2026-11-02 最新[P3i周期路径离线验证](tests/powerlink-cycle-p3i-20261102/README.md)：
 可选extSync通知语义修复，真实NMT自然进入Operational、10轮1280SoC/有序退出通过；双全新9产物一致、208Python与累计原生通过。
 DMA无完成进度保护仍仅HOST策略原型，未接owner/新增run命令或生成累计ELF，本轮无板卡操作。最近硬件结果仍P3h，不是持续MN/CN通过。

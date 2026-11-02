@@ -1,5 +1,9 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
+2026-11-02 最新[P3j实际owner有界周期保护](../../tests/powerlink-cycle-p3j-20261102/README.md)：
+默认关闭/UP2-only/一次性probe，pending/idle/定时/预算保护与有序停止生产路径已通过18+4原生和最终候选审计，215Python/双根11产物一致。
+1504B旧快照不变，新增608B独立结果区；不是持续run API，候选4b485415...未上板，原M6/正式ELF不变，真实CN与实时性尚未验收。
+
 2026-11-02 最新[P3i周期路径离线验证](../../tests/powerlink-cycle-p3i-20261102/README.md)：
 修复可选external-sync通知误FAULT，完整真实栈自然进入Operational及有序停止通过；9场景/208Python、双全新9软件产物一致。
 无新累计运行ELF/命令/板端操作。DMA无进度保护尚未接入owner，当前不能将HOST策略原型当作生产watchdog，P3h仍是最近硬件基线。

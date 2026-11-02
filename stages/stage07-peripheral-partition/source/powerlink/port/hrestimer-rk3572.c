@@ -31,6 +31,14 @@ int m7_hrestimer_ticks(uint64_t ns, uint32_t frequency, uint64_t* ticks)
     return *ticks != 0;
 }
 int m7_hrestimer_active(void) { return stats.leased; }
+uint32_t m7_hrestimer_pending(void)
+{
+    unsigned i;
+    uint32_t count = 0;
+    if (!m7_plk_owner() || !stats.leased || stats.dispatching) return UINT32_MAX;
+    for (i = 0; i < TIMER_COUNT; ++i) if (timers[i].armed) ++count;
+    return count;
+}
 void m7_hrestimer_stats(M7PlkTimerStats* out)
 {
     uintptr_t state;

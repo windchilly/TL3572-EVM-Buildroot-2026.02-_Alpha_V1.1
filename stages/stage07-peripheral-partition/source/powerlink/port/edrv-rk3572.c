@@ -125,6 +125,13 @@ tOplkError edrv_exit(void)
 }
 const UINT8* edrv_getMacAddr(void) { return instance.init.aMacAddr; }
 const tM7EdrvStats* m7_edrv_stats(void) { return &instance.stats; }
+UINT32 m7_edrv_tx_pending(void)
+{
+    UINT i, busy = 0;
+    if (instance.state != RUNNING || instance.polling) return UINT32_MAX;
+    for (i = 0; i < M7_ETH2_TX_BUFFERS; ++i) if (instance.busy[i]) ++busy;
+    return busy == instance.txCount ? instance.txCount : UINT32_MAX;
+}
 tOplkError edrv_allocTxBuffer(tEdrvTxBuffer* buffer)
 {
     UINT i;

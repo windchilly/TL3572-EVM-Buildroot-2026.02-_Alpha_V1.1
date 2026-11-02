@@ -12,4 +12,7 @@ typedef struct {
     UINT32 rxDeferredRejected, dmaFatal;
 } tM7EdrvStats;
 const tM7EdrvStats* m7_edrv_stats(void);
+/* Owner-only, outside poll/callbacks. UINT32_MAX means unproved state.
+ * Count software-owned submissions, not just descriptor OWN bits. */
+UINT32 m7_edrv_tx_pending(void);
 #endif

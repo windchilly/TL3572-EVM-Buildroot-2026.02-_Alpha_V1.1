@@ -4,6 +4,9 @@
 #include <stddef.h>
 #include <stdint.h>
 #include "m7_mn.h"
+#ifdef M7_POWERLINK_CYCLE_PROBE
+#include "m7_cycle_probe.h"
+#endif
 #ifdef M7_POWERLINK_NMT_PROBE
 #include "m7_nmt_probe.h"
 #endif
@@ -42,4 +45,7 @@ typedef struct {
 uint32_t Rk3572PowerlinkInit(void);
 int Rk3572PowerlinkInput(const char* data, size_t length);
 int Rk3572PowerlinkSnapshot(M7PowerlinkSnapshot* out);
+#ifdef M7_POWERLINK_CYCLE_PROBE
+int Rk3572PowerlinkCycleSnapshot(M7CycleProbeResult* out);
+#endif
 #endif
