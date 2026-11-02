@@ -84,4 +84,6 @@ python3 -m unittest discover -s tests -p 'test_*.py' -v
 
 构建根必须不存在，脚本拒绝覆盖。旧清单、旧候选与P3h硬件证据保持原记录；不要拿新源码的可选hook语义冒充旧P3h ELF已经包含修复。
 新 `SHA256SUMS`继承完整源码与旧证据；`verify_powerlink_cycle_checkpoint.py`只做离线归档/208测试/真实解包补丁校验，不连接板卡。
+首次GitHub清单恢复漏列新增 `run_powerlink_cycle_native.sh`，精简检出208项中1项缺文件；[原始失败](github-first-failed.log)保留。
+脚本原已提交，仅补清单/依赖断言，并在原5项Python用例中加入清单覆盖回归；最终另建全新检出复核，不修改运行源码或伪造通过日志。
 GitHub/服务器后验日志不纳入自身清单；同步状态及GitHub新检出验证以最终报告为准。

@@ -33,6 +33,10 @@ if __name__=='__main__':
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=REPO,text=True).strip()
     if commit!=a.expected_commit:raise ValueError('unexpected checkout')
     evidence=STAGE/'tests/powerlink-cycle-p3i-20261102';count=0
+    listed={line.split('  ',1)[1] for line in (evidence/'SHA256SUMS').read_text().splitlines()}
+    if not {'stages/stage07-peripheral-partition/tests/run_powerlink_cycle_native.sh',
+            'stages/stage07-peripheral-partition/build/build_m7_powerlink_cycle.sh'} <= listed:
+        raise ValueError('reproduction shell dependencies missing from manifest')
     for line in (evidence/'SHA256SUMS').read_text().splitlines():
         digest,name=line.split('  ',1);path=(REPO/name).resolve();path.relative_to(REPO)
         if hashlib.sha256(path.read_bytes()).hexdigest()!=digest:raise ValueError('SHA mismatch: '+name)

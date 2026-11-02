@@ -1,6 +1,7 @@
 # 项目交接记录（2026-09-23）
 
 2026-11-02 最新软件入口：tests/powerlink-cycle-p3i-20261102/README.md，真实MN周期原生路径预研通过；未连接板卡/生成新累计ELF/新增运行命令/改正式固件。
+首次GitHub精简检出漏清单中的新cycle原生sh依赖，原脚本已提交但恢复时缺文件；github-first-failed.log保留，补清单/入口依赖断言/原5用例中的覆盖回归后另做全新检出，不改运行源码。
 P3h归档已完成，前两提交b4ea67c/0d61c70已推GitHub，616SHA/新检出203Python/服务器203通过。最近实板仍10月23日P3h，旧授权已消耗。
 P3i首次复用P3h原生库定位：自然进PreOp2首SoC后extSync通知触发FAULT。上游controlTimeSync在正常NMT进程也调用可选hook；POSIX/i210等无外部硬件时忽略。
 只修hrestimer-rk3572.c该void通知为no-op，不arm/mask/fault；显式定义TIMER_USE_EXT_SYNC_INT(含0)编译#error，原P2测试改验通知保持timer/deadline/正常target。

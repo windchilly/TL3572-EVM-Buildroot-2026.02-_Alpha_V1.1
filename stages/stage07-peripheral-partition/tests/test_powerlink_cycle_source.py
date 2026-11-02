@@ -35,5 +35,7 @@ class CycleSourceTests(unittest.TestCase):
         self.assertIn('i < 32', source)
         shell = (STAGE/'tests/run_powerlink_cycle_native.sh').read_text()
         self.assertIn('timeout 20s', shell)
+        from make_powerlink_cycle_manifest import inputs
+        self.assertIn(STAGE/'tests/run_powerlink_cycle_native.sh', inputs())
 
 if __name__ == '__main__': unittest.main()
