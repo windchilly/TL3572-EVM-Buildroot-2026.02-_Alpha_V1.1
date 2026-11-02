@@ -1,0 +1,58 @@
+{
+  "phase": "P3i SOFTWARE ONLY; no candidate/board",
+  "identical": true,
+  "independent_roots": [
+    "/home/openeuler/build/powerlink-cycle-p3i-20261102/software",
+    "/home/openeuler/build/powerlink-cycle-p3i-20261102/software-repro"
+  ],
+  "artifacts": [
+    {
+      "path": "aarch64/core/libm7_powerlink_mn_core.a",
+      "bytes": 634892,
+      "sha256": "294900eccf95a6246417f12d681e12a8c3f224cf06484019c8521cae7ce858a3"
+    },
+    {
+      "path": "aarch64/libm7_powerlink_passive_mn.a",
+      "bytes": 459406,
+      "sha256": "bc5f4ed9688015335c3f48eff1c5ba1bf247f0c824e998e09633222310fd73f3"
+    },
+    {
+      "path": "mn-passive-full.o",
+      "bytes": 959960,
+      "sha256": "b90786415a20311582fc26992eb1dadb5f9bf29d71415bfc5a20632f2a0ab2b2"
+    },
+    {
+      "path": "p2/p1/core/aarch64/libm7_powerlink_mn_core.a",
+      "bytes": 634932,
+      "sha256": "d16139c8181e033f49af145823da7960f721f2b03cb25cef99dfd0674997117b"
+    },
+    {
+      "path": "p2/p1/core/aarch64/mn-core.o",
+      "bytes": 509712,
+      "sha256": "f6e1773b6e3b4c0d807bd79a0fc738754170910fa0ee37704cd512cc2f601fbe"
+    },
+    {
+      "path": "p2/p1/edrv-aarch64/libm7_powerlink_eth2_edrv.a",
+      "bytes": 13722,
+      "sha256": "c576132cd1a83b22e056c5d348b46e8c329648fbaa176a84b71968cb6e8f6ef8"
+    },
+    {
+      "path": "p2/p1/mn-core-edrv.o",
+      "bytes": 521472,
+      "sha256": "b199dfe18f3f7ca36eca7192c8f56053de9ba4164a9b5b937b4cc9d1842d4b29"
+    },
+    {
+      "path": "p2/rtos-aarch64/libm7_powerlink_rtos.a",
+      "bytes": 25078,
+      "sha256": "15506bd4ac2fc00aa845af0234b82c50357294378712dd137e7cb96c07c10c30"
+    },
+    {
+      "path": "p2/mn-core-edrv-rtos.o",
+      "bytes": 542432,
+      "sha256": "c179bc46f5ee09357c81b1b95bae76328ed82d7798f290be3c6c71910460c6e5"
+    }
+  ],
+  "origin": "Two fresh complete builds from pinned archive; no copied prebuilt libraries",
+  "hardware_tested": false,
+  "runtime_images_built": false
+}

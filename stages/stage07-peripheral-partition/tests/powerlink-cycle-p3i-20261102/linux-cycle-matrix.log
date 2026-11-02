@@ -1,0 +1,78 @@
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i REAL MN cycle software PASS: scenario=normal rounds=10 reset=10 off=10 SoC=1280 SoA=2910 ASnd=10 tx_completed_mock=4200 doorbells=4200 timer_arms=125310 IRQ_mock=4200 heap_peak_model=505744 live=0; NO BOARD/real CN/realtime guarantee
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i REAL MN cycle software PASS: scenario=heap_full rounds=10 reset=10 off=10 SoC=1280 SoA=2910 ASnd=10 tx_completed_mock=4200 doorbells=4200 timer_arms=125310 IRQ_mock=4200 heap_peak_model=636816 live=0; NO BOARD/real CN/realtime guarantee
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i REAL MN cycle software PASS: scenario=wrong_owner rounds=1 reset=1 off=1 SoC=128 SoA=291 ASnd=1 tx_completed_mock=420 doorbells=420 timer_arms=12531 IRQ_mock=420 heap_peak_model=505744 live=0; NO BOARD/real CN/realtime guarantee
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i native fault at 1628300us
+/tmp/tl3572-plk-cycle.odneZI/cycle(__wrap_m7_plk_fault+0x19)[0x40b2d9]
+/tmp/tl3572-plk-cycle.odneZI/cycle(m7_mn_process+0x92)[0x40b8d2]
+/tmp/tl3572-plk-cycle.odneZI/cycle(main+0x687)[0x4097d7]
+/lib64/libc.so.6(+0x23ad0)[0x7f647d513ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f647d513b89]
+/tmp/tl3572-plk-cycle.odneZI/cycle(_start+0x25)[0x409c75]
+P3i cycle fault dma_fault retained; rc=0x5 first=0x5 completed_mock=420 submitted=420 live=25
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i native fault at 1628300us
+/tmp/tl3572-plk-cycle.odneZI/cycle(__wrap_m7_plk_fault+0x19)[0x40b2d9]
+/tmp/tl3572-plk-cycle.odneZI/cycle(m7_mn_process+0x92)[0x40b8d2]
+/tmp/tl3572-plk-cycle.odneZI/cycle(main+0x687)[0x4097d7]
+/lib64/libc.so.6(+0x23ad0)[0x7f40bce0fad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f40bce0fb89]
+/tmp/tl3572-plk-cycle.odneZI/cycle(_start+0x25)[0x409c75]
+P3i cycle fault tx_error retained; rc=0x5 first=0x5 completed_mock=419 submitted=420 live=25
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+cycle: /home/openeuler/build/powerlink-cycle-p3i-20261102/stage/tests/test_powerlink_cycle.c:133: main: Assertion `rc && m7_plk_faulted() && ethLease && timerLease' failed.
+timeout: the monitored command dumped core
+/home/openeuler/build/powerlink-cycle-p3i-20261102/stage/tests/run_powerlink_cycle_native.sh: line 14:  2505 Aborted                 timeout 20s "$work/cycle" "$scenario"
+
+REMOTE_EXIT=134

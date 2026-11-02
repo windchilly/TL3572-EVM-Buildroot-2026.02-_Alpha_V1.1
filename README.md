@@ -1,6 +1,10 @@
 # TL3572 / RK3572：openEuler + MICA + UniProton
 
 本仓库保存评估板资料、Stage01–Stage07 的源码/配置、正式阶段记录，以及换机恢复入口。
+2026-11-02 最新[P3i真实MN周期路径离线验证](stages/stage07-peripheral-partition/tests/powerlink-cycle-p3i-20261102/README.md)：
+修复可选external-sync通知误FAULT，真实完整栈自然进Operational，10轮1280SoC及有序停止原生通过，双全新构建9产物一致、208Python通过。
+DMA停滞的owner进度保护尚未接入，故无新运行候选/板卡操作；模拟结果不代表实板周期或CN验收，最近硬件基线仍下方P3h。
+
 2026-10-23 最新[P3h单次NMT/真实FSC/安全归还实板通过](stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-hw-20261023/README.md)：
 新授权下固定候选仅一次reset→NotActive→SwitchOff，rc0/clean1；真实堆峰543648B、峰值余量504896B，CPU4/5 OFF后证明/归还Linux通过。
 boot/micad/管理口/正式固件不变，无重启或CAN/UART发送；窗口已用完，不代表持续MN、真实CN、PDO/SDO或周期性能通过。

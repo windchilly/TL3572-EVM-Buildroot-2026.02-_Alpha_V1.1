@@ -1,0 +1,160 @@
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i REAL MN cycle software PASS: scenario=normal rounds=10 reset=10 off=10 SoC=1280 SoA=2910 ASnd=10 tx_completed_mock=4200 doorbells=4200 timer_arms=125310 IRQ_mock=4200 heap_peak_model=505744 live=0; NO BOARD/real CN/realtime guarantee
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i REAL MN cycle software PASS: scenario=heap_full rounds=10 reset=10 off=10 SoC=1280 SoA=2910 ASnd=10 tx_completed_mock=4200 doorbells=4200 timer_arms=125310 IRQ_mock=4200 heap_peak_model=636816 live=0; NO BOARD/real CN/realtime guarantee
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i REAL MN cycle software PASS: scenario=wrong_owner rounds=1 reset=1 off=1 SoC=128 SoA=291 ASnd=1 tx_completed_mock=420 doorbells=420 timer_arms=12531 IRQ_mock=420 heap_peak_model=505744 live=0; NO BOARD/real CN/realtime guarantee
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i native fault at 1628300us
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(__wrap_m7_plk_fault+0x19)[0x40b339]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(m7_mn_process+0x92)[0x40b932]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(main+0x68d)[0x4097dd]
+/lib64/libc.so.6(+0x23ad0)[0x7f2a30e97ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f2a30e97b89]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(_start+0x25)[0x409cd5]
+P3i cycle fault dma_fault retained; rc=0x5 first=0x5 completed_mock=420 submitted=420 live=25
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i native fault at 1628300us
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(__wrap_m7_plk_fault+0x19)[0x40b339]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(m7_mn_process+0x92)[0x40b932]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(main+0x68d)[0x4097dd]
+/lib64/libc.so.6(+0x23ad0)[0x7f11a37f2ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f11a37f2b89]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(_start+0x25)[0x409cd5]
+P3i cycle fault tx_error retained; rc=0x5 first=0x5 completed_mock=419 submitted=420 live=25
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i native fault at 1653250us
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(__wrap_m7_plk_fault+0x19)[0x40b339]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(main+0x6ec)[0x40983c]
+/lib64/libc.so.6(+0x23ad0)[0x7fbe8e3ebad0]
+P3i GAP: stalled TX did not fault automatically; HOST 25ms progress guard marks terminal, not an RTOS watchdog implementation
+P3i cycle fault no_completion retained; rc=0xa first=0x0 completed_mock=419 submitted=423 live=25
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7fbe8e3ebb89]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(_start+0x25)[0x409cd5]
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i freeTxBuffer failed rc=0x5 buffer=0x52efa0 slot=12
+P3i native fault at 1628300us
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(__wrap_m7_plk_fault+0x19)[0x40b339]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle[0x40b54e]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle[0x4223a0]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(eventu_process+0xde)[0x4128ae]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(eventucal_processEventCircbuf+0x71)[0x428331]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(ctrlu_processStack+0x9)[0x4228e9]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(m7_mn_process+0xc5)[0x40b965]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(main+0x265)[0x4093b5]
+/lib64/libc.so.6(+0x23ad0)[0x7f6ceed23ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f6ceed23b89]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(_start+0x25)[0x409cd5]
+P3i native fault at 1628300us
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(__wrap_m7_plk_fault+0x19)[0x40b339]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(m7_mn_process+0x92)[0x40b932]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(main+0x265)[0x4093b5]
+/lib64/libc.so.6(+0x23ad0)[0x7f6ceed23ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f6ceed23b89]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(_start+0x25)[0x409cd5]
+SwitchOff process rc=0x5 first=0x5 event=18 state=0x2fd completed=420 submitted=420
+P3i direct SwitchOff rejected busy buffer; resources retained, no unsafe free/retry
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i native fault at 1628700us
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(__wrap_m7_plk_fault+0x19)[0x40b339]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(m7_mn_stop+0xbc)[0x40ba6c]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(main+0x857)[0x4099a7]
+/lib64/libc.so.6(+0x23ad0)[0x7f208df53ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f208df53b89]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(_start+0x25)[0x409cd5]
+P3i stop_failure retained after real cyclic run, no false cleanup
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i native fault at 1628700us
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(__wrap_m7_plk_fault+0x19)[0x40b339]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(hrestimer_exit+0x65)[0x40d5f5]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(ctrlu_shutdownStack+0x1d)[0x42285d]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(oplk_destroy+0x9)[0x40deb9]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(m7_mn_stop+0x6d)[0x40ba1d]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(main+0x857)[0x4099a7]
+/lib64/libc.so.6(+0x23ad0)[0x7f59c5e4bad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f59c5e4bb89]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(_start+0x25)[0x409cd5]
+P3i native fault at 1628700us
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(__wrap_m7_plk_fault+0x19)[0x40b339]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(m7_mn_stop+0xbc)[0x40ba6c]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(main+0x857)[0x4099a7]
+/lib64/libc.so.6(+0x23ad0)[0x7f59c5e4bad0]
+P3i timer_release_failure retained after real cyclic run, no false cleanup
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f59c5e4bb89]
+/tmp/tl3572-plk-cycle.ZBqstu/cycle(_start+0x25)[0x409cd5]
+P3i explicit external-sync build rejected
+P3i explicit external-sync build rejected
+
+REMOTE_EXIT=0

@@ -4,6 +4,9 @@
 #include <kernel/hrestimer.h>
 #include "m7_plk_platform.h"
 #include "m7_plk_rtos.h"
+#ifdef TIMER_USE_EXT_SYNC_INT
+#error "RK3572 port has no external synchronization interrupt hardware"
+#endif
 #define TIMER_COUNT 2U
 typedef struct {
     tTimerEventArg event;
@@ -121,8 +124,11 @@ tOplkError hrestimer_deleteTimer(tTimerHdl* handle)
 }
 void hrestimer_controlExtSyncIrq(BOOL enable)
 {
-    /* No external sync pin wired in this port. Reject activation, not fake OK. */
-    if (enable) { m7_plk_fault(); if (stats.leased) m7_plk_timer_mask(); }
+    /* Upstream controlTimeSync() sends this OPTIONAL notification on ordinary
+     * NMT progression too. Its contract says to ignore it when unsupported;
+     * it is not a request to arm CNTP or evidence of external pin support.
+     * Reject an explicit external-hardware build above, not normal MN sync. */
+    (void)enable;
 }
 tOplkError m7_hrestimer_process(void)
 {

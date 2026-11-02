@@ -1,0 +1,14 @@
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i REAL MN cycle software PASS: rounds=10 reset=10 off=10 SoC=1280 SoA=2910 ASnd=10 tx_completed_mock=4200 doorbells=4200 timer_arms=125310 IRQ_mock=4200 heap_peak_model=505744 live=0; NO BOARD/real CN/realtime guarantee
+P3i explicit external-sync build rejected
+P3i explicit external-sync build rejected
+
+REMOTE_EXIT=0

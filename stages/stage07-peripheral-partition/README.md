@@ -2,6 +2,10 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-11-02 最新[P3i周期路径离线验证](tests/powerlink-cycle-p3i-20261102/README.md)：
+可选extSync通知语义修复，真实NMT自然进入Operational、10轮1280SoC/有序退出通过；双全新9产物一致、208Python与累计原生通过。
+DMA无完成进度保护仍仅HOST策略原型，未接owner/新增run命令或生成累计ELF，本轮无板卡操作。最近硬件结果仍P3h，不是持续MN/CN通过。
+
 2026-10-23 最新[P3h单次NMT与真实堆实板通过](tests/powerlink-nmt-p3h-hw-20261023/README.md)：
 独立授权的一次reset/off均1，实际NotActive→GsOff/退出通过，真实FSC峰543648B/余504896B；停核证明后清理并归还Linux100Full。
 CPU4/5 OFF、boot/micad/工控/正式固件保持，无重启；已消耗窗口，不重复执行。持续MN/真实CN及周期性能仍未验收。

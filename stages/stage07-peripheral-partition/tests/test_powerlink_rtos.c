@@ -157,8 +157,12 @@ static void fault(void)
     assert(hrestimer_modifyTimer(&first, 1000, callback, 0, TRUE) == kErrorOk);
     now = 24; assert(m7_hrestimer_process() == kErrorNoResource);
     assert(m7_plk_faulted() && !timerArmed); finish();
-    start(); hrestimer_controlExtSyncIrq(FALSE); assert(!m7_plk_faulted());
-    hrestimer_controlExtSyncIrq(TRUE); assert(m7_plk_faulted() && !timerArmed); finish();
+    start(); action = 0; first = 0;
+    assert(hrestimer_modifyTimer(&first, 1000, callback, 0, TRUE) == kErrorOk);
+    uint64_t savedDeadline = deadline;
+    hrestimer_controlExtSyncIrq(FALSE); hrestimer_controlExtSyncIrq(TRUE);
+    assert(!m7_plk_faulted() && timerArmed && deadline == savedDeadline);
+    finish();
 }
 static void mutex_test(void)
 {

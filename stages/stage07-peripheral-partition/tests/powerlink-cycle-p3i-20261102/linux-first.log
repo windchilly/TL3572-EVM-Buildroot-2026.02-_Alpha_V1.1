@@ -1,0 +1,13 @@
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x25d rc=0x5 first=0x5 t=1501250us SoC=1 tx=165
+cycle: /home/openeuler/build/powerlink-cycle-p3i-20261102/stage/tests/test_powerlink_cycle.c:85: main: Assertion `rc == kErrorOk' failed.
+timeout: the monitored command dumped core
+/home/openeuler/build/powerlink-cycle-p3i-20261102/stage/tests/run_powerlink_cycle_native.sh: line 14:   232 Aborted                 timeout 20s "$work/cycle" normal
+
+REMOTE_EXIT=134

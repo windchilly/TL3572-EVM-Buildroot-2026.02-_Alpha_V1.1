@@ -1,0 +1,38 @@
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+P3i native fault at 1501250us
+/tmp/tl3572-plk-cycle.CivggS/cycle(__wrap_m7_plk_fault+0x19)[0x40aae9]
+/tmp/tl3572-plk-cycle.CivggS/cycle(hrestimer_controlExtSyncIrq+0x19)[0x40d139]
+/tmp/tl3572-plk-cycle.CivggS/cycle(dllk_process+0x28d)[0x42894d]
+/tmp/tl3572-plk-cycle.CivggS/cycle(nmtk_process+0xbc)[0x42480c]
+/tmp/tl3572-plk-cycle.CivggS/cycle(eventk_process+0x55)[0x423c95]
+/tmp/tl3572-plk-cycle.CivggS/cycle(eventucal_postKernelEvent+0x13)[0x4234d3]
+/tmp/tl3572-plk-cycle.CivggS/cycle(nmtu_postNmtEvent+0x3a)[0x41218a]
+/tmp/tl3572-plk-cycle.CivggS/cycle[0x412800]
+/tmp/tl3572-plk-cycle.CivggS/cycle(dllucal_process+0x74)[0x411a64]
+/tmp/tl3572-plk-cycle.CivggS/cycle(eventu_process+0x75)[0x412025]
+/tmp/tl3572-plk-cycle.CivggS/cycle(eventucal_processEventCircbuf+0x71)[0x427b11]
+/tmp/tl3572-plk-cycle.CivggS/cycle(ctrlu_processStack+0x9)[0x4220c9]
+/tmp/tl3572-plk-cycle.CivggS/cycle(m7_mn_process+0xc5)[0x40b115]
+/tmp/tl3572-plk-cycle.CivggS/cycle(main+0xab)[0x4091eb]
+/lib64/libc.so.6(+0x23ad0)[0x7f54e5405ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f54e5405b89]
+/tmp/tl3572-plk-cycle.CivggS/cycle(_start+0x25)[0x409565]
+P3i native fault at 1501250us
+/tmp/tl3572-plk-cycle.CivggS/cycle(__wrap_m7_plk_fault+0x19)[0x40aae9]
+/tmp/tl3572-plk-cycle.CivggS/cycle(m7_mn_process+0x92)[0x40b0e2]
+/tmp/tl3572-plk-cycle.CivggS/cycle(main+0xab)[0x4091eb]
+/lib64/libc.so.6(+0x23ad0)[0x7f54e5405ad0]
+REAL NMT state=0x25d rc=0x5 first=0x5 t=1501250us SoC=1 tx=165
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f54e5405b89]
+/tmp/tl3572-plk-cycle.CivggS/cycle(_start+0x25)[0x409565]
+cycle: /home/openeuler/build/powerlink-cycle-p3i-20261102/stage/tests/test_powerlink_cycle.c:95: main: Assertion `rc == kErrorOk' failed.
+timeout: the monitored command dumped core
+/home/openeuler/build/powerlink-cycle-p3i-20261102/stage/tests/run_powerlink_cycle_native.sh: line 14:   302 Aborted                 timeout 20s "$work/cycle" normal
+
+REMOTE_EXIT=134

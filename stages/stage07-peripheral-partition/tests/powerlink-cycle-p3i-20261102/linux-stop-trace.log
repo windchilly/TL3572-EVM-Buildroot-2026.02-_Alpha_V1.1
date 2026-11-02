@@ -1,0 +1,35 @@
+REAL NMT state=0x19 rc=0x0 first=0x0 t=50us SoC=0 tx=0
+REAL NMT state=0x29 rc=0x0 first=0x0 t=100us SoC=0 tx=0
+REAL NMT state=0x39 rc=0x0 first=0x0 t=150us SoC=0 tx=0
+REAL NMT state=0x79 rc=0x0 first=0x0 t=200us SoC=0 tx=0
+REAL NMT state=0x21c rc=0x0 first=0x0 t=250us SoC=0 tx=0
+REAL NMT state=0x21d rc=0x0 first=0x0 t=1000050us SoC=0 tx=0
+REAL NMT state=0x25d rc=0x0 first=0x0 t=1500100us SoC=0 tx=164
+REAL NMT state=0x26d rc=0x0 first=0x0 t=1501300us SoC=1 tx=166
+REAL NMT state=0x2fd rc=0x0 first=0x0 t=1506050us SoC=5 tx=174
+P3i freeTxBuffer failed rc=0x5 buffer=0x52df60 slot=12
+P3i native fault at 1628300us
+/tmp/tl3572-plk-cycle.zYMgkU/cycle(__wrap_m7_plk_fault+0x19)[0x40aba9]
+/tmp/tl3572-plk-cycle.zYMgkU/cycle[0x40adbe]
+/tmp/tl3572-plk-cycle.zYMgkU/cycle[0x421c10]
+/tmp/tl3572-plk-cycle.zYMgkU/cycle(eventu_process+0xde)[0x41211e]
+/tmp/tl3572-plk-cycle.zYMgkU/cycle(eventucal_processEventCircbuf+0x71)[0x427ba1]
+/tmp/tl3572-plk-cycle.zYMgkU/cycle(ctrlu_processStack+0x9)[0x422159]
+/tmp/tl3572-plk-cycle.zYMgkU/cycle(m7_mn_process+0xc5)[0x40b1d5]
+/tmp/tl3572-plk-cycle.zYMgkU/cycle(main+0x185)[0x4092c5]
+/lib64/libc.so.6(+0x23ad0)[0x7f2174d7cad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f2174d7cb89]
+/tmp/tl3572-plk-cycle.zYMgkU/cycle(_start+0x25)[0x4095d5]
+P3i native fault at 1628300us
+/tmp/tl3572-plk-cycle.zYMgkU/cycle(__wrap_m7_plk_fault+0x19)[0x40aba9]
+/tmp/tl3572-plk-cycle.zYMgkU/cycle(m7_mn_process+0x92)[0x40b1a2]
+/tmp/tl3572-plk-cycle.zYMgkU/cycle(main+0x185)[0x4092c5]
+/lib64/libc.so.6(+0x23ad0)[0x7f2174d7cad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f2174d7cb89]
+/tmp/tl3572-plk-cycle.zYMgkU/cycle(_start+0x25)[0x4095d5]
+SwitchOff process rc=0x5 first=0x5 event=18 state=0x2fd completed=420 submitted=420
+cycle: /home/openeuler/build/powerlink-cycle-p3i-20261102/stage/tests/test_powerlink_cycle.c:112: main: Assertion `rc == kErrorOk' failed.
+timeout: the monitored command dumped core
+/home/openeuler/build/powerlink-cycle-p3i-20261102/stage/tests/run_powerlink_cycle_native.sh: line 14:  2349 Aborted                 timeout 20s "$work/cycle" normal
+
+REMOTE_EXIT=134

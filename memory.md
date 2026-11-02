@@ -1,5 +1,21 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-02 最新软件入口：tests/powerlink-cycle-p3i-20261102/README.md，真实MN周期原生路径预研通过；未连接板卡/生成新累计ELF/新增运行命令/改正式固件。
+P3h归档已完成，前两提交b4ea67c/0d61c70已推GitHub，616SHA/新检出203Python/服务器203通过。最近实板仍10月23日P3h，旧授权已消耗。
+P3i首次复用P3h原生库定位：自然进PreOp2首SoC后extSync通知触发FAULT。上游controlTimeSync在正常NMT进程也调用可选hook；POSIX/i210等无外部硬件时忽略。
+只修hrestimer-rk3572.c该void通知为no-op，不arm/mask/fault；显式定义TIMER_USE_EXT_SYNC_INT(含0)编译#error，原P2测试改验通知保持timer/deadline/正常target。
+真实完整MN/NMT/OD/PDO/CFM/edrvcyclic/EDRV/target/timer原生，只有24MHz时间/IRQ/RTOS/IO/DMA完成模拟。无伪造NMT状态或CN应答，保留默认1s/500ms等待/完整OD。
+自然19→29→39→79→21c→21d→25d→26d→2fd；10轮1280SoC/2910SoA/10ASnd/4200模拟完成、分配归零；不是实板1ms/FCS/IRQ时延/CN互操作证明。
+1MiB-minus32/128KiB预留/每块64B开销宿主模型同样10轮，峰636816/余411728/live0，不是新真实FSC峰；P3h实板旧峰543648仍单独记录。
+直接Operational→SwitchOff会free忙TX(slot12/rc5)，首次full-build完整编译成功但随后native停止失败EXIT134，原始日志保留；不能复用P3h无流量停止方案。
+测试采用edrvcyclic_stopCycle(FALSE)→有界poll排空→确认无timer/全部提交完成→SwitchOff/GsOff→stop/exit；不擦busy冒充完成，目前仅测试验证，未接UP2 owner。
+9原生场景包括normal/heap_full/wrong_owner/DMAfault/TXerror/no_completion/direct_off/stop_failure/timer_release_failure，外部sync0/1两种真实编译拒绝；错误保留、不自动释放。
+明确未解决上板前GAP：DMA永不完成时旧栈可25ms继续返回OK；no_completion是HOST进度保护原型手动置FAULT后证实保留，不是生产RTOS watchdog实现。尚不能制作/部署MN运行候选。
+下一步将时间/周期数上限、发送完成进度、丢周期/迟到、合法owner/NMT与有序停止/首错证明接入默认OFF的UP2诊断，离线/最终ELF预算后再另问硬件授权；CAN/UART不发仍有效。
+服务器独立根/home/openeuler/build/powerlink-cycle-p3i-20261102；software/software-repro全量从固定归档编译native+AArch64，9产物逐字节相同，无复制预构建核心/新runtime。
+Windows/Linux各208Python(原203+5)，原P3h27+4/旧累计原生通过；旧上游告警保留。GitHub/交付与新精确清单验证以最终报告为准。
+以下均为历史时序，不覆盖本条软件进展/已知watchdog缺口；历史硬件状态不是今天新快照，未触碰reports/结构/硬件资料。
+
 2026-11-02 继续上次中断的P3h硬件证据归档/同步；不连接板卡、不重新执行已消耗窗口。
 实板测试日期仍2026-10-23，不能把下方历史boot/服务/资源状态描述成11月2日的新快照；本次仅离线复核/GitHub新检出与构建服务器delivery。
 同步完成状态和验证日志以tests/powerlink-nmt-p3h-hw-20261023及最终报告为准，用户新增reports/结构/硬件资料保持未动。

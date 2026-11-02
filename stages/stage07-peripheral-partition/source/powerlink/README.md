@@ -1,5 +1,9 @@
 # UP2 / ETH2 POWERLINK MN 移植入口
 
+2026-11-02 最新[P3i周期路径离线验证](../../tests/powerlink-cycle-p3i-20261102/README.md)：
+修复可选external-sync通知误FAULT，完整真实栈自然进入Operational及有序停止通过；9场景/208Python、双全新9软件产物一致。
+无新累计运行ELF/命令/板端操作。DMA无进度保护尚未接入owner，当前不能将HOST策略原型当作生产watchdog，P3h仍是最近硬件基线。
+
 用户已确认 UP2 做 Managing Node（MN，主站），控制外部设备。当前入口是
 **P3h累计候选：保留全部旧功能 + 完整PDO预算/首错修复 + 有界NMT诊断**。
 最新[P3h单次NMT实板](../../tests/powerlink-nmt-p3h-hw-20261023/README.md)通过：reset/NotActive/SwitchOff、真实FSC峰543648B/余504896B及安全归还。

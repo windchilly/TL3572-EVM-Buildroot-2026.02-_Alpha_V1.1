@@ -79,3 +79,5 @@ stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-runner-20261023/*.js
 stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-hw-20261023/*.log -text whitespace=-blank-at-eol,-blank-at-eof
 stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-hw-20261023/*.json whitespace=cr-at-eol
 stages/stage07-peripheral-partition/tests/powerlink-nmt-p3h-hw-20261023/*.hex whitespace=cr-at-eol
+stages/stage07-peripheral-partition/tests/powerlink-cycle-p3i-20261102/*.log -text whitespace=-blank-at-eol,-blank-at-eof
+stages/stage07-peripheral-partition/tests/powerlink-cycle-p3i-20261102/*.json whitespace=cr-at-eol

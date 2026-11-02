@@ -2,6 +2,10 @@
 
 ## POWERLINK MN 核心软件准备入口（2026-10-10）
 
+2026-11-02 最新[P3i周期路径软件构建](../tests/powerlink-cycle-p3i-20261102/README.md)：
+`build_m7_powerlink_cycle.sh`完整重编native+AArch64再运行真实周期测试；两新根9产物一致，无runtime/ELF构建或板卡操作。
+可选同步通知修复并显式拒绝外部硬件配置；9原生场景/208Python通过，但owner进度保护未接入，不能生成运行候选。
+
 2026-10-23 最新[P3h实板复测归档](../tests/powerlink-nmt-p3h-hw-20261023/README.md)：
 不重编核心/ELF，固定P3h单次NMT/真实FSC峰543648B/余504896B和安全归还通过。
 新离线归档验证器只检查实际上传回执/原始缓存/结果/源码回归，不访问板卡，不是重跑NMT的入口；下列未部署等为历史准备状态。
