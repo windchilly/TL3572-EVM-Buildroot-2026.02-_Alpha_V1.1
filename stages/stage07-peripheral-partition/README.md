@@ -2,6 +2,11 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-11-04 最新[P3j runner-v2自动闭环软件修正](tests/powerlink-cycle-p3j-v2-20261104/README.md)：
+把真实验证的direct/pthread TCB门槛接入新单次runner，旧ELF/脚本/失败记录不改；305Python、Windows/Linux17组回放与原生18+4通过。
+22项未来输入及新永久窗口已规划，v2不是更长运行候选，未连接或部署板卡；后续须另获一次隔离自动闭环许可，当前Linux已归还状态不变但本轮未新采样。
+真实CN/PDO/SDO/持续MN/最坏实时性未验收。以下均为历史实际执行和旧软件版本记录。
+
 2026-11-04 最新[P3j独立停核资源归还PASS](tests/powerlink-cycle-p3j-return-20261104/README.md)：
 用户另行授权仅归还；CPUOFF/同缓存/FSC/修正TCB/完整基线核验后，一次移除已停临时实例、重绑Linux ETH2、卸载hold，两端100FullANon/linkyes。
 无UP start/stop/周期/重启，原失败记录及固件不改；286Python通过。CPU4/5OFF、原两实例Offline、boot/micad/管理/工控不变，临时client/端点/hold清除。

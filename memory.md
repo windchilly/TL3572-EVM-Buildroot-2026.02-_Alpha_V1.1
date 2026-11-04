@@ -1,5 +1,19 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-04 最新软件入口：tests/powerlink-cycle-p3j-v2-20261104/README.md；runner-v2把修正TCB证明接入自动闭环，未连接/上传/部署板卡/COM7/接管ETH/发帧/重启。
+v2是板端工具版，不是新固件；沿用4b485415...1220888B原P3j累计ELF，预算仍100ms或256TX/8s/4M/≤1024及1MiB/256KiB，不延长或开放持续run/CN业务。
+新read_powerlink_cycle_p3j_v2_snapshot.py显式复用原COLD/live及1504+608解码，但不调用旧错误read_stopped；用纯TCBgate分direct taskEntry@32与pthread wrapper@32/args0@48，并归档17项控制前缀。
+新run_powerlink_cycle_p3j_v2_probe.py/cacheFSC+TCB双证明必须同候选和RTOS库SHA，动作前校验；新root/root/m7-powerlink-cycle-p3j-v2-20261104/client up-b-m7-plk-cycle-p3j-v2/AutoBoot=no/--confirm-isolated-p3j-v2-cycle，仅规划尚未板端创建。
+22精确未来输入清单prepared_only，不是上传回执/执行许可；旧P3j ATTEMPTED和LinuxReturn窗口均消费，未改旧runner/reader/固件/结果，不重用旧授权。
+新17场景Windows/Linux回放结果和最终模拟状态一致（trace含临时路径不逐字节同）；实际历史TCB/1504+608原始字节经真实新reader解码，所有系统/PSCI/DRAM/RPMsg/网络边界为mock，非新实板PASS。
+Windows/Linux305Python=原286+新19，成功模拟完整一次命令→一次stop→OFF读TCB→证明后rm/bind/卸hold，故障保留/不重投/不二stop/ACK模糊仅观察；22平铺import闭包与ABI/新profile门槛通过。
+Linux再编生产guard/harness18+owner4通过，明确复用11月2日software-repro核心，无新核心/累计ELF重建；TCB证明沿用已实际双编译几何800/16/20/24/32/48和原RTOS库。
+首个Windows失败仅fixture误把正常已绑定Linux driver true要求全清零；修为driver=true其余临时状态false。首Linux失败为旧runtime fixture漏传及临时stage非标准repo相对路径，补fixture/精确SHA+包内路径校验后全过，原日志均留。
+服务器独立/home/openeuler/build/powerlink-cycle-p3j-v2-20261104；新清单/GitHub/delivery以最终报告为准，旧源码/候选/证据不动，仅滚动索引更新。
+本轮无新硬件状态采样，最近已知仍上次boot63986874.../micad329/CPU4、5OFF/原两实例Offline/ETH2ETH3Linux100FullANon/无临时client端点hold/正式固件不变，不能当成本轮新快照。
+下一步另问隔离ETH2ETH3及一次v2自动闭环新许可，归档门槛和新回复皆满足才可上板；之后再按明确CN型号/固件/XDDCDC/NodeID/PDO需求准备隔离互操作，持续MN/真实CN/最坏实时性未验收。
+以下“原runner因TCB失败后独立归还”仍是实际历史，v2未在板卡证明自动全部通过；CAN/UART不发、旧窗口不可重用继续有效。
+
 2026-11-04 最新恢复入口：tests/powerlink-cycle-p3j-return-20261104/README.md；用户新允许“核验后仅清理并归还Linux”，已执行一次且PASS，板卡不再处于旧保留状态。
 执行前659bfb795fea63204978838f65ccde9269bff66e；新独立return_powerlink_cycle_p3j_linux.py/纯TCBgate/baseline三项上传读回一致，新子目录/root/m7-powerlink-cycle-p3j-20261104/return-linux-20261104，原19项/失败结果/ATTEMPTED不覆盖。
 归还前再次独立CPU4/5OFF、稳定1504+608/真实FSC/异常lease/17项TCB全核验；缓存及TCB逐字节同旧保留现场，FSC used38584/peak543648/余504896、owner32768/TTYlisten4096均合格。

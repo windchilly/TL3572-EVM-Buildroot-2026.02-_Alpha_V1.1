@@ -1,0 +1,3263 @@
+{
+  "software_only": true,
+  "hardware_executed": false,
+  "cases": {
+    "normal": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": true,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": {
+          "lifecycle": {
+            "result": 0,
+            "clean": 1,
+            "stage": 9,
+            "stackError": 0,
+            "loops": 598738,
+            "leaseBefore": 0,
+            "leaseAfter": 0,
+            "timerBefore": 0,
+            "timerAfter": 0,
+            "rx": 0,
+            "tx": 376,
+            "txDescriptors": 0,
+            "dropped": 4,
+            "rxErrors": 0,
+            "txErrors": 0,
+            "fatal": 0,
+            "timerIrqs": 376,
+            "timerCallbacks": 376,
+            "initialized": {
+              "state": 1,
+              "owner": 6,
+              "lastError": 0,
+              "lastEvent": 0,
+              "nmtState": 0,
+              "processes": 0,
+              "events": 0
+            },
+            "prepared": {
+              "state": 2,
+              "owner": 6,
+              "lastError": 0,
+              "lastEvent": 0,
+              "nmtState": 0,
+              "processes": 0,
+              "events": 0
+            },
+            "final": {
+              "state": 0,
+              "owner": 6,
+              "lastError": 0,
+              "lastEvent": 16,
+              "nmtState": 0,
+              "processes": 598738,
+              "events": 14
+            },
+            "active": {
+              "mac": 49155,
+              "tx": 524289,
+              "rx": 527361,
+              "dma": 0,
+              "macIrq": 0,
+              "dmaIrq": 0
+            },
+            "stopped": {
+              "mac": 0,
+              "tx": 0,
+              "rx": 0,
+              "dma": 0,
+              "macIrq": 0,
+              "dmaIrq": 0
+            },
+            "timerInitial": {
+              "counter": 37403336790,
+              "ticks": 120,
+              "affinity": 2147483905,
+              "interrupts": 0,
+              "maxIrqLate": 0,
+              "level": 4,
+              "frequency": 24000000,
+              "cntp": 0,
+              "cntv": 1,
+              "enabled": 134266879,
+              "pending": 0,
+              "active": 0,
+              "group": 0,
+              "config": 1364459520,
+              "priority30": 160,
+              "priority27": 0,
+              "typer": 64749,
+              "cpuControl": 1
+            },
+            "timerFinal": {
+              "counter": 37501110558,
+              "ticks": 4192,
+              "affinity": 2147483905,
+              "interrupts": 376,
+              "maxIrqLate": 62,
+              "level": 4,
+              "frequency": 24000000,
+              "cntp": 2,
+              "cntv": 1,
+              "enabled": 134266879,
+              "pending": 0,
+              "active": 0,
+              "group": 0,
+              "config": 1364459520,
+              "priority30": 160,
+              "priority27": 0,
+              "typer": 64749,
+              "cpuControl": 1
+            }
+          },
+          "cycle": {
+            "abi": 1,
+            "bytes": 608,
+            "resetSubmitted": 1,
+            "offSubmitted": 1,
+            "reached": 765,
+            "stopCycleCalls": 1,
+            "owner": 6,
+            "pending": 0,
+            "maxPending": 1,
+            "pendingAtStop": 0,
+            "txBeforeRun": 176,
+            "txAtStop": 376,
+            "runLoops": 36641,
+            "drainLoops": 374,
+            "offLoops": 1,
+            "contextValid": 1,
+            "watchdogTrips": 0,
+            "frequency": 24000000,
+            "startCounter": 37403336790,
+            "endCounter": 37501110706,
+            "runCounter": 37498648608,
+            "lastTxCounter": 37501075342,
+            "pendingCounter": 37501075342,
+            "maxGapTicks": 59020945,
+            "maxLateTicks": 458,
+            "skippedPeriods": 0
+          },
+          "cache": {
+            "ready": 1,
+            "pending": 0,
+            "running": 0,
+            "seq": 1,
+            "done": 1,
+            "cmd": 8,
+            "rc": 0,
+            "runtime": 0,
+            "owner": 6
+          },
+          "mn": {
+            "state": 0,
+            "owner": 6,
+            "lastError": 0,
+            "lastEvent": 16,
+            "nmtState": 0,
+            "processes": 598738,
+            "events": 14
+          },
+          "ethLease": 0,
+          "exception": {
+            "cause": 0,
+            "elr": 0,
+            "esr": 0
+          },
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "snapshot_sha256": "a9a3368cd8c76e68083a17cf9e3544b46da459876c9ec394ebf1bc1d133aff97",
+          "cycle_sha256": "2f73ba3b9f05762cd60d06fd3524a9e50bdcb0c10c612786c7ad3c76bf4f8e80",
+          "snapshot_hex": "01000000000000000000000001000000010000000800000000000000000000000600000000000000000000000600000000000000100000000000000000000000d2220900000000000e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "cycle_hex": "010000006002000000000000010000000900000000000000d22209000000000000000000000000000000000000000000780100000000000004000000000000000000000000000000780100000000000078010000000000000100000006000000000000000000000000000000000000000000000000000000000000000000000002000000060000000000000000000000000000000000000000000000000000000000000000000000000000000600000000000000100000000000000000000000d2220900000000000e000000000000000000000000000000000000000000000003c0000001000800010c08000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000056a069b50800000078000000000000000101008000000000000000000000000000000000000000000400000000366e010000000001000000ffbf000800000000000000000000000000005451a000000000000000edfc000001000000000000001e893dbb080000006010000000000000010100800000000078010000000000003e000000000000000400000000366e010200000001000000ffbf000800000000000000000000000000005451a000000000000000edfc000001000000000000000100000001000000fd0200000100000006000000000000000100000000000000b000000078010000218f00007601000001000000010000000000000000366e0156a069b508000000b2893dbb0800000020f817bb080000008eff3cbb080000008eff3cbb080000009196840300000000ca010000000000000000000000000000",
+          "heap": {
+            "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+            "phase": "STOPPED",
+            "pool_start": 2083124528,
+            "pool_bytes": 1048576,
+            "scalars": {
+              "g_memTotalSize": 1048544,
+              "g_memUsage": 38584,
+              "g_memPeakUsage": 543648,
+              "g_memStartAddr": 2083124528
+            },
+            "free_bytes": 1009960,
+            "peak_headroom_bytes": 504896,
+            "minimum_headroom_bytes": 262144,
+            "minimum_initial_free_bytes": 767888,
+            "model_stack_peak_bytes": 505744,
+            "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+          },
+          "threads": [
+            {
+              "name": "PLKowner",
+              "id": 6,
+              "allocated_stack": 32768,
+              "stack_base": 2084241040,
+              "entry": 2082553120,
+              "entry_kind": "direct-taskEntry@32",
+              "index": 6
+            },
+            {
+              "name": "rpmsg_tty_task",
+              "id": 8,
+              "allocated_stack": 4096,
+              "stack_base": 2084139728,
+              "entry": 2082797620,
+              "routine": 2082621496,
+              "entry_kind": "OsPthreadWrapper@32,args[0]@48",
+              "index": 8
+            },
+            {
+              "name": "rpmsg_listen_task",
+              "id": 9,
+              "allocated_stack": 4096,
+              "stack_base": 2084135584,
+              "entry": 2082797620,
+              "routine": 2082622256,
+              "entry_kind": "OsPthreadWrapper@32,args[0]@48",
+              "index": 9
+            }
+          ],
+          "tcb_pointer": 2084158416,
+          "tcb_maximum": 16,
+          "tcb_prefix_hex": [
+            "30b3397c00000000000000001900010000200000000000006095397c0000000088a3207c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "d093397c00000000c10000003f00000000100000010000003085397c00000000702a257c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00343a7c00000000210000001a0001000040000002000000b0f5397c00000000e0ba207c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00743a7c00000000210000001b0001000040000003000000b0353a7c00000000e0ba207c0000000000000000000000000100000000000000000000000000000000000000000000000000000000000000",
+            "00b43a7c00000000210000001c0001000040000004000000b0753a7c00000000e0ba207c0000000000000000000000000200000000000000000000000000000000000000000000000000000000000000",
+            "00f43a7c00000000210000001d0001000040000005000000b0b53a7c00000000e0ba207c0000000000000000000000000300000000000000000000000000000000000000000000000000000000000000",
+            "c07a3b7c000000002100000018000100008000000600000090fe3a7c00000000203d217c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "b081397c00000000000000000a0000000010000007000000d072397c0000000034f8247c0000000000000000000000002046227c00000000000000000000000000000000000000000000000000000000",
+            "107f397c00000000090000000a0000000010000008000000d072397c0000000034f8247c00000000a0b8397c000000003848227c00000000000000000000000000000000000000000000000000000000",
+            "e070397c00000000090000000a0000000010000009000000a062397c0000000034f8247c00000000e0b7397c00000000304b227c00000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "0000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ],
+          "limit": "Stopped-only 1504+608/real FSC/actual TCB metadata; fixed ELF and compiled TCB geometry, not stack watermark, worst latency, fragmentation or realtime acceptance.",
+          "heap_comparison": {
+            "used_delta_bytes": 1064,
+            "peak_bytes": 543648,
+            "peak_headroom_bytes": 504896,
+            "limit": "Includes RTOS/RPMsg allocations; usage delta is not an exact leak verdict."
+          }
+        },
+        "cleanup": true,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": null
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmppbq4gzc_\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmppbq4gzc_\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ],
+        [
+          "stop",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "TCB",
+          2084158416
+        ],
+        [
+          "TCB",
+          2084159216
+        ],
+        [
+          "TCB",
+          2084160016
+        ],
+        [
+          "TCB",
+          2084160816
+        ],
+        [
+          "TCB",
+          2084161616
+        ],
+        [
+          "TCB",
+          2084162416
+        ],
+        [
+          "TCB",
+          2084163216
+        ],
+        [
+          "TCB",
+          2084164016
+        ],
+        [
+          "TCB",
+          2084164816
+        ],
+        [
+          "TCB",
+          2084165616
+        ],
+        [
+          "TCB",
+          2084166416
+        ],
+        [
+          "TCB",
+          2084167216
+        ],
+        [
+          "TCB",
+          2084168016
+        ],
+        [
+          "TCB",
+          2084168816
+        ],
+        [
+          "TCB",
+          2084169616
+        ],
+        [
+          "TCB",
+          2084170416
+        ],
+        [
+          "TCB",
+          2084171216
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "rm",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "driver",
+          "bind"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "up"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "rmmod",
+          "m7_eth2_power_hold"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": false,
+        "driver": true,
+        "created": false,
+        "running": false
+      }
+    },
+    "abi": {
+      "simulated_result": null,
+      "system_calls": [],
+      "simulated_final_state": {
+        "hold": false,
+        "driver": true,
+        "created": false,
+        "running": false
+      }
+    },
+    "cold": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": false,
+        "completion": null,
+        "heap_before": null,
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "ValueError: COLD allowance; UNSAFE/UNKNOWN: retain UP2/client/ETH/hold; NO CPU_OFF/rebind/rmmod/reboot/retry"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpczus5as0\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpczus5as0\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": true
+      }
+    },
+    "liveproof": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "live proof"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpt891o1jo\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpt891o1jo\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": true
+      }
+    },
+    "tcb": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "PLKowner direct TCB/stack/args mismatch"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpac2p6uk1\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpac2p6uk1\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ],
+        [
+          "stop",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "TCB",
+          2084158416
+        ],
+        [
+          "TCB",
+          2084159216
+        ],
+        [
+          "TCB",
+          2084160016
+        ],
+        [
+          "TCB",
+          2084160816
+        ],
+        [
+          "TCB",
+          2084161616
+        ],
+        [
+          "TCB",
+          2084162416
+        ],
+        [
+          "TCB",
+          2084163216
+        ],
+        [
+          "TCB",
+          2084164016
+        ],
+        [
+          "TCB",
+          2084164816
+        ],
+        [
+          "TCB",
+          2084165616
+        ],
+        [
+          "TCB",
+          2084166416
+        ],
+        [
+          "TCB",
+          2084167216
+        ],
+        [
+          "TCB",
+          2084168016
+        ],
+        [
+          "TCB",
+          2084168816
+        ],
+        [
+          "TCB",
+          2084169616
+        ],
+        [
+          "TCB",
+          2084170416
+        ],
+        [
+          "TCB",
+          2084171216
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": false
+      }
+    },
+    "wrapper": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "actual direct/pthread tasks missing or duplicate"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpbaqwnpv0\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpbaqwnpv0\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ],
+        [
+          "stop",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "TCB",
+          2084158416
+        ],
+        [
+          "TCB",
+          2084159216
+        ],
+        [
+          "TCB",
+          2084160016
+        ],
+        [
+          "TCB",
+          2084160816
+        ],
+        [
+          "TCB",
+          2084161616
+        ],
+        [
+          "TCB",
+          2084162416
+        ],
+        [
+          "TCB",
+          2084163216
+        ],
+        [
+          "TCB",
+          2084164016
+        ],
+        [
+          "TCB",
+          2084164816
+        ],
+        [
+          "TCB",
+          2084165616
+        ],
+        [
+          "TCB",
+          2084166416
+        ],
+        [
+          "TCB",
+          2084167216
+        ],
+        [
+          "TCB",
+          2084168016
+        ],
+        [
+          "TCB",
+          2084168816
+        ],
+        [
+          "TCB",
+          2084169616
+        ],
+        [
+          "TCB",
+          2084170416
+        ],
+        [
+          "TCB",
+          2084171216
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": false
+      }
+    },
+    "lease": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "ETH lease after stop"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpov1mfmtj\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpov1mfmtj\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ],
+        [
+          "stop",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "OFF"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": false
+      }
+    },
+    "heap": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "insufficient P3j reviewed FSC allowance/headroom"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpdshpa6r3\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpdshpa6r3\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ],
+        [
+          "stop",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "OFF"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": false
+      }
+    },
+    "bounds": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "pinned M6 TCB bounds changed"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpdbhow8fu\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpdbhow8fu\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ],
+        [
+          "stop",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "OFF"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": false
+      }
+    },
+    "publish": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "P3j cache/result not published exactly once"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmp6814o3ew\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmp6814o3ew\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ],
+        [
+          "stop",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "OFF"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": false
+      }
+    },
+    "exception": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "UP2 exception cache is nonzero"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmp4wp05e9n\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmp4wp05e9n\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ],
+        [
+          "stop",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "OFF"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": false
+      }
+    },
+    "fault": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": null,
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "RuntimeError: not complete; UNSAFE/UNKNOWN: retain UP2/client/ETH/hold; NO CPU_OFF/rebind/rmmod/reboot/retry"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpvqq3pseb\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpvqq3pseb\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": true
+      }
+    },
+    "ambiguous": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": {
+          "lifecycle": {
+            "result": 0,
+            "clean": 1,
+            "stage": 9,
+            "stackError": 0,
+            "loops": 598738,
+            "leaseBefore": 0,
+            "leaseAfter": 0,
+            "timerBefore": 0,
+            "timerAfter": 0,
+            "rx": 0,
+            "tx": 376,
+            "txDescriptors": 0,
+            "dropped": 4,
+            "rxErrors": 0,
+            "txErrors": 0,
+            "fatal": 0,
+            "timerIrqs": 376,
+            "timerCallbacks": 376,
+            "initialized": {
+              "state": 1,
+              "owner": 6,
+              "lastError": 0,
+              "lastEvent": 0,
+              "nmtState": 0,
+              "processes": 0,
+              "events": 0
+            },
+            "prepared": {
+              "state": 2,
+              "owner": 6,
+              "lastError": 0,
+              "lastEvent": 0,
+              "nmtState": 0,
+              "processes": 0,
+              "events": 0
+            },
+            "final": {
+              "state": 0,
+              "owner": 6,
+              "lastError": 0,
+              "lastEvent": 16,
+              "nmtState": 0,
+              "processes": 598738,
+              "events": 14
+            },
+            "active": {
+              "mac": 49155,
+              "tx": 524289,
+              "rx": 527361,
+              "dma": 0,
+              "macIrq": 0,
+              "dmaIrq": 0
+            },
+            "stopped": {
+              "mac": 0,
+              "tx": 0,
+              "rx": 0,
+              "dma": 0,
+              "macIrq": 0,
+              "dmaIrq": 0
+            },
+            "timerInitial": {
+              "counter": 37403336790,
+              "ticks": 120,
+              "affinity": 2147483905,
+              "interrupts": 0,
+              "maxIrqLate": 0,
+              "level": 4,
+              "frequency": 24000000,
+              "cntp": 0,
+              "cntv": 1,
+              "enabled": 134266879,
+              "pending": 0,
+              "active": 0,
+              "group": 0,
+              "config": 1364459520,
+              "priority30": 160,
+              "priority27": 0,
+              "typer": 64749,
+              "cpuControl": 1
+            },
+            "timerFinal": {
+              "counter": 37501110558,
+              "ticks": 4192,
+              "affinity": 2147483905,
+              "interrupts": 376,
+              "maxIrqLate": 62,
+              "level": 4,
+              "frequency": 24000000,
+              "cntp": 2,
+              "cntv": 1,
+              "enabled": 134266879,
+              "pending": 0,
+              "active": 0,
+              "group": 0,
+              "config": 1364459520,
+              "priority30": 160,
+              "priority27": 0,
+              "typer": 64749,
+              "cpuControl": 1
+            }
+          },
+          "cycle": {
+            "abi": 1,
+            "bytes": 608,
+            "resetSubmitted": 1,
+            "offSubmitted": 1,
+            "reached": 765,
+            "stopCycleCalls": 1,
+            "owner": 6,
+            "pending": 0,
+            "maxPending": 1,
+            "pendingAtStop": 0,
+            "txBeforeRun": 176,
+            "txAtStop": 376,
+            "runLoops": 36641,
+            "drainLoops": 374,
+            "offLoops": 1,
+            "contextValid": 1,
+            "watchdogTrips": 0,
+            "frequency": 24000000,
+            "startCounter": 37403336790,
+            "endCounter": 37501110706,
+            "runCounter": 37498648608,
+            "lastTxCounter": 37501075342,
+            "pendingCounter": 37501075342,
+            "maxGapTicks": 59020945,
+            "maxLateTicks": 458,
+            "skippedPeriods": 0
+          },
+          "cache": {
+            "ready": 1,
+            "pending": 0,
+            "running": 0,
+            "seq": 1,
+            "done": 1,
+            "cmd": 8,
+            "rc": 0,
+            "runtime": 0,
+            "owner": 6
+          },
+          "mn": {
+            "state": 0,
+            "owner": 6,
+            "lastError": 0,
+            "lastEvent": 16,
+            "nmtState": 0,
+            "processes": 598738,
+            "events": 14
+          },
+          "ethLease": 0,
+          "exception": {
+            "cause": 0,
+            "elr": 0,
+            "esr": 0
+          },
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "snapshot_sha256": "a9a3368cd8c76e68083a17cf9e3544b46da459876c9ec394ebf1bc1d133aff97",
+          "cycle_sha256": "2f73ba3b9f05762cd60d06fd3524a9e50bdcb0c10c612786c7ad3c76bf4f8e80",
+          "snapshot_hex": "01000000000000000000000001000000010000000800000000000000000000000600000000000000000000000600000000000000100000000000000000000000d2220900000000000e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "cycle_hex": "010000006002000000000000010000000900000000000000d22209000000000000000000000000000000000000000000780100000000000004000000000000000000000000000000780100000000000078010000000000000100000006000000000000000000000000000000000000000000000000000000000000000000000002000000060000000000000000000000000000000000000000000000000000000000000000000000000000000600000000000000100000000000000000000000d2220900000000000e000000000000000000000000000000000000000000000003c0000001000800010c08000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000056a069b50800000078000000000000000101008000000000000000000000000000000000000000000400000000366e010000000001000000ffbf000800000000000000000000000000005451a000000000000000edfc000001000000000000001e893dbb080000006010000000000000010100800000000078010000000000003e000000000000000400000000366e010200000001000000ffbf000800000000000000000000000000005451a000000000000000edfc000001000000000000000100000001000000fd0200000100000006000000000000000100000000000000b000000078010000218f00007601000001000000010000000000000000366e0156a069b508000000b2893dbb0800000020f817bb080000008eff3cbb080000008eff3cbb080000009196840300000000ca010000000000000000000000000000",
+          "heap": {
+            "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+            "phase": "STOPPED",
+            "pool_start": 2083124528,
+            "pool_bytes": 1048576,
+            "scalars": {
+              "g_memTotalSize": 1048544,
+              "g_memUsage": 38584,
+              "g_memPeakUsage": 543648,
+              "g_memStartAddr": 2083124528
+            },
+            "free_bytes": 1009960,
+            "peak_headroom_bytes": 504896,
+            "minimum_headroom_bytes": 262144,
+            "minimum_initial_free_bytes": 767888,
+            "model_stack_peak_bytes": 505744,
+            "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+          },
+          "threads": [
+            {
+              "name": "PLKowner",
+              "id": 6,
+              "allocated_stack": 32768,
+              "stack_base": 2084241040,
+              "entry": 2082553120,
+              "entry_kind": "direct-taskEntry@32",
+              "index": 6
+            },
+            {
+              "name": "rpmsg_tty_task",
+              "id": 8,
+              "allocated_stack": 4096,
+              "stack_base": 2084139728,
+              "entry": 2082797620,
+              "routine": 2082621496,
+              "entry_kind": "OsPthreadWrapper@32,args[0]@48",
+              "index": 8
+            },
+            {
+              "name": "rpmsg_listen_task",
+              "id": 9,
+              "allocated_stack": 4096,
+              "stack_base": 2084135584,
+              "entry": 2082797620,
+              "routine": 2082622256,
+              "entry_kind": "OsPthreadWrapper@32,args[0]@48",
+              "index": 9
+            }
+          ],
+          "tcb_pointer": 2084158416,
+          "tcb_maximum": 16,
+          "tcb_prefix_hex": [
+            "30b3397c00000000000000001900010000200000000000006095397c0000000088a3207c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "d093397c00000000c10000003f00000000100000010000003085397c00000000702a257c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00343a7c00000000210000001a0001000040000002000000b0f5397c00000000e0ba207c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00743a7c00000000210000001b0001000040000003000000b0353a7c00000000e0ba207c0000000000000000000000000100000000000000000000000000000000000000000000000000000000000000",
+            "00b43a7c00000000210000001c0001000040000004000000b0753a7c00000000e0ba207c0000000000000000000000000200000000000000000000000000000000000000000000000000000000000000",
+            "00f43a7c00000000210000001d0001000040000005000000b0b53a7c00000000e0ba207c0000000000000000000000000300000000000000000000000000000000000000000000000000000000000000",
+            "c07a3b7c000000002100000018000100008000000600000090fe3a7c00000000203d217c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "b081397c00000000000000000a0000000010000007000000d072397c0000000034f8247c0000000000000000000000002046227c00000000000000000000000000000000000000000000000000000000",
+            "107f397c00000000090000000a0000000010000008000000d072397c0000000034f8247c00000000a0b8397c000000003848227c00000000000000000000000000000000000000000000000000000000",
+            "e070397c00000000090000000a0000000010000009000000a062397c0000000034f8247c00000000e0b7397c00000000304b227c00000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "0000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ],
+          "limit": "Stopped-only 1504+608/real FSC/actual TCB metadata; fixed ELF and compiled TCB geometry, not stack watermark, worst latency, fragmentation or realtime acceptance.",
+          "heap_comparison": {
+            "used_delta_bytes": 1064,
+            "peak_bytes": 543648,
+            "peak_headroom_bytes": 504896,
+            "limit": "Includes RTOS/RPMsg allocations; usage delta is not an exact leak verdict."
+          }
+        },
+        "cleanup": true,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "RuntimeError: ambiguous acceptance"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmp4rpi38pq\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmp4rpi38pq\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ],
+        [
+          "stop",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "TCB",
+          2084158416
+        ],
+        [
+          "TCB",
+          2084159216
+        ],
+        [
+          "TCB",
+          2084160016
+        ],
+        [
+          "TCB",
+          2084160816
+        ],
+        [
+          "TCB",
+          2084161616
+        ],
+        [
+          "TCB",
+          2084162416
+        ],
+        [
+          "TCB",
+          2084163216
+        ],
+        [
+          "TCB",
+          2084164016
+        ],
+        [
+          "TCB",
+          2084164816
+        ],
+        [
+          "TCB",
+          2084165616
+        ],
+        [
+          "TCB",
+          2084166416
+        ],
+        [
+          "TCB",
+          2084167216
+        ],
+        [
+          "TCB",
+          2084168016
+        ],
+        [
+          "TCB",
+          2084168816
+        ],
+        [
+          "TCB",
+          2084169616
+        ],
+        [
+          "TCB",
+          2084170416
+        ],
+        [
+          "TCB",
+          2084171216
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "rm",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "driver",
+          "bind"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "up"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "rmmod",
+          "m7_eth2_power_hold"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": false,
+        "driver": true,
+        "created": false,
+        "running": false
+      }
+    },
+    "start": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": false,
+        "completion": null,
+        "heap_before": null,
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "RuntimeError: ambiguous start; UNSAFE/UNKNOWN: retain UP2/client/ETH/hold; NO CPU_OFF/rebind/rmmod/reboot/retry"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmp2tr613w0\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmp2tr613w0\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": true
+      }
+    },
+    "stop": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "ambiguous stop"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpjmf_0_py\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpjmf_0_py\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ],
+        [
+          "stop",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": false,
+        "created": true,
+        "running": false
+      }
+    },
+    "insmod": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": false,
+        "completion": null,
+        "heap_before": null,
+        "private_stopped": null,
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "RuntimeError: ambiguous insmod; UNSAFE/UNKNOWN: retain UP2/client/ETH/hold; NO CPU_OFF/rebind/rmmod/reboot/retry"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpwy0zud45\\hold.ko"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": false,
+        "driver": true,
+        "created": false,
+        "running": false
+      }
+    },
+    "drift": {
+      "simulated_result": {
+        "phase": "P3j runner-v2 bounded MN cycle hardware window",
+        "passed": false,
+        "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+        "submitted": true,
+        "completion": {
+          "owner": {
+            "ready": "1",
+            "owner": "6",
+            "pending": "0",
+            "running": "0",
+            "seq": "1",
+            "done": "1",
+            "cmd": "8",
+            "rc": "0x0",
+            "runtime": "0x0",
+            "state": "0",
+            "nmt": "0x0",
+            "processes": "598738",
+            "events": "14",
+            "mode": "bounded-cycle-diagnostic"
+          },
+          "result": {
+            "abi": "1",
+            "bytes": "608",
+            "rc": "0",
+            "clean": "1",
+            "stage": "9",
+            "stack": "0x0",
+            "reset": "1",
+            "off": "1",
+            "reached": "0x2fd",
+            "loops": "598738",
+            "run": "36641",
+            "drain": "374",
+            "tx": "376",
+            "pending": "0",
+            "stopCalls": "1",
+            "trips": "0",
+            "context": "1"
+          }
+        },
+        "heap_before": {
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "phase": "COLD",
+          "pool_start": 2083124528,
+          "pool_bytes": 1048576,
+          "scalars": {
+            "g_memTotalSize": 1048544,
+            "g_memUsage": 37520,
+            "g_memPeakUsage": 37520,
+            "g_memStartAddr": 2083124528
+          },
+          "free_bytes": 1011024,
+          "peak_headroom_bytes": 1011024,
+          "minimum_headroom_bytes": 262144,
+          "minimum_initial_free_bytes": 767888,
+          "model_stack_peak_bytes": 505744,
+          "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+        },
+        "private_stopped": {
+          "lifecycle": {
+            "result": 0,
+            "clean": 1,
+            "stage": 9,
+            "stackError": 0,
+            "loops": 598738,
+            "leaseBefore": 0,
+            "leaseAfter": 0,
+            "timerBefore": 0,
+            "timerAfter": 0,
+            "rx": 0,
+            "tx": 376,
+            "txDescriptors": 0,
+            "dropped": 4,
+            "rxErrors": 0,
+            "txErrors": 0,
+            "fatal": 0,
+            "timerIrqs": 376,
+            "timerCallbacks": 376,
+            "initialized": {
+              "state": 1,
+              "owner": 6,
+              "lastError": 0,
+              "lastEvent": 0,
+              "nmtState": 0,
+              "processes": 0,
+              "events": 0
+            },
+            "prepared": {
+              "state": 2,
+              "owner": 6,
+              "lastError": 0,
+              "lastEvent": 0,
+              "nmtState": 0,
+              "processes": 0,
+              "events": 0
+            },
+            "final": {
+              "state": 0,
+              "owner": 6,
+              "lastError": 0,
+              "lastEvent": 16,
+              "nmtState": 0,
+              "processes": 598738,
+              "events": 14
+            },
+            "active": {
+              "mac": 49155,
+              "tx": 524289,
+              "rx": 527361,
+              "dma": 0,
+              "macIrq": 0,
+              "dmaIrq": 0
+            },
+            "stopped": {
+              "mac": 0,
+              "tx": 0,
+              "rx": 0,
+              "dma": 0,
+              "macIrq": 0,
+              "dmaIrq": 0
+            },
+            "timerInitial": {
+              "counter": 37403336790,
+              "ticks": 120,
+              "affinity": 2147483905,
+              "interrupts": 0,
+              "maxIrqLate": 0,
+              "level": 4,
+              "frequency": 24000000,
+              "cntp": 0,
+              "cntv": 1,
+              "enabled": 134266879,
+              "pending": 0,
+              "active": 0,
+              "group": 0,
+              "config": 1364459520,
+              "priority30": 160,
+              "priority27": 0,
+              "typer": 64749,
+              "cpuControl": 1
+            },
+            "timerFinal": {
+              "counter": 37501110558,
+              "ticks": 4192,
+              "affinity": 2147483905,
+              "interrupts": 376,
+              "maxIrqLate": 62,
+              "level": 4,
+              "frequency": 24000000,
+              "cntp": 2,
+              "cntv": 1,
+              "enabled": 134266879,
+              "pending": 0,
+              "active": 0,
+              "group": 0,
+              "config": 1364459520,
+              "priority30": 160,
+              "priority27": 0,
+              "typer": 64749,
+              "cpuControl": 1
+            }
+          },
+          "cycle": {
+            "abi": 1,
+            "bytes": 608,
+            "resetSubmitted": 1,
+            "offSubmitted": 1,
+            "reached": 765,
+            "stopCycleCalls": 1,
+            "owner": 6,
+            "pending": 0,
+            "maxPending": 1,
+            "pendingAtStop": 0,
+            "txBeforeRun": 176,
+            "txAtStop": 376,
+            "runLoops": 36641,
+            "drainLoops": 374,
+            "offLoops": 1,
+            "contextValid": 1,
+            "watchdogTrips": 0,
+            "frequency": 24000000,
+            "startCounter": 37403336790,
+            "endCounter": 37501110706,
+            "runCounter": 37498648608,
+            "lastTxCounter": 37501075342,
+            "pendingCounter": 37501075342,
+            "maxGapTicks": 59020945,
+            "maxLateTicks": 458,
+            "skippedPeriods": 0
+          },
+          "cache": {
+            "ready": 1,
+            "pending": 0,
+            "running": 0,
+            "seq": 1,
+            "done": 1,
+            "cmd": 8,
+            "rc": 0,
+            "runtime": 0,
+            "owner": 6
+          },
+          "mn": {
+            "state": 0,
+            "owner": 6,
+            "lastError": 0,
+            "lastEvent": 16,
+            "nmtState": 0,
+            "processes": 598738,
+            "events": 14
+          },
+          "ethLease": 0,
+          "exception": {
+            "cause": 0,
+            "elr": 0,
+            "esr": 0
+          },
+          "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+          "snapshot_sha256": "a9a3368cd8c76e68083a17cf9e3544b46da459876c9ec394ebf1bc1d133aff97",
+          "cycle_sha256": "2f73ba3b9f05762cd60d06fd3524a9e50bdcb0c10c612786c7ad3c76bf4f8e80",
+          "snapshot_hex": "01000000000000000000000001000000010000000800000000000000000000000600000000000000000000000600000000000000100000000000000000000000d2220900000000000e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "cycle_hex": "010000006002000000000000010000000900000000000000d22209000000000000000000000000000000000000000000780100000000000004000000000000000000000000000000780100000000000078010000000000000100000006000000000000000000000000000000000000000000000000000000000000000000000002000000060000000000000000000000000000000000000000000000000000000000000000000000000000000600000000000000100000000000000000000000d2220900000000000e000000000000000000000000000000000000000000000003c0000001000800010c08000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000056a069b50800000078000000000000000101008000000000000000000000000000000000000000000400000000366e010000000001000000ffbf000800000000000000000000000000005451a000000000000000edfc000001000000000000001e893dbb080000006010000000000000010100800000000078010000000000003e000000000000000400000000366e010200000001000000ffbf000800000000000000000000000000005451a000000000000000edfc000001000000000000000100000001000000fd0200000100000006000000000000000100000000000000b000000078010000218f00007601000001000000010000000000000000366e0156a069b508000000b2893dbb0800000020f817bb080000008eff3cbb080000008eff3cbb080000009196840300000000ca010000000000000000000000000000",
+          "heap": {
+            "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+            "phase": "STOPPED",
+            "pool_start": 2083124528,
+            "pool_bytes": 1048576,
+            "scalars": {
+              "g_memTotalSize": 1048544,
+              "g_memUsage": 38584,
+              "g_memPeakUsage": 543648,
+              "g_memStartAddr": 2083124528
+            },
+            "free_bytes": 1009960,
+            "peak_headroom_bytes": 504896,
+            "minimum_headroom_bytes": 262144,
+            "minimum_initial_free_bytes": 767888,
+            "model_stack_peak_bytes": 505744,
+            "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+          },
+          "threads": [
+            {
+              "name": "PLKowner",
+              "id": 6,
+              "allocated_stack": 32768,
+              "stack_base": 2084241040,
+              "entry": 2082553120,
+              "entry_kind": "direct-taskEntry@32",
+              "index": 6
+            },
+            {
+              "name": "rpmsg_tty_task",
+              "id": 8,
+              "allocated_stack": 4096,
+              "stack_base": 2084139728,
+              "entry": 2082797620,
+              "routine": 2082621496,
+              "entry_kind": "OsPthreadWrapper@32,args[0]@48",
+              "index": 8
+            },
+            {
+              "name": "rpmsg_listen_task",
+              "id": 9,
+              "allocated_stack": 4096,
+              "stack_base": 2084135584,
+              "entry": 2082797620,
+              "routine": 2082622256,
+              "entry_kind": "OsPthreadWrapper@32,args[0]@48",
+              "index": 9
+            }
+          ],
+          "tcb_pointer": 2084158416,
+          "tcb_maximum": 16,
+          "tcb_prefix_hex": [
+            "30b3397c00000000000000001900010000200000000000006095397c0000000088a3207c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "d093397c00000000c10000003f00000000100000010000003085397c00000000702a257c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00343a7c00000000210000001a0001000040000002000000b0f5397c00000000e0ba207c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00743a7c00000000210000001b0001000040000003000000b0353a7c00000000e0ba207c0000000000000000000000000100000000000000000000000000000000000000000000000000000000000000",
+            "00b43a7c00000000210000001c0001000040000004000000b0753a7c00000000e0ba207c0000000000000000000000000200000000000000000000000000000000000000000000000000000000000000",
+            "00f43a7c00000000210000001d0001000040000005000000b0b53a7c00000000e0ba207c0000000000000000000000000300000000000000000000000000000000000000000000000000000000000000",
+            "c07a3b7c000000002100000018000100008000000600000090fe3a7c00000000203d217c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "b081397c00000000000000000a0000000010000007000000d072397c0000000034f8247c0000000000000000000000002046227c00000000000000000000000000000000000000000000000000000000",
+            "107f397c00000000090000000a0000000010000008000000d072397c0000000034f8247c00000000a0b8397c000000003848227c00000000000000000000000000000000000000000000000000000000",
+            "e070397c00000000090000000a0000000010000009000000a062397c0000000034f8247c00000000e0b7397c00000000304b227c00000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "00000000000000000000000000000000000000000f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "0000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ],
+          "limit": "Stopped-only 1504+608/real FSC/actual TCB metadata; fixed ELF and compiled TCB geometry, not stack watermark, worst latency, fragmentation or realtime acceptance.",
+          "heap_comparison": {
+            "used_delta_bytes": 1064,
+            "peak_bytes": 543648,
+            "peak_headroom_bytes": 504896,
+            "limit": "Includes RTOS/RPMsg allocations; usage delta is not an exact leak verdict."
+          }
+        },
+        "cleanup": false,
+        "boot_id": "test-boot",
+        "micad": {
+          "ActiveState": "active"
+        },
+        "error": "management/micad/boot drift; retain hold"
+      },
+      "system_calls": [
+        [
+          "uname",
+          "-r"
+        ],
+        [
+          "mcsctl",
+          "status"
+        ],
+        [
+          "ip",
+          "-4",
+          "-o",
+          "addr",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "ip",
+          "route",
+          "show",
+          "dev",
+          "eth1"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "insmod",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpc9kvpy14\\hold.ko"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "down"
+        ],
+        [
+          "driver",
+          "unbind"
+        ],
+        [
+          "create",
+          "C:\\Users\\limew\\AppData\\Local\\Temp\\tmpc9kvpy14\\up-b-m7-plk-cycle-p3j-v2.conf"
+        ],
+        [
+          "start",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "diagnostic",
+          "PLK status"
+        ],
+        [
+          "diagnostic",
+          "M7 status"
+        ],
+        [
+          "diagnostic",
+          "PLK cycle-probe"
+        ],
+        [
+          "stop",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "TCB",
+          2084158416
+        ],
+        [
+          "TCB",
+          2084159216
+        ],
+        [
+          "TCB",
+          2084160016
+        ],
+        [
+          "TCB",
+          2084160816
+        ],
+        [
+          "TCB",
+          2084161616
+        ],
+        [
+          "TCB",
+          2084162416
+        ],
+        [
+          "TCB",
+          2084163216
+        ],
+        [
+          "TCB",
+          2084164016
+        ],
+        [
+          "TCB",
+          2084164816
+        ],
+        [
+          "TCB",
+          2084165616
+        ],
+        [
+          "TCB",
+          2084166416
+        ],
+        [
+          "TCB",
+          2084167216
+        ],
+        [
+          "TCB",
+          2084168016
+        ],
+        [
+          "TCB",
+          2084168816
+        ],
+        [
+          "TCB",
+          2084169616
+        ],
+        [
+          "TCB",
+          2084170416
+        ],
+        [
+          "TCB",
+          2084171216
+        ],
+        [
+          "OFF"
+        ],
+        [
+          "rm",
+          "up-b-m7-plk-cycle-p3j-v2"
+        ],
+        [
+          "driver",
+          "bind"
+        ],
+        [
+          "ip",
+          "link",
+          "set",
+          "eth1",
+          "up"
+        ]
+      ],
+      "simulated_final_state": {
+        "hold": true,
+        "driver": true,
+        "created": false,
+        "running": false
+      }
+    }
+  },
+  "limit": "Actual historical TCB bytes replayed, all native/system/RPMsg boundaries FAKE. Not new hardware PASS."
+}

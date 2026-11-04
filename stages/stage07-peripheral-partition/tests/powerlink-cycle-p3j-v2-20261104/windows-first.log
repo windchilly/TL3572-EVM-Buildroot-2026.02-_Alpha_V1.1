@@ -1,0 +1,31 @@
+test_actual_records_pass_with_off_before_after (test_powerlink_cycle_p3j_v2_board.V2ReaderTests.test_actual_records_pass_with_off_before_after) ... ok
+test_actual_tcb_compiler_proof_required (test_powerlink_cycle_p3j_v2_board.V2ReaderTests.test_actual_tcb_compiler_proof_required) ... ok
+test_live_cpu_no_metadata_read (test_powerlink_cycle_p3j_v2_board.V2ReaderTests.test_live_cpu_no_metadata_read) ... ok
+test_live_helpers_use_v2_image_not_old_default (test_powerlink_cycle_p3j_v2_board.V2ReaderTests.test_live_helpers_use_v2_image_not_old_default) ... ok
+test_private_failures_keep_rejecting (test_powerlink_cycle_p3j_v2_board.V2ReaderTests.test_private_failures_keep_rejecting) ... ok
+test_profiles_and_old_files_are_separate (test_powerlink_cycle_p3j_v2_board.V2ReaderTests.test_profiles_and_old_files_are_separate) ... ok
+test_actual_tcb_flow_automatically_reaches_clean_linux (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_actual_tcb_flow_automatically_reaches_clean_linux) ... FAIL
+test_ambiguous_ack_only_observes_no_resubmit (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_ambiguous_ack_only_observes_no_resubmit) ... ok
+test_ambiguous_start_or_hold_retains_without_stop (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_ambiguous_start_or_hold_retains_without_stop) ... ok
+test_ambiguous_stop_no_second_stop_or_private_reads (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_ambiguous_stop_no_second_stop_or_private_reads) ... ok
+test_bad_actual_private_tcb_or_heap_retains_after_single_stop (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_bad_actual_private_tcb_or_heap_retains_after_single_stop) ... ok
+test_fault_or_live_proof_failure_never_stops_or_restores (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_fault_or_live_proof_failure_never_stops_or_restores) ... ok
+test_new_profile_marker_is_exclusive (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_new_profile_marker_is_exclusive) ... ok
+test_no_hardware_approval_without_new_switch (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_no_hardware_approval_without_new_switch) ... ok
+test_old_profile_cli_and_globals_unchanged (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_old_profile_cli_and_globals_unchanged) ... ok
+test_restore_drift_keeps_hold (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_restore_drift_keeps_hold) ... ok
+test_wrong_tcb_abi_rejected_before_attempt_and_handoff (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_wrong_tcb_abi_rejected_before_attempt_and_handoff) ... ok
+
+======================================================================
+FAIL: test_actual_tcb_flow_automatically_reaches_clean_linux (test_powerlink_cycle_p3j_v2_board.V2WorkflowTests.test_actual_tcb_flow_automatically_reaches_clean_linux)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_cycle_p3j_v2_board.py", line 177, in test_actual_tcb_flow_automatically_reaches_clean_linux
+    self.assertTrue(result['passed'] and result['cleanup']);self.assertFalse(any(state.values()))
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.547s
+
+FAILED (failures=1)

@@ -1,0 +1,129 @@
+{
+  "prepared_only": true,
+  "board_root": "/root/m7-powerlink-cycle-p3j-v2-20261104",
+  "client": "up-b-m7-plk-cycle-p3j-v2",
+  "kernel": "6.12.69-gf1b67c293213",
+  "files": {
+    "run_powerlink_cycle_p3j_v2_probe.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/run_powerlink_cycle_p3j_v2_probe.py",
+      "bytes": 13534,
+      "sha256": "1e1304473a900a457942c191b67b3f566c18a26b0bc2a46ddc9681bf7600ec77"
+    },
+    "powerlink_cycle_p3j_checks.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/powerlink_cycle_p3j_checks.py",
+      "bytes": 11659,
+      "sha256": "f7f98838c3e2916fbc07d2c77913d76d6e2a8d477443d5acb28b49d00a5be027"
+    },
+    "read_powerlink_cycle_p3j_snapshot.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/read_powerlink_cycle_p3j_snapshot.py",
+      "bytes": 6301,
+      "sha256": "f8d4bae1c084572181d1e86d09acc863558e03e8296e343e0bd66fc608437488"
+    },
+    "read_powerlink_cycle_p3j_v2_snapshot.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/read_powerlink_cycle_p3j_v2_snapshot.py",
+      "bytes": 2520,
+      "sha256": "a32f33999ed2f1765287ae1784b0ab9b8a5110dfa65f352b37101bd411f2fd81"
+    },
+    "powerlink_cycle_p3j_tcb_checks.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/powerlink_cycle_p3j_tcb_checks.py",
+      "bytes": 2150,
+      "sha256": "e432adbe05dbca671c54011b28677031f28fa35633c02f5a063aa351fa991d2c"
+    },
+    "powerlink_nmt_checks.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/powerlink_nmt_checks.py",
+      "bytes": 7753,
+      "sha256": "6e4c6a0b70962d2361b9be9b5e9974c368d76700e71ed99137e88562590f4e94"
+    },
+    "run_powerlink_eth_probe.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/run_powerlink_eth_probe.py",
+      "bytes": 11445,
+      "sha256": "5b69652d68e17f6faca60a90fbd7b512dd9317c4af3e3aff7aafab1a16cd251a"
+    },
+    "powerlink_eth_checks.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/powerlink_eth_checks.py",
+      "bytes": 2178,
+      "sha256": "ecdff54acd330f7b9e442fabbac0afea6683ef43452b7781ffd8f5c15acbe674"
+    },
+    "run_can_direct_pair.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/run_can_direct_pair.py",
+      "bytes": 9896,
+      "sha256": "68cf00b53e6c5cd7c3ad39834b381c1a561e422395478a1cd7bd36c94f3fce8d"
+    },
+    "integrated_mmu_resources.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/integrated_mmu_resources.py",
+      "bytes": 3376,
+      "sha256": "32382cd1a99e58739c3aeeb23800e8fc018e175f83a4defe51b6e60c5b63df22"
+    },
+    "eth3_l2_smoke.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/eth3_l2_smoke.py",
+      "bytes": 4409,
+      "sha256": "a9b6d84c40fc8913cfbb61dbeffa701dc12a54d257c218f1b2e0d91a65846fbe"
+    },
+    "eth2_resources.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/eth2_resources.py",
+      "bytes": 827,
+      "sha256": "f543bba6b8edd50e040fdd72bf216c09efefc4cccc9efea82052017a79226b9c"
+    },
+    "run_integrated_passive.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/run_integrated_passive.py",
+      "bytes": 12727,
+      "sha256": "a9c5442aa86d08f2f1c313efc13538536797701f0b858a85b4ebe263f4defc53"
+    },
+    "can_resource_preflight.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/can_resource_preflight.py",
+      "bytes": 6169,
+      "sha256": "2d0c7ab0eb2ad18efff75573dc4898213f3eebad4d583d816103c3ccfb422450"
+    },
+    "rs232_resources.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/rs232_resources.py",
+      "bytes": 4400,
+      "sha256": "0c4bc30b9fbd8ca9b6136ef08ff10e948741c7eb7ad1012386d3c4555624733e"
+    },
+    "rs485_resources.py": {
+      "path": "stages/stage07-peripheral-partition/tests/board/rs485_resources.py",
+      "bytes": 4867,
+      "sha256": "4f8e1727b8821eccd0c9f3a3d1d81789fcfbf3c330fa72322b3994e6890306e0"
+    },
+    "up-b-m7-plk-cycle-p3j-v2.conf": {
+      "path": "stages/stage07-peripheral-partition/tests/board/up-b-m7-plk-cycle-p3j-v2.conf",
+      "bytes": 140,
+      "sha256": "f76dabc2edbf4f3de8ea438c44410127c9eda64282328b29c4bf56a3594b1e26"
+    },
+    "audit_integrated_mmu.py": {
+      "path": "stages/stage07-peripheral-partition/tests/audit_integrated_mmu.py",
+      "bytes": 2189,
+      "sha256": "9ca28f1a61a7320c2836c25f259379460d3bfea83590989fde964f4e005f8536"
+    },
+    "verify_integrated_elf.py": {
+      "path": "stages/stage07-peripheral-partition/tests/verify_integrated_elf.py",
+      "bytes": 5048,
+      "sha256": "2648a42ca0150b579e6c8fde6c53e95bd6e73238d47a6d1b7db9b9c180e31134"
+    },
+    "tl3572-m7-powerlink-p3j-up-b.elf": {
+      "path": "stages/stage07-peripheral-partition/tests/powerlink-cycle-p3j-20261102/candidates/tl3572-m7-powerlink-p3j-up-b.elf",
+      "bytes": 1220888,
+      "sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35"
+    },
+    "p3j-abi.json": {
+      "path": "stages/stage07-peripheral-partition/tests/powerlink-cycle-p3j-runner-20261104/p3j-abi.json",
+      "bytes": 2108,
+      "sha256": "283a6218a38bbd085d012655a372af3f06b28f9109e049b5a2614dc91d31d85d"
+    },
+    "tcb-abi.json": {
+      "path": "stages/stage07-peripheral-partition/tests/powerlink-cycle-p3j-hw-20261104/tcb-abi.json",
+      "bytes": 968,
+      "sha256": "0abb2e1774253979f4b269151836ef5a3f30321eb9db15879c8be9bbdf2b786b"
+    }
+  },
+  "existing_hold": {
+    "board_path": "/root/m7-eth-direct-20261010/m7_eth2_power_hold.ko",
+    "path": "stages/stage07-peripheral-partition/firmware/m7_eth2_power_hold.ko",
+    "sha256": "b071d4346d0d3310e22ffd2d1ae9ce2dcc1f3a2784ae94efd05a0798a546fc8d"
+  },
+  "existing_log_reader": {
+    "board_path": "/usr/libexec/m7/up_log_reader.py",
+    "path": "stages/stage07-peripheral-partition/source/host/up_log_reader.py",
+    "sha256": "2066c5bf6d6a7c2507f9bf9243ece7b767582079971096db836c1c6bccec6f14"
+  },
+  "limit": "Prepared inputs only, NOT upload/readback receipt, hardware approval or execution proof."
+}
