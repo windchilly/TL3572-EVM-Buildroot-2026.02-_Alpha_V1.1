@@ -2,6 +2,11 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-11-04 最新[P3j独立停核资源归还PASS](tests/powerlink-cycle-p3j-return-20261104/README.md)：
+用户另行授权仅归还；CPUOFF/同缓存/FSC/修正TCB/完整基线核验后，一次移除已停临时实例、重绑Linux ETH2、卸载hold，两端100FullANon/linkyes。
+无UP start/stop/周期/重启，原失败记录及固件不改；286Python通过。CPU4/5OFF、原两实例Offline、boot/micad/管理/工控不变，临时client/端点/hold清除。
+原一次Operational运行376TX加本次独立归还已安全闭合；原runner清理EXIT1仍保留，真实CN/PDO/SDO/持续MN与实时性未验收，旧“仍保留现场”为历史。
+
 2026-11-04 最新[P3j一次Operational周期实测/清理保留](tests/powerlink-cycle-p3j-hw-20261104/README.md)：
 固定候选一次自然到Operational并完成376TX、IRQ/回调376、最终COLD/CPU4、5OFF；周期保护未触发。
 原runner因TCB direct taskEntry@32/pthread args0@48混淆而误报栈缺失，整轮EXIT1/清理未完成；原结果保留，未第二次stop/重试。

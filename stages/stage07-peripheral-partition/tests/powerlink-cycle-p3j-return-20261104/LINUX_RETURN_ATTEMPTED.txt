@@ -1,0 +1,3 @@
+candidate=4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35
+boot=63986874-c4a0-4c1a-95b0-a92deb7f3bae
+scope=stopped-only-linux-return

@@ -1,5 +1,17 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-04 最新恢复入口：tests/powerlink-cycle-p3j-return-20261104/README.md；用户新允许“核验后仅清理并归还Linux”，已执行一次且PASS，板卡不再处于旧保留状态。
+执行前659bfb795fea63204978838f65ccde9269bff66e；新独立return_powerlink_cycle_p3j_linux.py/纯TCBgate/baseline三项上传读回一致，新子目录/root/m7-powerlink-cycle-p3j-20261104/return-linux-20261104，原19项/失败结果/ATTEMPTED不覆盖。
+归还前再次独立CPU4/5OFF、稳定1504+608/真实FSC/异常lease/17项TCB全核验；缓存及TCB逐字节同旧保留现场，FSC used38584/peak543648/余504896、owner32768/TTYlisten4096均合格。
+同boot/micad/管理/工控/内核无Oops/无RPMsg端点/正式6文件SHA与基线保持后创建永久LINUX_RETURN_ATTEMPTED，依次一次rm已停client注册→Linuxbind ETH2→eth1up→两端100FullANon/linkyes→rmmodhold/最终复核。
+新return-result passed=true/cycle_reexecuted=false/cpu_stop_issued=false，四项attempted/completed一致，原board-result passed=false/cleanup=false/EXIT1仍保留。没有第二次UP start/stop/周期/TTY写入/重启；配置ELF日志标记都保留，只移除临时实例注册。
+当前boot63986874-c4a0-4c1a-95b0-a92deb7f3bae、micadPID329/NRestarts0/active、CPU4/5OFF、仅原up-a/up-b Offline，无临时client/RPMsg/hold，ETH2/3 Linux eth1/eth2均100FullANon/linkyes。
+管理eth0地址路由/工控寄存器及驱动/CAN全DOWN/failed0/taint4096无Oops/原M6两ELF与配置保持，正式M7/DT/kernel/开机不改，无COM7/CAN串口/重启；Linux重绑的正常协商/后台网络不是UP2测试发送。
+Windows/Linux286Python（旧273+新归还13）通过，明确测试证明失败/标记拒绝/四动作模糊失败不重试/漂移保留hold等；本次无核心或ELF重编。
+P3j原一次实际376TX/376IRQ回调/Operational→COLD加本次单独安全归还已闭合，但不是原runner一遍自动全流程通过，更非持续MN/真实CN/PDO/SDO/最坏实时验收。
+新清单/GitHub/服务器delivery以最终报告为准。两个永久窗口均已消费，不重投/不再归还；下一步先软件路线，新物理周期或CN窗口另问用户。
+以下“当前仍保留/待仅清理授权”等均为历史阶段状态，已被本条Linux已归还覆盖；旧失败记录不改写。
+
 2026-11-04 最新硬件入口：tests/powerlink-cycle-p3j-hw-20261104/README.md；用户允许隔离ETH2ETH3一次P3j周期，已执行一次且周期成功，但原runner清理验收失败，现场保留，整轮不是PASS。
 执行前2d36c3a0c9188cb1ccbdfe2430a607ff55364cfc；727SHA/19固定输入逐项上传读回一致，原4b485415...ELF不改不重编，新root/root/m7-powerlink-cycle-p3j-20261104/永久ATTEMPTED已消费，不得复跑。
 实际reset/off1/1、stopCycle1，reachedOperational0x2fd/rc0/clean1/stage9、最终COLD；598738process/14events，run36641/drain374/off1。
