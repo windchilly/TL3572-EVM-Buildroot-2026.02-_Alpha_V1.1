@@ -1,0 +1,213 @@
+{
+  "sftp_reads_only": true,
+  "files": {
+    "/lib/firmware/rk3572-uniproton-up-a.elf": {
+      "sha256": "9c5e55a268d9f59e180998848b79297945f2b7eb92ba6512d3869e9cd9ae89b8",
+      "bytes": 589040
+    },
+    "/lib/firmware/rk3572-uniproton-up-b.elf": {
+      "sha256": "3357eb979263332a7a4ee606e90fbec90ac0363977a908c5c3a6862c250edde4",
+      "bytes": 589040
+    },
+    "/etc/mica/tl3572-up-a.conf": {
+      "sha256": "238bbf9ae2f0035412e0c3209fb8a77ba4b3a98b4cf5e9228e016cb36807aaf2",
+      "bytes": 86
+    },
+    "/etc/mica/tl3572-up-b.conf": {
+      "sha256": "b542c0d0405a5517ba6911ca7bb51da9fb9a8ec45d0bb06fd1529d9fccdd886c",
+      "bytes": 86
+    },
+    "/usr/libexec/m7/up_log_reader.py": {
+      "sha256": "2066c5bf6d6a7c2507f9bf9243ece7b767582079971096db836c1c6bccec6f14",
+      "bytes": 5064
+    },
+    "/root/m7-eth-direct-20261010/m7_eth2_power_hold.ko": {
+      "sha256": "b071d4346d0d3310e22ffd2d1ae9ce2dcc1f3a2784ae94efd05a0798a546fc8d",
+      "bytes": 52912
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/run_powerlink_cycle_p3j_probe.py": {
+      "sha256": "088111f447a77f0a8730f666c2e7465c7d4425008a67f7812b2ab4263867ed1c",
+      "bytes": 13358
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/powerlink_cycle_p3j_checks.py": {
+      "sha256": "f7f98838c3e2916fbc07d2c77913d76d6e2a8d477443d5acb28b49d00a5be027",
+      "bytes": 11659
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/read_powerlink_cycle_p3j_snapshot.py": {
+      "sha256": "f8d4bae1c084572181d1e86d09acc863558e03e8296e343e0bd66fc608437488",
+      "bytes": 6301
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/powerlink_nmt_checks.py": {
+      "sha256": "6e4c6a0b70962d2361b9be9b5e9974c368d76700e71ed99137e88562590f4e94",
+      "bytes": 7753
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/run_powerlink_eth_probe.py": {
+      "sha256": "5b69652d68e17f6faca60a90fbd7b512dd9317c4af3e3aff7aafab1a16cd251a",
+      "bytes": 11445
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/powerlink_eth_checks.py": {
+      "sha256": "ecdff54acd330f7b9e442fabbac0afea6683ef43452b7781ffd8f5c15acbe674",
+      "bytes": 2178
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/run_can_direct_pair.py": {
+      "sha256": "68cf00b53e6c5cd7c3ad39834b381c1a561e422395478a1cd7bd36c94f3fce8d",
+      "bytes": 9896
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/integrated_mmu_resources.py": {
+      "sha256": "32382cd1a99e58739c3aeeb23800e8fc018e175f83a4defe51b6e60c5b63df22",
+      "bytes": 3376
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/eth3_l2_smoke.py": {
+      "sha256": "a9b6d84c40fc8913cfbb61dbeffa701dc12a54d257c218f1b2e0d91a65846fbe",
+      "bytes": 4409
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/eth2_resources.py": {
+      "sha256": "f543bba6b8edd50e040fdd72bf216c09efefc4cccc9efea82052017a79226b9c",
+      "bytes": 827
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/run_integrated_passive.py": {
+      "sha256": "a9c5442aa86d08f2f1c313efc13538536797701f0b858a85b4ebe263f4defc53",
+      "bytes": 12727
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/can_resource_preflight.py": {
+      "sha256": "2d0c7ab0eb2ad18efff75573dc4898213f3eebad4d583d816103c3ccfb422450",
+      "bytes": 6169
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/rs232_resources.py": {
+      "sha256": "0c4bc30b9fbd8ca9b6136ef08ff10e948741c7eb7ad1012386d3c4555624733e",
+      "bytes": 4400
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/rs485_resources.py": {
+      "sha256": "4f8e1727b8821eccd0c9f3a3d1d81789fcfbf3c330fa72322b3994e6890306e0",
+      "bytes": 4867
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/up-b-m7-plk-cycle-p3j.conf": {
+      "sha256": "0b66db7971f97539e7e9088e40211ca0cb1f151510d0b0bb68b560c594d9adb2",
+      "bytes": 134
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/audit_integrated_mmu.py": {
+      "sha256": "9ca28f1a61a7320c2836c25f259379460d3bfea83590989fde964f4e005f8536",
+      "bytes": 2189
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/verify_integrated_elf.py": {
+      "sha256": "2648a42ca0150b579e6c8fde6c53e95bd6e73238d47a6d1b7db9b9c180e31134",
+      "bytes": 5048
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/tl3572-m7-powerlink-p3j-up-b.elf": {
+      "sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+      "bytes": 1220888
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/p3j-abi.json": {
+      "sha256": "283a6218a38bbd085d012655a372af3f06b28f9109e049b5a2614dc91d31d85d",
+      "bytes": 2108
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/run_powerlink_cycle_p3j_v2_probe.py": {
+      "sha256": "1e1304473a900a457942c191b67b3f566c18a26b0bc2a46ddc9681bf7600ec77",
+      "bytes": 13534
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/powerlink_cycle_p3j_checks.py": {
+      "sha256": "f7f98838c3e2916fbc07d2c77913d76d6e2a8d477443d5acb28b49d00a5be027",
+      "bytes": 11659
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/read_powerlink_cycle_p3j_snapshot.py": {
+      "sha256": "f8d4bae1c084572181d1e86d09acc863558e03e8296e343e0bd66fc608437488",
+      "bytes": 6301
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/read_powerlink_cycle_p3j_v2_snapshot.py": {
+      "sha256": "a32f33999ed2f1765287ae1784b0ab9b8a5110dfa65f352b37101bd411f2fd81",
+      "bytes": 2520
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/powerlink_cycle_p3j_tcb_checks.py": {
+      "sha256": "e432adbe05dbca671c54011b28677031f28fa35633c02f5a063aa351fa991d2c",
+      "bytes": 2150
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/powerlink_nmt_checks.py": {
+      "sha256": "6e4c6a0b70962d2361b9be9b5e9974c368d76700e71ed99137e88562590f4e94",
+      "bytes": 7753
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/run_powerlink_eth_probe.py": {
+      "sha256": "5b69652d68e17f6faca60a90fbd7b512dd9317c4af3e3aff7aafab1a16cd251a",
+      "bytes": 11445
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/powerlink_eth_checks.py": {
+      "sha256": "ecdff54acd330f7b9e442fabbac0afea6683ef43452b7781ffd8f5c15acbe674",
+      "bytes": 2178
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/run_can_direct_pair.py": {
+      "sha256": "68cf00b53e6c5cd7c3ad39834b381c1a561e422395478a1cd7bd36c94f3fce8d",
+      "bytes": 9896
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/integrated_mmu_resources.py": {
+      "sha256": "32382cd1a99e58739c3aeeb23800e8fc018e175f83a4defe51b6e60c5b63df22",
+      "bytes": 3376
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/eth3_l2_smoke.py": {
+      "sha256": "a9b6d84c40fc8913cfbb61dbeffa701dc12a54d257c218f1b2e0d91a65846fbe",
+      "bytes": 4409
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/eth2_resources.py": {
+      "sha256": "f543bba6b8edd50e040fdd72bf216c09efefc4cccc9efea82052017a79226b9c",
+      "bytes": 827
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/run_integrated_passive.py": {
+      "sha256": "a9c5442aa86d08f2f1c313efc13538536797701f0b858a85b4ebe263f4defc53",
+      "bytes": 12727
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/can_resource_preflight.py": {
+      "sha256": "2d0c7ab0eb2ad18efff75573dc4898213f3eebad4d583d816103c3ccfb422450",
+      "bytes": 6169
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/rs232_resources.py": {
+      "sha256": "0c4bc30b9fbd8ca9b6136ef08ff10e948741c7eb7ad1012386d3c4555624733e",
+      "bytes": 4400
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/rs485_resources.py": {
+      "sha256": "4f8e1727b8821eccd0c9f3a3d1d81789fcfbf3c330fa72322b3994e6890306e0",
+      "bytes": 4867
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/up-b-m7-plk-cycle-p3j-v2.conf": {
+      "sha256": "f76dabc2edbf4f3de8ea438c44410127c9eda64282328b29c4bf56a3594b1e26",
+      "bytes": 140
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/audit_integrated_mmu.py": {
+      "sha256": "9ca28f1a61a7320c2836c25f259379460d3bfea83590989fde964f4e005f8536",
+      "bytes": 2189
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/verify_integrated_elf.py": {
+      "sha256": "2648a42ca0150b579e6c8fde6c53e95bd6e73238d47a6d1b7db9b9c180e31134",
+      "bytes": 5048
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/tl3572-m7-powerlink-p3j-up-b.elf": {
+      "sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+      "bytes": 1220888
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/p3j-abi.json": {
+      "sha256": "283a6218a38bbd085d012655a372af3f06b28f9109e049b5a2614dc91d31d85d",
+      "bytes": 2108
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/tcb-abi.json": {
+      "sha256": "0abb2e1774253979f4b269151836ef5a3f30321eb9db15879c8be9bbdf2b786b",
+      "bytes": 968
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/board-result.json": {
+      "sha256": "5198d4d4e50e95d04790aaa23743e0fc32157db5acfbb6bc9835fd8694e22767",
+      "bytes": 14481
+    },
+    "/root/m7-powerlink-cycle-p3j-v2-20261104/ATTEMPTED": {
+      "sha256": "1ad955f9bb91bc5dc379aae3a47d118be094f7eafbb9a01d1761293c4e583ad8",
+      "bytes": 117
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/ATTEMPTED": {
+      "sha256": "1ad955f9bb91bc5dc379aae3a47d118be094f7eafbb9a01d1761293c4e583ad8",
+      "bytes": 117
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/board-result.json": {
+      "sha256": "87adc1d9698697ce7479767ff366cbd8f8ebe31553dbe5ac450665b017741749",
+      "bytes": 1787
+    },
+    "/root/m7-powerlink-cycle-p3j-20261104/return-linux-20261104/return-result.json": {
+      "sha256": "e56d62fd8c766cc95b907a862731e251d525f9e9af4d23ce23fae39f78348286",
+      "bytes": 10082
+    }
+  }
+}

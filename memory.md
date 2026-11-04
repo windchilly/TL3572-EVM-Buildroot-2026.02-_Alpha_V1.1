@@ -1,5 +1,19 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-04 最新实板入口：tests/powerlink-cycle-p3j-v2-hw-20261104/README.md；用户新允许隔离ETH2ETH3一次runner-v2自动闭环，已执行且周期/停核证明/自动归还全流程PASS，不是改写旧失败或拼接两次授权。
+执行来源3b07cd341d2874f4e6dba6259ff88e09004e27ae；新root/root/m7-powerlink-cycle-p3j-v2-20261104/client up-b-m7-plk-cycle-p3j-v2/AutoBoot=no，22项逐项上传读回bytes/SHA一致，原4b485415...1220888B累计ELF不改不重编。
+新host和board永久标记均已消费，唯一run/PLK cycle-probe/stop新client各一次，不重试；board-result passed=true/cleanup=true/submitted=true/error=null/EXIT0，旧失败和独立归还结果不动。
+实际reset/off1/1、Operational0x2fd→停周期/排空/SwitchOff→COLD，rc0/clean1/stage9/context1/trips0；597790process/14events，run36578/drain372/off1。
+TX376/入Op前176/停调度376，pendingAtStop0/max1，IRQ回调376/376/skipped0；最大记录迟到3950ticks≈164.6us，仅本次观测非最坏实时性；总counter约3.979s含PHY准备，run→end约102.582ms含排空退出，非精确Op时长。
+RX交付0/收发错误0/fatal0/dropped4保留；无真实CN，不声称PDO/应答收发或线侧抓包/网络丢包0。预算仍100ms或256TX/8s/4M/≤1024，无持续run。
+完整live证明后stop一次，独立CPU4/5OFF前后1504+608/17TCB/真实FSC通过，跨OFF缓存逐字节同；直接owner taskEntry@32栈32768、pthread wrapper@32/args0@48两栈4096，lease异常0/MACDMA停止六值0/CNTP2/PPI30静默。
+真实FSC总1048544，COLD used/peak38584、停后used38584/peak543648/峰余504896、delta0仅两个观测点相同，非精确无泄漏/碎片或栈水位结论。
+全部证明后自动rm临时注册→Linuxbind ETH2/eth1up→两端100FullANon/linkyes→卸hold；独立前后完整快照相同，SFTP52项正式/旧窗口/新窗口文件SHA不变，非强制恢复。
+最新实际boot63986874-c4a0-4c1a-95b0-a92deb7f3bae、micad329/NRestarts0/active、CPU4/5OFF/online0-3,6-7、仅原up-a/up-b Offline、无临时client/RPMsg/hold；ETH2ETH3归Linux100FullANon，管理192.168.2.141/24路由/工控寄存器驱动不变/CAN全DOWN/failed0/taint4096无Oops。
+没有COM7/CAN串口/专用测试帧/正式固件DT内核开机变更/重启/二次stop或周期；测试窗口关闭后只补采文件证据，没有再接管或执行物理测试。
+新增7项实际证据篡改拒绝回归，Windows312通过；新清单/GitHub/Linux delivery后验日志以最终报告为准，服务器/home/openeuler/build/powerlink-cycle-p3j-v2-hw-20261104，无新核心或ELF重编。
+下一步需明确隔离CN型号/固件/XDDCDC/NodeID/PDO/周期后准备互操作；真实CN/PDO/SDO/持续MN/长稳/最坏实时性未验收，新物理窗口另问。以下“v2未上板/待一次许可”已由本次实际自动全流程PASS覆盖，历史原失败仍不改。
+
 2026-11-04 最新软件入口：tests/powerlink-cycle-p3j-v2-20261104/README.md；runner-v2把修正TCB证明接入自动闭环，未连接/上传/部署板卡/COM7/接管ETH/发帧/重启。
 v2是板端工具版，不是新固件；沿用4b485415...1220888B原P3j累计ELF，预算仍100ms或256TX/8s/4M/≤1024及1MiB/256KiB，不延长或开放持续run/CN业务。
 新read_powerlink_cycle_p3j_v2_snapshot.py显式复用原COLD/live及1504+608解码，但不调用旧错误read_stopped；用纯TCBgate分direct taskEntry@32与pthread wrapper@32/args0@48，并归档17项控制前缀。
