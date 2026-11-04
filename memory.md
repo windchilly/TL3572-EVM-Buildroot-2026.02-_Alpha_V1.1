@@ -1,5 +1,21 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-04 最新软件入口：tests/powerlink-cycle-p3j-runner-20261104/README.md；P3j独立板端工具准备，未连接/上传/部署板卡/COM7/接管ETH/发物理帧/重启。
+固定4b485415...原P3j ELF不改不重编。新root/root/m7-powerlink-cycle-p3j-20261104/client up-b-m7-plk-cycle-p3j/AutoBoot=no，19精确未来运行输入，仅准备非上传回执。
+新cycle_checks/reader/runner独立SHA/命令白名单；原1504B通用缓存与608B版本1结果联合校验，不能套旧NMT无流量判据。
+仅一次PLK cycle-probe；永久ATTEMPTED独占+fsync/结果不覆盖，模糊短写或ACK只观察不重投。澄清旧“同boot一次”：BSS只覆盖一次UP2加载，reload会清零，不是跨Linuxboot持久锁。
+公开完成后先读稳定608/1504完整成功/静默证明才stop新client一次；独立CPU4/5 OFF前后再读缓存、异常0/lease0/真实FSC与真实TTY/listen4096和Worker32768/ownerid，跨OFF逐字节结果一致才rm/rebind/去hold。
+真实FSC门槛仍1MiB-minus32/COLD可用≥767888/真实峰值余≥256KiB；前后used差仅记录，非精确泄漏/碎片/实时结论。无reset/drain/stopCounter，不声称离线可重新证明每段期限。
+两次真实native/AArch64编译23缓存/10周期/FSC32+8布局一致，实际候选14私有符号一致；真实RTOS头/源/库SHA记录，非重新发现M6TCB800/异常520偏移。
+新采集fixture重编生产guard及harness、明确复用11月2日software-repro核心；normal/heap_full真实HOST608B被新解码器接受，32142loops/374TX/14events；通用mailbox在此项是合成，非实板证据。
+首次capture因历史harness内部main宏冲突编译失败保留linux-first；去掉不必要main重命名通过，未改固件或旧harness。
+linux-final在263Python/P3j/P3i通过后误写额外NMT脚本文件名EXIT127，原日志保留；改用实际run_powerlink_nmt_probe_native.sh，linux-final-fixed全部通过。
+Windows/Linux263Python（旧215+新48）/P3j18+4/P3i9/P3h27+4累计原生通过。两次HOST608逐字节相同；不是本轮全核心或累计ELF重建。
+服务器独立/home/openeuler/build/powerlink-cycle-p3j-runner-20261104，旧P3h ATTEMPTED/root/runner及正式M7/M6/DT/开机不动；新清单/GitHub/交付以最终报告为准。
+最近实板仍2026-10-23 P3h，不是今天新状态；旧授权已消耗。下一步归档复核后另问新隔离ETH2ETH3+P3j一次reset→Operational100ms或256TX→drain→SwitchOff/安全归还许可。
+本阶段不得以“继续”复用旧NMT授权，CAN/UART不发送仍有效；真实CN/PDO/SDO/周期实时性未验收，未知保留资源不重试/自动重启。
+以下为历史，P3j软件候选后的“待独立runner”已由本工具准备推进，但未变为硬件PASS。
+
 2026-11-02 最新软件入口：tests/powerlink-cycle-p3j-20261102/README.md；进度保护已接实际PLKowner一次性诊断，软件/候选审计通过，未上板。
 新增m7_cycle_probe.c/h，0021/defaultOFF/CPU5/显式NMT+1MiB；PLK cycle-probe/status，不开放持续run/start，同boot成功或失败均不可重投。原1504B快照不变，独立608B版本1 BSS，pending/running时拒绝不完整结果。
 生产probe8s总预算/3sNMT/4Mprocess上限，Operational后100ms或256TX完成、总提交≤1024；pending2ms和idle10ms独立计时，24MHz/无丢周期/迟到≤500us，均为保守软件诊断值非实板保证。

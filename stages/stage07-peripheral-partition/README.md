@@ -2,6 +2,11 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-11-04 最新[P3j 独立单次 runner 软件准备](tests/powerlink-cycle-p3j-runner-20261104/README.md)：
+原1504B+新608B双结果、停止前完整校验/停核后交叉证明、真实FSC及TTY/PLKowner栈门槛已准备；Windows/Linux263项与原生回归通过。
+候选仍4b485415...未改/未上板；新永久ATTEMPTED防重投。固件一次性只覆盖本次UP2加载，不是跨reload持久锁。
+尚无本窗口硬件授权，未连接板卡/COM7/发帧；下一步另确认ETH2↔ETH3隔离及一次有限MN周期测试。
+
 2026-11-02 最新[P3j生产周期保护/一次性owner候选](tests/powerlink-cycle-p3j-20261102/README.md)：
 实际probe检出pending超时/无进展/迟到并保留资源，100ms有界运行及有序停止原生通过；18+4/215Python/双根9对象+2runtime一致。
 旧1504+新608B ABI/最终ISA内存栈预算通过，候选4b485415...未上板，正式固件不变，待独立新runner/新硬件授权。

@@ -1,0 +1,148 @@
+{
+  "passed": true,
+  "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+  "cache_native": [
+    1504,
+    40,
+    80,
+    576,
+    496,
+    472,
+    472,
+    488,
+    40,
+    16,
+    24,
+    64,
+    80,
+    120,
+    160,
+    216,
+    256,
+    280,
+    376,
+    96,
+    40,
+    48,
+    88
+  ],
+  "cache_aarch64": [
+    1504,
+    40,
+    80,
+    576,
+    496,
+    472,
+    472,
+    488,
+    40,
+    16,
+    24,
+    64,
+    80,
+    120,
+    160,
+    216,
+    256,
+    280,
+    376,
+    96,
+    40,
+    48,
+    88
+  ],
+  "cycle_native": [
+    608,
+    8,
+    480,
+    496,
+    520,
+    532,
+    544,
+    576,
+    584,
+    1504
+  ],
+  "cycle_aarch64": [
+    608,
+    8,
+    480,
+    496,
+    520,
+    532,
+    544,
+    576,
+    584,
+    1504
+  ],
+  "fsc_native": [
+    32,
+    8
+  ],
+  "fsc_aarch64": [
+    32,
+    8
+  ],
+  "symbols": {
+    "snapshot": [
+      2084239528,
+      1504
+    ],
+    "cycleResult": [
+      2084273824,
+      608
+    ],
+    "cycleReady": [
+      2084274432,
+      4
+    ],
+    "cycleAttempted": [
+      2084274436,
+      4
+    ],
+    "g_ethLease": [
+      2084239524,
+      4
+    ],
+    "g_excInfoInternal": [
+      2083121360,
+      520
+    ],
+    "g_memRegion00": [
+      2083124528,
+      1048576
+    ],
+    "g_memTotalSize": [
+      2085165200,
+      8
+    ],
+    "g_memUsage": [
+      2085165192,
+      8
+    ],
+    "g_memPeakUsage": [
+      2085165184,
+      8
+    ],
+    "g_memStartAddr": [
+      2085165176,
+      8
+    ],
+    "g_tskCbArray": [
+      2083122008,
+      8
+    ],
+    "g_tskMaxNum": [
+      2083122016,
+      4
+    ],
+    "ownerTask": [
+      2084427140,
+      4
+    ]
+  },
+  "fsc_header_sha256": "02745bef27ad2688557ac19f6879bed8f4b91bc6fd0adfe70d561d54a5d19370",
+  "fsc_source_sha256": "346f40871089b193f0a7159bef643fd9e782f05de12ab0cdc3065935725ff843",
+  "rtos_archive_sha256": "ff5781681faee4f3b3e719d5a4241ecbbd62fdf234a3df5819e2bd61688646c8",
+  "limit": "Real native/cross header cache layout + exact source-extracted FSC struct; not RTOS execution/heap peak or M6 TCB/exception offset discovery. No firmware change."
+}

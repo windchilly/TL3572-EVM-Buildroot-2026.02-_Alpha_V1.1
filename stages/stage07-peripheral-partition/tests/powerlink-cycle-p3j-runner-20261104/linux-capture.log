@@ -1,0 +1,230 @@
+P3j PRODUCTION guard normal result=0x0 stack=0x0 clean=1 stage=9 reset/off=1/1 reached=0x2fd loops=32142 run/drain=2000/20 tx=374 pending=0 max=1 stopCalls=1 trips=0 context=1 SoC_mock=105 time_us=1607100 heap_model=505744 live=0
+P3j native production diagnostic normal PASS; mock hardware only, ABI=608; NO BOARD
+P3j HOST actual608B decoder PASS: loops=32142 tx=374 events=14; SYNTHESIZED mailbox, NO BOARD
+P3j PRODUCTION guard heap_full result=0x0 stack=0x0 clean=1 stage=9 reset/off=1/1 reached=0x2fd loops=32142 run/drain=2000/20 tx=374 pending=0 max=1 stopCalls=1 trips=0 context=1 SoC_mock=105 time_us=1607100 heap_model=636816 live=0
+P3j native production diagnostic heap_full PASS; mock hardware only, ABI=608; NO BOARD
+P3j HOST actual608B decoder PASS: loops=32142 tx=374 events=14; SYNTHESIZED mailbox, NO BOARD
+P3j PRODUCTION guard normal result=0x0 stack=0x0 clean=1 stage=9 reset/off=1/1 reached=0x2fd loops=32142 run/drain=2000/20 tx=374 pending=0 max=1 stopCalls=1 trips=0 context=1 SoC_mock=105 time_us=1607100 heap_model=505744 live=0
+P3j native production diagnostic normal PASS; mock hardware only, ABI=608; NO BOARD
+P3j PRODUCTION guard heap_full result=0x0 stack=0x0 clean=1 stage=9 reset/off=1/1 reached=0x2fd loops=32142 run/drain=2000/20 tx=374 pending=0 max=1 stopCalls=1 trips=0 context=1 SoC_mock=105 time_us=1607100 heap_model=636816 live=0
+P3j native production diagnostic heap_full PASS; mock hardware only, ABI=608; NO BOARD
+P3i native fault at 200us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe[0x40d07e]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe[0x424010]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(eventu_process+0xde)[0x41451e]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(eventu_postError+0x79)[0x4143c9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(eventu_process+0x60)[0x4144a0]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(eventucal_processEventCircbuf+0x71)[0x429fa1]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(ctrlu_processStack+0x9)[0x424559]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_mn_process+0xc5)[0x40d495]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe[0x40c7a5]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x37d)[0x40cb4d]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f3026cb1ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f3026cb1b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3i native fault at 200us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_mn_process+0x92)[0x40d462]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe[0x40c7a5]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x37d)[0x40cb4d]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f3026cb1ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f3026cb1b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3i native fault at 200us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f3026cb1ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f3026cb1b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard heap_small result=0x302 stack=0xb3 clean=0 stage=3 reset/off=1/0 reached=0x0 loops=4 run/drain=0/0 tx=0 pending=0 max=0 stopCalls=0 trips=1 context=1 SoC_mock=0 time_us=200 heap_model=468352 live=19
+P3j native production diagnostic heap_small PASS; mock hardware only, ABI=608; NO BOARD
+mock DMA completed=0 doorbells=0 own0=0x0 own1=0x0 stalled=0 ETH=1 timer=1
+P3j PRODUCTION guard context result=0x0 stack=0x0 clean=1 stage=9 reset/off=1/1 reached=0x2fd loops=32142 run/drain=2000/20 tx=374 pending=0 max=1 stopCalls=1 trips=0 context=1 SoC_mock=105 time_us=1607100 heap_model=505744 live=0
+P3j native production diagnostic context PASS; mock hardware only, ABI=608; NO BOARD
+P3i native fault at 1508200us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f9d592a4ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f9d592a4b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+mock DMA completed=174 doorbells=178 own0=0xb0000024 own1=0xb0000036 stalled=1 ETH=1 timer=1
+P3j PRODUCTION guard no_completion result=0x305 stack=0x0 clean=0 stage=4 reset/off=1/0 reached=0x2fd loops=30164 run/drain=43/0 tx=174 pending=4 max=4 stopCalls=0 trips=1 context=1 SoC_mock=5 time_us=1508200 heap_model=505744 live=25
+P3j native production diagnostic no_completion PASS; mock hardware only, ABI=608; NO BOARD
+P3i native fault at 1515300us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f2ba38b6ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f2ba38b6b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+mock DMA completed=174 doorbells=174 own0=0x30000024 own1=0x30000036 stalled=0 ETH=1 timer=1
+P3j PRODUCTION guard no_progress result=0x306 stack=0x0 clean=0 stage=4 reset/off=1/0 reached=0x2fd loops=30306 run/drain=185/0 tx=174 pending=0 max=1 stopCalls=0 trips=1 context=1 SoC_mock=5 time_us=1515300 heap_model=505744 live=25
+P3j native production diagnostic no_progress PASS; mock hardware only, ABI=608; NO BOARD
+P3i native fault at 1512050us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f7c52976ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f7c52976b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard late result=0x307 stack=0x0 clean=0 stage=4 reset/off=1/0 reached=0x2fd loops=30122 run/drain=1/0 tx=174 pending=1 max=1 stopCalls=0 trips=1 context=1 SoC_mock=5 time_us=1512050 heap_model=505744 live=25
+P3j native production diagnostic late PASS; mock hardware only, ABI=608; NO BOARD
+mock DMA completed=174 doorbells=175 own0=0x30000024 own1=0x30000036 stalled=0 ETH=1 timer=1
+P3i native fault at 1506100us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_mn_process+0x92)[0x40d462]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe[0x40c7a5]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x48c)[0x40cc5c]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f78f34e8ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f78f34e8b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3i native fault at 1506100us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f78f34e8ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f78f34e8b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard dma_fault result=0x302 stack=0x5 clean=0 stage=4 reset/off=1/0 reached=0x2fd loops=30122 run/drain=1/0 tx=174 pending=0 max=1 stopCalls=0 trips=1 context=1 SoC_mock=5 time_us=1506100 heap_model=505744 live=25
+P3j native production diagnostic dma_fault PASS; mock hardware only, ABI=608; NO BOARD
+mock DMA completed=174 doorbells=174 own0=0x30000024 own1=0x30000036 stalled=0 ETH=1 timer=1
+P3i native fault at 1506250us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_mn_process+0x92)[0x40d462]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe[0x40c7a5]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x48c)[0x40cc5c]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f168e032ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f168e032b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3i native fault at 1506250us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f168e032ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f168e032b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard tx_error result=0x302 stack=0x5 clean=0 stage=4 reset/off=1/0 reached=0x2fd loops=30125 run/drain=4/0 tx=174 pending=1 max=1 stopCalls=0 trips=1 context=1 SoC_mock=5 time_us=1506250 heap_model=505744 live=25
+P3j native production diagnostic tx_error PASS; mock hardware only, ABI=608; NO BOARD
+mock DMA completed=174 doorbells=176 own0=0x30000024 own1=0x30000036 stalled=0 ETH=1 timer=1
+mock DMA completed=174 doorbells=174 own0=0x30000024 own1=0x30000036 stalled=0 ETH=1 timer=1
+P3j PRODUCTION guard wrong_context result=0x300 stack=0x0 clean=0 stage=4 reset/off=1/0 reached=0x2fd loops=30122 run/drain=1/0 tx=174 pending=0 max=1 stopCalls=0 trips=1 context=0 SoC_mock=5 time_us=1506050 heap_model=505744 live=25
+P3j native production diagnostic wrong_context PASS; mock hardware only, ABI=608; NO BOARD
+P3i native fault at 3000000us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7fac60ec8ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7fac60ec8b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard nmt_timeout result=0x303 stack=0x0 clean=0 stage=3 reset/off=1/0 reached=0x0 loops=60000 run/drain=0/0 tx=0 pending=0 max=0 stopCalls=0 trips=1 context=1 SoC_mock=0 time_us=3000000 heap_model=173248 live=16
+P3j native production diagnostic nmt_timeout PASS; mock hardware only, ABI=608; NO BOARD
+mock DMA completed=0 doorbells=0 own0=0x0 own1=0x0 stalled=0 ETH=1 timer=1
+P3i native fault at 0us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7fdcd4106ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7fdcd4106b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard reset_command result=0x30a stack=0x8 clean=0 stage=3 reset/off=0/0 reached=0x0 loops=0 run/drain=0/0 tx=0 pending=0 max=0 stopCalls=0 trips=1 context=1 SoC_mock=0 time_us=0 heap_model=173248 live=16
+mock DMA completed=0 doorbells=0 own0=0x0 own1=0x0 stalled=0 ETH=1 timer=1
+P3j native production diagnostic reset_command PASS; mock hardware only, ABI=608; NO BOARD
+P3i native fault at 1607050us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7fccbe9e0ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7fccbe9e0b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard off_command result=0x30a stack=0x8 clean=0 stage=7 reset/off=1/0 reached=0x2fd loops=32141 run/drain=2000/20 tx=374 pending=0 max=1 stopCalls=1 trips=1 context=1 SoC_mock=105 time_us=1607050 heap_model=505744 live=25
+P3j native production diagnostic off_command PASS; mock hardware only, ABI=608; NO BOARD
+mock DMA completed=374 doorbells=374 own0=0x30000024 own1=0x30000036 stalled=0 ETH=1 timer=1
+P3i native fault at 1606050us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f6cc40a0ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f6cc40a0b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard stop_cycle_failure result=0x30b stack=0x8 clean=0 stage=5 reset/off=1/0 reached=0x2fd loops=32121 run/drain=2000/0 tx=374 pending=0 max=1 stopCalls=1 trips=1 context=1 SoC_mock=105 time_us=1606050 heap_model=505744 live=25
+P3j native production diagnostic stop_cycle_failure PASS; mock hardware only, ABI=608; NO BOARD
+mock DMA completed=374 doorbells=374 own0=0x30000024 own1=0x30000036 stalled=0 ETH=1 timer=1
+P3i native fault at 1607100us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_mn_stop+0xbc)[0x40d59c]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x655)[0x40ce25]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7fedadc3ead0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7fedadc3eb89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3i native fault at 1607100us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7fedadc3ead0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7fedadc3eb89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard stop_failure result=0x30b stack=0x5 clean=0 stage=8 reset/off=1/1 reached=0x2fd loops=32142 run/drain=2000/20 tx=374 pending=0 max=1 stopCalls=1 trips=1 context=1 SoC_mock=105 time_us=1607100 heap_model=505744 live=24
+P3j native production diagnostic stop_failure PASS; mock hardware only, ABI=608; NO BOARD
+mock DMA completed=374 doorbells=374 own0=0x30000024 own1=0x30000036 stalled=0 ETH=1 timer=1
+P3i native fault at 1607100us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(hrestimer_exit+0x65)[0x40f265]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(ctrlu_shutdownStack+0x1d)[0x4244cd]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(oplk_destroy+0x9)[0x40fb29]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_mn_stop+0x6d)[0x40d54d]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x655)[0x40ce25]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f05a73cead0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f05a73ceb89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3i native fault at 1607100us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_mn_stop+0xbc)[0x40d59c]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x655)[0x40ce25]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f05a73cead0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f05a73ceb89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3i native fault at 1607100us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f05a73cead0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f05a73ceb89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard timer_release_failure result=0x30b stack=0x8 clean=0 stage=8 reset/off=1/1 reached=0x2fd loops=32142 run/drain=2000/20 tx=374 pending=0 max=1 stopCalls=1 trips=1 context=1 SoC_mock=105 time_us=1607100 heap_model=505744 live=24
+P3j native production diagnostic timer_release_failure PASS; mock hardware only, ABI=608; NO BOARD
+mock DMA completed=374 doorbells=374 own0=0x30000024 own1=0x30000036 stalled=0 ETH=0 timer=1
+P3i native fault at 1607100us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7f7299509ad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7f7299509b89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard readback result=0x30d stack=0x0 clean=0 stage=8 reset/off=1/1 reached=0x2fd loops=32142 run/drain=2000/20 tx=374 pending=0 max=1 stopCalls=1 trips=1 context=1 SoC_mock=105 time_us=1607100 heap_model=505744 live=0
+P3j native production diagnostic readback PASS; mock hardware only, ABI=608; NO BOARD
+mock DMA completed=374 doorbells=374 own0=0x30000024 own1=0x30000036 stalled=0 ETH=0 timer=0
+P3i native fault at 8000000us
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(__wrap_m7_plk_fault+0x19)[0x40b1f9]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(m7_cycle_probe+0x32a)[0x40cafa]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(main+0xd3)[0x409223]
+/lib64/libc.so.6(+0x23ad0)[0x7fcb83e3fad0]
+/lib64/libc.so.6(__libc_start_main+0x89)[0x7fcb83e3fb89]
+/tmp/tl3572-plk-cycle-guard.yPXal3/probe(_start+0x25)[0x409b85]
+P3j PRODUCTION guard total_budget result=0x303 stack=0x0 clean=0 stage=2 reset/off=0/0 reached=0x0 loops=0 run/drain=0/0 tx=0 pending=0 max=0 stopCalls=0 trips=1 context=1 SoC_mock=0 time_us=8000000 heap_model=173248 live=16
+P3j native production diagnostic total_budget PASS; mock hardware only, ABI=608; NO BOARD
+mock DMA completed=0 doorbells=0 own0=0x0 own1=0x0 stalled=0 ETH=1 timer=1
+P3j owner mailbox one-shot/BSS ABI/busy/fault/serialization PASS; guard mocked, NO BOARD
+P3j owner mailbox one-shot/BSS ABI/busy/fault/serialization PASS; guard mocked, NO BOARD
+P3j owner mailbox one-shot/BSS ABI/busy/fault/serialization PASS; guard mocked, NO BOARD
+
+REMOTE_EXIT=0
