@@ -1,0 +1,6 @@
+grep: src/core/kernel/task/include/prt_task_external.h: No such file or directory
+./demos/rk3572_mica/build/m7-powerlink-p3e-up-b/compile_commands.json
+./demos/rk3572_mica/build/m7-powerlink-p3d-up-b/compile_commands.json
+./demos/rk3572_mica/build/m7-powerlink-p3g-up-b/compile_commands.json
+
+REMOTE_EXIT=0

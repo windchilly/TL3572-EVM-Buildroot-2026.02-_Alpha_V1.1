@@ -2,6 +2,12 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-11-04 最新[P3j一次Operational周期实测/清理保留](tests/powerlink-cycle-p3j-hw-20261104/README.md)：
+固定候选一次自然到Operational并完成376TX、IRQ/回调376、最终COLD/CPU4、5OFF；周期保护未触发。
+原runner因TCB direct taskEntry@32/pthread args0@48混淆而误报栈缺失，整轮EXIT1/清理未完成；原结果保留，未第二次stop/重试。
+实际栈32768/4096/4096及FSC峰543648/余504896合格，实际RTOS头双编译/273Python通过；ETH2/hold/已停client仍保留，另问仅清理新授权。
+本次不改固件/开机/COM7/CAN串口、不重启，真实CN/PDO/SDO/实时性未验收。以下“未上板/最近P3h”为历史。
+
 2026-11-04 最新[P3j 独立单次 runner 软件准备](tests/powerlink-cycle-p3j-runner-20261104/README.md)：
 原1504B+新608B双结果、停止前完整校验/停核后交叉证明、真实FSC及TTY/PLKowner栈门槛已准备；Windows/Linux263项与原生回归通过。
 候选仍4b485415...未改/未上板；新永久ATTEMPTED防重投。固件一次性只覆盖本次UP2加载，不是跨reload持久锁。

@@ -1,0 +1,70 @@
+{
+  "phase": "P3j bounded MN cycle hardware window",
+  "passed": false,
+  "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+  "submitted": true,
+  "completion": {
+    "owner": {
+      "ready": "1",
+      "owner": "6",
+      "pending": "0",
+      "running": "0",
+      "seq": "1",
+      "done": "1",
+      "cmd": "8",
+      "rc": "0x0",
+      "runtime": "0x0",
+      "state": "0",
+      "nmt": "0x0",
+      "processes": "598738",
+      "events": "14",
+      "mode": "bounded-cycle-diagnostic"
+    },
+    "result": {
+      "abi": "1",
+      "bytes": "608",
+      "rc": "0",
+      "clean": "1",
+      "stage": "9",
+      "stack": "0x0",
+      "reset": "1",
+      "off": "1",
+      "reached": "0x2fd",
+      "loops": "598738",
+      "run": "36641",
+      "drain": "374",
+      "tx": "376",
+      "pending": "0",
+      "stopCalls": "1",
+      "trips": "0",
+      "context": "1"
+    }
+  },
+  "heap_before": {
+    "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+    "phase": "COLD",
+    "pool_start": 2083124528,
+    "pool_bytes": 1048576,
+    "scalars": {
+      "g_memTotalSize": 1048544,
+      "g_memUsage": 37520,
+      "g_memPeakUsage": 37520,
+      "g_memStartAddr": 2083124528
+    },
+    "free_bytes": 1011024,
+    "peak_headroom_bytes": 1011024,
+    "minimum_headroom_bytes": 262144,
+    "minimum_initial_free_bytes": 767888,
+    "model_stack_peak_bytes": 505744,
+    "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof."
+  },
+  "private_stopped": null,
+  "cleanup": false,
+  "boot_id": "63986874-c4a0-4c1a-95b0-a92deb7f3bae",
+  "micad": {
+    "MainPID": "329",
+    "NRestarts": "0",
+    "ActiveState": "active"
+  },
+  "error": "actual RPMsg/PLKowner stacks changed/missing"
+}

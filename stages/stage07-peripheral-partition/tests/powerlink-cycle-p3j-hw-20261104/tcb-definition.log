@@ -1,0 +1,151 @@
+104:struct TagTskCb {
+105-    /* 当前任务的SP */
+106-    void *stackPointer;
+107-    /* 任务状态,后续内部全改成U32 */
+108-    U32 taskStatus;
+109-    /* 任务的运行优先级 */
+110-    TskPrior priority;
+111-    /* 任务栈配置标记 */
+112-    U16 stackCfgFlg;
+113-#if defined(OS_OPTION_SMP)
+114-    
+115-    /* 任务正在进行的操作类型 */
+116-    volatile U32 taskOperating;
+117-    /* 用于任务做关键不可打断的操作时不被打断如绑定，挂起，删任务，被删。0可以做这些事，为1不能做*/
+118-    U32 opBusy;
+119-#endif
+120-    /* 任务栈大小 */
+121-    U32 stackSize;
+122-    TskHandle taskPid;
+123-
+124-    /* 任务栈顶 */
+125-    uintptr_t topOfStack;
+126-
+127-    /* 任务入口函数 */
+128-    TskEntryFunc taskEntry;
+129-    /* 任务Pend的信号量指针 */
+130-    void *taskSem;
+131-
+132-    /* 任务的参数 */
+133-    uintptr_t args[4];
+134-#if (defined(OS_OPTION_TASK_INFO))
+135-    /* 存放任务名 */
+136-    char name[OS_TSK_NAME_LEN];
+137-#endif
+138-    /* 信号量链表指针 */
+139-    struct TagListObject pendList;
+140-    /* 任务延时链表指针 */
+141-    struct TagListObject timerList;
+142-    /* 持有互斥信号量链表 */
+143-    struct TagListObject semBList;
+144-    /* 记录条件变量的等待线程 */
+145-    struct TagListObject condNode;
+146-#if defined(OS_OPTION_LINUX)
+147-    /* 等待队列指针 */
+148-    struct TagListObject waitList;
+149-#endif
+150-#if defined(OS_OPTION_EVENT)
+151-    /* 任务事件 */
+152-    U32 event;
+153-    /* 任务事件掩码 */
+154-    U32 eventMask;
+155-#endif
+156-    /* 任务记录的最后一个错误码 */
+157-    U32 lastErr;
+158-#if defined(OS_OPTION_SMP)
+159-    /* reserved */
+160-    U32 smpReserve;
+161-    struct PushablTskList pushAbleList;
+162-    U32 timeCoreID;
+163-    /* 该任务可以执行的核bitmap */
+164-    OS_CORE_MASK coreAllowedMask;
+165-    /* 该任务可以执行的核个数 */
+166-    U32 nrCoresAllowed;
+167-    /* 该任务所处的rq挂接的核号 */
+168-    U32 coreID;
+169-    /* 该任务是否在运行队列上(ready) */
+170-    bool isOnRq;
+171-    /* 该任务使用的调度类 */
+172-    struct TagScheduleClass *scheClass;
+173-#endif
+174-    /* 任务恢复的时间点(单位Tick) */
+175-    U64 expirationTick;
+176-#if defined(OS_OPTION_POSIX)
+177-    /* 当前任务状态 */
+178-    U8 state;
+179-    /* pthread cancel */
+180-    U8 cancelState;
+181-    U8 cancelType;
+182-    U8 cancelPending;
+183-    struct __ptcb *cancelBuf;
+184-    /* exit status */
+185-    void *retval;
+186-    /* count for thread join */
+187-    U16 joinCount;
+188-    /* semaphore for thread join */
+189-    SemHandle joinableSem;
+190-    /* pthread key */
+191-    void *tsd[PTHREAD_KEYS_MAX];
+192-    U32 tsdUsed;
+193-#if defined(OS_OPTION_POSIX_SIGNAL)
+194-    /* 设置的阻塞信号掩码 */
+195-    signalSet sigMask;
+196-    /* 设置的等待信号掩码 */
+197-    signalSet sigWaitMask;
+198-    /* 未决信号掩码 */
+199-    signalSet sigPending;
+200-    /* 信号信息 */
+201-    struct TagListObject sigInfoList;
+202-    /* 信号处理函数 */
+203-    _sa_handler sigVectors[PRT_SIGNAL_MAX];
+204-    /* 保存任务的原SP */
+205-    void *oldStackPointer;
+206-    int holdSignal;
+207-    timer_t itimer;
+208-#endif
+209-#if defined(OS_OPTION_LOCALE)
+210-    locale_t locale;
+211-#endif
+212-#if defined(OS_OPTION_LINUX)
+213-    struct task_struct *kthreadTsk;
+214-#endif
+215-#endif
+216-#if defined(OS_OPTION_NUTTX_VFS)
+217-    struct filelist tskFileList;
+218-    void *stdio_locks;      // 来自musl中的struct pthread
+219-#if defined(CONFIG_FILE_STREAM)
+220-    struct streamlist ta_streamlist;
+221-#endif
+222-#endif
+223-};
+224-
+225-/*
+226- * 任务信息表节点数据结构
+227- */
+228-struct TagTskMonNode {
+229-    /* 撑死/饿死的时间点(tick) */
+230-    U64 expiredTick;
+231-    /* 撑死/饿死标记 */
+232-    U32 flag;
+233-    /* 撑死/饿死检测标记 */
+234-    U32 ckFlag;
+235-    /* 检测类型 */
+236-    U32 ckStyles;
+237-    /* 保留(对齐) */
+238-    U32 reserved;
+239-};
+240-
+241-typedef void (*TskCoresleep)(void);
+242-typedef void (*TaskNameGetFunc)(U32 taskId, char **taskName);
+243-typedef U32 (*TaskNameAddFunc)(U32 taskId, const char *name);
+244-
+[
+{
+  "directory": "/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/build/m7-powerlink-p3j-up-b/bsp",
+  "command": "/home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-elf-gcc -DM7_INTEGRATED_FIRMWARE=1 -DM7_POWERLINK_CYCLE_PROBE=1 -DM7_POWERLINK_EDRV_PROBE=1 -DM7_POWERLINK_ETH_PROBE=1 -DM7_POWERLINK_MN=1 -DM7_POWERLINK_MN_PROBE=1 -DM7_POWERLINK_NMT_HEAP=1 -DM7_POWERLINK_NMT_PROBE=1 -DM7_POWERLINK_TIMER_PROBE=1 -DMCS_CLIENT_CPU_ID=5 -DMCS_NOTIFY_SGI_ID=9 -DMMU_IMAGE_ADDR=0x7c200000ULL -I/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/include -I/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/config -I/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/bsp -I/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/bsp/rk3572 -I/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/apps/openamp -I/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/build/open-amp/output/usr/local/include -I/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/build/libmetal/output/usr/local/include -I/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/../../output/libc/include -I/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/../../src/component/mica -I/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/../../src/utility/lib/include -g -march=armv8.2-a+nofp+nosimd -Wl,--build-id=none -fno-builtin -fno-PIE -Wall -fno-dwarf2-cfi-asm -O0 -mcmodel=large -fomit-frame-pointer -fzero-initialized-in-bss -fdollars-in-identifiers -ffunction-sections -fdata-sections -fno-common -fno-aggressive-loop-optimizations -fno-optimize-strlen -fno-schedule-insns -fno-inline-small-functions -fno-inline-functions-called-once -fno-strict-aliasing -fno-builtin -finline-limit=20 -mstrict-align -mlittle-endian -nostartfiles -mgeneral-regs-only -DENV_EL1  -o CMakeFiles/bsp.dir/start.S.o -c /home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/bsp/start.S",
+  "file": "/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/demos/rk3572_mica/bsp/start.S",
+  "output": "bsp/CMakeFiles/bsp.dir/start.S.o"
+},
+{
+  "directory": "/home/openeuler/build/powerlink-cycle-p3j-20261102/UniProton-repro/d
+REMOTE_EXIT=0

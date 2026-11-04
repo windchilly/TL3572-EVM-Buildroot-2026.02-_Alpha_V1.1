@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+  "native": [
+    800,
+    16,
+    20,
+    24,
+    32,
+    48
+  ],
+  "aarch64": [
+    800,
+    16,
+    20,
+    24,
+    32,
+    48
+  ],
+  "fields": [
+    "sizeof(TagTskCb)",
+    "stackSize",
+    "taskPid",
+    "topOfStack",
+    "taskEntry",
+    "args"
+  ],
+  "source_sha256": {
+    "src/core/kernel/include/prt_task_external.h": "a143bd2ee8a9436e20ae6220e0672dba8134de2d103a297d2813d246e4721056",
+    "demos/rk3572_mica/include/prt_buildef.h": "129c7881b5cfccc41cc0a8457e8be19cd7fa1ee7aedf463bc48cd84d594b0cf0",
+    "src/libc/litelibc/src/thread/pthread_create.c": "783f7269c3d6efe7ab31b62714edada7ce8916df605d96cf4d7f662109cc6a12",
+    "demos/rk3572_mica/libs/libRK3572.a": "ff5781681faee4f3b3e719d5a4241ecbbd62fdf234a3df5819e2bd61688646c8"
+  },
+  "limit": "Actual RTOS headers/config compiled only, no firmware change, stack watermark or RTOS execution."
+}

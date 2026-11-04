@@ -1,0 +1,91 @@
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+P3j SCOPE: ONE reset -> Operational (100ms OR256TX) -> drain -> SwitchOff; real FSC pre/post proof; no continuous MN/CN/test frames/CAN/UART/boot/reboot
+BEFORE {"boot": "63986874-c4a0-4c1a-95b0-a92deb7f3bae", "management": {"address": [["inet", "192.168.2.141", 24, "global"], ["inet6", "fe80::d414:36ff:fe8b:78f0", 64, "link"]], "cpus": "0-3,6-7\n", "driver": "/sys/bus/platform/drivers/rk_gmac-dwmac", "routes": "default via 192.168.2.1 dev eth0 proto dhcp src 192.168.2.141 metric 1024 \n192.168.2.0/24 dev eth0 proto kernel scope link src 192.168.2.141 metric 1024 \n192.168.2.1 dev eth0 proto dhcp scope link src 192.168.2.141 metric 1024 \n"}, "micad": {"ActiveState": "active", "MainPID": "329", "NRestarts": "0"}, "peripherals": {"drivers": {"26500000.serial": "dw-apb-uart", "2ab10000.can": "rk3576_can", "2ab30000.can": "rk3576_can", "2c140000.serial": "dw-apb-uart", "2c160000.serial": "dw-apb-uart", "2c1a0000.serial": "dw-apb-uart"}, "registers": {"0x2607400c": 37017, "0x26074010": 2457, "0x26074018": 4, "0x2608203c": 3536, "0x2608404c": 153, "0x2608608c": 56576, "0x26090374": 31488, "0x26090404": 387, "0x26090408": 387, "0x2609040c": 33, "0x26090410": 0, "0x26090414": 279, "0x26090418": 11, "0x2609041c": 768, "0x26090420": 768, "0x26090424": 768, "0x26090428": 768, "0x2609042c": 768, "0x26090430": 768, "0x26090434": 768, "0x26090438": 768, "0x26090808": 24512, "0x2609082c": 32768, "0x26090838": 32736, "0x2609083c": 37449, "0x26090840": 65468, "0x26090a2c": 0, "0x26090a38": 0, "0x26090a3c": 0, "0x26090a40": 0, "0x260b0320": 1, "0x260b0814": 16844, "0x260b0a14": 0, "0x2a601090": 0, "0x2a601094": 0, "0x2a601110": 286331264, "0x2a601114": 4009791488, "0x2a601210": 0, "0x2a601214": 0, "0x2a601310": 0, "0x2a601314": 0, "0x2a60149c": 2694881440, "0x2a6014a0": 2694881440, "0x2a6014a4": 2694881440, "0x2a6014b8": 2694881440, "0x2a60189c": 16843009, "0x2a6018a0": 16843009, "0x2a6018a4": 16843009, "0x2a6018b8": 16843009, "0x2a601c24": 1431655765, "0x2a601c28": 1431655765, "0x2a601c2c": 1431655765}}}
+POWER/ROOT HOLD PASS CRU42=0xf000
+REAL MMU {"budget_bytes": 65536, "mapped_units": 67, "rc": 0, "root": "0x7ca00000", "table_pages": 10, "tcr": "0x80003520", "used_bytes": 40960}
+LIVE COLD HEAP (NOT STOP PROOF) {"candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35", "free_bytes": 1011024, "limit": "Scalar FSC metadata only, not fragmentation, exact leak or real-time proof.", "minimum_headroom_bytes": 262144, "minimum_initial_free_bytes": 767888, "model_stack_peak_bytes": 505744, "peak_headroom_bytes": 1011024, "phase": "COLD", "pool_bytes": 1048576, "pool_start": 2083124528, "scalars": {"g_memPeakUsage": 37520, "g_memStartAddr": 2083124528, "g_memTotalSize": 1048544, "g_memUsage": 37520}}
+PLK UP2 ACCEPTED seq=1
+PLK UP2 CYCLE abi=1 bytes=608 rc=0 clean=1 stage=9 stack=0x0 reset=1 off=1 reached=0x2fd loops=598738 run=36641 drain=374 tx=376 pending=0 stopCalls=1 trips=0 context=1
+[up-b boot=1 seq=1] [boot] UP CPU5 entered
+[up-b boot=1 seq=2] [boot] MMU PASS sctlr=0x30d01805 tables=10/16 mapped=67 ttbr=0x7ca00000
+[up-b boot=1 seq=3] [boot] interrupt routing ready
+[up-b boot=1 seq=4] [boot] scheduler task entered
+[up-b boot=1 seq=5] [plk] dormant owner init rc=0; no PHY/timer/MN startup
+[up-b boot=1 seq=6] [integrated] UP2 ready modules=can-classic,can-fd,rs232,rs485 mode=passive
+[up-b boot=1 seq=7] [openamp] get rsctable 7c29b918, size a64 
+[up-b boot=1 seq=8] [openamp]: get vring0: da 7a0a0000
+[up-b boot=1 seq=9] [openamp]: get vring1: da 7a0a00e0
+[up-b boot=1 seq=10] [openamp] tty task started
+[up-b boot=1 seq=11] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=0 done=0 cmd=0 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=12] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+[up-b boot=1 seq=13] [openamp] ept ready
+[up-b boot=1 seq=14] [boot] RPMsg ready
+[up-b boot=1 seq=15] [plk] PLK UP2 ACCEPTED seq=1
+[up-b boot=1 seq=16] [plk] PLK UP2 ready=1 owner=6 pending=1 running=0 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=17] [plk-cycle] BEGIN one-shot bounded MN, isolated window required
+[up-b boot=1 seq=18] [eth] own clocks/mux ready; entering NVM0 GRF
+[up-b boot=1 seq=19] [eth] RGMII/delay configured; resetting own MAC
+[up-b boot=1 seq=20] [eth] PHY id=0x7b744412 MAC version=0x5051
+[up-b boot=1 seq=21] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=22] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=23] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=24] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=25] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=26] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=27] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=28] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=29] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=30] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=31] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=32] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=33] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=34] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=35] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=36] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=37] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=38] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=39] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=40] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=41] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=42] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=43] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=44] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=45] [eth] PHY forced 100-half link ready; AN disabled, bmsr=0x794d
+[up-b boot=1 seq=46] [plk-edrv] started 100-half polling, DMA=0x7ca10000 bytes=61696; not MN runtime
+[up-b boot=1 seq=47] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=48] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=49] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=50] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=51] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=52] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=53] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=54] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=55] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=56] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=57] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=58] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=59] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=60] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=61] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=62] [plk] PLK UP2 ready=1 owner=6 pending=0 running=1 seq=1 done=0 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=0 events=0 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=63] [plk-edrv] QUIESCED reset=1; aborted TX is not completion
+[up-b boot=1 seq=64] [plk-cycle] END rc=0 clean=1 stage=9 tx=376; one-shot consumed
+[up-b boot=1 seq=65] [plk] PLK UP2 ready=1 owner=6 pending=0 running=0 seq=1 done=1 cmd=8 rc=0x0 runtime=0x0 state=0 nmt=0x0 processes=598738 events=14 mode=bounded-cycle-diagnostic
+[up-b boot=1 seq=66] [plk] PLK UP2 CYCLE abi=1 bytes=608 rc=0 clean=1 stage=9 stack=0x0 reset=1 off=1 reached=0x2fd loops=598738 run=36641 drain=374 tx=376 pending=0 stopCalls=1 trips=0 context=1
+[up-b boot=1 seq=67] [integrated] M7 UP2 ready=1 pending=0x0 running=0x0 rc=0/0/0 done=0/0/0 eth_rc=0 eth_done=0
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CPU4 PSCI OFF confirmed
+CPU5 PSCI OFF confirmed
+CLEANUP STOPPED: NO automatic second stop/rebind/rmmod/reboot/retry: actual RPMsg/PLKowner stacks changed/missing
+Traceback (most recent call last):
+  File "/root/m7-powerlink-cycle-p3j-20261104/run_powerlink_cycle_p3j_probe.py", line 201, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/root/m7-powerlink-cycle-p3j-20261104/run_powerlink_cycle_p3j_probe.py", line 198, in main
+    if error or not cleanup: raise RuntimeError(error or 'cleanup incomplete')
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: actual RPMsg/PLKowner stacks changed/missing
+
+BOARD_EXIT_CODE=1

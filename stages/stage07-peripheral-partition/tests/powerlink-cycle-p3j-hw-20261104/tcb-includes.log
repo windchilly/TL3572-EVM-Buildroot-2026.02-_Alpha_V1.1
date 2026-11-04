@@ -1,0 +1,91 @@
+/*
+ * Copyright (c) 2009-2022 Huawei Technologies Co., Ltd. All rights reserved.
+ *
+ * UniProton is licensed under Mulan PSL v2.
+ * You can use this software according to the terms and conditions of the Mulan PSL v2.
+ * You may obtain a copy of Mulan PSL v2 at:
+ *          http://license.coscl.org.cn/MulanPSL2
+ * THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+ * EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+ * MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+ * See the Mulan PSL v2 for more details.
+ * Create: 2009-12-22
+ * Description: 任务模块的内部头文件
+ */
+#ifndef PRT_TASK_EXTERNAL_H
+#define PRT_TASK_EXTERNAL_H
+
+#include "prt_task.h"
+#include "prt_sem.h"
+#include "prt_lib_external.h"
+#include "prt_list_external.h"
+#include "prt_sys_external.h"
+#include "prt_err_external.h"
+#include "prt_tick_external.h"
+#include "prt_cpu_external.h"
+#include "prt_mem_external.h"
+#include "prt_atomic.h"
+#include "prt_plist_external.h"
+#include "prt_sched_external.h"
+
+#if defined(OS_OPTION_NUTTX_VFS)
+#include "nuttx/fs/fs.h"
+#if defined(CONFIG_FILE_STREAM)
+#include "nuttx/tls.h"
+#endif
+#endif
+
+extern U8 g_maxNumOfCores;
+#define OS_COREID_CHK_INVALID(coreId) ((coreId) >= g_maxNumOfCores)
+
+#if defined(OS_OPTION_POSIX)
+#include "pthread.h"
+#ifndef PTHREAD_KEYS_MAX
+#define PTHREAD_KEYS_MAX 32
+#endif
+#if defined(OS_OPTION_POSIX_SIGNAL)
+#include "prt_signal.h"
+#endif
+#if defined(OS_OPTION_LINUX)
+#include <linux/kthread.h>
+#endif
+#if defined(OS_OPTION_LOCALE)
+#include <locale.h>
+#endif
+#endif
+
+#define OS_CORES_32 32
+#if (OS_MAX_CORE_NUM > OS_CORES_32)
+#define OS_CORE_MASK U64
+#else
+#define OS_CORE_MASK U32
+#endif
+
+extern U32 g_tskBaseId;
+#if !defined(OS_OPTION_SMP) // AMP
+./build/uniproton_config/config_armv8_rk3572/prt_buildef.h
+./src/include/uapi/hw/armv7-m/prt_task.h
+./src/include/uapi/prt_task.h
+./src/include/uapi/prt_typedef.h
+./demos/rk3572_mica/include/hw/armv7-m/prt_task.h
+./demos/rk3572_mica/include/prt_task.h
+./demos/rk3572_mica/include/prt_typedef.h
+./demos/rk3572_mica/include/prt_buildef.h
+./output/UniProton/include/prt_task.h
+./output/UniProton/include/prt_typedef.h
+./output/UniProton/config/rk3572/prt_buildef.h
+src/libc/litelibc/src/thread/pthread_create.c:84:static void OsPthreadWrapper(uintptr_t param1, uintptr_t param2, uintptr_t param3, uintptr_t param4)
+src/libc/litelibc/src/thread/pthread_create.c-85-{
+src/libc/litelibc/src/thread/pthread_create.c-86-    void *ret;
+src/libc/litelibc/src/thread/pthread_create.c-87-
+src/libc/litelibc/src/thread/pthread_create.c-88-    (void)param3;
+src/libc/litelibc/src/thread/pthread_create.c-89-    (void)param4;
+src/libc/litelibc/src/thread/pthread_create.c-90-    void *(*threadroutine)(void *) = (void *)param1;
+src/libc/litelibc/src/thread/pthread_create.c-91-
+src/libc/litelibc/src/thread/pthread_create.c-92-    ret = threadroutine((void *)param2);
+src/libc/litelibc/src/thread/pthread_create.c-93-    PRT_PthreadExit(ret);
+src/libc/litelibc/src/thread/pthread_create.c-94-}
+src/libc/litelibc/src/thread/pthread_create.c-95-
+src/libc/litelibc/src/thread/pthread_create.c-96-OS_SEC_ALW_INLINE INLINE void OsPthreadCreateTcbInit(uintptr_t stackPtr, pthread_attr_t *attr,
+
+REMOTE_EXIT=0

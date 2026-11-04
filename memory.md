@@ -1,5 +1,21 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-04 最新硬件入口：tests/powerlink-cycle-p3j-hw-20261104/README.md；用户允许隔离ETH2ETH3一次P3j周期，已执行一次且周期成功，但原runner清理验收失败，现场保留，整轮不是PASS。
+执行前2d36c3a0c9188cb1ccbdfe2430a607ff55364cfc；727SHA/19固定输入逐项上传读回一致，原4b485415...ELF不改不重编，新root/root/m7-powerlink-cycle-p3j-20261104/永久ATTEMPTED已消费，不得复跑。
+实际reset/off1/1、stopCycle1，reachedOperational0x2fd/rc0/clean1/stage9、最终COLD；598738process/14events，run36641/drain374/off1。
+真实TX完成376、入Op前176/停调度376、pendingAtStop0/max1，IRQ/回调376/376，无丢周期，最大timer迟到458ticks≈19.1us；总counter约4.074s，run→end约102.6ms含排空退出，不是精确Op时长/最坏实时验收。
+完整私有缓存成功后仅stop新client一次，独立CPU4/5 OFF；随后TCB门槛误报actual RPMsg/PLKowner stacks changed/missing，原board-result passed=false/cleanup=false/private_stopped=null/EXIT1均保留，不覆盖。
+原reader把PLKowner按RPMsg pthread的args0@48识别，但PRT_TaskCreate直接入口在taskEntry@32；实际TCB6入口Worker/args0=0/ownerStack32768，TTY8/listen9经OsPthreadWrapper业务函数@48、栈各4096。
+新增纯powerlink_cycle_p3j_tcb_checks及10项实际记录回归，不改历史reader/runner/19上传文件/固件；两次实际RTOS头/config native+AArch64布局[800,16,20,24,32,48]一致，候选libRK3572 SHA与原ABI相同。
+只读保留现场前后再确认CPU4/5 OFF，1504+608/rawTCB/真实FSC/异常证据已存；ETHlease/timer0/MACDMA停止六回读0/CNTP_CTL2/PPI30静默/异常causeELRESR0，RXdelivered/error/fatal0、dropped4不隐瞒。
+真实FSC总1048544，COLD used/peak37520，停后used38584/peak543648/峰余504896，used差1064仅记录；不是HOST峰或严格无泄漏/碎片结论。
+当前boot63986874-c4a0-4c1a-95b0-a92deb7f3bae（新于10月23日），micad329/NRestarts0/active，原两UP Offline/临时新client Offline未rm，CPU4/5OFF，ETH2解绑/hold加载，ETH3Linux100Half/linkyes。
+管理eth0地址路由正常/CAN全DOWN/failed0/taint4096无Oops，原M6两固件9c5e55a2.../3357eb97...不变；正式M7/M6/DT/开机不改，无COM7/CAN串口/重启。
+窗口失败后未rm/rebind/rmmod/第二次stop/重投；已另问用户“重新只读核验后仅清理已停实例并归还Linux，不再周期/stop/重启”的新许可，回复到来前不得继续资源变更。
+Windows/Linux273Python（原263+新10）及两次真实TCB几何编译通过。软件ABI来源查找缺rg/初错目录日志保留，有效证据为tcb-definition/tcb-includes/tcb-abi。
+原硬件失败结果永不改写成PASS；后续若获仅清理许可须另存结果，先确认同boot/micad/管理/工控/CPUOFF/完整缓存/FSC/修正TCB，再rm/rebind/去hold，不调用旧runner重试。
+新清单/GitHub/服务器交付以本轮最终报告为准；真实CN/PDO/SDO/连续MN/1ms最坏实时性仍未验收。以下“最近实板仍P3h/未上板”均被本条覆盖。
+
 2026-11-04 最新软件入口：tests/powerlink-cycle-p3j-runner-20261104/README.md；P3j独立板端工具准备，未连接/上传/部署板卡/COM7/接管ETH/发物理帧/重启。
 固定4b485415...原P3j ELF不改不重编。新root/root/m7-powerlink-cycle-p3j-20261104/client up-b-m7-plk-cycle-p3j/AutoBoot=no，19精确未来运行输入，仅准备非上传回执。
 新cycle_checks/reader/runner独立SHA/命令白名单；原1504B通用缓存与608B版本1结果联合校验，不能套旧NMT无流量判据。
