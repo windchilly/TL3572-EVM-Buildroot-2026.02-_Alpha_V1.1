@@ -1,5 +1,16 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-05 最新软件入口：tests/powerlink-cn-p4b-20261105/README.md；本轮推进默认未arm的Linux CN传输组件，未连接板卡/COM7/运行真实peer/发送网络CAN串口/修改UP2或正式配置，未复用旧硬件许可。
+发现P4a原生rawsock用全局SIOCSIFFLAGS混杂、FIONBIO=0可阻塞、exit无join先销毁mutex/关socket；另原ctrlu/ctrlk先释放user/PDO/DLL再edrv_exit，整栈仍不安全，不能只包timeout/SIGTERM或换库后直接跑demo。这是新CN路径上游问题，不是已通过UP2退化。
+新增source/powerlink/linux-cn/transport/edrv-m7-cn.c+h，仅新解包树覆盖Linux CN源：默认未arm/init在socket前拒绝；只读固定eth2/SR9900/板载USB路径、单owner/一次grant/init/stop，不改IP路由全局flags/调度，不新增可运行peer应用。
+socket NONBLOCK/CLOEXEC+0x88ab、绑定ifindex、socket级PACKET_MR_PROMISC；过滤本机OUTGOING/错误接口协议长度自身MAC；即时RX/deferred请求拒绝并留静态存储；TX失败短写无完成回调、成功仅socket接受非线上完成。
+固定8s传输lease/2048TX提交/4096RX交付、poll10ms、MONOTONIC timedjoin1s/在途清零后close；未知join/clock/close保留状态FD、无cancel/强杀/二join二close，首错fault保留。调用边界检查不能抢占卡死回调，不是硬watchdog/新许可/完整停止证明。
+arm不是用户授权也未查IP路由/其它进程/内核共享资源；组件active0不足证明安全，完整frontend/整栈退出仍未集成，runtime_ready=false。
+34种真实生产源C场景全部socket/sysfs/收发模拟，含一项真实pthread回收；O2/Wall/Wextra/Werror下两新native目录各34通过，交叉库不执行。首轮deferred fixture误要求poll2而生产一次即停，修测试期望后通过，原失败日志/首版source快照保留，core不上传且后续禁core。
+Native最终库459730B/ee187e36...，AArch64425674B/d74ba59f...，各双新目录逐字节同，库/逐成员ELF头/完整build-report归档；P4a原生demo/库及P3j ELF/旧源码证据不改。
+Windows/Linux340=原330+新10通过，Linux记录实际最终builder/source/header/test SHA；服务器/home/openeuler/build/powerlink-cn-p4b-20261105，新清单/GitHub/delivery后验以最终报告为准，最近实板仍11月4日已归还快照不是今日重采样。
+下一步先Linux CN完整栈先静默再释放（RX+hrestimer/timesync+user事件/定时器+OD/PDO）、部分init/失败stop首错和拒绝释放证明，再做root/IP路由/进程身份/预算/永久标记frontend；随后独立CN-capable有界MN/decoder/明确CDC/PDO/事件/过程映像。无设备也继续软件路线，不追问型号采购，不放宽旧P3j no-CN判据；当前不得启动peer或申请未齐备的硬件窗口。
+
 2026-11-05 最新软件入口：tests/powerlink-cn-p4a-20261105/README.md；用户明确没有CN设备，转先准备Linux软件CN协议对端，不等待采购，不追问不存在的型号/XDD，不把它当工业/硬实时CN。
 本轮没有连接板卡/COM7/移交ETH/发送网络CAN串口/运行CN/重启/替换正式配置固件，旧硬件窗口已消费不重用；最近实板状态仍11月4日P3j-v2自动归还快照，不是今日重采样。
 只读基线核对原1355文件归档/源码SHA/P3j ELF与15B CDC：仅0x1006=1000us；生产m7_cycle_probe要求1F81各节点全0且任意RX失败，decoder亦拒绝RX，不能直接接CN或只放宽host检查。

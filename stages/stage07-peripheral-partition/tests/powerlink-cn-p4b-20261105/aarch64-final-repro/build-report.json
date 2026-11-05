@@ -1,0 +1,18 @@
+{
+  "phase": "P4b default-unarmed transport component only",
+  "aarch64": true,
+  "compiler_machine": "aarch64-none-linux-gnu",
+  "library": {
+    "bytes": 425674,
+    "sha256": "d74ba59f2891eeb1572fc6e639b2361e1f59fc8a66a4b888329d9df9ec02213f"
+  },
+  "source_sha256": {
+    "edrv-m7-cn.c": "9bde864fa59bed7ae694ae16024a6688682e02e95f353d55faa07ed21a763ddc",
+    "m7_cn_edrv.h": "afa76b23732434b2bfc83c75a323092e27c944e204091b62f1434a4c2b272af1"
+  },
+  "mock_network_tests": 0,
+  "board_contacted": false,
+  "peer_executed": false,
+  "runtime_ready": false,
+  "limit": "No frontend, full-stack teardown fix, MN/CN config or hardware proof; callback stalls retain state."
+}

@@ -1,0 +1,18 @@
+{
+  "phase": "P4b default-unarmed transport component only",
+  "aarch64": false,
+  "compiler_machine": "x86_64-openEuler-linux",
+  "library": {
+    "bytes": 459730,
+    "sha256": "ee187e3615bb540f54b1f83291e789c4f8f722bf88e2124c72258d8c162e7edf"
+  },
+  "source_sha256": {
+    "edrv-m7-cn.c": "9bde864fa59bed7ae694ae16024a6688682e02e95f353d55faa07ed21a763ddc",
+    "m7_cn_edrv.h": "afa76b23732434b2bfc83c75a323092e27c944e204091b62f1434a4c2b272af1"
+  },
+  "mock_network_tests": 34,
+  "board_contacted": false,
+  "peer_executed": false,
+  "runtime_ready": false,
+  "limit": "No frontend, full-stack teardown fix, MN/CN config or hardware proof; callback stalls retain state."
+}

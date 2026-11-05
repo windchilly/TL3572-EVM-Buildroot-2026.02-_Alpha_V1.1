@@ -2,6 +2,9 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-11-05 最新软件[P4b 默认未arm CN传输组件](tests/powerlink-cn-p4b-20261105/README.md)：修复原生rawsock全局混杂/阻塞接收/未join即释放缺口，固定ETH3身份和有界传输/退出检查；34组模拟网络生产源测试、340项回归、Native/AArch64库双新目录一致。
+未连接板卡或运行真实CN，原P4a/P3j不动。完整栈仍有先释放后停RX的独立缺口，当前无可运行安全peer应用；下一步先整栈退出及frontend，再有CN的MN/CDC/PDO，不以组件通过代替互操作验收。
+
 2026-11-05 最新软件[P4a Linux CN对端准备](tests/powerlink-cn-p4a-20261105/README.md)：用户无实体CN设备，先走Linux ETH3软件对端路线，不等待采购。
 原生/AArch64 rawsocket CN库及demo各双新目录复编一致，330项回归/CDC只读审计通过；未执行CN、未连接板卡、原UP2固件及no-CN判据不变。
 当前P3j仍拒绝有CN分配及RX；下一步独立有CN的有界MN/配置/PDO路径与受限CN包装，然后另确认隔离互测。软件demo不是可直接上线的工业CN或硬实时证明。
