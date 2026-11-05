@@ -1,5 +1,15 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-05 最新软件入口：tests/powerlink-cn-p4c-20261105/README.md；继续无实体设备的Linux CN软件路线，仅构建/模拟IO，未连接板卡COM7/运行真实CN/发送网络CAN串口/改变UP2与正式配置，未复用旧硬件窗口。
+新增Linux专用lifecycle及9文件固定源码变换：默认未arm在target/IPC/线程前拒绝；四路eventk/hres/eventu/timeru注册到单owner一次create/stop，全局原子请求停止、EDRV自身回收再四路共用MONOTONIC 1s join，全部静默才允许user/kernel/OD/PDO/timesync析构，不cancel/二join/重复close，不改FIFO/RR；非硬2s watchdog。
+部分init保留首错，虽quiet也不释放；漏worker/无活动EDRV不能标完整init；失败析构立即停止后续动作，若此前已有释放不回滚、不声称所有资源原样保留。kernel retVal错误不覆盖、不假报Ready/Running/exit；generic待清理标记失败保留，环境清理也仅一次。
+仅固定CN/PDO/SOC同步profile，禁止MN/CFM/VETH/LED/store-restore/独立synctimer扩展；原P4a/P4b/UniProton/P3j源码和候选不动。9源文件仅LF规范化SHA，整包SHA/1355文件原校验保留，全部变换锚点通过才写入新树。
+26项链接真实generic/ctrlu/ctrlk/lifecycle的模拟模块/IO场景及4项实际生产worker init/循环/回调/exit场景，每新native目录30通过，两目录60；后一组四回调同时在途、实际pthread/join、所有命名IPC/POSIX timer/信号/EDRV边界fake，不打开raw socket/真实命名IPC/真实POSIX timer，释放失败不继续。
+Native最终库469396B/fa2837fc...、AArch64433964B/51a6597a...，各双新目录库和report逐字节同，交叉产物不执行；未编可运行CN应用。Windows/Linux352=原340+新12回归，Linux记录实际输入SHA，归档后验以最终报告为准。
+首轮换行输入检查拒绝、中间22场景、worker测试缩进Werror及Windows静态名字fixture失败日志均留，最终对应修正通过，不降低检查/改写失败；上游编译警告保留。
+重要剩余：固定全局event/circbuf semaphore/shm命名仍可能unlink，timeru堆指针signal与delete/free及create失败链表寿命未解决，启动RX/事件激活与完整栈就绪须联调。本轮只证明退出基础/受控边界，不是完整安全栈/互操作验收，runtime_ready=false，不准跑真实init/demo/help。
+下一步先IPC私有/独占及定时器对象寿命，再完整模块模拟IO init/process/stop/free与frontend身份/IP路由/其它进程/运行库/永久标记；然后独立CN-capable有界UP2 MN/decoder/CDC/PDO。无设备不阻塞，不再追问型号采购，不放宽P3j no-CN保护。服务器/home/openeuler/build/powerlink-cn-p4c-20261105，最近实板仍11月4日历史Linux归还快照不是今日采样。
+
 2026-11-05 最新软件入口：tests/powerlink-cn-p4b-20261105/README.md；本轮推进默认未arm的Linux CN传输组件，未连接板卡/COM7/运行真实peer/发送网络CAN串口/修改UP2或正式配置，未复用旧硬件许可。
 发现P4a原生rawsock用全局SIOCSIFFLAGS混杂、FIONBIO=0可阻塞、exit无join先销毁mutex/关socket；另原ctrlu/ctrlk先释放user/PDO/DLL再edrv_exit，整栈仍不安全，不能只包timeout/SIGTERM或换库后直接跑demo。这是新CN路径上游问题，不是已通过UP2退化。
 新增source/powerlink/linux-cn/transport/edrv-m7-cn.c+h，仅新解包树覆盖Linux CN源：默认未arm/init在socket前拒绝；只读固定eth2/SR9900/板载USB路径、单owner/一次grant/init/stop，不改IP路由全局flags/调度，不新增可运行peer应用。

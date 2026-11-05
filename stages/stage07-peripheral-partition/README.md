@@ -2,6 +2,9 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-11-05 最新软件[P4c CN先静默后释放基础](tests/powerlink-cn-p4c-20261105/README.md)：四路栈线程与EDRV联动回收，全部quiet后才释放user/kernel/OD/PDO；部分init/停止未知/析构失败保留首错并拒绝重复动作。真实控制函数26场景+实际worker模拟IO4场景各双新目录通过，352项Windows/Linux回归，Native/AArch64库复编一致。
+未连接板卡/运行CN/发帧或改UP2；这不是完整安全CN应用。共享IPC命名空间、定时signal对象寿命和启动激活仍待修复，随后完整栈模拟联调/frontend及有CN的MN/CDC/PDO；旧P3j no-CN保护不放宽。
+
 2026-11-05 最新软件[P4b 默认未arm CN传输组件](tests/powerlink-cn-p4b-20261105/README.md)：修复原生rawsock全局混杂/阻塞接收/未join即释放缺口，固定ETH3身份和有界传输/退出检查；34组模拟网络生产源测试、340项回归、Native/AArch64库双新目录一致。
 未连接板卡或运行真实CN，原P4a/P3j不动。完整栈仍有先释放后停RX的独立缺口，当前无可运行安全peer应用；下一步先整栈退出及frontend，再有CN的MN/CDC/PDO，不以组件通过代替互操作验收。
 

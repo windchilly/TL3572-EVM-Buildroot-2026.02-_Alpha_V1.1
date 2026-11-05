@@ -1,0 +1,12 @@
+POWERLINK PREPARED: 048650a80db37fa372330c3a900d2c8edb327e47 / 1355 files / /home/openeuler/build/powerlink-cn-p4c-20261105/native-first/source/openPOWERLINK_V2-2.7.2
+Traceback (most recent call last):
+  File "/home/openeuler/build/powerlink-cn-p4c-20261105/workspace/stages/stage07-peripheral-partition/build/build_m7_powerlink_cn_lifecycle.py", line 78, in <module>
+    build(args.destination,args.cc,args.aarch64)
+  File "/home/openeuler/build/powerlink-cn-p4c-20261105/workspace/stages/stage07-peripheral-partition/build/build_m7_powerlink_cn_lifecycle.py", line 34, in build
+    generated=apply(tree)
+              ^^^^^^^^^^^
+  File "/home/openeuler/build/powerlink-cn-p4c-20261105/workspace/stages/stage07-peripheral-partition/build/apply_m7_powerlink_cn_lifecycle.py", line 49, in apply
+    raise ValueError('unexpected pinned Linux CN input: ' + relative)
+ValueError: unexpected pinned Linux CN input: stack/proj/linux/liboplkcn/CMakeLists.txt
+
+REMOTE_EXIT=1

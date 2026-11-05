@@ -1,0 +1,37 @@
+{
+  "phase": "P4c Linux CN quiesce-before-free foundation",
+  "aarch64": false,
+  "compiler_machine": "x86_64-openEuler-linux",
+  "library": {
+    "bytes": 469396,
+    "sha256": "fa2837fc528b176039e7feed93eab0ad7f81b49795b7cd2f90f57192e536996d"
+  },
+  "input_sha256": {
+    "build/apply_m7_powerlink_cn_lifecycle.py": "a9c1ce85982f40dfb4341ededee0251ac1ec824f6a750004a399dc16fd5b8ef9",
+    "build/build_m7_powerlink_cn_lifecycle.py": "ae262d8a1bd1054eb8c01505e727488a3cc8730dc93343f689a2fa553de06225",
+    "tests/test_powerlink_cn_lifecycle.c": "1a862e349a9b4edf9bfc1a30f735b9cebefb0881a348bd23a2e64a00b1da7788",
+    "tests/test_powerlink_cn_workers.c": "441bd869c8802747678da4baa7fed857eecead4acc95e82dd9f366e21d67beac",
+    "source/powerlink/linux-cn/lifecycle/m7_cn_lifecycle.h": "e41d53dd2553ed5ee7efdfb52dc912c158d147c8c1021d7123cd662537c9b0e5",
+    "source/powerlink/linux-cn/lifecycle/m7_cn_lifecycle.c": "d6da80ee30cbfd8adb0ed7685835902c761d608419de8767856bd50fc7b90575",
+    "source/powerlink/linux-cn/lifecycle/upstream-files.json": "678dfe47bf5cb41ed1b8067f51d577921a57493818cf689f00dc781e4299e2f8",
+    "source/powerlink/linux-cn/transport/edrv-m7-cn.c": "9bde864fa59bed7ae694ae16024a6688682e02e95f353d55faa07ed21a763ddc",
+    "source/powerlink/linux-cn/transport/m7_cn_edrv.h": "afa76b23732434b2bfc83c75a323092e27c944e204091b62f1434a4c2b272af1"
+  },
+  "generated_sha256": {
+    "stack/src/user/api/generic.c": "2d63871881959764fe3acf9e350e4accffa22fbfaee6db2240e2c76a9ceff30b",
+    "stack/src/user/ctrl/ctrlu.c": "099ec4366d3ff21031929e8b3a8d49d5df4a956cdb912480463c8ddfd68b8fa1",
+    "stack/src/kernel/ctrl/ctrlk.c": "1d369106261cf6516bc2e581024a8ca0e7a8c878974bbcb07cff560b518d8376",
+    "stack/src/kernel/event/eventkcal-linux.c": "f884004a59cf077e4f57dc3660603b46bebbb257a6772be5bb4aed639d09ee1d",
+    "stack/src/user/event/eventucal-linux.c": "c4f56e46318be59fff4f537799e931a7b0cc315040f605da50f33b0681366ed1",
+    "stack/src/kernel/timer/hrestimer-posix.c": "cb561620b37f7eb350b28930d52bf0698aff28bfbcd15a60d52255d8af89c39e",
+    "stack/src/user/timer/timer-linuxuser.c": "2f62ed8a5da05a0318fca0238865e50b37fb443ddce4bf578a63024f522eb893",
+    "stack/proj/linux/liboplkcn/oplkcfg.h": "291f67bf6a5b6693969ff5a3bcf97857db44365500f1a0fcbfd7ec84299b8e24",
+    "stack/proj/linux/liboplkcn/CMakeLists.txt": "f42c3dfcd85ba5270d2b0aa46e8fdf9709d526c09df489b4b7f58295bb18fd38"
+  },
+  "mock_lifecycle_tests": 26,
+  "mock_io_real_worker_tests": 4,
+  "board_contacted": false,
+  "peer_executed": false,
+  "runtime_ready": false,
+  "limit": "No runnable CN/frontend or all-module live integration; IPC namespace, timer signal lifetimes, paired MN/config remain pending."
+}
