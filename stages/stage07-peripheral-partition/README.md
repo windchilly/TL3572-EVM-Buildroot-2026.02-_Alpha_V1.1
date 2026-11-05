@@ -2,6 +2,9 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-11-05 最新软件[P4e 整栈就绪门](tests/powerlink-cn-p4e-20261105/README.md)：完整 user/kernel/OD/PDO 初始化后才一次激活协议接收，RX/TX/event/timer 统一 ready/stop 门，worker 错误关闭派发并原子保留首错。67 顶层 C 场景各双目录通过，其中 17 场景链接真实完整栈及真实 EDRV、只模拟网络 OS 边界；Windows/Linux380回归，Native/AArch64 库各复编一致。
+未连接实板/COM7/运行真实CN/发帧/改UP2；仅库，无 frontend，runtime_ready=false。下一步受限启动入口身份/权限/IP路由/独占/运行库/预算/永久窗口，再独立有CN的MN/CDC/PDO；旧P3j no-CN保护不放宽。以下 P4a–P4d 是不可变历史记录。
+
 2026-11-05 最新软件[P4d 私有资源与代际定时器](tests/powerlink-cn-p4d-20261105/README.md)：Linux CN不用命名semaphore/shm/unlink，hres/user不用POSIX signal/堆对象句柄，旧/重复代际事件拒绝；补PDO互斥销毁失败传播。55顶层C场景各双目录通过，完整真实模块仅模拟EDRV的被动init/process/exit及部分失败已验，Windows/Linux368回归，Native/AArch64库复编一致。
 无实板/CN网络运行/发帧/UP2变更；仅库，不是可运行安全CN或MN互操作。下一步先ready前RX/事件激活与主动错误模拟，再frontend/有CN的MN/CDC/PDO；旧P3j no-CN保护不放宽。
 

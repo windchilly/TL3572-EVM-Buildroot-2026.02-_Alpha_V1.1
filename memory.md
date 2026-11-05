@@ -1,5 +1,16 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-05 最新软件入口：tests/powerlink-cn-p4e-20261105/README.md；继续无实体CN路线，无板卡/COM7/CN运行/真实收发/UP2正式配置变化，不复用硬件窗口。
+新startup header+apply/build_m7_powerlink_cn_startup，在不变P4d变换/23生成SHA后叠加25文件；P4a–d原源码补丁构建器测试证据产物不改。仅库无可运行CN/frontend，runtime_ready=false。
+EDRV init协议0 socket不接收，未bind前无内核接收积压；整栈user/kernel/OD/PDO+四线程+timer/transport健康后owner一次bindeth2/88ab再原子release发布ready。四栈线程与EDRV共5worker先等门，TX/API/process/direct event dispatch也挡门，内部有界队列/槽可准备但不派发。
+停或任一worker/transport/timer/事件clock/semwait/post/dispatch记录错误关门并stop，首错CAS+全atomic reads/owner逐字段快照。关闭门不抢占已准入回调，仍需EDRV在途0及5join才能析构；partial/fault/unknownjoin不释放不重试。8s从EDRV init起算不延长，非硬watchdog。
+每fresh native25旧control+25private+17真实完整栈/真实EDRV网络OS模拟=67顶层，各双目录共134通过；隔离helper另计不重复。旧control early_kernel_cleanup不再要求错后生产者继续运行，以新真实栈同名fail-closed场景代替；private组件显式mockready，非真实gate证明。
+完整栈五真实线程pending等待20ms零poll/recv/send/回调/timer；正常+模拟RX/TX各5join/1close/3sem+2cond释放/队列0；bind/thread/socket/timeout/启动首错零回调保留，短写/RXIO/semwait-post/eventclock/timerpost/应用dispatch首错关门保留。join模糊由替身实际join后报ETIMEDOUT，不是实挂死超时测试。
+Native490956B/f0c7e1e9...、Arm454204B/a29e046a...，各双新根库/report字节同，cross不执行；Windows/Linux380=原368+新12，Linux实际输入SHA已记。原上游警告保留，新增implicit声明Werror，测试Werror/原OD单编不Werror；非sanitizer/无泄漏/实时/互操作证明。
+首轮隐式声明警告/错数socket失败已创建2线程、第二轮TX参数先于门导致错误码差异的原失败日志均留；补header、库implicit声明Werror、前移TX门后通过。native-third66中间通过，最终补五线程等待及dispatch失败为67双编。core禁用不下载提交。
+下一步受限frontend身份/root/IP路由/其它进程独占/运行库/预算/永久窗口，再独立CN-capable有界UP2 MN/decoder/CDC/PDO/过程映像，不等采购、不放宽P3j no-CN/拒RX；未准备齐不跑真实CN/demo/help或申请物理互测。最近实板仍11月4日Linux归还历史非今日采样。
+服务器/home/openeuler/build/powerlink-cn-p4e-20261105；新清单/GitHub/delivery后验以最终日志为准。以下P4d及更早均不可变历史，旧“待全栈ready门”由本次软件结果覆盖但不代表可上线。
+
 2026-11-05 最新软件入口：tests/powerlink-cn-p4d-20261105/README.md；继续无实体CN的软件路线，不连接板卡COM7/运行真实CN/发网络CAN串口/改UP2及正式配置/复用硬件窗口。
 新private目录+apply/build_m7_powerlink_cn_private，固定完整archive+不变P4c基线之后叠加Linux CN专用变换；原P4a/b/c/UP2/P3j源、库、补丁链及no-CN保护不动。仅新库，无可运行CN/frontend，runtime_ready=false。
 event两unnamed semaphore由kernel创建销毁/user附着退出，join证明后才销毁，无系统命名IPC/unlink；circbuf进程私有heap+静态mutex，共享实例/owner+connector至多2引用，owner先关时保持既有连接存储/拒绝新连接，末引用回收；20id/每队列≤1MiB，计数/信号注册读写加锁、解锁后通知，修正负数/末端queue索引。生命周期构建连接释放由owner串行，不支持运行中fork。
