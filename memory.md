@@ -1,5 +1,16 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-05 最新软件入口：tests/powerlink-cn-p4d-20261105/README.md；继续无实体CN的软件路线，不连接板卡COM7/运行真实CN/发网络CAN串口/改UP2及正式配置/复用硬件窗口。
+新private目录+apply/build_m7_powerlink_cn_private，固定完整archive+不变P4c基线之后叠加Linux CN专用变换；原P4a/b/c/UP2/P3j源、库、补丁链及no-CN保护不动。仅新库，无可运行CN/frontend，runtime_ready=false。
+event两unnamed semaphore由kernel创建销毁/user附着退出，join证明后才销毁，无系统命名IPC/unlink；circbuf进程私有heap+静态mutex，共享实例/owner+connector至多2引用，owner先关时保持既有连接存储/拒绝新连接，末引用回收；20id/每队列≤1MiB，计数/信号注册读写加锁、解锁后通知，修正负数/末端queue索引。生命周期构建连接释放由owner串行，不支持运行中fork。
+新hres2/user64固定槽+MONOTONIC condvar，替换编译输入中两POSIX signal timer源（原文件仍在完整解包树），无timer堆对象/信号指针，64位域/槽/代际句柄不可回绕；修改/删除旧代际在实际user/kernel dispatch丢弃且防重复，锁内snapshot后回调，应用pValue仍由应用保活至在途完成/全静默。
+hres最小单次20us/连续100us仅约束非Linux硬实时；user0ms明确立即一次；最长10ms检查stop/定时fault在init及release前汇总，保留P4c四worker证明。event sem_clockwait同MONOTONIC；target_init/cleanup不再动signal mask/ftrace。无POSIX timer/namedIPC10类undefined引用已检查native及arm库。
+实际完整栈联调发现第三sem来自PDO target-mutex（参数名被忽略、pshared0），不是SDO。补其sem_destroy失败不free，PDO exit保留mutex/通道并传播首错及lock错误；失败不继续后续资源释放，不重试。
+每fresh native 26旧控制+25私有/代际timer+4实际完整被动栈=55顶层场景，各双目录共110通过；隔离场景另exec helper不加算。完整原CiA401OD+user/kernel/OD/PDO/NMT/SDO/event/timer，只有EDRV/network边界模拟：2内部user events/128process/GsOff→4join/1stop/3sem+2cond销毁/队列0；EDRV/thread部分init失败留3/6队列，PDO销毁失败4join后仅尝试1mutex/6队列及后续timer保留。
+Native最终484890B/4b1d5223...，AArch64448226B/bffdc575...，各双新目录库/report逐字节同，交叉不执行。Windows/Linux368=原352+新16，Linux记真实输入SHA；原警告保留，测试Werror而上游OD单编不Werror，不是全栈sanitizer/严格无泄漏或实时性证明。
+首头路径错误、旧fixture nonexistent nmtk_getNmtState编译拒绝（改实际nmtu_getNmtState）、少算PDOsem计数的原失败与中间native结果均留，不改写PASS/不降低检查，core禁用不上传。新清单/GitHub/delivery后验以最终报告为准，服务器/home/openeuler/build/powerlink-cn-p4d-20261105。
+下一步先全栈ready前RX/事件激活约束及主动处理/错误注入模拟，再受限frontend身份/root/IP路由/其它进程/运行库/预算/永久窗口；随后独立CN-capable有界UP2 MN/decoder/CDC/PDO/过程映像，不等采购、不放宽P3j no-CN。当前不准跑真实CN/demo/help或申请未准备好的物理互测；最近实板仍11月4日历史Linux归还快照非今日重采样。
+
 2026-11-05 最新软件入口：tests/powerlink-cn-p4c-20261105/README.md；继续无实体设备的Linux CN软件路线，仅构建/模拟IO，未连接板卡COM7/运行真实CN/发送网络CAN串口/改变UP2与正式配置，未复用旧硬件窗口。
 新增Linux专用lifecycle及9文件固定源码变换：默认未arm在target/IPC/线程前拒绝；四路eventk/hres/eventu/timeru注册到单owner一次create/stop，全局原子请求停止、EDRV自身回收再四路共用MONOTONIC 1s join，全部静默才允许user/kernel/OD/PDO/timesync析构，不cancel/二join/重复close，不改FIFO/RR；非硬2s watchdog。
 部分init保留首错，虽quiet也不释放；漏worker/无活动EDRV不能标完整init；失败析构立即停止后续动作，若此前已有释放不回滚、不声称所有资源原样保留。kernel retVal错误不覆盖、不假报Ready/Running/exit；generic待清理标记失败保留，环境清理也仅一次。

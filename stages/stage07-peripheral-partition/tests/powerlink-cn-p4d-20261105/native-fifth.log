@@ -1,0 +1,338 @@
+CMake Warning (dev) at CMakeLists.txt:32 (PROJECT):
+  cmake_minimum_required() should be called prior to this top-level project()
+  call.  Please see the cmake-commands(7) manual for usage documentation of
+  both commands.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- The C compiler identification is GNU 12.3.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+CMake Deprecation Warning at CMakeLists.txt:34 (CMAKE_MINIMUM_REQUIRED):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- CMAKE_SYSTEM_NAME is Linux
+-- CMAKE_SYSTEM_PROCESSOR is x86_64
+CMake Deprecation Warning at CMakeLists.txt:38 (CMAKE_POLICY):
+  The OLD behavior for policy CMP0043 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+
+
+-- Adding CMAKE configuration options for Linux
+-- Configuring oplkcn
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/stack
+[  1%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/m7_cn_lifecycle.c.o
+[  2%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/api/generic.c.o
+[  3%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/api/processimage.c.o
+[  4%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/api/sdotest.c.o
+[  6%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/api/service.c.o
+[  7%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/obd/obdu.c.o
+[  8%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/obd/obdal.c.o
+[  9%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/dll/dllucal.c.o
+In file included from /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:47:
+In function 'handleNotRxAsndFrame',
+    inlined from 'dllucal_process' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:264:19:
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[18]' [-Warray-bounds]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:820:5: note: in expansion of macro 'ami_setUint8Le'
+  820 |     ami_setUint8Le(&pFrame->srcNodeId, pAsndNotRx_p->nodeId);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c: In function 'dllucal_process':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:815:17: note: object 'aBuffer' of size 18
+  815 |     UINT8       aBuffer[DLLUCAL_NOTRX_FRAME_SIZE];
+      |                 ^~~~~~~
+In function 'handleNotRxAsndFrame',
+    inlined from 'dllucal_process' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:264:19:
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[18]' [-Warray-bounds]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:822:5: note: in expansion of macro 'ami_setUint8Le'
+  822 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, pAsndNotRx_p->serviceId);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c: In function 'dllucal_process':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:815:17: note: object 'aBuffer' of size 18
+  815 |     UINT8       aBuffer[DLLUCAL_NOTRX_FRAME_SIZE];
+      |                 ^~~~~~~
+[ 10%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/event/eventu.c.o
+[ 12%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/nmtu.c.o
+[ 13%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/nmtcnu.c.o
+[ 14%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/nmtmnu.c.o
+[ 15%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/identu.c.o
+[ 16%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/statusu.c.o
+[ 18%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/syncu.c.o
+[ 19%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/pdo/pdou.c.o
+[ 20%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/pdo/pdoucal.c.o
+[ 21%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/pdo/pdoucal-triplebufshm.c.o
+[ 22%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdotest-com.c.o
+[ 24%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdotest-seq.c.o
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3124:17: warning: array subscript 'tObdUnsigned64 {aka const long long unsigned int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds]
+ 3124 |             if (*((const tObdUnsigned64*)pData_p) < *((const tObdUnsigned64*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3106:17: warning: array subscript 'tObdInteger64 {aka const long long int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds]
+ 3106 |             if (*((const tObdInteger64*)pData_p) < *((const tObdInteger64*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3140:17: warning: array subscript 'tObdReal64 {aka const double}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds]
+ 3140 |             if (*((const tObdReal64*)pData_p) < *((const tObdReal64*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3085:17: warning: array subscript 'tObdReal32 {aka const float}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds]
+ 3085 |             if (*((const tObdReal32*)pData_p) < *((const tObdReal32*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3069:17: warning: array subscript 'tObdUnsigned32 {aka const unsigned int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds]
+ 3069 |             if (*((const tObdUnsigned32*)pData_p) < *((const tObdUnsigned32*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3039:17: warning: array subscript 'tObdUnsigned16 {aka const short unsigned int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds]
+ 3039 |             if (*((const tObdUnsigned16*)pData_p) < *((const tObdUnsigned16*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3054:17: warning: array subscript 'tObdInteger32 {aka const int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds]
+ 3054 |             if (*((const tObdInteger32*)pData_p) < *((const tObdInteger32*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3024:17: warning: array subscript 'tObdInteger16 {aka const short int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds]
+ 3024 |             if (*((const tObdInteger16*)pData_p) < *((const tObdInteger16*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+[ 25%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdocom-dummy.c.o
+[ 26%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdocom.c.o
+[ 27%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdocom-std.c.o
+[ 28%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdocomsrv.c.o
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomsrv.c: In function 'sdocomsrv_processStateServerSegmTrans':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomsrv.c:244:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  244 |             updateTransferAfterTx(pSdoComCon);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomsrv.c:246:9: note: here
+  246 |         case kSdoComConEventAckReceived:
+      |         ^~~~
+[ 30%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdocomclt.c.o
+[ 31%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdoseq.c.o
+[ 32%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdoasnd.c.o
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c: In function 'sdocomclt_processStateConnected':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c:623:14: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  623 |              updateTransferAfterTx(pSdoComCon);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c:625:9: note: here
+  625 |         case kSdoComConEventSendFirst:
+      |         ^~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c: In function 'sdocomclt_processStateSegmTransfer':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c:753:14: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  753 |              updateTransferAfterTx(pSdoComCon);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c:755:9: note: here
+  755 |         case kSdoComConEventSendFirst:
+      |         ^~~~
+[ 33%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdoudp.c.o
+[ 34%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/timesync/timesyncu.c.o
+[ 36%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/errhnd/errhndu.c.o
+[ 37%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/ctrl/ctrlu.c.o
+[ 38%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdoudp-linux.c.o
+[ 39%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/ctrl/ctrlucal-direct.c.o
+[ 40%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/dll/dllucal-circbuf.c.o
+[ 42%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/errhnd/errhnducal-local.c.o
+[ 43%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/event/eventucal-linux.c.o
+[ 44%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/event/eventucalintf-circbuf.c.o
+[ 45%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/pdo/pdoucalmem-local.c.o
+[ 46%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/timesync/timesyncucal-local.c.o
+[ 49%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkfilter.c.o
+[ 49%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllk.c.o
+[ 50%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkstatemachine.c.o
+[ 51%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkevent.c.o
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/kernel/dll/dllkstatemachine.c: In function 'processCsStoppedDllWaitSoa':
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/kernel/dll/dllkstatemachine.c:830:41: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  830 |             pDllEvent_p->dllErrorEvents |= DLL_ERR_CN_LOSS_SOA;
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/kernel/dll/dllkstatemachine.c:834:9: note: here
+  834 |         case kNmtEventDllCeAInv:
+      |         ^~~~
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/kernel/dll/dllkstatemachine.c:836:41: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  836 |             pDllEvent_p->dllErrorEvents |= DLL_ERR_CN_LOSS_SOA;
+/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/stack/src/kernel/dll/dllkstatemachine.c:839:9: note: here
+  839 |         case kNmtEventDllCeSoa:
+      |         ^~~~
+[ 53%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkframe.c.o
+[ 54%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllknode.c.o
+[ 55%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkcal.c.o
+[ 56%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/event/eventk.c.o
+[ 57%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/nmt/nmtk.c.o
+[ 59%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/pdo/pdok.c.o
+[ 60%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/pdo/pdokcal.c.o
+[ 61%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/pdo/pdokcal-triplebufshm.c.o
+[ 62%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/pdo/pdoklut.c.o
+[ 63%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/timesync/timesynck.c.o
+[ 65%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/errhnd/errhndk.c.o
+[ 66%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/errhnd/errhndkcal.c.o
+[ 67%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/ctrl/ctrlk.c.o
+[ 68%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/led/ledk.c.o
+[ 69%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/led/ledktimer.c.o
+[ 71%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/ctrl/ctrlkcal-direct.c.o
+[ 72%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkcal-circbuf.c.o
+[ 73%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/errhnd/errhndkcal-local.c.o
+[ 74%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/event/eventkcal-linux.c.o
+[ 75%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/event/eventkcalintf-circbuf.c.o
+[ 77%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/pdo/pdokcalmem-local.c.o
+[ 78%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/timesync/timesynckcal-local.c.o
+[ 79%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/debugstr.c.o
+[ 80%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/arch/linux/ftracedebug.c.o
+[ 81%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2/contrib/trace/trace-printf.c.o
+[ 83%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/arch/linux/target-linux.c.o
+[ 84%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/arch/linux/target-mutex.c.o
+[ 85%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/arch/linux/netif-linux.c.o
+[ 86%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/obd/obdconf-fileio.c.o
+[ 87%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/obd/obdconfcrc-generic.c.o
+[ 89%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/circbuf/circbuffer.c.o
+[ 90%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/circbuf/circbuf-posixshm.c.o
+[ 91%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/memmap/memmap-null.c.o
+[ 92%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/veth/veth-linuxuser.c.o
+[ 93%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/edrv/edrvcyclic.c.o
+[ 95%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/edrv/edrv-rawsock_linux.c.o
+[ 96%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/ami/amix86.c.o
+[ 97%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/m7_cn_private.c.o
+[ 98%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/m7_cn_timers.c.o
+[100%] Linking C static library liboplkcn.a
+[100%] Built target oplkcn
+-- Install configuration: "Release"
+-- Installing: /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/install/./liboplkcn.a
+PASS lifecycle unarmed created=0 joined=0 stop=0 releases=0 env=0
+PASS lifecycle normal created=4 joined=4 stop=1 releases=19 env=3
+PASS lifecycle no_transport created=4 joined=4 stop=0 releases=0 env=0
+PASS lifecycle partial_init created=2 joined=2 stop=1 releases=0 env=0
+PASS lifecycle thread_failure created=3 joined=2 stop=1 releases=0 env=0
+PASS lifecycle kernel_info_failure created=0 joined=0 stop=0 releases=0 env=0
+PASS lifecycle target_failure created=0 joined=0 stop=0 releases=0 env=0
+PASS lifecycle join_eventk created=4 joined=4 stop=1 releases=0 env=0
+PASS lifecycle join_hres created=4 joined=4 stop=1 releases=0 env=0
+PASS lifecycle join_eventu created=4 joined=4 stop=1 releases=0 env=0
+PASS lifecycle join_timeru created=4 joined=4 stop=1 releases=0 env=0
+PASS lifecycle clock_failure created=4 joined=0 stop=1 releases=0 env=0
+PASS lifecycle edrv_failure created=4 joined=4 stop=1 releases=0 env=0
+PASS lifecycle transport_unclosed created=4 joined=4 stop=1 releases=0 env=0
+PASS lifecycle transport_inflight created=4 joined=4 stop=1 releases=0 env=0
+PASS lifecycle transport_fault created=4 joined=4 stop=1 releases=0 env=0
+PASS lifecycle user_release_failure created=4 joined=4 stop=1 releases=1 env=0
+PASS lifecycle kernel_release_failure created=4 joined=4 stop=1 releases=10 env=0
+PASS lifecycle kernel_retval_failure created=4 joined=4 stop=1 releases=9 env=0
+PASS lifecycle double_create created=4 joined=4 stop=1 releases=19 env=3
+PASS lifecycle wrong_owner created=4 joined=4 stop=1 releases=19 env=3
+PASS lifecycle real_threads created=4 joined=4 stop=1 releases=19 env=3
+PASS lifecycle missing_worker created=3 joined=3 stop=1 releases=0 env=0
+PASS lifecycle duplicate_slot created=4 joined=4 stop=1 releases=19 env=3
+PASS lifecycle early_kernel_cleanup created=4 joined=4 stop=1 releases=0 env=0
+PASS lifecycle environment_failure created=4 joined=4 stop=1 releases=19 env=3
+PASS private queue_roundtrip records=0 threads=0 semInit=0 semDestroy=0 condDestroy=0 buffers=0
+PASS private queue_owner_first records=0 threads=0 semInit=0 semDestroy=0 condDestroy=0 buffers=0
+PASS private queue_threads records=0 threads=0 semInit=0 semDestroy=0 condDestroy=0 buffers=0
+PASS private queue_child records=0 threads=0 semInit=0 semDestroy=0 condDestroy=0 buffers=0
+PASS private queue_process_isolation records=0 threads=0 semInit=0 semDestroy=0 condDestroy=0 buffers=0
+PASS private queue_alloc_failure records=0 threads=0 semInit=0 semDestroy=0 condDestroy=0 buffers=0
+PASS private queue_bounds records=0 threads=0 semInit=0 semDestroy=0 condDestroy=0 buffers=0
+PASS private sem_normal records=0 threads=0 semInit=2 semDestroy=2 condDestroy=0 buffers=0
+PASS private sem_init_first records=0 threads=0 semInit=1 semDestroy=0 condDestroy=0 buffers=0
+PASS private sem_init_second records=0 threads=0 semInit=2 semDestroy=0 condDestroy=0 buffers=0
+PASS private sem_destroy_failure records=0 threads=0 semInit=2 semDestroy=1 condDestroy=0 buffers=0
+PASS private timer_once records=1 threads=1 semInit=0 semDestroy=0 condDestroy=1 buffers=0
+PASS private timer_modify records=2 threads=1 semInit=0 semDestroy=0 condDestroy=1 buffers=0
+PASS private timer_delete_reuse records=2 threads=1 semInit=0 semDestroy=0 condDestroy=1 buffers=0
+PASS private timer_capacity records=0 threads=1 semInit=0 semDestroy=0 condDestroy=1 buffers=0
+PASS private timer_bad_handle records=0 threads=1 semInit=0 semDestroy=0 condDestroy=1 buffers=0
+PASS private timer_zero records=1 threads=1 semInit=0 semDestroy=0 condDestroy=1 buffers=0
+PASS private inflight_delete records=2 threads=1 semInit=0 semDestroy=0 condDestroy=1 buffers=0
+PASS private hres_once records=1 threads=1 semInit=0 semDestroy=0 condDestroy=1 buffers=0
+PASS private hres_repeat records=4 threads=1 semInit=0 semDestroy=0 condDestroy=1 buffers=0
+PASS private hres_capacity records=1 threads=1 semInit=0 semDestroy=0 condDestroy=1 buffers=0
+PASS private cond_clock_failure records=0 threads=0 semInit=0 semDestroy=0 condDestroy=0 buffers=0
+PASS private thread_failure records=0 threads=0 semInit=0 semDestroy=0 condDestroy=0 buffers=0
+PASS private clock_failure records=0 threads=1 semInit=0 semDestroy=0 condDestroy=0 buffers=0
+PASS private post_failure records=0 threads=1 semInit=0 semDestroy=0 condDestroy=0 buffers=0
+PASS private cond_destroy_failure records=1 threads=1 semInit=0 semDestroy=0 condDestroy=1 buffers=0
+STACK COUNTERS creates=4 joins=4 stops=1 semDestroy=3 condDestroy=2
+mock-stack-tests: /home/openeuler/build/powerlink-cn-p4d-20261105/workspace/stages/stage07-peripheral-partition/tests/test_powerlink_cn_private_stack.c:110: main: Assertion `creates==4 && joins==4 && stops==1 && sems_destroyed==2 && conditions_destroyed==2' failed.
+timeout: the monitored command dumped core
+Traceback (most recent call last):
+  File "/home/openeuler/build/powerlink-cn-p4d-20261105/workspace/stages/stage07-peripheral-partition/build/build_m7_powerlink_cn_private.py", line 91, in <module>
+POWERLINK PREPARED: 048650a80db37fa372330c3a900d2c8edb327e47 / 1355 files / /home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/source/openPOWERLINK_V2-2.7.2
+    build(args.destination,args.cc,args.aarch64)
+  File "/home/openeuler/build/powerlink-cn-p4d-20261105/workspace/stages/stage07-peripheral-partition/build/build_m7_powerlink_cn_private.py", line 74, in build
+    for case in cases:run('timeout','5s',str(executable),case)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/openeuler/build/powerlink-cn-p4d-20261105/workspace/stages/stage07-peripheral-partition/build/build_m7_powerlink_cn_private.py", line 43, in run
+    def run(*args):subprocess.run(list(args),env=env,check=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['timeout', '5s', '/home/openeuler/build/powerlink-cn-p4d-20261105/native-fifth/mock-stack-tests', 'normal']' died with <Signals.SIGABRT: 6>.
+
+REMOTE_EXIT=1

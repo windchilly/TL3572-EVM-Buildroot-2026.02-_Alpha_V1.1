@@ -1,0 +1,834 @@
+
+m7_cn_lifecycle.c.o:
+                 U __aarch64_cas4_acq_rel
+                 U clock_gettime
+                 U edrv_exit
+                 U m7_cn_edrv_stats
+                 U m7_cn_timers_fault
+                 U pthread_clockjoin_np
+                 U pthread_create
+                 U pthread_self
+
+generic.c.o:
+                 U ami_getUint16Be
+                 U ctrlu_callUserEventCallback
+                 U ctrlu_checkKernelStack
+                 U ctrlu_checkKernelStackInfo
+                 U ctrlu_exit
+                 U ctrlu_getEthMacAddr
+                 U ctrlu_getFeatureFlags
+                 U ctrlu_getKernelInfo
+                 U ctrlu_init
+                 U ctrlu_initStack
+                 U ctrlu_processStack
+                 U ctrlu_shutdownStack
+                 U ctrlu_stackIsInitialized
+                 U dllucal_regAsndService
+                 U dllucal_sendAsyncFrame
+                 U eventu_postEvent
+                 U m7_cn_create_begin
+                 U m7_cn_environment_exit_begin
+                 U m7_cn_fail
+                 U m7_cn_init_result
+                 U m7_cn_lifecycle_begin
+                 U m7_cn_released
+                 U memcpy
+                 U memmap_init
+                 U memmap_shutdown
+                 U memset
+                 U nmtu_postNmtEvent
+                 U obdal_enableUserObdAccess
+                 U obdal_finishUserObdAccess
+                 U obdu_defineVar
+                 U obdu_getDataSize
+                 U obdu_getNodeId
+                 U obdu_readEntry
+                 U obdu_readEntryToLe
+                 U obdu_writeEntry
+                 U obdu_writeEntryFromLe
+                 U pdou_copyRxPdoToPi
+                 U pdou_copyTxPdoFromPi
+                 U sdocom_abortTransfer
+                 U sdocom_defineConnection
+                 U sdocom_initTransferByIndex
+                 U sdocom_undefineConnection
+                 U target_cleanup
+                 U target_enumerateNetworkInterfaces
+                 U target_init
+                 U timesyncu_getSocTime
+                 U timesyncu_waitSyncEvent
+
+processimage.c.o:
+                 U calloc
+                 U ctrlu_stackIsInitialized
+                 U free
+                 U oplk_linkObject
+                 U pdou_copyRxPdoToPi
+                 U pdou_copyTxPdoFromPi
+
+sdotest.c.o:
+                 U memcpy
+                 U memset
+                 U sdotestcom_closeCon
+                 U sdotestcom_init
+                 U sdotestcom_sendFrame
+                 U sdotestseq_closeCon
+                 U sdotestseq_init
+                 U sdotestseq_sendFrame
+
+service.c.o:
+                 U ctrlu_getMaxFileChunkSize
+                 U ctrlu_writeFileChunk
+                 U ctrlucal_executeCmd
+
+obdu.c.o:
+                 U ami_getTimeOfDay
+                 U ami_getUint16Le
+                 U ami_getUint24Le
+                 U ami_getUint32Le
+                 U ami_getUint40Le
+                 U ami_getUint48Le
+                 U ami_getUint56Le
+                 U ami_getUint64Le
+                 U ami_setTimeOfDay
+                 U ami_setUint16Le
+                 U ami_setUint24Le
+                 U ami_setUint32Le
+                 U ami_setUint40Le
+                 U ami_setUint48Le
+                 U ami_setUint56Le
+                 U ami_setUint64Le
+                 U memcpy
+
+obdal.c.o:
+                 U obdu_processRead
+                 U obdu_processWrite
+
+dllucal.c.o:
+                 U ami_getUint16Be
+                 U dllucalcircbuf_getInterface
+                 U eventu_postEvent
+                 U memmap_mapKernelBuffer
+                 U memmap_unmapKernelBuffer
+
+eventu.c.o:
+                 U dllucal_process
+                 U eventucal_exit
+                 U eventucal_init
+                 U eventucal_postKernelEvent
+                 U eventucal_postUserEvent
+                 U m7_cn_timer_event_current
+                 U memcpy
+                 U nmtu_processEvent
+                 U sdoseq_processEvent
+                 U sdotestcom_cbEvent
+
+nmtu.c.o:
+                 U eventu_postEvent
+                 U obdu_getNodeId
+                 U obdu_readEntry
+                 U timeru_deleteTimer
+                 U timeru_modifyTimer
+
+nmtcnu.c.o:
+                 U ami_setUint16Be
+                 U dllucal_regAsndService
+                 U dllucal_sendAsyncFrame
+                 U memcpy
+
+nmtmnu.c.o:
+
+identu.c.o:
+                 U dllucal_regAsndService
+                 U free
+                 U malloc
+                 U memset
+
+statusu.c.o:
+                 U dllucal_regAsndService
+                 U memset
+
+syncu.c.o:
+
+pdou.c.o:
+                 U ami_getTimeOfDay
+                 U ami_getUint16Le
+                 U ami_getUint24Le
+                 U ami_getUint32Le
+                 U ami_getUint40Le
+                 U ami_getUint48Le
+                 U ami_getUint56Le
+                 U ami_getUint64Le
+                 U ami_setTimeOfDay
+                 U ami_setUint16Le
+                 U ami_setUint24Le
+                 U ami_setUint32Le
+                 U ami_setUint40Le
+                 U ami_setUint48Le
+                 U ami_setUint56Le
+                 U ami_setUint64Le
+                 U free
+                 U m7_cn_fail
+                 U m7_cn_lifecycle_stats
+                 U malloc
+                 U memcpy
+                 U memset
+                 U obdu_getAccessType
+                 U obdu_getDataSize
+                 U obdu_getObjectDataPtr
+                 U obdu_getType
+                 U obdu_isNumerical
+                 U obdu_readEntry
+                 U pdoucal_cleanupPdoMem
+                 U pdoucal_exit
+                 U pdoucal_getRxPdo
+                 U pdoucal_getTxPdoAdrs
+                 U pdoucal_init
+                 U pdoucal_initPdoMem
+                 U pdoucal_postConfigureChannel
+                 U pdoucal_postPdokChannelAlloc
+                 U pdoucal_postSetupPdoBuffers
+                 U pdoucal_setTxPdo
+                 U target_createMutex
+                 U target_destroyMutex
+                 U target_lockMutex
+                 U target_msleep
+                 U target_unlockMutex
+
+pdoucal.c.o:
+                 U eventu_postEvent
+                 U pdoucal_closeMem
+                 U pdoucal_openMem
+
+pdoucal-triplebufshm.c.o:
+                 U __aarch64_swp1_sync
+                 U pdoucal_allocateMem
+                 U pdoucal_freeMem
+
+sdotest-com.c.o:
+                 U calloc
+                 U circbuf_alloc
+                 U circbuf_free
+                 U circbuf_readData
+                 U circbuf_writeData
+                 U eventu_postEvent
+                 U free
+                 U malloc
+                 U memcpy
+                 U memset
+                 U sdoseq_deleteCon
+                 U sdoseq_exit
+                 U sdoseq_init
+                 U sdoseq_initCon
+
+sdotest-seq.c.o:
+                 U calloc
+                 U free
+                 U memcpy
+                 U sdoasnd_deleteCon
+                 U sdoasnd_exit
+                 U sdoasnd_init
+                 U sdoasnd_initCon
+                 U sdoasnd_sendData
+
+sdocom-dummy.c.o:
+
+sdocom.c.o:
+                 U sdocomdummy_getInterface
+                 U sdocomstandard_getInterface
+
+sdocom-std.c.o:
+                 U ami_setUint16Le
+                 U memcpy
+                 U memset
+                 U sdocomclt_abortTransfer
+                 U sdocomclt_defineConnection
+                 U sdocomclt_getNodeId
+                 U sdocomclt_getState
+                 U sdocomclt_initTransferByIndex
+                 U sdocomclt_processStateConnected
+                 U sdocomclt_processStateSegmTransfer
+                 U sdocomclt_processStateWaitInit
+                 U sdocomclt_undefineConnection
+                 U sdocomsrv_initCon
+                 U sdocomsrv_processStateServerSegmTrans
+                 U sdoseq_deleteCon
+                 U sdoseq_exit
+                 U sdoseq_init
+
+sdocomsrv.c.o:
+                 U ami_getUint16Le
+                 U ami_getUint32Le
+                 U ami_setUint16Le
+                 U ami_setUint32Le
+                 U memcpy
+                 U memset
+                 U sdoComInstance_g
+                 U sdocomint_fillCmdFrameDataSegm
+                 U sdocomint_initCmdFrameGeneric
+                 U sdocomint_overwriteCmdFrameHdrFlags
+                 U sdocomint_setCmdFrameHdrFlag
+                 U sdocomint_setCmdFrameHdrSegmSize
+                 U sdocomint_updateHdlTransfSize
+                 U sdoseq_deleteCon
+                 U sdoseq_sendData
+
+sdocomclt.c.o:
+                 U ami_getUint16Le
+                 U ami_getUint32Le
+                 U ami_setUint16Le
+                 U ami_setUint32Le
+                 U memcpy
+                 U sdoComInstance_g
+                 U sdocomint_fillCmdFrameDataSegm
+                 U sdocomint_initCmdFrameGeneric
+                 U sdocomint_overwriteCmdFrameHdrFlags
+                 U sdocomint_processState
+                 U sdocomint_setCmdFrameHdrFlag
+                 U sdocomint_setCmdFrameHdrSegmSize
+                 U sdocomint_updateHdlTransfSize
+                 U sdoseq_deleteCon
+                 U sdoseq_initCon
+                 U sdoseq_sendData
+
+sdoseq.c.o:
+                 U memcpy
+                 U memset
+                 U sdoasnd_deleteCon
+                 U sdoasnd_exit
+                 U sdoasnd_init
+                 U sdoasnd_initCon
+                 U sdoasnd_sendData
+                 U timeru_deleteTimer
+                 U timeru_modifyTimer
+                 U timeru_setTimer
+
+sdoasnd.c.o:
+                 U dllucal_regAsndService
+                 U dllucal_sendAsyncFrame
+
+sdoudp.c.o:
+
+timesyncu.c.o:
+                 U __aarch64_swp1_sync
+                 U timesyncucal_exit
+                 U timesyncucal_getSharedMemory
+                 U timesyncucal_init
+                 U timesyncucal_waitSyncEvent
+
+errhndu.c.o:
+                 U errhnducal_exit
+                 U errhnducal_init
+                 U errhnducal_readErrorObject
+                 U errhnducal_writeErrorObject
+                 U obdu_defineVar
+
+ctrlu.c.o:
+                 U ctrlucal_checkKernelStack
+                 U ctrlucal_executeCmd
+                 U ctrlucal_exit
+                 U ctrlucal_getFileBufferSize
+                 U ctrlucal_getHeartbeat
+                 U ctrlucal_getStatus
+                 U ctrlucal_init
+                 U ctrlucal_process
+                 U ctrlucal_readInitParam
+                 U ctrlucal_storeInitParam
+                 U ctrlucal_writeFileBuffer
+                 U dllucal_config
+                 U dllucal_exit
+                 U dllucal_init
+                 U dllucal_setIdentity
+                 U errhndu_cbObdAccess
+                 U errhndu_exit
+                 U errhndu_init
+                 U eventu_exit
+                 U eventu_init
+                 U eventucal_process
+                 U m7_cn_fail
+                 U m7_cn_release_begin
+                 U m7_cn_release_finish
+                 U m7_cn_released
+                 U memcpy
+                 U memset
+                 U nmtcnu_exit
+                 U nmtcnu_init
+                 U nmtcnu_registerCheckEventCb
+                 U nmtu_exit
+                 U nmtu_getNmtState
+                 U nmtu_init
+                 U nmtu_postNmtEvent
+                 U nmtu_registerStateChangeCb
+                 U obdal_exit
+                 U obdal_init
+                 U obdal_processSdoRead
+                 U obdal_processSdoWrite
+                 U obdu_accessOdPart
+                 U obdu_exit
+                 U obdu_getNodeId
+                 U obdu_init
+                 U obdu_readEntry
+                 U obdu_setNodeId
+                 U obdu_writeEntry
+                 U pdou_cbNmtStateChange
+                 U pdou_cbObdAccess
+                 U pdou_exit
+                 U pdou_init
+                 U pdou_registerEventPdoChangeCb
+                 U sdocom_exit
+                 U sdocom_init
+                 U sdoseq_setTimeout
+                 U strlen
+                 U strncpy
+                 U target_getTickCount
+                 U timeru_exit
+                 U timeru_init
+                 U timeru_process
+                 U timesyncu_exit
+                 U timesyncu_init
+
+sdoudp-linux.c.o:
+
+ctrlucal-direct.c.o:
+                 U ctrlk_executeCmd
+                 U ctrlk_exit
+                 U ctrlk_init
+                 U ctrlk_process
+                 U ctrlkcal_getStatus
+                 U ctrlkcal_setStatus
+                 U kernelInitParam_g
+
+dllucal-circbuf.c.o:
+                 U circbuf_connect
+                 U circbuf_disconnect
+                 U circbuf_getDataCount
+                 U circbuf_readData
+                 U circbuf_reset
+                 U circbuf_writeData
+                 U free
+                 U malloc
+
+errhnducal-local.c.o:
+                 U errhndk_errorObjects_g
+
+eventucal-linux.c.o:
+                 U clock_gettime
+                 U eventucal_exitQueueCircbuf
+                 U eventucal_getEventCountCircbuf
+                 U eventucal_initQueueCircbuf
+                 U eventucal_postEventCircbuf
+                 U eventucal_processEventCircbuf
+                 U eventucal_setSignalingCircbuf
+                 U m7_cn_can_release
+                 U m7_cn_event_sem
+                 U m7_cn_event_sems_attach
+                 U m7_cn_event_sems_detach
+                 U m7_cn_fail
+                 U m7_cn_stopping
+                 U m7_cn_thread_create
+                 U pthread_setname_np
+                 U sem_clockwait
+                 U sem_post
+
+eventucalintf-circbuf.c.o:
+                 U circBuf_setSignaling
+                 U circbuf_alloc
+                 U circbuf_connect
+                 U circbuf_disconnect
+                 U circbuf_free
+                 U circbuf_getDataCount
+                 U circbuf_readData
+                 U circbuf_writeData
+                 U circbuf_writeMultipleData
+                 U eventu_postError
+                 U eventu_process
+
+pdoucalmem-local.c.o:
+                 U pdokcalmem_pPdo_g
+                 U target_msleep
+
+timesyncucal-local.c.o:
+                 U timesynckcal_sharedMemory_g
+
+dllk.c.o:
+                 U eventk_postEvent
+                 U memcpy
+                 U memset
+
+dllkfilter.c.o:
+                 U ami_setUint16Be
+                 U ami_setUint48Be
+                 U dllkInstance_g
+                 U memset
+
+dllkstatemachine.c.o:
+                 U dllkInstance_g
+                 U errhndk_postError
+
+dllkevent.c.o:
+                 U dllkInstance_g
+                 U dllkcal_getAsyncTxCount
+                 U dllkcal_getAsyncTxFrame
+                 U dllkframe_checkFrame
+                 U dllkframe_processTpdo
+                 U dllkframe_updateFrameAsyncRes
+                 U dllkframe_updateFrameIdentRes
+                 U dllkframe_updateFramePres
+                 U dllkframe_updateFrameStatusRes
+                 U dllknode_cleanupLocalNode
+                 U dllknode_setupLocalNode
+                 U edrv_sendTxBuffer
+                 U errhndk_decrementCounters
+                 U eventk_postEvent
+                 U hrestimer_controlExtSyncIrq
+                 U hrestimer_deleteTimer
+                 U memset
+
+dllkframe.c.o:
+                 U ami_getUint16Be
+                 U ami_getUint16Le
+                 U ami_getUint32Le
+                 U ami_getUint48Be
+                 U ami_getUint64Le
+                 U ami_setUint16Be
+                 U ami_setUint16Le
+                 U ami_setUint32Le
+                 U ami_setUint48Be
+                 U ami_setUint64Le
+                 U dllkInstance_g
+                 U dllk_postEvent
+                 U dllkcal_asyncFrameReceived
+                 U dllkcal_nmtCmdReceived
+                 U dllkstatemachine_changeState
+                 U edrv_allocTxBuffer
+                 U edrv_freeTxBuffer
+                 U edrv_getMacAddr
+                 U edrv_sendTxBuffer
+                 U errhndk_postError
+                 U eventk_postError
+                 U eventk_postEvent
+                 U hrestimer_modifyTimer
+                 U memset
+                 U timesynck_setSocTime
+
+dllknode.c.o:
+                 U ami_setUint48Be
+                 U dllkInstance_g
+                 U dllkcal_clearAsyncBuffer
+                 U dllkfilter_setupFilters
+                 U dllkfilter_setupPreqFilter
+                 U dllkframe_createTxFrame
+                 U dllkframe_deleteTxFrame
+                 U dllkframe_processTransmittedNmtReq
+                 U dllkframe_processTransmittedNonPlk
+                 U edrv_changeRxFilter
+                 U edrv_clearRxMulticastMacAddr
+                 U edrv_getMacAddr
+                 U edrv_setRxMulticastMacAddr
+                 U hrestimer_deleteTimer
+                 U timesynck_setCycleTime
+
+dllkcal.c.o:
+                 U ami_getUint16Be
+                 U dllk_config
+                 U dllk_setAsndServiceIdFilter
+                 U dllk_setIdentity
+                 U dllkcalcircbuf_getInterface
+                 U eventk_postEvent
+
+eventk.c.o:
+                 U dllk_process
+                 U dllkcal_process
+                 U errhndk_process
+                 U eventkcal_exit
+                 U eventkcal_init
+                 U eventkcal_postKernelEvent
+                 U eventkcal_postUserEvent
+                 U m7_cn_timer_event_current
+                 U memcpy
+                 U nmtk_process
+                 U pdokcal_process
+                 U timesynck_process
+
+nmtk.c.o:
+                 U dllk_process
+                 U eventk_postEvent
+
+pdok.c.o:
+                 U ami_getUint16Le
+                 U ami_setUint16Le
+                 U dllk_regTpdoHandler
+                 U free
+                 U malloc
+                 U memset
+                 U pdokcal_cleanupPdoMem
+                 U pdokcal_exit
+                 U pdokcal_init
+                 U pdokcal_initPdoMem
+                 U pdokcal_readTxPdo
+                 U pdokcal_writeRxPdo
+                 U pdoklut_addChannel
+                 U pdoklut_clear
+                 U pdoklut_getChannel
+
+pdokcal.c.o:
+                 U ami_getUint16Le
+                 U dllk_regRpdoHandler
+                 U eventk_postEvent
+                 U pdok_allocChannelMem
+                 U pdok_configureChannel
+                 U pdok_processRxPdo
+                 U pdok_setupPdoBuffers
+                 U pdokcal_closeMem
+                 U pdokcal_openMem
+
+pdokcal-triplebufshm.c.o:
+                 U __aarch64_swp1_sync
+                 U memcpy
+                 U memset
+                 U pdokcal_allocateMem
+                 U pdokcal_freeMem
+
+pdoklut.c.o:
+
+timesynck.c.o:
+                 U __aarch64_swp1_sync
+                 U timesynckcal_controlSync
+                 U timesynckcal_exit
+                 U timesynckcal_getSharedMemory
+                 U timesynckcal_init
+                 U timesynckcal_sendSyncEvent
+
+errhndk.c.o:
+                 U errhndkcal_exit
+                 U errhndkcal_getCnCrcError
+                 U errhndkcal_getCnCrcThresholdCnt
+                 U errhndkcal_getCnLossPreqError
+                 U errhndkcal_getCnLossSocError
+                 U errhndkcal_getLossPreqThresholdCnt
+                 U errhndkcal_getLossSocThresholdCnt
+                 U errhndkcal_getMemPtr
+                 U errhndkcal_init
+                 U errhndkcal_setCnCrcCounters
+                 U errhndkcal_setCnCrcThresholdCnt
+                 U errhndkcal_setCnLossPreqCounters
+                 U errhndkcal_setCnLossSocCounters
+                 U errhndkcal_setLossPreqThresholdCnt
+                 U errhndkcal_setLossSocThresholdCnt
+                 U eventk_postEvent
+
+errhndkcal.c.o:
+                 U errhndkcal_deinitMemory
+                 U errhndkcal_getMemPtr
+                 U errhndkcal_initMemory
+
+ctrlk.c.o:
+                 U ctrlkcal_exit
+                 U ctrlkcal_getCmd
+                 U ctrlkcal_getMaxFileChunkSize
+                 U ctrlkcal_init
+                 U ctrlkcal_process
+                 U ctrlkcal_readFileChunk
+                 U ctrlkcal_readInitParam
+                 U ctrlkcal_sendReturn
+                 U ctrlkcal_setStatus
+                 U ctrlkcal_storeInitParam
+                 U ctrlkcal_updateHeartbeat
+                 U dllk_exit
+                 U dllk_init
+                 U dllk_regSyncHandler
+                 U dllkcal_exit
+                 U dllkcal_init
+                 U dllkframe_processFrameReceived
+                 U edrv_getMacAddr
+                 U edrv_init
+                 U errhndk_exit
+                 U errhndk_init
+                 U eventk_exit
+                 U eventk_init
+                 U eventkcal_process
+                 U hrestimer_exit
+                 U hrestimer_init
+                 U m7_cn_fail
+                 U m7_cn_kernel_release_begin
+                 U nmtk_exit
+                 U nmtk_init
+                 U pdok_exit
+                 U pdok_init
+                 U timesynck_exit
+                 U timesynck_init
+                 U timesynck_sendSyncEvent
+
+ledk.c.o:
+
+ledktimer.c.o:
+
+ctrlkcal-direct.c.o:
+
+dllkcal-circbuf.c.o:
+                 U circbuf_alloc
+                 U circbuf_free
+                 U circbuf_getDataCount
+                 U circbuf_readData
+                 U circbuf_reset
+                 U circbuf_writeData
+                 U free
+                 U malloc
+
+errhndkcal-local.c.o:
+
+eventkcal-linux.c.o:
+                 U clock_gettime
+                 U eventkcal_exitQueueCircbuf
+                 U eventkcal_getEventCountCircbuf
+                 U eventkcal_initQueueCircbuf
+                 U eventkcal_postEventCircbuf
+                 U eventkcal_processEventCircbuf
+                 U eventkcal_setSignalingCircbuf
+                 U m7_cn_can_release
+                 U m7_cn_event_sem
+                 U m7_cn_event_sems_exit
+                 U m7_cn_event_sems_init
+                 U m7_cn_fail
+                 U m7_cn_stopping
+                 U m7_cn_thread_create
+                 U pthread_setname_np
+                 U sem_clockwait
+                 U sem_post
+
+eventkcalintf-circbuf.c.o:
+                 U circBuf_setSignaling
+                 U circbuf_alloc
+                 U circbuf_free
+                 U circbuf_getDataCount
+                 U circbuf_readData
+                 U circbuf_writeData
+                 U circbuf_writeMultipleData
+                 U eventk_postError
+                 U eventk_process
+
+pdokcalmem-local.c.o:
+                 U free
+                 U malloc
+
+timesynckcal-local.c.o:
+                 U timesyncucal_callSyncCb
+
+debugstr.c.o:
+
+ftracedebug.c.o:
+
+trace-printf.c.o:
+
+target-linux.c.o:
+                 U clock_gettime
+                 U close
+                 U inet_pton
+                 U ioctl
+                 U select
+                 U snprintf
+                 U socket
+                 U sprintf
+                 U system
+
+target-mutex.c.o:
+                 U free
+                 U m7_cn_fail
+                 U malloc
+                 U sem_destroy
+                 U sem_init
+                 U sem_post
+                 U sem_wait
+
+netif-linux.c.o:
+                 U freeifaddrs
+                 U getifaddrs
+                 U strcpy
+
+obdconf-fileio.c.o:
+
+obdconfcrc-generic.c.o:
+
+circbuffer.c.o:
+                 U circbuf_allocBuffer
+                 U circbuf_connectBuffer
+                 U circbuf_createInstance
+                 U circbuf_disconnectBuffer
+                 U circbuf_freeBuffer
+                 U circbuf_freeInstance
+                 U circbuf_lock
+                 U circbuf_unlock
+                 U memcpy
+
+circbuf-posixshm.c.o:
+                 U calloc
+                 U free
+                 U pthread_mutex_lock
+                 U pthread_mutex_unlock
+
+memmap-null.c.o:
+
+veth-linuxuser.c.o:
+
+edrvcyclic.c.o:
+                 U calloc
+                 U edrv_sendTxBuffer
+                 U free
+                 U hrestimer_deleteTimer
+                 U hrestimer_modifyTimer
+                 U memcpy
+                 U memset
+
+edrv-rawsock_linux.c.o:
+                 U __aarch64_cas4_acq_rel
+                 U __aarch64_cas8_acq_rel
+                 U __aarch64_ldadd4_acq_rel
+                 U __aarch64_ldadd8_acq_rel
+                 U __aarch64_swp4_acq_rel
+                 U __errno_location
+                 U bind
+                 U clock_gettime
+                 U close
+                 U free
+                 U ioctl
+                 U malloc
+                 U nanosleep
+                 U poll
+                 U pthread_clockjoin_np
+                 U pthread_create
+                 U pthread_self
+                 U realpath
+                 U recvfrom
+                 U send
+                 U setsockopt
+                 U socket
+                 U strcmp
+                 U strstr
+
+ami.c.o:
+
+m7_cn_private.c.o:
+                 U m7_cn_can_release
+                 U m7_cn_fail
+                 U m7_cn_stopping
+                 U sem_destroy
+                 U sem_init
+
+m7_cn_timers.c.o:
+                 U __aarch64_cas4_acq_rel
+                 U clock_gettime
+                 U eventu_postEvent
+                 U m7_cn_can_release
+                 U m7_cn_fail
+                 U m7_cn_stopping
+                 U m7_cn_thread_create
+                 U memset
+                 U pthread_cond_destroy
+                 U pthread_cond_init
+                 U pthread_cond_signal
+                 U pthread_cond_timedwait
+                 U pthread_condattr_destroy
+                 U pthread_condattr_init
+                 U pthread_condattr_setclock
+                 U pthread_mutex_lock
+                 U pthread_mutex_unlock

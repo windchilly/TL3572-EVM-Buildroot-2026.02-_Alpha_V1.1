@@ -1,0 +1,1804 @@
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(m7_cn_lifecycle.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          8048 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(generic.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          14256 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         15
+  Section header string table index: 14
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(processimage.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3160 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdotest.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2216 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(service.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          984 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(obdu.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          25440 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         16
+  Section header string table index: 15
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(obdal.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2312 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(dllucal.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3656 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(eventu.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3064 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         16
+  Section header string table index: 15
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(nmtu.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2288 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(nmtcnu.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1816 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(nmtmnu.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          320 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         10
+  Section header string table index: 9
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(identu.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2120 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(statusu.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1320 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(syncu.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          320 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         10
+  Section header string table index: 9
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(pdou.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          17224 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         17
+  Section header string table index: 16
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(pdoucal.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1472 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(pdoucal-triplebufshm.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1928 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdotest-com.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3552 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdotest-seq.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2784 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdocom-dummy.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1672 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdocom.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1848 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdocom-std.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          12624 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         16
+  Section header string table index: 15
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdocomsrv.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          15696 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         16
+  Section header string table index: 15
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdocomclt.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          15408 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         15
+  Section header string table index: 14
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdoseq.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          17816 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         16
+  Section header string table index: 15
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdoasnd.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2624 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdoudp.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          320 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         10
+  Section header string table index: 9
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(timesyncu.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1592 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(errhndu.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2288 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(ctrlu.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          15528 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(sdoudp-linux.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          320 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         10
+  Section header string table index: 9
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(ctrlucal-direct.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3048 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(dllucal-circbuf.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2432 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(errhnducal-local.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1080 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(eventucal-linux.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3816 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         15
+  Section header string table index: 14
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(eventucalintf-circbuf.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2792 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(pdoucalmem-local.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          984 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(timesyncucal-local.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1136 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(dllk.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3288 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(dllkfilter.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          4112 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(dllkstatemachine.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          5392 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         15
+  Section header string table index: 14
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(dllkevent.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          6312 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         16
+  Section header string table index: 15
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(dllkframe.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          11864 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         16
+  Section header string table index: 15
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(dllknode.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3936 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(dllkcal.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          7744 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         16
+  Section header string table index: 15
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(eventk.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3056 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         16
+  Section header string table index: 15
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(nmtk.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          15960 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         15
+  Section header string table index: 14
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(pdok.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          5072 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(pdokcal.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1656 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(pdokcal-triplebufshm.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2672 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(pdoklut.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1216 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(timesynck.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2160 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(errhndk.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          4424 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         15
+  Section header string table index: 14
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(errhndkcal.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2688 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(ctrlk.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          5496 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         15
+  Section header string table index: 14
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(ledk.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          312 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         10
+  Section header string table index: 9
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(ledktimer.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          320 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         10
+  Section header string table index: 9
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(ctrlkcal-direct.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2472 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(dllkcal-circbuf.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2448 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(errhndkcal-local.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          984 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(eventkcal-linux.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3816 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         15
+  Section header string table index: 14
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(eventkcalintf-circbuf.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3032 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(pdokcalmem-local.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1024 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(timesynckcal-local.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1104 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(debugstr.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          29312 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         17
+  Section header string table index: 16
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(ftracedebug.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          320 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         10
+  Section header string table index: 9
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(trace-printf.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          320 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         10
+  Section header string table index: 9
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(target-linux.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3328 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         15
+  Section header string table index: 14
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(target-mutex.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1392 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(netif-linux.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          1016 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(obdconf-fileio.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          328 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         10
+  Section header string table index: 9
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(obdconfcrc-generic.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          328 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         10
+  Section header string table index: 9
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(circbuffer.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          4880 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(circbuf-posixshm.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          4096 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(memmap-null.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          784 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         12
+  Section header string table index: 11
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(veth-linuxuser.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          328 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         10
+  Section header string table index: 9
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(edrvcyclic.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          4464 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(edrv-rawsock_linux.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          12480 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         17
+  Section header string table index: 16
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(amix86.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          3960 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(m7_cn_private.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          2296 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         13
+  Section header string table index: 12
+
+File: /home/openeuler/build/powerlink-cn-p4d-20261105/native-final/install/liboplkcn.a(m7_cn_timers.c.o)
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              REL (Relocatable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          0 (bytes into file)
+  Start of section headers:          21984 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           0 (bytes)
+  Number of program headers:         0
+  Size of section headers:           64 (bytes)
+  Number of section headers:         14
+  Section header string table index: 13
