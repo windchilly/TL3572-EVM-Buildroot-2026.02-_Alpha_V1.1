@@ -1,0 +1,22 @@
+{
+  "role": "CN",
+  "driver": "edrv-rawsock_linux.c",
+  "compiler_machine": "aarch64-none-linux-gnu",
+  "compiler_version": "aarch64-none-linux-gnu-gcc (Arm GNU Toolchain 14.3.Rel1 (Build arm-14.174)) 14.3.1 20250623",
+  "aarch64": true,
+  "software_only": true,
+  "executed": false,
+  "board_contacted": false,
+  "artifacts": {
+    "install/liboplkcn.a": {
+      "bytes": 420074,
+      "sha256": "22378496a1a515892ee807db11fda0fe06ef29076ac9c60fb0ef70156c7b693f"
+    },
+    "app/demo_cn_console": {
+      "bytes": 340536,
+      "sha256": "bc53889dd0c682ac4bec79e28e1e15d6254d82b281f5426f62487d02b26eb053"
+    }
+  },
+  "linux_cn_patch_sha256": "68b9ae1c05d4151bbbe13fedbde068030832e43a0731f5dd55cd84772ad94dfe",
+  "limit": "Unmodified CN demo behavior, NOT yet bounded/safe hardware runner; no network/PDO/timing acceptance."
+}

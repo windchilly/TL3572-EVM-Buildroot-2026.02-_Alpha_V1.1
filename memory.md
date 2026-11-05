@@ -1,5 +1,17 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-05 最新软件入口：tests/powerlink-cn-p4a-20261105/README.md；用户明确没有CN设备，转先准备Linux软件CN协议对端，不等待采购，不追问不存在的型号/XDD，不把它当工业/硬实时CN。
+本轮没有连接板卡/COM7/移交ETH/发送网络CAN串口/运行CN/重启/替换正式配置固件，旧硬件窗口已消费不重用；最近实板状态仍11月4日P3j-v2自动归还快照，不是今日重采样。
+只读基线核对原1355文件归档/源码SHA/P3j ELF与15B CDC：仅0x1006=1000us；生产m7_cycle_probe要求1F81各节点全0且任意RX失败，decoder亦拒绝RX，不能直接接CN或只放宽host检查。
+新增inspect_m7_powerlink_cdc只读严格结构子集（LE/count/header/长度/有界/不去重有序写）；仅显式MN scope展开一层1F22 CN配置，defaultunknown不猜，非XDD/OD语义验证/配置生成或运行许可。
+新增独立build_m7_powerlink_linux_cn.py从原固定V2.7.2新树编CN rawsocket/原CiA401_CN和demo，不编MN/内核驱动、不装系统包，仅新目录install；Linux专用两处patch接受AArch64及rawsocket不链pcap，未加入UniProton原补丁链。
+Native GCC12.3.1和Arm14.3.1均编译成功，未执行任何CN（连help不跑）。首轮native双根ELF同/.a时间戳不同EXIT1日志保留，显式ar qcD/ranlib-D及路径/epoch固定后四个全新final目录双架构ELF和.a逐字节同。
+native-final ELF271408B/d9696287.../.a453338B/3d7dfd7b...；aarch64-final ELF340536B/bc53889d.../.a420074B/80a19f0d...，各build-report完整SHA与readelf另存，初次产物不覆盖。
+AArch64静态需GLIBC2.38等，未核当前板卡运行库/未部署运行；上游警告原样保留，未声称零警告或可直接生产使用。原demo默认node1/cycle50000us；6000:1/6200:1 U8为未来软件测试候选，默认映射零，未生成匹配CDC/PDO。
+config/powerlink-linux-cn-peer.plan.json仅计划：UP2ETH2 MN240↔LinuxETH3/eth2软件CN暂拟1，runtime_ready=false；工业CN资料template为未来使用，现无设备不阻塞软件路线。
+Windows/Linux330项=原312+新18通过，Windows/Linux基线JSON逐字节同；服务器/home/openeuler/build/powerlink-cn-p4a-20261105，仅构建/只读分析，新清单/GitHub/delivery后验以最终报告为准。
+下一步不再等待采购：先独立CN-capable有界MN/decoder、CN/CFM/SDO事件、明确MN+CN CDC/PDO/周期/过程映像/RX接受和失败退出；另给软件CN加接口白名单/进程身份/运行预算/安全退出包装及运行库检查，再另问隔离互测许可。旧无CN P3j/正式固件/历史结果不动，不直接运行不受限demo。
+
 2026-11-04 最新实板入口：tests/powerlink-cycle-p3j-v2-hw-20261104/README.md；用户新允许隔离ETH2ETH3一次runner-v2自动闭环，已执行且周期/停核证明/自动归还全流程PASS，不是改写旧失败或拼接两次授权。
 执行来源3b07cd341d2874f4e6dba6259ff88e09004e27ae；新root/root/m7-powerlink-cycle-p3j-v2-20261104/client up-b-m7-plk-cycle-p3j-v2/AutoBoot=no，22项逐项上传读回bytes/SHA一致，原4b485415...1220888B累计ELF不改不重编。
 新host和board永久标记均已消费，唯一run/PLK cycle-probe/stop新client各一次，不重试；board-result passed=true/cleanup=true/submitted=true/error=null/EXIT0，旧失败和独立归还结果不动。

@@ -1,0 +1,34 @@
+{
+  "phase": "P4a software-peer plan only; NOT runtime configuration or permission",
+  "physical_cn_available": false,
+  "mn": {
+    "owner": "UP2/CPU5",
+    "physical_port": "ETH2",
+    "controller": "GMAC1",
+    "node_id": 240,
+    "existing_p3j_accepts_cn": false,
+    "separate_cn_capable_candidate_required": true
+  },
+  "cn": {
+    "owner": "Linux test peer, not an industrial real-time CN",
+    "proposed_physical_port": "ETH3",
+    "proposed_linux_interface": "eth2; must revalidate identity before any use",
+    "prototype": "openPOWERLINK V2.7.2 demo_cn_console / CiA401_CN",
+    "source_commit": "048650a80db37fa372330c3a900d2c8edb327e47",
+    "proposed_isolated_node_id": 1,
+    "driver": "edrv-rawsock_linux.c",
+    "upstream_default_cycle_us": 50000,
+    "reviewed_shared_cycle_us": null,
+    "candidate_cn_input_object": "0x6000:1 U8, CN to MN; mapping not generated",
+    "candidate_cn_output_object": "0x6200:1 U8, MN to CN; mapping not generated"
+  },
+  "next_software_gates": [
+    "Bound and audit CN startup/exit, interface whitelist, process identity and recovery behavior",
+    "Separate CN-capable bounded MN candidate, RX/PDO acceptance and MN/CN event handling",
+    "Review exact MN/CN CDC, assignment, PDO mappings and cycle; no inferred production-device semantics",
+    "Check target Linux runtime libraries and resource budgets; then request a new isolated hardware window"
+  ],
+  "peer_executed": false,
+  "runtime_ready": false,
+  "industrial_or_hard_realtime_acceptance": false
+}

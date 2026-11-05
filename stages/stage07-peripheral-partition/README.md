@@ -2,6 +2,10 @@
 
 当前状态：`IN PROGRESS / 全资源目标已规划 / 日志首切片实机验证 / UP1↔UP2 CAN、RS-232/485 自主配置及 IRQ 收发切片通过 / 持久外设移交尚未完成 / M7.0 未验收`。
 
+2026-11-05 最新软件[P4a Linux CN对端准备](tests/powerlink-cn-p4a-20261105/README.md)：用户无实体CN设备，先走Linux ETH3软件对端路线，不等待采购。
+原生/AArch64 rawsocket CN库及demo各双新目录复编一致，330项回归/CDC只读审计通过；未执行CN、未连接板卡、原UP2固件及no-CN判据不变。
+当前P3j仍拒绝有CN分配及RX；下一步独立有CN的有界MN/配置/PDO路径与受限CN包装，然后另确认隔离互测。软件demo不是可直接上线的工业CN或硬实时证明。
+
 2026-11-04 最新实板[P3j runner-v2 自动闭环通过](tests/powerlink-cycle-p3j-v2-hw-20261104/README.md)：
 新授权一次隔离窗口，22项精确输入，同一P3j ELF，Operational→376TX→排空/SwitchOff→一次停核→实际TCB/FSC/OFF证明→自动归还Linux全流程PASS。
 CPU4/5OFF、原两实例Offline、ETH2/3 Linux100FullANon、无临时端点/hold，前后基线及52文件SHA不变；无重启、正式替换或CAN/串口发送。

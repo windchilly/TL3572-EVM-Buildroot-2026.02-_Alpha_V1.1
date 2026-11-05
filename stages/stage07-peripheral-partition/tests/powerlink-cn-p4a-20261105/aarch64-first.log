@@ -1,0 +1,1190 @@
+CMake Warning (dev) at CMakeLists.txt:32 (PROJECT):
+  cmake_minimum_required() should be called prior to this top-level project()
+  call.  Please see the cmake-commands(7) manual for usage documentation of
+  both commands.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- The C compiler identification is GNU 14.3.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-linux-gnu-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+CMake Deprecation Warning at CMakeLists.txt:34 (CMAKE_MINIMUM_REQUIRED):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at CMakeLists.txt:38 (CMAKE_POLICY):
+  The OLD behavior for policy CMP0043 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+
+
+-- CMAKE_SYSTEM_NAME is Linux
+-- CMAKE_SYSTEM_PROCESSOR is aarch64
+-- Adding CMAKE configuration options for Linux
+-- Configuring oplkcn
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/stack
+[  1%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/api/generic.c.o
+[  2%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/api/service.c.o
+[  4%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/api/sdotest.c.o
+[  4%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/api/processimage.c.o
+[  6%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/obd/obdu.c.o
+[  7%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/obd/obdal.c.o
+[  8%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/dll/dllucal.c.o
+In file included from /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:47:
+In function 'handleNotRxAsndFrame',
+    inlined from 'dllucal_process' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:264:19:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[18]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:820:5: note: in expansion of macro 'ami_setUint8Le'
+  820 |     ami_setUint8Le(&pFrame->srcNodeId, pAsndNotRx_p->nodeId);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c: In function 'dllucal_process':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:815:17: note: object 'aBuffer' of size 18
+  815 |     UINT8       aBuffer[DLLUCAL_NOTRX_FRAME_SIZE];
+      |                 ^~~~~~~
+In function 'handleNotRxAsndFrame',
+    inlined from 'dllucal_process' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:264:19:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[18]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:822:5: note: in expansion of macro 'ami_setUint8Le'
+  822 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, pAsndNotRx_p->serviceId);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c: In function 'dllucal_process':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/dll/dllucal.c:815:17: note: object 'aBuffer' of size 18
+  815 |     UINT8       aBuffer[DLLUCAL_NOTRX_FRAME_SIZE];
+      |                 ^~~~~~~
+[  9%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/event/eventu.c.o
+[ 10%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/nmtu.c.o
+[ 12%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/nmtcnu.c.o
+[ 13%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/nmtmnu.c.o
+[ 14%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/identu.c.o
+[ 15%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/statusu.c.o
+[ 17%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/nmt/syncu.c.o
+[ 18%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/pdo/pdou.c.o
+[ 19%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/pdo/pdoucal.c.o
+[ 20%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/pdo/pdoucal-triplebufshm.c.o
+[ 21%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdotest-com.c.o
+[ 23%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdotest-seq.c.o
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3124:17: warning: array subscript 'tObdUnsigned64 {aka const long long unsigned int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 3124 |             if (*((const tObdUnsigned64*)pData_p) < *((const tObdUnsigned64*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3106:17: warning: array subscript 'tObdInteger64 {aka const long long int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 3106 |             if (*((const tObdInteger64*)pData_p) < *((const tObdInteger64*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3140:17: warning: array subscript 'tObdReal64 {aka const double}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 3140 |             if (*((const tObdReal64*)pData_p) < *((const tObdReal64*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3085:17: warning: array subscript 'tObdReal32 {aka const float}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 3085 |             if (*((const tObdReal32*)pData_p) < *((const tObdReal32*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3069:17: warning: array subscript 'tObdUnsigned32 {aka const unsigned int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 3069 |             if (*((const tObdUnsigned32*)pData_p) < *((const tObdUnsigned32*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3039:17: warning: array subscript 'tObdUnsigned16 {aka const short unsigned int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 3039 |             if (*((const tObdUnsigned16*)pData_p) < *((const tObdUnsigned16*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3054:17: warning: array subscript 'tObdInteger32 {aka const int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 3054 |             if (*((const tObdInteger32*)pData_p) < *((const tObdInteger32*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+In function 'checkObjectRange',
+    inlined from 'writeEntryPost' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:1916:15,
+    inlined from 'obdu_writeEntry' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:356:11,
+    inlined from 'obdu_setNodeId' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:743:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:3024:17: warning: array subscript 'tObdInteger16 {aka const short int}[0]' is partly outside array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 3024 |             if (*((const tObdInteger16*)pData_p) < *((const tObdInteger16*)pRangeData))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c: In function 'obdu_setNodeId':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/obd/obdu.c:735:17: note: object 'nodeId' of size 1
+  735 |     UINT8       nodeId;
+      |                 ^~~~~~
+[ 25%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdocom-dummy.c.o
+[ 25%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdocom.c.o
+[ 26%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdocom-std.c.o
+[ 28%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdocomsrv.c.o
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomsrv.c: In function 'sdocomsrv_processStateServerSegmTrans':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomsrv.c:244:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  244 |             updateTransferAfterTx(pSdoComCon);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomsrv.c:246:9: note: here
+  246 |         case kSdoComConEventAckReceived:
+      |         ^~~~
+[ 29%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdocomclt.c.o
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c: In function 'sdocomclt_processStateConnected':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c:623:14: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  623 |              updateTransferAfterTx(pSdoComCon);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c:625:9: note: here
+  625 |         case kSdoComConEventSendFirst:
+      |         ^~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c: In function 'sdocomclt_processStateSegmTransfer':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c:753:14: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  753 |              updateTransferAfterTx(pSdoComCon);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdocomclt.c:755:9: note: here
+  755 |         case kSdoComConEventSendFirst:
+      |         ^~~~
+[ 30%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdoseq.c.o
+[ 31%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdoasnd.c.o
+In file included from /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:49:
+In function 'sendFrame',
+    inlined from 'processFinalTimeout' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2258:5,
+    inlined from 'processTimeoutEvent.isra' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2374:13:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'processTimeoutEvent.isra':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processFinalTimeout' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2258:5,
+    inlined from 'processTimeoutEvent.isra' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2374:13:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'processTimeoutEvent.isra':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processFinalTimeout' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2258:5,
+    inlined from 'processTimeoutEvent.isra' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2374:13:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'processTimeoutEvent.isra':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processFinalTimeout' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2258:5,
+    inlined from 'processTimeoutEvent.isra' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2387:9:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'processTimeoutEvent.isra':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processFinalTimeout' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2258:5,
+    inlined from 'processTimeoutEvent.isra' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2387:9:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'processTimeoutEvent.isra':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processFinalTimeout' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2258:5,
+    inlined from 'processTimeoutEvent.isra' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2387:9:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'processTimeoutEvent.isra':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processSubTimeout' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2340:15,
+    inlined from 'processTimeoutEvent.isra' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2382:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'processTimeoutEvent.isra':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processSubTimeout' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2340:15,
+    inlined from 'processTimeoutEvent.isra' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2382:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'processTimeoutEvent.isra':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processSubTimeout' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2340:15,
+    inlined from 'processTimeoutEvent.isra' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:2382:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'processTimeoutEvent.isra':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+[ 32%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdoudp.c.o
+In function 'sendFrame',
+    inlined from 'processStateWaitAck' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1574:31,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1690:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateWaitAck' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1574:31,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1690:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateWaitAck' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1574:31,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1690:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1319:31,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1319:31,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1319:31,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1343:31,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1343:31,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1343:31,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit3' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1077:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1672:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit3' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1077:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1672:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+[ 34%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/timesync/timesyncu.c.o
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit3' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1077:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1672:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit3' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1116:21,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1672:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit3' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1116:21,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1672:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit3' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1116:21,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1672:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:956:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:956:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:956:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+[ 35%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/errhnd/errhndu.c.o
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:935:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:935:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:935:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:990:21,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:990:21,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:990:21,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:841:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:841:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:841:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:825:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:825:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:825:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:864:21,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:864:21,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:864:21,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateIdle' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:761:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1648:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateIdle' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:761:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1648:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateIdle' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:761:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1648:19,
+    inlined from 'receiveCb' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1924:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'receiveCb':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+[ 36%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/ctrl/ctrlu.c.o
+[ 37%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/sdo/sdoudp-linux.c.o
+[ 39%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/ctrl/ctrlucal-direct.c.o
+[ 40%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/dll/dllucal-circbuf.c.o
+[ 41%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/errhnd/errhnducal-local.c.o
+[ 42%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/event/eventucal-linux.c.o
+[ 43%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/event/eventucalintf-circbuf.c.o
+[ 45%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/pdo/pdoucalmem-local.c.o
+In function 'sendFrame',
+    inlined from 'processStateIdle' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:733:19,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1648:19,
+    inlined from 'sdoseq_initCon' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:521:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_initCon':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateIdle' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:733:19,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1648:19,
+    inlined from 'sdoseq_initCon' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:521:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_initCon':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+[ 46%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/timesync/timesyncucal-local.c.o
+[ 47%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/timer/timer-linuxuser.c.o
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1185:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'sdoseq_sendData' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:567:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_sendData':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1185:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'sdoseq_sendData' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:567:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_sendData':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1185:23,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'sdoseq_sendData' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:567:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_sendData':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+[ 48%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllk.c.o
+In function 'sendFrame',
+    inlined from 'processStateInit3' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1131:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1672:19,
+    inlined from 'sdoseq_processEvent' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:625:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_processEvent':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit3' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1131:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1672:19,
+    inlined from 'sdoseq_processEvent' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:625:11:
+[ 50%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkfilter.c.o
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_processEvent':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit3' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1131:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1672:19,
+    inlined from 'sdoseq_processEvent' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:625:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_processEvent':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1004:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'sdoseq_processEvent' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:625:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_processEvent':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1004:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'sdoseq_processEvent' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:625:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_processEvent':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit2' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1004:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1664:19,
+    inlined from 'sdoseq_processEvent' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:625:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_processEvent':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:880:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'sdoseq_processEvent' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:625:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_processEvent':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:880:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'sdoseq_processEvent' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:625:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_processEvent':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateInit1' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:880:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1656:19,
+    inlined from 'sdoseq_processEvent' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:625:11:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_processEvent':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1357:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'sdoseq_deleteCon' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:666:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1750:5: note: in expansion of macro 'ami_setUint8Le'
+ 1750 |     ami_setUint8Le(&pFrame->data.asnd.serviceId, 0x05);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_deleteCon':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1357:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'sdoseq_deleteCon' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:666:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1752:5: note: in expansion of macro 'ami_setUint8Le'
+ 1752 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.recvSeqNumCon, pSdoSeqCon_p->sendSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_deleteCon':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+In function 'sendFrame',
+    inlined from 'processStateConnected' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1357:13,
+    inlined from 'processState' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1680:19,
+    inlined from 'sdoseq_deleteCon' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:666:15:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/include/common/ami.h:50:65: warning: array subscript 'tPlkFrame[0]' is partly outside array bounds of 'unsigned char[24]' [-Warray-bounds=]
+   50 | #define ami_setUint8Le(pAddr_p, uint8Val_p) {*(UINT8*)(pAddr_p) = (uint8Val_p);}
+      |                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1753:5: note: in expansion of macro 'ami_setUint8Le'
+ 1753 |     ami_setUint8Le(&pFrame->data.asnd.payload.sdoSequenceFrame.sendSeqNumCon, pSdoSeqCon_p->recvSeqNum);
+      |     ^~~~~~~~~~~~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c: In function 'sdoseq_deleteCon':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/user/sdo/sdoseq.c:1733:17: note: object 'aFrame' of size 24
+ 1733 |     UINT8       aFrame[SDO_SEQ_FRAME_SIZE];
+      |                 ^~~~~~
+[ 51%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkstatemachine.c.o
+[ 52%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkevent.c.o
+[ 53%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkframe.c.o
+[ 54%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllknode.c.o
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/kernel/dll/dllkstatemachine.c: In function 'processCsStoppedDllWaitSoa':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/kernel/dll/dllkstatemachine.c:830:41: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  830 |             pDllEvent_p->dllErrorEvents |= DLL_ERR_CN_LOSS_SOA;
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/kernel/dll/dllkstatemachine.c:834:9: note: here
+  834 |         case kNmtEventDllCeAInv:
+      |         ^~~~
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/kernel/dll/dllkstatemachine.c:836:41: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  836 |             pDllEvent_p->dllErrorEvents |= DLL_ERR_CN_LOSS_SOA;
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/stack/src/kernel/dll/dllkstatemachine.c:839:9: note: here
+  839 |         case kNmtEventDllCeSoa:
+      |         ^~~~
+[ 56%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkcal.c.o
+[ 57%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/event/eventk.c.o
+[ 58%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/nmt/nmtk.c.o
+[ 59%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/pdo/pdok.c.o
+[ 60%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/pdo/pdokcal.c.o
+[ 62%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/pdo/pdokcal-triplebufshm.c.o
+[ 63%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/pdo/pdoklut.c.o
+[ 64%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/timesync/timesynck.c.o
+[ 65%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/errhnd/errhndk.c.o
+[ 67%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/errhnd/errhndkcal.c.o
+[ 68%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/ctrl/ctrlk.c.o
+[ 69%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/led/ledk.c.o
+[ 70%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/led/ledktimer.c.o
+[ 71%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/ctrl/ctrlkcal-direct.c.o
+[ 73%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/dll/dllkcal-circbuf.c.o
+[ 74%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/errhnd/errhndkcal-local.c.o
+[ 75%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/event/eventkcal-linux.c.o
+[ 76%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/event/eventkcalintf-circbuf.c.o
+[ 78%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/pdo/pdokcalmem-local.c.o
+[ 79%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/timesync/timesynckcal-local.c.o
+[ 80%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/debugstr.c.o
+[ 81%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/arch/linux/ftracedebug.c.o
+[ 82%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/contrib/trace/trace-printf.c.o
+[ 84%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/arch/linux/target-linux.c.o
+[ 85%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/arch/linux/target-mutex.c.o
+[ 86%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/arch/linux/netif-linux.c.o
+[ 87%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/obd/obdconf-fileio.c.o
+[ 89%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/user/obd/obdconfcrc-generic.c.o
+[ 90%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/circbuf/circbuffer.c.o
+[ 91%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/circbuf/circbuf-posixshm.c.o
+[ 92%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/memmap/memmap-null.c.o
+[ 93%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/veth/veth-linuxuser.c.o
+[ 95%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/timer/hrestimer-posix.c.o
+[ 96%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/edrv/edrvcyclic.c.o
+[ 97%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/kernel/edrv/edrv-rawsock_linux.c.o
+[ 98%] Building C object proj/linux/liboplkcn/CMakeFiles/oplkcn.dir/__/__/__/src/common/ami/ami.c.o
+[100%] Linking C static library liboplkcn.a
+[100%] Built target oplkcn
+-- Install configuration: "Release"
+-- Installing: /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/install/./liboplkcn.a
+CMake Warning (dev) at CMakeLists.txt:35 (PROJECT):
+  cmake_minimum_required() should be called prior to this top-level project()
+  call.  Please see the cmake-commands(7) manual for usage documentation of
+  both commands.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- The C compiler identification is GNU 14.3.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/openeuler/build/tl3572-2oo3/toolchain-14.3/bin/aarch64-none-linux-gnu-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring demo_cn_console
+CMake Deprecation Warning at CMakeLists.txt:38 (CMAKE_MINIMUM_REQUIRED):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at CMakeLists.txt:42 (CMAKE_POLICY):
+  The OLD behavior for policy CMP0043 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+
+
+-- CMAKE_SYSTEM_NAME is Linux
+-- CMAKE_SYSTEM_PROCESSOR is aarch64
+-- Searching for LIBRARY oplkcn in /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/apps/demo_cn_console/../../stack/lib/linux/aarch64
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/app
+[  8%] Building C object CMakeFiles/demo_cn_console.dir/src/main.c.o
+[ 16%] Building C object CMakeFiles/demo_cn_console.dir/src/app.c.o
+[ 25%] Building C object CMakeFiles/demo_cn_console.dir/src/event.c.o
+[ 33%] Building C object CMakeFiles/demo_cn_console.dir/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/apps/common/src/obdcreate/obdcreate.c.o
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/apps/demo_cn_console/src/main.c: In function 'main':
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/apps/demo_cn_console/src/main.c:162:19: warning: cast between incompatible function types from 'void (*)(const char *, ...)' to 'int (*)(const char *, ...)' [-Wcast-function-type]
+  162 |                   (tEventlogOutputCb)console_printlogadd);
+      |                   ^
+In function 'getOptions',
+    inlined from 'main' at /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/apps/demo_cn_console/src/main.c:150:9:
+/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/apps/demo_cn_console/src/main.c:528:17: warning: 'strncpy' specified bound 128 equals destination size [-Wstringop-truncation]
+  528 |                 strncpy(pOpts_p->devName, optarg, 128);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 41%] Building C object CMakeFiles/demo_cn_console.dir/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/apps/common/src/eventlog/eventlog.c.o
+[ 50%] Building C object CMakeFiles/demo_cn_console.dir/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/apps/common/src/eventlog/eventlogstring.c.o
+[ 58%] Building C object CMakeFiles/demo_cn_console.dir/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/apps/common/src/netselect/netselect.c.o
+[ 66%] Building C object CMakeFiles/demo_cn_console.dir/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/contrib/console/printlog.c.o
+[ 75%] Building C object CMakeFiles/demo_cn_console.dir/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/apps/common/src/system/system-linux.c.o
+[ 83%] Building C object CMakeFiles/demo_cn_console.dir/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/contrib/console/console-linux.c.o
+[ 91%] Building C object CMakeFiles/demo_cn_console.dir/home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2/contrib/trace/trace-printf.c.o
+[100%] Linking C executable demo_cn_console
+[100%] Built target demo_cn_console
+POWERLINK PREPARED: 048650a80db37fa372330c3a900d2c8edb327e47 / 1355 files / /home/openeuler/build/powerlink-cn-p4a-20261105/aarch64/source/openPOWERLINK_V2-2.7.2
+Linux CN BUILD ONLY PASS {"role": "CN", "driver": "edrv-rawsock_linux.c", "compiler_machine": "aarch64-none-linux-gnu", "compiler_version": "aarch64-none-linux-gnu-gcc (Arm GNU Toolchain 14.3.Rel1 (Build arm-14.174)) 14.3.1 20250623", "aarch64": true, "software_only": true, "executed": false, "board_contacted": false, "artifacts": {"install/liboplkcn.a": {"bytes": 420074, "sha256": "22378496a1a515892ee807db11fda0fe06ef29076ac9c60fb0ef70156c7b693f"}, "app/demo_cn_console": {"bytes": 340536, "sha256": "bc53889dd0c682ac4bec79e28e1e15d6254d82b281f5426f62487d02b26eb053"}}, "linux_cn_patch_sha256": "68b9ae1c05d4151bbbe13fedbde068030832e43a0731f5dd55cd84772ad94dfe", "limit": "Unmodified CN demo behavior, NOT yet bounded/safe hardware runner; no network/PDO/timing acceptance."}
+
+REMOTE_EXIT=0

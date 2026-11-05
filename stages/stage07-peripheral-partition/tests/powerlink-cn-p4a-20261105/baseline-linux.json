@@ -1,0 +1,54 @@
+{
+  "software_only": true,
+  "board_contacted": false,
+  "upstream_commit": "048650a80db37fa372330c3a900d2c8edb327e47",
+  "archive_sha256": "d342b8cd2b8a743a077c3b8cd1e262f0d6f9f8a5f0d8b49f4b14197e945fa381",
+  "upstream_files": 1355,
+  "source_sha256": {
+    "stack/src/user/obd/obdcdc.c": "61a550b6bc397288892bf7c58337d8f06aafd842159b95103ba699961bc52c0a",
+    "apps/common/objdicts/CiA302-4_MN/objdict.h": "671335e19bf4bafb2a37e8ba88f33ef72a52514fa64eb77ee5d16f24e7d59fe1",
+    "stack/include/oplk/oplkdefs.h": "fa935fb2b531c2647b86bc358e75f74f3c01962561b16d8fe6f27742c00b15d7"
+  },
+  "local_source_sha256": {
+    "source/powerlink/port/m7_mn.c": "d008a3949da7a0ae64e9ef8d991f99c1189115e40f104094bd281250bf50ca29",
+    "source/powerlink/port/m7_cycle_probe.c": "a5813faeeaf81dc462d851e990b5797f3ed1049a9fcd2375de198766ad5efd99",
+    "tests/board/powerlink_cycle_p3j_checks.py": "f7f98838c3e2916fbc07d2c77913d76d6e2a8d477443d5acb28b49d00a5be027"
+  },
+  "candidate_sha256": "4b4854157487a8ddfa07914c01efbe6c7215c1eed273f9e80e405f6b9c3d9c35",
+  "baseline_checks": {
+    "mn_node_f0": true,
+    "complete_assignment_scan": true,
+    "rejects_any_rx": true,
+    "decoder_rejects_rx": true,
+    "original_minimal_cdc": true
+  },
+  "builtin_cdc": {
+    "scope": "mn",
+    "bytes": 15,
+    "sha256": "d0da48fceb2d9c4b0d4efd6b5a9d8525eed2710ff4285fae00de8b5006396505",
+    "count": 1,
+    "entries": [
+      {
+        "sequence": 0,
+        "index": "0x1006",
+        "subindex": 0,
+        "bytes": 4,
+        "sha256": "79ff7fbc96a0a6111e3c2706d61deb84c7c8e5a137b776f34a7dc3775f3652de",
+        "data_hex": "e8030000",
+        "cycle_us": 1000
+      }
+    ],
+    "structural_subset_passed": true,
+    "device_semantics_validated": false,
+    "runtime_ready": false,
+    "limit": "Ordered CDC bytes only; no OD access/type/range/CFM identity/PDO timing or deployment approval."
+  },
+  "cn_capable": false,
+  "runtime_ready": false,
+  "required_changes": [
+    "Separate CN-capable candidate and bounded owner/decoder; preserve P3j no-CN history.",
+    "Reviewed device identity, node assignment, MN+CN OD/PDO mappings and safe output values.",
+    "CN/SDO/CFM/application event handling, process-image exchange and RX acceptance tests.",
+    "New memory/timing/failure-stop proof and separately approved isolated hardware window."
+  ]
+}

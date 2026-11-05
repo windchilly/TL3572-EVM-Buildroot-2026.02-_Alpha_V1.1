@@ -1,0 +1,22 @@
+{
+  "role": "CN",
+  "driver": "edrv-rawsock_linux.c",
+  "compiler_machine": "x86_64-openEuler-linux",
+  "compiler_version": "gcc (GCC) 12.3.1 (openEuler 12.3.1-99.oe2403sp2)",
+  "aarch64": false,
+  "software_only": true,
+  "executed": false,
+  "board_contacted": false,
+  "artifacts": {
+    "install/liboplkcn.a": {
+      "bytes": 453338,
+      "sha256": "2f05568e98154a531e1ba8c68baa4da3a87ce253c9108d8df1925d4652c088eb"
+    },
+    "app/demo_cn_console": {
+      "bytes": 271408,
+      "sha256": "d96962879e52c5453ca34a6fa7a5dd2078a5880b1b3797d8ae28be7b591a69ad"
+    }
+  },
+  "linux_cn_patch_sha256": "68b9ae1c05d4151bbbe13fedbde068030832e43a0731f5dd55cd84772ad94dfe",
+  "limit": "Unmodified CN demo behavior, NOT yet bounded/safe hardware runner; no network/PDO/timing acceptance."
+}

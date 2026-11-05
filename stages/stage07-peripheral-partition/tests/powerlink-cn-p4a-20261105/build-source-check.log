@@ -1,0 +1,5 @@
+bece8cab662c56449bdbc1713618c2a8d2f302d903f76cb66792a52fcf9bea90  stages/stage07-peripheral-partition/build/build_m7_powerlink_linux_cn.py
+f35ac8815174300e031a8ab8e2671b429a4dd88e2b505f16517283c2c65ac790  stages/stage07-peripheral-partition/build/prepare_m7_powerlink.py
+68b9ae1c05d4151bbbe13fedbde068030832e43a0731f5dd55cd84772ad94dfe  stages/stage07-peripheral-partition/source/powerlink/linux-cn/0001-rawsocket-aarch64-build.patch
+
+REMOTE_EXIT=0

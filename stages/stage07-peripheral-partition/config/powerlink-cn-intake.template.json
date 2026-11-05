@@ -1,0 +1,28 @@
+{
+  "purpose": "P4a manual intake only; not firmware input or permission to run",
+  "status": "TEMPLATE_ONLY_FOR_FUTURE_INDUSTRIAL_DEVICE",
+  "mn": {"owner": "UP2/CPU5", "interface": "ETH2/GMAC1", "baseline_node_id": 240},
+  "cn": {
+    "manufacturer": null,
+    "model": null,
+    "firmware_version": null,
+    "node_id": null,
+    "vendor_id": null,
+    "product_code": null,
+    "revision_number": null,
+    "xdd_filename_and_sha256": null,
+    "cdc_filename_sha256_and_target_scope": null
+  },
+  "requested_cycle_us": null,
+  "pdo": {
+    "mn_to_cn_objects_types_bits_offsets": null,
+    "cn_to_mn_objects_types_bits_offsets": null,
+    "safe_output_values_and_device_behavior": null
+  },
+  "isolated_test": {
+    "topology_and_cable_ports": null,
+    "actuator_or_power_stage_disconnection": null,
+    "watchdog_loss_of_link_and_safe_state_requirements": null
+  },
+  "runtime_ready": false
+}

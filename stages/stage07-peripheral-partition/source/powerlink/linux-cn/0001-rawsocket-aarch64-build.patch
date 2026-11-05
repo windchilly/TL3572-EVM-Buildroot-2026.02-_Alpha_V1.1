@@ -1,0 +1,34 @@
+diff --git a/stack/proj/linux/liboplkcn/CMakeLists.txt b/stack/proj/linux/liboplkcn/CMakeLists.txt
+--- a/stack/proj/linux/liboplkcn/CMakeLists.txt
++++ b/stack/proj/linux/liboplkcn/CMakeLists.txt
+@@ -72,7 +72,7 @@ ENDIF()
+ 
+ IF(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86|x86(_64)?)$")
+     SET(LIB_SOURCES ${LIB_SOURCES} ${ARCH_X86_SOURCES})
+-ELSEIF(CMAKE_SYSTEM_PROCESSOR MATCHES arm*)
++ELSEIF(CMAKE_SYSTEM_PROCESSOR MATCHES "^(arm.*|aarch64)$")
+     SET(LIB_SOURCES ${LIB_SOURCES} ${ARCH_LE_SOURCES})
+ ELSE()
+     MESSAGE(FATAL_ERROR "Unsupported CMAKE_SYSTEM_PROCESSOR ${CMAKE_SYSTEM_PROCESSOR}")
+diff --git a/apps/demo_cn_console/linux.cmake b/apps/demo_cn_console/linux.cmake
+--- a/apps/demo_cn_console/linux.cmake
++++ b/apps/demo_cn_console/linux.cmake
+@@ -54,7 +54,8 @@ IF (NOT CFG_COMPILE_SHARED_LIBRARY)
+     SET(PCAP_CONFIG_OPTS --static)
+ ENDIF()
+ 
+-IF (CFG_KERNEL_STACK_DIRECTLINK OR CFG_KERNEL_STACK_USERSPACE_DAEMON)
++OPTION(CFG_USE_PCAP_EDRV "Link pcap when using the pcap EDRV" ON)
++IF (CFG_USE_PCAP_EDRV AND (CFG_KERNEL_STACK_DIRECTLINK OR CFG_KERNEL_STACK_USERSPACE_DAEMON))
+ 
+ FIND_PROGRAM(PCAP_CONFIG NAMES pcap-config PATHS)
+ 
+@@ -74,7 +75,7 @@ ELSE (PCAP_CONFIG)
+     SET (ARCH_LIBRARIES ${ARCH_LIBRARIES} pcap)
+ ENDIF (PCAP_CONFIG)
+ 
+-ENDIF (CFG_KERNEL_STACK_DIRECTLINK OR CFG_KERNEL_STACK_USERSPACE_DAEMON)
++ENDIF()
+ SET (ARCH_LIBRARIES ${ARCH_LIBRARIES} pthread rt)
+ 
+ ################################################################################
