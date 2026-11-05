@@ -1,0 +1,115 @@
+test_clock_order_and_age (test_powerlink_cn_preflight.PreflightTests.test_clock_order_and_age) ... ok
+test_collector_reads_only_exact_allowlisted_commands (test_powerlink_cn_preflight.PreflightTests.test_collector_reads_only_exact_allowlisted_commands) ... FAIL
+test_dependency_version_not_numeric_maximum (test_powerlink_cn_preflight.PreflightTests.test_dependency_version_not_numeric_maximum) ... ok
+test_elf_architecture_and_injection_rejected (test_powerlink_cn_preflight.PreflightTests.test_elf_architecture_and_injection_rejected) ... ok
+test_elf_missing_count_rejected (test_powerlink_cn_preflight.PreflightTests.test_elf_missing_count_rejected) ... ok
+test_elf_version_symbols_do_not_supply_definitions (test_powerlink_cn_preflight.PreflightTests.test_elf_version_symbols_do_not_supply_definitions) ... ok
+test_packet_duplicate_inode_denied (test_powerlink_cn_preflight.PreflightTests.test_packet_duplicate_inode_denied) ... ok
+test_packet_malformed_rows_denied (test_powerlink_cn_preflight.PreflightTests.test_packet_malformed_rows_denied) ... ok
+test_packet_unrelated_port_allowed (test_powerlink_cn_preflight.PreflightTests.test_packet_unrelated_port_allowed) ... ok
+test_policy_reject_budget (test_powerlink_cn_preflight.PreflightTests.test_policy_reject_budget) ... ok
+test_policy_reject_incomplete_artifact (test_powerlink_cn_preflight.PreflightTests.test_policy_reject_incomplete_artifact) ... ok
+test_policy_reject_management_alias (test_powerlink_cn_preflight.PreflightTests.test_policy_reject_management_alias) ... ok
+test_policy_reject_runtime_ready (test_powerlink_cn_preflight.PreflightTests.test_policy_reject_runtime_ready) ... ok
+test_policy_reject_unbounded_renamed_demo (test_powerlink_cn_preflight.PreflightTests.test_policy_reject_unbounded_renamed_demo) ... ok
+test_policy_reject_wrong_usb (test_powerlink_cn_preflight.PreflightTests.test_policy_reject_wrong_usb) ... ok
+test_positive_is_evidence_never_execution (test_powerlink_cn_preflight.PreflightTests.test_positive_is_evidence_never_execution) ... ok
+test_process_cpu_stat_changes_not_pid_reuse (test_powerlink_cn_preflight.PreflightTests.test_process_cpu_stat_changes_not_pid_reuse) ... ERROR
+test_process_disappearance_denied (test_powerlink_cn_preflight.PreflightTests.test_process_disappearance_denied) ... ERROR
+test_process_pid_reuse_denied (test_powerlink_cn_preflight.PreflightTests.test_process_pid_reuse_denied) ... ERROR
+test_readonly_command_boundary (test_powerlink_cn_preflight.PreflightTests.test_readonly_command_boundary) ... ok
+test_real_archived_cn_elf_versions_are_exact (test_powerlink_cn_preflight.PreflightTests.test_real_archived_cn_elf_versions_are_exact) ... ok
+test_reject_all_packet (test_powerlink_cn_preflight.PreflightTests.test_reject_all_packet) ... ok
+test_reject_bridge (test_powerlink_cn_preflight.PreflightTests.test_reject_bridge) ... ok
+test_reject_conflicting_process (test_powerlink_cn_preflight.PreflightTests.test_reject_conflicting_process) ... ok
+test_reject_ipv4_address (test_powerlink_cn_preflight.PreflightTests.test_reject_ipv4_address) ... ok
+test_reject_ipv6_link_local (test_powerlink_cn_preflight.PreflightTests.test_reject_ipv6_link_local) ... ok
+test_reject_ipv6_route (test_powerlink_cn_preflight.PreflightTests.test_reject_ipv6_route) ... ok
+test_reject_loader_environment (test_powerlink_cn_preflight.PreflightTests.test_reject_loader_environment) ... ok
+test_reject_management_changed (test_powerlink_cn_preflight.PreflightTests.test_reject_management_changed) ... ok
+test_reject_missing_cap_net_raw (test_powerlink_cn_preflight.PreflightTests.test_reject_missing_cap_net_raw) ... ok
+test_reject_multipath_route (test_powerlink_cn_preflight.PreflightTests.test_reject_multipath_route) ... ok
+test_reject_nonroot (test_powerlink_cn_preflight.PreflightTests.test_reject_nonroot) ... ok
+test_reject_pid_reuse_type (test_powerlink_cn_preflight.PreflightTests.test_reject_pid_reuse_type) ... ok
+test_reject_prepared_protocol_zero (test_powerlink_cn_preflight.PreflightTests.test_reject_prepared_protocol_zero) ... ok
+test_reject_promiscuous (test_powerlink_cn_preflight.PreflightTests.test_reject_promiscuous) ... ok
+test_reject_runtime_missing_version (test_powerlink_cn_preflight.PreflightTests.test_reject_runtime_missing_version) ... ok
+test_reject_runtime_nested_dependency (test_powerlink_cn_preflight.PreflightTests.test_reject_runtime_nested_dependency) ... ok
+test_reject_runtime_wrong_hash (test_powerlink_cn_preflight.PreflightTests.test_reject_runtime_wrong_hash) ... ok
+test_reject_target_packet (test_powerlink_cn_preflight.PreflightTests.test_reject_target_packet) ... ok
+test_reject_tc_egress_unknown (test_powerlink_cn_preflight.PreflightTests.test_reject_tc_egress_unknown) ... ok
+test_reject_tc_ingress (test_powerlink_cn_preflight.PreflightTests.test_reject_tc_ingress) ... ok
+test_reject_wrong_boot (test_powerlink_cn_preflight.PreflightTests.test_reject_wrong_boot) ... ok
+test_reject_wrong_driver (test_powerlink_cn_preflight.PreflightTests.test_reject_wrong_driver) ... ok
+test_reject_wrong_mac (test_powerlink_cn_preflight.PreflightTests.test_reject_wrong_mac) ... ok
+test_reject_wrong_mtu (test_powerlink_cn_preflight.PreflightTests.test_reject_wrong_mtu) ... ok
+test_reject_wrong_namespace (test_powerlink_cn_preflight.PreflightTests.test_reject_wrong_namespace) ... ok
+test_reject_xdp (test_powerlink_cn_preflight.PreflightTests.test_reject_xdp) ... ok
+test_replay_never_collects_or_opens_socket (test_powerlink_cn_preflight.PreflightTests.test_replay_never_collects_or_opens_socket) ... ok
+test_second_observation_drift_denied (test_powerlink_cn_preflight.PreflightTests.test_second_observation_drift_denied) ... ok
+test_strict_json (test_powerlink_cn_preflight.PreflightTests.test_strict_json) ... ok
+test_template_refuses_before_collection (test_powerlink_cn_preflight.PreflightTests.test_template_refuses_before_collection) ... ok
+test_window_has_no_execution_or_recovery_cli (test_powerlink_cn_preflight.PreflightTests.test_window_has_no_execution_or_recovery_cli) ... ok
+test_window_record_freshness_and_binding (test_powerlink_cn_preflight.PreflightTests.test_window_record_freshness_and_binding) ... ok
+
+======================================================================
+ERROR: test_process_cpu_stat_changes_not_pid_reuse (test_powerlink_cn_preflight.PreflightTests.test_process_cpu_stat_changes_not_pid_reuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_cn_preflight.py", line 179, in test_process_cpu_stat_changes_not_pid_reuse
+    self.assertEqual(self.process_census()[0]['start'],400)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_cn_preflight.py", line 177, in process_census
+    listing.side_effect=lambda:iter([Path('/proc/7')]);return collector.processes()
+                                                              ^^^^^^^^^^^^^^^^^^^^^
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\board\collect_powerlink_cn_preflight.py", line 70, in processes
+    start=int(before[before.rfind(')')+2:].split()[19])
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_process_disappearance_denied (test_powerlink_cn_preflight.PreflightTests.test_process_disappearance_denied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_cn_preflight.py", line 183, in test_process_disappearance_denied
+    with self.assertRaisesRegex(ValueError,'vanished/hidden'):self.process_census(vanished=True)
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_cn_preflight.py", line 177, in process_census
+    listing.side_effect=lambda:iter([Path('/proc/7')]);return collector.processes()
+                                                              ^^^^^^^^^^^^^^^^^^^^^
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\board\collect_powerlink_cn_preflight.py", line 70, in processes
+    start=int(before[before.rfind(')')+2:].split()[19])
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_process_pid_reuse_denied (test_powerlink_cn_preflight.PreflightTests.test_process_pid_reuse_denied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_cn_preflight.py", line 181, in test_process_pid_reuse_denied
+    with self.assertRaisesRegex(ValueError,'PID reused'):self.process_census(changed_start=True)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_cn_preflight.py", line 177, in process_census
+    listing.side_effect=lambda:iter([Path('/proc/7')]);return collector.processes()
+                                                              ^^^^^^^^^^^^^^^^^^^^^
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\board\collect_powerlink_cn_preflight.py", line 70, in processes
+    start=int(before[before.rfind(')')+2:].split()[19])
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+
+======================================================================
+FAIL: test_collector_reads_only_exact_allowlisted_commands (test_powerlink_cn_preflight.PreflightTests.test_collector_reads_only_exact_allowlisted_commands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "I:\TL3572-EVM(Buildroot-2026.02)_Alpha_V1.1\stages\stage07-peripheral-partition\tests\test_powerlink_cn_preflight.py", line 167, in test_collector_reads_only_exact_allowlisted_commands
+    self.assertEqual(observed,expected);self.assertEqual(len(calls),7)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'boo[265 chars]ex': 2, 'mac': '02:00:00:00:00:01', 'driver': [1861 chars]0000} != {'boo[265 chars]ex': 17, 'mac': '02:10:20:30:40:50', 'driver':[1833 chars]0000}
+Diff is 4363 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 53 tests in 0.039s
+
+FAILED (failures=1, errors=3)
+
+EXIT=1

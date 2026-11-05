@@ -1,0 +1,183 @@
+{
+  "board_contacted": false,
+  "execution_allowed": false,
+  "peer_executed": false,
+  "positive": {
+    "execution_allowed": false,
+    "limit": "Evidence only; advisory observations are not exclusive ownership or human approval.",
+    "policy_sha256": "afea4683ecf249d3fdfb4b3298ffcbfccd4ee602fc071a59fbbc4ffc5af476cd",
+    "preflight_pass": true,
+    "runtime_ready": false,
+    "schema": "m7-cn-preflight-v1",
+    "snapshot_sha256": "2cb7be05741b85a22087034a6be76414203b1ddd0589441195a12e40b849b62f"
+  },
+  "rejections": [
+    {
+      "case": "frame/all_packet",
+      "reason": "packet socket overlaps CN/all interfaces (even protocol0)",
+      "rejected": true
+    },
+    {
+      "case": "frame/bridge",
+      "reason": "bridge/bond/VLAN/XDP/promisc",
+      "rejected": true
+    },
+    {
+      "case": "frame/conflicting_process",
+      "reason": "conflicting process: 123",
+      "rejected": true
+    },
+    {
+      "case": "frame/ipv4_address",
+      "reason": "CN has IPv4/IPv6 address, including link-local",
+      "rejected": true
+    },
+    {
+      "case": "frame/ipv6_link_local",
+      "reason": "CN has IPv4/IPv6 address, including link-local",
+      "rejected": true
+    },
+    {
+      "case": "frame/ipv6_route",
+      "reason": "CN has route in some table/nexthop",
+      "rejected": true
+    },
+    {
+      "case": "frame/loader_environment",
+      "reason": "loader environment injection",
+      "rejected": true
+    },
+    {
+      "case": "frame/management_changed",
+      "reason": "management baseline changed",
+      "rejected": true
+    },
+    {
+      "case": "frame/missing_cap_net_raw",
+      "reason": "root/CAP_NET_RAW required",
+      "rejected": true
+    },
+    {
+      "case": "frame/multipath_route",
+      "reason": "CN has route in some table/nexthop",
+      "rejected": true
+    },
+    {
+      "case": "frame/nonroot",
+      "reason": "root/CAP_NET_RAW required",
+      "rejected": true
+    },
+    {
+      "case": "frame/pid_reuse_type",
+      "reason": "invalid integer",
+      "rejected": true
+    },
+    {
+      "case": "frame/prepared_protocol_zero",
+      "reason": "packet socket overlaps CN/all interfaces (even protocol0)",
+      "rejected": true
+    },
+    {
+      "case": "frame/promiscuous",
+      "reason": "bridge/bond/VLAN/XDP/promisc",
+      "rejected": true
+    },
+    {
+      "case": "frame/runtime_missing_version",
+      "reason": "missing symbol versions: libc.so.6 ['GLIBC_2.38']",
+      "rejected": true
+    },
+    {
+      "case": "frame/runtime_nested_dependency",
+      "reason": "unresolved dependency: libc.so.6",
+      "rejected": true
+    },
+    {
+      "case": "frame/runtime_wrong_hash",
+      "reason": "runtime object SHA/path: artifact",
+      "rejected": true
+    },
+    {
+      "case": "frame/target_packet",
+      "reason": "packet socket overlaps CN/all interfaces (even protocol0)",
+      "rejected": true
+    },
+    {
+      "case": "frame/tc_egress_unknown",
+      "reason": "tc filter attached or unobserved",
+      "rejected": true
+    },
+    {
+      "case": "frame/tc_ingress",
+      "reason": "tc filter attached or unobserved",
+      "rejected": true
+    },
+    {
+      "case": "frame/wrong_boot",
+      "reason": "host/boot mismatch",
+      "rejected": true
+    },
+    {
+      "case": "frame/wrong_driver",
+      "reason": "ETH3 identity changed",
+      "rejected": true
+    },
+    {
+      "case": "frame/wrong_mac",
+      "reason": "ETH3 identity changed",
+      "rejected": true
+    },
+    {
+      "case": "frame/wrong_mtu",
+      "reason": "link not clean/up/1500",
+      "rejected": true
+    },
+    {
+      "case": "frame/wrong_namespace",
+      "reason": "namespace mismatch",
+      "rejected": true
+    },
+    {
+      "case": "frame/xdp",
+      "reason": "bridge/bond/VLAN/XDP/promisc",
+      "rejected": true
+    },
+    {
+      "case": "policy/budget",
+      "reason": "budget changed",
+      "rejected": true
+    },
+    {
+      "case": "policy/incomplete_artifact",
+      "reason": "noncanonical absolute path",
+      "rejected": true
+    },
+    {
+      "case": "policy/management_alias",
+      "reason": "not ETH3/SR9900",
+      "rejected": true
+    },
+    {
+      "case": "policy/runtime_ready",
+      "reason": "policy role/version",
+      "rejected": true
+    },
+    {
+      "case": "policy/unbounded_renamed_demo",
+      "reason": "unbounded demo is not frontend",
+      "rejected": true
+    },
+    {
+      "case": "policy/wrong_usb",
+      "reason": "USB device interface path",
+      "rejected": true
+    }
+  ],
+  "reused_library_sha256": {
+    "aarch64": "a29e046a5c107511eb8c6341d0310edf47fbfd96d5cdb09df366305ac9072e5b",
+    "native": "f0c7e1e9c810518bce3ff55878de04c28b857e7a6748b315f243364e186b2f68"
+  },
+  "runtime_ready": false,
+  "schema": "m7-cn-preflight-replay-v1",
+  "synthetic_only": true
+}

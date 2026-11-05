@@ -1,0 +1,12 @@
+{
+  "schema": "m7-cn-preflight-v1",
+  "runtime_ready": false,
+  "boot_id": null,
+  "kernel": "6.12.69-gf1b67c293213",
+  "namespaces": {"net": null, "pid": null, "user": null},
+  "interface": {"name": "eth2", "ifindex": null, "mac": null, "driver": "/sys/bus/usb/drivers/sr9900", "device": null},
+  "management": {"name": "eth0", "driver": "/sys/bus/platform/drivers/rk_gmac-dwmac", "mac": null, "addresses": null, "routes4": null, "routes6": null},
+  "artifact": {"path": null, "sha256": null, "role": "bounded-cn-frontend", "interpreter": "/lib/ld-linux-aarch64.so.1"},
+  "objects": {"libc.so.6": {"path": null, "sha256": null}, "ld-linux-aarch64.so.1": {"path": null, "sha256": null}},
+  "limits": {"lease_ns": 8000000000, "max_tx": 2048, "max_rx": 4096, "node_id": 1, "cycle_us": 1000}
+}

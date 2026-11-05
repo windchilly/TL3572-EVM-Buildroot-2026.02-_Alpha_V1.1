@@ -1,0 +1,12 @@
+{
+  "stages/stage07-peripheral-partition/config/powerlink-cn-preflight.template.json": "8c59a42627aa1de7bc5c4b63090774b1fe840dc7879dbea269bc50758193bcc0",
+  "stages/stage07-peripheral-partition/tests/board/collect_powerlink_cn_preflight.py": "d68df8e260973d2a468a0514b7086e5bdfa483244c7c7ec18ff970f48fa8fc12",
+  "stages/stage07-peripheral-partition/tests/board/eth3-recovery-20261009/final.json": "a6c9a84b4a306c3988d38501649643361ad0be2a6253f5f10296894b17dac2fd",
+  "stages/stage07-peripheral-partition/tests/board/powerlink_cn_preflight.py": "8313d989b0cfa55f3ac9796eda6b839f7d26ee3305b9e2d53a933e91268544b6",
+  "stages/stage07-peripheral-partition/tests/board/powerlink_cn_window.py": "7af2393caabb0db68855b09f4d060a4e485b7f4858c3db06d52710ec7219070f",
+  "stages/stage07-peripheral-partition/tests/check_powerlink_cn_window_linux.py": "2406c946a409cdb60875ee1ec75e93bdbb16220c5163fca95927d8acd986d53f",
+  "stages/stage07-peripheral-partition/tests/make_powerlink_cn_p4f_manifest.py": "c2eecdb9ee65f8b79d9d4c4ffebde34a10c7d6ff4806fa1a49677a1a76267a82",
+  "stages/stage07-peripheral-partition/tests/run_powerlink_cn_preflight_replay.py": "4d3d4b8642a0e8bc3028239d4a72f5fac24ee56e86c36f1050899215b894a2cb",
+  "stages/stage07-peripheral-partition/tests/test_powerlink_cn_preflight.py": "4c9aeaa7ad6b0f0d27bafd481949dd38c886e51c7b684436b13911ba894cf765",
+  "stages/stage07-peripheral-partition/tests/verify_powerlink_cn_p4f_checkpoint.py": "f17c252519e79e6215ee03e7dd53f1820886ca399e7ec47b8c44d6a4aed028c1"
+}

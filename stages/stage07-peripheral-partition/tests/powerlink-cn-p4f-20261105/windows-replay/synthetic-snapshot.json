@@ -1,0 +1,269 @@
+{
+  "frames": [
+    {
+      "addresses": [],
+      "boot_id": "11111111-1111-4111-8111-111111111111",
+      "cap_eff": "00002000",
+      "end_ns": 4100000000,
+      "environment": {},
+      "euid": 0,
+      "interface": {
+        "device": "/sys/devices/fake/usb/1-1.4.1/net/eth2",
+        "driver": "/sys/bus/usb/drivers/sr9900",
+        "ifindex": 17,
+        "mac": "02:10:20:30:40:50",
+        "name": "eth2"
+      },
+      "kernel": "6.12.69-gf1b67c293213",
+      "links": [
+        {
+          "address": "02:10:20:30:40:50",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "ifindex": 17,
+          "ifname": "eth2",
+          "link_type": "ether",
+          "mtu": 1500,
+          "operstate": "UP",
+          "promiscuity": 0
+        }
+      ],
+      "machine": "aarch64",
+      "management": {
+        "addresses": [
+          {
+            "family": "inet",
+            "local": "192.168.2.141",
+            "prefixlen": 24,
+            "scope": "global"
+          }
+        ],
+        "driver": "/sys/bus/platform/drivers/rk_gmac-dwmac",
+        "mac": "02:00:00:00:00:01",
+        "name": "eth0",
+        "routes4": [
+          {
+            "dev": "eth0",
+            "dst": "default",
+            "gateway": "192.168.2.1"
+          }
+        ],
+        "routes6": []
+      },
+      "namespaces": {
+        "net": "net:[1]",
+        "pid": "pid:[2]",
+        "user": "user:[3]"
+      },
+      "packet": "sk RefCnt Type Proto Iface R Rmem User Inode\n",
+      "processes": [
+        {
+          "argv": [
+            "python3",
+            "collect_powerlink_cn_preflight.py"
+          ],
+          "exe": "/usr/bin/python3",
+          "pid": 123,
+          "start": 100
+        }
+      ],
+      "routes4": [
+        {
+          "dev": "eth0",
+          "dst": "default",
+          "gateway": "192.168.2.1"
+        }
+      ],
+      "routes6": [],
+      "runtime": {
+        "artifact": {
+          "elf": {
+            "definitions": [],
+            "interpreter": "/lib/ld-linux-aarch64.so.1",
+            "needed": [
+              "libc.so.6"
+            ],
+            "needs": {
+              "libc.so.6": [
+                "GLIBC_2.17",
+                "GLIBC_2.38"
+              ]
+            }
+          },
+          "interpreter_target": "/usr/lib64/ld-real.so",
+          "path": "/root/m7/never-built-cn",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "objects": {
+          "ld-linux-aarch64.so.1": {
+            "elf": {
+              "definitions": [],
+              "interpreter": null,
+              "needed": [],
+              "needs": {}
+            },
+            "interpreter_target": null,
+            "path": "/usr/lib64/ld-real.so",
+            "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          },
+          "libc.so.6": {
+            "elf": {
+              "definitions": [
+                "GLIBC_2.17",
+                "GLIBC_2.38"
+              ],
+              "interpreter": null,
+              "needed": [
+                "ld-linux-aarch64.so.1"
+              ],
+              "needs": {}
+            },
+            "interpreter_target": null,
+            "path": "/usr/lib64/libc-real.so",
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "start_ns": 4000000000,
+      "tc_egress": [],
+      "tc_ingress": []
+    },
+    {
+      "addresses": [],
+      "boot_id": "11111111-1111-4111-8111-111111111111",
+      "cap_eff": "00002000",
+      "end_ns": 4300000000,
+      "environment": {},
+      "euid": 0,
+      "interface": {
+        "device": "/sys/devices/fake/usb/1-1.4.1/net/eth2",
+        "driver": "/sys/bus/usb/drivers/sr9900",
+        "ifindex": 17,
+        "mac": "02:10:20:30:40:50",
+        "name": "eth2"
+      },
+      "kernel": "6.12.69-gf1b67c293213",
+      "links": [
+        {
+          "address": "02:10:20:30:40:50",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "ifindex": 17,
+          "ifname": "eth2",
+          "link_type": "ether",
+          "mtu": 1500,
+          "operstate": "UP",
+          "promiscuity": 0
+        }
+      ],
+      "machine": "aarch64",
+      "management": {
+        "addresses": [
+          {
+            "family": "inet",
+            "local": "192.168.2.141",
+            "prefixlen": 24,
+            "scope": "global"
+          }
+        ],
+        "driver": "/sys/bus/platform/drivers/rk_gmac-dwmac",
+        "mac": "02:00:00:00:00:01",
+        "name": "eth0",
+        "routes4": [
+          {
+            "dev": "eth0",
+            "dst": "default",
+            "gateway": "192.168.2.1"
+          }
+        ],
+        "routes6": []
+      },
+      "namespaces": {
+        "net": "net:[1]",
+        "pid": "pid:[2]",
+        "user": "user:[3]"
+      },
+      "packet": "sk RefCnt Type Proto Iface R Rmem User Inode\n",
+      "processes": [
+        {
+          "argv": [
+            "python3",
+            "collect_powerlink_cn_preflight.py"
+          ],
+          "exe": "/usr/bin/python3",
+          "pid": 123,
+          "start": 100
+        }
+      ],
+      "routes4": [
+        {
+          "dev": "eth0",
+          "dst": "default",
+          "gateway": "192.168.2.1"
+        }
+      ],
+      "routes6": [],
+      "runtime": {
+        "artifact": {
+          "elf": {
+            "definitions": [],
+            "interpreter": "/lib/ld-linux-aarch64.so.1",
+            "needed": [
+              "libc.so.6"
+            ],
+            "needs": {
+              "libc.so.6": [
+                "GLIBC_2.17",
+                "GLIBC_2.38"
+              ]
+            }
+          },
+          "interpreter_target": "/usr/lib64/ld-real.so",
+          "path": "/root/m7/never-built-cn",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "objects": {
+          "ld-linux-aarch64.so.1": {
+            "elf": {
+              "definitions": [],
+              "interpreter": null,
+              "needed": [],
+              "needs": {}
+            },
+            "interpreter_target": null,
+            "path": "/usr/lib64/ld-real.so",
+            "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          },
+          "libc.so.6": {
+            "elf": {
+              "definitions": [
+                "GLIBC_2.17",
+                "GLIBC_2.38"
+              ],
+              "interpreter": null,
+              "needed": [
+                "ld-linux-aarch64.so.1"
+              ],
+              "needs": {}
+            },
+            "interpreter_target": null,
+            "path": "/usr/lib64/libc-real.so",
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "start_ns": 4200000000,
+      "tc_egress": [],
+      "tc_ingress": []
+    }
+  ],
+  "schema": "m7-cn-preflight-v1"
+}

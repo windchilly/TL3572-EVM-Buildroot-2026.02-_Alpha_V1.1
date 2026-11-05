@@ -1,0 +1,62 @@
+{
+  "artifact": {
+    "interpreter": "/lib/ld-linux-aarch64.so.1",
+    "path": "/root/m7/never-built-cn",
+    "role": "bounded-cn-frontend",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "boot_id": "11111111-1111-4111-8111-111111111111",
+  "interface": {
+    "device": "/sys/devices/fake/usb/1-1.4.1/net/eth2",
+    "driver": "/sys/bus/usb/drivers/sr9900",
+    "ifindex": 17,
+    "mac": "02:10:20:30:40:50",
+    "name": "eth2"
+  },
+  "kernel": "6.12.69-gf1b67c293213",
+  "limits": {
+    "cycle_us": 1000,
+    "lease_ns": 8000000000,
+    "max_rx": 4096,
+    "max_tx": 2048,
+    "node_id": 1
+  },
+  "management": {
+    "addresses": [
+      {
+        "family": "inet",
+        "local": "192.168.2.141",
+        "prefixlen": 24,
+        "scope": "global"
+      }
+    ],
+    "driver": "/sys/bus/platform/drivers/rk_gmac-dwmac",
+    "mac": "02:00:00:00:00:01",
+    "name": "eth0",
+    "routes4": [
+      {
+        "dev": "eth0",
+        "dst": "default",
+        "gateway": "192.168.2.1"
+      }
+    ],
+    "routes6": []
+  },
+  "namespaces": {
+    "net": "net:[1]",
+    "pid": "pid:[2]",
+    "user": "user:[3]"
+  },
+  "objects": {
+    "ld-linux-aarch64.so.1": {
+      "path": "/usr/lib64/ld-real.so",
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    },
+    "libc.so.6": {
+      "path": "/usr/lib64/libc-real.so",
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  },
+  "runtime_ready": false,
+  "schema": "m7-cn-preflight-v1"
+}

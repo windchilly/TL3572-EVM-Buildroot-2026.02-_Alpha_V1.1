@@ -1,0 +1,27 @@
+test_broken_hold_symlink_blocks (__main__.LinuxWindowTests.test_broken_hold_symlink_blocks) ... ok
+test_child_abrupt_exit_does_not_rearm (__main__.LinuxWindowTests.test_child_abrupt_exit_does_not_rearm) ... ok
+test_concurrent_child_is_locked_out (__main__.LinuxWindowTests.test_concurrent_child_is_locked_out) ... ok
+test_directory_permissions_rejected (__main__.LinuxWindowTests.test_directory_permissions_rejected) ... ok
+test_expired_after_fsync_retains_hold (__main__.LinuxWindowTests.test_expired_after_fsync_retains_hold) ... ok
+test_fsync_failure_retains_attempt (__main__.LinuxWindowTests.test_fsync_failure_retains_attempt) ... ok
+test_later_window_denied_after_close (__main__.LinuxWindowTests.test_later_window_denied_after_close) ... ok
+test_lock_hardlink_rejected (__main__.LinuxWindowTests.test_lock_hardlink_rejected) ... ok
+test_lock_permission_drift_rejected (__main__.LinuxWindowTests.test_lock_permission_drift_rejected) ... ok
+test_lock_symlink_rejected (__main__.LinuxWindowTests.test_lock_symlink_rejected) ... ok
+test_normal_hold_and_attempt_survive_close (__main__.LinuxWindowTests.test_normal_hold_and_attempt_survive_close) ... ok
+test_old_attempt_without_hold_blocks_same_id (__main__.LinuxWindowTests.test_old_attempt_without_hold_blocks_same_id) ... ok
+test_real_elf_fd_inspection_never_executes_candidate (__main__.LinuxWindowTests.test_real_elf_fd_inspection_never_executes_candidate) ... ok
+test_runtime_file_changed_during_inspection_rejected (__main__.LinuxWindowTests.test_runtime_file_changed_during_inspection_rejected) ... ok
+test_runtime_hash_mismatch_rejected_before_readelf (__main__.LinuxWindowTests.test_runtime_hash_mismatch_rejected_before_readelf) ... ok
+test_runtime_symlink_candidate_rejected (__main__.LinuxWindowTests.test_runtime_symlink_candidate_rejected) ... ok
+test_short_write_retains_partial_attempt (__main__.LinuxWindowTests.test_short_write_retains_partial_attempt) ... ok
+test_stale_record_touches_no_files (__main__.LinuxWindowTests.test_stale_record_touches_no_files) ... ok
+test_symlink_directory_rejected (__main__.LinuxWindowTests.test_symlink_directory_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.523s
+
+OK
+P4f REPLAY PASS: 1 evidence-only positive /32 fail-closed mutations /NO CN OR HOST COLLECTION
+
+REMOTE_EXIT=0

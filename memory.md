@@ -1,5 +1,15 @@
 # 项目交接记录（2026-09-23）
 
+2026-11-05 最新软件入口：tests/powerlink-cn-p4f-20261105/README.md；继续无实体CN路线。本轮只构建机软件验证，无板卡/COM7/真实采集器或CN运行/收发/UP2正式配置变化；不复用硬件窗口。
+新增board/powerlink_cn_preflight纯门槛、collect_powerlink_cn_preflight只读/离线CLI、powerlink_cn_window Linux root窗口存储及默认null未填配置。仅组件没有CN启动器，所有正例runtime_ready/execution_allowed=false；不变P4e C源码/库复用，不重编，不改旧P4a–e测试证据/UP2/P3j no-CN拒RX。
+门槛：root/CAP_NET_RAW/M6/aarch64/boot/ns钉死，两帧≤5s/末端≤2s一致；ETH3eth2/SR9900完整USBinterface realpath/ifindex/MAC，管理eth0/IP路由不变；CN双栈地址含linklocal/全表多路径route/桥VLAN依赖/XDP/tc/promisc拒绝；packet包含协议0未绑定/target全拒，PID+start/已知程序复用不可见均拒。
+collector只白名单精确ip/tc查询，不删地址/关IPv6/调网卡/停进程；运行库root/no-follow单链接文件SHA+受控FD readelf/前后元数据，精确版本集合与libc-loader有限闭包，不ldd/loader执行；旧P4a demo即改名hash也拒。只是静态ABI子集，不是重定位/实际加载或强制设备独占证明。
+窗口root0700公共dir/安全祖先+0600单链接LOCK非阻塞flock/CLOEXEC，复制记录绑定boot/≤2s时间及policy/snapshot/ELF SHA；O_EXCL ATTEMPTED→fsync文件/目录→HOLD→fsync，短写/fsync/过期保留不重试，close仅关自身FD不清HOLD，无恢复API。flock仅协作、存储掉电持久性/主机永久标记和人类授权仍需未来入口审查，生产目录未板端创建。
+Windows/Linux各434=原380+新54通过；构建机19实际Linux锁/子进程/文件/受控FD/readelf场景各两次38通过（测试tmp自清，不是生产清理；x86对ARM解释器target显式mock）。合成1证据正例+32拒绝变异，最终3JSON跨平台byte同，假身份/SHA不可部署或当许可；Linux10实际输入SHA已记。
+中间Windows429/433通过及53夹具Windows分隔符/resolve格式失败日志保留，修fixture不降门槛；读历史快照修正device实为1-1.4.1:1.0而非net/eth2目录，新历史几何回归加入。Linux首最终两19+replay已过但缺该历史JSON依赖导致434单错，原输入锁/失败保留，补10输入闭包后新replay目录全过。
+Native490956B/f0c7e1e9...、Arm454204B/a29e046a...原P4e库SHA不变；新清单/GitHub/delivery后验以最终日志为准，服务器/home/openeuler/build/powerlink-cn-p4f-20261105。最近实板仍11月4日归还历史非今日采样。
+下一步把组件接入有界单owner CN启动器，补独立人类授权+主机永久标记/fresh再核验/候选FD执行/实际持久存储/内存栈信号停止证明与HOLD归还；链路速率双工、运行库加载重定位及板端工具适配需配合新MNprofile。再独立CN-capable有界UP2 MN/decoder/CDC/PDO/过程映像，不等采购、不放宽P3j、不跑真实CN/demo/help、不申请未齐的软件互测窗口。
+
 2026-11-05 最新软件入口：tests/powerlink-cn-p4e-20261105/README.md；继续无实体CN路线，无板卡/COM7/CN运行/真实收发/UP2正式配置变化，不复用硬件窗口。
 新startup header+apply/build_m7_powerlink_cn_startup，在不变P4d变换/23生成SHA后叠加25文件；P4a–d原源码补丁构建器测试证据产物不改。仅库无可运行CN/frontend，runtime_ready=false。
 EDRV init协议0 socket不接收，未bind前无内核接收积压；整栈user/kernel/OD/PDO+四线程+timer/transport健康后owner一次bindeth2/88ab再原子release发布ready。四栈线程与EDRV共5worker先等门，TX/API/process/direct event dispatch也挡门，内部有界队列/槽可准备但不派发。
